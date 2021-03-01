@@ -1,13 +1,19 @@
-import React, { Fragment } from 'react'
-import { Button } from 'reactstrap'
+import React, { Fragment } from "react";
+import Layout from "../layout/Layout";
+import "../../sass/app.scss";
+import Homepage from "../home/Homepage";
+import { Route, Switch } from "react-router";
 
 const App = (props) => {
     return (
         <Fragment>
-            <h1>Hello from React</h1>
-            <Button color="primary">primary</Button>
+            <Layout>
+                <Switch>
+                    <Route path="/" exact component={Homepage} />
+                </Switch>
+            </Layout>
         </Fragment>
-    )
-}
+    );
+};
 
-export default App
+export default App;

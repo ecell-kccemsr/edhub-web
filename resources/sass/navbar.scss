@@ -1,0 +1,13 @@
+.navbar {
+    background-color: #3c64b1;
+
+    .navbar-ul {
+        flex: 1;
+        justify-content: space-evenly;
+
+        .navbar-navlink,
+        .navbar-navlink:hover {
+            color: #fff;
+        }
+    }
+}

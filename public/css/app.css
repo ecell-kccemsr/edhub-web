@@ -10966,3 +10966,7 @@ a.text-dark:focus {
 
 /* Custom */
 
+.test {
+  background-color: red;
+}
+
