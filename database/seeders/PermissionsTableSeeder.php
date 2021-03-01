@@ -227,6 +227,126 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-01 17:27:13',
                 'updated_at' => '2021-03-01 17:27:13',
             ),
+            26 => 
+            array (
+                'id' => 27,
+                'key' => 'browse_current_affair_categories',
+                'table_name' => 'current_affair_categories',
+                'created_at' => '2021-03-01 20:30:30',
+                'updated_at' => '2021-03-01 20:30:30',
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'key' => 'read_current_affair_categories',
+                'table_name' => 'current_affair_categories',
+                'created_at' => '2021-03-01 20:30:30',
+                'updated_at' => '2021-03-01 20:30:30',
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'key' => 'edit_current_affair_categories',
+                'table_name' => 'current_affair_categories',
+                'created_at' => '2021-03-01 20:30:30',
+                'updated_at' => '2021-03-01 20:30:30',
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'key' => 'add_current_affair_categories',
+                'table_name' => 'current_affair_categories',
+                'created_at' => '2021-03-01 20:30:30',
+                'updated_at' => '2021-03-01 20:30:30',
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'key' => 'delete_current_affair_categories',
+                'table_name' => 'current_affair_categories',
+                'created_at' => '2021-03-01 20:30:30',
+                'updated_at' => '2021-03-01 20:30:30',
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'key' => 'browse_current_affair_sub_categories',
+                'table_name' => 'current_affair_sub_categories',
+                'created_at' => '2021-03-01 20:32:21',
+                'updated_at' => '2021-03-01 20:32:21',
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'key' => 'read_current_affair_sub_categories',
+                'table_name' => 'current_affair_sub_categories',
+                'created_at' => '2021-03-01 20:32:21',
+                'updated_at' => '2021-03-01 20:32:21',
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'key' => 'edit_current_affair_sub_categories',
+                'table_name' => 'current_affair_sub_categories',
+                'created_at' => '2021-03-01 20:32:21',
+                'updated_at' => '2021-03-01 20:32:21',
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'key' => 'add_current_affair_sub_categories',
+                'table_name' => 'current_affair_sub_categories',
+                'created_at' => '2021-03-01 20:32:21',
+                'updated_at' => '2021-03-01 20:32:21',
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'key' => 'delete_current_affair_sub_categories',
+                'table_name' => 'current_affair_sub_categories',
+                'created_at' => '2021-03-01 20:32:21',
+                'updated_at' => '2021-03-01 20:32:21',
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'key' => 'browse_current_affairs',
+                'table_name' => 'current_affairs',
+                'created_at' => '2021-03-01 20:41:56',
+                'updated_at' => '2021-03-01 20:41:56',
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'key' => 'read_current_affairs',
+                'table_name' => 'current_affairs',
+                'created_at' => '2021-03-01 20:41:56',
+                'updated_at' => '2021-03-01 20:41:56',
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'key' => 'edit_current_affairs',
+                'table_name' => 'current_affairs',
+                'created_at' => '2021-03-01 20:41:56',
+                'updated_at' => '2021-03-01 20:41:56',
+            ),
+            39 => 
+            array (
+                'id' => 40,
+                'key' => 'add_current_affairs',
+                'table_name' => 'current_affairs',
+                'created_at' => '2021-03-01 20:41:56',
+                'updated_at' => '2021-03-01 20:41:56',
+            ),
+            40 => 
+            array (
+                'id' => 41,
+                'key' => 'delete_current_affairs',
+                'table_name' => 'current_affairs',
+                'created_at' => '2021-03-01 20:41:56',
+                'updated_at' => '2021-03-01 20:41:56',
+            ),
         ));
         
         
