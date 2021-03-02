@@ -52,7 +52,54 @@ let LookingFor = () => {
         </Row>
     );
 };
-
+const Jobs = () => {
+    return (
+        <Row>
+            {Array.from(Array(3), (e, i) => {
+                return (
+                    <Col sm="12" md="6" lg="4">
+                        <div className="text-center d-flex align-items-center justify-content-center ">
+                            <div className="jobs-section-circle ">
+                                <img
+                                    className="jobs-section-circle-img"
+                                    src="https://rukminim1.flixcart.com/image/352/352/jxrv4i80/stuffed-toy/2/g/k/3feet-cream-color-special-soft-teddy-bear-92-cm-92-hasya-big-original-imafeqfrhcktabj5.jpeg?q=70"
+                                />
+                            </div>
+                        </div>
+                        <h5 className="text-center">Bank job</h5>
+                        <div className="jobs-section-sub-divison">
+                            <div className="d-flex jobs-section-box">
+                                <img
+                                    className="jobs-section-image"
+                                    src="https://rukminim1.flixcart.com/image/352/352/jxrv4i80/stuffed-toy/2/g/k/3feet-cream-color-special-soft-teddy-bear-92-cm-92-hasya-big-original-imafeqfrhcktabj5.jpeg?q=70"
+                                />
+                                <div className="jobs-section-content">
+                                    BSF Recruitment 2020 Notification: 317 SI/HC
+                                    Vacancies Released
+                                </div>
+                            </div>
+                            <div className="d-flex jobs-section-box">
+                                <img
+                                    className="jobs-section-image"
+                                    src="https://rukminim1.flixcart.com/image/352/352/jxrv4i80/stuffed-toy/2/g/k/3feet-cream-color-special-soft-teddy-bear-92-cm-92-hasya-big-original-imafeqfrhcktabj5.jpeg?q=70"
+                                />
+                                <div className="jobs-section-content">
+                                    BSF Recruitment 2020 Notification: 317 SI/HC
+                                    Vacancies Released
+                                </div>
+                            </div>
+                            <div className="text-center">
+                                <ButtonToggle className="jobs-section-btn">
+                                    View All
+                                </ButtonToggle>
+                            </div>
+                        </div>
+                    </Col>
+                );
+            })}
+        </Row>
+    );
+};
 const Homepage = () => {
     return (
         <div>
@@ -62,6 +109,13 @@ const Homepage = () => {
 
             <section className="homepage-job ">
                 <LookingFor />
+            </section>
+
+            <section className="jobs-section-container">
+                <div className="jobs-section-div">
+                    <h3 className="">JOBS</h3>
+                    <Jobs />
+                </div>
             </section>
 
             <section className="exam-updates-section">

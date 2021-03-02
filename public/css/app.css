@@ -11036,6 +11036,56 @@ a.text-dark:focus {
   border-radius: 50%;
 }
 
+.jobs-section-container {
+  padding: 50px 150px;
+}
+
+.jobs-section-container .jobs-section-circle {
+  border-radius: 50%;
+  background-color: #eeeeee;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jobs-section-container .jobs-section-circle .jobs-section-circle-img {
+  height: 100px;
+  width: 100px;
+  align-items: center;
+}
+
+.jobs-section-container .jobs-section-sub-divison {
+  background: #f8f8f8;
+  padding: 100px 0 20px 0;
+  margin-top: -100px;
+}
+
+.jobs-section-container .jobs-section-sub-divison .jobs-section-box {
+  border: #838383 1px solid;
+  background: #fff;
+}
+
+.jobs-section-container .jobs-section-sub-divison .jobs-section-box .jobs-section-image {
+  height: 156px;
+  width: 340px;
+  padding: 20px;
+  border-radius: 20%;
+}
+
+.jobs-section-container .jobs-section-sub-divison .jobs-section-box .jobs-section-content {
+  padding: 20px;
+}
+
+.jobs-section-container .jobs-section-sub-divison .jobs-section-btn {
+  background-color: transparent;
+  color: #e63939;
+  border: none;
+  outline: none;
+  padding: 15px;
+}
+
 .exam-updates-section {
   padding: 50px 150px;
 }
@@ -11050,6 +11100,26 @@ a.text-dark:focus {
 }
 
 .exam-updates-section .exam-update-container .exam-updates-section-btn {
+  background-color: transparent;
+  color: #e63939;
+  border: none;
+  outline: none;
+}
+
+.question-paper-section {
+  padding: 50px 150px;
+}
+
+.question-paper-section .question-paper-container {
+  padding: 20px;
+  box-shadow: 0px 5px 4px 0px #bebcbc;
+}
+
+.question-paper-section .question-paper-section-header {
+  padding: 10px 0 0 0;
+}
+
+.question-paper-section .question-papers-section-btn {
   background-color: transparent;
   color: #e63939;
   border: none;
@@ -11098,25 +11168,5 @@ a.text-dark:focus {
   .question-paper-section {
     padding: 50px;
   }
-}
-
-.question-paper-section {
-  padding: 50px 150px;
-}
-
-.question-paper-section .question-paper-container {
-  padding: 20px;
-  box-shadow: 0px 5px 4px 0px #bebcbc;
-}
-
-.question-paper-section .question-paper-section-header {
-  padding: 10px 0 0 0;
-}
-
-.question-paper-section .question-papers-section-btn {
-  background-color: transparent;
-  color: #e63939;
-  border: none;
-  outline: none;
 }
 
