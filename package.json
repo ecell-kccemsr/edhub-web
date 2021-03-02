@@ -36,7 +36,11 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+<<<<<<< HEAD
         "concurrently": "^6.0.0",
         "i": "^0.3.6"
+=======
+        "concurrently": "^6.0.0"
+>>>>>>> f4ccbef25a44a5e6a4a57dfa3a0fb6680eb62cb4
     }
 }
