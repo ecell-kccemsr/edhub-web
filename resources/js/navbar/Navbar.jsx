@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
     Collapse,
     Navbar,
@@ -11,10 +12,10 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText,
+    NavbarText
 } from "reactstrap";
 
-const NavbarComponent = (props) => {
+const NavbarComponent = props => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -26,44 +27,33 @@ const NavbarComponent = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav navbar className="navbar-ul">
                         <NavItem>
-                            <NavLink
-                                href="https://github.com/reactstrap/reactstrap"
-                                className="navbar-navlink"
-                            >
-                                Current Affairs
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                href="https://github.com/reactstrap/reactstrap"
+                            <Link
+                                to="https://github.com/reactstrap/reactstrap"
                                 className="navbar-navlink"
                             >
                                 Goverment Jobs
-                            </NavLink>
+                            </Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink
-                                href="https://github.com/reactstrap/reactstrap"
-                                className="navbar-navlink"
-                            >
+                            <Link to="/news" className="navbar-navlink">
                                 News
-                            </NavLink>
+                            </Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink
-                                href="https://github.com/reactstrap/reactstrap"
+                            <Link
+                                to="https://github.com/reactstrap/reactstrap"
                                 className="navbar-navlink"
                             >
                                 Exam Calendar
-                            </NavLink>
+                            </Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink
-                                href="https://github.com/reactstrap/reactstrap"
+                            <Link
+                                to="https://github.com/reactstrap/reactstrap"
                                 className="navbar-navlink"
                             >
                                 Question Papers
-                            </NavLink>
+                            </Link>
                         </NavItem>
                     </Nav>
                 </Collapse>
