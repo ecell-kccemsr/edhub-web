@@ -3,7 +3,7 @@ import {
     Row,
     Col
 } from "reactstrap";
-import "./Govermentjob.css";
+import "../../../sass/Govermentjob.scss";
 const Govermentjob = () => {
     return (
         <>

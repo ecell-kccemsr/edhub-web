@@ -1,0 +1,57 @@
+/* Remove extra left and right margins, due to padding */
+/* Clear floats after the columns */
+/* Responsive columns */
+/* Style the counter cards */
+.bankjoblast {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.disabled-bank-last {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    color: rgb(196, 196, 196);
+}
+.title-bank-last {
+    padding: 35px 0px 35px 0px;
+}
+.column-bankjoblast {
+    float: left;
+    width: 12%;
+    padding: 0 10px;
+}
+.row-bankjoblast {
+    margin: 0 -5px;
+    box-shadow: 0px 4px 8px -1px #8888;
+    background-color: rgba(240, 240, 240, 0.533);
+    padding: 30px;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+.card-bankjoblast {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #ffb342;
+}
+.content-bankjoblast {
+    margin-top: 45px;
+}
+.container-bankjoblast {
+    box-shadow: 0px 4px 8px -1px #8888;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 25px;
+}
+@media screen and (max-width: 600px) {
+    .column-bankjoblast {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
