@@ -28,7 +28,7 @@ const NavbarComponent = props => {
                     <Nav navbar className="navbar-ul">
                         <NavItem>
                             <Link
-                                to="https://github.com/reactstrap/reactstrap"
+                                to="/govermentjobs"
                                 className="navbar-navlink"
                             >
                                 Goverment Jobs
