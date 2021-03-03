@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'app');
 Route::view('/news', 'app');
 Route::view('/govermentjobs', 'app');
+<<<<<<< HEAD
 Route::view('/bankjob', 'app');
 Route::view('/bankjoblast', 'app');
 
 
+=======
+>>>>>>> afef47a01e13f01b918c7fc9de66497176fb272e
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

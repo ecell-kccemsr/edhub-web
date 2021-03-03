@@ -79,7 +79,7 @@
             background: #fff;
             .jobs-section-image {
                 height: 156px;
-                width: 340px;
+                max-width: 340px;
                 padding: 20px;
                 border-radius: 20%;
             }
@@ -165,7 +165,11 @@
         }
     }
 }
-
+@media screen and (max-width: 1100px) {
+    .jobs-section-container {
+        padding: 20px;
+    }
+}
 @media screen and (min-width: 605px) and (max-width: 1100px) {
     .news-card-body {
         padding: 20px;

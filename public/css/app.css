@@ -11069,7 +11069,7 @@ a.text-dark:focus {
 
 .jobs-section-container .jobs-section-sub-divison .jobs-section-box .jobs-section-image {
   height: 156px;
-  width: 340px;
+  max-width: 340px;
   padding: 20px;
   border-radius: 20%;
 }
@@ -11152,6 +11152,12 @@ a.text-dark:focus {
   }
 }
 
+@media screen and (max-width: 1100px) {
+  .jobs-section-container {
+    padding: 20px;
+  }
+}
+
 @media screen and (min-width: 605px) and (max-width: 1100px) {
   .news-card-body {
     padding: 20px;
@@ -11168,5 +11174,140 @@ a.text-dark:focus {
   .question-paper-section {
     padding: 50px;
   }
+}
+
+.category-left-section {
+  box-shadow: 0px 5px 4px 0px #bebcbc;
+}
+
+.select-news-by-category {
+  padding: 50px 150px;
+}
+
+.select-news-by-category .select-news-by-category-btn-section {
+  background: #f8f8f8;
+  padding: 50px 150px;
+  box-shadow: 0px 5px 4px 0px #bebcbc;
+  border-radius: 10px;
+}
+
+.select-news-by-category .category-btn {
+  margin-right: 20px;
+  background: #ffb342;
+  border: none;
+  outline: none;
+}
+
+.registration-section {
+  box-shadow: 0px 5px 4px 0px #bebcbc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.registration-section .registration-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.category-information-sub-section {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.category-information-sub-section .category-information-section {
+  padding: 40px 0 10px 0;
+}
+
+.category-information-image {
+  width: 100px;
+  height: 70px;
+  padding: 5px;
+}
+
+.trending-section-container {
+  padding: 20px;
+  box-shadow: 0px 5px 4px 0px #bebcbc;
+  border-radius: 4px;
+}
+
+.trending-section-container .trending-section-btn {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  color: red;
+}
+
+@media screen and (max-width: 1100px) {
+  .select-news-by-category .select-news-by-category-btn-section {
+    padding: 20px;
+  }
+
+  .select-news-by-category {
+    padding: 20px;
+  }
+}
+
+.gov {
+  max-width: 2000px;
+}
+
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 77%;
+  background-color: white;
+}
+
+.jumbotron {
+  background-color: #fff;
+  box-shadow: 0px 4px 8px -1px #8888;
+}
+
+.titles {
+  padding-left: 50px;
+}
+
+.title-notify {
+  margin-left: 2px;
+  padding: 20px;
+}
+
+.title-Edu {
+  padding: 60px 0px 25px 0px;
+}
+
+.title-Exam {
+  margin-left: 1px;
+  padding: 20px;
+}
+
+.disabled {
+  padding: 45px 0px 2px 5px;
+  color: #c4c4c4;
+}
+
+.container {
+  box-shadow: 0px 4px 8px -1px #8888;
+  margin-top: 50px;
+  margin-bottom: 3px;
+}
+
+.container-Edu {
+  margin: 20px auto;
+}
+
+.view {
+  text-align: center;
+  font-size: 17px;
+  color: #ff0000;
+  border-top: 1px solid #000;
+  padding: 10px;
 }
 
