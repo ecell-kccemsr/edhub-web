@@ -17,7 +17,13 @@ class CreateGovernmentJobsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->string('url');
+            $table->longText('job_positions');
+            $table->longText('eligibility_criteria');
+            $table->longText('syllabus');
+            $table->longText('exam_pattern');
+            $table->longText('cutoff');
+            $table->longText('apply_online');
+            $table->longText('admit_card');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('subcategory_id');
             $table->timestamps();

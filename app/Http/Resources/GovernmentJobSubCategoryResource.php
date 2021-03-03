@@ -18,7 +18,7 @@ class GovernmentJobSubCategoryResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'category' => new GovernmentJobCategoryResource($this->category_id),
+            'category' => new GovernmentJobCategoryResource($this->category),
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,

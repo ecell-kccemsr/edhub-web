@@ -16,6 +16,6 @@ class GovernmentJob extends Model
 
     public function sub_category()
     {
-        return $this->belongsTo('App\Models\GovernmentJobSubCategory;','subcategory_id');
+        return $this->belongsTo('App\Models\GovernmentJobSubCategory','subcategory_id');
     }
 }
