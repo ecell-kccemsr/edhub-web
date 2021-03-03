@@ -7,37 +7,37 @@ function News() {
                 <div className="">News</div>
                 <hr />
                 <Row>
-                    <Col sm="12" md="6" lg="8">
+                    <Col sm="12" md="6" lg="8" className="mb-4">
                         <div className="category-left-section">
                             <h6 className="select-by-category-header text-center">
                                 Select By Category
                             </h6>
                             <div className="select-news-by-category-btn-section">
-                                <div className="d-flex align-items-center justify-content-center">
-                                    <Button className="category-btn">
+                                <div className="d-flex align-items-center justify-content-center flex-wrap">
+                                    <Button className="category-btn mt-2">
                                         primary
                                     </Button>
-                                    <Button className="category-btn">
+                                    <Button className="category-btn mt-2">
                                         primary
                                     </Button>
-                                    <Button className="category-btn">
+                                    <Button className="category-btn mt-2">
                                         primary
                                     </Button>
-                                    <Button className="category-btn">
+                                    <Button className="category-btn mt-2">
                                         primary
                                     </Button>
                                 </div>
-                                <div className="d-flex align-items-center justify-content-center">
-                                    <Button className="category-btn mt-4">
+                                <div className="d-flex align-items-center justify-content-center flex-wrap">
+                                    <Button className="category-btn mt-2">
                                         primary
                                     </Button>
-                                    <Button className="category-btn mt-4">
+                                    <Button className="category-btn mt-2">
                                         primary
                                     </Button>
-                                    <Button className="category-btn mt-4">
+                                    <Button className="category-btn mt-2">
                                         primary
                                     </Button>
-                                    <Button className="category-btn mt-4">
+                                    <Button className="category-btn mt-2">
                                         primary
                                     </Button>
                                 </div>
