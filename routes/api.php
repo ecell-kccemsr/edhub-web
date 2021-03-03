@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\API\GovernmentJobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\NewsController;
+use App\Http\Controllers\API\GovernmentJobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,8 @@ Route::get('/current_affairs',[CurrentAffairController::class,'get']);
 Route::get('/government_jobs',[GovernmentJobController::class,'get']);
 Route::get('/government_jobs/categories',[GovernmentJobController::class,'category']);
 Route::get('/government_jobs/sub_categories',[GovernmentJobController::class,'sub_category']);
+
+//News
+Route::get('/news',[NewsController::class,'get']);
+Route::get('/news/categories',[NewsController::class,'category']);
+Route::get('/news/sub_categories',[NewsController::class,'sub_category']);
