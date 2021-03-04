@@ -49,7 +49,7 @@ const NavbarComponent = props => {
                         </NavItem>
                         <NavItem>
                             <Link
-                                to="https://github.com/reactstrap/reactstrap"
+                                to="/questionpaper"
                                 className="navbar-navlink"
                             >
                                 Question Papers

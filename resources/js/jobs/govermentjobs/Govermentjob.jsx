@@ -1,13 +1,9 @@
 import React from "react";
-<<<<<<< HEAD
 import {
     Row,
     Col
 } from "reactstrap";
 import "../../../sass/Govermentjob.scss";
-=======
-import { Row, Col } from "reactstrap";
->>>>>>> afef47a01e13f01b918c7fc9de66497176fb272e
 const Govermentjob = () => {
     return (
         <>
