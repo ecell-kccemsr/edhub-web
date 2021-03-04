@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\API\ExamCalendarController;
 use App\Http\Controllers\API\GovernmentJobController;
+use App\Http\Controllers\API\QuestionPaperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,6 @@ Route::get('/news/sub_categories',[NewsController::class,'sub_category']);
 //ExamCalendar
 Route::get('/examcalendar',[ExamCalendarController::class,'get']);
 
+//Question Paper
+Route::get('/questionpapers',[QuestionPaperController::class,'get']);
+Route::get('/questionpapers/categories',[QuestionPaperController::class,'categories']);
