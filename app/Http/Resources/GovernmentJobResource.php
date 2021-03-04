@@ -29,9 +29,9 @@ class GovernmentJobResource extends JsonResource
             'category' => new GovernmentJobCategoryResource($this->category),
             'subcategory' => new GovernmentJobSubCategoryResource($this->sub_category),
             'created_at' => $this->created_at,
-            'created_at_formated' => $this->created_at->diffForHumans(),
+            'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
-            'updated_at_formated' => $this->updated_at->diffForHumans(),
+            'updated_at_formated' => $this->updated_at === null ? null : $this->updated_at->diffForHumans(),
         ];
     }
 }
