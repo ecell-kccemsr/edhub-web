@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGovernmentJobsTable extends Migration
+class CreateNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,12 @@ class CreateGovernmentJobsTable extends Migration
      */
     public function up()
     {
-        Schema::create('government_jobs', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->longText('job_positions');
-            $table->longText('eligibility_criteria');
-            $table->longText('syllabus');
-            $table->longText('exam_pattern');
-            $table->longText('cutoff');
-            $table->longText('apply_online');
-            $table->longText('admit_card');
+            $table->longText('details');
+            $table->string('image');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('subcategory_id');
             $table->timestamps();
@@ -37,6 +32,6 @@ class CreateGovernmentJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('government_jobs');
+        Schema::dropIfExists('news');
     }
 }

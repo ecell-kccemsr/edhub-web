@@ -10,6 +10,7 @@ import Questionpaper2 from "../Question papers/Questionpaper2";
 
 import { Route, Switch } from "react-router";
 import News from "../news/News";
+import Examcalendar from "../examcalendar/Examcalendar";
 
 const App = props => {
     return (

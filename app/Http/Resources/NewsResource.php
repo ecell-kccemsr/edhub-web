@@ -2,10 +2,10 @@
 
 namespace App\Http\Resources;
 
-use TCG\Voyager\Facades\Voyager;
 use Illuminate\Http\Resources\Json\JsonResource;
+use TCG\Voyager\Facades\Voyager;
 
-class GovernmentJobCategoryResource extends JsonResource
+class NewsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,8 +17,12 @@ class GovernmentJobCategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'title' => $this->title,
+            'description' => $this->description,
+            'details' => $this->details,
             'image' =>  Voyager::image($this->image),
+            'category' => new NewsCategoryResource($this->category),
+            'subcategory' => new NewsSubCategoryResource($this->sub_category),
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,

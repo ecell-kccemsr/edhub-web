@@ -4,8 +4,9 @@ namespace App\Http\Resources;
 
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\ExamCalendarCategoryResource;
 
-class GovernmentJobCategoryResource extends JsonResource
+class ExamCalendarResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +17,12 @@ class GovernmentJobCategoryResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
             'name' => $this->name,
-            'image' =>  Voyager::image($this->image),
+            'date' => $this->date,
+            'image' => Voyager::image($this->image),
+            'official' => $this->official,
+            'category' => new ExamCalendarCategoryResource($this->category),
+            'url' => $this->url,
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
