@@ -9,8 +9,27 @@ use App\Models\ExamCalendarCategory;
 use App\Http\Resources\ExamCalendarResourceCollection;
 use App\Http\Resources\ExamCalendarCategoryResourceCollection;
 
+/**
+ * @group Exam Calendar management
+ *
+ * APIs for managing Exam Calendar
+ */
+
 class ExamCalendarController extends Controller
 {
+     /**
+     * Get All Exams Calendar
+     *
+     * This endpoint allows you to fetch all Exams Calendar.
+     * 
+     * @queryParam category_id integer Field to fetch exam calendar to particular category_id.
+     * @queryParam page integer Field to change page. Defaults to 1.
+     * @queryParam per_page integer Field to change exam calendar per page. Defaults to 10.
+     * 
+     * @apiResourceCollection App\Http\Resources\ExamCalendarResourceCollection
+     * @apiResourceModel App\Models\ExamCalendar
+     * 
+     */
     public function get(Request $request)
     {
         $exam_calendars = ExamCalendar::query();
@@ -22,6 +41,18 @@ class ExamCalendarController extends Controller
         return new ExamCalendarResourceCollection($exam_calendars);
     }
 
+     /**
+     * Get All Categories.
+     *
+     * This endpoint allows you to fetch all Exams Calendar Categories.
+     * 
+     * @queryParam page integer Field to change page. Defaults to 1.
+     * @queryParam per_page integer Field to change exam calendar categories per page. Defaults to 10.
+     * 
+     * @apiResourceCollection App\Http\Resources\ExamCalendarCategoryResourceCollection
+     * @apiResourceModel App\Models\ExamCalendarCategory
+     * 
+     */
     public function categories(Request $request)
     {
         $exam_calendars_categories = ExamCalendarCategory::paginate($request->input('per_page', 10));

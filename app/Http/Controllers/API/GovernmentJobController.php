@@ -11,8 +11,27 @@ use App\Http\Resources\GovernmentJobResourceCollection;
 use App\Http\Resources\GovernmentJobCategoryResourceCollection;
 use App\Http\Resources\GovernmentJobSubCategoryResourceCollection;
 
+/**
+ * @group Government Job management
+ *
+ * APIs for managing Government Job
+ */
 class GovernmentJobController extends Controller
 {
+     /**
+     * Get All Government Jobs
+     *
+     * This endpoint allows you to fetch all Government Jobs.
+     * 
+     * @queryParam category_id integer Field to fetch government job to particular category_id.
+     * @queryParam subcategory_id integer Field to fetch government job to particular subcategory_id.
+     * @queryParam page integer Field to change page. Defaults to 1.
+     * @queryParam per_page integer Field to change government job per page. Defaults to 10.
+     * 
+     * @apiResourceCollection App\Http\Resources\GovernmentJobResourceCollection
+     * @apiResourceModel App\Models\GovernmentJob
+     * 
+     */
     public function get(Request $request)
     {
         $government_jobs = GovernmentJob::query();
@@ -28,12 +47,37 @@ class GovernmentJobController extends Controller
         return new GovernmentJobResourceCollection($government_jobs);
     }
 
+     /**
+     * Get All Categories.
+     *
+     * This endpoint allows you to fetch all Government Job Categories.
+     * 
+     * @queryParam page integer Field to change page. Defaults to 1.
+     * @queryParam per_page integer Field to change government job categories per page. Defaults to 10.
+     * 
+     * @apiResourceCollection App\Http\Resources\GovernmentJobCategoryResourceCollection
+     * @apiResourceModel App\Models\GovernmentJobCategory
+     * 
+     */
     public function categories(Request $request)
     {
         $government_job_categories = GovernmentJobCategory::paginate($request->input('per_page', 10));
         return new GovernmentJobCategoryResourceCollection($government_job_categories);
     }
 
+     /**
+     * Get All Sub Categories.
+     *
+     * This endpoint allows you to fetch all Government Job Sub Categories.
+     * 
+     * @queryParam category_id integer Field to fetch government job subcategories to particular category_id.
+     * @queryParam page integer Field to change page. Defaults to 1.
+     * @queryParam per_page integer Field to change government job subcategories per page. Defaults to 10.
+     * 
+     * @apiResourceCollection App\Http\Resources\GovernmentJobSubCategoryResourceCollection
+     * @apiResourceModel App\Models\GovernmentJobSubCategory
+     * 
+     */
     public function sub_categories(Request $request)
     {
         $government_job_subcategories = GovernmentJobSubCategory::query();

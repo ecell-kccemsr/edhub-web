@@ -11,8 +11,27 @@ use App\Http\Resources\NewsResourceCollection;
 use App\Http\Resources\NewsCategoryResourceCollection;
 use App\Http\Resources\NewsSubCategoryResourceCollection;
 
+/**
+ * @group News management
+ *
+ * APIs for managing News
+ */
 class NewsController extends Controller
 {
+     /**
+     * Get All the News
+     *
+     * This endpoint allows you to fetch all the News.
+     * 
+     * @queryParam category_id integer Field to fetch news to particular category_id.
+     * @queryParam subcategory_id integer Field to fetch news to particular subcategory_id.
+     * @queryParam page integer Field to change page. Defaults to 1.
+     * @queryParam per_page integer Field to change news per page. Defaults to 10.
+     * 
+     * @apiResourceCollection App\Http\Resources\NewsResourceCollection
+     * @apiResourceModel App\Models\News
+     * 
+     */
     public function get(Request $request)
     {
         $news = News::query();
@@ -28,12 +47,37 @@ class NewsController extends Controller
         return new NewsResourceCollection($news);
     }
 
+     /**
+     * Get All Categories.
+     *
+     * This endpoint allows you to fetch all News Categories.
+     * 
+     * @queryParam page integer Field to change page. Defaults to 1.
+     * @queryParam per_page integer Field to change news categories per page. Defaults to 10.
+     * 
+     * @apiResourceCollection App\Http\Resources\NewsCategoryResourceCollection
+     * @apiResourceModel App\Models\NewsCategory
+     * 
+     */
     public function categories(Request $request)
     {
         $news_categories = NewsCategory::paginate($request->input('per_page', 10));
         return new NewsCategoryResourceCollection($news_categories);
     }
 
+     /**
+     * Get All Sub Categories.
+     *
+     * This endpoint allows you to fetch all News Sub Categories.
+     * 
+     * @queryParam category_id integer Field to fetch news subcategories to particular category_id.
+     * @queryParam page integer Field to change page. Defaults to 1.
+     * @queryParam per_page integer Field to change news subcategories per page. Defaults to 10.
+     * 
+     * @apiResourceCollection App\Http\Resources\NewsSubCategoryResourceCollection
+     * @apiResourceModel App\Models\NewsSubCategory
+     * 
+     */
     public function sub_categories(Request $request)
     {
         $news_subcategories = NewsSubCategory::query();

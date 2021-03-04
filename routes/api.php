@@ -22,8 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/current_affairs',[CurrentAffairController::class,'get']);
-
 //Government Job
 Route::get('/government_jobs',[GovernmentJobController::class,'get']);
 Route::get('/government_jobs/categories',[GovernmentJobController::class,'categories']);
