@@ -26,13 +26,13 @@ Route::get('/current_affairs',[CurrentAffairController::class,'get']);
 
 //Government Job
 Route::get('/government_jobs',[GovernmentJobController::class,'get']);
-Route::get('/government_jobs/categories',[GovernmentJobController::class,'category']);
-Route::get('/government_jobs/sub_categories',[GovernmentJobController::class,'sub_category']);
+Route::get('/government_jobs/categories',[GovernmentJobController::class,'categories']);
+Route::get('/government_jobs/sub_categories',[GovernmentJobController::class,'sub_categories']);
 
 //News
 Route::get('/news',[NewsController::class,'get']);
-Route::get('/news/categories',[NewsController::class,'category']);
-Route::get('/news/sub_categories',[NewsController::class,'sub_category']);
+Route::get('/news/categories',[NewsController::class,'categories']);
+Route::get('/news/sub_categories',[NewsController::class,'sub_categories']);
 
 //ExamCalendar
 Route::get('/examcalendar',[ExamCalendarController::class,'get']);

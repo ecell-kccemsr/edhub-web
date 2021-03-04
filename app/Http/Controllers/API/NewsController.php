@@ -28,13 +28,13 @@ class NewsController extends Controller
         return new NewsResourceCollection($news);
     }
 
-    public function category(Request $request)
+    public function categories(Request $request)
     {
         $news_categories = NewsCategory::paginate($request->input('per_page', 10));
         return new NewsCategoryResourceCollection($news_categories);
     }
 
-    public function sub_category(Request $request)
+    public function sub_categories(Request $request)
     {
         $news_subcategories = NewsSubCategory::query();
         if($request->has('category_id'))

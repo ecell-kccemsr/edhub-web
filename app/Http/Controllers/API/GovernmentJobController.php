@@ -28,13 +28,13 @@ class GovernmentJobController extends Controller
         return new GovernmentJobResourceCollection($government_jobs);
     }
 
-    public function category(Request $request)
+    public function categories(Request $request)
     {
         $government_job_categories = GovernmentJobCategory::paginate($request->input('per_page', 10));
         return new GovernmentJobCategoryResourceCollection($government_job_categories);
     }
 
-    public function sub_category(Request $request)
+    public function sub_categories(Request $request)
     {
         $government_job_subcategories = GovernmentJobSubCategory::query();
         if($request->has('category_id'))
