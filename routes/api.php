@@ -36,6 +36,7 @@ Route::get('/news/sub_categories',[NewsController::class,'sub_category']);
 
 //ExamCalendar
 Route::get('/examcalendar',[ExamCalendarController::class,'get']);
+Route::get('/examcalendar/categories',[ExamCalendarController::class,'categories']);
 
 //Question Paper
 Route::get('/questionpapers',[QuestionPaperController::class,'get']);
