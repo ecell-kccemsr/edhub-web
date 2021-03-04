@@ -77,7 +77,7 @@ const NavbarComponent = props => {
                         </NavItem>
                         <NavItem>
                             <Link
-                                to="https://github.com/reactstrap/reactstrap"
+                                to="/examcalendar"
                                 className="navbar-navlink"
                             >
                                 Exam Calendar

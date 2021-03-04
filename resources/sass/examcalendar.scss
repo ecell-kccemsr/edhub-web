@@ -1,0 +1,106 @@
+.exam-calendar-section {
+    padding: 50px 150px;
+}
+.exam-menu-section {
+    padding: 0 150px;
+    .exam-btn-section {
+        background: #f8f8f8;
+        padding: 20px;
+        box-shadow: 0px 5px 4px 0px #bebcbc;
+        border-radius: 10px;
+        .exam-single-btn {
+            margin-right: 20px;
+            background: #ffb342;
+            border: none;
+            outline: none;
+            width: 150px;
+        }
+    }
+}
+.exam-toggle-section {
+    padding: 50px 150px;
+
+    .exam-toggle-btn-section {
+        background: #f8f8f8;
+        padding: 20px;
+        box-shadow: 0px 5px 4px 0px #bebcbc;
+        border-radius: 10px;
+        border-left: 10px solid red;
+        .exam-toggle-btn {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            margin-top: -60px;
+            .icon-arrow {
+                color: black;
+                border-radius: 50%;
+                border: black 1px solid;
+                padding: 5px;
+            }
+        }
+    }
+    .exam-toggle-content-section {
+        border: none;
+    }
+}
+.exam-toggle-content-section {
+    background-color: #f3f3f3;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    .exam-toggle-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .exam-toggle-section-icon {
+        width: 30px;
+        height: 30px;
+        padding: 2px;
+    }
+    .exam-toggle-section-date {
+        padding: 0 30px 0 30px;
+    }
+
+    .exam-toggle-section-official {
+        background-color: blue;
+        color: white;
+        font-size: 12px;
+        align-self: auto;
+        padding: 0px 10px;
+        border-radius: 20%;
+        margin-left: 20px;
+    }
+    .exam-toggle-content-section-2-icon {
+        padding: 0 3px;
+        height: 30px;
+        width: 30px;
+    }
+    .exam-toggle-content-section-header {
+        padding: 2px 30px 0 30px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .exam-calendar-section {
+        padding: 20px;
+    }
+    .exam-menu-section {
+        padding: 20px;
+        .exam-btn-section {
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+    }
+    .exam-toggle-section {
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .exam-menu-section {
+        .exam-btn-section {
+            flex-wrap: wrap;
+        }
+    }
+}
