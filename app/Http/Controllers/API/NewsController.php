@@ -24,13 +24,14 @@ class NewsController extends Controller
         {
             $news = $news->where('subcategory_id',$request->input('subcategory_id'));
         }
-        return new NewsResourceCollection($news->get());
+        $news = $news->paginate($request->input('per_page', 10));
+        return new NewsResourceCollection($news);
     }
 
     public function category(Request $request)
     {
-        $news_categories = NewsCategory::query();
-        return new NewsCategoryResourceCollection($news_categories->get());
+        $news_categories = NewsCategory::paginate($request->input('per_page', 10));
+        return new NewsCategoryResourceCollection($news_categories);
     }
 
     public function sub_category(Request $request)
@@ -40,6 +41,7 @@ class NewsController extends Controller
         {
             $news_subcategories = $news_subcategories->where('category_id',$request->input('category_id'));
         }
-        return new NewsSubCategoryResourceCollection($news_subcategories->get());
+        $news_subcategories = $news_subcategories->paginate($request->input('per_page', 10));
+        return new NewsSubCategoryResourceCollection($news_subcategories);
     }
 }

@@ -24,13 +24,14 @@ class GovernmentJobController extends Controller
         {
             $government_jobs = $government_jobs->where('subcategory_id',$request->input('subcategory_id'));
         }
-        return new GovernmentJobResourceCollection($government_jobs->get());
+        $government_jobs = $government_jobs->paginate($request->input('per_page', 10));
+        return new GovernmentJobResourceCollection($government_jobs);
     }
 
     public function category(Request $request)
     {
-        $government_job_categories = GovernmentJobCategory::query();
-        return new GovernmentJobCategoryResourceCollection($government_job_categories->get());
+        $government_job_categories = GovernmentJobCategory::paginate($request->input('per_page', 10));
+        return new GovernmentJobCategoryResourceCollection($government_job_categories);
     }
 
     public function sub_category(Request $request)
@@ -40,6 +41,7 @@ class GovernmentJobController extends Controller
         {
             $government_job_subcategories = $government_job_subcategories->where('category_id',$request->input('category_id'));
         }
-        return new GovernmentJobSubCategoryResourceCollection($government_job_subcategories->get());
+        $government_job_subcategories = $government_job_subcategories->paginate($request->input('per_page', 10));
+        return new GovernmentJobSubCategoryResourceCollection($government_job_subcategories);
     }
 }

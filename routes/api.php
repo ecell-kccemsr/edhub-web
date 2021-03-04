@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\NewsController;
+use App\Http\Controllers\API\ExamCalendarController;
 use App\Http\Controllers\API\GovernmentJobController;
 
 /*
@@ -31,3 +32,7 @@ Route::get('/government_jobs/sub_categories',[GovernmentJobController::class,'su
 Route::get('/news',[NewsController::class,'get']);
 Route::get('/news/categories',[NewsController::class,'category']);
 Route::get('/news/sub_categories',[NewsController::class,'sub_category']);
+
+//ExamCalendar
+Route::get('/examcalendar',[ExamCalendarController::class,'get']);
+
