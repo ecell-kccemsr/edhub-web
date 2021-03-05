@@ -9,11 +9,15 @@
         box-shadow: 0px 5px 4px 0px #bebcbc;
         border-radius: 10px;
     }
-    .category-btn {
+    .category-btn:link,
+    .category-btn:hover {
         margin-right: 20px;
         background: #ffb342;
         border: none;
         outline: none;
+        text-decoration: none;
+        padding: 5px 10px;
+        color: #fff;
     }
 }
 .registration-section {

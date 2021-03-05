@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'app');
 Route::view('/news', 'app');
+Route::view('/newscategory/view/{category_id}', 'app');
+Route::view('/newssubcategory/view/{sub_category_id}', 'app');
 Route::view('/govermentjobs', 'app');
 Route::view('/bankjob', 'app');
 Route::view('/bankjoblast', 'app');
