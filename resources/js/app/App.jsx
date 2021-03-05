@@ -49,6 +49,11 @@ const App = props => {
                         exact
                         component={NewsSubCategory}
                     />
+                    <Route
+                        path="/examcalendar"
+                        exact
+                        component={Examcalendar}
+                    />
                 </Switch>
             </Layout>
         </Fragment>

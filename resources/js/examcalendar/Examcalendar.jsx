@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Collapse, Button, CardBody, Card, Row, Col } from "reactstrap";
+import axios from "axios";
 import image1 from "../Images/calendar-icon.png";
+import { Link } from "react-router-dom";
+
 const Examcalendar = props => {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => setIsOpen(!isOpen);
-
+    const [examName, setExamName] = useState([]);
+    useEffect(() => {
+        axios
+            .get("http://localhost:8000/api/examcalendar")
+            .then(res => {
+                console.log(res.data.data);
+                setExamName(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
     return (
         <div>
             <section className="exam-calendar-section">
@@ -20,14 +33,15 @@ const Examcalendar = props => {
             </section>
             <section className="exam-menu-section">
                 <div className="d-flex exam-btn-section  mb-2 justify-content-center">
-                    <Button className="exam-single-btn mt-2">primary</Button>
-                    <Button className="exam-single-btn mt-2">primary</Button>
-                    <Button className="exam-single-btn mt-2">primary</Button>
-                    <Button className="exam-single-btn mt-2">primary</Button>
-                    <Button className="exam-single-btn mt-2">primary</Button>
-                    <Button className="exam-single-btn mt-2">primary</Button>
-                    <Button className="exam-single-btn mt-2">primary</Button>
-                    <Button className="exam-single-btn mt-2">primary</Button>
+                    {examName.map(examName => (
+                        <Link
+                            to={`/newscategory/view/${examName?.id}`}
+                            key={examName.id}
+                            className="exam-single-btn mt-2"
+                        >
+                            {examName.name}
+                        </Link>
+                    ))}
                 </div>
             </section>
             <section className="exam-toggle-section">
@@ -49,7 +63,7 @@ const Examcalendar = props => {
                             lg="3"
                             className="exam-toggle-content-section"
                         >
-                            <div classNane="exam-toggle-content-sub-section">
+                            <div className="exam-toggle-content-sub-section">
                                 <div className="d-flex exam-toggle-content mb-2 align-items-center">
                                     <img
                                         src={image1}
@@ -79,7 +93,7 @@ const Examcalendar = props => {
                             lg="3"
                             className="exam-toggle-content-section"
                         >
-                            <div classNane="exam-toggle-content-sub-section">
+                            <div className="exam-toggle-content-sub-section">
                                 <div className="d-flex exam-toggle-content  mb-2 align-items-center">
                                     <img
                                         src={image1}

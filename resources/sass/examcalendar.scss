@@ -8,12 +8,14 @@
         padding: 20px;
         box-shadow: 0px 5px 4px 0px #bebcbc;
         border-radius: 10px;
+        .exam-single-btn:link,
         .exam-single-btn {
             margin-right: 20px;
             background: #ffb342;
             border: none;
             outline: none;
             width: 150px;
+            padding: 5px 10px;
         }
     }
 }
