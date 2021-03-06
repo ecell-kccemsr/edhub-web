@@ -7,6 +7,7 @@ use App\Models\NewsCategory;
 use Illuminate\Http\Request;
 use App\Models\NewsSubCategory;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\NewsResource;
 use App\Http\Resources\NewsResourceCollection;
 use App\Http\Resources\NewsCategoryResourceCollection;
 use App\Http\Resources\NewsSubCategoryResourceCollection;
@@ -87,5 +88,21 @@ class NewsController extends Controller
         }
         $news_subcategories = $news_subcategories->paginate($request->input('per_page', 10));
         return new NewsSubCategoryResourceCollection($news_subcategories);
+    }
+
+    /**
+     * Retrieve a News
+     *
+     * This endpoint allows you to fetch a News.
+     *      
+     * @urlParam news integer required The ID of the News.
+     * 
+     * @apiResource App\Http\Resources\NewsResource
+     * @apiResourceModel App\Models\News
+     * 
+     */
+    public function show(News $news)
+    {
+        return new NewsResource($news);
     }
 }

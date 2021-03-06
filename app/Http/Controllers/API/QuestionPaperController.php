@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\QuestionPaper;
 use App\Http\Controllers\Controller;
 use App\Models\QuestionPaperCategory;
+use App\Http\Resources\QuestionPaperResource;
 use App\Http\Resources\QuestionPaperResourceCollection;
 use App\Http\Resources\QuestionPaperCategoryResourceCollection;
 
@@ -56,5 +57,21 @@ class QuestionPaperController extends Controller
     {
         $question_paper_categories = QuestionPaperCategory::paginate($request->input('per_page', 10));
         return new QuestionPaperCategoryResourceCollection($question_paper_categories);
+    }
+
+    /**
+     * Retrieve a Question Paper
+     *
+     * This endpoint allows you to fetch a Question Paper.
+     *      
+     * @urlParam question_paper integer required The ID of the Question Paper.
+     * 
+     * @apiResource App\Http\Resources\QuestionPaperResource
+     * @apiResourceModel App\Models\QuestionPaper
+     * 
+     */
+    public function show(QuestionPaper $question_paper)
+    {
+        return new QuestionPaperResource($question_paper);
     }
 }

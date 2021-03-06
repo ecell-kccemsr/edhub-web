@@ -44,7 +44,7 @@
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: March 4 2021</li>
+            <li>Last updated: March 6 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -118,7 +118,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/examcalendar?category_id=18&amp;page=15&amp;per_page=8" \
+    -G "http://127.0.0.1:8000/api/examcalendar?category_id=18&amp;page=16&amp;per_page=10" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -127,8 +127,8 @@ fetch(url, {
 
 let params = {
     "category_id": "18",
-    "page": "15",
-    "per_page": "8",
+    "page": "16",
+    "per_page": "10",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -158,9 +158,9 @@ fetch(url, {
             },
             "url": "examcalendar",
             "created_at": "2021-03-04T13:00:01.000000Z",
-            "created_at_formated": "1 hour ago",
+            "created_at_formated": "2 days ago",
             "updated_at": "2021-03-04T13:00:01.000000Z",
-            "updated_at_formated": "1 hour ago"
+            "updated_at_formated": "2 days ago"
         },
         {
             "name": "IBPS PO MAINS 2021",
@@ -173,9 +173,9 @@ fetch(url, {
             },
             "url": "examcalendar",
             "created_at": "2021-03-04T13:00:01.000000Z",
-            "created_at_formated": "1 hour ago",
+            "created_at_formated": "2 days ago",
             "updated_at": "2021-03-04T13:00:01.000000Z",
-            "updated_at_formated": "1 hour ago"
+            "updated_at_formated": "2 days ago"
         }
     ]
 }</code></pre>
@@ -221,7 +221,7 @@ Field to change exam calendar per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/examcalendar/categories?page=6&amp;per_page=17" \
+    -G "http://127.0.0.1:8000/api/examcalendar/categories?page=6&amp;per_page=4" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -230,7 +230,7 @@ Field to change exam calendar per page. Defaults to 10.</p>
 
 let params = {
     "page": "6",
-    "per_page": "17",
+    "per_page": "4",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -250,12 +250,12 @@ fetch(url, {
 <pre><code class="language-json">{
     "data": [
         {
-            "id": 19,
-            "name": "Marlon Steuber"
+            "id": 23,
+            "name": "Jefferey Wunsch"
         },
         {
-            "id": 20,
-            "name": "Rory Hirthe"
+            "id": 24,
+            "name": "Mrs. Mariela Stamm Sr."
         }
     ]
 }</code></pre>
@@ -289,6 +289,74 @@ Field to change page. Defaults to 1.</p>
 <input type="number" name="per_page" data-endpoint="GETapi-examcalendar-categories" data-component="query"  hidden>
 <br>
 Field to change exam calendar categories per page. Defaults to 10.</p>
+</form>
+<h2>Retrieve a Exam Calendar</h2>
+<p>This endpoint allows you to fetch a Exam Calendar.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://127.0.0.1:8000/api/examcalendar/7" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/examcalendar/7"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "name": "IBPS PO MAINS 2021",
+        "date": "2021-02-04",
+        "image": "http:\/\/127.0.0.1:8000\/storage\/exam-calendars\/March2021\/Jv3TZB5ZIcHOoSmuonE1.PNG",
+        "official": true,
+        "category": {
+            "id": 1,
+            "name": "Government Exams"
+        },
+        "url": "examcalendar",
+        "created_at": "2021-03-04T13:00:01.000000Z",
+        "created_at_formated": "2 days ago",
+        "updated_at": "2021-03-04T13:00:01.000000Z",
+        "updated_at_formated": "2 days ago"
+    }
+}</code></pre>
+<div id="execution-results-GETapi-examcalendar--exam_calendars-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-examcalendar--exam_calendars-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-examcalendar--exam_calendars-"></code></pre>
+</div>
+<div id="execution-error-GETapi-examcalendar--exam_calendars-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-examcalendar--exam_calendars-"></code></pre>
+</div>
+<form id="form-GETapi-examcalendar--exam_calendars-" data-method="GET" data-path="api/examcalendar/{exam_calendars}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-examcalendar--exam_calendars-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-examcalendar--exam_calendars-" onclick="tryItOut('GETapi-examcalendar--exam_calendars-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-examcalendar--exam_calendars-" onclick="cancelTryOut('GETapi-examcalendar--exam_calendars-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-examcalendar--exam_calendars-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/examcalendar/{exam_calendars}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>exam_calendars</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="exam_calendars" data-endpoint="GETapi-examcalendar--exam_calendars-" data-component="url" required  hidden>
+<br>
+The ID of the Exam Calendar.</p>
 </form><h1>Government Job management</h1>
 <p>APIs for managing Government Job</p>
 <h2>Get All Government Jobs</h2>
@@ -297,7 +365,7 @@ Field to change exam calendar categories per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/government_jobs?category_id=16&amp;subcategory_id=18&amp;page=3&amp;per_page=18" \
+    -G "http://127.0.0.1:8000/api/government_jobs?category_id=16&amp;subcategory_id=9&amp;page=13&amp;per_page=9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -306,9 +374,9 @@ Field to change exam calendar categories per page. Defaults to 10.</p>
 
 let params = {
     "category_id": "16",
-    "subcategory_id": "18",
-    "page": "3",
-    "per_page": "18",
+    "subcategory_id": "9",
+    "page": "13",
+    "per_page": "9",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -412,7 +480,7 @@ Field to change government job per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/government_jobs/categories?page=18&amp;per_page=1" \
+    -G "http://127.0.0.1:8000/api/government_jobs/categories?page=12&amp;per_page=11" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -420,8 +488,8 @@ Field to change government job per page. Defaults to 10.</p>
 );
 
 let params = {
-    "page": "18",
-    "per_page": "1",
+    "page": "12",
+    "per_page": "11",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -441,21 +509,21 @@ fetch(url, {
 <pre><code class="language-json">{
     "data": [
         {
-            "id": 11,
-            "name": "Prof. Dejon Hintz",
-            "image": "http:\/\/127.0.0.1:8000\/storage\/C:\/Users\/Admin\/AppData\/Local\/Temp\/f8e2e9589e2bd63e3076e22c5d494335.png",
-            "created_at": "2021-03-04T14:55:20.000000Z",
-            "created_at_formated": "2 seconds ago",
-            "updated_at": "2021-03-04T14:55:20.000000Z",
-            "updated_at_formated": "2 seconds ago"
+            "id": 15,
+            "name": "Callie Kunze",
+            "image": "http:\/\/127.0.0.1:8000\/storage\/C:\/Users\/Admin\/AppData\/Local\/Temp\/fcfab62bdd39336e1d8c531f0f2a95f7.png",
+            "created_at": "2021-03-06T16:01:14.000000Z",
+            "created_at_formated": "1 second ago",
+            "updated_at": "2021-03-06T16:01:14.000000Z",
+            "updated_at_formated": "1 second ago"
         },
         {
-            "id": 12,
-            "name": "Prof. Vida Stroman",
-            "image": "http:\/\/127.0.0.1:8000\/storage\/C:\/Users\/Admin\/AppData\/Local\/Temp\/cde31613da24c37bfe3c14fd3d5029e6.png",
-            "created_at": "2021-03-04T14:55:22.000000Z",
+            "id": 16,
+            "name": "Geo Daugherty",
+            "image": "http:\/\/127.0.0.1:8000\/storage\/C:\/Users\/Admin\/AppData\/Local\/Temp\/18ff10444129de49a7b21af205cf921f.png",
+            "created_at": "2021-03-06T16:01:15.000000Z",
             "created_at_formated": "1 second ago",
-            "updated_at": "2021-03-04T14:55:22.000000Z",
+            "updated_at": "2021-03-06T16:01:15.000000Z",
             "updated_at_formated": "1 second ago"
         }
     ]
@@ -497,7 +565,7 @@ Field to change government job categories per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/government_jobs/sub_categories?category_id=15&amp;page=5&amp;per_page=4" \
+    -G "http://127.0.0.1:8000/api/government_jobs/sub_categories?category_id=13&amp;page=16&amp;per_page=7" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -505,9 +573,9 @@ Field to change government job categories per page. Defaults to 10.</p>
 );
 
 let params = {
-    "category_id": "15",
-    "page": "5",
-    "per_page": "4",
+    "category_id": "13",
+    "page": "16",
+    "per_page": "7",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -528,7 +596,7 @@ fetch(url, {
     "data": [
         {
             "id": null,
-            "name": "Melisa Wiegand",
+            "name": "Dr. Iva Stracke DVM",
             "category": null,
             "created_at": null,
             "created_at_formated": null,
@@ -537,7 +605,7 @@ fetch(url, {
         },
         {
             "id": null,
-            "name": "Elyssa Armstrong",
+            "name": "Gregg Doyle",
             "category": null,
             "created_at": null,
             "created_at_formated": null,
@@ -581,6 +649,77 @@ Field to change page. Defaults to 1.</p>
 <input type="number" name="per_page" data-endpoint="GETapi-government_jobs-sub_categories" data-component="query"  hidden>
 <br>
 Field to change government job subcategories per page. Defaults to 10.</p>
+</form>
+<h2>Retrieve a Government Jobs</h2>
+<p>This endpoint allows you to fetch a Government Jobs.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://127.0.0.1:8000/api/government_jobs/13" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/government_jobs/13"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "id": null,
+        "title": null,
+        "description": null,
+        "job_positions": null,
+        "eligibility_criteria": null,
+        "syllabus": null,
+        "exam_pattern": null,
+        "cutoff": null,
+        "apply_online": null,
+        "admit_card": null,
+        "category": null,
+        "subcategory": null,
+        "created_at": null,
+        "created_at_formated": null,
+        "updated_at": null,
+        "updated_at_formated": null
+    }
+}</code></pre>
+<div id="execution-results-GETapi-government_jobs--government_job-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-government_jobs--government_job-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-government_jobs--government_job-"></code></pre>
+</div>
+<div id="execution-error-GETapi-government_jobs--government_job-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-government_jobs--government_job-"></code></pre>
+</div>
+<form id="form-GETapi-government_jobs--government_job-" data-method="GET" data-path="api/government_jobs/{government_job}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-government_jobs--government_job-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-government_jobs--government_job-" onclick="tryItOut('GETapi-government_jobs--government_job-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-government_jobs--government_job-" onclick="cancelTryOut('GETapi-government_jobs--government_job-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-government_jobs--government_job-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/government_jobs/{government_job}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>government_job</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="government_job" data-endpoint="GETapi-government_jobs--government_job-" data-component="url" required  hidden>
+<br>
+The ID of the Government Jobs.</p>
 </form><h1>News management</h1>
 <p>APIs for managing News</p>
 <h2>Get All the News</h2>
@@ -589,7 +728,7 @@ Field to change government job subcategories per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/news?category_id=12&amp;subcategory_id=12&amp;page=17&amp;per_page=17" \
+    -G "http://127.0.0.1:8000/api/news?category_id=15&amp;subcategory_id=4&amp;page=20&amp;per_page=15" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -597,10 +736,10 @@ Field to change government job subcategories per page. Defaults to 10.</p>
 );
 
 let params = {
-    "category_id": "12",
-    "subcategory_id": "12",
-    "page": "17",
-    "per_page": "17",
+    "category_id": "15",
+    "subcategory_id": "4",
+    "page": "20",
+    "per_page": "15",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -694,7 +833,7 @@ Field to change news per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/news/categories?page=20&amp;per_page=9" \
+    -G "http://127.0.0.1:8000/api/news/categories?page=15&amp;per_page=13" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -702,8 +841,8 @@ Field to change news per page. Defaults to 10.</p>
 );
 
 let params = {
-    "page": "20",
-    "per_page": "9",
+    "page": "15",
+    "per_page": "13",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -723,19 +862,19 @@ fetch(url, {
 <pre><code class="language-json">{
     "data": [
         {
-            "id": 7,
-            "name": "Jaylon Franecki",
-            "created_at": "2021-03-04T14:55:22.000000Z",
+            "id": 11,
+            "name": "Brennon Koss",
+            "created_at": "2021-03-06T16:01:16.000000Z",
             "created_at_formated": "1 second ago",
-            "updated_at": "2021-03-04T14:55:22.000000Z",
+            "updated_at": "2021-03-06T16:01:16.000000Z",
             "updated_at_formated": "1 second ago"
         },
         {
-            "id": 8,
-            "name": "Blaze Lang",
-            "created_at": "2021-03-04T14:55:22.000000Z",
+            "id": 12,
+            "name": "Domenick Davis",
+            "created_at": "2021-03-06T16:01:16.000000Z",
             "created_at_formated": "1 second ago",
-            "updated_at": "2021-03-04T14:55:22.000000Z",
+            "updated_at": "2021-03-06T16:01:16.000000Z",
             "updated_at_formated": "1 second ago"
         }
     ]
@@ -777,7 +916,7 @@ Field to change news categories per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/news/sub_categories?category_id=16&amp;page=11&amp;per_page=6" \
+    -G "http://127.0.0.1:8000/api/news/sub_categories?category_id=19&amp;page=1&amp;per_page=19" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -785,9 +924,9 @@ Field to change news categories per page. Defaults to 10.</p>
 );
 
 let params = {
-    "category_id": "16",
-    "page": "11",
-    "per_page": "6",
+    "category_id": "19",
+    "page": "1",
+    "per_page": "19",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -808,7 +947,7 @@ fetch(url, {
     "data": [
         {
             "id": null,
-            "name": "Addie Quigley",
+            "name": "Mr. Timothy Daugherty",
             "category": null,
             "created_at": null,
             "created_at_formated": null,
@@ -817,7 +956,7 @@ fetch(url, {
         },
         {
             "id": null,
-            "name": "Lydia Bartell",
+            "name": "Mrs. Catalina Swaniawski",
             "category": null,
             "created_at": null,
             "created_at_formated": null,
@@ -861,6 +1000,72 @@ Field to change page. Defaults to 1.</p>
 <input type="number" name="per_page" data-endpoint="GETapi-news-sub_categories" data-component="query"  hidden>
 <br>
 Field to change news subcategories per page. Defaults to 10.</p>
+</form>
+<h2>Retrieve a News</h2>
+<p>This endpoint allows you to fetch a News.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://127.0.0.1:8000/api/news/10" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/news/10"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "id": null,
+        "title": null,
+        "description": null,
+        "details": null,
+        "image": "",
+        "category": null,
+        "subcategory": null,
+        "created_at": null,
+        "created_at_formated": null,
+        "updated_at": null,
+        "updated_at_formated": null
+    }
+}</code></pre>
+<div id="execution-results-GETapi-news--news-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-news--news-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-news--news-"></code></pre>
+</div>
+<div id="execution-error-GETapi-news--news-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-news--news-"></code></pre>
+</div>
+<form id="form-GETapi-news--news-" data-method="GET" data-path="api/news/{news}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-news--news-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-news--news-" onclick="tryItOut('GETapi-news--news-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-news--news-" onclick="cancelTryOut('GETapi-news--news-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-news--news-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/news/{news}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>news</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="news" data-endpoint="GETapi-news--news-" data-component="url" required  hidden>
+<br>
+The ID of the News.</p>
 </form><h1>Question Paper management</h1>
 <p>APIs for managing Question Paper</p>
 <h2>Get All the Question Papers</h2>
@@ -869,7 +1074,7 @@ Field to change news subcategories per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/questionpapers?category_id=14&amp;page=15&amp;per_page=2" \
+    -G "http://127.0.0.1:8000/api/questionpapers?category_id=2&amp;page=14&amp;per_page=20" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -877,9 +1082,9 @@ Field to change news subcategories per page. Defaults to 10.</p>
 );
 
 let params = {
-    "category_id": "14",
-    "page": "15",
-    "per_page": "2",
+    "category_id": "2",
+    "page": "14",
+    "per_page": "20",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -966,7 +1171,7 @@ Field to change Question Paper per page. Defaults to 10.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://127.0.0.1:8000/api/questionpapers/categories?page=3&amp;per_page=3" \
+    -G "http://127.0.0.1:8000/api/questionpapers/categories?page=6&amp;per_page=8" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -974,8 +1179,8 @@ Field to change Question Paper per page. Defaults to 10.</p>
 );
 
 let params = {
-    "page": "3",
-    "per_page": "3",
+    "page": "6",
+    "per_page": "8",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -1042,6 +1247,71 @@ Field to change page. Defaults to 1.</p>
 <input type="number" name="per_page" data-endpoint="GETapi-questionpapers-categories" data-component="query"  hidden>
 <br>
 Field to change Question Paper categories per page. Defaults to 10.</p>
+</form>
+<h2>Retrieve a Question Paper</h2>
+<p>This endpoint allows you to fetch a Question Paper.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://127.0.0.1:8000/api/questionpapers/6" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/questionpapers/6"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "id": null,
+        "title": null,
+        "description": null,
+        "year": null,
+        "category": null,
+        "url": null,
+        "created_at": null,
+        "created_at_formated": null,
+        "updated_at": null,
+        "updated_at_formated": null
+    }
+}</code></pre>
+<div id="execution-results-GETapi-questionpapers--question_paper-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-questionpapers--question_paper-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-questionpapers--question_paper-"></code></pre>
+</div>
+<div id="execution-error-GETapi-questionpapers--question_paper-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-questionpapers--question_paper-"></code></pre>
+</div>
+<form id="form-GETapi-questionpapers--question_paper-" data-method="GET" data-path="api/questionpapers/{question_paper}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-questionpapers--question_paper-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-questionpapers--question_paper-" onclick="tryItOut('GETapi-questionpapers--question_paper-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-questionpapers--question_paper-" onclick="cancelTryOut('GETapi-questionpapers--question_paper-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-questionpapers--question_paper-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/questionpapers/{question_paper}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>question_paper</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="question_paper" data-endpoint="GETapi-questionpapers--question_paper-" data-component="url" required  hidden>
+<br>
+The ID of the Question Paper.</p>
 </form>
     </div>
     <div class="dark-box">

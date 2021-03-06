@@ -7,6 +7,7 @@ use App\Models\GovernmentJob;
 use App\Http\Controllers\Controller;
 use App\Models\GovernmentJobCategory;
 use App\Models\GovernmentJobSubCategory;
+use App\Http\Resources\GovernmentJobResource;
 use App\Http\Resources\GovernmentJobResourceCollection;
 use App\Http\Resources\GovernmentJobCategoryResourceCollection;
 use App\Http\Resources\GovernmentJobSubCategoryResourceCollection;
@@ -87,5 +88,21 @@ class GovernmentJobController extends Controller
         }
         $government_job_subcategories = $government_job_subcategories->paginate($request->input('per_page', 10));
         return new GovernmentJobSubCategoryResourceCollection($government_job_subcategories);
+    }
+
+    /**
+     * Retrieve a Government Jobs
+     *
+     * This endpoint allows you to fetch a Government Jobs.
+     *      
+     * @urlParam government_job integer required The ID of the Government Jobs.
+     * 
+     * @apiResource App\Http\Resources\GovernmentJobResource
+     * @apiResourceModel App\Models\GovernmentJob
+     * 
+     */
+    public function show(GovernmentJob $government_job)
+    {
+        return new GovernmentJobResource($government_job);
     }
 }

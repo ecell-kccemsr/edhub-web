@@ -26,16 +26,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/government_jobs',[GovernmentJobController::class,'get']);
 Route::get('/government_jobs/categories',[GovernmentJobController::class,'categories']);
 Route::get('/government_jobs/sub_categories',[GovernmentJobController::class,'sub_categories']);
+Route::get('/government_jobs/{government_job}',[GovernmentJobController::class,'show']);
 
 //News
 Route::get('/news',[NewsController::class,'get']);
 Route::get('/news/categories',[NewsController::class,'categories']);
 Route::get('/news/sub_categories',[NewsController::class,'sub_categories']);
+Route::get('/news/{news}',[NewsController::class,'show']);
 
 //ExamCalendar
 Route::get('/examcalendar',[ExamCalendarController::class,'get']);
 Route::get('/examcalendar/categories',[ExamCalendarController::class,'categories']);
+Route::get('/examcalendar/{exam_calendars}',[ExamCalendarController::class,'show']);
 
 //Question Paper
 Route::get('/questionpapers',[QuestionPaperController::class,'get']);
 Route::get('/questionpapers/categories',[QuestionPaperController::class,'categories']);
+Route::get('/questionpapers/{question_paper}',[QuestionPaperController::class,'show']);
+
