@@ -36,11 +36,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-<<<<<<< HEAD
-        "node-notifier": "^9.0.0"
-=======
         "concurrently": "^6.0.0",
         "i": "^0.3.6"
->>>>>>> afef47a01e13f01b918c7fc9de66497176fb272e
     }
 }

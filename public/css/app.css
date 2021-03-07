@@ -11254,11 +11254,15 @@ a.text-dark:focus {
   border-radius: 10px;
 }
 
-.select-news-by-category .category-btn {
+.select-news-by-category .category-btn:link,
+.select-news-by-category .category-btn:hover {
   margin-right: 20px;
   background: #ffb342;
   border: none;
   outline: none;
+  text-decoration: none;
+  padding: 5px 10px;
+  color: #fff;
 }
 
 .registration-section {
@@ -11389,12 +11393,14 @@ a.text-dark:focus {
   border-radius: 10px;
 }
 
+.exam-menu-section .exam-btn-section .exam-single-btn:link,
 .exam-menu-section .exam-btn-section .exam-single-btn {
   margin-right: 20px;
   background: #ffb342;
   border: none;
   outline: none;
   width: 150px;
+  padding: 5px 10px;
 }
 
 .exam-toggle-section {

@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import Layout from "../layout/Layout";
 import "../../sass/app.scss";
 import Homepage from "../home/Homepage";
-import Govermentjob from "../jobs/govermentjobs/Govermentjob";
-import Bankjob from "../jobs/bankjobs/Bankjob";
-import Bankjoblast from "../jobs/bankjobs/Bankjoblast";
+import Govermentjob from "../jobs/Govermentjob";
+import Governmentjobcategory from "../jobs/Governmentjobcategory";
+import Governmentjobsubcategory from "../jobs/Governmentjobsubcategory";
 import Questionpaper from "../Question papers/Questionpaper";
 import Questionpaper2 from "../Question papers/Questionpaper2";
 import News from "../news/newspages/News";
@@ -24,8 +24,8 @@ const App = props => {
                         exact
                         component={Govermentjob}
                     />
-                    <Route path="/bankjob" exact component={Bankjob} />
-                    <Route path="/bankjoblast" exact component={Bankjoblast} />
+                    <Route path="/governmentjobcategory/view/:category_id" exact component={Governmentjobcategory} />
+                    <Route path="/governmentjobsubcategory/view/:subcategory_id" exact component={Governmentjobsubcategory} />
                     <Route path="/news" exact component={News} />
                     <Route
                         path="/questionpaper"
@@ -37,7 +37,7 @@ const App = props => {
                         exact
                         component={Questionpaper2}
                     />
-
+ 
                     <Route
                         path="/newscategory/view/:category_id"
                         exact={true}

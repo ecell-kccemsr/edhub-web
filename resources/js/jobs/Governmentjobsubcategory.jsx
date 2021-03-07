@@ -1,9 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col, List, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-import "../../../sass/Bankjoblast.scss";
-const Bankjoblast = () => {
-    return (
+import "../../sass/Bankjoblast.scss";
+function Governmentjobsubcategory(props) {
+  const [categoryJobs, setCategoryJobs] = useState([]);
+  useEffect(() => {
+      const { subcategory_id } = props.match.params;
+      if (subcategory_id) {
+          axios
+              .get(
+                  `http://localhost:8000/api/government_jobs?subcategory_id=${subcategory_id}`
+              )
+
+              .then(res => {
+                setCategoryJobs(res.data.data);
+                  // console.log(res);
+              })
+              .catch(err => {
+                  console.log(err);
+              });
+      }
+  }, []);    return (
        <>
        <div className="bankjoblast">
       <div>
@@ -17,7 +36,7 @@ const Bankjoblast = () => {
   <div class="column-bankjoblast">
     <div class="card-bankjoblast">
       <p style={{fontSize:"18px"}}>Salary & job positions</p>
-    </div>
+    </div>   
   </div>
   <div class="column-bankjoblast">
     <div class="card-bankjoblast">
@@ -38,7 +57,7 @@ const Bankjoblast = () => {
   </div><div class="column-bankjoblast">
     <div class="card-bankjoblast">
       <p style={{fontSize:"18px"}}>Apply Online</p>
-    </div>
+    </div>  
   </div><div class="column-bankjoblast">
     <div class="card-bankjoblast">
       <p style={{fontSize:"18px"}}>Admit Card</p>
@@ -53,7 +72,54 @@ const Bankjoblast = () => {
 </div>
 
 <div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Overview</strong></h4>
+
+{categoryJobs && categoryJobs.length == 0 && (
+                                            <h4>No Sub-Category News</h4>
+                                        )}
+                                    {categoryJobs &&
+                                        categoryJobs.length > 0 &&
+                                        categoryJobs.map(categoryJobs => (
+                                            <>
+                                                <div
+                                                    className="d-flex"
+                                                    key={categoryJobs.id}
+                                                >
+                                                    <div>
+                                                        <h6 className="">
+                                                            {categoryJobs.title}
+                                                        </h6>
+                                                        <p className="">
+                                                            {
+                                                                categoryJobs.description
+                                                            }
+                                                        </p>
+                                                        <p className="">
+                                                            {
+                                                                categoryJobs.job_positions
+                                                            }
+                                                        </p>
+                                                        <p className="">
+                                                            {
+                                                                categoryJobs.eligibility_criteria
+                                                            }
+                                                        </p>
+                                                        <p className="">
+                                                            {
+                                                                categoryJobs.syllabus
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                    <img
+                                                        src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
+                                                        alt=""
+                                                        className="category-information-image"
+                                                    />
+                                                </div>
+                                                <hr />
+                                            </>
+                                        ))}
+
+  {/* <h4 style={{fontSize:"25px"}}><strong>Overview</strong></h4>
   <br/>
   <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
 </div>
@@ -95,7 +161,7 @@ const Bankjoblast = () => {
     hyperlink for Prev years question papers <br/>
     hyperlink for Prev years question papers <br/>
     hyperlink for Prev years question papers <br/>
-    </a></p>
+    </a></p> */}
 </div>
 <div className="container-bankjoblast">
   <Row xs="1" sm="2" md="2">
@@ -120,4 +186,4 @@ const Bankjoblast = () => {
            );
 }
  
-export default Bankjoblast;
+export default Governmentjobsubcategory;

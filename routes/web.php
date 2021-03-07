@@ -19,9 +19,8 @@ Route::view('/news', 'app');
 Route::view('/newscategory/view/{category_id}', 'app');
 Route::view('/newssubcategory/view/{sub_category_id}', 'app');
 Route::view('/govermentjobs', 'app');
-Route::view('/examcalendar', 'app');
-Route::view('/bankjob', 'app');
-Route::view('/bankjoblast', 'app');
+Route::view('/governmentjobcategory/view/:category_id', 'app');
+Route::view('/governmentjobsubcategory/view/:subcategory_id', 'app');
 Route::view('/questionpaper', 'app');
 Route::view('/questionpaper2', 'app');
 

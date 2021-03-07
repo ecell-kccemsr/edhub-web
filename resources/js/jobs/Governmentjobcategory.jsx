@@ -1,8 +1,40 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col, List, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import "../../../sass/Bankjob.scss";
-const Bankjob = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+import "../../sass/Bankjob.scss";
+function Governmentjobcategory(props) {
+  console.log(props);
+  const { category_id } = props.match.params;
+  const [subCategory, setSubCategory] = useState([]);
+  const [categoryJobs, setCategoryJobs] = useState([]);
+  useEffect(() => {
+      axios
+          .get(
+              `http://localhost:8000/api/government_jobs/sub_categories?category_id=${category_id}`
+          )
+          .then(res => {
+              setSubCategory(res.data.data);
+              // console.log(res)
+          })
+
+          .catch(err => {
+              console.log(err);
+          });
+
+      axios
+          .get(`http://localhost:8000/api/government_jobs?category_id=${category_id}`)
+
+          .then(res => {
+            setCategoryJobs(res.data.data);
+            // console.log(res)
+
+          })
+          .catch(err => {
+              console.log(err);
+          });
+  }, []); 
+   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen(prevState => !prevState);
     return (
@@ -47,6 +79,18 @@ Qualification
            <h5>CATEGORIES</h5> 
           </div>
           <List type="unstyled">
+          {subCategory && subCategory.length == 0 && (
+                                        <h4>No Subcategories</h4>
+                                    )}
+                                    {subCategory.map(subcategory => (
+                                        <Link
+                                            to={`/governmentjobsubcategory/view/${subcategory?.id}`}
+                                            key={subcategory.id}
+                                            className="category-btn mt-2"
+                                        >
+                                            {subcategory.name}
+                                        </Link>
+                                    ))}
       <li>
         <h4 className="category-bank">
           HDFC Bank
@@ -86,7 +130,44 @@ Qualification
     </List>
         </Col>
         <Col sm="6" md={{ size: 7, offset: 0 }} >
-          <div className="job-news-details">
+
+        {categoryJobs && categoryJobs.length == 0 && (
+                                            <h4>No Category News</h4>
+                                        )}
+
+                                    {categoryJobs &&
+                                        categoryJobs.length > 0 &&
+                                        categoryJobs.map(categoryJobs => {
+                                            return (
+                                                <>
+                                                    <div
+                                                        className="d-flex"
+                                                        key={categoryJobs.id}
+                                                    >
+                                                        <div>
+                                                            <h6 className="">
+                                                                {
+                                                                    categoryJobs.title
+                                                                }
+                                                            </h6>
+                                                            <p className="">
+                                                                {
+                                                                    categoryJobs.description
+                                                                }
+                                                            </p>
+                                                        </div>
+                                                        <img
+                                                            src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
+                                                            alt=""
+                                                            className="category-information-image"
+                                                        />
+                                                    </div>
+                                                    <hr />
+                                                </>
+                                            );
+                                        })}
+
+          {/* <div className="job-news-details">
               <h5><strong>RBI Recruitment 2021 Notification for Various Non CSG</strong></h5>
               <h5>Posts,Online Application begins from 23 Feb Onwards, Salary upto 77208/- </h5>        
           </div>
@@ -113,7 +194,7 @@ Qualification
           </div>
           <div className="job-news-details">
           <h5><strong>RBI Grade B 2021: Notification Out for 322 Vacancies,</strong><br/>Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cutoff, Eligibility</h5>    
-          </div>
+          </div> */}
         </Col>
         <Col className="job-news" sm="3" md="3">
           <h5 style={{padding:"10px"}}>REGISTER FOR FREE UPDATES</h5>
@@ -142,4 +223,4 @@ Qualification
     );
 }
  
-export default Bankjob;
+export default Governmentjobcategory;

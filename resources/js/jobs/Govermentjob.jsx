@@ -1,11 +1,35 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
     Row,
     Col
 } from "reactstrap";
-import "../../../sass/Govermentjob.scss";
-const Govermentjob = () => {
-    return (
+import "../../sass/Govermentjob.scss";
+function Govermentjob() {
+    const [categories, setCategory] = useState([]);
+    const [jobs, setJobs] = useState([]);
+    useEffect(() => {
+        axios
+            .get("http://localhost:8000/api/government_jobs/categories")
+            .then(res => {
+                setCategory(res.data.data);
+                // console.log(res.data.data);
+
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        axios
+            .get("http://localhost:8000/api/government_jobs")
+            .then(res => {
+                // console.log(res.data.data);
+                setJobs(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);    return (
         <>
             <div className="gov">
                 <div className="titles">
@@ -18,7 +42,19 @@ const Govermentjob = () => {
                     <div class="jumbotron">
                         <Row xs="1" sm="2" md="5">
                             <Col>
-                                <img src="../../Images/bank.png" alt="bank" />
+                                 <img src="../../Images/bank.png" alt="bank" />
+
+                                {categories.map(category => (
+
+                                        <Link
+                                            to={`/governmentjobcategory/view/${category?.id}`}
+                                            key={category.id}
+                                            className="category-btn mt-2"
+                                        >
+
+                                            {category.name}
+                                        </Link>
+                                    ))}
                             </Col>
                             <Col>
                                 <img
@@ -74,7 +110,34 @@ const Govermentjob = () => {
                             <h2 className="title-notify">
                                 <strong> Latest Notification </strong>
                             </h2>
-                            <Col>
+                            {/* <h4 className="category-header">
+                                        {categories[0]?.name}
+                                    </h4> */}
+
+                                    {jobs.map(jobs => (
+                                        <>
+                                            <div
+                                                className="d-flex"
+                                                key={jobs.id}
+                                            >
+                                                <div>
+                                                    <h6 className="">
+                                                        {jobs.title}
+                                                    </h6>
+                                                    <p className="">
+                                                        {jobs.description}
+                                                    </p>
+                                                </div>
+                                                <img
+                                                    src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
+                                                    alt=""
+                                                    className="category-information-image"
+                                                />
+                                            </div>
+                                            <hr />
+                                        </>
+                                    ))}
+                            {/* <Col>
                                 <h5>
                                     <strong>
                                         RBI Recruitment 2021 Notification for
@@ -145,7 +208,7 @@ const Govermentjob = () => {
                                     Exam Date, Admit Card, Vacancy, Exam
                                     Pattern, Syllabus, Cutoff, Eligibility
                                 </h5>
-                            </Col>
+                            </Col> */}
                         </Row>
                         <div className="view">View all</div>
                     </div>
