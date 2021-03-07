@@ -23,6 +23,7 @@ class CurrentAffairCategoriesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Technology',
+                'slug' => 'technology',
                 'created_at' => '2021-03-01 20:54:29',
                 'updated_at' => '2021-03-01 20:54:29',
             ),

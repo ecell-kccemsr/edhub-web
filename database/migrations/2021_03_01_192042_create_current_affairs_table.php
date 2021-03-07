@@ -18,6 +18,7 @@ class CreateCurrentAffairsTable extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('image');
+            $table->string('slug')->unique();
             $table->string('url');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('subcategory_id');

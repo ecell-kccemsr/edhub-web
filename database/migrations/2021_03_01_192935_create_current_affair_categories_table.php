@@ -16,6 +16,7 @@ class CreateCurrentAffairCategoriesTable extends Migration
         Schema::create('current_affair_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
