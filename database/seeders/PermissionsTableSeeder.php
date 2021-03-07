@@ -347,6 +347,86 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-01 20:41:56',
                 'updated_at' => '2021-03-01 20:41:56',
             ),
+            41 => 
+            array (
+                'id' => 42,
+                'key' => 'browse_exam_calendars',
+                'table_name' => 'exam_calendars',
+                'created_at' => '2021-03-04 18:19:31',
+                'updated_at' => '2021-03-04 18:19:31',
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'key' => 'read_exam_calendars',
+                'table_name' => 'exam_calendars',
+                'created_at' => '2021-03-04 18:19:31',
+                'updated_at' => '2021-03-04 18:19:31',
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'key' => 'edit_exam_calendars',
+                'table_name' => 'exam_calendars',
+                'created_at' => '2021-03-04 18:19:31',
+                'updated_at' => '2021-03-04 18:19:31',
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'key' => 'add_exam_calendars',
+                'table_name' => 'exam_calendars',
+                'created_at' => '2021-03-04 18:19:31',
+                'updated_at' => '2021-03-04 18:19:31',
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'key' => 'delete_exam_calendars',
+                'table_name' => 'exam_calendars',
+                'created_at' => '2021-03-04 18:19:31',
+                'updated_at' => '2021-03-04 18:19:31',
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'key' => 'browse_exam_calendar_categories',
+                'table_name' => 'exam_calendar_categories',
+                'created_at' => '2021-03-04 18:20:02',
+                'updated_at' => '2021-03-04 18:20:02',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'key' => 'read_exam_calendar_categories',
+                'table_name' => 'exam_calendar_categories',
+                'created_at' => '2021-03-04 18:20:02',
+                'updated_at' => '2021-03-04 18:20:02',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'key' => 'edit_exam_calendar_categories',
+                'table_name' => 'exam_calendar_categories',
+                'created_at' => '2021-03-04 18:20:02',
+                'updated_at' => '2021-03-04 18:20:02',
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'key' => 'add_exam_calendar_categories',
+                'table_name' => 'exam_calendar_categories',
+                'created_at' => '2021-03-04 18:20:02',
+                'updated_at' => '2021-03-04 18:20:02',
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'key' => 'delete_exam_calendar_categories',
+                'table_name' => 'exam_calendar_categories',
+                'created_at' => '2021-03-04 18:20:02',
+                'updated_at' => '2021-03-04 18:20:02',
+            ),
         ));
         
         

@@ -243,6 +243,38 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.current-affairs.index',
                 'parameters' => NULL,
             ),
+            14 => 
+            array (
+                'id' => 15,
+                'menu_id' => 1,
+                'title' => 'Exam Calendars',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-company',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 18,
+                'created_at' => '2021-03-04 18:19:31',
+                'updated_at' => '2021-03-04 18:19:31',
+                'route' => 'voyager.exam-calendars.index',
+                'parameters' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'menu_id' => 1,
+                'title' => 'Exam Calendar Categories',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-categories',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 19,
+                'created_at' => '2021-03-04 18:20:02',
+                'updated_at' => '2021-03-04 18:20:02',
+                'route' => 'voyager.exam-calendar-categories.index',
+                'parameters' => NULL,
+            ),
         ));
         
         

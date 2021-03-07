@@ -127,6 +127,42 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-03-01 20:41:55',
                 'updated_at' => '2021-03-01 20:44:45',
             ),
+            6 => 
+            array (
+                'id' => 7,
+                'name' => 'exam_calendars',
+                'slug' => 'exam-calendars',
+                'display_name_singular' => 'Exam Calendar',
+                'display_name_plural' => 'Exam Calendars',
+                'icon' => 'voyager-company',
+                'model_name' => 'App\\Models\\ExamCalendar',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-03-04 18:19:31',
+                'updated_at' => '2021-03-04 18:26:29',
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'name' => 'exam_calendar_categories',
+                'slug' => 'exam-calendar-categories',
+                'display_name_singular' => 'Exam Calendar Category',
+                'display_name_plural' => 'Exam Calendar Categories',
+                'icon' => 'voyager-categories',
+                'model_name' => 'App\\Models\\ExamCalendarCategory',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-03-04 18:20:02',
+                'updated_at' => '2021-03-04 18:20:02',
+            ),
         ));
         
         
