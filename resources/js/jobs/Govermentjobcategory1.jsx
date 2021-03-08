@@ -17,14 +17,14 @@ import {
     FormText
 } from "reactstrap";
 
-function Governmentjobsubcategory(props) {
+function Governmentjobsubcategory1(props) {
     const [categoryJobs, setCategoryJobs] = useState([]);
     useEffect(() => {
-        const { subcategory_id } = props.match.params;
-        if (subcategory_id) {
+        const { category_id } = props.match.params;
+        if (category_id) {
             axios
                 .get(
-                    `http://localhost:8000/api/government_jobs?subcategory_id=${subcategory_id}`
+                    `http://localhost:8000/api/government_jobs?category_id=${category_id}`
                 )
 
                 .then(res => {
@@ -63,7 +63,9 @@ function Governmentjobsubcategory(props) {
                 <h5>
                     <strong> Bank Jobs </strong>
                 </h5>
-                <h3 className="title-bank-last">{categoryJobs.title}</h3>
+                <h3 className="title-bank-last">
+                    RBI Recruitment 2021 Notification for Various Non CSG
+                </h3>
                 <div class="row-bankjoblast">
                     <div class="column-bankjoblast">
                         <div class="card-bankjoblast">
@@ -121,7 +123,7 @@ function Governmentjobsubcategory(props) {
                     />
 
                     {categoryJobs && categoryJobs.length == 0 && (
-                        <h4>No Sub-Category News</h4>
+                        <h4>No Category News</h4>
                     )}
                     {categoryJobs &&
                         categoryJobs.length > 0 &&
@@ -174,50 +176,6 @@ function Governmentjobsubcategory(props) {
                                 <hr />
                             </>
                         ))}
-
-                    {/* <h4 style={{fontSize:"25px"}}><strong>Overview</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div>
-<div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Salary & job positions</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Eligibility Category</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Syllabus</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Exam Pattern</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Cutoff</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Apply Online</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Prev years question papers</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}><a href="#">
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/> 
-    hyperlink for Prev years question papers  <br/> 
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    </a></p> */}
                 </div>
                 <div className="container-bankjoblast">
                     <Row xs="1" sm="2" md="2">
@@ -302,4 +260,4 @@ function Governmentjobsubcategory(props) {
     );
 }
 
-export default Governmentjobsubcategory;
+export default Governmentjobsubcategory1;

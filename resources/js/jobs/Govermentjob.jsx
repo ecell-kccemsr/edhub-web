@@ -1,10 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-    Row,
-    Col
-} from "reactstrap";
+import { Row, Col } from "reactstrap";
 function Govermentjob() {
     const [categories, setCategory] = useState([]);
     const [jobs, setJobs] = useState([]);
@@ -14,7 +11,6 @@ function Govermentjob() {
             .then(res => {
                 setCategory(res.data.data);
                 // console.log(res.data.data);
-
             })
             .catch(err => {
                 console.log(err);
@@ -28,16 +24,24 @@ function Govermentjob() {
             .catch(err => {
                 console.log(err);
             });
-    }, []);    return (
+    }, []);
+    return (
         <>
             <div className="government">
                 <div className="titles">
-                <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb">
-                   <li className="breadcrumb-item "><a href="#">Home</a></li>
-                    <li className="breadcrumb-item active" aria-current="page">Jobs</li>
-                </ol>
-                </nav>
+                    <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item ">
+                                <a href="#">Home</a>
+                            </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                Jobs
+                            </li>
+                        </ol>
+                    </nav>
                     <h2 className="title-government">
                         <strong> Goverment Jobs 2021 </strong>
                     </h2>
@@ -46,22 +50,22 @@ function Govermentjob() {
                     <div class="jumbotron">
                         <Row>
                             <Col sm="12" md="6" lg="8" className="mb-4">
-                            <div className="select-government-by-category-btn-section">
-                                <div className="d-flex align-items-center justify-content-center flex-wrap">
-                                    {categories.map(category => (
-                                        <Link
-                                            to={`/governmentjobcategory/view/${category?.id}`}
-                                            key={category.id}
-                                            className="category-btn"
-                                        >
-                                            {/* <a href={category.name} > 
+                                <div className="select-government-by-category-btn-section">
+                                    <div className="d-flex align-items-center justify-content-center flex-wrap">
+                                        {categories.map(category => (
+                                            <Link
+                                                to={`/govermentjobs/view/${category?.id}`}
+                                                key={category.id}
+                                                className="category-btn"
+                                            >
+                                                {/* <a href={category.name} > 
                                             <img src="../Images/bank.png" alt=""/>
                                             </a> */}
-                                            {category.name}
-                                        </Link>
-                                    ))}
+                                                {category.name}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
                             </Col>
                             {/* <Col>
                                 <img
@@ -120,36 +124,31 @@ function Govermentjob() {
                             {/* <h4 className="category-header">
                                         {categories[0]?.name}
                                     </h4> */}
-                                    
-                            
-                                    {jobs.map(jobs => (
-                                        <>
+
+                            {jobs.map(jobs => (
+                                <>
                                     <Col>
-                                            <div
-                                                className="d-flex"
-                                                key={jobs.id}
-                                            >
-                                                <div>
-                                                    <h5 className=""><strong>
-                                                    {jobs.title}
+                                        <div className="d-flex" key={jobs.id}>
+                                            <div>
+                                                <h5 className="">
+                                                    <strong>
+                                                        {jobs.title}
                                                     </strong>
-                                                    </h5>
-                                                    <h5 className="government-job-description">
-                                                        {jobs.description}
-                                                    </h5>
-                                                </div>
-                                                {/* <img
+                                                </h5>
+                                                <h5 className="government-job-description">
+                                                    {jobs.description}
+                                                </h5>
+                                            </div>
+                                            {/* <img
                                                     src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
                                                     alt=""
                                                     className="category-information-image"
                                                 /> */}
-                                            </div>
-                                            <hr />
+                                        </div>
+                                        <hr />
                                     </Col>
-
-                                        </>
-                                    ))}
-                                    
+                                </>
+                            ))}
 
                             {/* <Col>
                                 <h5>
@@ -345,6 +344,6 @@ function Govermentjob() {
             </div>
         </>
     );
-};
+}
 
 export default Govermentjob;
