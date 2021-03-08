@@ -31,32 +31,40 @@ function Govermentjob() {
             });
     }, []);    return (
         <>
-            <div className="gov">
+            <div className="government">
                 <div className="titles">
-                    <h6 className="disabled">Home | Jobs</h6>
-                    <h2 className="title-gov">
-                        <strong> Goverment Job </strong>
+                <nav aria-label="breadcrumb">
+                  <ol className="breadcrumb">
+                   <li className="breadcrumb-item "><a href="#">Home</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Jobs</li>
+                </ol>
+                </nav>
+                    <h2 className="title-government">
+                        <strong> Goverment Jobs 2021 </strong>
                     </h2>
                 </div>
                 <div className="container-fluid">
                     <div class="jumbotron">
-                        <Row xs="1" sm="2" md="5">
-                            <Col>
-                                 <img src="../../Images/bank.png" alt="bank" />
-
-                                {categories.map(category => (
-
+                        <Row>
+                            <Col sm="12" md="6" lg="8" className="mb-4">
+                            <div className="select-government-by-category-btn-section">
+                                <div className="d-flex align-items-center justify-content-center flex-wrap">
+                                    {categories.map(category => (
                                         <Link
                                             to={`/governmentjobcategory/view/${category?.id}`}
                                             key={category.id}
-                                            className="category-btn mt-2"
+                                            className="category-btn"
                                         >
-
+                                            {/* <a href={category.name} > 
+                                            <img src="../Images/bank.png" alt=""/>
+                                            </a> */}
                                             {category.name}
                                         </Link>
                                     ))}
+                                </div>
+                            </div>
                             </Col>
-                            <Col>
+                            {/* <Col>
                                 <img
                                     src="../../Images/judicial.png"
                                     alt="judicial"
@@ -76,10 +84,10 @@ function Govermentjob() {
                             </Col>
                             <Col>
                                 <img src="../../Images/upsc.png" alt="upsc" />
-                            </Col>
+                            </Col> */}
                         </Row>
                         <Row xs="1" sm="2" md="5">
-                            <Col>
+                            {/* <Col>
                                 <img
                                     src="../../Images/teaching.png"
                                     alt="teaching"
@@ -102,7 +110,7 @@ function Govermentjob() {
                             </Col>
                             <Col>
                                 <img src="../../Images/other.png" alt="other" />
-                            </Col>
+                            </Col> */}
                         </Row>
                     </div>
                     <div className="container">
@@ -113,30 +121,37 @@ function Govermentjob() {
                             {/* <h4 className="category-header">
                                         {categories[0]?.name}
                                     </h4> */}
-
+                                    
+                            
                                     {jobs.map(jobs => (
                                         <>
+                                    <Col>
                                             <div
                                                 className="d-flex"
                                                 key={jobs.id}
                                             >
                                                 <div>
-                                                    <h6 className="">
-                                                        {jobs.title}
-                                                    </h6>
-                                                    <p className="">
+                                                    <h5 className=""><strong>
+                                                    {jobs.title}
+                                                    </strong>
+                                                    </h5>
+                                                    <h5 className="government-job-description">
                                                         {jobs.description}
-                                                    </p>
+                                                    </h5>
                                                 </div>
-                                                <img
+                                                {/* <img
                                                     src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
                                                     alt=""
                                                     className="category-information-image"
-                                                />
+                                                /> */}
                                             </div>
                                             <hr />
+                                    </Col>
+
                                         </>
                                     ))}
+                                    
+
                             {/* <Col>
                                 <h5>
                                     <strong>

@@ -3,11 +3,7 @@
     margin-left: auto;
     margin-right: auto;
 }
-.disabled-bank {
-    padding-top: 15px;
-    padding-bottom: 20px;
-    color: rgb(196, 196, 196);
-}
+
 .btn-drop {
     display: flex;
 }
@@ -25,6 +21,14 @@
     text-align: center;
     height: fit-content;
     box-shadow: 0px 4px 8px -1px #8888;
+}
+.job-news-1 {
+    border: 1px solid #000;
+    text-align: center;
+    height: fit-content;
+    box-shadow: 0px 4px 8px -1px #8888;
+    padding: 0px;
+    width: 100%;
 }
 .title-bank {
     color: rgb(0, 0, 0);
@@ -53,4 +57,8 @@
     margin-bottom: 10px;
     color: #fff;
     background-color: #ee6f57;
+}
+.government-subcategory-title {
+    display: inline-grid;
+    font-size: 18px;
 }

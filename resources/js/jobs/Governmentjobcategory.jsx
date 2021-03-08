@@ -41,8 +41,14 @@ function Governmentjobcategory(props) {
     <>
     <div className="bank">
        <div className="title-bank">
-        <h6 className="disabled-bank">HOME | JOBS | BANK</h6>
-      </div>
+       <nav aria-label="breadcrumb">
+                  <ol className="breadcrumb">
+                   <li className="breadcrumb-item "><a href="#">Home</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Jobs</li>
+                    <li className="breadcrumb-item active" aria-current="page">Bank</li>
+
+                </ol>
+                </nav>      </div>
     <div className="btn-drop">    
         <h5 className="title-bank"><strong> Bank Jobs </strong></h5>
   
@@ -74,29 +80,26 @@ Qualification
         
         <div className="hero">
            <Row xs="1" sm="1" md="4" >
-        <Col md="2" sm="3"  className="job-news" >
-          <div className="title-bank-hero" style={{padding:"10px"}}>
-           <h5>CATEGORIES</h5> 
+        <Col md="2" sm="3"  className="job-news-1" >
+          <div className="title-bank-hero" style={{padding:"10px", backgroundColor:"#EE6F57" }}>
+           <h5 style={{color:"#fff"}}>CATEGORIES</h5> 
           </div>
           <List type="unstyled">
-          {subCategory && subCategory.length == 0 && (
+      <li className="government-subcategory-title">
+      {subCategory && subCategory.length == 0 && (
                                         <h4>No Subcategories</h4>
                                     )}
                                     {subCategory.map(subcategory => (
                                         <Link
                                             to={`/governmentjobsubcategory/view/${subcategory?.id}`}
                                             key={subcategory.id}
-                                            className="category-btn mt-2"
+                                            className="category-btn-government mt-2"
                                         >
                                             {subcategory.name}
                                         </Link>
                                     ))}
-      <li>
-        <h4 className="category-bank">
-          HDFC Bank
-        </h4>
       </li>
-      <li>
+      {/* <li>
       <h4 className="category-bank">
           IDFC Bank
         </h4>
@@ -125,7 +128,7 @@ Qualification
       <h4 className="category-bank-last">
          Bank of <br/> Baroda
         </h4>
-      </li>
+      </li> */}
  
     </List>
         </Col>
@@ -144,23 +147,19 @@ Qualification
                                                         className="d-flex"
                                                         key={categoryJobs.id}
                                                     >
-                                                        <div>
-                                                            <h6 className="">
-                                                                {
+                                                        <div className="job-news-details">
+                                                            <h5 className=""><strong>
+                                                               {
                                                                     categoryJobs.title
                                                                 }
-                                                            </h6>
-                                                            <p className="">
+                                                            </strong>
+                                                            </h5>
+                                                            <h5 className="">
                                                                 {
                                                                     categoryJobs.description
                                                                 }
-                                                            </p>
+                                                            </h5>
                                                         </div>
-                                                        <img
-                                                            src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
-                                                            alt=""
-                                                            className="category-information-image"
-                                                        />
                                                     </div>
                                                     <hr />
                                                 </>

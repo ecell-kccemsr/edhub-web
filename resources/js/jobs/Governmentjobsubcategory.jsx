@@ -25,9 +25,14 @@ function Governmentjobsubcategory(props) {
   }, []);    return (
        <>
        <div className="bankjoblast">
-      <div>
-      <h6 className="disabled-bank-last">HOME | JOBS | BANK</h6>
-    </div>
+      <div style={{paddingTop:"20px"}}>
+      <nav aria-label="breadcrumb">
+                  <ol className="breadcrumb">
+                   <li className="breadcrumb-item "><a href="#">Home</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Jobs</li>
+                    <li className="breadcrumb-item active" aria-current="page">Bank</li>
+                </ol>
+                </nav>     </div>
       <h5 ><strong> Bank Jobs </strong></h5>   
       <h3 className="title-bank-last">
       RBI Recruitment 2021 Notification for Various Non CSG
@@ -65,13 +70,14 @@ function Governmentjobsubcategory(props) {
   </div>
   <div class="column-bankjoblast">
     <div class="card-bankjoblast">
-      <p style={{fontSize:"18px"}}>Prev years <br/> question papers</p>
+      <p style={{fontSize:"18px"}}>Prev years <br/> que. papers</p>
     </div>
   </div>
   
 </div>
 
 <div className="content-bankjoblast">
+     <img className="government-job-subcategory" src="https://www.dsij.in/Portals/0/EasyDNNnews/16587/img-what-triggered-the-15-rally-in-bank-stocks-today.jpg" alt="bank"/>
 
 {categoryJobs && categoryJobs.length == 0 && (
                                             <h4>No Sub-Category News</h4>
@@ -81,39 +87,59 @@ function Governmentjobsubcategory(props) {
                                         categoryJobs.map(categoryJobs => (
                                             <>
                                                 <div
-                                                    className="d-flex"
+                                                    className="government-job-subcategory-content"
                                                     key={categoryJobs.id}
                                                 >
+
                                                     <div>
-                                                        <h6 className="">
-                                                            {categoryJobs.title}
-                                                        </h6>
-                                                        <p className="">
+                                                        <h5 className="government-job-subcategory-information">
                                                             {
                                                                 categoryJobs.description
                                                             }
-                                                        </p>
-                                                        <p className="">
+                                                        </h5>
+                                                        <h5 className="government-job-subcategory-information">
+                                                          <strong>Salary and Job Position</strong> <br/>
                                                             {
                                                                 categoryJobs.job_positions
                                                             }
-                                                        </p>
-                                                        <p className="">
+                                                        </h5>
+                                                        <h5 className="government-job-subcategory-information">
+                                                        <strong>Eligibility Criteria</strong> <br/>
                                                             {
                                                                 categoryJobs.eligibility_criteria
                                                             }
-                                                        </p>
-                                                        <p className="">
+                                                        </h5>
+                                                        <h5 className="government-job-subcategory-information">
+                                                        <strong>Syllabus</strong> <br/>
                                                             {
                                                                 categoryJobs.syllabus
                                                             }
-                                                        </p>
+                                                        </h5>
+                                                        <h5 className="government-job-subcategory-information">
+                                                        <strong>Exam Pattern</strong> <br/>
+                                                            {
+                                                                categoryJobs.exam_pattern
+                                                            }
+                                                        </h5>
+                                                        <h5 className="government-job-subcategory-information">
+                                                        <strong>Cutoff</strong> <br/>
+                                                            {
+                                                                categoryJobs.cutoff
+                                                            }
+                                                        </h5>
+                                                        <h5 className="government-job-subcategory-information">
+                                                        <strong>Apply Online</strong> <br/>
+                                                            {
+                                                                categoryJobs.apply_online
+                                                            }
+                                                        </h5>
+                                                        <h5 className="government-job-subcategory-information">
+                                                        <strong>Admit Card</strong> <br/>
+                                                            {
+                                                                categoryJobs.admit_card
+                                                            }
+                                                        </h5>
                                                     </div>
-                                                    <img
-                                                        src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
-                                                        alt=""
-                                                        className="category-information-image"
-                                                    />
                                                 </div>
                                                 <hr />
                                             </>
