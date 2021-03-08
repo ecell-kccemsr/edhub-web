@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\API\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\API\ExamCalendarController;
 use App\Http\Controllers\API\GovernmentJobController;
 use App\Http\Controllers\API\QuestionPaperController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 
 
@@ -32,6 +33,11 @@ Route::post('/auth/logout',[AuthController::class,'logout']);
 
 //Email Verification
 Route::get('/auth/verify-email',[EmailVerificationController::class,'verify']);
+
+//Forgot Password
+Route::post('/reset-link',[ForgotPasswordController::class,'resetLink']);
+Route::get('/reset-password',[ForgotPasswordController::class,'verify']);
+Route::post('/change-password',[ForgotPasswordController::class,'changePassword']);
 
 //Government Job
 Route::get('/government_jobs',[GovernmentJobController::class,'get']);
