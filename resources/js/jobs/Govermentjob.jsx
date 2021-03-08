@@ -5,7 +5,6 @@ import {
     Row,
     Col
 } from "reactstrap";
-import "../../sass/Govermentjob.scss";
 function Govermentjob() {
     const [categories, setCategory] = useState([]);
     const [jobs, setJobs] = useState([]);

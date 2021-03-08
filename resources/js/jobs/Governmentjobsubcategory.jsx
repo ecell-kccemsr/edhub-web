@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col, List, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-import "../../sass/Bankjoblast.scss";
 function Governmentjobsubcategory(props) {
   const [categoryJobs, setCategoryJobs] = useState([]);
   useEffect(() => {

@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col, List, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import "../../sass/Bankjob.scss";
 function Governmentjobcategory(props) {
   console.log(props);
   const { category_id } = props.match.params;
