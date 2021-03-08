@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\API\ExamCalendarController;
 use App\Http\Controllers\API\GovernmentJobController;
 use App\Http\Controllers\API\QuestionPaperController;
+use App\Http\Controllers\Auth\EmailVerificationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +24,14 @@ use App\Http\Controllers\API\QuestionPaperController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Auth Controller
+Route::post('/auth/signup',[AuthController::class,'signUp']);
+Route::post('/auth/login',[AuthController::class,'login']);
+Route::post('/auth/logout',[AuthController::class,'logout']);
+
+//Email Verification
+Route::get('/auth/verify-email',[EmailVerificationController::class,'verify']);
 
 //Government Job
 Route::get('/government_jobs',[GovernmentJobController::class,'get']);
