@@ -90,7 +90,6 @@ function Governmentjobsubcategory(props) {
                                                     className="government-job-subcategory-content"
                                                     key={categoryJobs.id}
                                                 >
-
                                                     <div>
                                                         <h5 className="government-job-subcategory-information">
                                                             {
@@ -143,7 +142,7 @@ function Governmentjobsubcategory(props) {
                                                 </div>
                                                 <hr />
                                             </>
-                                        ))}
+                                      ))}
 
   {/* <h4 style={{fontSize:"25px"}}><strong>Overview</strong></h4>
   <br/>
