@@ -43,11 +43,14 @@ const NavbarComponent = props => {
                         </Col>
                         <Col className="top-navbar-col mob-none" xs="6" md="1">
                             <Link to="/" className="navbar-navlink">
-                                Bell icon
+                                <img
+                                    src="https://i.ibb.co/hRbkfvr/Group-102.png"
+                                    alt=""
+                                />
                             </Link>
                         </Col>
                         <Col
-                            className="top-navbar-col text-center mob-none"
+                            className="top-navbar-col text-center mob-none pb-0"
                             xs="6"
                             md="3"
                         >
@@ -59,17 +62,11 @@ const NavbarComponent = props => {
                 </div>
             </div>
             <Navbar expand="md" className="main-navbar">
-                <NavbarToggler onClick={toggle} />
+                <NavbarToggler onClick={toggle}>
+                    <i className="fas fa-bars" style={{ color: "#fff" }}></i>
+                </NavbarToggler>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav navbar className="navbar-ul">
-                        <NavItem>
-                            <Link
-                                to="/govermentjobs"
-                                className="navbar-navlink"
-                            >
-                                Goverment Jobs
-                            </Link>
-                        </NavItem>
                         <NavItem>
                             <Link to="/news" className="navbar-navlink">
                                 News
@@ -77,9 +74,14 @@ const NavbarComponent = props => {
                         </NavItem>
                         <NavItem>
                             <Link
-                                to="/examcalendar"
+                                to="/govermentjobs"
                                 className="navbar-navlink"
                             >
+                                Govt. Jobs
+                            </Link>
+                        </NavItem>
+                        <NavItem>
+                            <Link to="/examcalendar" className="navbar-navlink">
                                 Exam Calendar
                             </Link>
                         </NavItem>
