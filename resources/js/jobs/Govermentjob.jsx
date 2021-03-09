@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Container } from "reactstrap";
 function Govermentjob() {
     const [categories, setCategory] = useState([]);
     const [jobs, setJobs] = useState([]);
@@ -48,8 +48,8 @@ function Govermentjob() {
                 </div>
                 <div className="container-fluid">
                     <div class="jumbotron">
-                        <Row>
-                            <Col sm="12" md="6" lg="8" className="mb-4">
+                        <Row> 
+                            <Col className="col-sm-3 col-md-12 col-xs-2 mt-2">
                                 <div className="select-government-by-category-btn-section">
                                     <div className="d-flex align-items-center justify-content-center flex-wrap">
                                         {categories.map(category => (
@@ -89,6 +89,7 @@ function Govermentjob() {
                                 <img src="../../Images/upsc.png" alt="upsc" />
                             </Col> */}
                         </Row>
+
                         <Row xs="1" sm="2" md="5">
                             {/* <Col>
                                 <img

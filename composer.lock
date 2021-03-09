@@ -2124,6 +2124,10 @@
                 "oauth",
                 "passport"
             ],
+            "support": {
+                "issues": "https://github.com/laravel/passport/issues",
+                "source": "https://github.com/laravel/passport"
+            },
             "time": "2021-03-02T16:40:00+00:00"
         },
         {
@@ -9378,5 +9382,6 @@
     "platform": {
         "php": "^7.3|^8.0"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }
