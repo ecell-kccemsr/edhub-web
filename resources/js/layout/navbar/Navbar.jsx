@@ -54,7 +54,7 @@ const NavbarComponent = props => {
                             xs="6"
                             md="3"
                         >
-                            <Link to="/signin" className="top-navbar-signin">
+                            <Link to="/login" className="top-navbar-signin">
                                 Sign in
                             </Link>
                         </Col>
