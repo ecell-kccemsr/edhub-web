@@ -20,6 +20,7 @@ class CreateQuestionPapersTable extends Migration
             $table->year('year');
             $table->string('url');
             $table->unsignedInteger('category_id');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

@@ -26,6 +26,7 @@ class CreateGovernmentJobsTable extends Migration
             $table->longText('admit_card');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('subcategory_id');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

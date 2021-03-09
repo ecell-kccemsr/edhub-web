@@ -19,6 +19,7 @@ class CurrentAffairSubCategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'category' => new CurrentAffairCategoryResource($this->category_id),
+            'slug' => $this->slug
         ];
     }
 }

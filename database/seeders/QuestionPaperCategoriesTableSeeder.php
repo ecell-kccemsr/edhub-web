@@ -23,6 +23,7 @@ class QuestionPaperCategoriesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Government Exams',
+                'slug' => 'Government Exams',
                 'created_at' => '2021-03-04 17:37:58',
                 'updated_at' => '2021-03-04 17:37:58',
             ),
@@ -30,6 +31,7 @@ class QuestionPaperCategoriesTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'name' => 'Bank Exams',
+                'slug' => 'Bank Exams',
                 'created_at' => '2021-03-04 17:38:13',
                 'updated_at' => '2021-03-04 17:38:13',
             ),
@@ -37,6 +39,7 @@ class QuestionPaperCategoriesTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'name' => 'MBA Exams',
+                'slug' => 'MBA Exams',
                 'created_at' => '2021-03-04 17:38:29',
                 'updated_at' => '2021-03-04 17:38:29',
             ),
