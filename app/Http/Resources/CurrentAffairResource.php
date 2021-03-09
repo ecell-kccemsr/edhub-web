@@ -21,6 +21,7 @@ class CurrentAffairResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
+            'slug' => $this->slug,
             'image' => Voyager::image($this->image),
             'url' => $this->url,
             'category' => new CurrentAffairCategoryResource($this->category_id),

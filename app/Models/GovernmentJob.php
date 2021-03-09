@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class GovernmentJob extends Model
 {
-    use HasFactory;
+    use HasFactory, HasSlug;
 
     public function category()
     {

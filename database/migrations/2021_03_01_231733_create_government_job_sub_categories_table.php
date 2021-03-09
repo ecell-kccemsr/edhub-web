@@ -17,6 +17,7 @@ class CreateGovernmentJobSubCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedInteger('category_id');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

@@ -21,6 +21,7 @@ class CreateExamCalendarsTable extends Migration
             $table->boolean('official');
             $table->string('url');
             $table->unsignedInteger('category_id');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

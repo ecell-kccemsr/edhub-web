@@ -23,6 +23,7 @@ class CurrentAffairSubCategoriesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Mobiles',
+                'slug' => 'Mobiles',
                 'category_id' => 1,
                 'created_at' => '2021-03-01 20:54:54',
                 'updated_at' => '2021-03-01 20:54:54',
@@ -31,6 +32,7 @@ class CurrentAffairSubCategoriesTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'name' => 'Gadgets',
+                'slug' => 'Gadgets',
                 'category_id' => 1,
                 'created_at' => '2021-03-01 20:58:59',
                 'updated_at' => '2021-03-01 20:58:59',

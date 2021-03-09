@@ -16,6 +16,7 @@ class CreateQuestionPaperCategoriesTable extends Migration
         Schema::create('question_paper_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
