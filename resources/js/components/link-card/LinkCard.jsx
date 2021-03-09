@@ -50,7 +50,7 @@ const LinkCard = props => {
                     <>
                         <hr />
 
-                        <div className="text-center" style={{ padding: 0 }}>
+                        <div className="text-center pb-0">
                             <ButtonToggle
                                 className="link-card-section-btn "
                                 onClick={viewAll}
@@ -64,7 +64,7 @@ const LinkCard = props => {
                     <>
                         <hr />
 
-                        <div className="text-center" style={{ padding: 0 }}>
+                        <div className="text-center pb-0">
                             <ButtonToggle
                                 className="link-card-section-btn "
                                 onClick={viewLess}

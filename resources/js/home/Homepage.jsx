@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
     Container,
     Row,
@@ -20,70 +20,302 @@ import doctor from "../Images/doctor 1.png";
 import architect from "../Images/architect 1.png";
 import examPattern from "../Images/ExamPatternandSyllabus.png";
 import LinkCard from "../components/link-card/LinkCard";
-let NewsSection = () => {
+
+const NewsDummyData = [
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news(4).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news.png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news (2).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news(3).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news.png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news (2).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news(4).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news.png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news (2).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news(3).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news.png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news (2).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news(4).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news.png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news (2).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news(3).png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news.png"
+    },
+    {
+        title: "Nitin Gadkari launches ‘Go Electric Campaign’",
+        link: "www.google.com",
+        img: "../Images/news (2).png"
+    }
+];
+
+// Carousel //
+const items = [
+    {
+        src: "",
+        altText: "Slide 1",
+        caption: "Slide 1",
+        header: "Slide 1 Header",
+        key: "1"
+    },
+    {
+        src: "",
+        altText: "Slide 2",
+        caption: "Slide 2",
+        header: "Slide 2 Header",
+        key: "2"
+    },
+    {
+        src: "",
+        altText: "Slide 3",
+        caption: "Slide 3",
+        header: "Slide 3 Header",
+        key: "3"
+    }
+];
+
+const dummyLinkData = [
+    {
+        title: "RBI Recruitment 2021 Notification for Various Non CSG",
+        link: "https://www.google.com/",
+        description:
+            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-"
+    },
+    {
+        title: "RBI Recruitment 2021 Notification for Various Non CSG",
+        link: "https://www.google.com/",
+        description:
+            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-"
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    }
+];
+
+let NewsSection = props => {
+    const initialPosts = 9;
+    const [news, setNews] = useState([]);
+    const [visible, setVisible] = useState(initialPosts);
+
+    useEffect(() => {
+        if (props?.news) {
+            setNews(props?.news);
+        }
+    }, []);
+
+    const viewAll = () => {
+        setVisible(news.length);
+    };
+
+    const viewLess = () => {
+        setVisible(initialPosts);
+    };
+
     return (
         <div className="news-card-section">
             <h4 className="news-card-section-header">Latest News</h4>
             <Row className=" justify-content-center">
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news4} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news1} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news2} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news3} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news4} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news1} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news3} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news2} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
-                <div className="latest-news-card">
-                    <img className="news-card-img" src={news4} />
-                    <p className="news-card-para">
-                        Nitin Gadkari launches ‘Go Electric Campaign’
-                    </p>
-                </div>
+                {news &&
+                    news.slice(0, visible).map((n, key) => (
+                        <div className="latest-news-card" key={key}>
+                            <img className="news-card-img" src={n?.img} />
+                            <p className="news-card-para">
+                                <a
+                                    href={n?.link}
+                                    target="_blank"
+                                    style={{ color: "#000" }}
+                                    rel="noreferrer noopener"
+                                >
+                                    {n?.title}
+                                </a>
+                            </p>
+                        </div>
+                    ))}
             </Row>
-            <hr className="hr" />
-            <div className="text-center">
-                <ButtonToggle className="news-card-btn">View All</ButtonToggle>
-            </div>
+            {visible < news.length && (
+                <>
+                    <hr className="hr" />
+                    <div className="text-center pb-0">
+                        <ButtonToggle
+                            className="news-card-btn"
+                            onClick={viewAll}
+                        >
+                            View All
+                        </ButtonToggle>
+                    </div>
+                </>
+            )}
+            {visible >= news.length && (
+                <>
+                    <hr className="hr" />
+                    <div className="text-center pb-0">
+                        <ButtonToggle
+                            className="news-card-btn"
+                            onClick={viewLess}
+                        >
+                            Show Less
+                        </ButtonToggle>
+                    </div>
+                </>
+            )}
         </div>
     );
 };
@@ -214,117 +446,6 @@ const Jobs = () => {
     );
 };
 
-// Carousel //
-const items = [
-    {
-        src: "",
-        altText: "Slide 1",
-        caption: "Slide 1",
-        header: "Slide 1 Header",
-        key: "1"
-    },
-    {
-        src: "",
-        altText: "Slide 2",
-        caption: "Slide 2",
-        header: "Slide 2 Header",
-        key: "2"
-    },
-    {
-        src: "",
-        altText: "Slide 3",
-        caption: "Slide 3",
-        header: "Slide 3 Header",
-        key: "3"
-    }
-];
-
-const dummyLinkData = [
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        link: "https://www.google.com/",
-        description:
-            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-"
-    },
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        link: "https://www.google.com/",
-        description:
-            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-"
-    },
-    {
-        title: "55 mins ago RBI Recruitment 2021 Notification",
-        link: "https://www.google.com/",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-    },
-    {
-        title: "55 mins ago RBI Recruitment 2021 Notification",
-        link: "https://www.google.com/",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        link: "https://www.google.com/",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        link: "https://www.google.com/",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-    },
-    {
-        title: "55 mins ago RBI Recruitment 2021 Notification",
-        link: "https://www.google.com/",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-    },
-    {
-        title: "55 mins ago RBI Recruitment 2021 Notification",
-        link: "https://www.google.com/",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        link: "https://www.google.com/",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        link: "https://www.google.com/",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-    },
-    {
-        title: "55 mins ago RBI Recruitment 2021 Notification",
-        link: "https://www.google.com/",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-    },
-    {
-        title: "55 mins ago RBI Recruitment 2021 Notification",
-        link: "https://www.google.com/",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        link: "https://www.google.com/",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        link: "https://www.google.com/",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-    }
-];
 const Homepage = () => {
     return (
         <>
@@ -333,7 +454,7 @@ const Homepage = () => {
             </div>
             <div>
                 <section className="news-card-body">
-                    <NewsSection />
+                    <NewsSection news={NewsDummyData} />
                 </section>
 
                 <section className="homepage-job ">
