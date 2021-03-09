@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, UncontrolledCarousel } from "reactstrap";
+import {
+    Container,
+    Row,
+    Col,
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption
+} from "reactstrap";
 
 import suitcase from "../Images/suitcase (1) 2.png";
 import newspaper from "../Images/newspaper 1.png";
@@ -11,6 +20,11 @@ import architect from "../Images/architect 1.png";
 import examPattern from "../Images/ExamPatternandSyllabus.png";
 import LinkCard from "../components/link-card/LinkCard";
 
+const carouselDummyData = [
+    "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+    "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+    "https://i.ibb.co/QHfGBv2/Group-179-1.png"
+];
 const NewsDummyData = [
     {
         title: "Nitin Gadkari launches ‘Go Electric Campaign’",
@@ -315,6 +329,62 @@ const dummyLinkData = [
     }
 ];
 
+const HomeCarousel = props => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+
+    const next = () => {
+        if (animating) return;
+        const nextIndex =
+            activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        setActiveIndex(nextIndex);
+    };
+
+    const previous = () => {
+        if (animating) return;
+        const nextIndex =
+            activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        setActiveIndex(nextIndex);
+    };
+
+    const goToIndex = newIndex => {
+        if (animating) return;
+        setActiveIndex(newIndex);
+    };
+
+    const slides = carouselDummyData.map(item => {
+        return (
+            <CarouselItem
+                onExiting={() => setAnimating(true)}
+                onExited={() => setAnimating(false)}
+                key={item}
+            >
+                <img src={item} className="w-100" alt="Home Slider" />
+            </CarouselItem>
+        );
+    });
+
+    return (
+        <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+            <CarouselIndicators
+                items={items}
+                activeIndex={activeIndex}
+                onClickHandler={goToIndex}
+            />
+            {slides}
+            <CarouselControl
+                direction="prev"
+                directionText="Previous"
+                onClickHandler={previous}
+            />
+            <CarouselControl
+                direction="next"
+                directionText="Next"
+                onClickHandler={next}
+            />
+        </Carousel>
+    );
+};
 let NewsSection = props => {
     const initialPosts = 9;
     const [news, setNews] = useState([]);
@@ -499,9 +569,9 @@ const Homepage = () => {
     return (
         <>
             <div>
-                <UncontrolledCarousel items={items} />
-            </div>
-            <div>
+                <section>
+                    <HomeCarousel />
+                </section>
                 <section className="news-card-body">
                     <NewsSection news={NewsDummyData} />
                 </section>
