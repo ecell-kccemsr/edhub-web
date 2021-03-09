@@ -17,7 +17,6 @@ import {
     FormText
 } from "reactstrap";
 function Governmentjobcategory(props) {
-    console.log(props);
     const { category_id } = props.match.params;
     const [subCategory, setSubCategory] = useState([]);
     const [categoryJobs, setCategoryJobs] = useState([]);
@@ -28,7 +27,6 @@ function Governmentjobcategory(props) {
             )
             .then(res => {
                 setSubCategory(res.data.data);
-                // console.log(res)
             })
 
             .catch(err => {
@@ -42,7 +40,6 @@ function Governmentjobcategory(props) {
 
             .then(res => {
                 setCategoryJobs(res.data.data);
-                // console.log(res)
             })
             .catch(err => {
                 console.log(err);
