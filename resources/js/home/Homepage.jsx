@@ -6,10 +6,6 @@ import {
     ButtonToggle,
     UncontrolledCarousel
 } from "reactstrap";
-import news4 from "../Images/news(4).png";
-import news1 from "../Images/news.png";
-import news2 from "../Images/news (2).png";
-import news3 from "../Images/news(3).png";
 
 import suitcase from "../Images/suitcase (1) 2.png";
 import newspaper from "../Images/newspaper 1.png";

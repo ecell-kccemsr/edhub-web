@@ -1,144 +1,48 @@
-import React from "react";
-import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Container, Row, Col, FormGroup, Input } from "reactstrap";
 
 const Footer = () => {
+    const [email, setEmail] = useState("");
+
+    const handleFooterForm = e => {
+        e.preventDefault();
+        console.log("SUBMITTED");
+        e.target.reset();
+    };
+
     return (
         <footer className="footer-section py-5">
             <Container style={{ boxShadow: "none" }}>
-                <Row>
-                    <Col sm="12" md="6" lg="3">
-                        <h5 className="footer-link-header">Company</h5>
-                        <small className="d-block mb-3 text-white">
-                            © 2017–2021
-                        </small>
-                    </Col>
-                    <Col sm="12" md="6" lg="3">
-                        <h5 className="footer-link-header">Features</h5>
-                        <ul className="list-unstyled text-small">
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Cool stuff
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Random feature
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Team feature
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Stuff for developers
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Another one
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Last time
-                                </a>
-                            </li>
-                        </ul>
-                    </Col>
-                    <Col sm="12" md="6" lg="3">
-                        <h5 className="footer-link-header">Resources</h5>
-                        <ul className="list-unstyled text-small">
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Resource name
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Resource
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Another resource
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Final resource
-                                </a>
-                            </li>
-                        </ul>
-                    </Col>
-                    <Col sm="12" md="6" lg="3">
-                        <h5 className="footer-link-header">Resources</h5>
-                        <ul className="list-unstyled text-small">
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Business
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Education
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Government
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    className="link-secondary footer-link"
-                                    href="#"
-                                >
-                                    Gaming
-                                </a>
-                            </li>
-                        </ul>
+                <Row className="justify-content-center">
+                    <Col sm="12" md="6">
+                        <h2 className="footer-header">
+                            Subscribe to our Newsletter for latest updates
+                        </h2>
+                        <Row className="justify-content-center footer-row">
+                            <Col sm="12" md="8">
+                                <form onSubmit={handleFooterForm}>
+                                    <FormGroup>
+                                        <Input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            defaultValue={email}
+                                            onBlur={e =>
+                                                setEmail(e.target.value)
+                                            }
+                                            placeholder="someone@gmail.com"
+                                        />
+                                    </FormGroup>
+                                </form>
+
+                                <small className="footer-smalltext">
+                                    By clicking “Primary action” you accepting
+                                    ipsum dolor sit amet, sit ea brute
+                                    mediocritatem, eu sed aliquam scripserit
+                                    dissentiunt.
+                                </small>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Container>

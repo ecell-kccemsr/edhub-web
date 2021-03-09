@@ -20,7 +20,12 @@ const LinkCard = props => {
     };
     return (
         <section className="link-card-section">
-            <div className="link-card-container">
+            <div
+                className="link-card-container"
+                style={{
+                    background: `${props.background ? "#F8F8F8" : "#fff"}`
+                }}
+            >
                 <h4 className="link-card-section-header">{props?.title}</h4>
                 <Row>
                     {data &&
