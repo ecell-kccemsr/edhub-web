@@ -11,7 +11,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="footer-section py-5">
+        <footer className="footer-section pb-5 pt-2">
             <Container style={{ boxShadow: "none" }}>
                 <Row className="justify-content-center">
                     <Col sm="12" md="6">
