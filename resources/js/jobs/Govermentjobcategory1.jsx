@@ -23,12 +23,11 @@ function Governmentjobsubcategory1(props) {
         const { category_id } = props.match.params;
         if (category_id) {
             axios
-                .get(
-                    `http://localhost:8000/api/government_jobs?category_id=${category_id}`
-                )
+                .get(`http://localhost:8000/api/government_jobs/${category_id}`)
 
                 .then(res => {
                     setCategoryJobs(res.data.data);
+                    console.log(res);
                 })
                 .catch(err => {
                     console.log(err);
@@ -62,9 +61,7 @@ function Governmentjobsubcategory1(props) {
                 <h5>
                     <strong> Bank Jobs </strong>
                 </h5>
-                <h3 className="title-bank-last">
-                    RBI Recruitment 2021 Notification for Various Non CSG
-                </h3>
+                <h3 className="title-bank-last">{categoryJobs.title}</h3>
                 <div class="row-bankjoblast">
                     <div class="column-bankjoblast">
                         <div class="card-bankjoblast">
@@ -124,57 +121,49 @@ function Governmentjobsubcategory1(props) {
                     {categoryJobs && categoryJobs.length == 0 && (
                         <h4>No Category News</h4>
                     )}
-                    {categoryJobs &&
-                        categoryJobs.length > 0 &&
-                        categoryJobs.map(categoryJobs => (
-                            <>
-                                <div
-                                    className="government-job-subcategory-content"
-                                    key={categoryJobs.id}
-                                >
-                                    <div>
-                                        <h5 className="government-job-subcategory-information">
-                                            {categoryJobs.description}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>
-                                                Salary and Job Position
-                                            </strong>{" "}
-                                            <br />
-                                            {categoryJobs.job_positions}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>
-                                                Eligibility Criteria
-                                            </strong>{" "}
-                                            <br />
-                                            {categoryJobs.eligibility_criteria}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Syllabus</strong> <br />
-                                            {categoryJobs.syllabus}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Exam Pattern</strong> <br />
-                                            {categoryJobs.exam_pattern}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Cutoff</strong> <br />
-                                            {categoryJobs.cutoff}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Apply Online</strong> <br />
-                                            {categoryJobs.apply_online}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Admit Card</strong> <br />
-                                            {categoryJobs.admit_card}
-                                        </h5>
-                                    </div>
-                                </div>
-                                <hr />
-                            </>
-                        ))}
+
+                    <>
+                        <div
+                            className="government-job-subcategory-content"
+                            key={categoryJobs.id}
+                        >
+                            <div>
+                                <h5 className="government-job-subcategory-information">
+                                    {categoryJobs.description}
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    <strong>Salary and Job Position</strong>{" "}
+                                    <br />
+                                    {categoryJobs.job_positions}
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    <strong>Eligibility Criteria</strong> <br />
+                                    {categoryJobs.eligibility_criteria}
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    <strong>Syllabus</strong> <br />
+                                    {categoryJobs.syllabus}
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    <strong>Exam Pattern</strong> <br />
+                                    {categoryJobs.exam_pattern}
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    <strong>Cutoff</strong> <br />
+                                    {categoryJobs.cutoff}
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    <strong>Apply Online</strong> <br />
+                                    {categoryJobs.apply_online}
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    <strong>Admit Card</strong> <br />
+                                    {categoryJobs.admit_card}
+                                </h5>
+                            </div>
+                        </div>
+                        <hr />
+                    </>
                 </div>
                 <div className="container-bankjoblast">
                     <Row xs="1" sm="2" md="2">
