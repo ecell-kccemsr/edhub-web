@@ -1,7 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button, Row, Col, InputGroup, Input, Form, FormGroup } from "reactstrap";
+import {
+    Button,
+    Row,
+    Col,
+    InputGroup,
+    Input,
+    Form,
+    FormGroup
+} from "reactstrap";
 function NewsCategory(props) {
     console.log(props);
     const { category_id } = props.match.params;
@@ -34,32 +42,35 @@ function NewsCategory(props) {
     return (
         <div>
             <section className="select-news-by-category">
-            <nav aria-label="breadcrumb">
-                        <ol className="breadcrumb">
-                            <li className="breadcrumb-item">
-                            <a href="#" className="href-government">HOME</a>
-                                                        </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                <a href="" className="href-government">NEWS</a>
-                            </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                <a href="" className="href-government">BUSINESS</a>
-                            </li>
-                         
-                        </ol>
-                    </nav>{" "}
-                    <h4 className="title-bank">
-                       News  
-                         </h4>          
-      <hr className="news-hr" />
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item">
+                            <a href="#" className="href-government">
+                                HOME
+                            </a>
+                        </li>
+                        <li
+                            className="breadcrumb-item active"
+                            aria-current="page"
+                        >
+                            <a href="" className="href-government">
+                                NEWS
+                            </a>
+                        </li>
+                        <li
+                            className="breadcrumb-item active"
+                            aria-current="page"
+                        >
+                            <a href="" className="href-government">
+                                BUSINESS
+                            </a>
+                        </li>
+                    </ol>
+                </nav>{" "}
+                <h4 className="title-bank">News</h4>
+                <hr className="news-hr" />
                 <Row>
-                    <Col sm="12" md="6" lg="8" className="mb-4">
+                    <Col sm="12" md="6" lg="9" className="mb-4">
                         <div className="category-left-section">
                             <h6 className="select-by-category-header text-center">
                                 Select News By Sub Category
@@ -126,9 +137,11 @@ function NewsCategory(props) {
                             </section>
                         </div>
                     </Col>
-                    <Col sm="12" md="6" lg="4">
-                    <div className="registration-section">
-                        <h5 style={{ padding: "10px", textAlign:"center" }}>
+                    <Col sm="12" md="6" lg="3">
+                        <div className="registration-section">
+                            <h5
+                                style={{ padding: "10px", textAlign: "center" }}
+                            >
                                 REGISTER FOR FREE UPDATES
                             </h5>
                             <Form>

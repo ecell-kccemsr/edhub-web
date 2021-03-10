@@ -40,26 +40,29 @@ function News() {
     return (
         <div>
             <section className="select-news-by-category">
-            <nav aria-label="breadcrumb">
-                        <ol className="breadcrumb">
-                            <li className="breadcrumb-item">
-                            <a href="#" className="href-government">HOME</a>
-                                                        </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                <a href="" className="href-government">NEWS</a>
-                            </li>
-                         
-                        </ol>
-                    </nav>{" "}
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item">
+                            <a href="#" className="href-government">
+                                HOME
+                            </a>
+                        </li>
+                        <li
+                            className="breadcrumb-item active"
+                            aria-current="page"
+                        >
+                            <a href="" className="href-government">
+                                NEWS
+                            </a>
+                        </li>
+                    </ol>
+                </nav>{" "}
                 <div className="news-title">
-                   <h5>NEWS</h5> 
-                    </div>
+                    <h5>NEWS</h5>
+                </div>
                 <hr className="news-hr" />
                 <Row>
-                    <Col sm="6" md={{ size: 8, offset: 0 }} >
+                    <Col sm="6" md={{ size: 8, offset: 0 }} lg="9">
                         <div className="category-left-section">
                             <h6 className="select-by-category-header text-center">
                                 Select News By Category
@@ -72,7 +75,7 @@ function News() {
                                             key={category.id}
                                             className="category-btn text-center"
                                         >
-                                             {category.name}
+                                            {category.name}
                                         </Link>
                                     ))}
                                 </div>
@@ -115,9 +118,11 @@ function News() {
                         </div>
                     </Col>
 
-                    <Col className="" sm="3" md="4">
+                    <Col className="" sm="3" md="4" lg="3">
                         <div className="registration-section">
-                        <h5 style={{ padding: "10px", textAlign:"center" }}>
+                            <h5
+                                style={{ padding: "10px", textAlign: "center" }}
+                            >
                                 REGISTER FOR FREE UPDATES
                             </h5>
                             <Form>
