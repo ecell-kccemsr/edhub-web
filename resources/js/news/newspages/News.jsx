@@ -17,7 +17,6 @@ function News() {
         axios
             .get("http://localhost:8000/api/news")
             .then(res => {
-                // console.log(res.data.data);
                 setNews(res.data.data);
             })
             .catch(err => {
@@ -27,21 +26,21 @@ function News() {
     return (
         <div>
             <section className="select-news-by-category">
-                <div className="">News</div>
-                <hr />
+                <div className="news-title">NEWS</div>
+                <hr className="news-hr" />
                 <Row>
                     <Col sm="12" md="6" lg="8" className="mb-4">
                         <div className="category-left-section">
                             <h6 className="select-by-category-header text-center">
-                                Select By Category
+                                Select News By Category
                             </h6>
                             <div className="select-news-by-category-btn-section">
-                                <div className="d-flex align-items-center justify-content-center flex-wrap">
+                                <div className="d-flex flex-wrap justify-content-center">
                                     {categories.map(category => (
                                         <Link
                                             to={`/newscategory/view/${category?.id}`}
                                             key={category.id}
-                                            className="category-btn mt-2"
+                                            className="category-btn text-center"
                                         >
                                             {category.name}
                                         </Link>
@@ -50,7 +49,7 @@ function News() {
                             </div>
                             <section className="category-information-section">
                                 <div className="category-information-sub-section">
-                                    <h4 className="category-header">
+                                    <h4 className="category-header pb-2">
                                         {categories[0]?.name}
                                     </h4>
 
@@ -61,11 +60,17 @@ function News() {
                                                 key={news.id}
                                             >
                                                 <div>
-                                                    <h6 className="">
+                                                    <h5 className="news-title">
                                                         {news.title}
-                                                    </h6>
-                                                    <p className="">
-                                                        {news.description}
+
+                                                        <br />
+                                                    </h5>
+
+                                                    <p className="news-description">
+                                                        {news.description.slice(
+                                                            0,
+                                                            300
+                                                        )}
                                                     </p>
                                                 </div>
                                                 <img
@@ -74,7 +79,7 @@ function News() {
                                                     className="category-information-image"
                                                 />
                                             </div>
-                                            <hr />
+                                            <hr className="news-hr" />
                                         </>
                                     ))}
                                 </div>
@@ -83,25 +88,36 @@ function News() {
                     </Col>
 
                     <Col sm="12" md="6" lg="4">
-                        <div className="pb-3">Register For free Updates</div>
                         <div className="registration-section">
+                            <div className="pb-3 ml-2 register">
+                                <h4>REGISTER FOR FREE UPDATES</h4>
+                            </div>
                             <InputGroup>
-                                <Input placeholder="Name" type="text" />
+                                <Input
+                                    placeholder="Name"
+                                    type="text"
+                                    className="input-fields"
+                                />
                             </InputGroup>
-                            <br />
+
                             <InputGroup>
-                                <Input placeholder="Email" type="email" />
+                                <Input
+                                    placeholder="Email"
+                                    type="email"
+                                    className="input-fields"
+                                />
                             </InputGroup>
-                            <br />
+
                             <InputGroup>
                                 <Input
                                     placeholder="Phone Number"
                                     type="number"
+                                    className="input-fields"
                                 />
                             </InputGroup>
                             <div className="text-center">
                                 <Button className="registration-btn">
-                                    Submit
+                                    SUBMIT
                                 </Button>
                             </div>
                         </div>
@@ -112,23 +128,19 @@ function News() {
                                 <div>
                                     <div className="d-flex" key={news.id}>
                                         <div>
-                                            <h6 className="trending-section-header">
+                                            <strong className="news-title">
                                                 {news.title}
-                                            </h6>
-                                            <p className="trending-section-paragraph">
-                                                {news.description}
+                                            </strong>
+                                            <br />
+
+                                            <p className="news-description">
+                                                {news.description.slice(0, 100)}
                                             </p>
                                         </div>
-                                        <img
-                                            src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
-                                            alt=""
-                                            className="category-information-image"
-                                        />
                                     </div>
-                                    <hr />
                                 </div>
                             ))}
-
+                            <hr />
                             <div className="text-center">
                                 <Button className="trending-section-btn">
                                     View All

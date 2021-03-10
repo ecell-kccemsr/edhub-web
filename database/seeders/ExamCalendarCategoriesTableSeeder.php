@@ -23,6 +23,7 @@ class ExamCalendarCategoriesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Government Exams',
+                'slug' => 'Government Exams',
                 'created_at' => '2021-03-04 18:22:35',
                 'updated_at' => '2021-03-04 18:22:35',
             ),
@@ -30,6 +31,7 @@ class ExamCalendarCategoriesTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'name' => 'Bank Exams',
+                'slug' => 'Bank Exams',
                 'created_at' => '2021-03-04 18:22:47',
                 'updated_at' => '2021-03-04 18:22:47',
             ),

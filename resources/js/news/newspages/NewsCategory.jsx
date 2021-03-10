@@ -34,8 +34,8 @@ function NewsCategory(props) {
     return (
         <div>
             <section className="select-news-by-category">
-                <div className="">News</div>
-                <hr />
+                <div className="news-title">News</div>
+                <hr className="news-hr" />
                 <Row>
                     <Col sm="12" md="6" lg="8" className="mb-4">
                         <div className="category-left-section">
@@ -43,7 +43,7 @@ function NewsCategory(props) {
                                 Select News By Sub Category
                             </h6>
                             <div className="select-news-by-category-btn-section">
-                                <div className="d-flex align-items-center justify-content-center flex-wrap">
+                                <div className="d-flex flex-wrap justify-content-center">
                                     {subCategory && subCategory.length == 0 && (
                                         <h4>No Subcategories</h4>
                                     )}
@@ -51,7 +51,7 @@ function NewsCategory(props) {
                                         <Link
                                             to={`/newssubcategory/view/${subcategory?.id}`}
                                             key={subcategory.id}
-                                            className="category-btn mt-2"
+                                            className="category-btn text-center"
                                         >
                                             {subcategory.name}
                                         </Link>
@@ -60,7 +60,7 @@ function NewsCategory(props) {
                             </div>
                             <section className="category-information-section">
                                 <div className="category-information-sub-section">
-                                    <h4 className="category-header">
+                                    <h4 className="category-header pb-2">
                                         Latest News
                                     </h4>
                                     {categoryNews &&
@@ -78,15 +78,16 @@ function NewsCategory(props) {
                                                         key={categorynews.id}
                                                     >
                                                         <div>
-                                                            <h6 className="">
+                                                            <h6 className="news-title">
                                                                 {
                                                                     categorynews.title
                                                                 }
                                                             </h6>
-                                                            <p className="">
-                                                                {
-                                                                    categorynews.description
-                                                                }
+                                                            <p className="news-description">
+                                                                {categorynews.description.slice(
+                                                                    0,
+                                                                    300
+                                                                )}
                                                             </p>
                                                         </div>
                                                         <img
@@ -95,7 +96,7 @@ function NewsCategory(props) {
                                                             className="category-information-image"
                                                         />
                                                     </div>
-                                                    <hr />
+                                                    <hr className="news-hr" />
                                                 </>
                                             );
                                         })}
@@ -104,25 +105,36 @@ function NewsCategory(props) {
                         </div>
                     </Col>
                     <Col sm="12" md="6" lg="4">
-                        <div className="pb-3">Register For free Updates</div>
                         <div className="registration-section">
+                            <div className="pb-3 ml-2 register">
+                                <h4>REGISTER FOR FREE UPDATES</h4>
+                            </div>
                             <InputGroup>
-                                <Input placeholder="Name" type="text" />
+                                <Input
+                                    placeholder="Name"
+                                    type="text"
+                                    className="input-fields"
+                                />
                             </InputGroup>
-                            <br />
+
                             <InputGroup>
-                                <Input placeholder="Email" type="email" />
+                                <Input
+                                    placeholder="Email"
+                                    type="email"
+                                    className="input-fields"
+                                />
                             </InputGroup>
-                            <br />
+
                             <InputGroup>
                                 <Input
                                     placeholder="Phone Number"
                                     type="number"
+                                    className="input-fields"
                                 />
                             </InputGroup>
                             <div className="text-center">
                                 <Button className="registration-btn">
-                                    Submit
+                                    SUBMIT
                                 </Button>
                             </div>
                         </div>
@@ -130,7 +142,7 @@ function NewsCategory(props) {
                         <div className="trending-section-container">
                             <h4 className="trending-section">Trending</h4>
                             {categoryNews && categoryNews.length == 0 && (
-                                <h4>No Trending News on category</h4>
+                                <h4>No Trending News</h4>
                             )}
                             {categoryNews &&
                                 categoryNews.length > 0 &&
@@ -141,23 +153,20 @@ function NewsCategory(props) {
                                             key={categorynews.id}
                                         >
                                             <div>
-                                                <h6 className="trending-section-header">
+                                                <strong className="news-title">
                                                     {categorynews.title}
-                                                </h6>
-                                                <p className="trending-section-paragraph">
-                                                    {categorynews.description}
+                                                </strong>
+                                                <p className="news-description">
+                                                    {categorynews.description.slice(
+                                                        0,
+                                                        100
+                                                    )}
                                                 </p>
                                             </div>
-                                            <img
-                                                src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
-                                                alt=""
-                                                className="category-information-image"
-                                            />
                                         </div>
-                                        <hr />
                                     </div>
                                 ))}
-
+                            <hr />
                             <div className="text-center">
                                 <Button className="trending-section-btn">
                                     View All

@@ -1,43 +1,95 @@
 .category-left-section {
     box-shadow: 0px 5px 4px 0px #bebcbc;
+    border-radius: 8px;
 }
 .select-news-by-category {
     padding: 50px 150px;
+    .news-title {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 35px;
+        color: #4f4f4f;
+    }
+    .news-hr {
+        border-top: 1px solid #444444;
+    }
+    .select-by-category-header {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+        color: #4f4f4f;
+    }
     .select-news-by-category-btn-section {
         background: #f8f8f8;
-        padding: 50px 150px;
+        padding: 50px 130px 40px;
         box-shadow: 0px 5px 4px 0px #bebcbc;
         border-radius: 10px;
+        margin: 10px;
     }
-    .category-btn:link,
-    .category-btn:hover {
-        margin-right: 20px;
-        background: #ffb342;
+
+    .category-btn {
         border: none;
         outline: none;
         text-decoration: none;
-        padding: 5px 10px;
         color: #fff;
+        width: 141.34px;
+        height: 52.76px;
+        justify-content: center;
+        align-items: center;
+        background: #ffb342;
+        border-radius: 8px;
+        padding: 10px !important;
+    }
+    .news-title {
+        font-family: Open Sans;
+        font-style: mixed;
+        font-size: 18px;
+        line-height: 25px;
+        color: #111111;
+        align-items: left;
+        vertical-align: top;
+    }
+    .news-description {
+        font-family: Open Sans;
+        font-style: mixed;
+        font-size: 18px;
+        line-height: 25px;
+        color: #4f4f4f;
+        align-items: left;
+        vertical-align: top;
     }
 }
 .registration-section {
-    box-shadow: 0px 5px 4px 0px #bebcbc;
+    border: 1px solid black;
     border-radius: 4px;
     padding: 10px;
+    box-shadow: none !important;
+    .register {
+        letter-spacing: 2px;
+    }
+    .input-fields {
+        margin: 5px;
+    }
+
     .registration-btn {
         background-color: red;
         color: white;
         border: none;
         outline: none;
-        width: 100%;
-        margin-top: 12px;
+        letter-spacing: 4px;
     }
 }
-.category-information-sub-section {
-    margin-top: 30px;
-    padding: 20px;
-    .category-information-section {
-        padding: 40px 0 10px 0;
+
+.category-information-section {
+    padding: 40px 0 10px 0;
+
+    .category-information-sub-section {
+        margin-top: 30px;
+        padding: 20px;
     }
 }
 .category-information-image {

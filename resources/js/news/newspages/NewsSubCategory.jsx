@@ -15,7 +15,6 @@ function NewsSubCategory(props) {
 
                 .then(res => {
                     setCategoryNews(res.data.data);
-                    console.log(res);
                 })
                 .catch(err => {
                     console.log(err);
@@ -26,12 +25,12 @@ function NewsSubCategory(props) {
     return (
         <div>
             <section className="select-news-by-category">
-                <div className="">News</div>
-                <hr />
+                <div className="news-title">NEWS</div>
+                <hr className="news-hr" />
                 <Row>
                     <Col sm="12" md="6" lg="8" className="mb-4">
                         <div className="category-left-section">
-                            <section className="category-information-section">
+                            <section className="category-information-section p-0">
                                 <div className="category-information-sub-section">
                                     {categoryNews &&
                                         categoryNews.length == 0 && (
@@ -46,10 +45,10 @@ function NewsSubCategory(props) {
                                                     key={categorynews.id}
                                                 >
                                                     <div>
-                                                        <h6 className="">
+                                                        <h6 className="news-title">
                                                             {categorynews.title}
                                                         </h6>
-                                                        <p className="">
+                                                        <p className="news-description">
                                                             {
                                                                 categorynews.description
                                                             }
@@ -61,7 +60,7 @@ function NewsSubCategory(props) {
                                                         className="category-information-image"
                                                     />
                                                 </div>
-                                                <hr />
+                                                <hr className="news-hr" />
                                             </>
                                         ))}
                                 </div>
@@ -69,25 +68,36 @@ function NewsSubCategory(props) {
                         </div>
                     </Col>
                     <Col sm="12" md="6" lg="4">
-                        <div className="pb-3">Register For free Updates</div>
                         <div className="registration-section">
+                            <div className="pb-3 ml-2 register">
+                                <h4>REGISTER FOR FREE UPDATES</h4>
+                            </div>
                             <InputGroup>
-                                <Input placeholder="Name" type="text" />
+                                <Input
+                                    placeholder="Name"
+                                    type="text"
+                                    className="input-fields"
+                                />
                             </InputGroup>
-                            <br />
+
                             <InputGroup>
-                                <Input placeholder="Email" type="email" />
+                                <Input
+                                    placeholder="Email"
+                                    type="email"
+                                    className="input-fields"
+                                />
                             </InputGroup>
-                            <br />
+
                             <InputGroup>
                                 <Input
                                     placeholder="Phone Number"
                                     type="number"
+                                    className="input-fields"
                                 />
                             </InputGroup>
                             <div className="text-center">
                                 <Button className="registration-btn">
-                                    Submit
+                                    SUBMIT
                                 </Button>
                             </div>
                         </div>
@@ -95,7 +105,7 @@ function NewsSubCategory(props) {
                         <div className="trending-section-container">
                             <h4 className="trending-section">Trending</h4>
                             {categoryNews && categoryNews.length == 0 && (
-                                <h4>No Sub-Category News</h4>
+                                <h4>No Trending news</h4>
                             )}
                             {categoryNews &&
                                 categoryNews.length > 0 &&
@@ -106,11 +116,14 @@ function NewsSubCategory(props) {
                                             key={categorynews.id}
                                         >
                                             <div>
-                                                <h6 className="trending-section-header">
+                                                <h6 className="news-title">
                                                     {categorynews.title}
                                                 </h6>
-                                                <p className="trending-section-paragraph">
-                                                    {categorynews.description}
+                                                <p className="news-description">
+                                                    {categorynews.description.slice(
+                                                        0,
+                                                        100
+                                                    )}
                                                 </p>
                                             </div>
                                             <img
@@ -119,10 +132,9 @@ function NewsSubCategory(props) {
                                                 className="category-information-image"
                                             />
                                         </div>
-                                        <hr />
                                     </div>
                                 ))}
-
+                            <hr />
                             <div className="text-center">
                                 <Button className="trending-section-btn">
                                     View All

@@ -21,6 +21,7 @@ class CreateNewsTable extends Migration
             $table->string('image');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('subcategory_id');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

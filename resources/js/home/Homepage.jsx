@@ -3,13 +3,12 @@ import {
     Container,
     Row,
     Col,
-    ButtonToggle,
-    UncontrolledCarousel
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption
 } from "reactstrap";
-import news4 from "../Images/news(4).png";
-import news1 from "../Images/news.png";
-import news2 from "../Images/news (2).png";
-import news3 from "../Images/news(3).png";
 
 import suitcase from "../Images/suitcase (1) 2.png";
 import newspaper from "../Images/newspaper 1.png";
@@ -21,6 +20,11 @@ import architect from "../Images/architect 1.png";
 import examPattern from "../Images/ExamPatternandSyllabus.png";
 import LinkCard from "../components/link-card/LinkCard";
 
+const carouselDummyData = [
+    "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+    "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+    "https://i.ibb.co/QHfGBv2/Group-179-1.png"
+];
 const NewsDummyData = [
     {
         title: "Nitin Gadkari launches ‘Go Electric Campaign’",
@@ -139,6 +143,81 @@ const items = [
     }
 ];
 
+const dummyJobData = [
+    {
+        title: "Bank jobs",
+        img: "../Images/Group (6).png",
+        data: [
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            },
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            },
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            }
+        ]
+    },
+    {
+        title: "Engineering jobs",
+        img: "../Images/architect 1.png",
+        data: [
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            },
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            },
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            }
+        ]
+    },
+    {
+        title: "Medical jobs",
+        img: "../Images/doctor 1.png",
+        data: [
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            },
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            },
+            {
+                title:
+                    "BSF Recruitment 2020 Notification: 317 SI/HC Vacancies Released",
+                img: "../Images/ExamPatternandSyllabus.png",
+                link: "www.google.com"
+            }
+        ]
+    }
+];
+
 const dummyLinkData = [
     {
         title: "RBI Recruitment 2021 Notification for Various Non CSG",
@@ -250,6 +329,62 @@ const dummyLinkData = [
     }
 ];
 
+const HomeCarousel = props => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+
+    const next = () => {
+        if (animating) return;
+        const nextIndex =
+            activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        setActiveIndex(nextIndex);
+    };
+
+    const previous = () => {
+        if (animating) return;
+        const nextIndex =
+            activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        setActiveIndex(nextIndex);
+    };
+
+    const goToIndex = newIndex => {
+        if (animating) return;
+        setActiveIndex(newIndex);
+    };
+
+    const slides = carouselDummyData.map(item => {
+        return (
+            <CarouselItem
+                onExiting={() => setAnimating(true)}
+                onExited={() => setAnimating(false)}
+                key={item}
+            >
+                <img src={item} className="w-100" alt="Home Slider" />
+            </CarouselItem>
+        );
+    });
+
+    return (
+        <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+            <CarouselIndicators
+                items={items}
+                activeIndex={activeIndex}
+                onClickHandler={goToIndex}
+            />
+            {slides}
+            <CarouselControl
+                direction="prev"
+                directionText="Previous"
+                onClickHandler={previous}
+            />
+            <CarouselControl
+                direction="next"
+                directionText="Next"
+                onClickHandler={next}
+            />
+        </Carousel>
+    );
+};
 let NewsSection = props => {
     const initialPosts = 9;
     const [news, setNews] = useState([]);
@@ -294,12 +429,13 @@ let NewsSection = props => {
                 <>
                     <hr className="hr" />
                     <div className="text-center pb-0">
-                        <ButtonToggle
+                        <p
                             className="news-card-btn"
                             onClick={viewAll}
+                            style={{ cursor: "pointer" }}
                         >
                             View All
-                        </ButtonToggle>
+                        </p>
                     </div>
                 </>
             )}
@@ -307,12 +443,13 @@ let NewsSection = props => {
                 <>
                     <hr className="hr" />
                     <div className="text-center pb-0">
-                        <ButtonToggle
+                        <p
                             className="news-card-btn"
                             onClick={viewLess}
+                            style={{ cursor: "pointer" }}
                         >
                             Show Less
-                        </ButtonToggle>
+                        </p>
                     </div>
                 </>
             )}
@@ -349,99 +486,81 @@ let LookingFor = () => {
         </Row>
     );
 };
-const Jobs = () => {
+const Jobs = props => {
+    const initialJobs = 2;
+    const [jobs, setJobs] = useState([]);
+    const [visible, setVisible] = useState(initialJobs);
+
+    useEffect(() => {
+        if (props?.jobs) {
+            setJobs(props?.jobs);
+        }
+    }, []);
+
+    const viewAll = () => {
+        setVisible(jobs.length);
+    };
+
+    const viewLess = () => {
+        setVisible(initialJobs);
+    };
     return (
         <Row>
-            <Col sm="12" md="6" lg="4">
-                <div className="text-center d-flex align-items-center justify-content-center ">
-                    <div className="jobs-section-circle ">
-                        <img className="jobs-section-circle-img" src={bank} />
-                    </div>
-                </div>
-                <h5 className="text-center">Bank jobs</h5>
-                <div className="jobs-section-sub-divison">
-                    <div className="d-flex jobs-section-box">
-                        <img className="jobs-section-image" src={examPattern} />
-                        <div className="jobs-section-content">
-                            BSF Recruitment 2020 Notification: 317 SI/HC
-                            Vacancies Released
+            {props?.jobs &&
+                props?.jobs.map((j, key) => (
+                    <Col sm="12" md="6" lg="4" className="mt-2" key={key}>
+                        <div className="text-center d-flex align-items-center justify-content-center ">
+                            <div className="jobs-section-circle ">
+                                <img
+                                    className="jobs-section-circle-img"
+                                    src={j?.img}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex jobs-section-box">
-                        <img className="jobs-section-image" src={examPattern} />
-                        <div className="jobs-section-content">
-                            BSF Recruitment 2020 Notification: 317 SI/HC
-                            Vacancies Released
+                        <h5 className="text-center">{j?.title}</h5>
+                        <div className="jobs-section-sub-divison">
+                            {j?.data &&
+                                j.data.slice(0, visible).map((data, key) => (
+                                    <div
+                                        className="d-flex jobs-section-box"
+                                        key={key}
+                                    >
+                                        <img
+                                            className="jobs-section-image"
+                                            src={data?.img}
+                                        />
+                                        <div className="jobs-section-content">
+                                            {data?.title}
+                                        </div>
+                                    </div>
+                                ))}
+
+                            {visible < jobs.length && (
+                                <div className="text-center">
+                                    <p
+                                        className="jobs-section-btn mb-0 pb-0"
+                                        style={{ cursor: "pointer" }}
+                                        onClick={viewAll}
+                                    >
+                                        View All
+                                    </p>
+                                </div>
+                            )}
+
+                            {visible >= jobs.length && (
+                                <div className="text-center">
+                                    <p
+                                        className="jobs-section-btn mb-0 pb-0"
+                                        style={{ cursor: "pointer" }}
+                                        onClick={viewLess}
+                                    >
+                                        Show Less
+                                    </p>
+                                </div>
+                            )}
                         </div>
-                    </div>
-                    <div className="text-center">
-                        <ButtonToggle className="jobs-section-btn">
-                            View All
-                        </ButtonToggle>
-                    </div>
-                </div>
-            </Col>
-            <Col sm="12" md="6" lg="4">
-                <div className="text-center d-flex align-items-center justify-content-center ">
-                    <div className="jobs-section-circle ">
-                        <img
-                            className="jobs-section-circle-img"
-                            src={architect}
-                        />
-                    </div>
-                </div>
-                <h5 className="text-center">Engineering jobs</h5>
-                <div className="jobs-section-sub-divison">
-                    <div className="d-flex jobs-section-box">
-                        <img className="jobs-section-image" src={examPattern} />
-                        <div className="jobs-section-content">
-                            BSF Recruitment 2020 Notification: 317 SI/HC
-                            Vacancies Released
-                        </div>
-                    </div>
-                    <div className="d-flex jobs-section-box">
-                        <img className="jobs-section-image" src={examPattern} />
-                        <div className="jobs-section-content">
-                            BSF Recruitment 2020 Notification: 317 SI/HC
-                            Vacancies Released
-                        </div>
-                    </div>
-                    <div className="text-center">
-                        <ButtonToggle className="jobs-section-btn">
-                            View All
-                        </ButtonToggle>
-                    </div>
-                </div>
-            </Col>
-            <Col sm="12" md="6" lg="4">
-                <div className="text-center d-flex align-items-center justify-content-center ">
-                    <div className="jobs-section-circle ">
-                        <img className="jobs-section-circle-img" src={doctor} />
-                    </div>
-                </div>
-                <h5 className="text-center">Medical job</h5>
-                <div className="jobs-section-sub-divison">
-                    <div className="d-flex jobs-section-box">
-                        <img className="jobs-section-image" src={examPattern} />
-                        <div className="jobs-section-content">
-                            BSF Recruitment 2020 Notification: 317 SI/HC
-                            Vacancies Released
-                        </div>
-                    </div>
-                    <div className="d-flex jobs-section-box">
-                        <img className="jobs-section-image" src={examPattern} />
-                        <div className="jobs-section-content">
-                            BSF Recruitment 2020 Notification: 317 SI/HC
-                            Vacancies Released
-                        </div>
-                    </div>
-                    <div className="text-center">
-                        <ButtonToggle className="jobs-section-btn">
-                            View All
-                        </ButtonToggle>
-                    </div>
-                </div>
-            </Col>
+                    </Col>
+                ))}
         </Row>
     );
 };
@@ -450,9 +569,9 @@ const Homepage = () => {
     return (
         <>
             <div>
-                <UncontrolledCarousel items={items} />
-            </div>
-            <div>
+                <section>
+                    <HomeCarousel />
+                </section>
                 <section className="news-card-body">
                     <NewsSection news={NewsDummyData} />
                 </section>
@@ -464,7 +583,7 @@ const Homepage = () => {
                 <section className="jobs-section-container">
                     <div className="jobs-section-div">
                         <h3 className="">JOBS</h3>
-                        <Jobs />
+                        <Jobs jobs={dummyJobData} />
                     </div>
                 </section>
 

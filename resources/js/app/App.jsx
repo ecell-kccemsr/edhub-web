@@ -15,13 +15,18 @@ import NewsDetails from "../news/newspages/Newsdetails";
 import { Route, Switch } from "react-router";
 import Examcalendar from "../examcalendar/Examcalendar";
 import Governmentjobsubcategory1 from "../jobs/Govermentjobcategory1";
+import Login from "../auth/login/Login";
+import Register from "../auth/register/Register";
 
 const App = props => {
     return (
         <Fragment>
-            <Layout>
-                <Switch>
+            <Switch>
+                <Route path="/login" exact component={Login} />
+                <Route path="/register" exact component={Register} />
+                <Layout>
                     <Route path="/" exact component={Homepage} />
+
                     <Route
                         path="/govermentjobs"
                         exact
@@ -75,8 +80,8 @@ const App = props => {
                         exact
                         component={Examcalendar}
                     />
-                </Switch>
-            </Layout>
+                </Layout>
+            </Switch>
         </Fragment>
     );
 };

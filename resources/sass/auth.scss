@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@400;700&display=swap");
+.auth {
+    font-family: "Playfair Display", serif;
+    .auth-brand {
+        span {
+            color: #f05454;
+        }
+    }
+    .auth-header {
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 700;
+        span {
+            color: #f05454;
+        }
+    }
+    .auth-subheader {
+        margin-bottom: 40px;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .auth-input {
+        border: 2px solid black;
+        height: 50px;
+        font-family: "Inter", sans-serif;
+    }
+
+    .auth-row {
+        margin-bottom: 10px;
+        font-family: "Inter", sans-serif;
+
+        a,
+        a:hover {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+
+    .auth-btn {
+        background: #f05454;
+        border: none;
+        outline: none;
+        padding: 10px 5px;
+        color: #fff;
+        width: 100%;
+        text-transform: capitalize;
+        font-weight: 600;
+        font-family: "Inter", sans-serif;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .auth-img-col {
+        display: none;
+    }
+}
