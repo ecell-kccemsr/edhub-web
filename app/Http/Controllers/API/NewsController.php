@@ -101,8 +101,9 @@ class NewsController extends Controller
      * @apiResourceModel App\Models\News
      * 
      */
-    public function show(News $news)
+    public function show($news)
     {
+        $news = News::where('id',$news)->orWhere('slug',$news)->firstOrFail();
         return new NewsResource($news);
     }
 }
