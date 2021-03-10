@@ -50,11 +50,11 @@ const NavbarComponent = props => {
                             </Link>
                         </Col>
                         <Col
-                            className="top-navbar-col text-center mob-none pb-0"
+                            className="top-navbar-col text-center mob-none pb-0 text-lg-right"
                             xs="6"
                             md="3"
                         >
-                            <Link to="/login" className="top-navbar-signin">
+                            <Link to="/login" className="top-navbar-signin ">
                                 Sign in
                             </Link>
                         </Col>
