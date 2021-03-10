@@ -61,9 +61,16 @@ function Govermentjob() {
                                                 {/* <a href={category.name} > 
                                             <img src="../Images/bank.png" alt=""/>
                                             </a> */}
-                                           <a href={category.name} > 
-                                            <img src="../Images/bank.png" alt="bank" className="government-job-category-img" />
-                                            </a>                                            </Link>
+                                            <div>
+                                                <Col col-sm-3 col-md-12 col-xs-2>
+                                             <img src="../Images/bank-job.jpg" alt="bank" className="government-job-category-img" />
+ <h6>{category.name} 
+                                              </h6> 
+                                            </Col>
+                                           
+                                            </div>
+                                          
+                                             </Link>
                                         ))}
                                     </div>
                                 </div>
