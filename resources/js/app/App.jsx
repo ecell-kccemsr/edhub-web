@@ -11,7 +11,6 @@ import Questionpaper2 from "../Question papers/Questionpaper2";
 import News from "../news/newspages/News";
 import NewsCategory from "../news/newspages/NewsCategory";
 import NewsSubCategory from "../news/newspages/NewsSubCategory";
-import NewsDetails from "../news/newspages/Newsdetails";
 import { Route, Switch } from "react-router";
 import Examcalendar from "../examcalendar/Examcalendar";
 import Governmentjobsubcategory1 from "../jobs/Govermentjobcategory1";
@@ -69,11 +68,6 @@ const App = props => {
                         exact={true}
                         exact
                         component={NewsSubCategory}
-                    />
-                     <Route
-                        path="/newsdetails"
-                        exact={true}
-                        component={NewsDetails}
                     />
                     <Route
                         path="/examcalendar"

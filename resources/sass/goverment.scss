@@ -4,14 +4,15 @@
 }
 .container-fluid {
     width: 77%;
+
     background-color: rgb(255, 255, 255);
 }
-.jumbotron-government {
+.jumbotron {
     background-color: #fff;
     box-shadow: 0px 4px 8px -1px #8888;
 }
 .titles {
-    padding: 50px 0px 5px 180px;
+    padding: 50px 0px 5px 160px;
 }
 .title-notify {
     margin-left: 2px;
@@ -28,7 +29,7 @@
 .government-job-description {
     font-size: 18px;
 }
-.government-notification {
+.container {
     box-shadow: 0px 4px 8px -1px #8888;
     margin-top: 50px;
     margin-bottom: 3px;
@@ -51,27 +52,16 @@
     list-style: none;
     background-color: #fff;
     border-radius: 0.25rem;
-    color: rgb(112, 112, 112);
 }
-
 // .select-government-by-category-btn-section {
 // }
 .category-btn {
-    background-color: #fff;
-    box-shadow: none;
+    background-color: #f0f0f0;
+    box-shadow: 0px 5px 4px 0px #ffd8d8;
     border-radius: 4px;
     margin: 13px;
     display: flex;
     padding: 15px;
-}
-.card-govermentjobs {
-    padding: 30px;
-    text-align: center;
-    width: 101%;
-    height: 100%;
-}
-.hero-govermentjobs {
-    background-color: rgb(245, 245, 245);
 }
 
 // Government Job Category //

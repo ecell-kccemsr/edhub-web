@@ -20,8 +20,6 @@ Route::view('/register', 'app');
 Route::view('/news', 'app');
 Route::view('/newscategory/view/{category_id}', 'app');
 Route::view('/newssubcategory/view/{sub_category_id}', 'app');
-Route::view('/newsdetails', 'app');
-
 Route::view('/govermentjobs', 'app');
 Route::view('/govermentjobs/view/{category_id}', 'app');
 Route::view('/govermentjobs/view/category/{category_id}', 'app');
