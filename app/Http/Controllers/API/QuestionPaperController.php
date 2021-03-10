@@ -70,8 +70,9 @@ class QuestionPaperController extends Controller
      * @apiResourceModel App\Models\QuestionPaper
      * 
      */
-    public function show(QuestionPaper $question_paper)
+    public function show($question_paper)
     {
+        $question_paper = QuestionPaper::where('id',$question_paper)->orWhere('slug',$question_paper)->firstOrFail();
         return new QuestionPaperResource($question_paper);
     }
 }

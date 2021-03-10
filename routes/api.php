@@ -54,7 +54,7 @@ Route::get('/news/{news}',[NewsController::class,'show']);
 //ExamCalendar
 Route::get('/examcalendar',[ExamCalendarController::class,'get']);
 Route::get('/examcalendar/categories',[ExamCalendarController::class,'categories']);
-Route::get('/examcalendar/{exam_calendars}',[ExamCalendarController::class,'show']);
+Route::get('/examcalendar/{exam_calendar}',[ExamCalendarController::class,'show']);
 
 //Question Paper
 Route::get('/questionpapers',[QuestionPaperController::class,'get']);

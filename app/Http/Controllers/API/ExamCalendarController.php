@@ -71,8 +71,9 @@ class ExamCalendarController extends Controller
      * @apiResourceModel App\Models\ExamCalendar
      * 
      */
-    public function show(ExamCalendar $exam_calendar)
+    public function show($exam_calendar)
     {
+        $exam_calendar = ExamCalendar::where('id',$exam_calendar)->orWhere('slug',$exam_calendar)->firstOrFail();
         return new ExamCalendarResource($exam_calendar);
     }
 

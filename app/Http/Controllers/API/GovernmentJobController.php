@@ -101,8 +101,9 @@ class GovernmentJobController extends Controller
      * @apiResourceModel App\Models\GovernmentJob
      * 
      */
-    public function show(GovernmentJob $government_job)
+    public function show($government_job)
     {
+        $government_job = GovernmentJob::where('id',$government_job)->orWhere('slug',$government_job)->firstOrFail();
         return new GovernmentJobResource($government_job);
     }
 }
