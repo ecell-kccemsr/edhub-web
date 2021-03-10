@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Container } from "reactstrap";
+import { Row, Col, Container, Card } from "reactstrap";
 function Govermentjob() {
     const [categories, setCategory] = useState([]);
     const [jobs, setJobs] = useState([]);
@@ -32,24 +32,24 @@ function Govermentjob() {
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                             <li className="breadcrumb-item ">
-                                <a href="#">Home</a>
-                            </li>
+                            <a href="#" className="href-government">HOME</a>
+                                                        </li>
                             <li
                                 className="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                Jobs
+                                <a href="" className="href-government">JOBS</a>
                             </li>
                         </ol>
                     </nav>
-                    <h2 className="title-government">
-                        <strong> Goverment Jobs 2021 </strong>
-                    </h2>
+                    <h3 className="title-government">
+                         Goverment Jobs 2021 
+                    </h3>
                 </div>
                 <div className="container-fluid">
-                    <div class="jumbotron">
+                <div class="jumbotron-government">
                         <Row> 
-                            <Col className="col-sm-3 col-md-12 col-xs-2 mt-2">
+                        <Col className="col-sm-3 col-md-12 col-xs-2">
                                 <div className="select-government-by-category-btn-section">
                                     <div className="d-flex align-items-center justify-content-center flex-wrap">
                                         {categories.map(category => (
@@ -61,8 +61,9 @@ function Govermentjob() {
                                                 {/* <a href={category.name} > 
                                             <img src="../Images/bank.png" alt=""/>
                                             </a> */}
-                                                {category.name}
-                                            </Link>
+                                           <a href={category.name} > 
+                                            <img src="../Images/bank.png" alt="bank" className="government-job-category-img" />
+                                            </a>                                            </Link>
                                         ))}
                                     </div>
                                 </div>
@@ -117,10 +118,11 @@ function Govermentjob() {
                             </Col> */}
                         </Row>
                     </div>
-                    <div className="container">
+                    <div className="container hero-govermentjobs">
+
                         <Row xs="1" sm="2" md="2">
                             <h2 className="title-notify">
-                                <strong> Latest Notification </strong>
+                            <strong> Latest Notifications</strong>
                             </h2>
                             {/* <h4 className="category-header">
                                         {categories[0]?.name}
@@ -129,14 +131,14 @@ function Govermentjob() {
                             {jobs.map(jobs => (
                                 <>
                                     <Col>
-                                        <div className="d-flex" key={jobs.id}>
+                                    <div className="government-job-description" key={jobs.id}>
                                             <div>
                                                 <h5 className="">
                                                     <strong>
                                                         {jobs.title}
                                                     </strong>
                                                 </h5>
-                                                <h5 className="government-job-description">
+                                                <h5 className="">
                                                     {jobs.description}
                                                 </h5>
                                             </div>
@@ -232,41 +234,64 @@ function Govermentjob() {
                         </h2>
                         <Row xs="1" sm="2" md="6">
                             <Col>
-                                <img src="../../Images/10.png" alt="10th" />
+                            <Card className="card-govermentjobs" style={{backgroundColor:"#BCFFB1"}}> <strong> 10TH</strong></Card>
                             </Col>
                             <Col>
-                                <img src="../../Images/12.png" alt="12" />
+                            <Card className="card-govermentjobs" style={{backgroundColor:"#FBB3A5"}}> <strong>12TH</strong></Card>
                             </Col>
                             <Col>
-                                <img
-                                    src="../../Images/undergraduate.png"
-                                    alt="undergraduate"
-                                />
+                            <Card className="card-govermentjobs" style={{backgroundColor:"#F1E189"}}> <strong> UNDER<br/>GRADUATE</strong></Card>
+
                             </Col>
                             <Col>
-                                <img
-                                    src="../../Images/graduate.png"
-                                    alt="graduate"
-                                />
+                            <Card className="card-govermentjobs" style={{backgroundColor:"#87BDFF"}}> <strong>GRADUATE</strong> </Card>
+
                             </Col>
                             <Col>
-                                <img
-                                    src="../../Images/post graduate.png"
-                                    alt="post graduate"
-                                />
+                            <Card className="card-govermentjobs" style={{backgroundColor:"#FFB579"}}> <strong>POST<br/>GRADUATE </strong> </Card>
+
                             </Col>
                             <Col>
-                                <img src="../../Images/doc.png" alt="doc" />
+                            <Card className="card-govermentjobs" style={{backgroundColor:"#87E1FE"}}> <strong>DOCTORATE </strong> </Card>
                             </Col>
                         </Row>
                     </div>
 
-                    <div className="container">
+                    <div className="container hero-govermentjobs">
+
                         <Row xs="1" sm="2" md="2">
-                            <h2 className="title-Exam">
-                                <strong> Exam Results </strong>
+                        <h2 className="title-notify">
+                                <strong> Exam Results</strong>
                             </h2>
-                            <Col>
+                                 {/* <h4 className="category-header">
+                                        {categories[0]?.name}
+                                    </h4> */}
+
+{jobs.map(jobs => (
+                                <>
+                                    <Col>
+                                        <div className="government-job-description" key={jobs.id}>
+                                            <div>
+                                                <h5 className="">
+                                                    <strong>
+                                                        {jobs.title}
+                                                    </strong>
+                                                </h5>
+                                                <h5 className="">
+                                                    {jobs.description}
+                                                </h5>
+                                            </div>
+                                            {/* <img
+                                                    src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
+                                                    alt=""
+                                                    className="category-information-image"
+                                                /> */}
+                                        </div>
+                                        <hr />
+                                    </Col>
+                                </>
+                            ))}
+                            {/* <Col>
                                 <h5>
                                     <strong>
                                         RBI Recruitment 2021 Notification for
@@ -337,7 +362,7 @@ function Govermentjob() {
                                     Exam Date, Admit Card, Vacancy, Exam
                                     Pattern, Syllabus, Cutoff, Eligibility
                                 </h5>
-                            </Col>
+                            </Col> */}
                         </Row>
                         <div className="view">View all</div>
                     </div>

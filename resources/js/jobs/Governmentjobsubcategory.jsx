@@ -40,29 +40,29 @@ function Governmentjobsubcategory(props) {
         <>
             <div className="bankjoblast">
                 <div style={{ paddingTop: "20px" }}>
-                    <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                             <li className="breadcrumb-item ">
-                                <a href="#">Home</a>
+                            <a href="#" className="href-government">HOME</a>
+                                                        </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">JOBS</a>
                             </li>
                             <li
                                 className="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                Jobs
-                            </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                Bank
+                                <a href="" className="href-government">BANK</a>
                             </li>
                         </ol>
                     </nav>{" "}
                 </div>
-                <h5>
-                    <strong> Bank Jobs </strong>
-                </h5>
+                <h4 className="title-bank">
+                         Bank Jobs
+                    </h4>
                 <h3 className="title-bank-last">{categoryJobs.title}</h3>
                 <div class="row-bankjoblast">
                     <div class="column-bankjoblast">

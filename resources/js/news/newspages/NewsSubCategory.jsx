@@ -25,8 +25,36 @@ function NewsSubCategory(props) {
     return (
         <div>
             <section className="select-news-by-category">
-                <div className="news-title">NEWS</div>
-                <hr className="news-hr" />
+            <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item">
+                            <a href="#" className="href-government">HOME</a>
+                                                        </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">NEWS</a>
+                            </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">BUSINESS</a>
+                            </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">ENTREPRENEURSHIP</a>
+                            </li>
+                         
+                        </ol>
+                    </nav>{" "}
+                    <h4 className="title-bank">
+                       News  
+                         </h4>         
+                       <hr className="news-hr" />
                 <Row>
                     <Col sm="12" md="6" lg="8" className="mb-4">
                         <div className="category-left-section">
@@ -45,9 +73,9 @@ function NewsSubCategory(props) {
                                                     key={categorynews.id}
                                                 >
                                                     <div>
-                                                        <h6 className="news-title">
+                                                        <h5 className="news-title">
                                                             {categorynews.title}
-                                                        </h6>
+                                                        </h5>
                                                         <p className="news-description">
                                                             {
                                                                 categorynews.description

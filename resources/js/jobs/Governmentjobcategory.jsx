@@ -52,30 +52,30 @@ function Governmentjobcategory(props) {
         <>
             <div className="bank">
                 <div className="title-bank">
-                    <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                             <li className="breadcrumb-item ">
-                                <a href="#">Home</a>
+                            <a href="#" className="href-government">HOME</a>
+                                                        </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">JOBS</a>
                             </li>
                             <li
                                 className="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                Jobs
-                            </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                Bank
+                                <a href="" className="href-government">BANK</a>
                             </li>
                         </ol>
                     </nav>{" "}
                 </div>
                 <div className="btn-drop">
-                    <h5 className="title-bank">
-                        <strong> Bank Jobs </strong>
-                    </h5>
+                    <h4 className="title-bank">
+                         Bank Jobs
+                    </h4>
 
                     <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
                         <DropdownToggle caret className="btn-drop-toggle">
@@ -109,7 +109,7 @@ function Governmentjobcategory(props) {
                             <div
                                 className="title-bank-hero"
                                 style={{
-                                    padding: "10px",
+                                    padding: "2px",
                                     backgroundColor: "#EE6F57"
                                 }}
                             >
@@ -126,7 +126,7 @@ function Governmentjobcategory(props) {
                                             key={subcategory.id}
                                             className="category-btn-government mt-2"
                                         >
-                                            {subcategory.name}
+                                          <h4 className="government-job-subcategory-name">{subcategory.name}</h4>  
                                         </Link>
                                     ))}
                                 </li>
@@ -181,11 +181,11 @@ function Governmentjobcategory(props) {
                                                         className=""
                                                         to={`/govermentjobs/view/category/${categoryJobs?.id}`}
                                                     >
-                                                        <strong>
-                                                            {categoryJobs.title}
-                                                        </strong>
+                                                        <h5 className="government-job-category-title">
+                                                          {categoryJobs.title}
+                                                        </h5>
                                                     </Link>
-                                                    <h5 className="">
+                                                    <h5 className="government-job-category-description">
                                                         {
                                                             categoryJobs.description
                                                         }

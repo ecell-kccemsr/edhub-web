@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button, Row, Col, InputGroup, Input } from "reactstrap";
+import { Button, Row, Col, InputGroup, Input, Form, FormGroup } from "reactstrap";
 function NewsCategory(props) {
     console.log(props);
     const { category_id } = props.match.params;
@@ -34,8 +34,30 @@ function NewsCategory(props) {
     return (
         <div>
             <section className="select-news-by-category">
-                <div className="news-title">News</div>
-                <hr className="news-hr" />
+            <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item">
+                            <a href="#" className="href-government">HOME</a>
+                                                        </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">NEWS</a>
+                            </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">BUSINESS</a>
+                            </li>
+                         
+                        </ol>
+                    </nav>{" "}
+                    <h4 className="title-bank">
+                       News  
+                         </h4>          
+      <hr className="news-hr" />
                 <Row>
                     <Col sm="12" md="6" lg="8" className="mb-4">
                         <div className="category-left-section">
@@ -91,7 +113,7 @@ function NewsCategory(props) {
                                                             </p>
                                                         </div>
                                                         <img
-                                                            src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
+                                                            src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-10635,resizemode-1,msid-75494904/tech/hardware/mobile-phone-retailers-set-to-reopen-stores-where-allowed.jpg"
                                                             alt=""
                                                             className="category-information-image"
                                                         />
@@ -105,38 +127,41 @@ function NewsCategory(props) {
                         </div>
                     </Col>
                     <Col sm="12" md="6" lg="4">
-                        <div className="registration-section">
-                            <div className="pb-3 ml-2 register">
-                                <h4>REGISTER FOR FREE UPDATES</h4>
-                            </div>
-                            <InputGroup>
-                                <Input
-                                    placeholder="Name"
-                                    type="text"
-                                    className="input-fields"
-                                />
-                            </InputGroup>
-
-                            <InputGroup>
-                                <Input
-                                    placeholder="Email"
-                                    type="email"
-                                    className="input-fields"
-                                />
-                            </InputGroup>
-
-                            <InputGroup>
-                                <Input
-                                    placeholder="Phone Number"
-                                    type="number"
-                                    className="input-fields"
-                                />
-                            </InputGroup>
-                            <div className="text-center">
-                                <Button className="registration-btn">
-                                    SUBMIT
+                    <div className="registration-section">
+                        <h5 style={{ padding: "10px", textAlign:"center" }}>
+                                REGISTER FOR FREE UPDATES
+                            </h5>
+                            <Form>
+                                <FormGroup>
+                                    <Input
+                                        type="name"
+                                        name="name"
+                                        id="exampleName"
+                                        placeholder="Name"
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        id="exampleEmail"
+                                        placeholder="Email"
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Input
+                                        type="number"
+                                        name="number"
+                                        id="exampleNumber"
+                                        min="1"
+                                        max="10"
+                                        placeholder="Phone Number"
+                                    />
+                                </FormGroup>
+                                <Button className="btn-submit-bank">
+                                    Submit
                                 </Button>
-                            </div>
+                            </Form>
                         </div>
                         <br />
                         <div className="trending-section-container">

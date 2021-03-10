@@ -1,7 +1,21 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button, Row, Col, InputGroup, Input } from "reactstrap";
+import {
+    ButtonDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    Row,
+    Col,
+    List,
+    Button,
+    Form,
+    FormGroup,
+    Label,
+    Input,
+    FormText
+} from "reactstrap";
 function News() {
     const [categories, setCategory] = useState([]);
     const [news, setNews] = useState([]);
@@ -26,10 +40,26 @@ function News() {
     return (
         <div>
             <section className="select-news-by-category">
-                <div className="news-title">NEWS</div>
+            <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item">
+                            <a href="#" className="href-government">HOME</a>
+                                                        </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">NEWS</a>
+                            </li>
+                         
+                        </ol>
+                    </nav>{" "}
+                <div className="news-title">
+                   <h5>NEWS</h5> 
+                    </div>
                 <hr className="news-hr" />
                 <Row>
-                    <Col sm="12" md="6" lg="8" className="mb-4">
+                    <Col sm="6" md={{ size: 8, offset: 0 }} >
                         <div className="category-left-section">
                             <h6 className="select-by-category-header text-center">
                                 Select News By Category
@@ -42,7 +72,7 @@ function News() {
                                             key={category.id}
                                             className="category-btn text-center"
                                         >
-                                            {category.name}
+                                             {category.name}
                                         </Link>
                                     ))}
                                 </div>
@@ -62,8 +92,6 @@ function News() {
                                                 <div>
                                                     <h5 className="news-title">
                                                         {news.title}
-
-                                                        <br />
                                                     </h5>
 
                                                     <p className="news-description">
@@ -74,7 +102,7 @@ function News() {
                                                     </p>
                                                 </div>
                                                 <img
-                                                    src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
+                                                    src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-10635,resizemode-1,msid-75494904/tech/hardware/mobile-phone-retailers-set-to-reopen-stores-where-allowed.jpg"
                                                     alt=""
                                                     className="category-information-image"
                                                 />
@@ -87,39 +115,42 @@ function News() {
                         </div>
                     </Col>
 
-                    <Col sm="12" md="6" lg="4">
+                    <Col className="" sm="3" md="4">
                         <div className="registration-section">
-                            <div className="pb-3 ml-2 register">
-                                <h4>REGISTER FOR FREE UPDATES</h4>
-                            </div>
-                            <InputGroup>
-                                <Input
-                                    placeholder="Name"
-                                    type="text"
-                                    className="input-fields"
-                                />
-                            </InputGroup>
-
-                            <InputGroup>
-                                <Input
-                                    placeholder="Email"
-                                    type="email"
-                                    className="input-fields"
-                                />
-                            </InputGroup>
-
-                            <InputGroup>
-                                <Input
-                                    placeholder="Phone Number"
-                                    type="number"
-                                    className="input-fields"
-                                />
-                            </InputGroup>
-                            <div className="text-center">
-                                <Button className="registration-btn">
-                                    SUBMIT
+                        <h5 style={{ padding: "10px", textAlign:"center" }}>
+                                REGISTER FOR FREE UPDATES
+                            </h5>
+                            <Form>
+                                <FormGroup>
+                                    <Input
+                                        type="name"
+                                        name="name"
+                                        id="exampleName"
+                                        placeholder="Name"
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        id="exampleEmail"
+                                        placeholder="Email"
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Input
+                                        type="number"
+                                        name="number"
+                                        id="exampleNumber"
+                                        min="1"
+                                        max="10"
+                                        placeholder="Phone Number"
+                                    />
+                                </FormGroup>
+                                <Button className="btn-submit-bank">
+                                    Submit
                                 </Button>
-                            </div>
+                            </Form>
                         </div>
                         <br />
                         <div className="trending-section-container">
