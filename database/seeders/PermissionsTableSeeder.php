@@ -427,6 +427,246 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-04 18:20:02',
                 'updated_at' => '2021-03-04 18:20:02',
             ),
+            51 => 
+            array (
+                'id' => 52,
+                'key' => 'browse_government_job_categories',
+                'table_name' => 'government_job_categories',
+                'created_at' => '2021-03-10 18:21:21',
+                'updated_at' => '2021-03-10 18:21:21',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'key' => 'read_government_job_categories',
+                'table_name' => 'government_job_categories',
+                'created_at' => '2021-03-10 18:21:21',
+                'updated_at' => '2021-03-10 18:21:21',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'key' => 'edit_government_job_categories',
+                'table_name' => 'government_job_categories',
+                'created_at' => '2021-03-10 18:21:21',
+                'updated_at' => '2021-03-10 18:21:21',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'key' => 'add_government_job_categories',
+                'table_name' => 'government_job_categories',
+                'created_at' => '2021-03-10 18:21:21',
+                'updated_at' => '2021-03-10 18:21:21',
+            ),
+            55 => 
+            array (
+                'id' => 56,
+                'key' => 'delete_government_job_categories',
+                'table_name' => 'government_job_categories',
+                'created_at' => '2021-03-10 18:21:21',
+                'updated_at' => '2021-03-10 18:21:21',
+            ),
+            56 => 
+            array (
+                'id' => 57,
+                'key' => 'browse_government_job_sub_categories',
+                'table_name' => 'government_job_sub_categories',
+                'created_at' => '2021-03-10 18:22:23',
+                'updated_at' => '2021-03-10 18:22:23',
+            ),
+            57 => 
+            array (
+                'id' => 58,
+                'key' => 'read_government_job_sub_categories',
+                'table_name' => 'government_job_sub_categories',
+                'created_at' => '2021-03-10 18:22:23',
+                'updated_at' => '2021-03-10 18:22:23',
+            ),
+            58 => 
+            array (
+                'id' => 59,
+                'key' => 'edit_government_job_sub_categories',
+                'table_name' => 'government_job_sub_categories',
+                'created_at' => '2021-03-10 18:22:23',
+                'updated_at' => '2021-03-10 18:22:23',
+            ),
+            59 => 
+            array (
+                'id' => 60,
+                'key' => 'add_government_job_sub_categories',
+                'table_name' => 'government_job_sub_categories',
+                'created_at' => '2021-03-10 18:22:23',
+                'updated_at' => '2021-03-10 18:22:23',
+            ),
+            60 => 
+            array (
+                'id' => 61,
+                'key' => 'delete_government_job_sub_categories',
+                'table_name' => 'government_job_sub_categories',
+                'created_at' => '2021-03-10 18:22:23',
+                'updated_at' => '2021-03-10 18:22:23',
+            ),
+            61 => 
+            array (
+                'id' => 62,
+                'key' => 'browse_government_jobs',
+                'table_name' => 'government_jobs',
+                'created_at' => '2021-03-10 18:25:20',
+                'updated_at' => '2021-03-10 18:25:20',
+            ),
+            62 => 
+            array (
+                'id' => 63,
+                'key' => 'read_government_jobs',
+                'table_name' => 'government_jobs',
+                'created_at' => '2021-03-10 18:25:20',
+                'updated_at' => '2021-03-10 18:25:20',
+            ),
+            63 => 
+            array (
+                'id' => 64,
+                'key' => 'edit_government_jobs',
+                'table_name' => 'government_jobs',
+                'created_at' => '2021-03-10 18:25:20',
+                'updated_at' => '2021-03-10 18:25:20',
+            ),
+            64 => 
+            array (
+                'id' => 65,
+                'key' => 'add_government_jobs',
+                'table_name' => 'government_jobs',
+                'created_at' => '2021-03-10 18:25:20',
+                'updated_at' => '2021-03-10 18:25:20',
+            ),
+            65 => 
+            array (
+                'id' => 66,
+                'key' => 'delete_government_jobs',
+                'table_name' => 'government_jobs',
+                'created_at' => '2021-03-10 18:25:20',
+                'updated_at' => '2021-03-10 18:25:20',
+            ),
+            66 => 
+            array (
+                'id' => 67,
+                'key' => 'browse_news_categories',
+                'table_name' => 'news_categories',
+                'created_at' => '2021-03-10 18:26:20',
+                'updated_at' => '2021-03-10 18:26:20',
+            ),
+            67 => 
+            array (
+                'id' => 68,
+                'key' => 'read_news_categories',
+                'table_name' => 'news_categories',
+                'created_at' => '2021-03-10 18:26:20',
+                'updated_at' => '2021-03-10 18:26:20',
+            ),
+            68 => 
+            array (
+                'id' => 69,
+                'key' => 'edit_news_categories',
+                'table_name' => 'news_categories',
+                'created_at' => '2021-03-10 18:26:20',
+                'updated_at' => '2021-03-10 18:26:20',
+            ),
+            69 => 
+            array (
+                'id' => 70,
+                'key' => 'add_news_categories',
+                'table_name' => 'news_categories',
+                'created_at' => '2021-03-10 18:26:20',
+                'updated_at' => '2021-03-10 18:26:20',
+            ),
+            70 => 
+            array (
+                'id' => 71,
+                'key' => 'delete_news_categories',
+                'table_name' => 'news_categories',
+                'created_at' => '2021-03-10 18:26:20',
+                'updated_at' => '2021-03-10 18:26:20',
+            ),
+            71 => 
+            array (
+                'id' => 77,
+                'key' => 'browse_news',
+                'table_name' => 'news',
+                'created_at' => '2021-03-10 18:30:37',
+                'updated_at' => '2021-03-10 18:30:37',
+            ),
+            72 => 
+            array (
+                'id' => 78,
+                'key' => 'read_news',
+                'table_name' => 'news',
+                'created_at' => '2021-03-10 18:30:37',
+                'updated_at' => '2021-03-10 18:30:37',
+            ),
+            73 => 
+            array (
+                'id' => 79,
+                'key' => 'edit_news',
+                'table_name' => 'news',
+                'created_at' => '2021-03-10 18:30:37',
+                'updated_at' => '2021-03-10 18:30:37',
+            ),
+            74 => 
+            array (
+                'id' => 80,
+                'key' => 'add_news',
+                'table_name' => 'news',
+                'created_at' => '2021-03-10 18:30:37',
+                'updated_at' => '2021-03-10 18:30:37',
+            ),
+            75 => 
+            array (
+                'id' => 81,
+                'key' => 'delete_news',
+                'table_name' => 'news',
+                'created_at' => '2021-03-10 18:30:37',
+                'updated_at' => '2021-03-10 18:30:37',
+            ),
+            76 => 
+            array (
+                'id' => 82,
+                'key' => 'browse_news_sub_categories',
+                'table_name' => 'news_sub_categories',
+                'created_at' => '2021-03-10 18:34:04',
+                'updated_at' => '2021-03-10 18:34:04',
+            ),
+            77 => 
+            array (
+                'id' => 83,
+                'key' => 'read_news_sub_categories',
+                'table_name' => 'news_sub_categories',
+                'created_at' => '2021-03-10 18:34:04',
+                'updated_at' => '2021-03-10 18:34:04',
+            ),
+            78 => 
+            array (
+                'id' => 84,
+                'key' => 'edit_news_sub_categories',
+                'table_name' => 'news_sub_categories',
+                'created_at' => '2021-03-10 18:34:04',
+                'updated_at' => '2021-03-10 18:34:04',
+            ),
+            79 => 
+            array (
+                'id' => 85,
+                'key' => 'add_news_sub_categories',
+                'table_name' => 'news_sub_categories',
+                'created_at' => '2021-03-10 18:34:04',
+                'updated_at' => '2021-03-10 18:34:04',
+            ),
+            80 => 
+            array (
+                'id' => 86,
+                'key' => 'delete_news_sub_categories',
+                'table_name' => 'news_sub_categories',
+                'created_at' => '2021-03-10 18:34:04',
+                'updated_at' => '2021-03-10 18:34:04',
+            ),
         ));
         
         

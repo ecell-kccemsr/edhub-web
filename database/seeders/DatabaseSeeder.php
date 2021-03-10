@@ -27,5 +27,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CurrentAffairCategoriesTableSeeder::class);
         $this->call(QuestionPaperCategoriesTableSeeder::class);
         $this->call(ExamCalendarCategoriesTableSeeder::class);
+        $this->call(GovernmentJobCategoriesTableSeeder::class);
+        $this->call(GovernmentJobSubCategoriesTableSeeder::class);
+        $this->call(NewsSubCategoriesTableSeeder::class);
+        $this->call(NewsCategoriesTableSeeder::class);
     }
 }
