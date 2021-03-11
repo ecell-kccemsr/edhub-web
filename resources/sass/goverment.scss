@@ -1,3 +1,243 @@
+// Goverment Job //
+.government {
+    max-width: 2000px;
+}
+.container-fluid {
+    width: 77%;
+    background-color: rgb(255, 255, 255);
+}
+.jumbotron-government {
+    background-color: #fff;
+    box-shadow: 0px 4px 8px -1px #8888;
+}
+.titles {
+    padding: 50px 0px 5px 180px;
+}
+.title-notify {
+    margin-left: 2px;
+    color: rgb(100, 100, 100);
+    padding: 20px;
+}
+.title-Edu {
+    padding: 60px 0px 25px 0px;
+}
+.title-Exam {
+    margin-left: 1px;
+    padding: 20px;
+}
+.government-job-description {
+    font-size: 18px;
+    padding: 15px;
+}
+.government-notification {
+    box-shadow: 0px 4px 8px -1px #8888;
+    margin-top: 50px;
+    margin-bottom: 3px;
+}
+.container-Edu {
+    margin: 20px auto;
+}
+.view {
+    text-align: center;
+    font-size: 17px;
+    color: #ff0000;
+    border-top: 1px solid #000;
+    padding: 10px;
+}
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 0rem;
+    margin-bottom: 0rem;
+    list-style: none;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    color: rgb(112, 112, 112);
+}
+.category-btn {
+    border-radius: 4px;
+    margin: 13px;
+    display: flex;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: none;
+}
+.card-govermentjobs {
+    padding: 30px;
+    text-align: center;
+    width: 101%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px -1px #8888;
+}
+.hero-govermentjobs {
+    background-color: rgb(245, 245, 245);
+    margin-bottom: 50px;
+}
+.href-government {
+    color: rgb(194, 194, 194);
+    font-size: 18px;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    float: left;
+    padding-right: 0.5rem;
+    color: #6c757d;
+    content: "|";
+}
+.government-job-category-img {
+    height: 94%;
+    width: 7%;
+}
+
+// Government Job Category //
+
+.bank {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-drop {
+    display: flex;
+}
+.btn-drop-toggle {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    margin-left: 25px;
+}
+.hero {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.job-news {
+    border: 1px solid #000;
+    text-align: center;
+    height: fit-content;
+    box-shadow: 0px 4px 8px -1px #8888;
+}
+.job-news-1 {
+    border: 1px solid #000;
+    text-align: center;
+    height: fit-content;
+    box-shadow: 0px 4px 8px -1px #8888;
+    padding: 0px;
+    width: 100%;
+}
+.title-bank {
+    color: rgb(0, 0, 0);
+    padding: 8px;
+}
+.category-bank {
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 100px;
+    text-align: start;
+}
+.category-bank-last {
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 100px;
+    text-align: start;
+}
+.job-news-details {
+    border-bottom: 1px solid #000;
+    padding: 10px;
+}
+.btn-submit-bank {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #ee6f57;
+}
+.government-subcategory-title {
+    display: inline-grid;
+    font-size: 18px;
+}
+.government-job-subcategory-name {
+    text-align: start;
+    color: #000;
+    font-weight: 400;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    :hover {
+        border-bottom: none;
+    }
+}
+.government-job-category-title {
+    color: #000;
+}
+.government-job-category-description {
+    font-weight: 400;
+}
+//  Government Job Sub-Category //
+
+.bankjoblast {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-bank-last {
+    padding: 35px 0px 35px 0px;
+}
+.column-bankjoblast {
+    float: left;
+    width: 12%;
+    padding: 0 10px;
+}
+.row-bankjoblast {
+    margin: 0 -5px;
+    box-shadow: 0px 4px 8px -1px #8888;
+    background-color: rgba(240, 240, 240, 0.533);
+    padding: 30px;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+.card-bankjoblast {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    height: 80px;
+    border-radius: 10px;
+    background-color: #ffb342;
+}
+.content-bankjoblast {
+    margin-top: 45px;
+}
+.container-bankjoblast {
+    box-shadow: 0px 4px 8px -1px #8888;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 25px;
+}
+.government-job-subcategory {
+    height: 350px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px -1px #8888;
+}
+.government-job-subcategory-content {
+    padding-top: 30px;
+    color: rgb(70, 70, 70);
+}
+.government-job-subcategory-information {
+    padding: 10px;
+}
+@media screen and (max-width: 600px) {
+    .column-bankjoblast {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+// NEW CSS
 .government-section {
     padding: 50px 150px 30px;
 
@@ -84,6 +324,10 @@
     }
 }
 
+.government-job-subcategory-content {
+    padding: 50px 100px 30px;
+    color: rgb(70, 70, 70);
+}
 @media screen and (max-width: 600px) {
     .government-section {
         padding: 20px;

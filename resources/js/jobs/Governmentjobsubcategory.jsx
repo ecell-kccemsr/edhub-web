@@ -16,19 +16,138 @@ import {
     Input,
     FormText
 } from "reactstrap";
-
+import BreadCrumb from "../components/breadcrumb/BreadCrumb";
+import LinkCard from "../components/link-card/LinkCard";
+const dummyLinkData = [
+    {
+        title: "RBI Recruitment 2021 Notification for Various Non CSG",
+        link: "https://www.google.com/",
+        description:
+            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-"
+    },
+    {
+        title: "RBI Recruitment 2021 Notification for Various Non CSG",
+        link: "https://www.google.com/",
+        description:
+            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-"
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "55 mins ago RBI Recruitment 2021 Notification",
+        link: "https://www.google.com/",
+        description:
+            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    },
+    {
+        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
+        link: "https://www.google.com/",
+        description:
+            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
+    }
+];
 function Governmentjobsubcategory(props) {
     const [categoryJobs, setCategoryJobs] = useState([]);
+    const [categoryslug, setSlug] = useState("");
+    const [subcategoryslug, setSubSlug] = useState("");
     useEffect(() => {
         const { category_slug } = props.match.params;
-        if (category_slug) {
+        const { subcategory_slug } = props.match.params;
+        const { subcategory_id } = props.match.params;
+
+        if (category_slug && subcategory_slug && subcategory_id) {
+            setSlug(category_slug);
+            setSubSlug(subcategoryslug);
             axios
                 .get(
-                    `http://localhost:8000/api/government_jobs?category_slug=${category_slug}`
+                    `http://localhost:8000/api/government_jobs?subcategory_id=${subcategory_id}`
                 )
 
                 .then(res => {
-                    setCategoryJobs(res.data.data);
+                    // setCategoryJobs(res.data.data);
+                    console.log(res.data);
                 })
                 .catch(err => {
                     console.log(err);
@@ -37,78 +156,81 @@ function Governmentjobsubcategory(props) {
     }, []);
     return (
         <>
-            <div className="bankjoblast">
-                <div style={{ paddingTop: "20px" }}>
-                    <nav aria-label="breadcrumb">
-                        <ol className="breadcrumb">
-                            <li className="breadcrumb-item ">
-                                <a href="#" className="href-government">
-                                    HOME
-                                </a>
-                            </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                <a href="" className="href-government">
-                                    JOBS
-                                </a>
-                            </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                <a href="" className="href-government">
-                                    BANK
-                                </a>
-                            </li>
-                        </ol>
-                    </nav>{" "}
-                </div>
-                <h4 className="title-bank">Bank Jobs</h4>
+            <div className="government-job-subcategory-content">
+                <BreadCrumb
+                    navData={[
+                        {
+                            title: "Home",
+                            link: "/"
+                        },
+                        {
+                            title: "Jobs",
+                            link: "/govermentjobs"
+                        },
+                        {
+                            title: `${categoryslug}`,
+                            link: `/govermentjobs/${categoryslug}`
+                        },
+                        {
+                            title: `${subcategoryslug}`,
+                            link: `/govermentjobs/${categoryslug}/${subcategoryslug}`,
+                            active: true
+                        }
+                    ]}
+                />
+                {categoryslug && (
+                    <h5
+                        style={{
+                            color: "#4F4F4F",
+                            textTransform: "capitalize"
+                        }}
+                    >
+                        {categoryslug}
+                    </h5>
+                )}
                 <h3 className="title-bank-last">{categoryJobs.title}</h3>
-                <div class="row-bankjoblast">
-                    <div class="column-bankjoblast">
-                        <div class="card-bankjoblast">
+                <div className="row-bankjoblast">
+                    <div className="column-bankjoblast">
+                        <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>
                                 Salary & job positions
                             </p>
                         </div>
                     </div>
-                    <div class="column-bankjoblast">
-                        <div class="card-bankjoblast">
+                    <div className="column-bankjoblast">
+                        <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>
                                 Eligibility <br /> Category
                             </p>
                         </div>
                     </div>
-                    <div class="column-bankjoblast">
-                        <div class="card-bankjoblast">
+                    <div className="column-bankjoblast">
+                        <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>Syllabus</p>
                         </div>
                     </div>
-                    <div class="column-bankjoblast">
-                        <div class="card-bankjoblast">
+                    <div className="column-bankjoblast">
+                        <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>Exam Pattern</p>
                         </div>
                     </div>
-                    <div class="column-bankjoblast">
-                        <div class="card-bankjoblast">
+                    <div className="column-bankjoblast">
+                        <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>Cutoff</p>
                         </div>
                     </div>
-                    <div class="column-bankjoblast">
-                        <div class="card-bankjoblast">
+                    <div className="column-bankjoblast">
+                        <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>Apply Online</p>
                         </div>
                     </div>
-                    <div class="column-bankjoblast">
-                        <div class="card-bankjoblast">
+                    <div className="column-bankjoblast">
+                        <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>Admit Card</p>
                         </div>
                     </div>
-                    <div class="column-bankjoblast">
-                        <div class="card-bankjoblast">
+                    <div className="column-bankjoblast">
+                        <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>
                                 Prev years <br /> que. papers
                             </p>
@@ -119,187 +241,256 @@ function Governmentjobsubcategory(props) {
                 <div className="content-bankjoblast">
                     <img
                         className="government-job-subcategory"
-                        src="https://www.dsij.in/Portals/0/EasyDNNnews/16587/img-what-triggered-the-15-rally-in-bank-stocks-today.jpg"
+                        src="https://i.ibb.co/BfNN8Lc/Group-207.png"
                         alt="bank"
                     />
 
-                    {categoryJobs && categoryJobs.length == 0 && (
-                        <h4>No Sub-Category News</h4>
-                    )}
-                    {categoryJobs &&
-                        categoryJobs.length > 0 &&
-                        categoryJobs.map(categoryJobs => (
-                            <>
-                                <div
-                                    className="government-job-subcategory-content"
-                                    key={categoryJobs.id}
-                                >
-                                    <div>
-                                        <h5 className="government-job-subcategory-information">
-                                            {categoryJobs.description}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>
-                                                Salary and Job Position
-                                            </strong>{" "}
-                                            <br />
-                                            {categoryJobs.job_positions}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>
-                                                Eligibility Criteria
-                                            </strong>{" "}
-                                            <br />
-                                            {categoryJobs.eligibility_criteria}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Syllabus</strong> <br />
-                                            {categoryJobs.syllabus}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Exam Pattern</strong> <br />
-                                            {categoryJobs.exam_pattern}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Cutoff</strong> <br />
-                                            {categoryJobs.cutoff}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Apply Online</strong> <br />
-                                            {categoryJobs.apply_online}
-                                        </h5>
-                                        <h5 className="government-job-subcategory-information">
-                                            <strong>Admit Card</strong> <br />
-                                            {categoryJobs.admit_card}
-                                        </h5>
-                                    </div>
-                                </div>
-                                <hr />
-                            </>
-                        ))}
+                    {/* {categoryJobs && categoryJobs.length == 0 && (
+                        <h4>No Category News</h4>
+                    )} */}
 
-                    {/* <h4 style={{fontSize:"25px"}}><strong>Overview</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div>
-<div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Salary & job positions</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Eligibility Category</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Syllabus</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Exam Pattern</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Cutoff</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Apply Online</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos ipsam nesciunt dolor vitae commodi, laudantium, illo molestias doloribus nemo beatae non atque quisquam dolorum nulla quaerat sapiente et excepturi. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut non libero, ducimus sed vitae voluptate, beatae doloribus fuga consequatur odio accusantium repellat possimus quidem saepe dignissimos, rerum similique debitis assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nesciunt dolores magnam illo quisquam deleniti maxime nihil at dolorum, ipsum molestiae dicta! Dolorum corporis vel voluptate architecto necessitatibus praesentium voluptatem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, similique quaerat. Cum odit commodi quo vel voluptatibus, sapiente voluptas! Architecto, labore illo. Sunt neque, sint delectus saepe maiores culpa voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis pariatur autem, ipsum tenetur quo aliquid doloremque fuga, ut alias debitis laboriosam nisi nihil cupiditate impedit reprehenderit praesentium dolores iusto!</p>
-</div><div className="content-bankjoblast">
-  <h4 style={{fontSize:"25px"}}><strong>Prev years question papers</strong></h4>
-  <br/>
-  <p style={{fontSize:"20px"}}><a href="#">
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/> 
-    hyperlink for Prev years question papers  <br/> 
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    hyperlink for Prev years question papers <br/>
-    </a></p> */}
+                    <>
+                        <div className="government-job-subcategory-content">
+                            <div>
+                                <h5 className="government-job-subcategory-information">
+                                    <h6 style={{ fontWeight: "300" }}>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta vLorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Tincidunt
+                                        massa lacinia enim cras. Eu etiam quis
+                                        amet cras amet. In faucibus massa varius
+                                        et. Arcu sed non eu eu porta vLorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta v
+                                    </h6>
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    Salary and Job Position <br />
+                                    <h6 style={{ fontWeight: "300" }}>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta vLorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Tincidunt
+                                        massa lacinia enim cras. Eu etiam quis
+                                        amet cras amet. In faucibus massa varius
+                                        et. Arcu sed non eu eu porta vLorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta v
+                                    </h6>
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    Eligibility Criteria <br />
+                                    <h6 style={{ fontWeight: "300" }}>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta vLorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Tincidunt
+                                        massa lacinia enim cras. Eu etiam quis
+                                        amet cras amet. In faucibus massa varius
+                                        et. Arcu sed non eu eu porta vLorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta v
+                                    </h6>
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    Syllabus <br />
+                                    <h6 style={{ fontWeight: "300" }}>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta vLorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Tincidunt
+                                        massa lacinia enim cras. Eu etiam quis
+                                        amet cras amet. In faucibus massa varius
+                                        et. Arcu sed non eu eu porta vLorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta v
+                                    </h6>
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    Exam Pattern <br />
+                                    <h6 style={{ fontWeight: "300" }}>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta vLorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Tincidunt
+                                        massa lacinia enim cras. Eu etiam quis
+                                        amet cras amet. In faucibus massa varius
+                                        et. Arcu sed non eu eu porta vLorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta v
+                                    </h6>
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    Cutoff <br />
+                                    <h6 style={{ fontWeight: "300" }}>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta vLorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Tincidunt
+                                        massa lacinia enim cras. Eu etiam quis
+                                        amet cras amet. In faucibus massa varius
+                                        et. Arcu sed non eu eu porta vLorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta v
+                                    </h6>
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    Apply Online <br />
+                                    <h6 style={{ fontWeight: "300" }}>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta vLorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Tincidunt
+                                        massa lacinia enim cras. Eu etiam quis
+                                        amet cras amet. In faucibus massa varius
+                                        et. Arcu sed non eu eu porta vLorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta v
+                                    </h6>
+                                </h5>
+                                <h5 className="government-job-subcategory-information">
+                                    Admit Card <br />
+                                    <h6 style={{ fontWeight: "300" }}>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta vLorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit. Tincidunt
+                                        massa lacinia enim cras. Eu etiam quis
+                                        amet cras amet. In faucibus massa varius
+                                        et. Arcu sed non eu eu porta vLorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt massa lacinia
+                                        enim cras. Eu etiam quis amet cras amet.
+                                        In faucibus massa varius et. Arcu sed
+                                        non eu eu porta vLorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.
+                                        Tincidunt massa lacinia enim cras. Eu
+                                        etiam quis amet cras amet. In faucibus
+                                        massa varius et. Arcu sed non eu eu
+                                        porta v
+                                    </h6>
+                                </h5>
+                            </div>
+                        </div>
+                    </>
                 </div>
-                <div className="container-bankjoblast">
-                    <Row xs="1" sm="2" md="2">
-                        <h2 className="title-notify">
-                            <strong> Related Jobs for you </strong>
-                        </h2>
-                        <Col>
-                            <h5>
-                                <strong>
-                                    RBI Recruitment 2021 Notification for
-                                    Various Non CSG
-                                </strong>
-                            </h5>
-                            <h5>
-                                Posts,Online Application begins from 23 Feb
-                                Onwards, Salary upto 77208/-{" "}
-                            </h5>
-                        </Col>
-                        <Col>
-                            <h5>
-                                <strong>
-                                    RBI Recruitment 2021 Notification for
-                                    Various Non CSG
-                                </strong>
-                            </h5>
-                            <h5>
-                                Posts,Online Application begins from 23 Feb
-                                Onwards, Salary upto 77208/-{" "}
-                            </h5>
-                        </Col>
-                        <Col>
-                            <h5>
-                                <strong>
-                                    55 min agoRBI Recruitment 2021 Notification
-                                    for{" "}
-                                </strong>
-                                various Non CSG Post Released @rbi.org.in. Check
-                                RBI Recruitment 2021 Application Process, RBI
-                                2021 Eligibility, RBI 2021 Salary, RBI 2021
-                                Criteria and other details here
-                            </h5>
-                        </Col>
-                        <Col>
-                            <h5>
-                                <strong>
-                                    55 min agoRBI Recruitment 2021 Notification
-                                    for{" "}
-                                </strong>
-                                various Non CSG Post Released @rbi.org.in. Check
-                                RBI Recruitment 2021 Application Process, RBI
-                                2021 Eligibility, RBI 2021 Salary, RBI 2021
-                                Criteria and other details here
-                            </h5>
-                        </Col>
-                        <Col>
-                            <h5>
-                                <strong>
-                                    RBI Grade B 2021: Notification Out for 322
-                                    Vacancies,
-                                </strong>
-                                <br />
-                                Exam Date, Admit Card, Vacancy, Exam Pattern,
-                                Syllabus, Cutoff, Eligibility
-                            </h5>
-                        </Col>
-                        <Col>
-                            <h5>
-                                <strong>
-                                    RBI Grade B 2021: Notification Out for 322
-                                    Vacancies,
-                                </strong>
-                                <br />
-                                Exam Date, Admit Card, Vacancy, Exam Pattern,
-                                Syllabus, Cutoff, Eligibility
-                            </h5>
-                        </Col>
-                    </Row>
-                    <div className="view">View all</div>
-                </div>
+                <LinkCard
+                    title="Related Notifications and jobs for you"
+                    data={dummyLinkData}
+                />
             </div>
         </>
     );

@@ -5,7 +5,7 @@ import Homepage from "../home/Homepage";
 import Govermentjob from "../jobs/Govermentjob";
 import Governmentjobcategory from "../jobs/Governmentjobcategory";
 import Governmentjobsubcategory from "../jobs/Governmentjobsubcategory";
-import Govermentjobcategory1 from "../jobs/Govermentjobcategory1";
+
 import Questionpaper from "../Question papers/Questionpaper";
 import Questionpaper2 from "../Question papers/Questionpaper2";
 import News from "../news/newspages/News";
@@ -14,7 +14,6 @@ import NewsSubCategory from "../news/newspages/NewsSubCategory";
 import NewsDetails from "../news/newspages/NewsDetails";
 import { Route, Switch } from "react-router";
 import Examcalendar from "../examcalendar/Examcalendar";
-import Governmentjobsubcategory1 from "../jobs/Govermentjobcategory1";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
 import Newsdetails from "../news/newspages/NewsDetails";
@@ -38,15 +37,11 @@ const App = props => {
                         exact
                         component={Governmentjobcategory}
                     />
+
                     <Route
-                        path="/govermentjobs/view/:category_slug"
+                        path="/govermentjobs/:category_slug/:subcategory_slug/:subcategory_id"
                         exact
                         component={Governmentjobsubcategory}
-                    />
-                    <Route
-                        path="/govermentjobs/details/view/:category_slug"
-                        exact
-                        component={Governmentjobsubcategory1}
                     />
 
                     <Route
