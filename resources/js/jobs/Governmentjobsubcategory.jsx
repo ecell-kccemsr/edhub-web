@@ -20,16 +20,15 @@ import {
 function Governmentjobsubcategory(props) {
     const [categoryJobs, setCategoryJobs] = useState([]);
     useEffect(() => {
-        const { subcategory_id } = props.match.params;
-        if (subcategory_id) {
+        const { category_slug } = props.match.params;
+        if (category_slug) {
             axios
                 .get(
-                    `http://localhost:8000/api/government_jobs?subcategory_id=${subcategory_id}`
+                    `http://localhost:8000/api/government_jobs?category_slug=${category_slug}`
                 )
 
                 .then(res => {
                     setCategoryJobs(res.data.data);
-                    console.log(res);
                 })
                 .catch(err => {
                     console.log(err);
@@ -40,29 +39,33 @@ function Governmentjobsubcategory(props) {
         <>
             <div className="bankjoblast">
                 <div style={{ paddingTop: "20px" }}>
-                <nav aria-label="breadcrumb">
+                    <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                             <li className="breadcrumb-item ">
-                            <a href="#" className="href-government">HOME</a>
-                                                        </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                <a href="" className="href-government">JOBS</a>
+                                <a href="#" className="href-government">
+                                    HOME
+                                </a>
                             </li>
                             <li
                                 className="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                <a href="" className="href-government">BANK</a>
+                                <a href="" className="href-government">
+                                    JOBS
+                                </a>
+                            </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">
+                                    BANK
+                                </a>
                             </li>
                         </ol>
                     </nav>{" "}
                 </div>
-                <h4 className="title-bank">
-                         Bank Jobs
-                    </h4>
+                <h4 className="title-bank">Bank Jobs</h4>
                 <h3 className="title-bank-last">{categoryJobs.title}</h3>
                 <div class="row-bankjoblast">
                     <div class="column-bankjoblast">

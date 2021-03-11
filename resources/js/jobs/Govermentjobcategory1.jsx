@@ -20,14 +20,16 @@ import {
 function Governmentjobsubcategory1(props) {
     const [categoryJobs, setCategoryJobs] = useState([]);
     useEffect(() => {
-        const { category_id } = props.match.params;
-        if (category_id) {
+        const { category_slug } = props.match.params;
+
+        if (category_slug) {
             axios
-                .get(`http://localhost:8000/api/government_jobs/${category_id}`)
+                .get(
+                    `http://localhost:8000/api/government_jobs/${category_slug}`
+                )
 
                 .then(res => {
                     setCategoryJobs(res.data.data);
-                    console.log(res);
                 })
                 .catch(err => {
                     console.log(err);

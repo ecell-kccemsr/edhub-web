@@ -15,7 +15,6 @@ function NewsSubCategory(props) {
     const [categoryNews, setCategoryNews] = useState([]);
     useEffect(() => {
         const { category_slug } = props.match.params;
-        console.log(props);
         if (category_slug) {
             axios
                 .get(
@@ -23,7 +22,6 @@ function NewsSubCategory(props) {
                 )
 
                 .then(res => {
-                    console.log(res);
                     setCategoryNews(res.data.data);
                 })
                 .catch(err => {

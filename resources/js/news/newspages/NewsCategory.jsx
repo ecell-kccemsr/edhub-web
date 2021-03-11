@@ -11,8 +11,6 @@ import {
     FormGroup
 } from "reactstrap";
 function NewsCategory(props) {
-    console.log(props);
-
     const [subCategory, setSubCategory] = useState([]);
     const [categoryNews, setCategoryNews] = useState([]);
     useEffect(() => {

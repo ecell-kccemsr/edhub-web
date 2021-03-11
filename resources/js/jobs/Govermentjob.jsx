@@ -61,13 +61,14 @@ function Govermentjob() {
                                 <Col xs="6" md="4" lg="2">
                                     <div className="category-button">
                                         <img
-                                            src="https://i.ibb.co/7rg0Vsw/Group-206.png"
+                                            src={category.image}
                                             alt="category"
                                             className="category-button-img mb-3"
                                         />
+
                                         <h6>
                                             <Link
-                                                to={`/govermentjobs/view/${category?.id}`}
+                                                to={`/govermentjobs/${category.slug}`}
                                                 key={category?.id}
                                                 className="category-btn-link"
                                             >

@@ -23,14 +23,12 @@ function Newsdetails(props) {
     const [categorynews, setcategorynews] = useState([]);
     const [subcategory, setsubcategory] = useState([]);
     useEffect(() => {
-        console.log(props);
         const { category_slug } = props.match.params;
         axios
             .get(`http://localhost:8000/api/news/${category_slug}`)
 
             .then(res => {
                 setcategorynews(res.data.data);
-                console.log(res);
             })
             .catch(err => {
                 console.log(err);

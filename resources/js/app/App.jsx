@@ -34,17 +34,17 @@ const App = props => {
                         component={Govermentjob}
                     />
                     <Route
-                        path="/govermentjobs/view/:category_id"
+                        path="/govermentjobs/:category_slug"
                         exact
                         component={Governmentjobcategory}
                     />
                     <Route
-                        path="/govermentjobs/view/sub/category/:subcategory_id"
+                        path="/govermentjobs/view/:category_slug"
                         exact
                         component={Governmentjobsubcategory}
                     />
                     <Route
-                        path="/govermentjobs/view/category/:category_id"
+                        path="/govermentjobs/details/view/:category_slug"
                         exact
                         component={Governmentjobsubcategory1}
                     />

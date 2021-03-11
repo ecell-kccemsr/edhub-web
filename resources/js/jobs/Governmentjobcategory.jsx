@@ -17,13 +17,13 @@ import {
     FormText
 } from "reactstrap";
 function Governmentjobcategory(props) {
-    const { category_id } = props.match.params;
+    const { category_slug } = props.match.params;
     const [subCategory, setSubCategory] = useState([]);
     const [categoryJobs, setCategoryJobs] = useState([]);
     useEffect(() => {
         axios
             .get(
-                `http://localhost:8000/api/government_jobs/sub_categories?category_id=${category_id}`
+                `http://localhost:8000/api/government_jobs/sub_categories?category_slug=${category_slug}`
             )
             .then(res => {
                 setSubCategory(res.data.data);
@@ -35,7 +35,7 @@ function Governmentjobcategory(props) {
 
         axios
             .get(
-                `http://localhost:8000/api/government_jobs?category_id=${category_id}`
+                `http://localhost:8000/api/government_jobs?category_slug=${category_slug}`
             )
 
             .then(res => {
@@ -52,30 +52,34 @@ function Governmentjobcategory(props) {
         <>
             <div className="bank">
                 <div className="title-bank">
-                <nav aria-label="breadcrumb">
+                    <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                             <li className="breadcrumb-item ">
-                            <a href="#" className="href-government">HOME</a>
-                                                        </li>
-                            <li
-                                className="breadcrumb-item active"
-                                aria-current="page"
-                            >
-                                <a href="" className="href-government">JOBS</a>
+                                <a href="#" className="href-government">
+                                    HOME
+                                </a>
                             </li>
                             <li
                                 className="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                <a href="" className="href-government">BANK</a>
+                                <a href="" className="href-government">
+                                    JOBS
+                                </a>
+                            </li>
+                            <li
+                                className="breadcrumb-item active"
+                                aria-current="page"
+                            >
+                                <a href="" className="href-government">
+                                    BANK
+                                </a>
                             </li>
                         </ol>
                     </nav>{" "}
                 </div>
                 <div className="btn-drop">
-                    <h4 className="title-bank">
-                         Bank Jobs
-                    </h4>
+                    <h4 className="title-bank">Bank Jobs</h4>
 
                     <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
                         <DropdownToggle caret className="btn-drop-toggle">
@@ -121,13 +125,18 @@ function Governmentjobcategory(props) {
                                         <h4>No Subcategories</h4>
                                     )}
                                     {subCategory.map(subcategory => (
-                                        <Link
-                                            to={`/govermentjobs/view/sub/category/${subcategory?.id}`}
-                                            key={subcategory.id}
-                                            className="category-btn-government mt-2"
-                                        >
-                                          <h4 className="government-job-subcategory-name">{subcategory.name}</h4>  
-                                        </Link>
+                                        <div>
+                                            <Link
+                                                to={`/govermentjobs/view/${subcategory.slug}`}
+                                                // key={subcategory.id}
+                                                className="category-btn-government mt-2"
+                                            >
+                                                <h4 className="government-job-subcategory-name">
+                                                    {subcategory.name}
+                                                </h4>
+                                            </Link>
+                                            <hr />
+                                        </div>
                                     ))}
                                 </li>
                                 {/* <li>
@@ -179,10 +188,10 @@ function Governmentjobcategory(props) {
                                                 <div className="job-news-details">
                                                     <Link
                                                         className=""
-                                                        to={`/govermentjobs/view/category/${categoryJobs?.id}`}
+                                                        to={`/govermentjobs/details/view/${categoryJobs.slug}`}
                                                     >
                                                         <h5 className="government-job-category-title">
-                                                          {categoryJobs.title}
+                                                            {categoryJobs.title}
                                                         </h5>
                                                     </Link>
                                                     <h5 className="government-job-category-description">
