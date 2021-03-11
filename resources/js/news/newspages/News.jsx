@@ -71,7 +71,7 @@ function News() {
                                 <div className="d-flex flex-wrap justify-content-center">
                                     {categories.map(category => (
                                         <Link
-                                            to={`/news/${category.slug}`}
+                                            to={`/news/view/${category.id}`}
                                             key={category.id}
                                             className="category-btn text-center"
                                         >
@@ -152,7 +152,7 @@ function News() {
                                         placeholder="Phone Number"
                                     />
                                 </FormGroup>
-                                <Button className="btn-submit-bank">
+                                <Button className="registration-btn">
                                     Submit
                                 </Button>
                             </Form>

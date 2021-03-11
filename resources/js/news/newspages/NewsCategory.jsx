@@ -14,10 +14,10 @@ function NewsCategory(props) {
     const [subCategory, setSubCategory] = useState([]);
     const [categoryNews, setCategoryNews] = useState([]);
     useEffect(() => {
-        const { category_slug } = props.match.params;
+        const { category_id } = props.match.params;
         axios
             .get(
-                `http://localhost:8000/api/news/sub_categories?category_slug=${category_slug}`
+                `http://localhost:8000/api/news/sub_categories?category_id=${category_id}`
             )
             .then(res => {
                 setSubCategory(res.data.data);
@@ -28,9 +28,7 @@ function NewsCategory(props) {
             });
 
         axios
-            .get(
-                `http://localhost:8000/api/news?category_slug=${category_slug}`
-            )
+            .get(`http://localhost:8000/api/news?category_id=${category_id}`)
 
             .then(res => {
                 console.log(res);
@@ -84,7 +82,7 @@ function NewsCategory(props) {
                                     )}
                                     {subCategory.map(subcategory => (
                                         <Link
-                                            to={`/news/view/${subcategory.slug}`}
+                                            to={`/news/view/subcategory/${subcategory?.id}`}
                                             key={subcategory.id}
                                             className="category-btn text-center"
                                         >
@@ -175,7 +173,7 @@ function NewsCategory(props) {
                                         placeholder="Phone Number"
                                     />
                                 </FormGroup>
-                                <Button className="btn-submit-bank">
+                                <Button className="registration-btn">
                                     Submit
                                 </Button>
                             </Form>

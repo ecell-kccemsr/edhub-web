@@ -168,7 +168,7 @@ function Newsdetails(props) {
                                     placeholder="Phone Number"
                                 />
                             </FormGroup>
-                            <Button className="btn-submit-bank">Submit</Button>
+                            <Button className="registration-btn">Submit</Button>
                         </Form>
                     </div>
 

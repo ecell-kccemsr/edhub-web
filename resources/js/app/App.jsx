@@ -61,12 +61,12 @@ const App = props => {
                     />
                     <Route path="/news" exact component={News} />
                     <Route
-                        path="/news/:category_slug"
+                        path="/news/view/:category_id"
                         exact={true}
                         component={NewsCategory}
                     />
                     <Route
-                        path="/news/view/:category_slug"
+                        path="/news/view/subcategory/:subcategory_id"
                         exact={true}
                         exact
                         component={NewsSubCategory}
