@@ -141,18 +141,28 @@
 .newsdeatils-hero {
     padding: 20px;
     padding-bottom: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
 }
 .img-newsdetails {
     width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px -1px #8888;
+    margin: 10px;
 }
 .newsdetails-detail {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #8888;
     padding-bottom: 15px;
+    margin-top: 5px;
 }
 .newsdetails-glance {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
+    .newdetails-glance-image {
+        width: 70px;
+        height: 100px;
+    }
 }
 .form-newsdetails {
     border: 1px solid #000;

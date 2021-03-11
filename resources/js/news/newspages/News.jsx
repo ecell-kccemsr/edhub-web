@@ -71,7 +71,7 @@ function News() {
                                 <div className="d-flex flex-wrap justify-content-center">
                                     {categories.map(category => (
                                         <Link
-                                            to={`/newscategory/view/${category?.id}`}
+                                            to={`/news/${category.slug}`}
                                             key={category.id}
                                             className="category-btn text-center"
                                         >
@@ -105,7 +105,7 @@ function News() {
                                                     </p>
                                                 </div>
                                                 <img
-                                                    src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-10635,resizemode-1,msid-75494904/tech/hardware/mobile-phone-retailers-set-to-reopen-stores-where-allowed.jpg"
+                                                    src={news.image}
                                                     alt=""
                                                     className="category-information-image"
                                                 />

@@ -14,11 +14,12 @@ import {
 function NewsSubCategory(props) {
     const [categoryNews, setCategoryNews] = useState([]);
     useEffect(() => {
-        const { subcategory_id } = props.match.params;
-        if (subcategory_id) {
+        const { category_slug } = props.match.params;
+        console.log(props);
+        if (category_slug) {
             axios
                 .get(
-                    `http://localhost:8000/api/news/?subcategory_id=${subcategory_id}`
+                    `http://localhost:8000/api/news/?category_slug=${category_slug}`
                 )
 
                 .then(res => {
@@ -87,9 +88,16 @@ function NewsSubCategory(props) {
                                                     key={categorynews.id}
                                                 >
                                                     <div>
-                                                        <h5 className="news-title">
-                                                            {categorynews.title}
-                                                        </h5>
+                                                        <Link
+                                                            className=""
+                                                            to={`/news/details/view/${categorynews.slug}`}
+                                                        >
+                                                            <h5 className="news-title">
+                                                                {
+                                                                    categorynews.title
+                                                                }
+                                                            </h5>
+                                                        </Link>
                                                         <p className="news-description">
                                                             {
                                                                 categorynews.description
@@ -97,7 +105,7 @@ function NewsSubCategory(props) {
                                                         </p>
                                                     </div>
                                                     <img
-                                                        src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
+                                                        src={categorynews.image}
                                                         alt=""
                                                         className="category-information-image"
                                                     />
@@ -173,11 +181,6 @@ function NewsSubCategory(props) {
                                                     )}
                                                 </p>
                                             </div>
-                                            <img
-                                                src="https://www.html5rocks.com/static/images/tutorials/easy-hidpi/chrome2x.png"
-                                                alt=""
-                                                className="category-information-image"
-                                            />
                                         </div>
                                     </div>
                                 ))}

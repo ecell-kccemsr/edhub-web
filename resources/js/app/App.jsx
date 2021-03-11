@@ -11,11 +11,13 @@ import Questionpaper2 from "../Question papers/Questionpaper2";
 import News from "../news/newspages/News";
 import NewsCategory from "../news/newspages/NewsCategory";
 import NewsSubCategory from "../news/newspages/NewsSubCategory";
+import NewsDetails from "../news/newspages/NewsDetails";
 import { Route, Switch } from "react-router";
 import Examcalendar from "../examcalendar/Examcalendar";
 import Governmentjobsubcategory1 from "../jobs/Govermentjobcategory1";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
+import Newsdetails from "../news/newspages/NewsDetails";
 
 const App = props => {
     return (
@@ -46,7 +48,7 @@ const App = props => {
                         exact
                         component={Governmentjobsubcategory1}
                     />
-                    <Route path="/news" exact component={News} />
+
                     <Route
                         path="/questionpaper"
                         exact
@@ -57,17 +59,23 @@ const App = props => {
                         exact
                         component={Questionpaper2}
                     />
-
+                    <Route path="/news" exact component={News} />
                     <Route
-                        path="/newscategory/view/:category_id"
+                        path="/news/:category_slug"
                         exact={true}
                         component={NewsCategory}
                     />
                     <Route
-                        path="/newssubcategory/view/:subcategory_id"
+                        path="/news/view/:category_slug"
                         exact={true}
                         exact
                         component={NewsSubCategory}
+                    />
+                    <Route
+                        path="/news/details/view/:category_slug"
+                        exact={true}
+                        exact
+                        component={Newsdetails}
                     />
                     <Route
                         path="/examcalendar"

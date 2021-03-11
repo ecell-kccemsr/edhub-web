@@ -12,13 +12,14 @@ import {
 } from "reactstrap";
 function NewsCategory(props) {
     console.log(props);
-    const { category_id } = props.match.params;
+
     const [subCategory, setSubCategory] = useState([]);
     const [categoryNews, setCategoryNews] = useState([]);
     useEffect(() => {
+        const { category_slug } = props.match.params;
         axios
             .get(
-                `http://localhost:8000/api/news/sub_categories?category_id=${category_id}`
+                `http://localhost:8000/api/news/sub_categories?category_slug=${category_slug}`
             )
             .then(res => {
                 setSubCategory(res.data.data);
@@ -29,9 +30,12 @@ function NewsCategory(props) {
             });
 
         axios
-            .get(`http://localhost:8000/api/news?category_id=${category_id}`)
+            .get(
+                `http://localhost:8000/api/news?category_slug=${category_slug}`
+            )
 
             .then(res => {
+                console.log(res);
                 setCategoryNews(res.data.data);
             })
             .catch(err => {
@@ -82,7 +86,7 @@ function NewsCategory(props) {
                                     )}
                                     {subCategory.map(subcategory => (
                                         <Link
-                                            to={`/newssubcategory/view/${subcategory?.id}`}
+                                            to={`/news/view/${subcategory.slug}`}
                                             key={subcategory.id}
                                             className="category-btn text-center"
                                         >
@@ -124,7 +128,9 @@ function NewsCategory(props) {
                                                             </p>
                                                         </div>
                                                         <img
-                                                            src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-10635,resizemode-1,msid-75494904/tech/hardware/mobile-phone-retailers-set-to-reopen-stores-where-allowed.jpg"
+                                                            src={
+                                                                categorynews.image
+                                                            }
                                                             alt=""
                                                             className="category-information-image"
                                                         />
