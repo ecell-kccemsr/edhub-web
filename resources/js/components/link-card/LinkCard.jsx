@@ -18,6 +18,8 @@ const LinkCard = props => {
     const viewLess = () => {
         setVisible(initialPosts);
     };
+
+    console.log(props);
     return (
         <section className="link-card-section">
             <div
@@ -29,27 +31,33 @@ const LinkCard = props => {
                 <h4 className="link-card-section-header">{props?.title}</h4>
                 <Row>
                     {data &&
-                        data.slice(0, visible).map((d, key) => (
-                            <Col
-                                xs="12"
-                                md="6"
-                                className="link-card-col"
-                                key={key}
-                            >
-                                <h5 className="link-card-colheader">
-                                    <a
-                                        classsName="link-card-anchor"
-                                        style={{ color: "#000" }}
-                                        href={d?.link}
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                    >
-                                        {d?.title}
-                                    </a>
-                                </h5>
-                                <p>{d?.description}</p>
-                            </Col>
-                        ))}
+                        data.length > 0 &&
+                        data.slice(0, visible).map((d, key) => {
+                            console.log(d);
+                            return (
+                                <Col
+                                    xs="12"
+                                    md="6"
+                                    className="link-card-col"
+                                    key={key}
+                                >
+                                    <h5 className="link-card-colheader">
+                                        <a
+                                            classsName="link-card-anchor"
+                                            style={{ color: "#000" }}
+                                            href={d?.link || "#"}
+                                            target="_blank"
+                                            rel="noreferrer noopener"
+                                        >
+                                            {d?.title}
+                                        </a>
+                                    </h5>
+                                    <p>
+                                        {d?.description.slice(0, 180) + "..."}
+                                    </p>
+                                </Col>
+                            );
+                        })}
                 </Row>
                 {visible < data.length && (
                     <>

@@ -118,37 +118,6 @@
     }
 }
 
-.link-card-section {
-    padding: 50px 150px;
-
-    .link-card-container {
-        padding: 20px;
-        box-shadow: 0px 5px 4px 0px #bebcbc;
-
-        .link-card-section-header {
-            padding: 10px 0 10px 0;
-            color: #4f4f4f;
-        }
-
-        .link-card-col {
-            .link-card-colheader {
-                font-size: 18px;
-
-                .link-card-anchor {
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .link-card-section-btn {
-            background-color: transparent;
-            color: rgb(230, 57, 57);
-            border: none;
-            outline: none;
-        }
-    }
-}
-
 .question-paper-section {
     padding: 50px 150px;
 
@@ -177,17 +146,6 @@
         }
     }
 
-    .link-card-section {
-        padding: 20px;
-
-        .link-card-container {
-            .link-card-col {
-                margin: 10px 0px;
-                padding-bottom: 13px;
-            }
-        }
-    }
-
     .question-paper-section {
         padding: 20px;
         .question-paper-container {
@@ -212,10 +170,6 @@
             }
         }
     }
-    .link-card-section {
-        padding: 0px 50px 50px 50px;
-    }
-
     .question-paper-section {
         padding: 50px;
     }
