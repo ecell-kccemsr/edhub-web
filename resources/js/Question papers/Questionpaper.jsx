@@ -117,9 +117,9 @@ const Questionpaper = () => {
                 </h3>
                 <Row>
                     <Col
-                        xs="12"
-                        md="6"
-                        lg="2"
+                        xs={{ size: 12, order: 1 }}
+                        md={{ size: 6, order: 2 }}
+                        lg={{ size: 2, order: 1 }}
                         className="questionpaper-filter-section"
                     >
                         <h5 className="questionpaper-filter-header">
@@ -166,7 +166,11 @@ const Questionpaper = () => {
                             </li>
                         </List>
                     </Col>
-                    <Col xs="12" md="6" lg="7">
+                    <Col
+                        xs={{ size: 12, order: 2 }}
+                        md={{ size: 12, order: 1 }}
+                        lg={{ size: 7, order: 2 }}
+                    >
                         <div className="questionpaper-main-section">
                             <h5 className="questionpaper-main-header">
                                 Question Papers
@@ -207,7 +211,11 @@ const Questionpaper = () => {
                                 )}
                         </div>
                     </Col>
-                    <Col sm="12" md="12" lg="3">
+                    <Col
+                        xs={{ size: 12, order: 3 }}
+                        md={{ size: 6, order: 3 }}
+                        lg={{ size: 3, order: 3 }}
+                    >
                         <div className="questionpaper-register-form-section">
                             <h5>REGISTER FOR FREE UPDATES</h5>
                             <form onSubmit={handleSubmit}>
