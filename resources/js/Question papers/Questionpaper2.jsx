@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
     ButtonDropdown,
@@ -16,95 +17,20 @@ import {
     FormText
 } from "reactstrap";
 
-const questionpaperTopicDummyData = [
-    {
-        title: "Goverment Exams",
-        link: "#"
-    },
-    {
-        title: "MBA Exams",
-        link: "#"
-    },
-    {
-        title: "Bank Exams",
-        link: "#"
-    },
-    {
-        title: "10th Exams",
-        link: "#"
-    },
-    {
-        title: "Medical Exams",
-        link: "#"
-    },
-    {
-        title: "12th Exams",
-        link: "#"
-    },
-    {
-        title: "Defence Exams",
-        link: "#"
-    },
-    {
-        title: "Arts Exams",
-        link: "#"
-    }
-];
+function Questionpaper2(props) {
+    const [quespaper, setQuespaper] = useState([]);
+    const { ques_slug } = props.match.params;
+    useEffect(() => {
+        axios
+            .get(`http://localhost:8000/api/questionpapers/${ques_slug}`)
+            .then(res => {
+                setQuespaper(res.data.data);
+            })
 
-const questionPaperMainSectionDummyData = [
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here.",
-        link: "#"
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility",
-        link: "#"
-    },
-    {
-        title: "9 hrs agoRBI Grade B 2021 Notification released",
-        description:
-            "@rbi.co.in for recruitment of 322 vacancies of Grade B Officers - GEN/DSIM/DEPR. RBI Grade B Phase 1 Exam will be held on 6th March 2021. Check here RBI Grade B Application Process & Dates, Exam Date, Admit",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here.",
-        link: "#"
-    }
-];
-
-const questionpaperTrendingDummyData = [
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb Onwards, Salary upto 77208/-",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection",
-        link: "#"
-    },
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb Onwards, Salary upto 77208/-",
-        link: "#"
-    }
-];
-const Questionpaper = () => {
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
     const handleSubmit = e => {
         e.preventDefault();
         console.log("SUBMITTED");
@@ -174,22 +100,20 @@ const Questionpaper = () => {
                                 Question Papers
                             </h5>
 
-                            {questionPaperMainSectionDummyData &&
-                                questionPaperMainSectionDummyData.map(
-                                    (q, key) => (
-                                        <div className="questionpaper-news-details">
-                                            <h5>
-                                                <Link to={q?.link}>
-                                                    {q?.title}{" "}
-                                                </Link>
-                                            </h5>
-                                            <h6>
-                                                {q?.description.slice(0, 200) +
-                                                    "..."}
-                                            </h6>
-                                        </div>
-                                    )
-                                )}
+                            <div
+                                className="questionpaper-news-details"
+                                style={{ color: "blue" }}
+                            >
+                                <h5>
+                                    <Link
+                                        to={quespaper?.link}
+                                        style={{ color: "blue" }}
+                                    >
+                                        {quespaper?.title}
+                                        <h6>{quespaper?.description}</h6>
+                                    </Link>
+                                </h5>
+                            </div>
                         </div>
                     </Col>
 
@@ -237,18 +161,15 @@ const Questionpaper = () => {
                         </div>
                         <div className="questionpaper-trending">
                             <h4>Trending</h4>
-                            {questionpaperTrendingDummyData &&
-                                questionpaperTrendingDummyData.map((q, key) => (
-                                    <div className="questionpaper-news-trending">
-                                        <h5>
-                                            <Link to={q?.link}>{q?.title}</Link>
-                                        </h5>
-                                        <h6>
-                                            {q?.description.slice(0, 150) +
-                                                "..."}
-                                        </h6>
-                                    </div>
-                                ))}
+
+                            <div className="questionpaper-news-trending">
+                                <strong className="news-title">
+                                    {quespaper?.title}
+                                </strong>
+                                <p className="news-description">
+                                    {quespaper?.description}
+                                </p>
+                            </div>
 
                             <div className="view">View all</div>
                         </div>
@@ -257,6 +178,6 @@ const Questionpaper = () => {
             </div>
         </>
     );
-};
+}
 
-export default Questionpaper;
+export default Questionpaper2;

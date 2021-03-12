@@ -162,7 +162,7 @@ function News() {
                             <h4 className="trending-section">Trending</h4>
                             {news.map(news => (
                                 <div>
-                                    <div className="d-flex" key={news.id}>
+                                    <div key={news.id}>
                                         <div>
                                             <strong className="news-title">
                                                 {news.title}
