@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
     Container,
     Row,
@@ -467,19 +468,28 @@ let LookingFor = () => {
                 <Row className=" justify-content-center">
                     <Col sm="12" md="6" lg="3" className="text-center">
                         <img className="homepage-job-img" src={newspaper} />
-                        <h5>News</h5>
+                        <Link to={"/news"}>
+                            <h5 className="text-dark">News</h5>
+                        </Link>
                     </Col>
                     <Col sm="12" md="6" lg="3" className="text-center">
                         <img className="homepage-job-img" src={suitcase} />
-                        <h5>Jobs</h5>
+                        <Link to={"/govermentjobs"}>
+                            <h5 className="text-dark">Jobs</h5>
+                        </Link>
                     </Col>
                     <Col sm="12" md="6" lg="3" className="text-center">
                         <img className="homepage-job-img" src={question} />
-                        <h5>Q. papers</h5>
+                        <Link to={"/questionpaper"}>
+                            <h5 className="text-dark">Q. papers</h5>
+                        </Link>
+                        <h5></h5>
                     </Col>
                     <Col sm="12" md="6" lg="3" className="text-center">
                         <img className="homepage-job-img" src={exam} />
-                        <h5>Exam</h5>
+                        <Link to={"/examcalendar"}>
+                            <h5 className="text-dark">Exams</h5>
+                        </Link>
                     </Col>
                 </Row>
             </Col>

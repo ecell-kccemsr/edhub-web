@@ -194,47 +194,64 @@ function Governmentjobsubcategory(props) {
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>
-                                Salary & job positions
+                                <a href="#two" style={{ color: "white" }}>
+                                    Salary & job positions
+                                </a>
                             </p>
                         </div>
                     </div>
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
                             <p style={{ fontSize: "18px" }}>
-                                Eligibility <br /> Category
+                                <a href="#three" style={{ color: "white" }}>
+                                    Eligibility <br /> Category
+                                </a>
                             </p>
                         </div>
                     </div>
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
-                            <p style={{ fontSize: "18px" }}>Syllabus</p>
+                            <a href="#four" style={{ color: "white" }}>
+                                <p style={{ fontSize: "18px" }}>Syllabus</p>
+                            </a>
                         </div>
                     </div>
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
-                            <p style={{ fontSize: "18px" }}>Exam Pattern</p>
+                            <a href="#five" style={{ color: "white" }}>
+                                <p style={{ fontSize: "18px" }}>Exam Pattern</p>
+                            </a>
                         </div>
                     </div>
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
-                            <p style={{ fontSize: "18px" }}>Cutoff</p>
+                            <a href="#six" style={{ color: "white" }}>
+                                {" "}
+                                <p style={{ fontSize: "18px" }}>Cutoff</p>
+                            </a>
                         </div>
                     </div>
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
-                            <p style={{ fontSize: "18px" }}>Apply Online</p>
+                            <a href="#seven" style={{ color: "white" }}>
+                                <p style={{ fontSize: "18px" }}>Apply Online</p>
+                            </a>
                         </div>
                     </div>
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
-                            <p style={{ fontSize: "18px" }}>Admit Card</p>
+                            <a href="#eight" style={{ color: "white" }}>
+                                <p style={{ fontSize: "18px" }}>Admit Card</p>
+                            </a>
                         </div>
                     </div>
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
-                            <p style={{ fontSize: "18px" }}>
-                                Prev years <br /> que. papers
-                            </p>
+                            <a href="#nine" style={{ color: "white" }}>
+                                <p style={{ fontSize: "18px" }}>
+                                    Prev years <br /> que. papers
+                                </p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -255,46 +272,67 @@ function Governmentjobsubcategory(props) {
                             <div>
                                 <h5 className="government-job-subcategory-information">
                                     <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.descriptionc}
+                                        {categoryJobs.description}
                                     </h6>
                                 </h5>
-                                <h5 className="government-job-subcategory-information">
+                                <h5
+                                    className="government-job-subcategory-information"
+                                    id="two"
+                                >
                                     Salary and Job Position <br />
                                     <h6 style={{ fontWeight: "300" }}>
                                         {categoryJobs.job_positions}
                                     </h6>
                                 </h5>
-                                <h5 className="government-job-subcategory-information">
+                                <h5
+                                    className="government-job-subcategory-information"
+                                    id="three"
+                                >
                                     Eligibility Criteria <br />
                                     <h6 style={{ fontWeight: "300" }}>
                                         {categoryJobs.eligibility_criteria}
                                     </h6>
                                 </h5>
-                                <h5 className="government-job-subcategory-information">
+                                <h5
+                                    className="government-job-subcategory-information"
+                                    id="four"
+                                >
                                     Syllabus <br />
                                     <h6 style={{ fontWeight: "300" }}>
                                         {categoryJobs.syllabus}
                                     </h6>
                                 </h5>
-                                <h5 className="government-job-subcategory-information">
+                                <h5
+                                    className="government-job-subcategory-information"
+                                    id="five"
+                                >
                                     Exam Pattern <br />
                                     <h6 style={{ fontWeight: "300" }}>
                                         {categoryJobs.exam_pattern}
                                     </h6>
                                 </h5>
-                                <h5 className="government-job-subcategory-information">
+                                <h5
+                                    className="government-job-subcategory-information"
+                                    id="six"
+                                >
                                     Cutoff <br />
                                     <h6 style={{ fontWeight: "300" }}>
                                         {categoryJobs.cutoff}
                                     </h6>
                                 </h5>
-                                <h5 className="government-job-subcategory-information">
+                                <h5
+                                    className="government-job-subcategory-information"
+                                    id="seven"
+                                >
                                     Apply Online <br />
                                     <h6 style={{ fontWeight: "300" }}>
                                         {categoryJobs.apply_online}
                                     </h6>
                                 </h5>
-                                <h5 className="government-job-subcategory-information">
+                                <h5
+                                    className="government-job-subcategory-information"
+                                    id="eight"
+                                >
                                     Admit Card <br />
                                     <h6 style={{ fontWeight: "300" }}>
                                         {categoryJobs.admit_card}
