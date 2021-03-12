@@ -146,8 +146,8 @@ function Governmentjobsubcategory(props) {
                 )
 
                 .then(res => {
-                    // setCategoryJobs(res.data.data);
-                    console.log(res.data);
+                    setCategoryJobs(res.data.data[0]);
+                    console.log(res);
                 })
                 .catch(err => {
                     console.log(err);
@@ -185,10 +185,11 @@ function Governmentjobsubcategory(props) {
                             textTransform: "capitalize"
                         }}
                     >
-                        {categoryslug}
+                        {categoryJobs.title}
+                        {/* {categoryslug} */}
                     </h5>
                 )}
-                <h3 className="title-bank-last">{categoryJobs.title}</h3>
+                {/* <h3 className="title-bank-last">{categoryJobs.title}</h3> */}
                 <div className="row-bankjoblast">
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
@@ -254,233 +255,49 @@ function Governmentjobsubcategory(props) {
                             <div>
                                 <h5 className="government-job-subcategory-information">
                                     <h6 style={{ fontWeight: "300" }}>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta vLorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Tincidunt
-                                        massa lacinia enim cras. Eu etiam quis
-                                        amet cras amet. In faucibus massa varius
-                                        et. Arcu sed non eu eu porta vLorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta v
+                                        {categoryJobs.descriptionc}
                                     </h6>
                                 </h5>
                                 <h5 className="government-job-subcategory-information">
                                     Salary and Job Position <br />
                                     <h6 style={{ fontWeight: "300" }}>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta vLorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Tincidunt
-                                        massa lacinia enim cras. Eu etiam quis
-                                        amet cras amet. In faucibus massa varius
-                                        et. Arcu sed non eu eu porta vLorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta v
+                                        {categoryJobs.job_positions}
                                     </h6>
                                 </h5>
                                 <h5 className="government-job-subcategory-information">
                                     Eligibility Criteria <br />
                                     <h6 style={{ fontWeight: "300" }}>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta vLorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Tincidunt
-                                        massa lacinia enim cras. Eu etiam quis
-                                        amet cras amet. In faucibus massa varius
-                                        et. Arcu sed non eu eu porta vLorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta v
+                                        {categoryJobs.eligibility_criteria}
                                     </h6>
                                 </h5>
                                 <h5 className="government-job-subcategory-information">
                                     Syllabus <br />
                                     <h6 style={{ fontWeight: "300" }}>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta vLorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Tincidunt
-                                        massa lacinia enim cras. Eu etiam quis
-                                        amet cras amet. In faucibus massa varius
-                                        et. Arcu sed non eu eu porta vLorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta v
+                                        {categoryJobs.syllabus}
                                     </h6>
                                 </h5>
                                 <h5 className="government-job-subcategory-information">
                                     Exam Pattern <br />
                                     <h6 style={{ fontWeight: "300" }}>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta vLorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Tincidunt
-                                        massa lacinia enim cras. Eu etiam quis
-                                        amet cras amet. In faucibus massa varius
-                                        et. Arcu sed non eu eu porta vLorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta v
+                                        {categoryJobs.exam_pattern}
                                     </h6>
                                 </h5>
                                 <h5 className="government-job-subcategory-information">
                                     Cutoff <br />
                                     <h6 style={{ fontWeight: "300" }}>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta vLorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Tincidunt
-                                        massa lacinia enim cras. Eu etiam quis
-                                        amet cras amet. In faucibus massa varius
-                                        et. Arcu sed non eu eu porta vLorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta v
+                                        {categoryJobs.cutoff}
                                     </h6>
                                 </h5>
                                 <h5 className="government-job-subcategory-information">
                                     Apply Online <br />
                                     <h6 style={{ fontWeight: "300" }}>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta vLorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Tincidunt
-                                        massa lacinia enim cras. Eu etiam quis
-                                        amet cras amet. In faucibus massa varius
-                                        et. Arcu sed non eu eu porta vLorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta v
+                                        {categoryJobs.apply_online}
                                     </h6>
                                 </h5>
                                 <h5 className="government-job-subcategory-information">
                                     Admit Card <br />
                                     <h6 style={{ fontWeight: "300" }}>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta vLorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Tincidunt
-                                        massa lacinia enim cras. Eu etiam quis
-                                        amet cras amet. In faucibus massa varius
-                                        et. Arcu sed non eu eu porta vLorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt massa lacinia
-                                        enim cras. Eu etiam quis amet cras amet.
-                                        In faucibus massa varius et. Arcu sed
-                                        non eu eu porta vLorem ipsum dolor sit
-                                        amet, consectetur adipiscing elit.
-                                        Tincidunt massa lacinia enim cras. Eu
-                                        etiam quis amet cras amet. In faucibus
-                                        massa varius et. Arcu sed non eu eu
-                                        porta v
+                                        {categoryJobs.admit_card}
                                     </h6>
                                 </h5>
                             </div>

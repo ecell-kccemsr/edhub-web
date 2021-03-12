@@ -265,7 +265,7 @@ const Governmentjobcategory = props => {
                                             </Link>
                                         </h5>
                                         <h6>
-                                            {c?.description.slice(0, 200) +
+                                            {c?.description.slice(0, 300) +
                                                 "..."}
                                         </h6>
                                     </div>

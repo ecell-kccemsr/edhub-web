@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
     ButtonDropdown,
@@ -16,99 +17,37 @@ import {
     FormText
 } from "reactstrap";
 
-const questionpaperTopicDummyData = [
-    {
-        title: "Goverment Exams",
-        link: "/questionpaper2"
-    },
-    {
-        title: "MBA Exams",
-        link: "/questionpaper2"
-    },
-    {
-        title: "Bank Exams",
-        link: "/questionpaper2"
-    },
-    {
-        title: "10th Exams",
-        link: "/questionpaper2"
-    },
-    {
-        title: "Medical Exams",
-        link: "/questionpaper2"
-    },
-    {
-        title: "12th Exams",
-        link: "/questionpaper2"
-    },
-    {
-        title: "Defence Exams",
-        link: "/questionpaper2"
-    },
-    {
-        title: "Arts Exams",
-        link: "/questionpaper2"
-    }
-];
-
-const questionPaperMainSectionDummyData = [
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here.",
-        link: "#"
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility",
-        link: "#"
-    },
-    {
-        title: "9 hrs agoRBI Grade B 2021 Notification released",
-        description:
-            "@rbi.co.in for recruitment of 322 vacancies of Grade B Officers - GEN/DSIM/DEPR. RBI Grade B Phase 1 Exam will be held on 6th March 2021. Check here RBI Grade B Application Process & Dates, Exam Date, Admit",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here.",
-        link: "#"
-    }
-];
-
-const questionpaperTrendingDummyData = [
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb Onwards, Salary upto 77208/-",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection",
-        link: "#"
-    },
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb Onwards, Salary upto 77208/-",
-        link: "#"
-    }
-];
-const Questionpaper = () => {
+function Questionpaper(props) {
     const handleSubmit = e => {
         e.preventDefault();
         console.log("SUBMITTED");
     };
+    console.log(props);
+    const [subQuespapercategory, setSubQuespapercategory] = useState([]);
+    const [quespaper, setQuespaper] = useState([]);
+    useEffect(() => {
+        axios
+            .get("http://localhost:8000/api/questionpapers")
+            .then(res => {
+                setQuespaper(res.data.data);
+            })
+
+            .catch(err => {
+                console.log(err);
+            });
+
+        axios
+            .get("http://localhost:8000/api/questionpapers/categories")
+
+            .then(res => {
+                console.log(res);
+                setSubQuespapercategory(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+
     return (
         <>
             <div className="questionpapear-section">
@@ -177,38 +116,36 @@ const Questionpaper = () => {
                             </h5>
                             <div className="questionpaper-topics">
                                 <div className="d-flex align-items-center justify-content-center flex-wrap questionpaper-topic-container">
-                                    {questionpaperTopicDummyData &&
-                                        questionpaperTopicDummyData.map(
-                                            (q, key) => (
-                                                <Button
-                                                    className="questionpaper-category-btn mt-2"
-                                                    key={key}
+                                    {subQuespapercategory &&
+                                        subQuespapercategory.map((q, key) => (
+                                            <Button
+                                                className="questionpaper-category-btn mt-2"
+                                                key={key}
+                                            >
+                                                <Link
+                                                    to={`/questionpaper/${q?.slug}`}
                                                 >
-                                                    <Link to={q?.link}>
-                                                        {q?.title}
-                                                    </Link>
-                                                </Button>
-                                            )
-                                        )}
+                                                    {q?.name}
+                                                </Link>
+                                            </Button>
+                                        ))}
                                 </div>
                             </div>
 
-                            {questionPaperMainSectionDummyData &&
-                                questionPaperMainSectionDummyData.map(
-                                    (q, key) => (
-                                        <div className="questionpaper-news-details">
-                                            <h5>
-                                                <Link to={q?.link}>
-                                                    {q?.title}{" "}
-                                                </Link>
-                                            </h5>
-                                            <h6>
-                                                {q?.description.slice(0, 200) +
-                                                    "..."}
-                                            </h6>
-                                        </div>
-                                    )
-                                )}
+                            {quespaper &&
+                                quespaper.map((q, key) => (
+                                    <div className="questionpaper-news-details">
+                                        <h5>
+                                            <Link to={q?.link}>
+                                                {q?.title}{" "}
+                                            </Link>
+                                        </h5>
+                                        <h6>
+                                            {q?.description.slice(0, 200) +
+                                                "..."}
+                                        </h6>
+                                    </div>
+                                ))}
                         </div>
                     </Col>
                     <Col
@@ -255,8 +192,8 @@ const Questionpaper = () => {
                         </div>
                         <div className="questionpaper-trending">
                             <h4>Trending</h4>
-                            {questionpaperTrendingDummyData &&
-                                questionpaperTrendingDummyData.map((q, key) => (
+                            {quespaper &&
+                                quespaper.map((q, key) => (
                                     <div className="questionpaper-news-trending">
                                         <h5>
                                             <Link to={q?.link}>{q?.title}</Link>
@@ -275,6 +212,6 @@ const Questionpaper = () => {
             </div>
         </>
     );
-};
+}
 
 export default Questionpaper;

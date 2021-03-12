@@ -50,7 +50,7 @@ const App = props => {
                         component={Questionpaper}
                     />
                     <Route
-                        path="/questionpaper2"
+                        path="/questionpaper/:ques_slug"
                         exact
                         component={Questionpaper2}
                     />
