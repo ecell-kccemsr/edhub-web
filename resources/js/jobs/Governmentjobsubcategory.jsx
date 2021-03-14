@@ -157,6 +157,7 @@ function Governmentjobsubcategory(props) {
     return (
         <>
             <div className="government-job-subcategory-content">
+            {/* BreadCrumb */}
                 <BreadCrumb
                     navData={[
                         {
@@ -190,6 +191,7 @@ function Governmentjobsubcategory(props) {
                     </h5>
                 )}
                 {/* <h3 className="title-bank-last">{categoryJobs.title}</h3> */}
+                {/* SubCategory */}
                 <div className="row-bankjoblast">
                     <div className="column-bankjoblast">
                         <div className="card-bankjoblast">
@@ -255,7 +257,7 @@ function Governmentjobsubcategory(props) {
                         </div>
                     </div>
                 </div>
-
+                   {/* Hero Img */}
                 <div className="content-bankjoblast">
                     <img
                         className="government-job-subcategory"
@@ -268,6 +270,7 @@ function Governmentjobsubcategory(props) {
                     )} */}
 
                     <>
+                    {/* Subcategory Content */}
                         <div className="government-job-subcategory-content">
                             <div>
                                 <h5 className="government-job-subcategory-information">

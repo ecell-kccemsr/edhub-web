@@ -39,6 +39,7 @@ function Questionpaper2(props) {
         <>
             <div className="questionpapear-section">
                 <Row>
+                    {/* Category by year */}
                     <Col
                         xs={{ size: 12, order: 1 }}
                         md={{ size: 6, order: 2 }}
@@ -83,12 +84,13 @@ function Questionpaper2(props) {
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory-last">
+                                <h4 className="questionpaper-subcategory">
                                     2015
                                 </h4>
                             </li>
                         </List>
                     </Col>
+                    {/* Question Papers News */}
                     <Col
                         xs={{ size: 12, order: 2 }}
                         md={{ size: 12, order: 1 }}
@@ -122,6 +124,7 @@ function Questionpaper2(props) {
                         md={{ size: 6, order: 3 }}
                         lg={{ size: 3, order: 3 }}
                     >
+                        {/* REGISTER FORM */}
                         <div className="questionpaper-register-form-section">
                             <h5>REGISTER FOR FREE UPDATES</h5>
                             <form onSubmit={handleSubmit}>
@@ -159,6 +162,7 @@ function Questionpaper2(props) {
                                 </button>
                             </form>
                         </div>
+                        {/* Trending */}
                         <div className="questionpaper-trending">
                             <h4>Trending</h4>
 

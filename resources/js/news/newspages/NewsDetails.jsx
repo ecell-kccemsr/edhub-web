@@ -36,6 +36,7 @@ function Newsdetails(props) {
     }, []);
     return (
         <div className="container news-details">
+            {/* Breadcrumb */}
             <nav aria-label="breadcrumb" style={{ marginTop: "30px" }}>
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item ">
@@ -61,6 +62,7 @@ function Newsdetails(props) {
                 </ol>
             </nav>
             <Row>
+                {/* News Hero Section */}
                 <Col md="8">
                     <div className="newsdeatils-hero">
                         <div className="newsdetails-title">
@@ -137,6 +139,7 @@ function Newsdetails(props) {
                     </div>
                 </Col>
                 <Col md="4">
+                {/* REGISTER FORM */}
                     <div className="form-newsdetails">
                         <h5 className="form-title-newsdetail">
                             REGISTER FOR FREE UPDATES
@@ -171,7 +174,7 @@ function Newsdetails(props) {
                             <Button className="registration-btn">Submit</Button>
                         </Form>
                     </div>
-
+                    {/* Trending News */}
                     <div className="trending-section-container mt-4">
                         <h4 className="trending-section">Trending</h4>
                         <div>

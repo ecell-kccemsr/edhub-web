@@ -2,20 +2,12 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
-    ButtonDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
     Row,
     Col,
     List,
-    Button,
-    Form,
     FormGroup,
     Label,
-    Input,
-    FormText
-} from "reactstrap";
+    Input} from "reactstrap";
 import BreadCrumb from "../components/breadcrumb/BreadCrumb";
 
 const questionpaperTopicDummyData = [
@@ -152,6 +144,7 @@ const Governmentjobcategory = props => {
     return (
         <>
             <div className="questionpapear-section">
+                {/* breadcrumb */}
                 <BreadCrumb
                     navData={[
                         {
@@ -169,6 +162,7 @@ const Governmentjobcategory = props => {
                         }
                     ]}
                 />
+
                 <Row className="align-items-center">
                     <Col sm="12" md="4" lg="2">
                         {categoryslug && (
@@ -182,7 +176,7 @@ const Governmentjobcategory = props => {
                             </h5>
                         )}
                     </Col>
-
+                      {/* Toggle by age */}
                     <Col sm="12" md="4" lg="2">
                         <FormGroup>
                             <Label for="Age" style={{ fontSize: "14px" }}>
@@ -195,7 +189,7 @@ const Governmentjobcategory = props => {
                             </Input>
                         </FormGroup>
                     </Col>
-
+                      {/* Toggle by Qualification */}
                     <Col sm="12" md="4" lg="2">
                         <FormGroup>
                             <Label
@@ -216,6 +210,7 @@ const Governmentjobcategory = props => {
                         </FormGroup>
                     </Col>
                 </Row>
+                {/* Category */}
                 <Row>
                     <Col
                         xs={{ size: 12, order: 1 }}
@@ -272,7 +267,7 @@ const Governmentjobcategory = props => {
                                 ))}
                         </div>
                     </Col>
-
+                    {/* REGISTER form */}
                     <Col
                         xs={{ size: 12, order: 3 }}
                         md={{ size: 6, order: 3 }}
@@ -315,6 +310,8 @@ const Governmentjobcategory = props => {
                                 </button>
                             </form>
                         </div>
+
+                        {/* Trending News */}
                         <div className="questionpaper-trending">
                             <h4>Trending</h4>
                             {questionpaperTrendingDummyData &&

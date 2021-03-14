@@ -51,10 +51,12 @@ function Questionpaper(props) {
     return (
         <>
             <div className="questionpapear-section">
+                {/* Title */}
                 <h3 className="questionpapaer-section-header text-center">
                     Select Exams by Category
                 </h3>
                 <Row>
+                    {/* Category by year */}
                     <Col
                         xs={{ size: 12, order: 1 }}
                         md={{ size: 6, order: 2 }}
@@ -105,6 +107,7 @@ function Questionpaper(props) {
                             </li>
                         </List>
                     </Col>
+                    {/* Question Papers Category */}
                     <Col
                         xs={{ size: 12, order: 2 }}
                         md={{ size: 12, order: 1 }}
@@ -148,6 +151,7 @@ function Questionpaper(props) {
                                 ))}
                         </div>
                     </Col>
+                    {/* REGISTER FORM */}
                     <Col
                         xs={{ size: 12, order: 3 }}
                         md={{ size: 6, order: 3 }}
@@ -190,6 +194,7 @@ function Questionpaper(props) {
                                 </button>
                             </form>
                         </div>
+                        {/* Trending  */}
                         <div className="questionpaper-trending">
                             <h4>Trending</h4>
                             {quespaper &&

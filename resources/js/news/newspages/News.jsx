@@ -40,6 +40,7 @@ function News() {
     return (
         <div>
             <section className="select-news-by-category">
+                {/* Breadcrumb */}
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item">
@@ -57,10 +58,13 @@ function News() {
                         </li>
                     </ol>
                 </nav>{" "}
+                {/* Title */}
                 <div className="news-title">
                     <h5>NEWS</h5>
                 </div>
                 <hr className="news-hr" />
+
+               {/* News Category */}
                 <Row>
                     <Col sm="6" md={{ size: 8, offset: 0 }} lg="9">
                         <div className="category-left-section">
@@ -117,7 +121,7 @@ function News() {
                             </section>
                         </div>
                     </Col>
-
+                    {/* REGISTER Form */}
                     <Col className="" sm="3" md="4" lg="3">
                         <div className="registration-section">
                             <h5
@@ -158,6 +162,7 @@ function News() {
                             </Form>
                         </div>
                         <br />
+                        {/* Trending News */}
                         <div className="trending-section-container">
                             <h4 className="trending-section">Trending</h4>
                             {news.map(news => (

@@ -36,6 +36,7 @@ function Govermentjob() {
     return (
         <>
             <div className="government-section">
+                 {/* Breadcrumb  */}
                 <BreadCrumb
                     navData={[
                         {
@@ -49,11 +50,12 @@ function Govermentjob() {
                         }
                     ]}
                 />
-
+               {/* title */}
                 <h3 className="government-top-card-header mb-3">
                     Goverment Jobs 2021
                 </h3>
-
+                
+                {/* Hero section */}
                 <div class="government-top-card">
                     <Row style={{ justifyContent: "space-evenly" }}>
                         {categories &&
@@ -81,7 +83,8 @@ function Govermentjob() {
                     </Row>
                 </div>
             </div>
-
+            
+            {/* Latest Notifications */}
             {jobs && jobs.length > 0 && (
                 <LinkCard
                     title="Latest Notifications"
@@ -89,7 +92,8 @@ function Govermentjob() {
                     background={true}
                 />
             )}
-
+       
+           {/* education wise cards */}
             <div className="eduwise-section">
                 <h4 className="eduwise-header mb-4">Education wise Jobs</h4>
                 <Row>
@@ -112,6 +116,7 @@ function Govermentjob() {
                 </Row>
             </div>
 
+            {/* Exam Results */}
             {jobs && jobs.length > 0 && (
                 <LinkCard title="Exam Results" data={jobs} background={true} />
             )}

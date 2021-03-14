@@ -42,6 +42,7 @@ function NewsCategory(props) {
     return (
         <div>
             <section className="select-news-by-category">
+                {/* Breadcrumb */}
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item">
@@ -70,6 +71,7 @@ function NewsCategory(props) {
                 <h4 className="title-bank">News</h4>
                 <hr className="news-hr" />
                 <Row>
+                {/* Sub Category News */}
                     <Col sm="12" md="6" lg="9" className="mb-4">
                         <div className="category-left-section">
                             <h6 className="select-by-category-header text-center">
@@ -91,6 +93,7 @@ function NewsCategory(props) {
                                     ))}
                                 </div>
                             </div>
+                            {/* Latest News */}
                             <section className="category-information-section">
                                 <div className="category-information-sub-section">
                                     <h4 className="category-header pb-2">
@@ -140,6 +143,7 @@ function NewsCategory(props) {
                         </div>
                     </Col>
                     <Col sm="12" md="6" lg="3">
+                    {/* REGISTER FORM */}
                         <div className="registration-section">
                             <h5
                                 style={{ padding: "10px", textAlign: "center" }}
@@ -179,6 +183,7 @@ function NewsCategory(props) {
                             </Form>
                         </div>
                         <br />
+                        {/* Trending News */}
                         <div className="trending-section-container">
                             <h4 className="trending-section">Trending</h4>
                             {categoryNews && categoryNews.length == 0 && (
