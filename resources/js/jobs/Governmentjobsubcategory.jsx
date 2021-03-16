@@ -14,7 +14,8 @@ import {
     FormGroup,
     Label,
     Input,
-    FormText
+    FormText,
+    Table
 } from "reactstrap";
 import BreadCrumb from "../components/breadcrumb/BreadCrumb";
 import LinkCard from "../components/link-card/LinkCard";
@@ -157,7 +158,7 @@ function Governmentjobsubcategory(props) {
     return (
         <>
             <div className="government-job-subcategory-content">
-            {/* BreadCrumb */}
+                {/* BreadCrumb */}
                 <BreadCrumb
                     navData={[
                         {
@@ -257,7 +258,7 @@ function Governmentjobsubcategory(props) {
                         </div>
                     </div>
                 </div>
-                   {/* Hero Img */}
+                {/* Hero Img */}
                 <div className="content-bankjoblast">
                     <img
                         className="government-job-subcategory"
@@ -265,85 +266,144 @@ function Governmentjobsubcategory(props) {
                         alt="bank"
                     />
 
-                    {/* {categoryJobs && categoryJobs.length == 0 && (
+                    {categoryJobs && categoryJobs.length == 0 && (
                         <h4>No Category News</h4>
-                    )} */}
+                    )}
 
-                    <>
                     {/* Subcategory Content */}
-                        <div className="government-job-subcategory-content">
-                            <div>
-                                <h5 className="government-job-subcategory-information">
-                                    <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.description}
-                                    </h6>
-                                </h5>
-                                <h5
-                                    className="government-job-subcategory-information"
-                                    id="two"
-                                >
-                                    Salary and Job Position <br />
-                                    <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.job_positions}
-                                    </h6>
-                                </h5>
-                                <h5
-                                    className="government-job-subcategory-information"
-                                    id="three"
-                                >
-                                    Eligibility Criteria <br />
-                                    <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.eligibility_criteria}
-                                    </h6>
-                                </h5>
-                                <h5
-                                    className="government-job-subcategory-information"
-                                    id="four"
-                                >
-                                    Syllabus <br />
-                                    <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.syllabus}
-                                    </h6>
-                                </h5>
-                                <h5
-                                    className="government-job-subcategory-information"
-                                    id="five"
-                                >
-                                    Exam Pattern <br />
-                                    <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.exam_pattern}
-                                    </h6>
-                                </h5>
-                                <h5
-                                    className="government-job-subcategory-information"
-                                    id="six"
-                                >
-                                    Cutoff <br />
-                                    <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.cutoff}
-                                    </h6>
-                                </h5>
-                                <h5
-                                    className="government-job-subcategory-information"
-                                    id="seven"
-                                >
-                                    Apply Online <br />
-                                    <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.apply_online}
-                                    </h6>
-                                </h5>
-                                <h5
-                                    className="government-job-subcategory-information"
-                                    id="eight"
-                                >
-                                    Admit Card <br />
-                                    <h6 style={{ fontWeight: "300" }}>
-                                        {categoryJobs.admit_card}
-                                    </h6>
-                                </h5>
-                            </div>
+                    <div className="government-job-subcategory-content">
+                        <div>
+                            <h5 className="government-job-subcategory-information">
+                                <h6 style={{ fontWeight: "300" }}>
+                                    {categoryJobs.description}
+                                </h6>
+                            </h5>
+                            <h5
+                                className="government-job-subcategory-information"
+                                id="two"
+                            >
+                                Salary and Job Position <br />
+                                <Table striped bordered hover>
+                                    <thead>
+                                        <tr>
+                                            <th>Job Position</th>
+                                            <th>Gross Salary</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </h5>
+                            <h5
+                                className="government-job-subcategory-information"
+                                id="three"
+                            >
+                                Eligibility Criteria <br />
+                                <Table striped bordered hover>
+                                    <thead>
+                                        <tr>
+                                            <th>Age Limit</th>
+                                            <th>Job Position</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </h5>
+                            <h5
+                                className="government-job-subcategory-information"
+                                id="four"
+                            >
+                                Syllabus <br />
+                                <h6 style={{ fontWeight: "300" }}>
+                                    {categoryJobs.syllabus}
+                                </h6>
+                            </h5>
+                            <h5
+                                className="government-job-subcategory-information"
+                                id="five"
+                            >
+                                Exam Pattern <br />
+                                <Table striped bordered hover>
+                                    <thead>
+                                        <tr>
+                                            <th>Subjects</th>
+                                            <th>Minimum Marks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </h5>
+                            <h5
+                                className="government-job-subcategory-information"
+                                id="six"
+                            >
+                                Cutoff <br />
+                                <Table striped bordered hover>
+                                    <thead>
+                                        <tr>
+                                            <th>Exam Name</th>
+                                            <th>Cutoffs</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>English</td>
+                                            <td>25%</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </h5>
+                            <h5
+                                className="government-job-subcategory-information"
+                                id="seven"
+                            >
+                                Apply Online <br />
+                                <a href="#" style={{ fontWeight: "300" }}>
+                                    {categoryJobs.apply_online}
+                                </a>
+                            </h5>
+                            <h5
+                                className="government-job-subcategory-information"
+                                id="eight"
+                            >
+                                Admit Card <br />
+                                <a href="/images/myw3schoolsimage.jpg" download>
+                                    <img
+                                        src="/images/myw3schoolsimage.jpg"
+                                        alt="W3Schools"
+                                        width="104"
+                                        height="142"
+                                    />
+                                </a>
+                            </h5>
                         </div>
-                    </>
+                    </div>
                 </div>
                 <LinkCard
                     title="Related Notifications and jobs for you"

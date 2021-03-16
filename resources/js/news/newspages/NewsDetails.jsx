@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
     Row,
     Col,
@@ -22,13 +23,37 @@ import {
 function Newsdetails(props) {
     const [categorynews, setcategorynews] = useState([]);
     const [subcategory, setsubcategory] = useState([]);
+    const [newsatglance, setNewsAtGlance] = useState([]);
     useEffect(() => {
+        console.log(props);
         const { category_slug } = props.match.params;
+        let id, sub_id;
         axios
             .get(`http://localhost:8000/api/news/${category_slug}`)
 
             .then(res => {
                 setcategorynews(res.data.data);
+                console.log(res);
+                id = res.data.data?.category.id;
+                sub_id = res.data.data?.subcategory.id;
+
+                axios
+                    .get(
+                        `http://localhost:8000/api/news/sub_categories?category_id=${id}`
+                    )
+                    .then(res => {
+                        // console.log(res);
+                        setsubcategory(res.data.data);
+                    });
+
+                axios
+                    .get(
+                        `http://localhost:8000/api/news?subcategory_id=${sub_id}`
+                    )
+                    .then(res => {
+                        // console.log(res);
+                        setNewsAtGlance(res.data.data);
+                    });
             })
             .catch(err => {
                 console.log(err);
@@ -83,63 +108,35 @@ function Newsdetails(props) {
                         <h5>News at glance</h5>
                         <Row xs="1" md="2">
                             <Col>
-                                <div className="newsdetails-glance">
-                                    <img
-                                        src={categorynews.image}
-                                        alt="news1"
-                                        className="newdetails-glance-image"
-                                    />
-                                    <h5 style={{ marginLeft: "15px" }}>
-                                        Nitin Gadkari <br /> launches <br /> ‘Go
-                                        Electric <br /> Campaign’
-                                    </h5>
-                                </div>
-                            </Col>
-                            <Col>
-                                <div className="newsdetails-glance">
-                                    <img
-                                        src={categorynews.image}
-                                        alt="news1"
-                                        className="newdetails-glance-image"
-                                    />
-                                    <h5 style={{ marginLeft: "15px" }}>
-                                        Nitin Gadkari <br /> launches <br /> ‘Go
-                                        Electric <br /> Campaign’
-                                    </h5>
-                                </div>
-                            </Col>
-                            <Col>
-                                <div className="newsdetails-glance">
-                                    <img
-                                        src={categorynews.image}
-                                        alt="news1"
-                                        className="newdetails-glance-image"
-                                    />
-                                    <h5 style={{ marginLeft: "15px" }}>
-                                        Nitin Gadkari <br /> launches <br /> ‘Go
-                                        Electric <br /> Campaign’
-                                    </h5>
-                                </div>
-                            </Col>
-                            <Col>
-                                <div className="newsdetails-glance">
-                                    <img
-                                        src={categorynews.image}
-                                        alt="news1"
-                                        className="newdetails-glance-image"
-                                    />
-                                    <h5 style={{ marginLeft: "15px" }}>
-                                        Nitin Gadkari <br /> launches <br /> ‘Go
-                                        Electric <br /> Campaign’
-                                    </h5>
-                                </div>
+                                {newsatglance && newsatglance.length == 0 && (
+                                    <h4>No news at glance news</h4>
+                                )}
+
+                                {newsatglance &&
+                                    newsatglance.length > 0 &&
+                                    newsatglance.map(newsatglance => (
+                                        <div className="newsdetails-glance">
+                                            <img
+                                                src={newsatglance.image}
+                                                alt="news1"
+                                                className="newdetails-glance-image"
+                                            />
+                                            <h5 style={{ marginLeft: "15px" }}>
+                                                {newsatglance.title} <br />{" "}
+                                                {newsatglance.description.slice(
+                                                    0,
+                                                    100
+                                                )}
+                                            </h5>
+                                        </div>
+                                    ))}
                             </Col>
                         </Row>
                         <div className="view">VIEW ALL</div>
                     </div>
                 </Col>
                 <Col md="4">
-                {/* REGISTER FORM */}
+                    {/* REGISTER FORM */}
                     <div className="form-newsdetails">
                         <h5 className="form-title-newsdetail">
                             REGISTER FOR FREE UPDATES
@@ -208,6 +205,22 @@ function Newsdetails(props) {
                                 View All
                             </Button>
                         </div>
+                    </div>
+                    <div>
+                        {subcategory && subcategory == 0 && (
+                            <div>No Subcategories</div>
+                        )}
+                        {subcategory &&
+                            subcategory.length > 0 &&
+                            subcategory.map(subcategory => (
+                                <Link
+                                    to={`/news/view/subcategory/${subcategory?.id}`}
+                                    key={subcategory.id}
+                                    className="category-btn text-center"
+                                >
+                                    {subcategory.name}
+                                </Link>
+                            ))}
                     </div>
 
                     <div className="select-news-by-category-btn-section">
