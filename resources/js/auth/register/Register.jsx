@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 const Register = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [cpassword, setCPassword] = useState("");
+    const [gender, setGender] = useState("");
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("SUBMITTED");
+        const data = JSON.stringify({
+            name,
+            email, //whatsapp
+            password,
+            gender: "Male"
+        });
+        axios
+            .post("http://localhost:8000/api/auth/signup", data, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(err => console.log(err));
     };
     return (
         <Container
@@ -28,6 +49,8 @@ const Register = () => {
                                 id="name"
                                 placeholder="Name"
                                 className="auth-input"
+                                value={name}
+                                onChange={e => setName(e.target.value)}
                             />
                         </FormGroup>
                         <FormGroup>
@@ -37,6 +60,8 @@ const Register = () => {
                                 id="email"
                                 placeholder="Email"
                                 className="auth-input"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
                             />
                         </FormGroup>
                         <FormGroup>
@@ -46,6 +71,8 @@ const Register = () => {
                                 id="password"
                                 placeholder="Password"
                                 className="auth-input"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
                             />
                         </FormGroup>
                         <FormGroup>
@@ -55,7 +82,37 @@ const Register = () => {
                                 id="cpassword"
                                 placeholder="Confirm Password"
                                 className="auth-input"
+                                value={cpassword}
+                                onChange={e => setCPassword(e.target.value)}
                             />
+                        </FormGroup>
+                        <FormGroup tag="fieldset">
+                            <FormGroup check>
+                                <Label check>
+                                    <Input
+                                        type="radio"
+                                        name="gender"
+                                        value={gender}
+                                        onChange={e =>
+                                            setGender(e.target.value)
+                                        }
+                                    />{" "}
+                                    Male
+                                </Label>
+                            </FormGroup>
+                            <FormGroup check>
+                                <Label check>
+                                    <Input
+                                        type="radio"
+                                        name="gender"
+                                        value={gender}
+                                        onChange={e =>
+                                            setGender(e.target.value)
+                                        }
+                                    />
+                                    Female
+                                </Label>
+                            </FormGroup>
                         </FormGroup>
 
                         <button className="auth-btn" type="submit">

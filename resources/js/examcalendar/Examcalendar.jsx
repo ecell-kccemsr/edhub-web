@@ -10,7 +10,7 @@ const Examcalendar = props => {
     const [examName, setExamName] = useState([]);
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/examcalendar")
+            .get("http://localhost:8000/api/examcalendar/categories")
             .then(res => {
                 console.log(res.data.data);
                 setExamName(res.data.data);

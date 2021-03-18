@@ -32,7 +32,7 @@ Route::view('/questionpaper', 'app');
 Route::view('/questionpaper/{ques_slug}', 'app');
 
 
-
+Route::view('/exam/calendar', 'app');
 
 
 Route::group(['prefix' => 'admin'], function () {

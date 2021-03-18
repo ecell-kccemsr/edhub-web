@@ -81,7 +81,10 @@ const NavbarComponent = props => {
                             </Link>
                         </NavItem>
                         <NavItem>
-                            <Link to="/examcalendar" className="navbar-navlink">
+                            <Link
+                                to="/exam/calendar"
+                                className="navbar-navlink"
+                            >
                                 Exam Calendar
                             </Link>
                         </NavItem>

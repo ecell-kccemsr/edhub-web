@@ -10,12 +10,17 @@
         border-radius: 10px;
         .exam-single-btn:link,
         .exam-single-btn {
-            margin-right: 20px;
-            background: #ffb342;
             border: none;
             outline: none;
-            width: 150px;
-            padding: 5px 10px;
+            text-decoration: none;
+            color: #fff;
+
+            justify-content: center;
+            align-items: center;
+            background: #ffb342;
+            border-radius: 8px;
+            padding: 10px !important;
+            margin: 5px;
         }
     }
 }

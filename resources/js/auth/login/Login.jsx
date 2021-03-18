@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [remember_me, setRememberMe] = useState(false);
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("SUBMITTED");
+        const data = JSON.stringify({
+            email,
+            password,
+            remember_me
+        });
+        axios
+            .post("http://localhost:8000/api/auth/login", data, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(res => {
+                console.log(res.data);
+            })
+            .catch(err => console.log(err));
     };
     return (
         <Container style={{ boxShadow: "none" }} className="auth">
@@ -25,6 +43,8 @@ const Login = () => {
                                 id="email"
                                 placeholder="Email"
                                 className="auth-input"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
                             />
                         </FormGroup>
                         <FormGroup>
@@ -34,13 +54,21 @@ const Login = () => {
                                 id="password"
                                 placeholder="Password"
                                 className="auth-input"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
                             />
                         </FormGroup>
                         <Row className="justify-content-between auth-row">
                             <Col sm="12" md="6">
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type="checkbox" />
+                                        <Input
+                                            type="checkbox"
+                                            checked={remember_me}
+                                            onChange={e =>
+                                                setRememberMe(!remember_me)
+                                            }
+                                        />
                                         Remember Me
                                     </Label>
                                 </FormGroup>

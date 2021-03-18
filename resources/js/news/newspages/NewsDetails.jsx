@@ -108,8 +108,8 @@ function Newsdetails(props) {
                     {/* News at glance */}
                     <div className="newsdeatils-hero">
                         <h5>News at glance</h5>
-                        <Row xs="1" md="12" >
-                            <Col >
+                        <Row xs="1" md="12">
+                            <Col>
                                 {newsatglance && newsatglance.length == 0 && (
                                     <h4>No news at glance news</h4>
                                 )}
@@ -123,7 +123,7 @@ function Newsdetails(props) {
                                                 alt="news1"
                                                 className="newdetails-glance-image"
                                             />
-                                            
+
                                             <h5 style={{ marginLeft: "15px" }}>
                                                 {newsatglance.title} <br />{" "}
                                                 {newsatglance.description.slice(
@@ -225,24 +225,24 @@ function Newsdetails(props) {
                                 </Link>
                             ))}
                     </div> */}
-                     <div className="select-news-by-category-btn-section-1">
-                                <div className="d-flex flex-wrap justify-content-center">
-                                {subcategory && subcategory == 0 && (
-                            <div>No Subcategories</div>
-                        )}
-                        {subcategory &&
-                            subcategory.length > 0 &&
-                            subcategory.map(subcategory => (
-                                <Link
-                                    to={`/news/view/subcategory/${subcategory?.id}`}
-                                    key={subcategory.id}
-                                    className="category-btn-1 text-center"
-                                >
-                                    {subcategory.name}
-                                </Link>
-                            ))}
-                                </div>
-                            </div>
+                    <div className="select-news-by-category-btn-section-1">
+                        <div className="d-flex flex-wrap justify-content-center">
+                            {subcategory && subcategory == 0 && (
+                                <div>No Subcategories</div>
+                            )}
+                            {subcategory &&
+                                subcategory.length > 0 &&
+                                subcategory.map(subcategory => (
+                                    <Link
+                                        to={`/news/view/subcategory/${subcategory?.id}`}
+                                        key={subcategory.id}
+                                        className="category-btn-1 text-center"
+                                    >
+                                        {subcategory.name}
+                                    </Link>
+                                ))}
+                        </div>
+                    </div>
                 </Col>
             </Row>
         </div>

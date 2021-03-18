@@ -73,7 +73,7 @@ const App = props => {
                         component={Newsdetails}
                     />
                     <Route
-                        path="/examcalendar"
+                        path="/exam/calendar"
                         exact
                         component={Examcalendar}
                     />
