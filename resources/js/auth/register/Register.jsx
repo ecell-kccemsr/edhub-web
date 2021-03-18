@@ -12,9 +12,9 @@ const Register = () => {
         e.preventDefault();
         const data = JSON.stringify({
             name,
-            email, //whatsapp
+            email, 
             password,
-            gender: "Male"
+            gender
         });
         axios
             .post("http://localhost:8000/api/auth/signup", data, {

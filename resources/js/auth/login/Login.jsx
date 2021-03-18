@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import axios from "axios";
 const Login = () => {
+    let history = useHistory();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [remember_me, setRememberMe] = useState(false);
@@ -20,7 +22,9 @@ const Login = () => {
                 }
             })
             .then(res => {
-                console.log(res.data);
+                if(res.data?.access_token){
+                    history.push("/");
+                }
             })
             .catch(err => console.log(err));
     };
