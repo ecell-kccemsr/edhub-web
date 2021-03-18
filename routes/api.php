@@ -46,7 +46,9 @@ Route::get('/government_jobs/sub_categories',[GovernmentJobController::class,'su
 Route::get('/government_jobs/{government_job}',[GovernmentJobController::class,'show']);
 
 //News
+
 Route::get('/news',[NewsController::class,'get']);
+Route::get('/news/trending',[NewsController::class,'trending']);
 Route::get('/news/categories',[NewsController::class,'categories']);
 Route::get('/news/sub_categories',[NewsController::class,'sub_categories']);
 Route::get('/news/{news}',[NewsController::class,'show']);

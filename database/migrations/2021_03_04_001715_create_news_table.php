@@ -19,6 +19,7 @@ class CreateNewsTable extends Migration
             $table->longText('description');
             $table->longText('details');
             $table->string('image');
+            $table->unsignedInteger('total_views')->default(0);
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('subcategory_id');
             $table->string('slug')->unique();

@@ -104,6 +104,13 @@ class NewsController extends Controller
     public function show($news)
     {
         $news = News::where('id',$news)->orWhere('slug',$news)->firstOrFail();
+        $news->increment('total_views',1);
         return new NewsResource($news);
+    }
+
+    public function trending()
+    {
+        $news = News::where("created_at", ">=", date("Y-m-d H:i:s", strtotime('-24 hours', time())))->orderBy('total_views','desc')->get();
+        return new NewsResourceCollection($news);
     }
 }
