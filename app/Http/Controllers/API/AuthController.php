@@ -7,10 +7,13 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\EmailVerification;
+use App\Http\Requests\StoreSignUp;
 use App\Notifications\VerifyEmail;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SignUpRequest;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -18,9 +21,9 @@ class AuthController extends Controller
     {
         $user = new User();
         $user->name = $request->input('name');
-        $user->email= $request->input('email');
-        $user->password= bcrypt($request->input('password'));
-        $user->gender= $request->input('gender');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('confirm_password'));
+        $user->gender = $request->input('gender');
         $user->save();
 
         $token = Str::random(128);
@@ -67,6 +70,11 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Successfully logged out!'
         ]);
+    }
+
+    public function user()
+    {
+        return new UserResource(Auth::user());
     }
 
 }
