@@ -1,46 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
+import {Link} from 'react-router-dom'
 const Register = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [cpassword, setCPassword] = useState("");
-    const [gender, setGender] = useState("");
+    let history = useHistory();
+
     const handleSubmit = e => {
         e.preventDefault();
-        const data = JSON.stringify({
-            name,
-            email, 
-            password,
-            gender
-        });
+         let form = e.nativeEvent.target;
+        let data = new FormData(form);
         axios
-            .post("http://localhost:8000/api/auth/signup", data, {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
+            .post("http://localhost:8000/api/auth/signup", data)
             .then(res => {
-                console.log(res.data);
+                console.log(res.data.message);
+                history.push("/");
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log(err.response.data.message));
     };
+
     return (
+        <>
+        <h3 className="auth-brand">
+        edu<span>hub</span>
+    </h3>
         <Container
-            style={{ boxShadow: "none", marginTop: "20px" }}
+            style={{ boxShadow: "none", marginTop: "0" }}
             className="auth"
         >
-            <h3 className="auth-brand">
-                edu<span>hub</span>
-            </h3>
+          
             <Row className="align-items-center">
                 <Col sm="12" md="5">
-                    <h4 className="auth-header">
+                    <h4 className="auth-header text-center pb-0">
                         Welcome to edu<span>hub</span>
                     </h4>
-                    <h2 className="auth-subheader">Sign Up</h2>
+                    <h2 className="auth-subheader  text-center pb-0" style={{marginBottom:'25px'}}>Sign Up</h2>
                     <form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Input
@@ -49,8 +43,6 @@ const Register = () => {
                                 id="name"
                                 placeholder="Name"
                                 className="auth-input"
-                                value={name}
-                                onChange={e => setName(e.target.value)}
                             />
                         </FormGroup>
                         <FormGroup>
@@ -60,8 +52,6 @@ const Register = () => {
                                 id="email"
                                 placeholder="Email"
                                 className="auth-input"
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
                             />
                         </FormGroup>
                         <FormGroup>
@@ -71,32 +61,27 @@ const Register = () => {
                                 id="password"
                                 placeholder="Password"
                                 className="auth-input"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
                             />
                         </FormGroup>
                         <FormGroup>
                             <Input
                                 type="password"
-                                name="cpassword"
-                                id="cpassword"
+                                name="confirm_password"
+                                id="confirm_password"
                                 placeholder="Confirm Password"
                                 className="auth-input"
-                                value={cpassword}
-                                onChange={e => setCPassword(e.target.value)}
                             />
                         </FormGroup>
-                        <FormGroup tag="fieldset">
-                            <FormGroup check>
+                        <FormGroup tag="fieldset" className="register-gender-block">
+                            <Label className="register-gender-label">Gender</Label>
+                           <div className="register-gender-radio">
+                           <FormGroup check>
                                 <Label check>
                                     <Input
                                         type="radio"
                                         name="gender"
-                                        value={gender}
-                                        onChange={e =>
-                                            setGender(e.target.value)
-                                        }
-                                    />{" "}
+                                        value="Male"
+                                    />
                                     Male
                                 </Label>
                             </FormGroup>
@@ -105,19 +90,19 @@ const Register = () => {
                                     <Input
                                         type="radio"
                                         name="gender"
-                                        value={gender}
-                                        onChange={e =>
-                                            setGender(e.target.value)
-                                        }
+                                        value="Female"
                                     />
                                     Female
                                 </Label>
                             </FormGroup>
+                           </div>
                         </FormGroup>
+                       
 
                         <button className="auth-btn" type="submit">
                             next
                         </button>
+                        <p className="register-login-link">Already have an account? <Link to="/login">Login</Link></p>
                     </form>
                 </Col>
                 <Col
@@ -133,6 +118,7 @@ const Register = () => {
                 </Col>
             </Row>
         </Container>
+        </>
     );
 };
 

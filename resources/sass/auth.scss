@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@400;700&display=swap");
+.auth-brand {
+    font-family: "Playfair Display", serif;
+    margin: 36px 42px 0;
+    span {
+        color: #f05454;
+    }
+}
 .auth {
     font-family: "Playfair Display", serif;
-    .auth-brand {
-        span {
-            color: #f05454;
-        }
-    }
+
     .auth-header {
         margin-bottom: 20px;
         font-size: 30px;
@@ -24,6 +27,35 @@
         border: 2px solid black;
         height: 50px;
         font-family: "Inter", sans-serif;
+    }
+    .register-gender-block{
+        font-family: "Inter", sans-serif;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .register-gender-label{
+            flex: 1;
+            text-align: center;
+        }
+        .register-gender-radio{
+            display: flex;
+            flex-wrap: wrap;
+            flex: 2;
+            justify-content: space-evenly;
+        }
+    }
+
+    .register-login-link{
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        a,
+        a:hover {
+            margin-top: 5px;
+            color: #f05454;
+            text-decoration: none;
+            font-weight: 600;
+        }
     }
 
     .auth-row {
@@ -51,6 +83,10 @@
 }
 
 @media screen and (max-width: 600px) {
+    .auth-brand{
+        margin: 20px;
+        text-align: center;
+    }
     .auth-img-col {
         display: none;
     }

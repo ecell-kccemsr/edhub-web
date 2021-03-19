@@ -29,10 +29,12 @@ const Login = () => {
             .catch(err => console.log(err));
     };
     return (
-        <Container style={{ boxShadow: "none" }} className="auth">
-            <h3 className="auth-brand">
+        <>
+          <h3 className="auth-brand">
                 edu<span>hub</span>
             </h3>
+        <Container style={{ boxShadow: "none" }} className="auth">
+          
             <Row className="align-items-center">
                 <Col sm="12" md="4">
                     <h4 className="auth-header ">
@@ -84,6 +86,8 @@ const Login = () => {
                         <button className="auth-btn" type="submit">
                             submit
                         </button>
+
+                        <p className="register-login-link mt-3" >Don't have an account? <Link to="/register">Get Started</Link></p>
                     </form>
                 </Col>
                 <Col
@@ -99,6 +103,7 @@ const Login = () => {
                 </Col>
             </Row>
         </Container>
+        </>
     );
 };
 
