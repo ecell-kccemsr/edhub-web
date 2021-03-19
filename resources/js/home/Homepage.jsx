@@ -366,6 +366,7 @@ const HomeCarousel = props => {
     });
 
     return (
+        // Carousel-Homepage
         <Carousel activeIndex={activeIndex} next={next} previous={previous}>
             <CarouselIndicators
                 items={items}
@@ -406,6 +407,7 @@ let NewsSection = props => {
     };
 
     return (
+        // Latest-News-Section
         <div className="news-card-section">
             <h4 className="news-card-section-header">Latest News</h4>
             <Row className=" justify-content-center">
@@ -460,6 +462,7 @@ let NewsSection = props => {
 
 let LookingFor = () => {
     return (
+        // Lookingfor-Homepage
         <Row className="justify-content-center align-items-center">
             <Col sm="12" md="4">
                 <h3 className="homepage-job-header">I'm looking for</h3>
@@ -516,6 +519,7 @@ const Jobs = props => {
     };
     return (
         <Row>
+            {/* Jobs-Homepage */}
             {props?.jobs &&
                 props?.jobs.map((j, key) => (
                     <Col sm="12" md="6" lg="4" className="mt-2" key={key}>

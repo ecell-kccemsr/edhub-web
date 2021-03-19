@@ -22,6 +22,7 @@ const Examcalendar = props => {
     return (
         <div>
             <section className="exam-calendar-section">
+                {/* Title */}
                 <div className="d-flex">
                     <img
                         className="exam-calendar-icon p-2"
@@ -31,6 +32,7 @@ const Examcalendar = props => {
                     <h4 className="pt-4">Upcoming Exams 2021</h4>
                 </div>
             </section>
+            {/* Exam Categories */}
             <section className="exam-menu-section">
                 <div className="d-flex exam-btn-section  mb-2 justify-content-center">
                     {examName.map(examName => (
@@ -44,6 +46,7 @@ const Examcalendar = props => {
                     ))}
                 </div>
             </section>
+            {/* exam-toggle-section */}
             <section className="exam-toggle-section">
                 <div className="exam-toggle-btn-section text-right">
                     <h5 className="text-left">January 2021</h5>

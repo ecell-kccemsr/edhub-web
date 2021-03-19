@@ -15,9 +15,11 @@ const Footer = () => {
             <Container style={{ boxShadow: "none" }}>
                 <Row className="justify-content-center">
                     <Col sm="12" md="6">
+                        {/* Footer-Title */}
                         <h2 className="footer-header">
                             Subscribe to our Newsletter for latest updates
                         </h2>
+                        {/* Footer-Form */}
                         <Row className="justify-content-center footer-row">
                             <Col sm="12" md="8">
                                 <form onSubmit={handleFooterForm}>

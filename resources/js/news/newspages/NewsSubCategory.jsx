@@ -68,9 +68,11 @@ function NewsSubCategory(props) {
                         </li>
                     </ol>
                 </nav>{" "}
+                {/* Title */}
                 <h4 className="title-bank">News</h4>
                 <hr className="news-hr" />
                 <Row>
+                    {/* subCategory-News */}
                     <Col sm="12" md="6" lg="9" className="mb-4">
                         <div className="category-left-section">
                             <section className="category-information-section p-0">
