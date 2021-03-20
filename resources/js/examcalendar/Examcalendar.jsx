@@ -5,19 +5,49 @@ import image1 from "../Images/calendar-icon.png";
 import { Link } from "react-router-dom";
 
 const Examcalendar = props => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
+    const [isOpen, setIsOpen] = useState({
+        January: false,
+        February: false,
+        March: false,
+        April: false,
+        May: false,
+        June: false,
+        July: false,
+        August: false,
+        September: false,
+        October: false,
+        November: false,
+        December: false
+    });
+    const toggle = value => setIsOpen({ [value]: !isOpen[value] });
     const [examName, setExamName] = useState([]);
+    const [calendar, setCalendar] = useState([]);
+    const Months = [
+        { name: "January", value: "01" },
+        { name: "February", value: "02" },
+        { name: "March", value: "03" },
+        { name: "April", value: "04" },
+        { name: "May", value: "05" },
+        { name: "June", value: "06" },
+        { name: "July", value: "07" },
+        { name: "August", value: "08" },
+        { name: "September", value: "09" },
+        { name: "October", value: "10" },
+        { name: "November", value: "11" },
+        { name: "December", value: "12" }
+    ];
     useEffect(() => {
         axios
             .get("http://localhost:8000/api/examcalendar/categories")
             .then(res => {
-                console.log(res.data.data);
                 setExamName(res.data.data);
             })
             .catch(err => {
                 console.log(err);
             });
+        axios.get("http://localhost:8000/api/examcalendar").then(res => {
+            setCalendar(res.data.data);
+        });
     }, []);
     return (
         <div>
@@ -47,112 +77,83 @@ const Examcalendar = props => {
                 </div>
             </section>
             {/* exam-toggle-section */}
-            <section className="exam-toggle-section">
-                <div className="exam-toggle-btn-section text-right">
-                    <h5 className="text-left">January 2021</h5>
-                    <Button className="exam-toggle-btn" onClick={toggle}>
-                        <i
-                            class="fa fa-arrow-down icon-arrow"
-                            aria-hidden="true"
-                        ></i>
-                    </Button>
-                </div>
+            {Months &&
+                Months.map(month => {
+                    return (
+                        <section
+                            className="exam-toggle-section"
+                            key={month.value}
+                        >
+                            <div className="exam-toggle-btn-section text-right">
+                                <h5 className="text-left">{month.name}</h5>
+                                <Button
+                                    className="exam-toggle-btn"
+                                    onClick={() => toggle(month.name)}
+                                >
+                                    <i
+                                        className="fa fa-arrow-down icon-arrow"
+                                        aria-hidden="true"
+                                    ></i>
+                                </Button>
+                            </div>
 
-                <Collapse isOpen={isOpen} className="">
-                    <Row className="justify-content-between w-100 m-0">
-                        <Col
-                            sm="12"
-                            md="6"
-                            lg="3"
-                            className="exam-toggle-content-section"
-                        >
-                            <div className="exam-toggle-content-sub-section">
-                                <div className="d-flex exam-toggle-content mb-2 align-items-center">
-                                    <img
-                                        src={image1}
-                                        className="exam-toggle-section-icon"
-                                    />
-                                    <p className=" m-0 exam-toggle-section-date">
-                                        4th Feb
-                                    </p>
-                                    <span className="exam-toggle-section-official">
-                                        Hello
-                                    </span>
-                                </div>
-                                <div className="d-flex exam-toggle-content-section-2">
-                                    <img
-                                        src={image1}
-                                        className="exam-toggle-content-section-2-icon"
-                                    />
-                                    <h6 className="exam-toggle-content-section-header">
-                                        Hello
-                                    </h6>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col
-                            sm="12"
-                            md="6"
-                            lg="3"
-                            className="exam-toggle-content-section"
-                        >
-                            <div className="exam-toggle-content-sub-section">
-                                <div className="d-flex exam-toggle-content  mb-2 align-items-center">
-                                    <img
-                                        src={image1}
-                                        className="exam-toggle-section-icon"
-                                    />
-                                    <p className=" m-0 exam-toggle-section-date">
-                                        4th Feb
-                                    </p>
-                                    <span className="exam-toggle-section-official">
-                                        Hello
-                                    </span>
-                                </div>
-                                <div className="d-flex exam-toggle-content-section-2">
-                                    <img
-                                        src={image1}
-                                        className="exam-toggle-content-section-2-icon"
-                                    />
-                                    <h6 className="exam-toggle-content-section-header">
-                                        Hello
-                                    </h6>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col
-                            sm="12"
-                            md="6"
-                            lg="3"
-                            className="exam-toggle-content-section"
-                        >
-                            <div classNane="exam-toggle-content-sub-section">
-                                <div className="d-flex exam-toggle-content mb-2 align-items-center">
-                                    <img
-                                        src={image1}
-                                        className="exam-toggle-section-icon"
-                                    />
-                                    <p className=" m-0 exam-toggle-section-date">
-                                        4th Feb
-                                    </p>
-                                    <span className="exam-toggle-section-official">
-                                        Hello
-                                    </span>
-                                </div>
-                                <div className="d-flex exam-toggle-content-section-2">
-                                    <img
-                                        src={image1}
-                                        className="exam-toggle-content-section-2-icon"
-                                    />
-                                    <h6 className="exam-toggle-content-section-header">
-                                        Hello
-                                    </h6>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
-                </Collapse>
-            </section>
+                            <Collapse isOpen={isOpen[month.name]} className="">
+                                <Row className=" w-100 m-0">
+                                    {calendar &&
+                                        calendar.length > 0 &&
+                                        calendar
+                                            .filter(cal => {
+                                                return (
+                                                    month.value ==
+                                                    cal.date.substring(5, 7)
+                                                );
+                                            })
+                                            .map(cal => {
+                                                return (
+                                                    <Col
+                                                        sm="12"
+                                                        md="6"
+                                                        lg="3"
+                                                        className="exam-toggle-content-section m-4"
+                                                        key={cal.id}
+                                                    >
+                                                        <div className="exam-toggle-content-sub-section">
+                                                            <div className="d-flex exam-toggle-content mb-2 align-items-center">
+                                                                <img
+                                                                    src={
+                                                                        cal.image
+                                                                    }
+                                                                    className="exam-toggle-section-icon"
+                                                                />
+                                                                <p className=" m-0 exam-toggle-section-date">
+                                                                    {cal.date}
+                                                                </p>
+                                                                <span className="exam-toggle-section-official">
+                                                                    {cal.official
+                                                                        ? "Official"
+                                                                        : ""}
+                                                                </span>
+                                                            </div>
+                                                            <div className="d-flex exam-toggle-content-section-2">
+                                                                <img
+                                                                    src={
+                                                                        cal.image
+                                                                    }
+                                                                    className="exam-toggle-content-section-2-icon"
+                                                                />
+                                                                <h6 className="exam-toggle-content-section-header">
+                                                                    {cal.name}
+                                                                </h6>
+                                                            </div>
+                                                        </div>
+                                                    </Col>
+                                                );
+                                            })}
+                                </Row>
+                            </Collapse>
+                        </section>
+                    );
+                })}
         </div>
     );
 };
