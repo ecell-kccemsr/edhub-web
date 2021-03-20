@@ -667,6 +667,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-10 18:34:04',
                 'updated_at' => '2021-03-10 18:34:04',
             ),
+            81 => 
+            array (
+                'id' => 87,
+                'key' => 'browse_exam_results',
+                'table_name' => 'exam_results',
+                'created_at' => '2021-03-20 21:30:52',
+                'updated_at' => '2021-03-20 21:30:52',
+            ),
+            82 => 
+            array (
+                'id' => 88,
+                'key' => 'read_exam_results',
+                'table_name' => 'exam_results',
+                'created_at' => '2021-03-20 21:30:52',
+                'updated_at' => '2021-03-20 21:30:52',
+            ),
+            83 => 
+            array (
+                'id' => 89,
+                'key' => 'edit_exam_results',
+                'table_name' => 'exam_results',
+                'created_at' => '2021-03-20 21:30:52',
+                'updated_at' => '2021-03-20 21:30:52',
+            ),
+            84 => 
+            array (
+                'id' => 90,
+                'key' => 'add_exam_results',
+                'table_name' => 'exam_results',
+                'created_at' => '2021-03-20 21:30:52',
+                'updated_at' => '2021-03-20 21:30:52',
+            ),
+            85 => 
+            array (
+                'id' => 91,
+                'key' => 'delete_exam_results',
+                'table_name' => 'exam_results',
+                'created_at' => '2021-03-20 21:30:52',
+                'updated_at' => '2021-03-20 21:30:52',
+            ),
         ));
         
         

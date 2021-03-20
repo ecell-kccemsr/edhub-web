@@ -17,7 +17,7 @@ class CreateGovernmentJobsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->longText('job_positions');
+            $table->longText('salary_and_job_positions');
             $table->longText('eligibility_criteria');
             $table->longText('syllabus');
             $table->longText('exam_pattern');
@@ -27,6 +27,8 @@ class CreateGovernmentJobsTable extends Migration
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('subcategory_id');
             $table->string('slug')->unique();
+            $table->unsignedInteger('age_limit');
+            $table->string('qualification');
             $table->timestamps();
         });
     }
