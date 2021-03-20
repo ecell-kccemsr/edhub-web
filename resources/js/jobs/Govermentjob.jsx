@@ -56,11 +56,11 @@ function Govermentjob() {
                 </h3>
                 
                 {/* Hero section */}
-                <div class="government-top-card">
+                <div class="government-top-card ">
                     <Row style={{ justifyContent: "space-evenly" }}>
                         {categories &&
                             categories.map(category => (
-                                <Col xs="6" md="4" lg="2">
+                                <Col xs="6" sm="2" md="2">
                                     <div className="category-button">
                                         <img
                                             src={category.image}
