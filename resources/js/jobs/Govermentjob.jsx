@@ -49,7 +49,7 @@ function Govermentjob() {
                             active: true
                         }
                     ]}
-                />
+                /> 
                {/* title */}
                 <h3 className="government-top-card-header mb-3">
                     Goverment Jobs 2021

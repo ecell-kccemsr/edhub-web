@@ -87,9 +87,45 @@
     }
 }
 // Government-SubCategory
-.government-job-subcategory-content {
+.government-section {
     padding: 50px 100px 30px;
     color: rgb(70, 70, 70);
+
+    .exam-btn-section {
+        background: #f8f8f8;
+        padding: 20px;
+        box-shadow: 0px 5px 4px 0px #bebcbc;
+        border-radius: 10px;
+        .exam-single-btn:link,
+        .job-single-btn {
+            border: none;
+            outline: none;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffb342;
+            border-radius: 8px;
+            padding: 10px !important;
+            margin: 5px;
+        }
+    }
+    .content-bankjoblast {
+        margin-top: 45px;
+        .government-job-subcategory {
+            height: 350px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px -1px #8888;
+        }
+        .government-job-subcategory-content {
+            margin-top: 30px;
+        }
+        .government-job-subcategory-information {
+            padding: 10px;
+        }
+    }
 }
 @media screen and (max-width: 600px) {
     .government-section {
@@ -101,6 +137,13 @@
             margin-top: 10px;
         }
     }
+    .government-job-subcategory-section {
+        padding: 20px;
+        .exam-btn-section {
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+    }
 }
 @media screen and (min-width: 605px) and (max-width: 1100px) {
     .government-section {
@@ -110,6 +153,11 @@
         padding: 0px 50px 50px 50px;
         .eduwise-cards {
             margin-top: 10px;
+        }
+    }
+    .government-job-subcategory-section {
+        .exam-btn-section {
+            flex-wrap: wrap;
         }
     }
 }

@@ -157,7 +157,7 @@ function Governmentjobsubcategory(props) {
     }, []);
     return (
         <>
-            <div className="government-job-subcategory-content">
+            <div className="government-section">
                 {/* BreadCrumb */}
                 <BreadCrumb
                     navData={[
@@ -191,100 +191,82 @@ function Governmentjobsubcategory(props) {
                         {/* {categoryslug} */}
                     </h5>
                 )}
-                {/* <h3 className="title-bank-last">{categoryJobs.title}</h3> */}
-                {/* SubCategory */}
-                <div className="row-bankjoblast">
-                    <div className="column-bankjoblast">
-                        <div className="card-bankjoblast">
-                            <p style={{ fontSize: "18px" }}>
+          <div className="government-job-subcategory-details">
+           <h3 className="title-bank-last">RBI Grade B 2021: Notification Out for 322 Vacancies</h3>
+               <section className="government-job-subcategory-section" >
+                <div className="d-flex exam-btn-section  mb-2 justify-content-center">
+               <div className="job-single-btn">
+                    <p style={{ fontSize: "18px" }}>
                                 <a href="#two" style={{ color: "white" }}>
-                                    Salary & job positions
+                                    Salary & <br/> job positions
                                 </a>
                             </p>
-                        </div>
-                    </div>
-                    <div className="column-bankjoblast">
-                        <div className="card-bankjoblast">
-                            <p style={{ fontSize: "18px" }}>
-                                <a href="#three" style={{ color: "white" }}>
-                                    Eligibility <br /> Category
+               </div>
+               <div className="job-single-btn">
+                    <p style={{ fontSize: "18px" }}>
+                                <a href="#two" style={{ color: "white" }}>
+                                    Salary & <br/> job positions
                                 </a>
                             </p>
-                        </div>
-                    </div>
-                    <div className="column-bankjoblast">
-                        <div className="card-bankjoblast">
-                            <a href="#four" style={{ color: "white" }}>
-                                <p style={{ fontSize: "18px" }}>Syllabus</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="column-bankjoblast">
-                        <div className="card-bankjoblast">
-                            <a href="#five" style={{ color: "white" }}>
-                                <p style={{ fontSize: "18px" }}>Exam Pattern</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="column-bankjoblast">
-                        <div className="card-bankjoblast">
-                            <a href="#six" style={{ color: "white" }}>
-                                {" "}
-                                <p style={{ fontSize: "18px" }}>Cutoff</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="column-bankjoblast">
-                        <div className="card-bankjoblast">
-                            <a href="#seven" style={{ color: "white" }}>
-                                <p style={{ fontSize: "18px" }}>Apply Online</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="column-bankjoblast">
-                        <div className="card-bankjoblast">
-                            <a href="#eight" style={{ color: "white" }}>
-                                <p style={{ fontSize: "18px" }}>Admit Card</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="column-bankjoblast">
-                        <div className="card-bankjoblast">
-                            <a href="#nine" style={{ color: "white" }}>
-                                <p style={{ fontSize: "18px" }}>
-                                    Prev years <br /> que. papers
-                                </p>
-                            </a>
-                        </div>
-                    </div>
+               </div>
+               <div className="job-single-btn">
+                    <p style={{ fontSize: "18px" }}>
+                                <a href="#two" style={{ color: "white" }}>
+                                    Salary & <br/> job positions
+                                </a>
+                            </p>
+               </div>
+               <div className="job-single-btn">
+                    <p style={{ fontSize: "18px" }}>
+                                <a href="#two" style={{ color: "white" }}>
+                                    Salary & <br/> job positions
+                                </a>
+                            </p>
+               </div>
+               <div className="job-single-btn">
+                    <p style={{ fontSize: "18px" }}>
+                                <a href="#two" style={{ color: "white" }}>
+                                    Salary & <br/> job positions
+                                </a>
+                            </p>
+               </div>
+               <div className="job-single-btn">
+                    <p style={{ fontSize: "18px" }}>
+                                <a href="#two" style={{ color: "white" }}>
+                                    Salary & <br/> job positions
+                                </a>
+                            </p>
+               </div>
+               <div className="job-single-btn">
+                    <p style={{ fontSize: "18px" }}>
+                                <a href="#two" style={{ color: "white" }}>
+                                    Salary & <br/> job positions
+                                </a>
+                            </p>
+               </div>
+               <div className="job-single-btn">
+                    <p style={{ fontSize: "18px" }}>
+                                <a href="#two" style={{ color: "white" }}>
+                                    Salary & <br/> job positions
+                                </a>
+                            </p>
+               </div>        
                 </div>
-                {/* Hero Img */}
-                <div className="content-bankjoblast">
+            </section>
+    <div className="content-bankjoblast">
                     <img
                         className="government-job-subcategory"
                         src="https://i.ibb.co/BfNN8Lc/Group-207.png"
                         alt="bank"
                     />
-
-                    {categoryJobs && categoryJobs.length == 0 && (
-                        <h4>No Category News</h4>
-                    )}
-
-                    {/* Subcategory Content */}
-                    <div className="government-job-subcategory-content">
-                        <div>
-                            <h5 className="government-job-subcategory-information">
-                                <h6 style={{ fontWeight: "300" }}>
-                                    {categoryJobs.description}
-                                </h6>
-                            </h5>
-                            <h5
+                     <div className="government-job-subcategory-content">
+                      <h5
                                 className="government-job-subcategory-information"
                                 id="two"
                             >
-                                Salary and Job Position <br />
+                                    Salary and Job Position <br />
                                 <Table striped bordered hover>
-                                    <thead>
+                                     <thead>
                                         <tr>
                                             <th>Job Position</th>
                                             <th>Gross Salary</th>
@@ -402,13 +384,25 @@ function Governmentjobsubcategory(props) {
                                     />
                                 </a>
                             </h5>
-                        </div>
-                    </div>
-                </div>
+                            <h5 className="government-job-subcategory-information">
+                            Previous Year Question papers
+                            </h5>
+                            <h5>
+                                <a href="#">Previous Year Question papers </a> <br/>
+                                <a href="#">Previous Year Question papers </a>  <br/>
+                                <a href="#">Previous Year Question papers </a> <br/> 
+                                <a href="#">Previous Year Question papers </a> <br/>
+                                <a href="#">Previous Year Question papers </a> <br/>
+                                <a href="#">Previous Year Question papers </a> <br/>
+                                <a href="#">Previous Year Question papers </a>
+                            </h5>
+           </div>
+           </div>
                 <LinkCard
                     title="Related Notifications and jobs for you"
                     data={dummyLinkData}
-                />
+                /> 
+        </div>
             </div>
         </>
     );
