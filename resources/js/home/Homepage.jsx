@@ -437,14 +437,16 @@ function Homepage() {
             </section>
             <LinkCard title="Exam Updates" data={dummyLinkData} />
 
-            {questionPaper &&
-                questionPaper.slice(0, visible).map((questionPaper, key) => (
-                    <div>
-                        {questionPaper?.title}
-                        {questionPaper?.description}
-                        {questionPaper?.url}
-                    </div>
-                ))}
+            {/* Question Paper */}
+             {questionPaper && questionPaper.length > 0 && (
+            <LinkCard
+                    title="Question Papers"
+                    data={questionPaper}
+                    background={true}
+                />
+                )}
+
+            
         </div>
     );
 }
