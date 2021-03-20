@@ -44,6 +44,10 @@ class GovernmentJobController extends Controller
         {
             $government_jobs = $government_jobs->where('subcategory_id',$request->input('subcategory_id'));
         }
+        if($request->has('age_limit'))
+        {
+            $government_jobs = $government_jobs->where('age_limit','<=',$request->input('age_limit'));
+        }
         $government_jobs = $government_jobs->paginate($request->input('per_page', 10));
         return new GovernmentJobResourceCollection($government_jobs);
     }

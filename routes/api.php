@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\NewsController;
+use App\Http\Controllers\API\ExamResultController;
 use App\Http\Controllers\API\ExamCalendarController;
 use App\Http\Controllers\API\GovernmentJobController;
 use App\Http\Controllers\API\QuestionPaperController;
@@ -30,6 +32,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/auth/signup',[AuthController::class,'signUp']);
 Route::post('/auth/login',[AuthController::class,'login']);
 Route::post('/auth/logout',[AuthController::class,'logout']);
+Route::get('/auth/user', [AuthController::class,'user']);
+
+
 
 //Email Verification
 Route::get('/auth/verify-email',[EmailVerificationController::class,'verify']);
@@ -62,4 +67,7 @@ Route::get('/examcalendar/{exam_calendar}',[ExamCalendarController::class,'show'
 Route::get('/questionpapers',[QuestionPaperController::class,'get']);
 Route::get('/questionpapers/categories',[QuestionPaperController::class,'categories']);
 Route::get('/questionpapers/{question_paper}',[QuestionPaperController::class,'show']);
+
+//ExamResult
+Route::get('/examresults',[ExamResultController::class,'get']);
 

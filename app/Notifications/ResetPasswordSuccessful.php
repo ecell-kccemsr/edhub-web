@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ResetPasswordSuccessful extends Notification
+class ResetPasswordSuccessful extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -41,9 +41,9 @@ class ResetPasswordSuccessful extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Password reset successfully')
+            ->subject('Password Reset successfull')
             ->greeting("Hello $notifiable->name")
-            ->line('You password has been reset successfully.');
+            ->line('You password has been reseted successfully.');
     }
 
     /**

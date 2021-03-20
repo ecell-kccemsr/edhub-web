@@ -110,7 +110,7 @@ class NewsController extends Controller
 
     public function trending()
     {
-        $news = News::where("created_at", ">=", date("Y-m-d H:i:s", strtotime('-24 hours', time())))->orderBy('total_views','desc')->get();
+        $news = News::where("created_at", ">=", date("Y-m-d H:i:s", strtotime('-24 hours', time())))->orderBy('total_views','desc')->limit(10)->get();
         return new NewsResourceCollection($news);
     }
 }

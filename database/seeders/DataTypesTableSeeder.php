@@ -215,7 +215,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-03-10 18:25:20',
-                'updated_at' => '2021-03-10 18:27:41',
+                'updated_at' => '2021-03-20 21:39:23',
             ),
             11 => 
             array (
@@ -270,6 +270,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-03-10 18:34:04',
                 'updated_at' => '2021-03-10 18:36:37',
+            ),
+            14 => 
+            array (
+                'id' => 16,
+                'name' => 'exam_results',
+                'slug' => 'exam-results',
+                'display_name_singular' => 'Exam Result',
+                'display_name_plural' => 'Exam Results',
+                'icon' => 'voyager-company',
+                'model_name' => 'App\\Models\\ExamResult',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-03-20 21:30:52',
+                'updated_at' => '2021-03-20 21:30:52',
             ),
         ));
         

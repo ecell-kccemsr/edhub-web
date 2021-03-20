@@ -371,6 +371,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.news-sub-categories.index',
                 'parameters' => NULL,
             ),
+            22 => 
+            array (
+                'id' => 24,
+                'menu_id' => 1,
+                'title' => 'Exam Results',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-company',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 27,
+                'created_at' => '2021-03-20 21:30:52',
+                'updated_at' => '2021-03-20 21:30:52',
+                'route' => 'voyager.exam-results.index',
+                'parameters' => NULL,
+            ),
         ));
         
         

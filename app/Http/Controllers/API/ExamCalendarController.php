@@ -38,6 +38,10 @@ class ExamCalendarController extends Controller
         {
             $exam_calendars = $exam_calendars->where('category_id',$request->input('category_id'));
         }
+        if($request->has('age_limit'))
+        {
+            $exam_calendars = $exam_calendars->where('age_limit','<=',$request->input('age_limit'));
+        }
         $exam_calendars = ExamCalendar::paginate($request->input('per_page', 10));
         return new ExamCalendarResourceCollection($exam_calendars);
     }
