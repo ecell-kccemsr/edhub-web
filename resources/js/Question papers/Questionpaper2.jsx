@@ -193,21 +193,7 @@ function Questionpaper2(props) {
                                 </button>
                             </form>
                         </div>
-                        {/* Trending */}
-                        <div className="questionpaper-trending">
-                            <h4>Trending</h4>
-
-                            <div className="questionpaper-news-trending">
-                                <strong className="news-title">
-                                    {quespaper?.title}
-                                </strong>
-                                <p className="news-description">
-                                    {quespaper?.description}
-                                </p>
-                            </div>
-
-                            <div className="view">View all</div>
-                        </div>
+                       
                     </Col>
                 </Row>
             </div>

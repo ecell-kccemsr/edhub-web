@@ -222,24 +222,6 @@ function Questionpaper(props) {
                                 </button>
                             </form>
                         </div>
-                        {/* Trending  */}
-                        <div className="questionpaper-trending">
-                            <h4>Trending</h4>
-                            {quespaper &&
-                                quespaper.map((q, key) => (
-                                    <div className="questionpaper-news-trending">
-                                        <h5>
-                                            <Link to={q?.link}>{q?.title}</Link>
-                                        </h5>
-                                        <h6>
-                                            {q?.description.slice(0, 150) +
-                                                "..."}
-                                        </h6>
-                                    </div>
-                                ))}
-
-                            <div className="view">View all</div>
-                        </div>
                     </Col>
                 </Row>
             </div>
