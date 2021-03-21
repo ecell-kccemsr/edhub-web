@@ -39,7 +39,7 @@ function NewsCategory(props) {
                 console.log(err);
             });
         axios
-            .get("http://localhost:8000/news/trending")
+            .get("http://localhost:8000/api/news/trending")
             .then(res => {
                 setTrending(res.data.data);
             })

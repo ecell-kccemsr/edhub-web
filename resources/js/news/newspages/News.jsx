@@ -38,9 +38,10 @@ function News() {
                 console.log(err);
             });
         axios
-            .get("http://localhost:8000/news/trending")
+            .get("http://localhost:8000/api/news/trending")
             .then(res => {
                 setTrending(res.data.data);
+                console.log(res);
             })
             .catch(err => {
                 console.log(err);
