@@ -20,7 +20,7 @@ import {
 function Questionpaper(props) {
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("SUBMITTED");
+        // console.log("SUBMITTED");
     };
     const [subQuespapercategory, setSubQuespapercategory] = useState([]);
     const [quespaper, setQuespaper] = useState([]);
@@ -41,7 +41,7 @@ function Questionpaper(props) {
             .get("http://localhost:8000/api/questionpapers/categories")
 
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setSubQuespapercategory(res.data.data);
             })
             .catch(err => {
@@ -221,24 +221,6 @@ function Questionpaper(props) {
                                     Submit
                                 </button>
                             </form>
-                        </div>
-                        {/* Trending  */}
-                        <div className="questionpaper-trending">
-                            <h4>Trending</h4>
-                            {quespaper &&
-                                quespaper.map((q, key) => (
-                                    <div className="questionpaper-news-trending">
-                                        <h5>
-                                            <Link to={q?.link}>{q?.title}</Link>
-                                        </h5>
-                                        <h6>
-                                            {q?.description.slice(0, 150) +
-                                                "..."}
-                                        </h6>
-                                    </div>
-                                ))}
-
-                            <div className="view">View all</div>
                         </div>
                     </Col>
                 </Row>

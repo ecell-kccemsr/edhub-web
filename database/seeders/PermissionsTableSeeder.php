@@ -787,6 +787,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-21 12:37:38',
                 'updated_at' => '2021-03-21 12:37:38',
             ),
+            96 => 
+            array (
+                'id' => 102,
+                'key' => 'browse_register_for_free_updates',
+                'table_name' => 'register_for_free_updates',
+                'created_at' => '2021-03-21 17:54:19',
+                'updated_at' => '2021-03-21 17:54:19',
+            ),
+            97 => 
+            array (
+                'id' => 103,
+                'key' => 'read_register_for_free_updates',
+                'table_name' => 'register_for_free_updates',
+                'created_at' => '2021-03-21 17:54:19',
+                'updated_at' => '2021-03-21 17:54:19',
+            ),
+            98 => 
+            array (
+                'id' => 104,
+                'key' => 'edit_register_for_free_updates',
+                'table_name' => 'register_for_free_updates',
+                'created_at' => '2021-03-21 17:54:19',
+                'updated_at' => '2021-03-21 17:54:19',
+            ),
+            99 => 
+            array (
+                'id' => 105,
+                'key' => 'add_register_for_free_updates',
+                'table_name' => 'register_for_free_updates',
+                'created_at' => '2021-03-21 17:54:19',
+                'updated_at' => '2021-03-21 17:54:19',
+            ),
+            100 => 
+            array (
+                'id' => 106,
+                'key' => 'delete_register_for_free_updates',
+                'table_name' => 'register_for_free_updates',
+                'created_at' => '2021-03-21 17:54:19',
+                'updated_at' => '2021-03-21 17:54:19',
+            ),
         ));
         
         

@@ -13,7 +13,7 @@ const Register = () => {
         axios
             .post("http://localhost:8000/api/auth/signup", data)
             .then(res => {
-                console.log(res.data.message);
+                // console.log(res.data.message);
                 history.push("/");
             })
             .catch(err => console.log(err.response.data.message));
