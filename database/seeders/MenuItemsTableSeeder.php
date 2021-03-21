@@ -387,6 +387,38 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.exam-results.index',
                 'parameters' => NULL,
             ),
+            23 => 
+            array (
+                'id' => 25,
+                'menu_id' => 1,
+                'title' => 'Question Paper Categories',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-categories',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 28,
+                'created_at' => '2021-03-21 12:36:42',
+                'updated_at' => '2021-03-21 12:36:42',
+                'route' => 'voyager.question-paper-categories.index',
+                'parameters' => NULL,
+            ),
+            24 => 
+            array (
+                'id' => 26,
+                'menu_id' => 1,
+                'title' => 'Question Papers',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-company',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 29,
+                'created_at' => '2021-03-21 12:37:38',
+                'updated_at' => '2021-03-21 12:37:38',
+                'route' => 'voyager.question-papers.index',
+                'parameters' => NULL,
+            ),
         ));
         
         

@@ -289,6 +289,42 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-03-20 21:30:52',
                 'updated_at' => '2021-03-20 21:30:52',
             ),
+            15 => 
+            array (
+                'id' => 17,
+                'name' => 'question_paper_categories',
+                'slug' => 'question-paper-categories',
+                'display_name_singular' => 'Question Paper Category',
+                'display_name_plural' => 'Question Paper Categories',
+                'icon' => 'voyager-categories',
+                'model_name' => 'App\\Models\\QuestionPaperCategory',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-03-21 12:36:42',
+                'updated_at' => '2021-03-21 12:36:42',
+            ),
+            16 => 
+            array (
+                'id' => 18,
+                'name' => 'question_papers',
+                'slug' => 'question-papers',
+                'display_name_singular' => 'Question Paper',
+                'display_name_plural' => 'Question Papers',
+                'icon' => 'voyager-company',
+                'model_name' => 'App\\Models\\QuestionPaper',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-03-21 12:37:38',
+                'updated_at' => '2021-03-21 12:40:15',
+            ),
         ));
         
         

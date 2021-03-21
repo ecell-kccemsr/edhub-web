@@ -707,6 +707,86 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-20 21:30:52',
                 'updated_at' => '2021-03-20 21:30:52',
             ),
+            86 => 
+            array (
+                'id' => 92,
+                'key' => 'browse_question_paper_categories',
+                'table_name' => 'question_paper_categories',
+                'created_at' => '2021-03-21 12:36:42',
+                'updated_at' => '2021-03-21 12:36:42',
+            ),
+            87 => 
+            array (
+                'id' => 93,
+                'key' => 'read_question_paper_categories',
+                'table_name' => 'question_paper_categories',
+                'created_at' => '2021-03-21 12:36:42',
+                'updated_at' => '2021-03-21 12:36:42',
+            ),
+            88 => 
+            array (
+                'id' => 94,
+                'key' => 'edit_question_paper_categories',
+                'table_name' => 'question_paper_categories',
+                'created_at' => '2021-03-21 12:36:42',
+                'updated_at' => '2021-03-21 12:36:42',
+            ),
+            89 => 
+            array (
+                'id' => 95,
+                'key' => 'add_question_paper_categories',
+                'table_name' => 'question_paper_categories',
+                'created_at' => '2021-03-21 12:36:42',
+                'updated_at' => '2021-03-21 12:36:42',
+            ),
+            90 => 
+            array (
+                'id' => 96,
+                'key' => 'delete_question_paper_categories',
+                'table_name' => 'question_paper_categories',
+                'created_at' => '2021-03-21 12:36:42',
+                'updated_at' => '2021-03-21 12:36:42',
+            ),
+            91 => 
+            array (
+                'id' => 97,
+                'key' => 'browse_question_papers',
+                'table_name' => 'question_papers',
+                'created_at' => '2021-03-21 12:37:38',
+                'updated_at' => '2021-03-21 12:37:38',
+            ),
+            92 => 
+            array (
+                'id' => 98,
+                'key' => 'read_question_papers',
+                'table_name' => 'question_papers',
+                'created_at' => '2021-03-21 12:37:38',
+                'updated_at' => '2021-03-21 12:37:38',
+            ),
+            93 => 
+            array (
+                'id' => 99,
+                'key' => 'edit_question_papers',
+                'table_name' => 'question_papers',
+                'created_at' => '2021-03-21 12:37:38',
+                'updated_at' => '2021-03-21 12:37:38',
+            ),
+            94 => 
+            array (
+                'id' => 100,
+                'key' => 'add_question_papers',
+                'table_name' => 'question_papers',
+                'created_at' => '2021-03-21 12:37:38',
+                'updated_at' => '2021-03-21 12:37:38',
+            ),
+            95 => 
+            array (
+                'id' => 101,
+                'key' => 'delete_question_papers',
+                'table_name' => 'question_papers',
+                'created_at' => '2021-03-21 12:37:38',
+                'updated_at' => '2021-03-21 12:37:38',
+            ),
         ));
         
         
