@@ -23,11 +23,10 @@ import examPattern from "../Images/ExamPatternandSyllabus.png";
 import LinkCard from "../components/link-card/LinkCard";
 
 function Homepage() {
-    const initialPosts = 9;
     const [news, setNews] = useState([]);
     const [jobs, setJobs] = useState([]);
+    const [categories, setCategories] = useState([]);
     const [questionPaper, setQuestionPaper] = useState([]);
-    const [visible, setVisible] = useState(initialPosts);
     useEffect(() => {
         axios
             .get("http://localhost:8000/api/news")
@@ -46,6 +45,15 @@ function Homepage() {
                 console.log(err);
             });
         axios
+            .get("http://localhost:8000/api/government_jobs/categories")
+            .then(res => {
+                // console.log(res);
+                setCategories(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        axios
             .get("http://localhost:8000/api/questionpapers")
             .then(res => {
                 // console.log(res);
@@ -55,13 +63,7 @@ function Homepage() {
                 console.log(err);
             });
     }, []);
-    const viewAll = () => {
-        setVisible(news.length);
-    };
 
-    const viewLess = () => {
-        setVisible(initialPosts);
-    };
     const carouselDummyData = [
         "https://i.ibb.co/QHfGBv2/Group-179-1.png",
         "https://i.ibb.co/QHfGBv2/Group-179-1.png",
@@ -90,116 +92,7 @@ function Homepage() {
             key: "3"
         }
     ];
-    const dummyLinkData = [
-        {
-            title: "RBI Recruitment 2021 Notification for Various Non CSG",
-            link: "https://www.google.com/",
-            description:
-                "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-"
-        },
-        {
-            title: "RBI Recruitment 2021 Notification for Various Non CSG",
-            link: "https://www.google.com/",
-            description:
-                "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-"
-        },
-        {
-            title: "55 mins ago RBI Recruitment 2021 Notification",
-            link: "https://www.google.com/",
-            description:
-                "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-        },
-        {
-            title: "55 mins ago RBI Recruitment 2021 Notification",
-            link: "https://www.google.com/",
-            description:
-                "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "55 mins ago RBI Recruitment 2021 Notification",
-            link: "https://www.google.com/",
-            description:
-                "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-        },
-        {
-            title: "55 mins ago RBI Recruitment 2021 Notification",
-            link: "https://www.google.com/",
-            description:
-                "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "55 mins ago RBI Recruitment 2021 Notification",
-            link: "https://www.google.com/",
-            description:
-                "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-        },
-        {
-            title: "55 mins ago RBI Recruitment 2021 Notification",
-            link: "https://www.google.com/",
-            description:
-                "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here."
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        },
-        {
-            title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-            link: "https://www.google.com/",
-            description:
-                "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility"
-        }
-    ];
+
     const HomeCarousel = props => {
         const [activeIndex, setActiveIndex] = useState(0);
         const [animating, setAnimating] = useState(false);
@@ -309,7 +202,7 @@ function Homepage() {
                     <h4 className="news-card-section-header">Latest News</h4>
                     <Row className=" justify-content-center">
                         {news &&
-                            news.slice(0, visible).map((n, key) => (
+                            news.slice(0, 9).map((n, key) => (
                                 <div className="latest-news-card" key={key}>
                                     <img
                                         className="news-card-img"
@@ -328,34 +221,16 @@ function Homepage() {
                                 </div>
                             ))}
                     </Row>
-                    {visible < news.length && (
-                        <>
-                            <hr className="hr" />
-                            <div className="text-center pb-0">
-                                <p
-                                    className="news-card-btn"
-                                    onClick={viewAll}
-                                    style={{ cursor: "pointer" }}
-                                >
-                                    View All
-                                </p>
-                            </div>
-                        </>
-                    )}
-                    {visible >= news.length && (
-                        <>
-                            <hr className="hr" />
-                            <div className="text-center pb-0">
-                                <p
-                                    className="news-card-btn"
-                                    onClick={viewLess}
-                                    style={{ cursor: "pointer" }}
-                                >
-                                    Show Less
-                                </p>
-                            </div>
-                        </>
-                    )}
+                    <hr className="hr" />
+                    <div className="text-center pb-0">
+                        <Link
+                            to="#"
+                            className="news-card-btn"
+                            style={{ cursor: "pointer" }}
+                        >
+                            View All
+                        </Link>
+                    </div>
                 </div>
             </section>
             <section className="homepage-job ">
@@ -366,8 +241,8 @@ function Homepage() {
                     <h3 className="">JOBS</h3>
                     <Row>
                         {/* Jobs-Homepage */}
-                        {jobs &&
-                            jobs.map((j, key) => (
+                        {categories &&
+                            categories.slice(0, 3).map((c, key) => (
                                 <Col
                                     sm="12"
                                     md="6"
@@ -379,73 +254,67 @@ function Homepage() {
                                         <div className="jobs-section-circle ">
                                             <img
                                                 className="jobs-section-circle-img"
-                                                src={j?.category.image}
+                                                src={c?.image}
                                             />
                                         </div>
                                     </div>
-                                    <h5 className="text-center">
-                                        {j?.category.name}
-                                    </h5>
+                                    <h5 className="text-center">{c?.name}</h5>
                                     <div className="jobs-section-sub-divison">
-                                        <div
-                                            className="d-flex jobs-section-box"
-                                            key={key}
-                                        >
-                                            <img
-                                                className="jobs-section-image"
-                                                src={j?.category.image}
-                                            />
+                                        {jobs &&
+                                            jobs
+                                                .filter(
+                                                    j =>
+                                                        j.category.slug ==
+                                                        c.slug
+                                                )
+                                                .map(j => {
+                                                    return (
+                                                        <div
+                                                            className="d-flex jobs-section-box"
+                                                            key={key}
+                                                        >
+                                                            <img
+                                                                className="jobs-section-image"
+                                                                src={
+                                                                    j?.category
+                                                                        .image
+                                                                }
+                                                            />
 
-                                            <div className="jobs-section-content">
-                                                {j?.description}
-                                            </div>
+                                                            <div className="jobs-section-content">
+                                                                {j?.title}
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+
+                                        <div className="text-center">
+                                            <Link
+                                                to={`/govermentjobs/${c?.id}`}
+                                                className="jobs-section-btn mb-0 pb-0"
+                                            >
+                                                View All
+                                            </Link>
                                         </div>
-
-                                        {visible < jobs.length && (
-                                            <div className="text-center">
-                                                <p
-                                                    className="jobs-section-btn mb-0 pb-0"
-                                                    style={{
-                                                        cursor: "pointer"
-                                                    }}
-                                                    onClick={viewAll}
-                                                >
-                                                    View All
-                                                </p>
-                                            </div>
-                                        )}
-
-                                        {visible >= jobs.length && (
-                                            <div className="text-center">
-                                                <p
-                                                    className="jobs-section-btn mb-0 pb-0"
-                                                    style={{
-                                                        cursor: "pointer"
-                                                    }}
-                                                    onClick={viewLess}
-                                                >
-                                                    Show Less
-                                                </p>
-                                            </div>
-                                        )}
                                     </div>
                                 </Col>
                             ))}
                     </Row>
                 </div>
             </section>
-            <LinkCard title="Exam Updates" data={dummyLinkData} />
+            {jobs && jobs.length > 0 && (
+                <LinkCard title="Exam Updates" data={jobs} limit={4} />
+            )}
 
             {/* Question Paper */}
-             {questionPaper && questionPaper.length > 0 && (
-            <LinkCard
+            {questionPaper && questionPaper.length > 0 && (
+                <LinkCard
                     title="Question Papers"
                     data={questionPaper}
                     background={true}
+                    limit={4}
                 />
-                )}
-
-            
+            )}
         </div>
     );
 }

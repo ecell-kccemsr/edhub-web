@@ -42,7 +42,6 @@ function Governmentjobsubcategory(props) {
 
                 .then(res => {
                     setCategoryJobs(res.data.data[0]);
-                    // console.log(res);
                 })
                 .catch(err => {
                     console.log(err);

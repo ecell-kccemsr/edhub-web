@@ -30,7 +30,7 @@ const LinkCard = props => {
                 <Row>
                     {data &&
                         data.length > 0 &&
-                        data.slice(0, 6).map((d, key) => {
+                        data.slice(0, props?.limit || 6).map((d, key) => {
                             return (
                                 <Col
                                     xs="12"
