@@ -6,7 +6,7 @@ const Footer = () => {
 
     const handleFooterForm = e => {
         e.preventDefault();
-        console.log("SUBMITTED");
+        // console.log("SUBMITTED");
         e.target.reset();
     };
 

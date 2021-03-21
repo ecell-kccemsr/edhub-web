@@ -22,7 +22,7 @@ function Questionpaper2(props) {
     const [quespapervar, setQuespaperVar] = useState([]);
     const { category_id } = props.match.params;
     useEffect(() => {
-        console.log(props);
+        // console.log(props);
         axios
             .get(
                 `http://localhost:8000/api/questionpapers?category_id=${category_id}`
@@ -38,7 +38,7 @@ function Questionpaper2(props) {
     }, []);
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("SUBMITTED");
+        // console.log("SUBMITTED");
     };
     const filterQuestionPaper = year => {
         let questionpaper = [];
@@ -47,7 +47,7 @@ function Questionpaper2(props) {
         });
         setQuespaperVar(questionpaper);
     };
-    console.log(quespaper);
+    // console.log(quespaper);
     return (
         <>
             <div className="questionpapear-section">

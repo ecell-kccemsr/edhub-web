@@ -20,7 +20,7 @@ import {
 function Questionpaper(props) {
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("SUBMITTED");
+        // console.log("SUBMITTED");
     };
     const [subQuespapercategory, setSubQuespapercategory] = useState([]);
     const [quespaper, setQuespaper] = useState([]);
@@ -41,7 +41,7 @@ function Questionpaper(props) {
             .get("http://localhost:8000/api/questionpapers/categories")
 
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setSubQuespapercategory(res.data.data);
             })
             .catch(err => {

@@ -366,7 +366,6 @@ function Homepage() {
                     <h3 className="">JOBS</h3>
                     <Row>
                         {/* Jobs-Homepage */}
-
                         {jobs &&
                             jobs.map((j, key) => (
                                 <Col

@@ -31,7 +31,7 @@ function NewsCategory(props) {
             .get(`http://localhost:8000/api/news?category_id=${category_id}`)
 
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setCategoryNews(res.data.data);
             })
             .catch(err => {

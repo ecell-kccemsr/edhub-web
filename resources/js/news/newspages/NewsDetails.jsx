@@ -25,7 +25,7 @@ function Newsdetails(props) {
     const [subcategory, setsubcategory] = useState([]);
     const [newsatglance, setNewsAtGlance] = useState([]);
     useEffect(() => {
-        console.log(props);
+        // console.log(props);
         const { category_slug } = props.match.params;
         let id, sub_id;
         axios
@@ -33,7 +33,7 @@ function Newsdetails(props) {
 
             .then(res => {
                 setcategorynews(res.data.data);
-                console.log(res);
+                // console.log(res);
                 id = res.data.data?.category.id;
                 sub_id = res.data.data?.subcategory.id;
 
