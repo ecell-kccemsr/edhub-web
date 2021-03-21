@@ -24,17 +24,14 @@ use App\Http\Controllers\API\RegisterForFreeUpdatesController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::group(['middleware' => ['auth:api']], function () {
+    Route::get('/auth/user', [AuthController::class,'user']);
+  });
 
 //Auth Controller
 Route::post('/auth/signup',[AuthController::class,'signUp']);
 Route::post('/auth/login',[AuthController::class,'login']);
 Route::post('/auth/logout',[AuthController::class,'logout']);
-Route::get('/auth/user', [AuthController::class,'user']);
-
-
 
 //Email Verification
 Route::get('/auth/verify-email',[EmailVerificationController::class,'verify']);

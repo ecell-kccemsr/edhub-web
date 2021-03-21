@@ -28,7 +28,7 @@ class CreateGovernmentJobsTable extends Migration
             $table->unsignedInteger('subcategory_id');
             $table->string('slug')->unique();
             $table->unsignedInteger('age_limit');
-            $table->string('qualification');
+            $table->unsignedInteger('qualification');
             $table->timestamps();
         });
     }

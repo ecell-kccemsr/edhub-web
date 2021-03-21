@@ -33,7 +33,8 @@ class GovernmentJobResource extends JsonResource
             'updated_at' => $this->updated_at,
             'updated_at_formated' => $this->updated_at === null ? null : $this->updated_at->diffForHumans(),
             'slug' => $this->slug,
-            'age_limit' => $this->age_limit
+            'age_limit' => $this->age_limit,
+            'qualification' => $this->qualification
         ];
     }
 }

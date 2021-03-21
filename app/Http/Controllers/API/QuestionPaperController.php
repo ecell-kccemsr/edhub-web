@@ -37,6 +37,10 @@ class QuestionPaperController extends Controller
         {
             $question_papers = $question_papers->where('category_id',$request->input('category_id'));
         }
+        if($request->has('year'))
+        {
+            $question_papers = $question_papers->where('year',$request->input('year'));
+        }
         $question_papers = $question_papers->paginate($request->input('per_page', 10));
         return new QuestionPaperResourceCollection($question_papers);
     }

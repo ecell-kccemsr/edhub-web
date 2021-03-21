@@ -23,7 +23,7 @@ class CreateExamCalendarsTable extends Migration
             $table->unsignedInteger('category_id');
             $table->string('slug')->unique();
             $table->unsignedInteger('age_limit');
-            $table->string('qualification');
+            $table->unsignedInteger('qualification');
             $table->timestamps();
         });
     }
