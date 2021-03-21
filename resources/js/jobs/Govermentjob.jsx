@@ -92,33 +92,9 @@ function Govermentjob() {
                     background={true}
                 />
             )}
-
-            {/* education wise cards */}
-            <div className="eduwise-section">
-                <h4 className="eduwise-header mb-4">Education wise Jobs</h4>
-                <Row>
-                    {eduWiseJobsDummyData &&
-                        eduWiseJobsDummyData.map((e, key) => (
-                            <Col
-                                sm="6"
-                                md="3"
-                                lg="2"
-                                className="eduwise-col"
-                                key={key}
-                            >
-                                <div className="eduwise-cards">
-                                    <h6>
-                                        <Link to="#">{e}</Link>
-                                    </h6>
-                                </div>
-                            </Col>
-                        ))}
-                </Row>
-            </div>
-
             {/* Exam Results */}
             {jobs && jobs.length > 0 && (
-                <LinkCard title="Exam Results" data={jobs} background={true} />
+                <LinkCard title="Exam Results" data={jobs} background={true}  />
             )}
         </>
     );

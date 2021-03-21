@@ -111,9 +111,9 @@ const Governmentjobcategory = props => {
                                 By Age
                             </Label>
                             <Input type="select" name="select" id="Age">
-                                <option>Above 10</option>
-                                <option>Above 20</option>
-                                <option>Above 30</option>
+                                <option>Below 10</option>
+                                <option>Below 20</option>
+                                <option>Below 30</option>
                             </Input>
                         </FormGroup>
                     </Col>

@@ -36,59 +36,10 @@
         }
     }
 }
-// Government-Category
-.eduwise-section {
-    padding: 50px 150px;
-    background: #f8f8f8;
 
-    .eduwise-header {
-        text-transform: capitalize;
-        color: #4f4f4f;
-    }
-
-    .eduwise-col {
-        &:nth-child(1) .eduwise-cards {
-            background: #bcffb1;
-        }
-        &:nth-child(2) .eduwise-cards {
-            background: #fbb3a5;
-        }
-        &:nth-child(3) .eduwise-cards {
-            background: #f1e189;
-        }
-        &:nth-child(4) .eduwise-cards {
-            background: #87bdff;
-        }
-        &:nth-child(5) .eduwise-cards {
-            background: #ffb579;
-        }
-        &:nth-child(6) .eduwise-cards {
-            background: #87e1fe;
-        }
-
-        .eduwise-cards {
-            padding: 30px 10px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0px 5px 9px -4px #b1b0b0;
-
-            h6 {
-                text-transform: uppercase;
-                font-weight: 700;
-                font-size: 15px;
-
-                a,
-                a:hover {
-                    color: #4f4f4f;
-                    text-decoration: none;
-                }
-            }
-        }
-    }
-}
 // Government-SubCategory
 .government-section {
-    padding: 50px 100px 30px;
+    padding: 50px 150px 30px;
     color: rgb(70, 70, 70);
 
     .exam-btn-section {
@@ -131,12 +82,7 @@
     .government-section {
         padding: 20px;
     }
-    .eduwise-section {
-        padding: 20px;
-        .eduwise-cards {
-            margin-top: 10px;
-        }
-    }
+
     .government-job-subcategory-section {
         padding: 20px;
         .exam-btn-section {
@@ -149,12 +95,7 @@
     .government-section {
         padding: 0px 50px 50px 50px;
     }
-    .eduwise-section {
-        padding: 0px 50px 50px 50px;
-        .eduwise-cards {
-            margin-top: 10px;
-        }
-    }
+
     .government-job-subcategory-section {
         .exam-btn-section {
             flex-wrap: wrap;

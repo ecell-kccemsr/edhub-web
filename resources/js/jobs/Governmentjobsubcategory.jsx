@@ -161,7 +161,7 @@ function Governmentjobsubcategory(props) {
                                 Salary and Job Position <br />
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: categoryJobs.job_positions
+                                        __html: categoryJobs.salary_and_job_positions
                                     }}
                                 ></div>
                             </h5>
