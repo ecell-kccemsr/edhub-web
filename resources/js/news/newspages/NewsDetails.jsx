@@ -130,11 +130,11 @@ function Newsdetails(props) {
 
                                             <h5 style={{ marginLeft: "15px" }}>
                                                 <a
+                                                    href={`/news/details/view/${newsatglance.slug}`}
                                                     style={{
                                                         color: "black",
                                                         textDecoration: "none"
                                                     }}
-                                                    href={`/news/details/view/${newsatglance.slug}`}
                                                 >
                                                     {" "}
                                                     {newsatglance.title}

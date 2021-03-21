@@ -199,6 +199,10 @@
     border-radius: 8px;
     padding: 10px !important;
     margin: 5px;
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+    }
 }
 .registration-btn {
     background-color: #ee6f57;

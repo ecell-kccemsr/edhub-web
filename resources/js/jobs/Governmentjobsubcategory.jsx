@@ -24,6 +24,8 @@ function Governmentjobsubcategory(props) {
     const [categoryJobs, setCategoryJobs] = useState([]);
     const [categoryslug, setSlug] = useState("");
     const [subcategoryslug, setSubSlug] = useState("");
+    const [jobs, setJobs] = useState([]);
+
     useEffect(() => {
         console.log(props);
         const { category_slug } = props.match.params;
@@ -41,6 +43,14 @@ function Governmentjobsubcategory(props) {
                 .then(res => {
                     setCategoryJobs(res.data.data[0]);
                     console.log(res);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+            axios
+                .get("http://localhost:8000/api/government_jobs")
+                .then(res => {
+                    setJobs(res.data.data);
                 })
                 .catch(err => {
                     console.log(err);
@@ -84,14 +94,12 @@ function Governmentjobsubcategory(props) {
                     </h5>
                 )}
                 <div className="government-job-subcategory-details">
-                    <h3 className="title-bank-last">
-                        RBI Grade B 2021: Notification Out for 322 Vacancies
-                    </h3>
+                    <h3 className="title-bank-last">{categoryJobs.title}</h3>
                     <section className="government-job-subcategory-section">
-                        <div className="d-flex exam-btn-section  mb-2 justify-content-center">
+                        <div className="d-flex  goverment-btn-section mb-2">
                             <div className="job-single-btn">
                                 <p style={{ fontSize: "18px" }}>
-                                    <a href="#two" style={{ color: "white" }}>
+                                    <a href="#one" style={{ color: "white" }}>
                                         Salary & <br /> job positions
                                     </a>
                                 </p>
@@ -99,49 +107,49 @@ function Governmentjobsubcategory(props) {
                             <div className="job-single-btn">
                                 <p style={{ fontSize: "18px" }}>
                                     <a href="#two" style={{ color: "white" }}>
-                                        Salary & <br /> job positions
+                                        Eligibility <br /> Criteria
                                     </a>
                                 </p>
                             </div>
                             <div className="job-single-btn">
                                 <p style={{ fontSize: "18px" }}>
-                                    <a href="#two" style={{ color: "white" }}>
-                                        Salary & <br /> job positions
+                                    <a href="#three" style={{ color: "white" }}>
+                                        Syllabus
                                     </a>
                                 </p>
                             </div>
                             <div className="job-single-btn">
                                 <p style={{ fontSize: "18px" }}>
-                                    <a href="#two" style={{ color: "white" }}>
-                                        Salary & <br /> job positions
+                                    <a href="#four" style={{ color: "white" }}>
+                                        Exam Pattern
                                     </a>
                                 </p>
                             </div>
                             <div className="job-single-btn">
                                 <p style={{ fontSize: "18px" }}>
-                                    <a href="#two" style={{ color: "white" }}>
-                                        Salary & <br /> job positions
+                                    <a href="#five" style={{ color: "white" }}>
+                                        Cutoff
                                     </a>
                                 </p>
                             </div>
                             <div className="job-single-btn">
                                 <p style={{ fontSize: "18px" }}>
-                                    <a href="#two" style={{ color: "white" }}>
-                                        Salary & <br /> job positions
+                                    <a href="#six" style={{ color: "white" }}>
+                                        Apply Online
                                     </a>
                                 </p>
                             </div>
                             <div className="job-single-btn">
                                 <p style={{ fontSize: "18px" }}>
-                                    <a href="#two" style={{ color: "white" }}>
-                                        Salary & <br /> job positions
+                                    <a href="#seven" style={{ color: "white" }}>
+                                        Admit Card
                                     </a>
                                 </p>
                             </div>
                             <div className="job-single-btn">
                                 <p style={{ fontSize: "18px" }}>
-                                    <a href="#two" style={{ color: "white" }}>
-                                        Salary & <br /> job positions
+                                    <a href="#eight" style={{ color: "white" }}>
+                                        Prev Year <br /> que.papers
                                     </a>
                                 </p>
                             </div>
@@ -156,18 +164,19 @@ function Governmentjobsubcategory(props) {
                         <div className="government-job-subcategory-content">
                             <h5
                                 className="government-job-subcategory-information"
-                                id="two"
+                                id="one"
                             >
                                 Salary and Job Position <br />
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: categoryJobs.salary_and_job_positions
+                                        __html:
+                                            categoryJobs.salary_and_job_positions
                                     }}
                                 ></div>
                             </h5>
                             <h5
                                 className="government-job-subcategory-information"
-                                id="three"
+                                id="two"
                             >
                                 Eligibility Criteria <br />
                                 <div
@@ -179,7 +188,7 @@ function Governmentjobsubcategory(props) {
                             </h5>
                             <h5
                                 className="government-job-subcategory-information"
-                                id="four"
+                                id="three"
                             >
                                 Syllabus <br />
                                 <div
@@ -190,7 +199,7 @@ function Governmentjobsubcategory(props) {
                             </h5>
                             <h5
                                 className="government-job-subcategory-information"
-                                id="five"
+                                id="four"
                             >
                                 Exam Pattern <br />
                                 <div
@@ -201,7 +210,7 @@ function Governmentjobsubcategory(props) {
                             </h5>
                             <h5
                                 className="government-job-subcategory-information"
-                                id="six"
+                                id="five"
                             >
                                 Cutoff <br />
                                 <div
@@ -212,7 +221,7 @@ function Governmentjobsubcategory(props) {
                             </h5>
                             <h5
                                 className="government-job-subcategory-information"
-                                id="seven"
+                                id="six"
                             >
                                 Apply Online <br />
                                 <div
@@ -223,7 +232,7 @@ function Governmentjobsubcategory(props) {
                             </h5>
                             <h5
                                 className="government-job-subcategory-information"
-                                id="eight"
+                                id="seven"
                             >
                                 Admit Card <br />
                                 <div
@@ -232,7 +241,10 @@ function Governmentjobsubcategory(props) {
                                     }}
                                 ></div>
                             </h5>
-                            <h5 className="government-job-subcategory-information">
+                            <h5
+                                className="government-job-subcategory-information"
+                                id="eight"
+                            >
                                 Previous Year Question papers
                             </h5>
                             <h5>
@@ -262,10 +274,15 @@ function Governmentjobsubcategory(props) {
                             </h5>
                         </div>
                     </div>
-                    {/* <LinkCard
-                        title="Related Notifications and jobs for you"
-                        data={dummyLinkData}
-                    /> */}
+                    {jobs && jobs.length > 0 && (
+                        <LinkCard
+                            title="Related Notifications and Jobs For you"
+                            data={jobs}
+                            background={true}
+                            customPadding="0px"
+                            customMargin="50px 0 0"
+                        />
+                    )}
                 </div>
             </div>
         </>

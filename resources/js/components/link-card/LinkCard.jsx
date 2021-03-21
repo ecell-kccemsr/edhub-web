@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, ButtonToggle } from "reactstrap";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 const LinkCard = props => {
     const [data, setData] = useState([]);
 
@@ -10,8 +10,16 @@ const LinkCard = props => {
         }
     }, []);
 
-        return (
-        <section className="link-card-section">
+    return (
+        <section
+            className="link-card-section"
+            style={{
+                padding: `${
+                    props.customPadding ? props.customPadding : " 50px 150px"
+                }`,
+                margin: `${props.customMargin ? props.customMargin : "0px"}`
+            }}
+        >
             <div
                 className="link-card-container"
                 style={{
@@ -50,13 +58,11 @@ const LinkCard = props => {
                 </Row>
                 <hr />
 
-                        <div className="text-center pb-0">
-                            <Link to="#"
-                                className="link-card-section-btn "
-                            >
-                                View All
-                            </Link>
-                        </div>
+                <div className="text-center pb-0">
+                    <Link to="#" className="link-card-section-btn ">
+                        View All
+                    </Link>
+                </div>
             </div>
         </section>
     );

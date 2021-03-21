@@ -1,37 +1,27 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, List, FormGroup, Label, Input } from "reactstrap";
+import {
+    Row,
+    Col,
+    List,
+    FormGroup,
+    Label,
+    Input,
+    Form,
+    Button
+} from "reactstrap";
 import BreadCrumb from "../components/breadcrumb/BreadCrumb";
 
-const questionpaperTrendingDummyData = [
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb Onwards, Salary upto 77208/-",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection",
-        link: "#"
-    },
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb Onwards, Salary upto 77208/-",
-        link: "#"
-    }
-];
 const Governmentjobcategory = props => {
     const [subCategory, setSubCategory] = useState([]);
     const [categoryslug, setSlug] = useState("");
     const [categoryJobs, setCategoryJobs] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [category, setCategory] = useState([]);
+    const [filterjobs, setFilterJobs] = useState([]);
 
     useEffect(() => {
-        console.log(props);
         let { category_id } = props.match.params;
         if (category_id) {
             axios
@@ -39,7 +29,6 @@ const Governmentjobcategory = props => {
                     `http://localhost:8000/api/government_jobs/sub_categories?category_id=${category_id}`
                 )
                 .then(res => {
-                    console.log(res);
                     setSubCategory(res.data.data);
                 })
 
@@ -53,14 +42,29 @@ const Governmentjobcategory = props => {
                 )
 
                 .then(res => {
-                    console.log(res);
                     setCategoryJobs(res.data.data);
+                    setFilterJobs(res.data.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+            axios
+                .get("http://localhost:8000/api/government_jobs/categories")
+                .then(res => {
+                    setCategory(res.data.data);
                 })
                 .catch(err => {
                     console.log(err);
                 });
         }
     }, []);
+    const filterJobs = slug => {
+        let jobs = [];
+        categoryJobs.filter(cjobs => {
+            if (cjobs.subcategory.slug == slug) jobs.push(cjobs);
+        });
+        setFilterJobs(jobs);
+    };
 
     const toggle = () => setDropdownOpen(prevState => !prevState);
 
@@ -156,12 +160,11 @@ const Governmentjobcategory = props => {
                             {subCategory &&
                                 subCategory.map(s => (
                                     <li key={s?.id}>
-                                        <h4 className="questionpaper-subcategory">
-                                            <Link
-                                                to={`/govermentjobs/subcategory/${s?.id}`}
-                                            >
-                                                {s?.name}
-                                            </Link>
+                                        <h4
+                                            className="questionpaper-subcategory"
+                                            onClick={() => filterJobs(s?.slug)}
+                                        >
+                                            {s?.name}
                                         </h4>
                                     </li>
                                 ))}
@@ -174,8 +177,8 @@ const Governmentjobcategory = props => {
                         className="mb-3"
                     >
                         <div className="questionpaper-main-section">
-                            {categoryJobs &&
-                                categoryJobs.map(c => (
+                            {filterjobs &&
+                                filterjobs.map(c => (
                                     <div
                                         className="questionpaper-news-details"
                                         key={c?.id}
@@ -201,14 +204,18 @@ const Governmentjobcategory = props => {
                         md={{ size: 6, order: 3 }}
                         lg={{ size: 3, order: 3 }}
                     >
-                        <div className="questionpaper-register-form-section">
-                            <h5>REGISTER FOR FREE UPDATES</h5>
-                            <form onSubmit={handleSubmit}>
+                        <div className="registration-section">
+                            <h5
+                                style={{ padding: "10px", textAlign: "center" }}
+                            >
+                                REGISTER FOR FREE UPDATES
+                            </h5>
+                            <Form>
                                 <FormGroup>
                                     <Input
                                         type="name"
                                         name="name"
-                                        id="name"
+                                        id="exampleName"
                                         placeholder="Name"
                                     />
                                 </FormGroup>
@@ -216,7 +223,7 @@ const Governmentjobcategory = props => {
                                     <Input
                                         type="email"
                                         name="email"
-                                        id="email"
+                                        id="exampleEmail"
                                         placeholder="Email"
                                     />
                                 </FormGroup>
@@ -224,41 +231,34 @@ const Governmentjobcategory = props => {
                                     <Input
                                         type="number"
                                         name="number"
-                                        id="number"
+                                        id="exampleNumber"
                                         min="1"
                                         max="10"
                                         placeholder="Phone Number"
                                     />
                                 </FormGroup>
-                                <button
-                                    className="btn-submit-questionpaper"
-                                    type="submit"
-                                >
+                                <Button className="registration-btn">
                                     Submit
-                                </button>
-                            </form>
+                                </Button>
+                            </Form>
                         </div>
-
-                        {/* Trending News */}
-                        <div className="questionpaper-trending">
-                            <h4>Trending</h4>
-                            {questionpaperTrendingDummyData &&
-                                questionpaperTrendingDummyData.map((q, key) => (
-                                    <div
-                                        className="questionpaper-news-trending"
-                                        key={key}
-                                    >
-                                        <h5>
-                                            <Link to={q?.link}>{q?.title}</Link>
-                                        </h5>
-                                        <h6>
-                                            {q?.description.slice(0, 150) +
-                                                "..."}
-                                        </h6>
-                                    </div>
-                                ))}
-
-                            <div className="view">View all</div>
+                        <div className="select-news-by-category-btn-section-1">
+                            <div className="d-flex flex-wrap justify-content-center">
+                                {category && category == 0 && (
+                                    <div>No Subcategories</div>
+                                )}
+                                {category &&
+                                    category.length > 0 &&
+                                    category.map(category => (
+                                        <a
+                                            href={`/govermentjobs/${category?.id}`}
+                                            key={category.id}
+                                            className="category-btn-1 text-center"
+                                        >
+                                            {category.name}
+                                        </a>
+                                    ))}
+                            </div>
                         </div>
                     </Col>
                 </Row>

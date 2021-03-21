@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 // Government-Job-Section
 .government-section {
     padding: 50px 150px 30px;
@@ -41,14 +44,17 @@
 .government-section {
     padding: 50px 150px 30px;
     color: rgb(70, 70, 70);
-
-    .exam-btn-section {
-        background: #f8f8f8;
-        padding: 20px;
+    .goverment-btn-section {
+        display: flex;
+        justify-content: space-around;
         box-shadow: 0px 5px 4px 0px #bebcbc;
         border-radius: 10px;
-        .exam-single-btn:link,
+        background: #f8f8f8;
+        padding: 20px;
+
         .job-single-btn {
+            width: 100%;
+            margin: 5px;
             border: none;
             outline: none;
             text-decoration: none;
@@ -58,8 +64,6 @@
             align-items: center;
             background: #ffb342;
             border-radius: 8px;
-            padding: 10px !important;
-            margin: 5px;
         }
     }
     .content-bankjoblast {
@@ -78,6 +82,7 @@
         }
     }
 }
+
 @media screen and (max-width: 600px) {
     .government-section {
         padding: 20px;
