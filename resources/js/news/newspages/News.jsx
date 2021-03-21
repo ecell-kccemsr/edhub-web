@@ -19,6 +19,7 @@ import {
 function News() {
     const [categories, setCategory] = useState([]);
     const [news, setNews] = useState([]);
+    const [trending, setTrending] = useState([]);
     useEffect(() => {
         axios
             .get("http://localhost:8000/api/news/categories")
@@ -32,6 +33,14 @@ function News() {
             .get("http://localhost:8000/api/news")
             .then(res => {
                 setNews(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        axios
+            .get("http://localhost:8000/news/trending")
+            .then(res => {
+                setTrending(res.data.data);
             })
             .catch(err => {
                 console.log(err);
@@ -89,33 +98,34 @@ function News() {
                                         {categories[0]?.name}
                                     </h4>
 
-                                    {news.map(news => (
-                                        <>
-                                            <div
-                                                className="d-flex"
-                                                key={news.id}
-                                            >
-                                                <div>
-                                                    <h5 className="news-title">
-                                                        {news.title}
-                                                    </h5>
+                                    {news &&
+                                        news.map(news => (
+                                            <>
+                                                <div
+                                                    className="d-flex"
+                                                    key={news.id}
+                                                >
+                                                    <div>
+                                                        <h5 className="news-title">
+                                                            {news.title}
+                                                        </h5>
 
-                                                    <p className="news-description">
-                                                        {news.description.slice(
-                                                            0,
-                                                            300
-                                                        ) + "..."}
-                                                    </p>
+                                                        <p className="news-description">
+                                                            {news.description.slice(
+                                                                0,
+                                                                300
+                                                            ) + "..."}
+                                                        </p>
+                                                    </div>
+                                                    <img
+                                                        src={news.image}
+                                                        alt=""
+                                                        className="category-information-image"
+                                                    />
                                                 </div>
-                                                <img
-                                                    src={news.image}
-                                                    alt=""
-                                                    className="category-information-image"
-                                                />
-                                            </div>
-                                            <hr className="news-hr" />
-                                        </>
-                                    ))}
+                                                <hr className="news-hr" />
+                                            </>
+                                        ))}
                                 </div>
                             </section>
                         </div>
@@ -164,25 +174,29 @@ function News() {
                         {/* Trending News */}
                         <div className="trending-section-container">
                             <h4 className="trending-section">Trending</h4>
-                            {news.map(news => (
-                                <div>
-                                    <div key={news.id}>
-                                        <div>
-                                            <strong className="news-title">
-                                                {news.title}
-                                            </strong>
-                                            <br />
+                            {trending && trending.length == 0 && (
+                                <p>No Trending News</p>
+                            )}
+                            {trending &&
+                                trending.map(news => (
+                                    <div>
+                                        <div key={news.id}>
+                                            <div>
+                                                <strong className="news-title">
+                                                    {news.title}
+                                                </strong>
+                                                <br />
 
-                                            <p className="news-description">
-                                                {news.description.slice(
-                                                    0,
-                                                    100
-                                                ) + "..."}
-                                            </p>
+                                                <p className="news-description">
+                                                    {news.description.slice(
+                                                        0,
+                                                        100
+                                                    ) + "..."}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
                             <hr />
                             <div className="text-center">
                                 <Button className="trending-section-btn">

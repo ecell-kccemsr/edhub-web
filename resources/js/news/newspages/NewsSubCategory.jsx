@@ -13,6 +13,7 @@ import {
 
 function NewsSubCategory(props) {
     const [categoryNews, setCategoryNews] = useState([]);
+    const [trending, setTrending] = useState([]);
     useEffect(() => {
         const { subcategory_id } = props.match.params;
         if (subcategory_id) {
@@ -29,6 +30,14 @@ function NewsSubCategory(props) {
                     console.log(err);
                 });
         }
+        axios
+            .get("http://localhost:8000/news/trending")
+            .then(res => {
+                setTrending(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
 
     return (
@@ -164,23 +173,20 @@ function NewsSubCategory(props) {
                         {/* Trending NEWS */}
                         <div className="trending-section-container">
                             <h4 className="trending-section">Trending</h4>
-                            {categoryNews && categoryNews.length == 0 && (
+                            {trending && trending.length == 0 && (
                                 <h4>No Trending news</h4>
                             )}
-                            {categoryNews &&
-                                categoryNews.length > 0 &&
-                                categoryNews.map(categorynews => (
+                            {trending &&
+                                trending.length > 0 &&
+                                trending.map(news => (
                                     <div>
-                                        <div
-                                            className="d-flex"
-                                            key={categorynews.id}
-                                        >
+                                        <div className="d-flex" key={news.id}>
                                             <div>
                                                 <h6 className="news-title">
-                                                    {categorynews.title}
+                                                    {news.title}
                                                 </h6>
                                                 <p className="news-description">
-                                                    {categorynews.description.slice(
+                                                    {news.description.slice(
                                                         0,
                                                         100
                                                     ) + "..."}

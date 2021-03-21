@@ -9,6 +9,7 @@ function Govermentjob() {
     const [categories, setCategory] = useState([]);
 
     const [jobs, setJobs] = useState([]);
+    const [results, setExamResults] = useState([]);
 
     useEffect(() => {
         axios
@@ -23,16 +24,16 @@ function Govermentjob() {
             .catch(err => {
                 console.log(err);
             });
+        axios
+            .get("http://localhost:8000/api/examresults")
+            .then(res => {
+                setExamResults(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
 
-    const eduWiseJobsDummyData = [
-        "10TH",
-        "12TH",
-        "UNDERGRADUATE",
-        "GRADUATE",
-        "POST GRADUATE",
-        "DOCTORATE"
-    ];
     return (
         <>
             <div className="government-section">
@@ -56,7 +57,7 @@ function Govermentjob() {
                 </h3>
 
                 {/* Hero section */}
-                <div class="government-top-card ">
+                <div className="government-top-card ">
                     <Row style={{ justifyContent: "space-evenly" }}>
                         {categories &&
                             categories.map(category => (
@@ -93,8 +94,12 @@ function Govermentjob() {
                 />
             )}
             {/* Exam Results */}
-            {jobs && jobs.length > 0 && (
-                <LinkCard title="Exam Results" data={jobs} background={true}  />
+            {results && results.length > 0 && (
+                <LinkCard
+                    title="Exam Results"
+                    data={results}
+                    background={true}
+                />
             )}
         </>
     );
