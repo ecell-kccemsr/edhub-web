@@ -24,6 +24,7 @@ function Questionpaper2(props) {
         axios
             .get(`http://localhost:8000/api/questionpapers/${ques_slug}`)
             .then(res => {
+                console.log(res);
                 setQuespaper(res.data.data);
             })
 
@@ -35,6 +36,13 @@ function Questionpaper2(props) {
         e.preventDefault();
         console.log("SUBMITTED");
     };
+    const filterQuestionPaper = year => {
+        // let questionpaper = quespaper.filter(quesp => {
+        //     return quesp.year == year;
+        // });
+        // setQuespaper(questionpaper);
+    };
+    console.log(quespaper);
     return (
         <>
             <div className="questionpapear-section">
@@ -54,22 +62,34 @@ function Questionpaper2(props) {
                             className="questionpaper-filter-ul"
                         >
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2021)}
+                                >
                                     2021
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2020)}
+                                >
                                     2020
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2019)}
+                                >
                                     2019
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2018)}
+                                >
                                     2018
                                 </h4>
                             </li>
@@ -107,13 +127,14 @@ function Questionpaper2(props) {
                                 style={{ color: "blue" }}
                             >
                                 <h5>
-                                    <Link
-                                        to={quespaper?.link}
+                                    <a
+                                        href={quespaper?.url}
+                                        target="_blank"
                                         style={{ color: "blue" }}
                                     >
                                         {quespaper?.title}
                                         <h6>{quespaper?.description}</h6>
-                                    </Link>
+                                    </a>
                                 </h5>
                             </div>
                         </div>

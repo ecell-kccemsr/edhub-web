@@ -1,82 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-    Row,
-    Col,
-    List,
-    FormGroup,
-    Label,
-    Input} from "reactstrap";
+import { Row, Col, List, FormGroup, Label, Input } from "reactstrap";
 import BreadCrumb from "../components/breadcrumb/BreadCrumb";
-
-const questionpaperTopicDummyData = [
-    {
-        title: "Goverment Exams",
-        link: "#"
-    },
-    {
-        title: "MBA Exams",
-        link: "#"
-    },
-    {
-        title: "Bank Exams",
-        link: "#"
-    },
-    {
-        title: "10th Exams",
-        link: "#"
-    },
-    {
-        title: "Medical Exams",
-        link: "#"
-    },
-    {
-        title: "12th Exams",
-        link: "#"
-    },
-    {
-        title: "Defence Exams",
-        link: "#"
-    },
-    {
-        title: "Arts Exams",
-        link: "#"
-    }
-];
-
-const questionPaperMainSectionDummyData = [
-    {
-        title: "RBI Recruitment 2021 Notification for Various Non CSG",
-        description:
-            "Posts,Online Application begins from 23 Feb onwards, Salary upto 77208/-",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here.",
-        link: "#"
-    },
-    {
-        title: "RBI Grade B 2021: Notification Out for 322 Vacancies",
-        description:
-            "Exam Date, Admit Card, Vacancy, Exam Pattern, Syllabus, Cut Off, Eligibility",
-        link: "#"
-    },
-    {
-        title: "9 hrs agoRBI Grade B 2021 Notification released",
-        description:
-            "@rbi.co.in for recruitment of 322 vacancies of Grade B Officers - GEN/DSIM/DEPR. RBI Grade B Phase 1 Exam will be held on 6th March 2021. Check here RBI Grade B Application Process & Dates, Exam Date, Admit",
-        link: "#"
-    },
-    {
-        title: "55 mins agoRBI Recruitment 2021 Notification",
-        description:
-            "Various Non CSG Posts Released @rbi.org.in. Check RBI Recruitment 2021 Application Process, RBI 2021 Eligibility, RBI 2021 Salary, RBI 2021 Selection Criteria and other details here.",
-        link: "#"
-    }
-];
 
 const questionpaperTrendingDummyData = [
     {
@@ -105,14 +31,15 @@ const Governmentjobcategory = props => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     useEffect(() => {
-        let { category_slug } = props.match.params;
-        if (category_slug) {
-            setSlug(category_slug);
+        console.log(props);
+        let { category_id } = props.match.params;
+        if (category_id) {
             axios
                 .get(
-                    `http://localhost:8000/api/government_jobs/sub_categories?category_slug=${category_slug}`
+                    `http://localhost:8000/api/government_jobs/sub_categories?category_id=${category_id}`
                 )
                 .then(res => {
+                    console.log(res);
                     setSubCategory(res.data.data);
                 })
 
@@ -122,10 +49,11 @@ const Governmentjobcategory = props => {
 
             axios
                 .get(
-                    `http://localhost:8000/api/government_jobs?category_slug=${category_slug}`
+                    `http://localhost:8000/api/government_jobs?category_id=${category_id}`
                 )
 
                 .then(res => {
+                    console.log(res);
                     setCategoryJobs(res.data.data);
                 })
                 .catch(err => {
@@ -176,7 +104,7 @@ const Governmentjobcategory = props => {
                             </h5>
                         )}
                     </Col>
-                      {/* Toggle by age */}
+                    {/* Toggle by age */}
                     <Col sm="12" md="4" lg="2">
                         <FormGroup>
                             <Label for="Age" style={{ fontSize: "14px" }}>
@@ -189,7 +117,7 @@ const Governmentjobcategory = props => {
                             </Input>
                         </FormGroup>
                     </Col>
-                      {/* Toggle by Qualification */}
+                    {/* Toggle by Qualification */}
                     <Col sm="12" md="4" lg="2">
                         <FormGroup>
                             <Label
@@ -230,7 +158,7 @@ const Governmentjobcategory = props => {
                                     <li key={s?.id}>
                                         <h4 className="questionpaper-subcategory">
                                             <Link
-                                                to={`/govermentjobs/${categoryslug}/${s?.slug}/${s?.id}`}
+                                                to={`/govermentjobs/subcategory/${s?.id}`}
                                             >
                                                 {s?.name}
                                             </Link>
@@ -254,7 +182,7 @@ const Governmentjobcategory = props => {
                                     >
                                         <h5>
                                             <Link
-                                                to={`/govermentjobs/${categoryslug}/${c?.slug}/${c?.id}`}
+                                                to={`/govermentjobs/subcategory/${c?.id}`}
                                             >
                                                 {c?.title}
                                             </Link>

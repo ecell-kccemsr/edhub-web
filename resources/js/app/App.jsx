@@ -33,13 +33,13 @@ const App = props => {
                         component={Govermentjob}
                     />
                     <Route
-                        path="/govermentjobs/:category_slug"
+                        path="/govermentjobs/:category_id"
                         exact
                         component={Governmentjobcategory}
                     />
 
                     <Route
-                        path="/govermentjobs/:category_slug/:subcategory_slug/:subcategory_id"
+                        path="/govermentjobs/subcategory/:subcategory_id"
                         exact
                         component={Governmentjobsubcategory}
                     />

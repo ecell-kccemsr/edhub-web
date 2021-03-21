@@ -36,7 +36,7 @@ function Govermentjob() {
     return (
         <>
             <div className="government-section">
-                 {/* Breadcrumb  */}
+                {/* Breadcrumb  */}
                 <BreadCrumb
                     navData={[
                         {
@@ -49,12 +49,12 @@ function Govermentjob() {
                             active: true
                         }
                     ]}
-                /> 
-               {/* title */}
+                />
+                {/* title */}
                 <h3 className="government-top-card-header mb-3">
                     Goverment Jobs 2021
                 </h3>
-                
+
                 {/* Hero section */}
                 <div class="government-top-card ">
                     <Row style={{ justifyContent: "space-evenly" }}>
@@ -70,7 +70,7 @@ function Govermentjob() {
 
                                         <h6>
                                             <Link
-                                                to={`/govermentjobs/${category.slug}`}
+                                                to={`/govermentjobs/${category.id}`}
                                                 key={category?.id}
                                                 className="category-btn-link"
                                             >
@@ -83,7 +83,7 @@ function Govermentjob() {
                     </Row>
                 </div>
             </div>
-            
+
             {/* Latest Notifications */}
             {jobs && jobs.length > 0 && (
                 <LinkCard
@@ -92,8 +92,8 @@ function Govermentjob() {
                     background={true}
                 />
             )}
-       
-           {/* education wise cards */}
+
+            {/* education wise cards */}
             <div className="eduwise-section">
                 <h4 className="eduwise-header mb-4">Education wise Jobs</h4>
                 <Row>
