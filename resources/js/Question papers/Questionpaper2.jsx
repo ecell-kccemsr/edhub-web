@@ -19,13 +19,17 @@ import {
 
 function Questionpaper2(props) {
     const [quespaper, setQuespaper] = useState([]);
-    const { ques_slug } = props.match.params;
+    const [quespapervar, setQuespaperVar] = useState([]);
+    const { category_id } = props.match.params;
     useEffect(() => {
+        console.log(props);
         axios
-            .get(`http://localhost:8000/api/questionpapers/${ques_slug}`)
+            .get(
+                `http://localhost:8000/api/questionpapers?category_id=${category_id}`
+            )
             .then(res => {
-                console.log(res);
                 setQuespaper(res.data.data);
+                setQuespaperVar(res.data.data);
             })
 
             .catch(err => {
@@ -37,10 +41,11 @@ function Questionpaper2(props) {
         console.log("SUBMITTED");
     };
     const filterQuestionPaper = year => {
-        // let questionpaper = quespaper.filter(quesp => {
-        //     return quesp.year == year;
-        // });
-        // setQuespaper(questionpaper);
+        let questionpaper = [];
+        quespaper.filter(quesp => {
+            if (quesp.year == year) questionpaper.push(quesp);
+        });
+        setQuespaperVar(questionpaper);
     };
     console.log(quespaper);
     return (
@@ -121,22 +126,27 @@ function Questionpaper2(props) {
                             <h5 className="questionpaper-main-header">
                                 Question Papers
                             </h5>
-
-                            <div
-                                className="questionpaper-news-details"
-                                style={{ color: "blue" }}
-                            >
-                                <h5>
-                                    <a
-                                        href={quespaper?.url}
-                                        target="_blank"
-                                        style={{ color: "blue" }}
-                                    >
-                                        {quespaper?.title}
-                                        <h6>{quespaper?.description}</h6>
-                                    </a>
-                                </h5>
-                            </div>
+                            {quespapervar &&
+                                quespapervar.map(ques => {
+                                    return (
+                                        <div
+                                            className="questionpaper-news-details"
+                                            style={{ color: "blue" }}
+                                            key={ques.id}
+                                        >
+                                            <h5>
+                                                <a
+                                                    href={ques?.url}
+                                                    target="_blank"
+                                                    style={{ color: "blue" }}
+                                                >
+                                                    {ques?.title}
+                                                    <h6>{ques?.description}</h6>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                    );
+                                })}
                         </div>
                     </Col>
 

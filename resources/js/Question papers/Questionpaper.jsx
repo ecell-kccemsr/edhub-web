@@ -22,14 +22,15 @@ function Questionpaper(props) {
         e.preventDefault();
         console.log("SUBMITTED");
     };
-    console.log(props);
     const [subQuespapercategory, setSubQuespapercategory] = useState([]);
     const [quespaper, setQuespaper] = useState([]);
+    const [quespapervar, setQuespaperVar] = useState([]);
     useEffect(() => {
         axios
             .get("http://localhost:8000/api/questionpapers")
             .then(res => {
                 setQuespaper(res.data.data);
+                setQuespaperVar(res.data.data);
             })
 
             .catch(err => {
@@ -47,7 +48,13 @@ function Questionpaper(props) {
                 console.log(err);
             });
     }, []);
-
+    const filterQuestionPaper = year => {
+        let questionpaper = [];
+        quespaper.filter(quesp => {
+            if (quesp.year == year) questionpaper.push(quesp);
+        });
+        setQuespaperVar(questionpaper);
+    };
     return (
         <>
             <div className="questionpapear-section">
@@ -71,37 +78,58 @@ function Questionpaper(props) {
                             className="questionpaper-filter-ul"
                         >
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2021)}
+                                >
                                     2021
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2020)}
+                                >
                                     2020
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2019)}
+                                >
                                     2019
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2018)}
+                                >
                                     2018
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2017)}
+                                >
                                     2017
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2016)}
+                                >
                                     2016
                                 </h4>
                             </li>
                             <li>
-                                <h4 className="questionpaper-subcategory">
+                                <h4
+                                    className="questionpaper-subcategory"
+                                    onClick={() => filterQuestionPaper(2015)}
+                                >
                                     2015
                                 </h4>
                             </li>
@@ -126,7 +154,7 @@ function Questionpaper(props) {
                                                 key={key}
                                             >
                                                 <Link
-                                                    to={`/questionpaper/${q?.slug}`}
+                                                    to={`/questionpaper/${q?.id}`}
                                                 >
                                                     {q?.name}
                                                 </Link>
@@ -135,8 +163,8 @@ function Questionpaper(props) {
                                 </div>
                             </div>
 
-                            {quespaper &&
-                                quespaper.map((q, key) => (
+                            {quespapervar &&
+                                quespapervar.map((q, key) => (
                                     <div className="questionpaper-news-details">
                                         <h5>
                                             <Link to={q?.link}>
