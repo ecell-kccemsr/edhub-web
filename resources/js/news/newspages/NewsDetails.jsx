@@ -101,7 +101,11 @@ function Newsdetails(props) {
                             className="img-newsdetails"
                         />
                         <div className="newsdetails-detail">
-                            <h5>{categorynews.details}</h5>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: categorynews.details
+                                }}
+                            ></div>
                         </div>
                     </div>
 
@@ -125,11 +129,21 @@ function Newsdetails(props) {
                                             />
 
                                             <h5 style={{ marginLeft: "15px" }}>
-                                                {newsatglance.title} <br />{" "}
+                                                <a
+                                                    style={{
+                                                        color: "black",
+                                                        textDecoration: "none"
+                                                    }}
+                                                    href={`/news/details/view/${newsatglance.slug}`}
+                                                >
+                                                    {" "}
+                                                    {newsatglance.title}
+                                                </a>{" "}
+                                                <br />{" "}
                                                 {newsatglance.description.slice(
                                                     0,
                                                     50
-                                                )}
+                                                ) + "..."}
                                             </h5>
                                         </div>
                                     ))}

@@ -71,7 +71,7 @@ function NewsCategory(props) {
                 <h4 className="title-bank">News</h4>
                 <hr className="news-hr" />
                 <Row>
-                {/* Sub Category News */}
+                    {/* Sub Category News */}
                     <Col sm="12" md="6" lg="9" className="mb-4">
                         <div className="category-left-section">
                             <h6 className="select-by-category-header text-center">
@@ -123,7 +123,7 @@ function NewsCategory(props) {
                                                                 {categorynews.description.slice(
                                                                     0,
                                                                     300
-                                                                )}
+                                                                ) + "..."}
                                                             </p>
                                                         </div>
                                                         <img
@@ -143,7 +143,7 @@ function NewsCategory(props) {
                         </div>
                     </Col>
                     <Col sm="12" md="6" lg="3">
-                    {/* REGISTER FORM */}
+                        {/* REGISTER FORM */}
                         <div className="registration-section">
                             <h5
                                 style={{ padding: "10px", textAlign: "center" }}
@@ -205,7 +205,7 @@ function NewsCategory(props) {
                                                     {categorynews.description.slice(
                                                         0,
                                                         100
-                                                    )}
+                                                    ) + "..."}
                                                 </p>
                                             </div>
                                         </div>

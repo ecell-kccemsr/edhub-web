@@ -101,9 +101,10 @@ function NewsSubCategory(props) {
                                                             </h5>
                                                         </Link>
                                                         <p className="news-description">
-                                                            {
-                                                                categorynews.description
-                                                            }
+                                                            {categorynews.description.slice(
+                                                                0,
+                                                                150
+                                                            ) + "..."}
                                                         </p>
                                                     </div>
                                                     <img
@@ -182,7 +183,7 @@ function NewsSubCategory(props) {
                                                     {categorynews.description.slice(
                                                         0,
                                                         100
-                                                    )}
+                                                    ) + "..."}
                                                 </p>
                                             </div>
                                         </div>

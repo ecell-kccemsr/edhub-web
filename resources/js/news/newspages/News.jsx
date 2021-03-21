@@ -63,8 +63,7 @@ function News() {
                     <h5>NEWS</h5>
                 </div>
                 <hr className="news-hr" />
-
-               {/* News Category */}
+                {/* News Category */}
                 <Row>
                     <Col sm="6" md={{ size: 8, offset: 0 }} lg="9">
                         <div className="category-left-section">
@@ -105,7 +104,7 @@ function News() {
                                                         {news.description.slice(
                                                             0,
                                                             300
-                                                        )}
+                                                        ) + "..."}
                                                     </p>
                                                 </div>
                                                 <img
@@ -175,7 +174,10 @@ function News() {
                                             <br />
 
                                             <p className="news-description">
-                                                {news.description.slice(0, 100)}
+                                                {news.description.slice(
+                                                    0,
+                                                    100
+                                                ) + "..."}
                                             </p>
                                         </div>
                                     </div>
