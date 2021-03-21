@@ -48,7 +48,7 @@ function Homepage() {
         axios
             .get("http://localhost:8000/api/questionpapers")
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setQuestionPaper(res.data.data);
             })
             .catch(err => {

@@ -70,7 +70,7 @@ const Governmentjobcategory = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("SUBMITTED");
+        // console.log("SUBMITTED");
     };
 
     return (

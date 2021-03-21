@@ -27,7 +27,7 @@ function Governmentjobsubcategory(props) {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        console.log(props);
+        // console.log(props);
         const { category_slug } = props.match.params;
         const { subcategory_slug } = props.match.params;
         const { subcategory_id } = props.match.params;
@@ -42,7 +42,7 @@ function Governmentjobsubcategory(props) {
 
                 .then(res => {
                     setCategoryJobs(res.data.data[0]);
-                    console.log(res);
+                    // console.log(res);
                 })
                 .catch(err => {
                     console.log(err);
