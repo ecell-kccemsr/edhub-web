@@ -419,6 +419,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.question-papers.index',
                 'parameters' => NULL,
             ),
+            25 => 
+            array (
+                'id' => 27,
+                'menu_id' => 1,
+                'title' => 'Register For Free Updates',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-company',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 30,
+                'created_at' => '2021-03-21 17:54:19',
+                'updated_at' => '2021-03-21 17:54:19',
+                'route' => 'voyager.register-for-free-updates.index',
+                'parameters' => NULL,
+            ),
         ));
         
         

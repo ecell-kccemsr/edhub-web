@@ -325,6 +325,24 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-03-21 12:37:38',
                 'updated_at' => '2021-03-21 12:40:15',
             ),
+            17 => 
+            array (
+                'id' => 20,
+                'name' => 'register_for_free_updates',
+                'slug' => 'register-for-free-updates',
+                'display_name_singular' => 'Register For Free Update',
+                'display_name_plural' => 'Register For Free Updates',
+                'icon' => 'voyager-company',
+                'model_name' => 'App\\Models\\RegisterForFreeUpdates',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-03-21 17:54:19',
+                'updated_at' => '2021-03-21 17:54:19',
+            ),
         ));
         
         

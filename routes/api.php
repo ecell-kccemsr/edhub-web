@@ -11,7 +11,7 @@ use App\Http\Controllers\API\GovernmentJobController;
 use App\Http\Controllers\API\QuestionPaperController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
-
+use App\Http\Controllers\API\RegisterForFreeUpdatesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,4 +70,7 @@ Route::get('/questionpapers/{question_paper}',[QuestionPaperController::class,'s
 
 //ExamResult
 Route::get('/examresults',[ExamResultController::class,'get']);
+
+//RegisterForFreeUpdates
+Route::post('/register_for_free_updates/add',[RegisterForFreeUpdatesController::class,'add']);
 
