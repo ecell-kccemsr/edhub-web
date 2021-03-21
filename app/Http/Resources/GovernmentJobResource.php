@@ -19,7 +19,7 @@ class GovernmentJobResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'job_positions' => $this->job_positions,
+            'salary_and_job_positions' => $this->salary_and_job_positions,
             'eligibility_criteria' => $this->eligibility_criteria,
             'syllabus' => $this->syllabus,
             'exam_pattern' => $this->exam_pattern,
@@ -32,7 +32,8 @@ class GovernmentJobResource extends JsonResource
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
             'updated_at_formated' => $this->updated_at === null ? null : $this->updated_at->diffForHumans(),
-            'slug' => $this->slug
+            'slug' => $this->slug,
+            'age_limit' => $this->age_limit
         ];
     }
 }

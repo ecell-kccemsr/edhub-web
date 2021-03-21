@@ -27,7 +27,8 @@ class ExamCalendarResource extends JsonResource
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
             'updated_at_formated' => $this->updated_at === null ? null : $this->updated_at->diffForHumans(),
-            'slug' => $this->slug
+            'slug' => $this->slug,
+            'age_limit' => $this->age_limit
         ];
     }
 }
