@@ -83,16 +83,17 @@ function Govermentjob() {
                             ))}
                     </Row>
                 </div>
-            </div>
 
-            {/* Latest Notifications */}
+ {/* Latest Notifications */}
             {jobs && jobs.length > 0 && (
                 <LinkCard
                     title="Latest Notifications"
                     data={jobs}
                     background={true}
-                />
+
+                    />
             )}
+            
             {/* Exam Results */}
             {results && results.length > 0 && (
                 <LinkCard
@@ -101,6 +102,9 @@ function Govermentjob() {
                     background={true}
                 />
             )}
+            </div>
+
+           
         </>
     );
 }

@@ -15,9 +15,9 @@ const LinkCard = props => {
             className="link-card-section"
             style={{
                 padding: `${
-                    props.customPadding ? props.customPadding : " 50px 150px"
+                    props.customPadding ? props.customPadding : " 0px 0px"
                 }`,
-                margin: `${props.customMargin ? props.customMargin : "0px"}`
+                margin: `${props.customMargin ? props.customMargin : "50px 0px 50px 0px"}`
             }}
         >
             <div

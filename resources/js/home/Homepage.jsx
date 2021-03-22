@@ -306,8 +306,7 @@ function Homepage() {
                             ))}
                     </Row>
                 </div>
-            </section>
-            {jobs && jobs.length > 0 && (
+                {jobs && jobs.length > 0 && (
                 <LinkCard
                     title="Exam Updates"
                     data={jobs}
@@ -326,6 +325,8 @@ function Homepage() {
                     toLink="/questionpaper"
                 />
             )}
+            </section>
+           
         </div>
     );
 }

@@ -158,11 +158,10 @@ function Governmentjobsubcategory(props) {
                         </div>
                     </section>
                     <div className="content-bankjoblast">
-                        <img
-                            className="government-job-subcategory"
-                            src="https://i.ibb.co/BfNN8Lc/Group-207.png"
-                            alt="bank"
-                        />
+                                <img src={categoryJobs.image} 
+                                     className="subcategory-image"
+                                     style={{maxWidth: "100%"}}
+                                      alt=""/>    
                         <div className="government-job-subcategory-content">
                             <h5
                                 className="government-job-subcategory-information"
