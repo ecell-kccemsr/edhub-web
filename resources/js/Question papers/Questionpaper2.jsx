@@ -22,7 +22,6 @@ function Questionpaper2(props) {
     const [quespapervar, setQuespaperVar] = useState([]);
     const { category_id } = props.match.params;
     useEffect(() => {
-        // console.log(props);
         axios
             .get(
                 `http://localhost:8000/api/questionpapers?category_id=${category_id}`
@@ -38,7 +37,17 @@ function Questionpaper2(props) {
     }, []);
     const handleSubmit = e => {
         e.preventDefault();
-        // console.log("SUBMITTED");
+        let form = e.nativeEvent.target;
+        let data = new FormData(form);
+        axios
+            .post(
+                "http://localhost:8000/api/register_for_free_updates/add",
+                data
+            )
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
     };
     const filterQuestionPaper = year => {
         let questionpaper = [];
@@ -47,7 +56,7 @@ function Questionpaper2(props) {
         });
         setQuespaperVar(questionpaper);
     };
-    // console.log(quespaper);
+
     return (
         <>
             <div className="questionpapear-section">
@@ -188,12 +197,12 @@ function Questionpaper2(props) {
                                 <button
                                     className="btn-submit-questionpaper"
                                     type="submit"
+                                    value="submit"
                                 >
                                     Submit
                                 </button>
                             </form>
                         </div>
-                       
                     </Col>
                 </Row>
             </div>

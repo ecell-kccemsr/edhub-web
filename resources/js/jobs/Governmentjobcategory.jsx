@@ -66,11 +66,19 @@ const Governmentjobcategory = props => {
         setFilterJobs(jobs);
     };
 
-    const toggle = () => setDropdownOpen(prevState => !prevState);
-
     const handleSubmit = e => {
         e.preventDefault();
-        // console.log("SUBMITTED");
+        let form = e.nativeEvent.target;
+        let data = new FormData(form);
+        axios
+            .post(
+                "http://localhost:8000/api/register_for_free_updates/add",
+                data
+            )
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
     };
 
     return (
@@ -210,7 +218,7 @@ const Governmentjobcategory = props => {
                             >
                                 REGISTER FOR FREE UPDATES
                             </h5>
-                            <Form>
+                            <form onSubmit={handleSubmit}>
                                 <FormGroup>
                                     <Input
                                         type="name"
@@ -230,17 +238,18 @@ const Governmentjobcategory = props => {
                                 <FormGroup>
                                     <Input
                                         type="number"
-                                        name="number"
-                                        id="exampleNumber"
-                                        min="1"
-                                        max="10"
+                                        name="mobile_no"
                                         placeholder="Phone Number"
                                     />
                                 </FormGroup>
-                                <Button className="registration-btn">
+                                <Button
+                                    className="registration-btn"
+                                    type="submit"
+                                    value="submit"
+                                >
                                     Submit
                                 </Button>
-                            </Form>
+                            </form>
                         </div>
                         <div className="select-news-by-category-btn-section-1">
                             <div className="d-flex flex-wrap justify-content-center">

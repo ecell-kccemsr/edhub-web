@@ -25,7 +25,6 @@ function Newsdetails(props) {
     const [subcategory, setsubcategory] = useState([]);
     const [newsatglance, setNewsAtGlance] = useState([]);
     useEffect(() => {
-        // console.log(props);
         const { category_slug } = props.match.params;
         let id, sub_id;
         axios
@@ -33,7 +32,7 @@ function Newsdetails(props) {
 
             .then(res => {
                 setcategorynews(res.data.data);
-                // console.log(res);
+
                 id = res.data.data?.category.id;
                 sub_id = res.data.data?.subcategory.id;
 
@@ -42,7 +41,6 @@ function Newsdetails(props) {
                         `http://localhost:8000/api/news/sub_categories?category_id=${id}`
                     )
                     .then(res => {
-                        // console.log(res);
                         setsubcategory(res.data.data);
                     });
 
@@ -51,14 +49,32 @@ function Newsdetails(props) {
                         `http://localhost:8000/api/news?subcategory_id=${sub_id}`
                     )
                     .then(res => {
-                        // console.log(res);
                         setNewsAtGlance(res.data.data);
+                    });
+                axios
+                    .get("http://localhost:8000/api/news/trending")
+                    .then(res => {
+                        setTrending(res.data.data);
                     });
             })
             .catch(err => {
                 console.log(err);
             });
     }, []);
+    const handleSubmit = e => {
+        e.preventDefault();
+        let form = e.nativeEvent.target;
+        let data = new FormData(form);
+        axios
+            .post(
+                "http://localhost:8000/api/register_for_free_updates/add",
+                data
+            )
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
+    };
     return (
         <div className="container news-details">
             {/* Breadcrumb */}
@@ -158,7 +174,7 @@ function Newsdetails(props) {
                         <h5 className="form-title-newsdetail">
                             REGISTER FOR FREE UPDATES
                         </h5>
-                        <Form>
+                        <form onSubmit={handleSubmit}>
                             <FormGroup>
                                 <Input
                                     type="name"
@@ -178,44 +194,44 @@ function Newsdetails(props) {
                             <FormGroup>
                                 <Input
                                     type="number"
-                                    name="number"
-                                    id="exampleNumber"
-                                    min="1"
-                                    max="10"
+                                    name="mobile_no"
                                     placeholder="Phone Number"
                                 />
                             </FormGroup>
-                            <Button className="registration-btn">Submit</Button>
-                        </Form>
+                            <Button
+                                className="registration-btn"
+                                type="submit"
+                                value="submit"
+                            >
+                                Submit
+                            </Button>
+                        </form>
                     </div>
                     {/* Trending News */}
-                    <div className="trending-section-container mt-4">
+                    <div className="trending-section-container">
                         <h4 className="trending-section">Trending</h4>
-                        <div>
-                            <div className="">
+                        {trending && trending.length == 0 && (
+                            <p>No Trending News</p>
+                        )}
+                        {trending &&
+                            trending.length > 0 &&
+                            trending.map(news => (
                                 <div>
-                                    <h6 className="news-title">
-                                        RBI Recruitment 2021 Notification for
-                                        Various Non CSG {""}
-                                    </h6>
-                                    <p className="news-description">
-                                        Posts,Online Application begins from 23
-                                        Feb Onwards, Salary upto 77208/-
-                                    </p>
+                                    <div className="d-flex" key={news.id}>
+                                        <div>
+                                            <strong className="news-title">
+                                                {news.title}
+                                            </strong>
+                                            <p className="news-description">
+                                                {news.description.slice(
+                                                    0,
+                                                    100
+                                                ) + "..."}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h6 className="news-title">
-                                        RBI Recruitment 2021 Notification for
-                                        Various Non CSG {""}
-                                    </h6>
-                                    <p className="news-description">
-                                        Posts,Online Application begins from 23
-                                        Feb Onwards, Salary upto 77208/-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
+                            ))}
                         <hr />
                         <div className="text-center">
                             <Button className="trending-section-btn">

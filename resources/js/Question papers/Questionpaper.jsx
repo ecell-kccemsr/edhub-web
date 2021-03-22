@@ -18,10 +18,6 @@ import {
 } from "reactstrap";
 
 function Questionpaper(props) {
-    const handleSubmit = e => {
-        e.preventDefault();
-        // console.log("SUBMITTED");
-    };
     const [subQuespapercategory, setSubQuespapercategory] = useState([]);
     const [quespaper, setQuespaper] = useState([]);
     const [quespapervar, setQuespaperVar] = useState([]);
@@ -54,6 +50,20 @@ function Questionpaper(props) {
             if (quesp.year == year) questionpaper.push(quesp);
         });
         setQuespaperVar(questionpaper);
+    };
+    const handleSubmit = e => {
+        e.preventDefault();
+        let form = e.nativeEvent.target;
+        let data = new FormData(form);
+        axios
+            .post(
+                "http://localhost:8000/api/register_for_free_updates/add",
+                data
+            )
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
     };
     return (
         <>
@@ -207,16 +217,14 @@ function Questionpaper(props) {
                                 <FormGroup>
                                     <Input
                                         type="number"
-                                        name="number"
-                                        id="number"
-                                        min="1"
-                                        max="10"
+                                        name="mobile_no"
                                         placeholder="Phone Number"
                                     />
                                 </FormGroup>
                                 <button
                                     className="btn-submit-questionpaper"
                                     type="submit"
+                                    value="submit"
                                 >
                                     Submit
                                 </button>

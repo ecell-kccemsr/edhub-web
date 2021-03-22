@@ -209,14 +209,14 @@ function Homepage() {
                                         src={n?.image}
                                     />
                                     <p className="news-card-para">
-                                        <a
-                                            href={n?.description}
+                                        <Link
+                                            to="/news"
                                             target="_blank"
                                             style={{ color: "#000" }}
                                             rel="noreferrer noopener"
                                         >
                                             {n?.title}
-                                        </a>
+                                        </Link>
                                     </p>
                                 </div>
                             ))}

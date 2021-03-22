@@ -47,6 +47,21 @@ function News() {
                 console.log(err);
             });
     }, []);
+    const handleSubmit = e => {
+        e.preventDefault();
+        let form = e.nativeEvent.target;
+        let data = new FormData(form);
+        axios
+            .post(
+                "http://localhost:8000/api/register_for_free_updates/add",
+                data
+            )
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
+    };
+
     return (
         <div>
             <section className="select-news-by-category">
@@ -139,7 +154,7 @@ function News() {
                             >
                                 REGISTER FOR FREE UPDATES
                             </h5>
-                            <Form>
+                            <form onSubmit={handleSubmit}>
                                 <FormGroup>
                                     <Input
                                         type="name"
@@ -159,17 +174,18 @@ function News() {
                                 <FormGroup>
                                     <Input
                                         type="number"
-                                        name="number"
-                                        id="exampleNumber"
-                                        min="1"
-                                        max="10"
+                                        name="mobile_no"
                                         placeholder="Phone Number"
                                     />
                                 </FormGroup>
-                                <Button className="registration-btn">
+                                <Button
+                                    className="registration-btn"
+                                    type="submit"
+                                    value="submit"
+                                >
                                     Submit
                                 </Button>
-                            </Form>
+                            </form>
                         </div>
                         <br />
                         {/* Trending News */}
