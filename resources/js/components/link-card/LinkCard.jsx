@@ -59,7 +59,10 @@ const LinkCard = props => {
                 <hr />
 
                 <div className="text-center pb-0">
-                    <Link to="#" className="link-card-section-btn ">
+                    <Link
+                        to={props?.toLink || "#"}
+                        className="link-card-section-btn "
+                    >
                         View All
                     </Link>
                 </div>

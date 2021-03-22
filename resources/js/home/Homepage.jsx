@@ -209,7 +209,7 @@ function Homepage() {
                                     />
                                     <p className="news-card-para">
                                         <Link
-                                            to="/news"
+                                            to={`/news/${n.category.slug}/${n.slug}`}
                                             target="_blank"
                                             style={{ color: "#000" }}
                                             rel="noreferrer noopener"
@@ -223,7 +223,7 @@ function Homepage() {
                     <hr className="hr" />
                     <div className="text-center pb-0">
                         <Link
-                            to="#"
+                            to="/news"
                             className="news-card-btn"
                             style={{ cursor: "pointer" }}
                         >
@@ -295,7 +295,7 @@ function Homepage() {
 
                                         <div className="text-center">
                                             <Link
-                                                to={`/govermentjobs/${c?.id}`}
+                                                to="/govermentjobs"
                                                 className="jobs-section-btn mb-0 pb-0"
                                             >
                                                 View All
@@ -308,7 +308,12 @@ function Homepage() {
                 </div>
             </section>
             {jobs && jobs.length > 0 && (
-                <LinkCard title="Exam Updates" data={jobs} limit={4} />
+                <LinkCard
+                    title="Exam Updates"
+                    data={jobs}
+                    limit={4}
+                    toLink="/govermentjobs"
+                />
             )}
 
             {/* Question Paper */}
@@ -318,6 +323,7 @@ function Homepage() {
                     data={questionPaper}
                     background={true}
                     limit={4}
+                    toLink="/questionpaper"
                 />
             )}
         </div>
