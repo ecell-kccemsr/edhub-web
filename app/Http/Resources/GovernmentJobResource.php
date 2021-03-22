@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\GovernmentJobCategoryResource;
 
@@ -19,6 +20,7 @@ class GovernmentJobResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
+            'image' =>  Voyager::image($this->image),
             'salary_and_job_positions' => $this->salary_and_job_positions,
             'eligibility_criteria' => $this->eligibility_criteria,
             'syllabus' => $this->syllabus,

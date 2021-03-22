@@ -17,6 +17,7 @@ class CreateGovernmentJobsTable extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
+            $table->string('image');
             $table->longText('salary_and_job_positions');
             $table->longText('eligibility_criteria');
             $table->longText('syllabus');
