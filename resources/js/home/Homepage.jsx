@@ -39,6 +39,7 @@ function Homepage() {
         axios
             .get("http://localhost:8000/api/government_jobs")
             .then(res => {
+                console.log(res);
                 setJobs(res.data.data);
             })
             .catch(err => {
@@ -47,7 +48,6 @@ function Homepage() {
         axios
             .get("http://localhost:8000/api/government_jobs/categories")
             .then(res => {
-                // console.log(res);
                 setCategories(res.data.data);
             })
             .catch(err => {
@@ -56,7 +56,6 @@ function Homepage() {
         axios
             .get("http://localhost:8000/api/questionpapers")
             .then(res => {
-                // console.log(res);
                 setQuestionPaper(res.data.data);
             })
             .catch(err => {
@@ -267,6 +266,7 @@ function Homepage() {
                                                         j.category.slug ==
                                                         c.slug
                                                 )
+                                                .slice(0, 2)
                                                 .map(j => {
                                                     return (
                                                         <div
@@ -283,6 +283,11 @@ function Homepage() {
 
                                                             <div className="jobs-section-content">
                                                                 {j?.title}
+                                                                <br />
+                                                                {j?.description.slice(
+                                                                    0,
+                                                                    200
+                                                                ) + "..."}
                                                             </div>
                                                         </div>
                                                     );
