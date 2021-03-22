@@ -164,7 +164,7 @@ function Questionpaper(props) {
                                                 key={key}
                                             >
                                                 <Link
-                                                    to={`/questionpaper/${q?.id}`}
+                                                    to={`/questionpaper/${q?.slug}`}
                                                 >
                                                     {q?.name}
                                                 </Link>

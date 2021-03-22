@@ -20,20 +20,25 @@ import {
 function Questionpaper2(props) {
     const [quespaper, setQuespaper] = useState([]);
     const [quespapervar, setQuespaperVar] = useState([]);
-    const { category_id } = props.match.params;
     useEffect(() => {
-        axios
-            .get(
-                `http://localhost:8000/api/questionpapers?category_id=${category_id}`
-            )
-            .then(res => {
-                setQuespaper(res.data.data);
-                setQuespaperVar(res.data.data);
-            })
+        const { category_slug } = props.match.params;
+        axios.get("/api/questionpapers/categories").then(res => {
+            const cats = res.data.data.filter(c => c.slug == category_slug);
+            if (cats.length > 0) {
+                axios
+                    .get(
+                        `http://localhost:8000/api/questionpapers?category_id=${cats[0].id}`
+                    )
+                    .then(res => {
+                        setQuespaper(res.data.data);
+                        setQuespaperVar(res.data.data);
+                    })
 
-            .catch(err => {
-                console.log(err);
-            });
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
+        });
     }, []);
     const handleSubmit = e => {
         e.preventDefault();

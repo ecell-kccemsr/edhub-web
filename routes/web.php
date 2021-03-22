@@ -27,7 +27,7 @@ Route::view('/govermentjobs/{category_slug}', 'app');
 Route::view('/govermentjobs/{category_slug}/{subcategory_slug}', 'app');
 
 Route::view('/questionpaper', 'app');
-Route::view('/questionpaper/{category_id}', 'app');
+Route::view('/questionpaper/{category_slug}', 'app');
 
 
 Route::view('/exam/calendar', 'app');
