@@ -19,51 +19,55 @@ const Governmentjobcategory = props => {
     const [categoryJobs, setCategoryJobs] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [category, setCategory] = useState([]);
-    const [filterjobs, setFilterJobs] = useState([]);
 
     useEffect(() => {
-        let { category_id } = props.match.params;
-        if (category_id) {
-            axios
-                .get(
-                    `http://localhost:8000/api/government_jobs/sub_categories?category_id=${category_id}`
-                )
-                .then(res => {
-                    setSubCategory(res.data.data);
-                })
+        let { category_slug } = props.match.params;
+        axios.get("/api/government_jobs/categories").then(res => {
+            const cats = res.data.data.filter(c => c.slug == category_slug);
+            if (cats.length > 0) {
+                axios
+                    .get(
+                        `http://localhost:8000/api/government_jobs/sub_categories?category_id=${cats[0].id}`
+                    )
+                    .then(res => {
+                        setSubCategory(res.data.data);
+                    })
 
-                .catch(err => {
-                    console.log(err);
-                });
+                    .catch(err => {
+                        console.log(err);
+                    });
 
-            axios
-                .get(
-                    `http://localhost:8000/api/government_jobs?category_id=${category_id}`
-                )
+                axios
+                    .get(
+                        `http://localhost:8000/api/government_jobs?category_id=${cats[0].id}`
+                    )
 
-                .then(res => {
-                    setCategoryJobs(res.data.data);
-                    setFilterJobs(res.data.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-            axios
-                .get("http://localhost:8000/api/government_jobs/categories")
-                .then(res => {
-                    setCategory(res.data.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        }
-    }, []);
-    const filterJobs = slug => {
-        let jobs = [];
-        categoryJobs.filter(cjobs => {
-            if (cjobs.subcategory.slug == slug) jobs.push(cjobs);
+                    .then(res => {
+                        setCategoryJobs(res.data.data);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
         });
-        setFilterJobs(jobs);
+
+        axios
+            .get("http://localhost:8000/api/government_jobs/categories")
+            .then(res => {
+                setCategory(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+    const filterJobs = subcategory_id => {
+        axios
+            .get(
+                `http://localhost:8000/api/government_jobs?subcategory_id=${subcategory_id}`
+            )
+            .then(res => {
+                setCategoryJobs(res.data.data);
+            });
     };
 
     const handleSubmit = e => {
@@ -170,7 +174,7 @@ const Governmentjobcategory = props => {
                                     <li key={s?.id}>
                                         <h4
                                             className="questionpaper-subcategory"
-                                            onClick={() => filterJobs(s?.slug)}
+                                            onClick={() => filterJobs(s?.id)}
                                         >
                                             {s?.name}
                                         </h4>
@@ -185,15 +189,15 @@ const Governmentjobcategory = props => {
                         className="mb-3"
                     >
                         <div className="questionpaper-main-section">
-                            {filterjobs &&
-                                filterjobs.map(c => (
+                            {categoryJobs &&
+                                categoryJobs.map(c => (
                                     <div
                                         className="questionpaper-news-details"
                                         key={c?.id}
                                     >
                                         <h5>
                                             <Link
-                                                to={`/govermentjobs/subcategory/${c?.id}`}
+                                                to={`/govermentjobs/${c.category.slug}/${c?.slug}`}
                                             >
                                                 {c?.title}
                                             </Link>

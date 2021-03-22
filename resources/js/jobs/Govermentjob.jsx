@@ -71,7 +71,7 @@ function Govermentjob() {
 
                                         <h6>
                                             <Link
-                                                to={`/govermentjobs/${category.id}`}
+                                                to={`/govermentjobs/${category.slug}`}
                                                 key={category?.id}
                                                 className="category-btn-link"
                                             >

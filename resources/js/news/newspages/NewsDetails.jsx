@@ -24,11 +24,12 @@ function Newsdetails(props) {
     const [categorynews, setcategorynews] = useState([]);
     const [subcategory, setsubcategory] = useState([]);
     const [newsatglance, setNewsAtGlance] = useState([]);
+    const [trending, setTrending] = useState([]);
     useEffect(() => {
-        const { category_slug } = props.match.params;
+        const { news_slug } = props.match.params;
         let id, sub_id;
         axios
-            .get(`http://localhost:8000/api/news/${category_slug}`)
+            .get(`http://localhost:8000/api/news/${news_slug}`)
 
             .then(res => {
                 setcategorynews(res.data.data);

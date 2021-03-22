@@ -33,13 +33,13 @@ const App = props => {
                         component={Govermentjob}
                     />
                     <Route
-                        path="/govermentjobs/:category_id"
+                        path="/govermentjobs/:category_slug"
                         exact
                         component={Governmentjobcategory}
                     />
 
                     <Route
-                        path="/govermentjobs/subcategory/:subcategory_id"
+                        path="/govermentjobs/:category_slug/:subcategory_slug"
                         exact
                         component={Governmentjobsubcategory}
                     />
@@ -56,18 +56,18 @@ const App = props => {
                     />
                     <Route path="/news" exact component={News} />
                     <Route
-                        path="/news/view/:category_id"
+                        path="/news/:category_slug"
                         exact={true}
                         component={NewsCategory}
                     />
                     <Route
-                        path="/news/view/subcategory/:subcategory_id"
+                        path="/news/:category_slug/:subcategory_slug"
                         exact={true}
                         exact
                         component={NewsSubCategory}
                     />
                     <Route
-                        path="/news/details/view/:category_slug"
+                        path="/news/:category_slug/:subcategory_slug/:news_slug"
                         exact={true}
                         exact
                         component={Newsdetails}

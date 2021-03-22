@@ -30,31 +30,34 @@ function Governmentjobsubcategory(props) {
         // console.log(props);
         const { category_slug } = props.match.params;
         const { subcategory_slug } = props.match.params;
-        const { subcategory_id } = props.match.params;
+        setSlug(category_slug);
+        setSubSlug(subcategory_slug);
 
-        if (subcategory_id) {
-            setSlug(category_slug);
-            setSubSlug(subcategoryslug);
-            axios
-                .get(
-                    `http://localhost:8000/api/government_jobs?subcategory_id=${subcategory_id}`
-                )
+        axios.get("/api/government_jobs/sub_categories").then(res => {
+            const cats = res.data.data.filter(c => c.slug == subcategory_slug);
+            if (cats.length > 0) {
+                axios
+                    .get(
+                        `http://localhost:8000/api/government_jobs?subcategory_id=${cats[0].id}`
+                    )
 
-                .then(res => {
-                    setCategoryJobs(res.data.data[0]);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-            axios
-                .get("http://localhost:8000/api/government_jobs")
-                .then(res => {
-                    setJobs(res.data.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        }
+                    .then(res => {
+                        setCategoryJobs(res.data.data[0]);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
+        });
+
+        axios
+            .get("http://localhost:8000/api/government_jobs")
+            .then(res => {
+                setJobs(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
     return (
         <>

@@ -18,15 +18,13 @@ Route::view('/', 'app');
 Route::view('/login', 'app');
 Route::view('/register', 'app');
 Route::view('/news', 'app');
-Route::view('/news/view/{category_id}', 'app');
-Route::view('/news/view/subcategory/{sub_category_id}', 'app');
-Route::view('/news/details/view/{category_slug}','app');
+Route::view('/news/{category_slug}', 'app');
+Route::view('/news/{category_slug}/{subcategory_slug}', 'app');
+Route::view('/news/{category_slug}/{subcategory_slug}/{news_slug}','app');
 
 Route::view('/govermentjobs', 'app');
-Route::view('/govermentjobs/{category_id}', 'app');
-// Route::view('/govermentjobs/view/{category_slug}', 'app');
-// Route::view('/govermentjobs/details/view/{category_slug}', 'app');
-Route::view('/govermentjobs/subcategory/{subcategory_id}', 'app');
+Route::view('/govermentjobs/{category_slug}', 'app');
+Route::view('/govermentjobs/{category_slug}/{subcategory_slug}', 'app');
 
 Route::view('/questionpaper', 'app');
 Route::view('/questionpaper/{category_id}', 'app');

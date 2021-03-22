@@ -15,22 +15,26 @@ function NewsSubCategory(props) {
     const [categoryNews, setCategoryNews] = useState([]);
     const [trending, setTrending] = useState([]);
     useEffect(() => {
-        const { subcategory_id } = props.match.params;
-        if (subcategory_id) {
-            axios
-                .get(
-                    `http://localhost:8000/api/news/?subcategory_id=${subcategory_id}`
-                )
+        const { subcategory_slug } = props.match.params;
+        axios.get("/api/news/sub_categories").then(res => {
+            const cats = res.data.data.filter(c => c.slug == subcategory_slug);
+            if (cats.length > 0) {
+                axios
+                    .get(
+                        `http://localhost:8000/api/news/?subcategory_id=${cats[0].id}`
+                    )
 
-                .then(res => {
-                    setCategoryNews(res.data.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        }
+                    .then(res => {
+                        setCategoryNews(res.data.data);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
+        });
+
         axios
-            .get("http://localhost:8000/news/trending")
+            .get("http://localhost:8000/api/news/trending")
             .then(res => {
                 setTrending(res.data.data);
             })
@@ -114,7 +118,7 @@ function NewsSubCategory(props) {
                                                     <div>
                                                         <Link
                                                             className=""
-                                                            to={`/news/details/view/${categorynews.slug}`}
+                                                            to={`/news/${categorynews.category.slug}/${categorynews.subcategory.slug}/${categorynews.slug}`}
                                                         >
                                                             <h5 className="news-title">
                                                                 {

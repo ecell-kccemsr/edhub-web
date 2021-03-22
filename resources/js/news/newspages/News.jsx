@@ -99,7 +99,7 @@ function News() {
                                 <div className="d-flex flex-wrap justify-content-center">
                                     {categories.map(category => (
                                         <Link
-                                            to={`/news/view/${category.id}`}
+                                            to={`/news/${category.slug}`}
                                             key={category.id}
                                             className="category-btn text-center"
                                         >

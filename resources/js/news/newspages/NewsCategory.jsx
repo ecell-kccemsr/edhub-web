@@ -15,28 +15,36 @@ function NewsCategory(props) {
     const [categoryNews, setCategoryNews] = useState([]);
     const [trending, setTrending] = useState([]);
     useEffect(() => {
-        const { category_id } = props.match.params;
-        axios
-            .get(
-                `http://localhost:8000/api/news/sub_categories?category_id=${category_id}`
-            )
-            .then(res => {
-                setSubCategory(res.data.data);
-            })
+        const { category_slug } = props.match.params;
+        axios.get("/api/news/categories").then(res => {
+            const cats = res.data.data.filter(c => c.slug == category_slug);
+            if (cats.length > 0) {
+                axios
+                    .get(
+                        `http://localhost:8000/api/news/sub_categories?category_id=${cats[0].id}`
+                    )
+                    .then(res => {
+                        setSubCategory(res.data.data);
+                    })
 
-            .catch(err => {
-                console.log(err);
-            });
+                    .catch(err => {
+                        console.log(err);
+                    });
 
-        axios
-            .get(`http://localhost:8000/api/news?category_id=${category_id}`)
+                axios
+                    .get(
+                        `http://localhost:8000/api/news?category_id=${cats[0].id}`
+                    )
 
-            .then(res => {
-                setCategoryNews(res.data.data);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+                    .then(res => {
+                        setCategoryNews(res.data.data);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
+        });
+
         axios
             .get("http://localhost:8000/api/news/trending")
             .then(res => {
@@ -106,7 +114,7 @@ function NewsCategory(props) {
                                     )}
                                     {subCategory.map(subcategory => (
                                         <Link
-                                            to={`/news/view/subcategory/${subcategory?.id}`}
+                                            to={`/news/${subcategory.category.slug}/${subcategory?.slug}`}
                                             key={subcategory.id}
                                             className="category-btn text-center"
                                         >
