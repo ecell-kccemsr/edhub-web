@@ -23,7 +23,7 @@ function Questionpaper(props) {
     const [quespapervar, setQuespaperVar] = useState([]);
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/questionpapers")
+            .get("/api/questionpapers")
             .then(res => {
                 setQuespaper(res.data.data);
                 setQuespaperVar(res.data.data);
@@ -34,7 +34,7 @@ function Questionpaper(props) {
             });
 
         axios
-            .get("http://localhost:8000/api/questionpapers/categories")
+            .get("/api/questionpapers/categories")
 
             .then(res => {
                 // console.log(res);
@@ -57,7 +57,7 @@ function Questionpaper(props) {
         let data = new FormData(form);
         axios
             .post(
-                "http://localhost:8000/api/register_for_free_updates/add",
+                "/api/register_for_free_updates/add",
                 data
             )
             .then(res => {

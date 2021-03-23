@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
+import loginBackground from "../../Images/loginBackground.png";
 const Login = () => {
     let history = useHistory();
 
@@ -18,7 +19,7 @@ const Login = () => {
         //     remember_me
         // });
         axios
-            .post("http://localhost:8000/api/auth/login", data, {
+            .post("/api/auth/login", data, {
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -101,7 +102,7 @@ const Login = () => {
                         className="auth-img-col"
                     >
                         <img
-                            src="https://i.ibb.co/9nsT3dm/Image.png"
+                            src={loginBackground}
                             alt=""
                             className="w-100"
                         />

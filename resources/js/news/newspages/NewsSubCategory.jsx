@@ -21,7 +21,7 @@ function NewsSubCategory(props) {
             if (cats.length > 0) {
                 axios
                     .get(
-                        `http://localhost:8000/api/news/?subcategory_id=${cats[0].id}`
+                        `/api/news/?subcategory_id=${cats[0].id}`
                     )
 
                     .then(res => {
@@ -34,7 +34,7 @@ function NewsSubCategory(props) {
         });
 
         axios
-            .get("http://localhost:8000/api/news/trending")
+            .get("/api/news/trending")
             .then(res => {
                 setTrending(res.data.data);
             })
@@ -48,7 +48,7 @@ function NewsSubCategory(props) {
         let data = new FormData(form);
         axios
             .post(
-                "http://localhost:8000/api/register_for_free_updates/add",
+                "/api/register_for_free_updates/add",
                 data
             )
             .then(res => {

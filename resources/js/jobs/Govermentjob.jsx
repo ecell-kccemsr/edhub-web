@@ -13,11 +13,11 @@ function Govermentjob() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/government_jobs/categories")
+            .get("/api/government_jobs/categories")
             .then(res => setCategory(res.data.data))
             .catch(err => console.log(err));
         axios
-            .get("http://localhost:8000/api/government_jobs")
+            .get("/api/government_jobs")
             .then(res => {
                 setJobs(res.data.data);
             })
@@ -25,7 +25,7 @@ function Govermentjob() {
                 console.log(err);
             });
         axios
-            .get("http://localhost:8000/api/examresults")
+            .get("/api/examresults")
             .then(res => {
                 setExamResults(res.data.data);
             })

@@ -38,7 +38,7 @@ function Governmentjobsubcategory(props) {
             if (cats.length > 0) {
                 axios
                     .get(
-                        `http://localhost:8000/api/government_jobs?subcategory_id=${cats[0].id}`
+                        `/api/government_jobs?subcategory_id=${cats[0].id}`
                     )
 
                     .then(res => {
@@ -51,7 +51,7 @@ function Governmentjobsubcategory(props) {
         });
 
         axios
-            .get("http://localhost:8000/api/government_jobs")
+            .get("/api/government_jobs")
             .then(res => {
                 setJobs(res.data.data);
             })

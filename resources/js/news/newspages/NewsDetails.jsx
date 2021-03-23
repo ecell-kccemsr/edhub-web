@@ -29,7 +29,7 @@ function Newsdetails(props) {
         const { news_slug } = props.match.params;
         let id, sub_id;
         axios
-            .get(`http://localhost:8000/api/news/${news_slug}`)
+            .get(`/api/news/${news_slug}`)
 
             .then(res => {
                 setcategorynews(res.data.data);
@@ -39,7 +39,7 @@ function Newsdetails(props) {
 
                 axios
                     .get(
-                        `http://localhost:8000/api/news/sub_categories?category_id=${id}`
+                        `/api/news/sub_categories?category_id=${id}`
                     )
                     .then(res => {
                         setsubcategory(res.data.data);
@@ -47,13 +47,13 @@ function Newsdetails(props) {
 
                 axios
                     .get(
-                        `http://localhost:8000/api/news?subcategory_id=${sub_id}`
+                        `/api/news?subcategory_id=${sub_id}`
                     )
                     .then(res => {
                         setNewsAtGlance(res.data.data);
                     });
                 axios
-                    .get("http://localhost:8000/api/news/trending")
+                    .get("/api/news/trending")
                     .then(res => {
                         setTrending(res.data.data);
                     });
@@ -68,7 +68,7 @@ function Newsdetails(props) {
         let data = new FormData(form);
         axios
             .post(
-                "http://localhost:8000/api/register_for_free_updates/add",
+                "/api/register_for_free_updates/add",
                 data
             )
             .then(res => {

@@ -27,7 +27,7 @@ function Questionpaper2(props) {
             if (cats.length > 0) {
                 axios
                     .get(
-                        `http://localhost:8000/api/questionpapers?category_id=${cats[0].id}`
+                        `/api/questionpapers?category_id=${cats[0].id}`
                     )
                     .then(res => {
                         setQuespaper(res.data.data);
@@ -46,7 +46,7 @@ function Questionpaper2(props) {
         let data = new FormData(form);
         axios
             .post(
-                "http://localhost:8000/api/register_for_free_updates/add",
+                "/api/register_for_free_updates/add",
                 data
             )
             .then(res => {

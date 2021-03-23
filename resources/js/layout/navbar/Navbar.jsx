@@ -17,6 +17,7 @@ import {
     Row,
     Col
 } from "reactstrap";
+import notificationIcon from "../../Images/notificationIcon.png";
 
 const NavbarComponent = props => {
     const [isOpen, setIsOpen] = useState(false);

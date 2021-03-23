@@ -38,14 +38,14 @@ const Examcalendar = props => {
     ];
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/examcalendar/categories")
+            .get("/api/examcalendar/categories")
             .then(res => {
                 setExamName(res.data.data);
             })
             .catch(err => {
                 console.log(err);
             });
-        axios.get("http://localhost:8000/api/examcalendar").then(res => {
+        axios.get("/api/examcalendar").then(res => {
             setCalendar(res.data.data);
         });
     }, []);

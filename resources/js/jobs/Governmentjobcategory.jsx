@@ -27,7 +27,7 @@ const Governmentjobcategory = props => {
             if (cats.length > 0) {
                 axios
                     .get(
-                        `http://localhost:8000/api/government_jobs/sub_categories?category_id=${cats[0].id}`
+                        `/api/government_jobs/sub_categories?category_id=${cats[0].id}`
                     )
                     .then(res => {
                         setSubCategory(res.data.data);
@@ -39,7 +39,7 @@ const Governmentjobcategory = props => {
 
                 axios
                     .get(
-                        `http://localhost:8000/api/government_jobs?category_id=${cats[0].id}`
+                        `/api/government_jobs?category_id=${cats[0].id}`
                     )
 
                     .then(res => {
@@ -52,7 +52,7 @@ const Governmentjobcategory = props => {
         });
 
         axios
-            .get("http://localhost:8000/api/government_jobs/categories")
+            .get("/api/government_jobs/categories")
             .then(res => {
                 setCategory(res.data.data);
             })
@@ -63,7 +63,7 @@ const Governmentjobcategory = props => {
     const filterJobs = subcategory_id => {
         axios
             .get(
-                `http://localhost:8000/api/government_jobs?subcategory_id=${subcategory_id}`
+                `/api/government_jobs?subcategory_id=${subcategory_id}`
             )
             .then(res => {
                 setCategoryJobs(res.data.data);
@@ -76,7 +76,7 @@ const Governmentjobcategory = props => {
         let data = new FormData(form);
         axios
             .post(
-                "http://localhost:8000/api/register_for_free_updates/add",
+                "/api/register_for_free_updates/add",
                 data
             )
             .then(res => {

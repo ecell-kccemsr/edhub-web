@@ -21,7 +21,7 @@ import doctor from "../Images/doctor 1.png";
 import architect from "../Images/architect 1.png";
 import examPattern from "../Images/ExamPatternandSyllabus.png";
 import LinkCard from "../components/link-card/LinkCard";
-
+import homepageBanner from "../Images/homepageBanner.png";
 function Homepage() {
     const [news, setNews] = useState([]);
     const [jobs, setJobs] = useState([]);
@@ -29,7 +29,7 @@ function Homepage() {
     const [questionPaper, setQuestionPaper] = useState([]);
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/news")
+            .get("/api/news")
             .then(res => {
                 setNews(res.data.data);
             })
@@ -37,7 +37,7 @@ function Homepage() {
                 console.log(err);
             });
         axios
-            .get("http://localhost:8000/api/government_jobs")
+            .get("/api/government_jobs")
             .then(res => {
                 console.log(res);
                 setJobs(res.data.data);
@@ -46,7 +46,7 @@ function Homepage() {
                 console.log(err);
             });
         axios
-            .get("http://localhost:8000/api/government_jobs/categories")
+            .get("/api/government_jobs/categories")
             .then(res => {
                 setCategories(res.data.data);
             })
@@ -54,7 +54,7 @@ function Homepage() {
                 console.log(err);
             });
         axios
-            .get("http://localhost:8000/api/questionpapers")
+            .get("/api/questionpapers")
             .then(res => {
                 setQuestionPaper(res.data.data);
             })
@@ -64,27 +64,27 @@ function Homepage() {
     }, []);
 
     const carouselDummyData = [
-        "https://i.ibb.co/QHfGBv2/Group-179-1.png",
-        "https://i.ibb.co/QHfGBv2/Group-179-1.png",
-        "https://i.ibb.co/QHfGBv2/Group-179-1.png"
+        "../Images/homepageBanner.png",
+        "../Images/homepageBanner.png",
+        "../Images/homepageBanner.png"
     ];
     const items = [
         {
-            src: "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+            src: "../Images/homepageBanner.png",
             altText: "Slide 1",
             caption: "Slide 1",
             header: "Slide 1 Header",
             key: "1"
         },
         {
-            src: "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+            src: "../Images/homepageBanner.png",
             altText: "Slide 2",
             caption: "Slide 2",
             header: "Slide 2 Header",
             key: "2"
         },
         {
-            src: "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+            src: "../Images/homepageBanner.png",
             altText: "Slide 3",
             caption: "Slide 3",
             header: "Slide 3 Header",

@@ -3,6 +3,7 @@ import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import registerBackground from "../../Images/registerBackground.png";
 const Register = () => {
     let history = useHistory();
 
@@ -11,7 +12,7 @@ const Register = () => {
         let form = e.nativeEvent.target;
         let data = new FormData(form);
         axios
-            .post("http://localhost:8000/api/auth/signup", data)
+            .post("/api/auth/signup", data)
             .then(res => {
                 // console.log(res.data.message);
                 history.push("/");
@@ -122,7 +123,7 @@ const Register = () => {
                         className="auth-img-col"
                     >
                         <img
-                            src="https://i.ibb.co/D14BMSg/Image-1.png"
+                            src={registerBackground}
                             alt=""
                             className="w-100"
                         />

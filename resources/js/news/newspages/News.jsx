@@ -22,7 +22,7 @@ function News() {
     const [trending, setTrending] = useState([]);
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/news/categories")
+            .get("/api/news/categories")
             .then(res => {
                 setCategory(res.data.data);
             })
@@ -30,7 +30,7 @@ function News() {
                 console.log(err);
             });
         axios
-            .get("http://localhost:8000/api/news")
+            .get("/api/news")
             .then(res => {
                 setNews(res.data.data);
             })
@@ -38,7 +38,7 @@ function News() {
                 console.log(err);
             });
         axios
-            .get("http://localhost:8000/api/news/trending")
+            .get("/api/news/trending")
             .then(res => {
                 setTrending(res.data.data);
                 console.log(res);
@@ -53,7 +53,7 @@ function News() {
         let data = new FormData(form);
         axios
             .post(
-                "http://localhost:8000/api/register_for_free_updates/add",
+                "/api/register_for_free_updates/add",
                 data
             )
             .then(res => {
