@@ -64,27 +64,27 @@ function Homepage() {
     }, []);
 
     const carouselDummyData = [
-        "../Images/homepageBanner.png",
-        "../Images/homepageBanner.png",
-        "../Images/homepageBanner.png"
+        "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+        "https://i.ibb.co/QHfGBv2/Group-179-1.png",
+        "https://i.ibb.co/QHfGBv2/Group-179-1.png"
     ];
     const items = [
         {
-            src: "../Images/homepageBanner.png",
+            src: "https://i.ibb.co/QHfGBv2/Group-179-1.png",
             altText: "Slide 1",
             caption: "Slide 1",
             header: "Slide 1 Header",
             key: "1"
         },
         {
-            src: "../Images/homepageBanner.png",
+            src: "https://i.ibb.co/QHfGBv2/Group-179-1.png",
             altText: "Slide 2",
             caption: "Slide 2",
             header: "Slide 2 Header",
             key: "2"
         },
         {
-            src: "../Images/homepageBanner.png",
+            src: "https://i.ibb.co/QHfGBv2/Group-179-1.png",
             altText: "Slide 3",
             caption: "Slide 3",
             header: "Slide 3 Header",
