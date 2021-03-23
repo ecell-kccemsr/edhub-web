@@ -242,7 +242,7 @@ function Governmentjobsubcategory(props) {
                                     }}
                                 ></div>
                             </h5>
-                            <h5
+                            {/* <h5
                                 className="government-job-subcategory-information"
                                 id="eight"
                             >
@@ -272,7 +272,7 @@ function Governmentjobsubcategory(props) {
                                 </a>{" "}
                                 <br />
                                 <a href="#">Previous Year Question papers </a>
-                            </h5>
+                            </h5> */}
                         </div>
                     </div>
                     {jobs && jobs.length > 0 && (
