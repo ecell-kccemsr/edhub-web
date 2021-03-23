@@ -1552,7 +1552,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{}',
+                'details' => '{"validation":{"rule":"required|max:1024"}}',
                 'order' => 5,
             ),
             96 => 
