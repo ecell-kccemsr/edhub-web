@@ -49,6 +49,11 @@ const Examcalendar = props => {
             setCalendar(res.data.data);
         });
     }, []);
+    const filterExams = category_id => {
+        axios.get(`/api/examcalendar?category_id=${category_id}`).then(res => {
+            setCalendar(res.data.data);
+        });
+    };
     return (
         <div>
             <section className="exam-calendar-section">
@@ -66,13 +71,13 @@ const Examcalendar = props => {
             <section className="exam-menu-section">
                 <div className="d-flex exam-btn-section  mb-2 justify-content-center">
                     {examName.map(examName => (
-                        <Link
-                            to={`/newscategory/view/${examName?.id}`}
+                        <button
+                            onClick={() => filterExams(examName.id)}
                             key={examName.id}
                             className="exam-single-btn mt-2"
                         >
                             {examName.name}
-                        </Link>
+                        </button>
                     ))}
                 </div>
             </section>
