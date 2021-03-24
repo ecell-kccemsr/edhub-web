@@ -53,7 +53,7 @@ const LinkCard = props => {
                                         </a>
                                     </h5>
                                     <p>
-                                        {d?.description.slice(0, 180) + "..."}
+                                        {d?.description.length>180?(d?.description.slice(0, 180) + "..."):(d?.description)}
                                     </p>
                                 </Col>
                             );

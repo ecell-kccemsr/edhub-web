@@ -98,8 +98,9 @@
 }
 .category-information-image {
     width: 100px;
-    height: 70px;
+    height: 100px;
     padding: 20px 5px 5px 5px;
+    object-fit: cover;
 }
 
 .trending-section-container {

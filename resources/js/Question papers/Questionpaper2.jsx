@@ -16,10 +16,14 @@ import {
     Input,
     FormText
 } from "reactstrap";
-
+import { toast, ToastContainer  } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 function Questionpaper2(props) {
     const [quespaper, setQuespaper] = useState([]);
     const [quespapervar, setQuespaperVar] = useState([]);
+    const [loading,setLoading] = useState({
+        quespaper:true
+    })
     useEffect(() => {
         const { category_slug } = props.match.params;
         axios.get("/api/questionpapers/categories").then(res => {
@@ -30,6 +34,7 @@ function Questionpaper2(props) {
                     .then(res => {
                         setQuespaper(res.data.data);
                         setQuespaperVar(res.data.data);
+                        setLoading({...loading,quespaper:false})
                     })
 
                     .catch(err => {
@@ -45,9 +50,10 @@ function Questionpaper2(props) {
         axios
             .post("/api/register_for_free_updates/add", data)
             .then(res => {
-                console.log(res);
+                toast.success("You have registered successfully !");
+                form.reset()
             })
-            .catch(err => console.log(err));
+            .catch(err =>  toast.error(err.response.data.message));
     };
     const filterQuestionPaper = year => {
         let questionpaper = [];
@@ -59,6 +65,7 @@ function Questionpaper2(props) {
 
     return (
         <>
+          <ToastContainer />
             <div className="questionpapear-section">
                 <Row>
                     {/* Category by year */}
@@ -135,6 +142,8 @@ function Questionpaper2(props) {
                             <h5 className="questionpaper-main-header">
                                 Question Papers
                             </h5>
+                            {quespapervar && quespapervar.length==0 && loading.quespaper==false && <h4 className="text-center py-3">No Question Papers Found</h4> }
+                            {quespapervar && quespapervar.length==0 && loading.quespaper==true && <h4 className="text-center py-3">Loading Question Papers</h4> }
                             {quespapervar &&
                                 quespapervar.map(ques => {
                                     return (
@@ -151,7 +160,7 @@ function Questionpaper2(props) {
                                                     download
                                                 >
                                                     {ques?.title}
-                                                    <h6>{ques?.description}</h6>
+                                                    <h6>{ques?.description.length>200?(ques?.description.slice(0,200)+"..."):(ques?.description)}</h6>
                                                 </a>
                                             </h5>
                                         </div>
@@ -188,10 +197,8 @@ function Questionpaper2(props) {
                                 <FormGroup>
                                     <Input
                                         type="number"
-                                        name="number"
+                                        name="mobile_no"
                                         id="number"
-                                        min="1"
-                                        max="10"
                                         placeholder="Phone Number"
                                     />
                                 </FormGroup>

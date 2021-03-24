@@ -16,6 +16,8 @@ import {
     Input,
     FormText
 } from "reactstrap";
+import { toast, ToastContainer  } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 function News() {
     const [categories, setCategory] = useState([]);
     const [news, setNews] = useState([]);
@@ -54,13 +56,15 @@ function News() {
         axios
             .post("/api/register_for_free_updates/add", data)
             .then(res => {
-                console.log(res);
+                toast.success("You have registered successfully !");
+                form.reset()
             })
-            .catch(err => console.log(err));
+            .catch(err =>  toast.error(err.response.data.message));
     };
 
     return (
         <div>
+            <ToastContainer />
             <section className="select-news-by-category">
                 {/* Breadcrumb */}
                 <nav aria-label="breadcrumb">
@@ -111,7 +115,7 @@ function News() {
                                         news.map(news => (
                                             <>
                                                 <div
-                                                    className="d-flex"
+                                                    className="d-flex justify-content-between"
                                                     key={news.id}
                                                 >
                                                     <div>
@@ -123,10 +127,10 @@ function News() {
                                                         </Link>
 
                                                         <p className="news-description">
-                                                            {news.description.slice(
+                                                            {news?.description.length>300?(news?.description.slice(
                                                                 0,
                                                                 300
-                                                            ) + "..."}
+                                                            ) + "..."):(news?.description)}
                                                         </p>
                                                     </div>
                                                     <img
@@ -201,10 +205,10 @@ function News() {
                                                 <br />
 
                                                 <p className="news-description">
-                                                    {news.description.slice(
+                                                    {news.description.length>100?(news.description.slice(
                                                         0,
                                                         100
-                                                    ) + "..."}
+                                                    ) + "..."):(news.description)}
                                                 </p>
                                             </div>
                                         </div>

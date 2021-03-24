@@ -10,7 +10,8 @@ import {
     Form,
     FormGroup
 } from "reactstrap";
-
+import { toast, ToastContainer  } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 function NewsSubCategory(props) {
     const [categoryNews, setCategoryNews] = useState([]);
     const [trending, setTrending] = useState([]);
@@ -53,13 +54,15 @@ function NewsSubCategory(props) {
                 data
             )
             .then(res => {
-                console.log(res);
+                toast.success("You have registered successfully !");
+                form.reset()
             })
-            .catch(err => console.log(err));
+            .catch(err =>  toast.error(err.response.data.message));
     };
 
     return (
         <div>
+            <ToastContainer />
             <section className="select-news-by-category">
                 {/* Breadcrumb */}
                 <nav aria-label="breadcrumb">
@@ -128,10 +131,10 @@ function NewsSubCategory(props) {
                                                             </h5>
                                                         </Link>
                                                         <p className="news-description">
-                                                            {categorynews.description.slice(
+                                                            {categorynews.description.length>150?(categorynews.description.slice(
                                                                 0,
                                                                 150
-                                                            ) + "..."}
+                                                            ) + "..."):(categorynews.description)}
                                                         </p>
                                                     </div>
                                                     <img
@@ -208,10 +211,10 @@ function NewsSubCategory(props) {
                                                     {news.title}
                                                 </h6>
                                                 <p className="news-description">
-                                                    {news.description.slice(
+                                                {news.description.length>100?(news.description.slice(
                                                         0,
                                                         100
-                                                    ) + "..."}
+                                                    ) + "..."):(news.description)}
                                                 </p>
                                             </div>
                                         </div>

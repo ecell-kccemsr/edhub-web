@@ -100,11 +100,13 @@
         .jobs-section-box {
             border: rgb(131, 131, 131) 1px solid;
             background: #fff;
+            max-height:150px;
             .jobs-section-image {
-                height: 156px;
-                max-width: 340px;
+                height: 150px;
+                max-width: 150px;
                 padding: 20px;
-                border-radius: 20%;
+                border-radius: 45px;
+                object-fit: cover;
             }
             .jobs-section-content {
                 padding: 20px;

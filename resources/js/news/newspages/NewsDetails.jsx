@@ -19,7 +19,8 @@ import {
     Input,
     FormText
 } from "reactstrap";
-
+import { toast, ToastContainer  } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 function Newsdetails(props) {
     const [categorynews, setcategorynews] = useState([]);
     const [subcategory, setsubcategory] = useState([]);
@@ -72,11 +73,15 @@ function Newsdetails(props) {
                 data
             )
             .then(res => {
-                console.log(res);
+                toast.success("You have registered successfully !");
+                form.reset()
             })
-            .catch(err => console.log(err));
+            .catch(err =>  toast.error(err.response.data.message));
     };
     return (
+        <>
+        <ToastContainer />
+        
         <div className="container news-details">
             {/* Breadcrumb */}
             <nav aria-label="breadcrumb" style={{ marginTop: "30px" }}>
@@ -153,14 +158,14 @@ function Newsdetails(props) {
                                                         textDecoration: "none"
                                                     }}
                                                 >
-                                                    {" "}
+                                                    
                                                     {newsatglance.title}
-                                                </a>{" "}
-                                                <br />{" "}
-                                                {newsatglance.description.slice(
+                                                </a>
+                                                <br />
+                                                {newsatglance.description.length>50?(newsatglance.description.slice(
                                                     0,
                                                     50
-                                                ) + "..."}
+                                                ) + "..."):(newsatglance.description)}
                                             </h5>
                                         </div>
                                     ))}
@@ -224,10 +229,10 @@ function Newsdetails(props) {
                                                 {news.title}
                                             </strong>
                                             <p className="news-description">
-                                                {news.description.slice(
-                                                    0,
-                                                    100
-                                                ) + "..."}
+                                            {news.description.length>100?(news.description.slice(
+                                                        0,
+                                                        100
+                                                    ) + "..."):(news.description)}
                                             </p>
                                         </div>
                                     </div>
@@ -240,22 +245,6 @@ function Newsdetails(props) {
                             </Button>
                         </div>
                     </div>
-                    {/* <div>
-                        {subcategory && subcategory == 0 && (
-                            <div>No Subcategories</div>
-                        )}
-                        {subcategory &&
-                            subcategory.length > 0 &&
-                            subcategory.map(subcategory => (
-                                <Link
-                                    to={`/news/view/subcategory/${subcategory?.id}`}
-                                    key={subcategory.id}
-                                    className="category-btn text-center"
-                                >
-                                    {subcategory.name}
-                                </Link>
-                            ))}
-                    </div> */}
                     <div className="select-news-by-category-btn-section-1">
                         <div className="d-flex flex-wrap justify-content-center">
                             {subcategory && subcategory == 0 && (
@@ -277,6 +266,7 @@ function Newsdetails(props) {
                 </Col>
             </Row>
         </div>
+        </>
     );
 }
 

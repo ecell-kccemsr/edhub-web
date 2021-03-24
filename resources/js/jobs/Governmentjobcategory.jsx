@@ -12,7 +12,8 @@ import {
     Button
 } from "reactstrap";
 import BreadCrumb from "../components/breadcrumb/BreadCrumb";
-
+import { toast, ToastContainer  } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 const Governmentjobcategory = props => {
     const [subCategory, setSubCategory] = useState([]);
     const [categoryslug, setSlug] = useState("");
@@ -58,6 +59,7 @@ const Governmentjobcategory = props => {
                 console.log(err);
             });
     }, []);
+    
     const filterJobs = subcategory_id => {
         axios
             .get(`/api/government_jobs?subcategory_id=${subcategory_id}`)
@@ -73,13 +75,15 @@ const Governmentjobcategory = props => {
         axios
             .post("/api/register_for_free_updates/add", data)
             .then(res => {
-                console.log(res);
+                toast.success("You have registered successfully !");
+                form.reset()
             })
-            .catch(err => console.log(err));
+            .catch(err =>  toast.error(err.response.data.message));
     };
 
     return (
         <>
+        <ToastContainer />
             <div className="questionpapear-section">
                 {/* breadcrumb */}
                 <BreadCrumb

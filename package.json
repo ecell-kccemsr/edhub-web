@@ -37,6 +37,7 @@
     },
     "dependencies": {
         "concurrently": "^6.0.0",
-        "i": "^0.3.6"
+        "i": "^0.3.6",
+        "react-toastify": "^7.0.3"
     }
 }

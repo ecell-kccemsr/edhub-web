@@ -10,6 +10,9 @@ import {
     Form,
     FormGroup
 } from "reactstrap";
+import { toast, ToastContainer  } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+
 function NewsCategory(props) {
     const [subCategory, setSubCategory] = useState([]);
     const [categoryNews, setCategoryNews] = useState([]);
@@ -57,13 +60,15 @@ function NewsCategory(props) {
         axios
             .post("/api/register_for_free_updates/add", data)
             .then(res => {
-                console.log(res);
+                toast.success("You have registered successfully !");
+                form.reset()
             })
-            .catch(err => console.log(err));
+            .catch(err =>  toast.error(err.response.data.message));
     };
 
     return (
         <div>
+            <ToastContainer />
             <section className="select-news-by-category">
                 {/* Breadcrumb */}
                 <nav aria-label="breadcrumb">
@@ -146,10 +151,10 @@ function NewsCategory(props) {
                                                                 }
                                                             </Link>
                                                             <p className="news-description">
-                                                                {categorynews.description.slice(
+                                                                {categorynews.description.length>300?(categorynews.description.slice(
                                                                     0,
                                                                     300
-                                                                ) + "..."}
+                                                                ) + "..."):(categorynews.description)}
                                                             </p>
                                                         </div>
                                                         <img
@@ -226,10 +231,10 @@ function NewsCategory(props) {
                                                     {news.title}
                                                 </strong>
                                                 <p className="news-description">
-                                                    {news.description.slice(
+                                                {news.description.length>100?(news.description.slice(
                                                         0,
                                                         100
-                                                    ) + "..."}
+                                                    ) + "..."):(news.description)}
                                                 </p>
                                             </div>
                                         </div>

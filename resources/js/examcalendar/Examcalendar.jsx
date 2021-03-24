@@ -22,6 +22,7 @@ const Examcalendar = props => {
     const toggle = value => setIsOpen({ [value]: !isOpen[value] });
     const [examName, setExamName] = useState([]);
     const [calendar, setCalendar] = useState([]);
+    const [examLoading, setExamLoading] = useState(true);
     const Months = [
         { name: "January", value: "01" },
         { name: "February", value: "02" },
@@ -41,6 +42,7 @@ const Examcalendar = props => {
             .get("/api/examcalendar/categories")
             .then(res => {
                 setExamName(res.data.data);
+                setExamLoading(false)
             })
             .catch(err => {
                 console.log(err);
@@ -70,7 +72,9 @@ const Examcalendar = props => {
             {/* Exam Categories */}
             <section className="exam-menu-section">
                 <div className="d-flex exam-btn-section  mb-2 justify-content-center">
-                    {examName.map(examName => (
+                    {examName && examName.length==0 && examLoading==true && <h5 className="text-center py-3">Loading Categories</h5> }
+                    {examName && examName.length==0 && examLoading==false && <h5 className="text-center py-3">No Categories Found</h5> }
+                    {examName && examName.map(examName => (
                         <button
                             onClick={() => filterExams(examName.id)}
                             key={examName.id}
@@ -124,12 +128,7 @@ const Examcalendar = props => {
                                                     >
                                                         <div className="exam-toggle-content-sub-section">
                                                             <div className="d-flex exam-toggle-content mb-2 align-items-center">
-                                                                <img
-                                                                    src={
-                                                                        cal.image
-                                                                    }
-                                                                    className="exam-toggle-section-icon"
-                                                                />
+                                                                <i class="far fa-calendar-alt"></i>
                                                                 <p className=" m-0 exam-toggle-section-date">
                                                                     {cal.date}
                                                                 </p>
