@@ -26,9 +26,7 @@ function Questionpaper2(props) {
             const cats = res.data.data.filter(c => c.slug == category_slug);
             if (cats.length > 0) {
                 axios
-                    .get(
-                        `/api/questionpapers?category_id=${cats[0].id}`
-                    )
+                    .get(`/api/questionpapers?category_id=${cats[0].id}`)
                     .then(res => {
                         setQuespaper(res.data.data);
                         setQuespaperVar(res.data.data);
@@ -45,10 +43,7 @@ function Questionpaper2(props) {
         let form = e.nativeEvent.target;
         let data = new FormData(form);
         axios
-            .post(
-                "/api/register_for_free_updates/add",
-                data
-            )
+            .post("/api/register_for_free_updates/add", data)
             .then(res => {
                 console.log(res);
             })
@@ -153,6 +148,7 @@ function Questionpaper2(props) {
                                                     href={ques?.url}
                                                     target="_blank"
                                                     style={{ color: "blue" }}
+                                                    download
                                                 >
                                                     {ques?.title}
                                                     <h6>{ques?.description}</h6>

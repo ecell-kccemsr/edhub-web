@@ -179,7 +179,7 @@ function Homepage() {
                         </Col>
                         <Col sm="12" md="6" lg="3" className="text-center">
                             <img className="homepage-job-img" src={exam} />
-                            <Link to={"/examcalendar"}>
+                            <Link to={"/exam/calendar"}>
                                 <h5 className="text-dark">Exams</h5>
                             </Link>
                         </Col>
@@ -209,8 +209,7 @@ function Homepage() {
                                     />
                                     <p className="news-card-para">
                                         <Link
-                                            to={`/news/${n.category.slug}/${n.slug}`}
-                                            target="_blank"
+                                            to={`/news/${n.category.slug}/${n.subcategory.slug}/${n.slug}`}
                                             style={{ color: "#000" }}
                                             rel="noreferrer noopener"
                                         >
@@ -307,26 +306,25 @@ function Homepage() {
                     </Row>
                 </div>
                 {jobs && jobs.length > 0 && (
-                <LinkCard
-                    title="Exam Updates"
-                    data={jobs}
-                    limit={4}
-                    toLink="/govermentjobs"
-                />
-            )}
+                    <LinkCard
+                        title="Exam Updates"
+                        data={jobs}
+                        limit={4}
+                        toLink="/govermentjobs"
+                    />
+                )}
 
-            {/* Question Paper */}
-            {questionPaper && questionPaper.length > 0 && (
-                <LinkCard
-                    title="Question Papers"
-                    data={questionPaper}
-                    background={true}
-                    limit={4}
-                    toLink="/questionpaper"
-                />
-            )}
+                {/* Question Paper */}
+                {questionPaper && questionPaper.length > 0 && (
+                    <LinkCard
+                        title="Question Papers"
+                        data={questionPaper}
+                        background={true}
+                        limit={4}
+                        toLink="/questionpaper"
+                    />
+                )}
             </section>
-           
         </div>
     );
 }

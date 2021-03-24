@@ -17,7 +17,11 @@ const LinkCard = props => {
                 padding: `${
                     props.customPadding ? props.customPadding : " 0px 0px"
                 }`,
-                margin: `${props.customMargin ? props.customMargin : "50px 0px 50px 0px"}`
+                margin: `${
+                    props.customMargin
+                        ? props.customMargin
+                        : "50px 0px 50px 0px"
+                }`
             }}
         >
             <div
@@ -43,7 +47,6 @@ const LinkCard = props => {
                                             classsName="link-card-anchor"
                                             style={{ color: "#000" }}
                                             href={d?.link || "#"}
-                                            target="_blank"
                                             rel="noreferrer noopener"
                                         >
                                             {d?.title}

@@ -20,9 +20,7 @@ function NewsCategory(props) {
             const cats = res.data.data.filter(c => c.slug == category_slug);
             if (cats.length > 0) {
                 axios
-                    .get(
-                        `/api/news/sub_categories?category_id=${cats[0].id}`
-                    )
+                    .get(`/api/news/sub_categories?category_id=${cats[0].id}`)
                     .then(res => {
                         setSubCategory(res.data.data);
                     })
@@ -32,9 +30,7 @@ function NewsCategory(props) {
                     });
 
                 axios
-                    .get(
-                        `/api/news?category_id=${cats[0].id}`
-                    )
+                    .get(`/api/news?category_id=${cats[0].id}`)
 
                     .then(res => {
                         setCategoryNews(res.data.data);
@@ -59,10 +55,7 @@ function NewsCategory(props) {
         let form = e.nativeEvent.target;
         let data = new FormData(form);
         axios
-            .post(
-                "/api/register_for_free_updates/add",
-                data
-            )
+            .post("/api/register_for_free_updates/add", data)
             .then(res => {
                 console.log(res);
             })
@@ -144,11 +137,14 @@ function NewsCategory(props) {
                                                         key={categorynews.id}
                                                     >
                                                         <div>
-                                                            <h6 className="news-title">
+                                                            <Link
+                                                                className="news-title"
+                                                                to={`/news/${categorynews.category.slug}/${categorynews.subcategory.slug}/${categorynews.slug}`}
+                                                            >
                                                                 {
                                                                     categorynews.title
                                                                 }
-                                                            </h6>
+                                                            </Link>
                                                             <p className="news-description">
                                                                 {categorynews.description.slice(
                                                                     0,

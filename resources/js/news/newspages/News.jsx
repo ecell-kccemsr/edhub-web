@@ -52,10 +52,7 @@ function News() {
         let form = e.nativeEvent.target;
         let data = new FormData(form);
         axios
-            .post(
-                "/api/register_for_free_updates/add",
-                data
-            )
+            .post("/api/register_for_free_updates/add", data)
             .then(res => {
                 console.log(res);
             })
@@ -110,10 +107,6 @@ function News() {
                             </div>
                             <section className="category-information-section">
                                 <div className="category-information-sub-section">
-                                    <h4 className="category-header pb-2">
-                                        {categories[0]?.name}
-                                    </h4>
-
                                     {news &&
                                         news.map(news => (
                                             <>
@@ -122,9 +115,12 @@ function News() {
                                                     key={news.id}
                                                 >
                                                     <div>
-                                                        <h5 className="news-title">
+                                                        <Link
+                                                            className="news-title"
+                                                            to={`/news/${news.category.slug}/${news.subcategory.slug}/${news.slug}`}
+                                                        >
                                                             {news.title}
-                                                        </h5>
+                                                        </Link>
 
                                                         <p className="news-description">
                                                             {news.description.slice(

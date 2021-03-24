@@ -38,9 +38,7 @@ const Governmentjobcategory = props => {
                     });
 
                 axios
-                    .get(
-                        `/api/government_jobs?category_id=${cats[0].id}`
-                    )
+                    .get(`/api/government_jobs?category_id=${cats[0].id}`)
 
                     .then(res => {
                         setCategoryJobs(res.data.data);
@@ -62,9 +60,7 @@ const Governmentjobcategory = props => {
     }, []);
     const filterJobs = subcategory_id => {
         axios
-            .get(
-                `/api/government_jobs?subcategory_id=${subcategory_id}`
-            )
+            .get(`/api/government_jobs?subcategory_id=${subcategory_id}`)
             .then(res => {
                 setCategoryJobs(res.data.data);
             });
@@ -75,10 +71,7 @@ const Governmentjobcategory = props => {
         let form = e.nativeEvent.target;
         let data = new FormData(form);
         axios
-            .post(
-                "/api/register_for_free_updates/add",
-                data
-            )
+            .post("/api/register_for_free_updates/add", data)
             .then(res => {
                 console.log(res);
             })
@@ -196,8 +189,9 @@ const Governmentjobcategory = props => {
                                         key={c?.id}
                                     >
                                         <h5>
+                                            {console.log(c)}
                                             <Link
-                                                to={`/govermentjobs/${c.category.slug}/${c?.slug}`}
+                                                to={`/govermentjobs/${c.category.slug}/${c?.subcategory.slug}`}
                                             >
                                                 {c?.title}
                                             </Link>

@@ -37,11 +37,10 @@ function Governmentjobsubcategory(props) {
             const cats = res.data.data.filter(c => c.slug == subcategory_slug);
             if (cats.length > 0) {
                 axios
-                    .get(
-                        `/api/government_jobs?subcategory_id=${cats[0].id}`
-                    )
+                    .get(`/api/government_jobs?subcategory_id=${cats[0].id}`)
 
                     .then(res => {
+                        console.log("res", res);
                         setCategoryJobs(res.data.data[0]);
                     })
                     .catch(err => {
@@ -158,10 +157,17 @@ function Governmentjobsubcategory(props) {
                         </div>
                     </section>
                     <div className="content-bankjoblast">
-                                <img src={categoryJobs.image} 
-                                     className="subcategory-image"
-                                     style={{maxWidth: "100%", marginLeft:"auto", marginRight:"auto", display:"block"}}
-                                      alt=""/>    
+                        <img
+                            src={categoryJobs.image}
+                            className="subcategory-image"
+                            style={{
+                                maxWidth: "100%",
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                                display: "block"
+                            }}
+                            alt=""
+                        />
                         <div className="government-job-subcategory-content">
                             <h5
                                 className="government-job-subcategory-information"
@@ -242,37 +248,6 @@ function Governmentjobsubcategory(props) {
                                     }}
                                 ></div>
                             </h5>
-                            {/* <h5
-                                className="government-job-subcategory-information"
-                                id="eight"
-                            >
-                                Previous Year Question papers
-                            </h5>
-                            <h5>
-                                <a href="#">Previous Year Question papers </a>{" "}
-                                <br />
-                                <a href="#">
-                                    Previous Year Question papers{" "}
-                                </a>{" "}
-                                <br />
-                                <a href="#">
-                                    Previous Year Question papers{" "}
-                                </a>{" "}
-                                <br />
-                                <a href="#">
-                                    Previous Year Question papers{" "}
-                                </a>{" "}
-                                <br />
-                                <a href="#">
-                                    Previous Year Question papers{" "}
-                                </a>{" "}
-                                <br />
-                                <a href="#">
-                                    Previous Year Question papers{" "}
-                                </a>{" "}
-                                <br />
-                                <a href="#">Previous Year Question papers </a>
-                            </h5> */}
                         </div>
                     </div>
                     {jobs && jobs.length > 0 && (
