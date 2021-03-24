@@ -23,6 +23,7 @@ const Governmentjobcategory = props => {
 
     useEffect(() => {
         let { category_slug } = props.match.params;
+        setSlug(category_slug);
         axios.get("/api/government_jobs/categories").then(res => {
             const cats = res.data.data.filter(c => c.slug == category_slug);
             if (cats.length > 0) {
