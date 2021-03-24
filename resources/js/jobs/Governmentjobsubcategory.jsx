@@ -257,6 +257,7 @@ function Governmentjobsubcategory(props) {
                             background={true}
                             customPadding="0px"
                             customMargin="50px 0 0"
+                            toggleTrue={true}
                         />
                     )}
                 </div>

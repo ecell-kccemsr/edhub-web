@@ -2,13 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, ButtonToggle } from "reactstrap";
 import { Link } from "react-router-dom";
 const LinkCard = props => {
+    const initialPosts = 6;
     const [data, setData] = useState([]);
-
+    const [visible, setVisible] = useState(initialPosts);
     useEffect(() => {
         if (props?.data) {
             setData(props?.data);
         }
     }, []);
+
+    const viewAll = () => {
+        setVisible(data.length);
+    };
+
+    const viewLess = () => {
+        setVisible(initialPosts);
+    };
 
     return (
         <section
@@ -34,7 +43,7 @@ const LinkCard = props => {
                 <Row>
                     {data &&
                         data.length > 0 &&
-                        data.slice(0, props?.limit || 6).map((d, key) => {
+                        data.slice(0, props?.limit || visible).map((d, key) => {
                             let link = "#";
                             if (props?.governmentJobURL) {
                                 link = `/govermentjobs/${d?.category?.slug}/${d?.subcategory?.slug}`;
@@ -74,15 +83,40 @@ const LinkCard = props => {
                         })}
                 </Row>
                 <hr />
+                {visible < data.length && props?.toggleTrue && (
+                    <div className="text-center">
+                        <p
+                            className="jobs-section-btn mb-0 pb-0"
+                            style={{ cursor: "pointer" }}
+                            onClick={viewAll}
+                        >
+                            View All
+                        </p>
+                    </div>
+                )}
 
-                <div className="text-center pb-0">
-                    <Link
-                        to={props?.toLink || "#"}
-                        className="link-card-section-btn "
-                    >
-                        View All
-                    </Link>
-                </div>
+                {visible >= data.length && props?.toggleTrue && (
+                    <div className="text-center">
+                        <p
+                            className="jobs-section-btn mb-0 pb-0"
+                            style={{ cursor: "pointer" }}
+                            onClick={viewLess}
+                        >
+                            Show Less
+                        </p>
+                    </div>
+                )}
+
+                {!props?.toggleTrue && (
+                    <div className="text-center pb-0">
+                        <Link
+                            to={props?.toLink || "#"}
+                            className="link-card-section-btn "
+                        >
+                            View All
+                        </Link>
+                    </div>
+                )}
             </div>
         </section>
     );

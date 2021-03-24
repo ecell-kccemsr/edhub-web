@@ -91,6 +91,7 @@ function Govermentjob() {
                         data={jobs}
                         background={true}
                         governmentJobURL={true}
+                        toggleTrue={true}
                     />
                 )}
 
@@ -101,6 +102,7 @@ function Govermentjob() {
                         data={results}
                         background={true}
                         examResults={true}
+                        toggleTrue={true}
                     />
                 )}
             </div>
