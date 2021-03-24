@@ -12,8 +12,8 @@ import {
     Button
 } from "reactstrap";
 import BreadCrumb from "../components/breadcrumb/BreadCrumb";
-import { toast, ToastContainer  } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 const Governmentjobcategory = props => {
     const [subCategory, setSubCategory] = useState([]);
     const [categoryslug, setSlug] = useState("");
@@ -60,7 +60,7 @@ const Governmentjobcategory = props => {
                 console.log(err);
             });
     }, []);
-    
+
     const filterJobs = subcategory_id => {
         axios
             .get(`/api/government_jobs?subcategory_id=${subcategory_id}`)
@@ -77,14 +77,14 @@ const Governmentjobcategory = props => {
             .post("/api/register_for_free_updates/add", data)
             .then(res => {
                 toast.success("You have registered successfully !");
-                form.reset()
+                form.reset();
             })
-            .catch(err =>  toast.error(err.response.data.message));
+            .catch(err => toast.error(err.response.data.message));
     };
 
     return (
         <>
-        <ToastContainer />
+            <ToastContainer />
             <div className="questionpapear-section">
                 {/* breadcrumb */}
                 <BreadCrumb
@@ -194,7 +194,6 @@ const Governmentjobcategory = props => {
                                         key={c?.id}
                                     >
                                         <h5>
-                                            {console.log(c)}
                                             <Link
                                                 to={`/govermentjobs/${c.category.slug}/${c?.subcategory.slug}`}
                                             >
@@ -202,8 +201,10 @@ const Governmentjobcategory = props => {
                                             </Link>
                                         </h5>
                                         <h6>
-                                            {c?.description.slice(0, 300) +
-                                                "..."}
+                                            {c?.description.length > 300
+                                                ? c?.description.slice(0, 300) +
+                                                  "..."
+                                                : c?.description}
                                         </h6>
                                     </div>
                                 ))}

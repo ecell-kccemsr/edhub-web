@@ -42,6 +42,9 @@ const LinkCard = props => {
                             if (props?.questionPaperURL) {
                                 link = `/questionpaper/${d?.category?.slug}`;
                             }
+                            if (props?.examResults) {
+                                link = `${d.url}`;
+                            }
                             return (
                                 <Col
                                     xs="12"
@@ -57,6 +60,7 @@ const LinkCard = props => {
                                             rel="noreferrer noopener"
                                         >
                                             {d?.title}
+                                            {d?.name}
                                         </a>
                                     </h5>
                                     <p>

@@ -17,8 +17,8 @@ import {
     FormText
 } from "reactstrap";
 import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
-import { toast, ToastContainer  } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 function News() {
     const [categories, setCategory] = useState([]);
     const [news, setNews] = useState([]);
@@ -58,9 +58,9 @@ function News() {
             .post("/api/register_for_free_updates/add", data)
             .then(res => {
                 toast.success("You have registered successfully !");
-                form.reset()
+                form.reset();
             })
-            .catch(err =>  toast.error(err.response.data.message));
+            .catch(err => toast.error(err.response.data.message));
     };
 
     return (
@@ -124,10 +124,13 @@ function News() {
                                                         </Link>
 
                                                         <p className="news-description">
-                                                            {news?.description.length>300?(news?.description.slice(
-                                                                0,
-                                                                300
-                                                            ) + "..."):(news?.description)}
+                                                            {news?.description
+                                                                .length > 300
+                                                                ? news?.description.slice(
+                                                                      0,
+                                                                      300
+                                                                  ) + "..."
+                                                                : news?.description}
                                                         </p>
                                                     </div>
                                                     <img
@@ -196,16 +199,22 @@ function News() {
                                     <div>
                                         <div key={news.id}>
                                             <div>
-                                                <strong className="news-title">
+                                                <Link
+                                                    to={`/news/${news.category.slug}/${news.subcategory.slug}/${news.slug}`}
+                                                    className="news-title"
+                                                >
                                                     {news.title}
-                                                </strong>
+                                                </Link>
                                                 <br />
 
                                                 <p className="news-description">
-                                                    {news.description.length>100?(news.description.slice(
-                                                        0,
-                                                        100
-                                                    ) + "..."):(news.description)}
+                                                    {news.description.length >
+                                                    100
+                                                        ? news.description.slice(
+                                                              0,
+                                                              100
+                                                          ) + "..."
+                                                        : news.description}
                                                 </p>
                                             </div>
                                         </div>

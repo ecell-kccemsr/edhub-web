@@ -11,8 +11,8 @@ import {
     FormGroup
 } from "reactstrap";
 import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
-import { toast, ToastContainer  } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 function NewsSubCategory(props) {
     const [categoryslug, setSlug] = useState("");
     const [subcategoryslug, setSubSlug] = useState("");
@@ -28,9 +28,7 @@ function NewsSubCategory(props) {
             console.log(cats);
             if (cats.length > 0) {
                 axios
-                    .get(
-                        `/api/news/?subcategory_id=${cats[0].id}`
-                    )
+                    .get(`/api/news/?subcategory_id=${cats[0].id}`)
 
                     .then(res => {
                         setCategoryNews(res.data.data);
@@ -55,15 +53,12 @@ function NewsSubCategory(props) {
         let form = e.nativeEvent.target;
         let data = new FormData(form);
         axios
-            .post(
-                "/api/register_for_free_updates/add",
-                data
-            )
+            .post("/api/register_for_free_updates/add", data)
             .then(res => {
                 toast.success("You have registered successfully !");
-                form.reset()
+                form.reset();
             })
-            .catch(err =>  toast.error(err.response.data.message));
+            .catch(err => toast.error(err.response.data.message));
     };
 
     return (
@@ -91,7 +86,6 @@ function NewsSubCategory(props) {
                             link: `/news/${categoryslug}/${subcategoryslug}`,
                             active: true
                         }
-                        
                     ]}
                 />{" "}
                 {/* Title */}
@@ -127,10 +121,14 @@ function NewsSubCategory(props) {
                                                             </h5>
                                                         </Link>
                                                         <p className="news-description">
-                                                            {categorynews.description.length>150?(categorynews.description.slice(
-                                                                0,
-                                                                150
-                                                            ) + "..."):(categorynews.description)}
+                                                            {categorynews
+                                                                .description
+                                                                .length > 150
+                                                                ? categorynews.description.slice(
+                                                                      0,
+                                                                      150
+                                                                  ) + "..."
+                                                                : categorynews.description}
                                                         </p>
                                                     </div>
                                                     <img
@@ -203,14 +201,20 @@ function NewsSubCategory(props) {
                                     <div>
                                         <div className="d-flex" key={news.id}>
                                             <div>
-                                                <h6 className="news-title">
+                                                <Link
+                                                    to={`/news/${news.category.slug}/${news.subcategory.slug}/${news.slug}`}
+                                                    className="news-title"
+                                                >
                                                     {news.title}
-                                                </h6>
+                                                </Link>
                                                 <p className="news-description">
-                                                {news.description.length>100?(news.description.slice(
-                                                        0,
-                                                        100
-                                                    ) + "..."):(news.description)}
+                                                    {news.description.length >
+                                                    100
+                                                        ? news.description.slice(
+                                                              0,
+                                                              100
+                                                          ) + "..."
+                                                        : news.description}
                                                 </p>
                                             </div>
                                         </div>

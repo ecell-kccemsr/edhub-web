@@ -100,6 +100,7 @@ function Govermentjob() {
                         title="Exam Results"
                         data={results}
                         background={true}
+                        examResults={true}
                     />
                 )}
             </div>
