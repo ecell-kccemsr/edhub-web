@@ -264,7 +264,7 @@ const Governmentjobcategory = props => {
                                     category.length > 0 &&
                                     category.map(category => (
                                         <a
-                                            href={`/govermentjobs/${category?.id}`}
+                                            href={`/govermentjobs/${category.slug}`}
                                             key={category.id}
                                             className="category-btn-1 text-center"
                                         >

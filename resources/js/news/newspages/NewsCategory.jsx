@@ -119,9 +119,7 @@ function NewsCategory(props) {
                             {/* Latest News */}
                             <section className="category-information-section">
                                 <div className="category-information-sub-section">
-                                    <h4 className="category-header pb-2">
-                                        Latest News
-                                    </h4>
+                                   
                                     {categoryNews &&
                                         categoryNews.length == 0 && (
                                             <h4>No Category News</h4>
