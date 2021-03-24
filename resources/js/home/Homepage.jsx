@@ -200,7 +200,9 @@ function Homepage() {
                 <div className="news-card-section">
                     <h4 className="news-card-section-header">Latest News</h4>
                     <Row className=" justify-content-center">
-                        {news && news.length==0 && <h6 className="py-3 text-center">Loading News</h6> }
+                        {news && news.length == 0 && (
+                            <h6 className="py-3 text-center">Loading News</h6>
+                        )}
                         {news &&
                             news.slice(0, 9).map((n, key) => (
                                 <div className="latest-news-card" key={key}>
@@ -240,7 +242,9 @@ function Homepage() {
                     <h3 className="">JOBS</h3>
                     <Row>
                         {/* Jobs-Homepage */}
-                        {categories && categories.length==0 && <h6 className="py-3 text-center">Loading Jobs</h6> }
+                        {categories && categories.length == 0 && (
+                            <h6 className="py-3 text-center">Loading Jobs</h6>
+                        )}
                         {categories &&
                             categories.slice(0, 3).map((c, key) => (
                                 <Col
@@ -283,10 +287,13 @@ function Homepage() {
                                                             />
 
                                                             <div className="jobs-section-content">
-                                                                {j?.description.length>50?(j?.description.slice(
-                                                                    0,
-                                                                    50
-                                                                ) + "..."):(j?.description)}
+                                                                {j?.description
+                                                                    .length > 50
+                                                                    ? j?.description.slice(
+                                                                          0,
+                                                                          50
+                                                                      ) + "..."
+                                                                    : j?.description}
                                                             </div>
                                                         </div>
                                                     );
@@ -311,6 +318,7 @@ function Homepage() {
                         data={jobs}
                         limit={4}
                         toLink="/govermentjobs"
+                        governmentJobURL={true}
                     />
                 )}
 
@@ -321,6 +329,7 @@ function Homepage() {
                         data={questionPaper}
                         limit={4}
                         toLink="/questionpaper"
+                        questionPaperURL={true}
                     />
                 )}
             </section>

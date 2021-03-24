@@ -84,27 +84,25 @@ function Govermentjob() {
                     </Row>
                 </div>
 
- {/* Latest Notifications */}
-            {jobs && jobs.length > 0 && (
-                <LinkCard
-                    title="Latest Notifications"
-                    data={jobs}
-                    background={true}
-
+                {/* Latest Notifications */}
+                {jobs && jobs.length > 0 && (
+                    <LinkCard
+                        title="Latest Notifications"
+                        data={jobs}
+                        background={true}
+                        governmentJobURL={true}
                     />
-            )}
-            
-            {/* Exam Results */}
-            {results && results.length > 0 && (
-                <LinkCard
-                    title="Exam Results"
-                    data={results}
-                    background={true}
-                />
-            )}
-            </div>
+                )}
 
-           
+                {/* Exam Results */}
+                {results && results.length > 0 && (
+                    <LinkCard
+                        title="Exam Results"
+                        data={results}
+                        background={true}
+                    />
+                )}
+            </div>
         </>
     );
 }

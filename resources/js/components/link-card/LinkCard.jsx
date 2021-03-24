@@ -35,6 +35,13 @@ const LinkCard = props => {
                     {data &&
                         data.length > 0 &&
                         data.slice(0, props?.limit || 6).map((d, key) => {
+                            let link = "#";
+                            if (props?.governmentJobURL) {
+                                link = `/govermentjobs/${d?.category?.slug}/${d?.subcategory?.slug}`;
+                            }
+                            if (props?.questionPaperURL) {
+                                link = `/questionpaper/${d?.category?.slug}`;
+                            }
                             return (
                                 <Col
                                     xs="12"
@@ -46,14 +53,17 @@ const LinkCard = props => {
                                         <a
                                             classsName="link-card-anchor"
                                             style={{ color: "#000" }}
-                                            href={d?.link || "#"}
+                                            href={link}
                                             rel="noreferrer noopener"
                                         >
                                             {d?.title}
                                         </a>
                                     </h5>
                                     <p>
-                                        {d?.description.length>180?(d?.description.slice(0, 180) + "..."):(d?.description)}
+                                        {d?.description.length > 180
+                                            ? d?.description.slice(0, 180) +
+                                              "..."
+                                            : d?.description}
                                     </p>
                                 </Col>
                             );
