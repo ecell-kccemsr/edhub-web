@@ -40,7 +40,7 @@ function Governmentjobsubcategory(props) {
                     .get(`/api/government_jobs?subcategory_id=${cats[0].id}`)
 
                     .then(res => {
-                        console.log("res", res);
+                        // console.log("res", res);
                         setCategoryJobs(res.data.data[0]);
                     })
                     .catch(err => {

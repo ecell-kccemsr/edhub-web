@@ -44,7 +44,7 @@ function News() {
             .get("/api/news/trending")
             .then(res => {
                 setTrending(res.data.data);
-                console.log(res);
+                // console.log(res);
             })
             .catch(err => {
                 console.log(err);

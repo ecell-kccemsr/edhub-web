@@ -39,7 +39,7 @@ function Homepage() {
         axios
             .get("/api/government_jobs")
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setJobs(res.data.data);
             })
             .catch(err => {
