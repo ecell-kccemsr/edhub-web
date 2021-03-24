@@ -16,6 +16,7 @@ import {
     Input,
     FormText
 } from "reactstrap";
+import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
 import { toast, ToastContainer  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 function News() {
@@ -67,23 +68,19 @@ function News() {
             <ToastContainer />
             <section className="select-news-by-category">
                 {/* Breadcrumb */}
-                <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                        <li className="breadcrumb-item">
-                            <a href="#" className="href-government">
-                                HOME
-                            </a>
-                        </li>
-                        <li
-                            className="breadcrumb-item active"
-                            aria-current="page"
-                        >
-                            <a href="" className="href-government">
-                                NEWS
-                            </a>
-                        </li>
-                    </ol>
-                </nav>{" "}
+                <BreadCrumb
+                    navData={[
+                        {
+                            title: "Home",
+                            link: "/"
+                        },
+                        {
+                            title: "News",
+                            link: "/news",
+                            active: true
+                        }
+                    ]}
+                />{" "}
                 {/* Title */}
                 <div className="news-title">
                     <h5>NEWS</h5>

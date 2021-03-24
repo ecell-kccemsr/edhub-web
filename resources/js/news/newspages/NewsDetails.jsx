@@ -19,15 +19,24 @@ import {
     Input,
     FormText
 } from "reactstrap";
+import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
 import { toast, ToastContainer  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 function Newsdetails(props) {
+    const [categoryslug, setSlug] = useState("");
+    const [subcategoryslug, setSubSlug] = useState("");
+    const [newsslug, setNewsslug] = useState("");
     const [categorynews, setcategorynews] = useState([]);
     const [subcategory, setsubcategory] = useState([]);
     const [newsatglance, setNewsAtGlance] = useState([]);
     const [trending, setTrending] = useState([]);
     useEffect(() => {
+        const { category_slug } = props.match.params;
+        const { subcategory_slug } = props.match.params;
+        setSlug(category_slug);
+        setSubSlug(subcategory_slug);
         const { news_slug } = props.match.params;
+        setNewsslug(news_slug);
         let id, sub_id;
         axios
             .get(`/api/news/${news_slug}`)
@@ -84,30 +93,33 @@ function Newsdetails(props) {
         
         <div className="container news-details">
             {/* Breadcrumb */}
-            <nav aria-label="breadcrumb" style={{ marginTop: "30px" }}>
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item ">
-                        <a href="#" className="href-government">
-                            HOME
-                        </a>
-                    </li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                        <a href="" className="href-government">
-                            NEWS
-                        </a>
-                    </li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                        <a href="" className="href-government">
-                            BUSINESS
-                        </a>
-                    </li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                        <a href="" className="href-government">
-                            ENTREPRENEURSHIP
-                        </a>
-                    </li>
-                </ol>
-            </nav>
+            <BreadCrumb
+                    navData={[
+                        {
+                            title: "Home",
+                            link: "/"
+                        },
+                        {
+                            title: "News",
+                            link: "/news"
+                        },
+                        {
+                            title: `${categoryslug}`,
+                            link: `/news/${categoryslug}`,
+                            active: true
+                        },
+                        {
+                            title: `${subcategoryslug}`,
+                            link: `/news/${categoryslug}/${subcategoryslug}`,
+                            active: true
+                        },
+                        {
+                            title: `${newsslug}`,
+                            link: `/news/${categoryslug}/${subcategoryslug}/${newsslug}`,
+                            active: true
+                        }
+                    ]}
+                />
             <Row>
                 {/* News Hero Section */}
                 <Col md="8">
@@ -254,7 +266,7 @@ function Newsdetails(props) {
                                 subcategory.length > 0 &&
                                 subcategory.map(subcategory => (
                                     <Link
-                                        to={`/news/view/subcategory/${subcategory?.id}`}
+                                        to={`/news/${subcategory.category.slug}/${subcategory?.slug}`}
                                         key={subcategory.id}
                                         className="category-btn-1 text-center"
                                     >
