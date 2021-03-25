@@ -39,7 +39,7 @@ const App = props => {
                     />
 
                     <Route
-                        path="/govermentjobs/:category_slug/:subcategory_slug"
+                        path="/govermentjobs/:category_slug/:subcategory_slug/:slug"
                         exact
                         component={Governmentjobsubcategory}
                     />

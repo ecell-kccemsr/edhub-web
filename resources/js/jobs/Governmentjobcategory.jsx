@@ -195,7 +195,7 @@ const Governmentjobcategory = props => {
                                     >
                                         <h5>
                                             <Link
-                                                to={`/govermentjobs/${c.category.slug}/${c?.subcategory.slug}`}
+                                                to={`/govermentjobs/${c.category.slug}/${c?.subcategory.slug}/${c?.slug}`}
                                             >
                                                 {c?.title}
                                             </Link>

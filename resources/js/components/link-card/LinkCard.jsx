@@ -46,7 +46,7 @@ const LinkCard = props => {
                         data.slice(0, props?.limit || visible).map((d, key) => {
                             let link = "#";
                             if (props?.governmentJobURL) {
-                                link = `/govermentjobs/${d?.category?.slug}/${d?.subcategory?.slug}`;
+                                link = `/govermentjobs/${d?.category?.slug}/${d?.subcategory?.slug}/${d?.slug}`;
                             }
                             if (props?.questionPaperURL) {
                                 link = `/questionpaper/${d?.category?.slug}`;

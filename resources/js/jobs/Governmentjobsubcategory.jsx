@@ -22,16 +22,18 @@ import LinkCard from "../components/link-card/LinkCard";
 
 function Governmentjobsubcategory(props) {
     const [categoryJobs, setCategoryJobs] = useState([]);
-    const [categoryslug, setSlug] = useState("");
+    const [categoryslug, setCategorySlug] = useState("");
     const [subcategoryslug, setSubSlug] = useState("");
+    const [slug, setSlug] = useState("");
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        // console.log(props);
         const { category_slug } = props.match.params;
         const { subcategory_slug } = props.match.params;
-        setSlug(category_slug);
+        const { slug } = props.match.params;
+        setCategorySlug(category_slug);
         setSubSlug(subcategory_slug);
+        setSlug(slug);
 
         axios.get("/api/government_jobs/sub_categories").then(res => {
             const cats = res.data.data.filter(c => c.slug == subcategory_slug);
@@ -40,8 +42,9 @@ function Governmentjobsubcategory(props) {
                     .get(`/api/government_jobs?subcategory_id=${cats[0].id}`)
 
                     .then(res => {
-                        // console.log("res", res);
-                        setCategoryJobs(res.data.data[0]);
+                        setCategoryJobs(
+                            res.data.data.filter(c => c.slug == slug)[0]
+                        );
                     })
                     .catch(err => {
                         console.log(err);
@@ -258,6 +261,7 @@ function Governmentjobsubcategory(props) {
                             customPadding="0px"
                             customMargin="50px 0 0"
                             toggleTrue={true}
+                            governmentJobURL={true}
                         />
                     )}
                 </div>
