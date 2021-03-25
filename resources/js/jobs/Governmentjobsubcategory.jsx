@@ -93,7 +93,6 @@ function Governmentjobsubcategory(props) {
                             textTransform: "capitalize"
                         }}
                     >
-                        {categoryJobs.title}
                         {categoryslug}
                     </h5>
                 )}
