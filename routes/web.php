@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\SocialLoginController;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login/{provider}/redirect', [SocialLoginController::class,'redirect']);
+Route::get('/login/{provider}/callback', [SocialLoginController::class,'callback']);
 
 Route::view('/', 'app');
 Route::view('/login', 'app');
@@ -29,9 +32,7 @@ Route::view('/govermentjobs/{category_slug}/{subcategory_slug}/{slug}', 'app');
 Route::view('/questionpaper', 'app');
 Route::view('/questionpaper/{category_slug}', 'app');
 
-
 Route::view('/exam/calendar', 'app');
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
