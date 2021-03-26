@@ -20,13 +20,32 @@ const Governmentjobcategory = props => {
     const [categoryJobs, setCategoryJobs] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [category, setCategory] = useState([]);
+    const [age, setAge] = useState([]);
 
     useEffect(() => {
+        getData();
+
+        axios
+            .get("/api/government_jobs/categories")
+            .then(res => {
+                setCategory(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+
+    const getData = (ageVal = null, qualificationVal = null) => {
         let { category_slug } = props.match.params;
         setSlug(category_slug);
         axios.get("/api/government_jobs/categories").then(res => {
             const cats = res.data.data.filter(c => c.slug == category_slug);
             if (cats.length > 0) {
+                let age, qualification;
+                if (ageVal == null) age = "";
+                else age = `&age_limit=${ageVal}`;
+                if (qualificationVal == null) qualification = "";
+                else qualification = `&qualification=${qualificationVal}`;
                 axios
                     .get(
                         `/api/government_jobs/sub_categories?category_id=${cats[0].id}`
@@ -40,7 +59,9 @@ const Governmentjobcategory = props => {
                     });
 
                 axios
-                    .get(`/api/government_jobs?category_id=${cats[0].id}`)
+                    .get(
+                        `/api/government_jobs?category_id=${cats[0].id}${age}${qualification}`
+                    )
 
                     .then(res => {
                         setCategoryJobs(res.data.data);
@@ -50,16 +71,7 @@ const Governmentjobcategory = props => {
                     });
             }
         });
-
-        axios
-            .get("/api/government_jobs/categories")
-            .then(res => {
-                setCategory(res.data.data);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }, []);
+    };
 
     const filterJobs = subcategory_id => {
         axios
@@ -69,6 +81,9 @@ const Governmentjobcategory = props => {
             });
     };
 
+    const filterByAge = age_limit => {
+        getData(age_limit, null);
+    };
     const handleSubmit = e => {
         e.preventDefault();
         let form = e.nativeEvent.target;
@@ -124,10 +139,18 @@ const Governmentjobcategory = props => {
                             <Label for="Age" style={{ fontSize: "14px" }}>
                                 By Age
                             </Label>
-                            <Input type="select" name="select" id="Age">
-                                <option>Below 10</option>
-                                <option>Below 20</option>
-                                <option>Below 30</option>
+                            <Input
+                                type="select"
+                                name="select"
+                                id="age"
+                                onChange={e => filterByAge(e.target.value)}
+                            >
+                                <option value="none" selected disabled hidden>
+                                    Select Age
+                                </option>
+                                <option value="10">Below 10</option>
+                                <option value="20">Below 20</option>
+                                <option value="30">Below 30</option>
                             </Input>
                         </FormGroup>
                     </Col>

@@ -16,22 +16,22 @@ import {
     Input,
     FormText
 } from "reactstrap";
-import { toast, ToastContainer  } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 function Questionpaper(props) {
     const [subQuespapercategory, setSubQuespapercategory] = useState([]);
     const [quespaper, setQuespaper] = useState([]);
     const [quespapervar, setQuespaperVar] = useState([]);
-    const [loading,setLoading] = useState({
-        quespaper:true
-    })
+    const [loading, setLoading] = useState({
+        quespaper: true
+    });
     useEffect(() => {
         axios
             .get("/api/questionpapers")
             .then(res => {
                 setQuespaper(res.data.data);
                 setQuespaperVar(res.data.data);
-                setLoading({...loading,quespaper:false})
+                setLoading({ ...loading, quespaper: false });
             })
 
             .catch(err => {
@@ -49,11 +49,9 @@ function Questionpaper(props) {
     }, []);
 
     const filterQuestionPaper = year => {
-        let questionpaper = [];
-        quespaper.filter(quesp => {
-            if (quesp.year == year) questionpaper.push(quesp);
+        axios.get(`/api/questionpapers?year=${year}`).then(res => {
+            setQuespaperVar(res.data.data);
         });
-        setQuespaperVar(questionpaper);
     };
 
     const handleSubmit = e => {
@@ -61,19 +59,16 @@ function Questionpaper(props) {
         let form = e.nativeEvent.target;
         let data = new FormData(form);
         axios
-            .post(
-                "/api/register_for_free_updates/add",
-                data
-            )
+            .post("/api/register_for_free_updates/add", data)
             .then(res => {
                 toast.success("You have registered successfully !");
-                form.reset()
+                form.reset();
             })
-            .catch(err =>  toast.error(err.response.data.message));
+            .catch(err => toast.error(err.response.data.message));
     };
     return (
         <>
-        <ToastContainer />
+            <ToastContainer />
             <div className="questionpapear-section">
                 {/* Title */}
                 <h3 className="questionpapaer-section-header text-center">
@@ -179,15 +174,25 @@ function Questionpaper(props) {
                                         ))}
                                 </div>
                             </div>
-                            {quespapervar && quespapervar.length==0 && loading.quespaper==false && <h4 className="text-center py-3">No Question Papers Found</h4> }
-                            {quespapervar && quespapervar.length==0 && loading.quespaper==true && <h4 className="text-center py-3">Loading Question Papers</h4> }
+                            {quespapervar &&
+                                quespapervar.length == 0 &&
+                                loading.quespaper == false && (
+                                    <h4 className="text-center py-3">
+                                        No Question Papers Found
+                                    </h4>
+                                )}
+                            {quespapervar &&
+                                quespapervar.length == 0 &&
+                                loading.quespaper == true && (
+                                    <h4 className="text-center py-3">
+                                        Loading Question Papers
+                                    </h4>
+                                )}
                             {quespapervar &&
                                 quespapervar.map((q, key) => (
                                     <div className="questionpaper-news-details">
                                         <h5>
-                                            <Link to={q?.link}>
-                                                {q?.title}
-                                            </Link>
+                                            <Link to={q?.link}>{q?.title}</Link>
                                         </h5>
                                         <h6>
                                             {q?.description.slice(0, 200) +
