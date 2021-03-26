@@ -2,27 +2,20 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
-    ButtonDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
     Row,
     Col,
-    List,
     Button,
-    Form,
     FormGroup,
-    Label,
-    Input,
-    FormText
-} from "reactstrap";
+    Input} from "reactstrap";
 import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import ReactPaginate from "react-paginate";
 function News() {
     const [categories, setCategory] = useState([]);
-    const [news, setNews] = useState([]);
+    const [news, setNews] = useState([news?.slice(0, 50)]);
     const [trending, setTrending] = useState([]);
+    
     useEffect(() => {
         axios
             .get("/api/news/categories")
@@ -44,12 +37,12 @@ function News() {
             .get("/api/news/trending")
             .then(res => {
                 setTrending(res.data.data);
-                // console.log(res);
             })
             .catch(err => {
                 console.log(err);
             });
     }, []);
+    
     const handleSubmit = e => {
         e.preventDefault();
         let form = e.nativeEvent.target;
@@ -62,6 +55,54 @@ function News() {
             })
             .catch(err => toast.error(err.response.data.message));
     };
+//pagination
+    const [pageNumber, setPageNumber] = useState(0);
+    const newsPerPage = 10;
+    const pagesVisited = pageNumber * newsPerPage;
+  
+    const displayNews = news
+      .slice(pagesVisited, pagesVisited + newsPerPage)
+                                {news && news.map(news => {
+                                    return (
+                                        <>
+                <div
+                    className="d-flex justify-content-between"
+                    key={news.id}
+                >
+                    <div>
+                        <Link
+                            className="news-title"
+                            to={`/news/${news.category.slug}/${news.subcategory.slug}/${news.slug}`}
+                        >
+                            {news.title}
+                        </Link>
+
+                        <p className="news-description">
+                            {news?.description
+                                .length > 300
+                                ? news?.description.slice(
+                                      0,
+                                      300
+                                  ) + "..."
+                                : news?.description}
+                        </p>
+                    </div>
+                    <img
+                        src={news.image}
+                        alt=""
+                        className="category-information-image"
+                    />
+                </div>
+                <hr className="news-hr" />
+            </>
+                                    );
+            
+                                })}   
+                                const pageCount = Math.ceil(news.length / newsPerPage);
+
+                                const changePage = ({ selected }) => {
+                                  setPageNumber(selected);
+                                };   
 
     return (
         <div>
@@ -108,40 +149,19 @@ function News() {
                             </div>
                             <section className="category-information-section">
                                 <div className="category-information-sub-section">
-                                    {news &&
-                                        news.map(news => (
-                                            <>
-                                                <div
-                                                    className="d-flex justify-content-between"
-                                                    key={news.id}
-                                                >
-                                                    <div>
-                                                        <Link
-                                                            className="news-title"
-                                                            to={`/news/${news.category.slug}/${news.subcategory.slug}/${news.slug}`}
-                                                        >
-                                                            {news.title}
-                                                        </Link>
-
-                                                        <p className="news-description">
-                                                            {news?.description
-                                                                .length > 300
-                                                                ? news?.description.slice(
-                                                                      0,
-                                                                      300
-                                                                  ) + "..."
-                                                                : news?.description}
-                                                        </p>
-                                                    </div>
-                                                    <img
-                                                        src={news.image}
-                                                        alt=""
-                                                        className="category-information-image"
-                                                    />
-                                                </div>
-                                                <hr className="news-hr" />
-                                            </>
-                                        ))}
+                                {displayNews}
+                                 <ReactPaginate
+                                  previousLabel={"Previous"}
+                                   nextLabel={"Next"}
+                                   pageCount={pageCount}
+                                   onPageChange={changePage}
+                                   containerClassName={"paginationBttns"}
+                                   previousLinkClassName={"previousBttn"}
+                                   nextLinkClassName={"nextBttn"}
+                                   disabledClassName={"paginationDisabled"}
+                                   activeClassName={"paginationActive"}
+                                 />
+                                 
                                 </div>
                             </section>
                         </div>
