@@ -11,7 +11,7 @@ This endpoint allows you to fetch all the News.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/news?category_id=15&subcategory_id=4&page=20&per_page=15" \
+    -G "http://127.0.0.1:8000/api/news?category_id=8&subcategory_id=9&page=8&per_page=17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -22,10 +22,10 @@ const url = new URL(
 );
 
 let params = {
-    "category_id": "15",
-    "subcategory_id": "4",
-    "page": "20",
-    "per_page": "15",
+    "category_id": "8",
+    "subcategory_id": "9",
+    "page": "8",
+    "per_page": "17",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -59,7 +59,10 @@ fetch(url, {
             "created_at": null,
             "created_at_formated": null,
             "updated_at": null,
-            "updated_at_formated": null
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null
         },
         {
             "id": null,
@@ -72,7 +75,10 @@ fetch(url, {
             "created_at": null,
             "created_at_formated": null,
             "updated_at": null,
-            "updated_at_formated": null
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null
         }
     ]
 }
@@ -120,6 +126,67 @@ Field to change news per page. Defaults to 10.</p>
 </form>
 
 
+## api/news/trending
+
+
+
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://127.0.0.1:8000/api/news/trending" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://127.0.0.1:8000/api/news/trending"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response => response.json());
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": []
+}
+```
+<div id="execution-results-GETapi-news-trending" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-news-trending"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-news-trending"></code></pre>
+</div>
+<div id="execution-error-GETapi-news-trending" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-news-trending"></code></pre>
+</div>
+<form id="form-GETapi-news-trending" data-method="GET" data-path="api/news/trending" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-news-trending', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-news-trending" onclick="tryItOut('GETapi-news-trending');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-news-trending" onclick="cancelTryOut('GETapi-news-trending');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-news-trending" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/news/trending</code></b>
+</p>
+</form>
+
+
 ## Get All Categories.
 
 
@@ -129,7 +196,7 @@ This endpoint allows you to fetch all News Categories.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/news/categories?page=15&per_page=13" \
+    -G "http://127.0.0.1:8000/api/news/categories?page=13&per_page=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -140,8 +207,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "15",
-    "per_page": "13",
+    "page": "13",
+    "per_page": "1",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -165,20 +232,26 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 11,
-            "name": "Brennon Koss",
-            "created_at": "2021-03-06T16:01:16.000000Z",
+            "id": 9,
+            "name": "Franz Parisian DDS",
+            "created_at": "2021-03-26T12:26:38.000000Z",
             "created_at_formated": "1 second ago",
-            "updated_at": "2021-03-06T16:01:16.000000Z",
-            "updated_at_formated": "1 second ago"
+            "updated_at": "2021-03-26T12:26:38.000000Z",
+            "updated_at_formated": "1 second ago",
+            "slug": "franz-parisian-dds",
+            "seo_keywords": null,
+            "seo_description": null
         },
         {
-            "id": 12,
-            "name": "Domenick Davis",
-            "created_at": "2021-03-06T16:01:16.000000Z",
+            "id": 10,
+            "name": "Thalia Fritsch",
+            "created_at": "2021-03-26T12:26:38.000000Z",
             "created_at_formated": "1 second ago",
-            "updated_at": "2021-03-06T16:01:16.000000Z",
-            "updated_at_formated": "1 second ago"
+            "updated_at": "2021-03-26T12:26:38.000000Z",
+            "updated_at_formated": "1 second ago",
+            "slug": "thalia-fritsch",
+            "seo_keywords": null,
+            "seo_description": null
         }
     ]
 }
@@ -225,7 +298,7 @@ This endpoint allows you to fetch all News Sub Categories.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/news/sub_categories?category_id=19&page=1&per_page=19" \
+    -G "http://127.0.0.1:8000/api/news/sub_categories?category_id=15&page=18&per_page=15" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -236,9 +309,9 @@ const url = new URL(
 );
 
 let params = {
-    "category_id": "19",
-    "page": "1",
-    "per_page": "19",
+    "category_id": "15",
+    "page": "18",
+    "per_page": "15",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -262,22 +335,48 @@ fetch(url, {
 {
     "data": [
         {
-            "id": null,
-            "name": "Mr. Timothy Daugherty",
-            "category": null,
-            "created_at": null,
-            "created_at_formated": null,
-            "updated_at": null,
-            "updated_at_formated": null
+            "id": 7,
+            "name": "Mariane Ebert",
+            "category": {
+                "id": 1,
+                "name": "Business",
+                "created_at": "2021-03-10T13:40:53.000000Z",
+                "created_at_formated": "2 weeks ago",
+                "updated_at": "2021-03-10T13:41:25.000000Z",
+                "updated_at_formated": "2 weeks ago",
+                "slug": "business",
+                "seo_keywords": null,
+                "seo_description": null
+            },
+            "created_at": "2021-03-26T12:26:38.000000Z",
+            "created_at_formated": "1 second ago",
+            "updated_at": "2021-03-26T12:26:38.000000Z",
+            "updated_at_formated": "1 second ago",
+            "slug": "mariane-ebert",
+            "seo_keywords": null,
+            "seo_description": null
         },
         {
-            "id": null,
-            "name": "Mrs. Catalina Swaniawski",
-            "category": null,
-            "created_at": null,
-            "created_at_formated": null,
-            "updated_at": null,
-            "updated_at_formated": null
+            "id": 8,
+            "name": "Angelita Rosenbaum",
+            "category": {
+                "id": 1,
+                "name": "Business",
+                "created_at": "2021-03-10T13:40:53.000000Z",
+                "created_at_formated": "2 weeks ago",
+                "updated_at": "2021-03-10T13:41:25.000000Z",
+                "updated_at_formated": "2 weeks ago",
+                "slug": "business",
+                "seo_keywords": null,
+                "seo_description": null
+            },
+            "created_at": "2021-03-26T12:26:38.000000Z",
+            "created_at_formated": "1 second ago",
+            "updated_at": "2021-03-26T12:26:38.000000Z",
+            "updated_at_formated": "1 second ago",
+            "slug": "angelita-rosenbaum",
+            "seo_keywords": null,
+            "seo_description": null
         }
     ]
 }
@@ -329,14 +428,14 @@ This endpoint allows you to fetch a News.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/news/10" \
+    -G "http://127.0.0.1:8000/api/news/9" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/news/10"
+    "http://127.0.0.1:8000/api/news/9"
 );
 
 let headers = {
@@ -367,7 +466,10 @@ fetch(url, {
         "created_at": null,
         "created_at_formated": null,
         "updated_at": null,
-        "updated_at_formated": null
+        "updated_at_formated": null,
+        "slug": null,
+        "seo_keywords": null,
+        "seo_description": null
     }
 }
 ```

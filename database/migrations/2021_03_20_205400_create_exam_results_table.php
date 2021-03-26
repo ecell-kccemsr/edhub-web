@@ -18,6 +18,8 @@ class CreateExamResultsTable extends Migration
             $table->string('name');
             $table->longText('description')->nullable();
             $table->string('url');
+            $table->string('seo_keywords')->nullable();
+            $table->longText('seo_description')->nullable();
             $table->timestamps();
         });
     }

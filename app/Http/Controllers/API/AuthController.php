@@ -17,6 +17,26 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    /**
+    * Signup
+    *
+    * This endpoint allows you to Signup and retrieve an access token.
+    * @group Authenticating requests
+    *
+    * @bodyParam name string required The name of the user.
+    * @bodyParam email string required The email of the user.
+    * @bodyParam confirm_password string required The confirm_password of the user.
+    * @bodyParam gender string required The gender of the user.
+    *
+    * @response 401 {
+    *  "message" : "Unauthorized"
+    * }
+    * @response {
+    *  "access_token" : "<ACCESS_TOKEN>",
+    *  "token_type" : "Bearer",
+    *  "expires_at" : "<EXPIRES_AT>",
+    * }
+    */
     public function signUp(SignUpRequest $request)
     {
         $user = new User();
@@ -38,6 +58,24 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+    * Login
+    *
+    * This endpoint allows you to login and retrieve an access token.
+    * @group Authenticating requests
+    *
+    * @bodyParam email string required The email of the user.
+    * @bodyParam password string required The password of the user.
+    *      
+    * @response 401 {
+    *  "message" : "Unauthorized"
+    * }
+    * @response {
+    *  "access_token" : "<ACCESS_TOKEN>",
+    *  "token_type" : "Bearer",
+    *  "expires_at" : "<EXPIRES_AT>",
+    * }
+    */
     public function login(Request $request){
         $request->validate([
             'email' => 'required | string ',
@@ -64,6 +102,19 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+    * Logout
+    *
+    * This endpoint allows you to logout.
+    * @group Authenticating requests
+    *          
+    * @response 401 {
+    *  "message" : "Unauthorized"
+    * }
+    * @response {
+    *  "message" : "Successfully logged out!",
+    * }
+    */
     public function logout(Request $request){
         $request->user()->token()->revoke();
         return response()->json([
@@ -71,6 +122,18 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+    * Get Authenticated User
+    *
+    * This endpoint allows you to get authenticated User.
+    * @group Authenticating requests
+    *
+    * @authenticated 
+    * 
+    * @apiResource App\Http\Resources\UserResource
+    * @apiResourceModel App\Models\User
+    * 
+    */
     public function user()
     {
         return new UserResource(Auth::user());

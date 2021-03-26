@@ -11,7 +11,7 @@ This endpoint allows you to fetch all the Question Papers.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/questionpapers?category_id=2&page=14&per_page=20" \
+    -G "http://127.0.0.1:8000/api/questionpapers?category_id=13&page=10&per_page=7" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -22,9 +22,9 @@ const url = new URL(
 );
 
 let params = {
-    "category_id": "2",
-    "page": "14",
-    "per_page": "20",
+    "category_id": "13",
+    "page": "10",
+    "per_page": "7",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -57,7 +57,10 @@ fetch(url, {
             "created_at": null,
             "created_at_formated": null,
             "updated_at": null,
-            "updated_at_formated": null
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null
         },
         {
             "id": null,
@@ -69,7 +72,10 @@ fetch(url, {
             "created_at": null,
             "created_at_formated": null,
             "updated_at": null,
-            "updated_at_formated": null
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null
         }
     ]
 }
@@ -121,7 +127,7 @@ This endpoint allows you to fetch all Question Paper Categories.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/questionpapers/categories?page=6&per_page=8" \
+    -G "http://127.0.0.1:8000/api/questionpapers/categories?page=5&per_page=18" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -132,8 +138,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "6",
-    "per_page": "8",
+    "page": "5",
+    "per_page": "18",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -162,7 +168,10 @@ fetch(url, {
             "created_at": null,
             "created_at_formated": null,
             "updated_at": null,
-            "updated_at_formated": null
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null
         },
         {
             "id": null,
@@ -170,7 +179,10 @@ fetch(url, {
             "created_at": null,
             "created_at_formated": null,
             "updated_at": null,
-            "updated_at_formated": null
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null
         }
     ]
 }
@@ -217,14 +229,14 @@ This endpoint allows you to fetch a Question Paper.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/questionpapers/6" \
+    -G "http://127.0.0.1:8000/api/questionpapers/5" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/questionpapers/6"
+    "http://127.0.0.1:8000/api/questionpapers/5"
 );
 
 let headers = {
@@ -254,7 +266,10 @@ fetch(url, {
         "created_at": null,
         "created_at_formated": null,
         "updated_at": null,
-        "updated_at_formated": null
+        "updated_at_formated": null,
+        "slug": null,
+        "seo_keywords": null,
+        "seo_description": null
     }
 }
 ```

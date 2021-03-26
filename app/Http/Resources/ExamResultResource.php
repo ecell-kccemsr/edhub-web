@@ -19,6 +19,8 @@ class ExamResultResource extends JsonResource
             'name' => $this->name,
             'description' => $this->description,
             'url' => $this->url,
+            'seo_keywords' => $this->seo_keywords,
+            'seo_description' => $this->seo_description,
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,

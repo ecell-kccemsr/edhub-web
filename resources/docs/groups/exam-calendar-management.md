@@ -11,7 +11,7 @@ This endpoint allows you to fetch all Exams Calendar.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/examcalendar?category_id=18&page=16&per_page=10" \
+    -G "http://127.0.0.1:8000/api/examcalendar?category_id=15&page=8&per_page=17" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -22,9 +22,9 @@ const url = new URL(
 );
 
 let params = {
-    "category_id": "18",
-    "page": "16",
-    "per_page": "10",
+    "category_id": "15",
+    "page": "8",
+    "per_page": "17",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -48,34 +48,36 @@ fetch(url, {
 {
     "data": [
         {
-            "name": "IBPS PO MAINS 2021",
-            "date": "2021-02-04",
-            "image": "http:\/\/127.0.0.1:8000\/storage\/exam-calendars\/March2021\/Jv3TZB5ZIcHOoSmuonE1.PNG",
-            "official": true,
-            "category": {
-                "id": 1,
-                "name": "Government Exams"
-            },
-            "url": "examcalendar",
-            "created_at": "2021-03-04T13:00:01.000000Z",
-            "created_at_formated": "2 days ago",
-            "updated_at": "2021-03-04T13:00:01.000000Z",
-            "updated_at_formated": "2 days ago"
+            "name": null,
+            "date": null,
+            "image": "",
+            "official": null,
+            "category": null,
+            "url": null,
+            "created_at": null,
+            "created_at_formated": null,
+            "updated_at": null,
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null,
+            "age_limit": null
         },
         {
-            "name": "IBPS PO MAINS 2021",
-            "date": "2021-02-04",
-            "image": "http:\/\/127.0.0.1:8000\/storage\/exam-calendars\/March2021\/Jv3TZB5ZIcHOoSmuonE1.PNG",
-            "official": true,
-            "category": {
-                "id": 1,
-                "name": "Government Exams"
-            },
-            "url": "examcalendar",
-            "created_at": "2021-03-04T13:00:01.000000Z",
-            "created_at_formated": "2 days ago",
-            "updated_at": "2021-03-04T13:00:01.000000Z",
-            "updated_at_formated": "2 days ago"
+            "name": null,
+            "date": null,
+            "image": "",
+            "official": null,
+            "category": null,
+            "url": null,
+            "created_at": null,
+            "created_at_formated": null,
+            "updated_at": null,
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null,
+            "age_limit": null
         }
     ]
 }
@@ -127,7 +129,7 @@ This endpoint allows you to fetch all Exams Calendar Categories.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/examcalendar/categories?page=6&per_page=4" \
+    -G "http://127.0.0.1:8000/api/examcalendar/categories?page=19&per_page=12" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -138,8 +140,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "6",
-    "per_page": "4",
+    "page": "19",
+    "per_page": "12",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -163,12 +165,18 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 23,
-            "name": "Jefferey Wunsch"
+            "id": 3,
+            "name": "Jerry Bode",
+            "slug": "jerry-bode",
+            "seo_keywords": null,
+            "seo_description": null
         },
         {
-            "id": 24,
-            "name": "Mrs. Mariela Stamm Sr."
+            "id": 4,
+            "name": "Crystel Pagac",
+            "slug": "crystel-pagac",
+            "seo_keywords": null,
+            "seo_description": null
         }
     ]
 }
@@ -215,14 +223,14 @@ This endpoint allows you to fetch a Exam Calendar.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/examcalendar/7" \
+    -G "http://127.0.0.1:8000/api/examcalendar/magni" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/examcalendar/7"
+    "http://127.0.0.1:8000/api/examcalendar/magni"
 );
 
 let headers = {
@@ -243,45 +251,51 @@ fetch(url, {
 ```json
 {
     "data": {
-        "name": "IBPS PO MAINS 2021",
-        "date": "2021-02-04",
-        "image": "http:\/\/127.0.0.1:8000\/storage\/exam-calendars\/March2021\/Jv3TZB5ZIcHOoSmuonE1.PNG",
-        "official": true,
-        "category": {
-            "id": 1,
-            "name": "Government Exams"
-        },
-        "url": "examcalendar",
-        "created_at": "2021-03-04T13:00:01.000000Z",
-        "created_at_formated": "2 days ago",
-        "updated_at": "2021-03-04T13:00:01.000000Z",
-        "updated_at_formated": "2 days ago"
+        "name": null,
+        "date": null,
+        "image": "",
+        "official": null,
+        "category": null,
+        "url": null,
+        "created_at": null,
+        "created_at_formated": null,
+        "updated_at": null,
+        "updated_at_formated": null,
+        "slug": null,
+        "seo_keywords": null,
+        "seo_description": null,
+        "age_limit": null
     }
 }
 ```
-<div id="execution-results-GETapi-examcalendar--exam_calendars-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-examcalendar--exam_calendars-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-examcalendar--exam_calendars-"></code></pre>
+<div id="execution-results-GETapi-examcalendar--exam_calendar-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-examcalendar--exam_calendar-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-examcalendar--exam_calendar-"></code></pre>
 </div>
-<div id="execution-error-GETapi-examcalendar--exam_calendars-" hidden>
+<div id="execution-error-GETapi-examcalendar--exam_calendar-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-examcalendar--exam_calendars-"></code></pre>
+    <pre><code id="execution-error-message-GETapi-examcalendar--exam_calendar-"></code></pre>
 </div>
-<form id="form-GETapi-examcalendar--exam_calendars-" data-method="GET" data-path="api/examcalendar/{exam_calendars}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-examcalendar--exam_calendars-', this);">
+<form id="form-GETapi-examcalendar--exam_calendar-" data-method="GET" data-path="api/examcalendar/{exam_calendar}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-examcalendar--exam_calendar-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-examcalendar--exam_calendars-" onclick="tryItOut('GETapi-examcalendar--exam_calendars-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-examcalendar--exam_calendars-" onclick="cancelTryOut('GETapi-examcalendar--exam_calendars-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-examcalendar--exam_calendars-" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-examcalendar--exam_calendar-" onclick="tryItOut('GETapi-examcalendar--exam_calendar-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-examcalendar--exam_calendar-" onclick="cancelTryOut('GETapi-examcalendar--exam_calendar-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-examcalendar--exam_calendar-" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/examcalendar/{exam_calendars}</code></b>
+ <b><code>api/examcalendar/{exam_calendar}</code></b>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
+<b><code>exam_calendar</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="exam_calendar" data-endpoint="GETapi-examcalendar--exam_calendar-" data-component="url" required  hidden>
+<br>
+</p>
+<p>
 <b><code>exam_calendars</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="exam_calendars" data-endpoint="GETapi-examcalendar--exam_calendars-" data-component="url" required  hidden>
+<input type="number" name="exam_calendars" data-endpoint="GETapi-examcalendar--exam_calendar-" data-component="url" required  hidden>
 <br>
 The ID of the Exam Calendar.</p>
 </form>

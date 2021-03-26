@@ -10,6 +10,24 @@ use App\Http\Controllers\Controller;
 
 class EmailVerificationController extends Controller
 {
+    /**
+    * Verify
+    *
+    * This endpoint allows you to verify email.
+    * @group Authenticating requests
+    *
+    * @bodyParam email string required The email of the user.
+    * @bodyParam password string required The password of the user.
+    *      
+    * @response 401 {
+    *  "message" : "Unauthorized"
+    * }
+    * @response {
+    *  "access_token" : "<ACCESS_TOKEN>",
+    *  "token_type" : "Bearer",
+    *  "expires_at" : "<EXPIRES_AT>",
+    * }
+    */
     public function verify(Request $request)
     {
         $verified_token = EmailVerification::where('token',$request->input('token'))->first();

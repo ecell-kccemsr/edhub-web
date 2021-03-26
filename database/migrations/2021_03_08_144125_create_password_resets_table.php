@@ -17,6 +17,8 @@ class CreatePasswordResetsTable extends Migration
             $table->id();
             $table->unsignedInteger('user_id');
             $table->string('token');
+            $table->string('seo_keywords')->nullable();
+            $table->longText('seo_description')->nullable();
             $table->timestamps();
         });
     }

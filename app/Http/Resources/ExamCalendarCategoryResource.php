@@ -17,7 +17,9 @@ class ExamCalendarCategoryResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'slug' => $this->slug
+            'slug' => $this->slug,
+            'seo_keywords' => $this->seo_keywords,
+            'seo_description' => $this->seo_description,
         ];
     }
 }

@@ -23,6 +23,8 @@ class CreateNewsTable extends Migration
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('subcategory_id');
             $table->string('slug')->unique();
+            $table->string('seo_keywords')->nullable();
+            $table->longText('seo_description')->nullable();
             $table->timestamps();
         });
     }

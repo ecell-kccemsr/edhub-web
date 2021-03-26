@@ -18,6 +18,8 @@ class CreateGovernmentJobCategoriesTable extends Migration
             $table->string('name');
             $table->string('image');
             $table->string('slug')->unique();
+            $table->string('seo_keywords')->nullable();
+            $table->longText('seo_description')->nullable();
             $table->timestamps();
         });
     }

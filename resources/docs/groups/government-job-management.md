@@ -11,7 +11,7 @@ This endpoint allows you to fetch all Government Jobs.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/government_jobs?category_id=16&subcategory_id=9&page=13&per_page=9" \
+    -G "http://127.0.0.1:8000/api/government_jobs?category_id=13&subcategory_id=17&page=3&per_page=11" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -22,10 +22,10 @@ const url = new URL(
 );
 
 let params = {
-    "category_id": "16",
-    "subcategory_id": "9",
-    "page": "13",
-    "per_page": "9",
+    "category_id": "13",
+    "subcategory_id": "17",
+    "page": "3",
+    "per_page": "11",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -52,7 +52,7 @@ fetch(url, {
             "id": null,
             "title": null,
             "description": null,
-            "job_positions": null,
+            "salary_and_job_positions": null,
             "eligibility_criteria": null,
             "syllabus": null,
             "exam_pattern": null,
@@ -64,13 +64,17 @@ fetch(url, {
             "created_at": null,
             "created_at_formated": null,
             "updated_at": null,
-            "updated_at_formated": null
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null,
+            "age_limit": null
         },
         {
             "id": null,
             "title": null,
             "description": null,
-            "job_positions": null,
+            "salary_and_job_positions": null,
             "eligibility_criteria": null,
             "syllabus": null,
             "exam_pattern": null,
@@ -82,7 +86,11 @@ fetch(url, {
             "created_at": null,
             "created_at_formated": null,
             "updated_at": null,
-            "updated_at_formated": null
+            "updated_at_formated": null,
+            "slug": null,
+            "seo_keywords": null,
+            "seo_description": null,
+            "age_limit": null
         }
     ]
 }
@@ -139,7 +147,7 @@ This endpoint allows you to fetch all Government Job Categories.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/government_jobs/categories?page=12&per_page=11" \
+    -G "http://127.0.0.1:8000/api/government_jobs/categories?page=4&per_page=20" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -150,8 +158,8 @@ const url = new URL(
 );
 
 let params = {
-    "page": "12",
-    "per_page": "11",
+    "page": "4",
+    "per_page": "20",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -175,22 +183,28 @@ fetch(url, {
 {
     "data": [
         {
-            "id": 15,
-            "name": "Callie Kunze",
-            "image": "http:\/\/127.0.0.1:8000\/storage\/C:\/Users\/Admin\/AppData\/Local\/Temp\/fcfab62bdd39336e1d8c531f0f2a95f7.png",
-            "created_at": "2021-03-06T16:01:14.000000Z",
+            "id": 2,
+            "name": "Preston Nader",
+            "image": "http:\/\/127.0.0.1:8000\/storage\/C:\/Users\/Admin\/AppData\/Local\/Temp\/ba11f0c24e28258698c7efaf799f42d2.png",
+            "created_at": "2021-03-26T12:26:36.000000Z",
             "created_at_formated": "1 second ago",
-            "updated_at": "2021-03-06T16:01:14.000000Z",
-            "updated_at_formated": "1 second ago"
+            "updated_at": "2021-03-26T12:26:36.000000Z",
+            "updated_at_formated": "1 second ago",
+            "slug": "preston-nader",
+            "seo_keywords": null,
+            "seo_description": null
         },
         {
-            "id": 16,
-            "name": "Geo Daugherty",
-            "image": "http:\/\/127.0.0.1:8000\/storage\/C:\/Users\/Admin\/AppData\/Local\/Temp\/18ff10444129de49a7b21af205cf921f.png",
-            "created_at": "2021-03-06T16:01:15.000000Z",
+            "id": 3,
+            "name": "Dameon McKenzie",
+            "image": "http:\/\/127.0.0.1:8000\/storage\/C:\/Users\/Admin\/AppData\/Local\/Temp\/4f0a860d7e5ad6c7858a9848287d6c9b.png",
+            "created_at": "2021-03-26T12:26:37.000000Z",
             "created_at_formated": "1 second ago",
-            "updated_at": "2021-03-06T16:01:15.000000Z",
-            "updated_at_formated": "1 second ago"
+            "updated_at": "2021-03-26T12:26:37.000000Z",
+            "updated_at_formated": "1 second ago",
+            "slug": "dameon-mckenzie",
+            "seo_keywords": null,
+            "seo_description": null
         }
     ]
 }
@@ -237,7 +251,7 @@ This endpoint allows you to fetch all Government Job Sub Categories.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/government_jobs/sub_categories?category_id=13&page=16&per_page=7" \
+    -G "http://127.0.0.1:8000/api/government_jobs/sub_categories?category_id=17&page=12&per_page=5" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -248,9 +262,9 @@ const url = new URL(
 );
 
 let params = {
-    "category_id": "13",
-    "page": "16",
-    "per_page": "7",
+    "category_id": "17",
+    "page": "12",
+    "per_page": "5",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -274,22 +288,50 @@ fetch(url, {
 {
     "data": [
         {
-            "id": null,
-            "name": "Dr. Iva Stracke DVM",
-            "category": null,
-            "created_at": null,
-            "created_at_formated": null,
-            "updated_at": null,
-            "updated_at_formated": null
+            "id": 2,
+            "name": "Gay Gaylord",
+            "category": {
+                "id": 1,
+                "name": "Bank Jobs",
+                "image": "http:\/\/127.0.0.1:8000\/storage\/government-job-categories\/March2021\/Rx9pAmWNPz8bdfWUChbr.png",
+                "created_at": "2021-03-10T13:13:32.000000Z",
+                "created_at_formated": "2 weeks ago",
+                "updated_at": "2021-03-10T13:13:32.000000Z",
+                "updated_at_formated": "2 weeks ago",
+                "slug": "bank-jobs",
+                "seo_keywords": null,
+                "seo_description": null
+            },
+            "created_at": "2021-03-26T12:26:37.000000Z",
+            "created_at_formated": "1 second ago",
+            "updated_at": "2021-03-26T12:26:37.000000Z",
+            "updated_at_formated": "1 second ago",
+            "slug": "gay-gaylord",
+            "seo_keywords": null,
+            "seo_description": null
         },
         {
-            "id": null,
-            "name": "Gregg Doyle",
-            "category": null,
-            "created_at": null,
-            "created_at_formated": null,
-            "updated_at": null,
-            "updated_at_formated": null
+            "id": 3,
+            "name": "Bernice O'Hara Jr.",
+            "category": {
+                "id": 1,
+                "name": "Bank Jobs",
+                "image": "http:\/\/127.0.0.1:8000\/storage\/government-job-categories\/March2021\/Rx9pAmWNPz8bdfWUChbr.png",
+                "created_at": "2021-03-10T13:13:32.000000Z",
+                "created_at_formated": "2 weeks ago",
+                "updated_at": "2021-03-10T13:13:32.000000Z",
+                "updated_at_formated": "2 weeks ago",
+                "slug": "bank-jobs",
+                "seo_keywords": null,
+                "seo_description": null
+            },
+            "created_at": "2021-03-26T12:26:37.000000Z",
+            "created_at_formated": "1 second ago",
+            "updated_at": "2021-03-26T12:26:37.000000Z",
+            "updated_at_formated": "1 second ago",
+            "slug": "bernice-ohara-jr",
+            "seo_keywords": null,
+            "seo_description": null
         }
     ]
 }
@@ -341,14 +383,14 @@ This endpoint allows you to fetch a Government Jobs.
 
 ```bash
 curl -X GET \
-    -G "http://127.0.0.1:8000/api/government_jobs/13" \
+    -G "http://127.0.0.1:8000/api/government_jobs/15" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://127.0.0.1:8000/api/government_jobs/13"
+    "http://127.0.0.1:8000/api/government_jobs/15"
 );
 
 let headers = {
@@ -372,7 +414,7 @@ fetch(url, {
         "id": null,
         "title": null,
         "description": null,
-        "job_positions": null,
+        "salary_and_job_positions": null,
         "eligibility_criteria": null,
         "syllabus": null,
         "exam_pattern": null,
@@ -384,7 +426,11 @@ fetch(url, {
         "created_at": null,
         "created_at_formated": null,
         "updated_at": null,
-        "updated_at_formated": null
+        "updated_at_formated": null,
+        "slug": null,
+        "seo_keywords": null,
+        "seo_description": null,
+        "age_limit": null
     }
 }
 ```

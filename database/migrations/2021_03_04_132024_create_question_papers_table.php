@@ -21,6 +21,8 @@ class CreateQuestionPapersTable extends Migration
             $table->string('url');
             $table->unsignedInteger('category_id');
             $table->string('slug')->unique();
+            $table->string('seo_keywords')->nullable();
+            $table->longText('seo_description')->nullable();
             $table->timestamps();
         });
     }

@@ -9,6 +9,16 @@ use App\Http\Requests\RegisterForFreeUpdatesRequest;
 
 class RegisterForFreeUpdatesController extends Controller
 {
+    /**
+     * Add a Category
+     *
+     * This endpoint allows you to add a category.
+     *      
+     * @bodyParam name string required The name of the category
+     * @bodyParam email file required The email of the category
+     * @bodyParam mobile_no file required The mobile_no of the category    
+     * 
+     */
     public function add(RegisterForFreeUpdatesRequest $request)
     {
         $register = new RegisterForFreeUpdates();
