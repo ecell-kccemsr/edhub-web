@@ -8,15 +8,14 @@ import Governmentjobsubcategory from "../jobs/Governmentjobsubcategory";
 
 import Questionpaper from "../Question papers/Questionpaper";
 import Questionpaper2 from "../Question papers/Questionpaper2";
-import News from "../news/newspages/News";
-import NewsCategory from "../news/newspages/NewsCategory";
-import NewsSubCategory from "../news/newspages/NewsSubCategory";
-import NewsDetails from "../news/newspages/NewsDetails";
+import News from "../news/News";
+import NewsCategory from "../news/NewsCategory";
+import NewsSubCategory from "../news/NewsSubCategory";
 import { Route, Switch } from "react-router";
 import Examcalendar from "../examcalendar/Examcalendar";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
-import Newsdetails from "../news/newspages/NewsDetails";
+import Newsdetails from "../news/NewsDetails";
 
 const App = props => {
     return (
