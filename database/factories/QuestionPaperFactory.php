@@ -24,10 +24,12 @@ class QuestionPaperFactory extends Factory
     {
         return [
             'title' => $this->faker->title,
-            'description' => $this->faker->description,
+            'description' => $this->faker->paragraph,
             'year' => $this->faker->year,
             'url' => $this->faker->url,
-            'category_id' => QuestionPaperCategory::first() ? QuestionPaperCategory::first()->id : null,
+            'category_id' => QuestionPaperCategory::inRandomOrder()->first(),
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

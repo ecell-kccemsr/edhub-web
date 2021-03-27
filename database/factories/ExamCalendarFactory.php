@@ -26,9 +26,13 @@ class ExamCalendarFactory extends Factory
             'name' => $this->faker->name,
             'date' => $this->faker->date,
             'image' => $this->faker->image,
-            'official' => $this->faker->official,
+            'official' => random_int(0, 1),
             'url' => $this->faker->url,
-            'category_id' => ExamCalendarCategory::first() ? ExamCalendarCategory::first()->id : null,
+            'category_id' => ExamCalendarCategory::inRandomOrder()->first(),
+            'age_limit' => random_int(0, 60),
+            'qualification' => random_int(10,12),
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

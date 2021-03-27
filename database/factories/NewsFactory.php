@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\News;
 use App\Models\NewsCategory;
+use App\Models\NewsSubCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class NewsFactory extends Factory
@@ -24,11 +25,14 @@ class NewsFactory extends Factory
     {
         return [
             'title' => $this->faker->title,
-            'description' => $this->faker->description,
-            'details' => $this->faker->details,
+            'description' => $this->faker->sentence,
+            'details' => $this->faker->paragraph,
             'image' => $this->faker->image,
-            'category_id' => NewsCategory::first() ? NewsCategory::first()->id : null,
-            'subcategory_id' => NewsCategory::first() ? NewsCategory::first()->id : null,
+            'total_views' => random_int(0, 60),
+            'category_id' => NewsCategory::inRandomOrder()->first(),
+            'subcategory_id' => NewsSubCategory::inRandomOrder()->first(),
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

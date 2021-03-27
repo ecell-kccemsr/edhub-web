@@ -24,6 +24,8 @@ class CreateExamCalendarsTable extends Migration
             $table->string('slug')->unique();
             $table->unsignedInteger('age_limit');
             $table->unsignedInteger('qualification');
+            $table->string('seo_keywords')->nullable();
+            $table->longText('seo_description')->nullable();
             $table->timestamps();
         });
     }
