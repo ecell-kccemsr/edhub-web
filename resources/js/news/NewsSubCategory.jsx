@@ -10,7 +10,7 @@ import {
     Form,
     FormGroup
 } from "reactstrap";
-import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
+import BreadCrumb from "../components/breadcrumb/BreadCrumb";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 function NewsSubCategory(props) {

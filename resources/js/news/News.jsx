@@ -16,10 +16,10 @@ import {
     Input,
     FormText
 } from "reactstrap";
-import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
+import BreadCrumb from "../components/breadcrumb/BreadCrumb";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import Pagination from "../../components/pagination/Pagination";
+import Pagination from "../components/pagination/Pagination";
 function News() {
     const [categories, setCategory] = useState([]);
     const [news, setNews] = useState([]);
