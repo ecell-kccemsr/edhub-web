@@ -19,10 +19,14 @@ import {
 import BreadCrumb from "../../components/breadcrumb/BreadCrumb";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import Pagination from "../../components/pagination/Pagination";
 function News() {
     const [categories, setCategory] = useState([]);
     const [news, setNews] = useState([]);
     const [trending, setTrending] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(10);
+
     useEffect(() => {
         axios
             .get("/api/news/categories")
@@ -44,7 +48,6 @@ function News() {
             .get("/api/news/trending")
             .then(res => {
                 setTrending(res.data.data);
-                // console.log(res);
             })
             .catch(err => {
                 console.log(err);
@@ -63,6 +66,11 @@ function News() {
             .catch(err => toast.error(err.response.data.message));
     };
 
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexofFirstPost = indexOfLastPost - postsPerPage;
+    const currentNews = news.slice(indexofFirstPost, indexOfLastPost);
+
+    const paginate = pageNumber => setCurrentPage(pageNumber);
     return (
         <div>
             <ToastContainer />
@@ -108,8 +116,8 @@ function News() {
                             </div>
                             <section className="category-information-section">
                                 <div className="category-information-sub-section">
-                                    {news &&
-                                        news.map(news => (
+                                    {currentNews &&
+                                        currentNews.map(news => (
                                             <>
                                                 <div
                                                     className="d-flex justify-content-between"
@@ -142,6 +150,11 @@ function News() {
                                                 <hr className="news-hr" />
                                             </>
                                         ))}
+                                    <Pagination
+                                        postsPerPage={postsPerPage}
+                                        totalPosts={news.length}
+                                        paginate={paginate}
+                                    />
                                 </div>
                             </section>
                         </div>
