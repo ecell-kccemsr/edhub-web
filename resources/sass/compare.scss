@@ -1,0 +1,43 @@
+.compare-section {
+    table {
+        height: 100%;
+        width: 100%;
+        table-layout: fixed;
+
+        tr {
+            background: #f6f7f8;
+            border-bottom: 10px solid #eee;
+            margin: 10px 0;
+            td {
+                padding: 20px;
+                border-right: 1px solid gainsboro;
+                .compare-title {
+                    font-weight: 500;
+                }
+                .compare-card {
+                    background: #eeeeee;
+                    padding: 20px;
+                    border-radius: 20px;
+                    h5 {
+                        padding: 10px 0px;
+                        font-weight: 400;
+                    }
+                    span {
+                        font-size: 20px;
+                    }
+                    button {
+                        display: block;
+                        border: none;
+                        outline: none;
+                        background: #f05454;
+                        width: 100%;
+                        padding: 10px;
+                        color: #fff;
+                        border-radius: 4px;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
