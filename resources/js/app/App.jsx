@@ -16,7 +16,8 @@ import Examcalendar from "../examcalendar/Examcalendar";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
 import Newsdetails from "../news/NewsDetails";
-
+import Profile from "../profile/Profile";
+import Notification from "../notification/notification";
 const App = props => {
     return (
         <Fragment>
@@ -75,6 +76,12 @@ const App = props => {
                         path="/exam/calendar"
                         exact
                         component={Examcalendar}
+                    />
+                    <Route path="/profile" exact component={Profile} />
+                    <Route
+                        path="/notification"
+                        exact
+                        component={Notification}
                     />
                 </Layout>
             </Switch>
