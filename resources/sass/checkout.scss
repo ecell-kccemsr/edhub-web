@@ -1,0 +1,84 @@
+.checkout-section {
+    background: #eeeeee;
+    padding: 30px 0;
+    .containerSection {
+        box-shadow: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        .checkout-header-title,
+        .checkout-header-subtitle {
+            font-weight: 400;
+            color: #333333;
+        }
+        .checkout-header-title {
+            margin-bottom: 20px;
+        }
+        .checkout-select-container {
+            display: flex;
+            flex-wrap: wrap;
+            .form-group {
+                flex: 1;
+                max-width: 300px;
+                margin: 5px 10px 5px 0;
+                position: relative;
+                label {
+                    position: absolute;
+                    top: 2px;
+                    left: 15px;
+                    font-size: 10px;
+                }
+                .form-control {
+                    border: none;
+                    background: #f8f8f8;
+                    height: calc(3rem + 0.75rem + 2px);
+                }
+            }
+        }
+        .fieldset {
+            padding: 20px 0;
+            .form-check {
+                margin: 10px 0;
+
+                .form-check-label {
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .checkout-card {
+            background: #f6f7f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px 0px #c1c1c1;
+            .checkout-title {
+                font-weight: 500;
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+            p {
+                font-weight: 500;
+                color: #333333;
+                font-size: 18px;
+            }
+            .discount {
+                color: #ff0303;
+            }
+            small {
+                font-size: 11px;
+            }
+            .checkout-btn {
+                color: #fff;
+                background: #f05454;
+                text-transform: capitalize;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                outline: none;
+                border-radius: 4px;
+                margin-top: 15px;
+            }
+        }
+    }
+}
