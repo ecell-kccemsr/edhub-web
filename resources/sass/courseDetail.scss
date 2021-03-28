@@ -1,0 +1,178 @@
+.course-detail-section {
+    background: #eeeeee;
+    .containerClass {
+        margin-top: 0;
+        margin-bottom: 0;
+        box-shadow: none;
+        .course-overview-card {
+            background: #f6f7f8;
+            padding: 15px 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            .course-overview-card-title {
+                font-weight: 400;
+                text-transform: capitalize;
+                color: #333333;
+            }
+            .course-overview-card-descriptionbox {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 15px 0;
+                p {
+                    background: #fdf5ad;
+                    padding: 4px 10px;
+                    font-weight: 200;
+                    text-transform: capitalize;
+                    margin: 2px 10px 2px 0;
+                    border-radius: 100px;
+                }
+            }
+            .course-overview-card-stats {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 15px 0;
+                .stat-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    margin: 2px 10px 2px 0;
+                    img {
+                        object-fit: contain;
+                    }
+                    p {
+                        color: #818181;
+                        margin-left: 5px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .course-description {
+                margin-top: 20px;
+                color: #818181;
+            }
+            .course-description-readmore {
+                color: #f05454;
+                margin: 0;
+                text-align: center;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .course-content-top-header {
+            font-weight: 400;
+            color: #333333;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+        }
+        .course-content-top-overview {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            span {
+                color: #f05454;
+                margin-right: 5px;
+            }
+        }
+        .course-content-accordion {
+            margin-bottom: 30px;
+            .card {
+                margin: 5px 0;
+                padding: 10px 20px;
+                background: #f6f7f8;
+                border-radius: 10px;
+                border: none;
+
+                .course-content-card-headerlink {
+                    color: #333333;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                .card-body {
+                    .courseContent-list {
+                        display: flex;
+                        color: #818181;
+                        margin: 10px 0;
+                        align-items: center;
+                        img {
+                            object-fit: contain;
+                        }
+                        .duration {
+                            color: #f05454;
+                            flex: 1;
+                            text-align: end;
+                        }
+                    }
+                }
+            }
+        }
+        .course-prereq-section {
+            margin-bottom: 30px;
+            .course-prereq-title {
+                color: #818181;
+            }
+        }
+
+        .course-author-designations {
+            font-weight: 400;
+            color: #818181;
+        }
+        .author-overview {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px 0;
+            .author-img {
+                border-radius: 50%;
+                max-height: 100px;
+                margin-right: 20px;
+            }
+            .author-overview-list {
+                .author-overview-list-img {
+                    max-height: 16px;
+                }
+                .author-overview-title {
+                    color: #818181;
+                }
+            }
+        }
+        .course-detail-review-section {
+            .rating-container {
+                h4 {
+                    font-size: 60px;
+                }
+                p {
+                    text-transform: capitalize;
+                    font-weight: 400;
+                    font-size: 15px;
+                }
+            }
+            .progress-container {
+                .indi-progress {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .progress {
+                        flex: 1;
+                        max-width: 460px;
+                    }
+                    img {
+                        object-fit: contain;
+                        margin-left: 10px;
+                    }
+                    span {
+                        color: #333333;
+                        font-weight: 600;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+.progress {
+    margin: 5px 0;
+    .progress-bar {
+        background: #ead628;
+        height: 20px;
+    }
+}
