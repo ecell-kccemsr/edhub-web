@@ -10,6 +10,9 @@ import star4 from "../Images/courseDetail/4star.png";
 import star3 from "../Images/courseDetail/3star.png";
 import star2 from "../Images/courseDetail/2star.png";
 import star1 from "../Images/courseDetail/1star.png";
+import user1 from "../Images/courseDetail/user1.png";
+import user2 from "../Images/courseDetail/user2.png";
+import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
 
 const courseContent = [
     {
@@ -94,10 +97,44 @@ const authorOverview = [
     "5,680 Reviews",
     "73,742 Students"
 ];
+
+const userTestimonials = [
+    {
+        name: "Abhishek Mogaveera",
+        review:
+            "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”"
+    },
+    {
+        name: "Abhishek Mogaveera",
+        review:
+            "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”"
+    }
+];
+
 const CourseDetail = () => {
     return (
         <>
             <div className="course-detail-section">
+                <div className="course-detail-hero-section">
+                    <Container className="containerClass">
+                        <Row>
+                            <Col sm="12" md="8">
+                                <img src={courseDetailCompany} alt="" />
+                                <h2>
+                                    The Complete Android R + Java Developer
+                                    Course™ : 2021
+                                </h2>
+                                <h4>Course by: Dr. makn vjyvhj</h4>
+                                <h5>Subtitiles</h5>
+                                <h6>English , Hindi , Espanol</h6>
+                                <button className="share-btn">Share</button>
+                                <button className="compare-btn">
+                                    Add to compare
+                                </button>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
@@ -376,12 +413,37 @@ const CourseDetail = () => {
                                 </div>
                             </Col>
                         </Row>
+                        <Row className="course-detail-testimonial-section">
+                            <Col sm="12" md="8">
+                                <Row className="justify-content-center">
+                                    {userTestimonials &&
+                                        userTestimonials.map(u => (
+                                            <Col
+                                                sm="12"
+                                                md="6"
+                                                key={u?.name}
+                                                className="my-4"
+                                            >
+                                                <div className="course-detail-testimonial-cards">
+                                                    <img src={user1} alt="" />
+                                                    <h6>{u?.name}</h6>
+                                                    <p>{u?.review}</p>
+                                                </div>
+                                            </Col>
+                                        ))}
+                                </Row>
+                                <p className="course-testimonial-readmore">
+                                    Read more
+                                    <i class="fas fa-chevron-down ml-2"></i>
+                                </p>
+                            </Col>
+                        </Row>
                     </Container>
                 </div>
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <h5 className="course-content-top-header text-center">
+                            <h5 className="course-content-top-header text-center pt-2">
                                 FAQs
                             </h5>
                             <div
