@@ -64,7 +64,7 @@ function Profile() {
                                 type="submit"
                                 value="submit"
                             >
-                                Update Profile
+                                Update Profile Image
                             </Button>
                         </div>
                         <br />
