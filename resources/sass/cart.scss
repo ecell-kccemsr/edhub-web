@@ -1,0 +1,86 @@
+.cart-section {
+    background: #eeeeee;
+    padding: 30px 0;
+    .containerSection {
+        box-shadow: none;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        .my-cart-card-section {
+            background: #fbfbfb;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            .my-cart-card-section-title {
+                font-weight: 400;
+                margin-bottom: 20px;
+            }
+            .cart-content-list {
+                margin: 10px 5px 10px 0;
+                .cart-content-list-text {
+                    padding: 5px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    h5 {
+                        font-weight: 400;
+                        padding: 0 5px 0 0;
+                    }
+                    p {
+                        margin-bottom: 0;
+                        color: #333333;
+                    }
+                }
+                .btn-container {
+                    align-self: center;
+                    .remove-btn,
+                    .add-btn {
+                        border: none;
+                        outline: none;
+                        color: #fff;
+                        text-transform: capitalize;
+                        padding: 5px 10px;
+                        align-self: center;
+                    }
+                    .remove-btn {
+                        background: #3c64b1;
+                    }
+                    .add-btn {
+                        background: #f05454;
+                    }
+                }
+            }
+        }
+        .cart-card {
+            background: #f6f7f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px 0px #c1c1c1;
+            .cart-title {
+                font-weight: 500;
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+            p {
+                font-weight: 500;
+                color: #333333;
+                font-size: 18px;
+            }
+            .discount {
+                color: #ff0303;
+            }
+            .cart-btn {
+                color: #fff;
+                background: #f05454;
+                text-transform: capitalize;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                outline: none;
+                border-radius: 4px;
+                margin-top: 15px;
+            }
+        }
+    }
+}
