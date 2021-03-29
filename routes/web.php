@@ -34,7 +34,16 @@ Route::view('/questionpaper/{category_slug}', 'app');
 
 Route::view('/exam/calendar', 'app');
 Route::view('/profile','app');
+Route::view('/profile-1','app');
+Route::view('/profile-2','app');
+
+
 Route::view('/notification','app');
+Route::view('/compare','app');
+Route::view('/cart','app');
+Route::view('/checkout','app');
+Route::view('/courseDetail','app');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

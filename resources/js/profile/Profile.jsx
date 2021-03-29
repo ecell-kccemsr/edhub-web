@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { Button, Row, Col, FormGroup, Input } from "reactstrap";
 function Profile() {
     return (
+        <div className="profile-outer-part">
+            
         <div className="outermost-section">
             <Row className="profile-section">
-                <Col xs="12" md="6" lg="9" className="profile-section-1">
-                    <div>
+                <Col xs="10" md="5" lg="8" >
+                <h3 className="profile-title">BASIC</h3>
+                    <div className="profile-section-1">
                         <form onSubmit="#">
                             <FormGroup>
                                 <p className="input-headers">First Name</p>
@@ -49,7 +52,7 @@ function Profile() {
                         </form>
                     </div>
                 </Col>
-                <Col className="profile-section-2">
+                <Col sm={{ size: 'auto', offset: 1}} className="profile-section-2">
                     <div>
                         <div>
                             <img
@@ -67,7 +70,6 @@ function Profile() {
                                 Update Profile Image
                             </Button>
                         </div>
-                        <br />
                         <hr className="profile-hr" />
                         <Link className="profile-links">Basic</Link>
                         <hr className="profile-hr" />
@@ -80,6 +82,8 @@ function Profile() {
                 </Col>
             </Row>
         </div>
+        </div>
+
     );
 }
 
