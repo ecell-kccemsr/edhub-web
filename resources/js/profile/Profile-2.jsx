@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Row, Col, FormGroup, Input } from "reactstrap";
+import { Button, Row, Col, FormGroup, Input,  Card,  CardImg, CardTitle, CardText, CardDeck, CardSubtitle, CardBody } from "reactstrap";
+import cardimg from "../Images/compare/cardheader.png"
+import courseCompany from "../Images/courseDetail/courseDetailCompany.png"
 function Profile2() {
-    
+     
     return (
         <div className="profile-outer-part">
             
@@ -11,7 +13,100 @@ function Profile2() {
                 <Col xs="10" md="5" lg="8" >
                 <h3 className="profile-title">My Courses</h3>
                     <div className="profile-section-1">
-                <h1>Happy Holi</h1>
+                    <CardDeck>
+                    <Card className="Card">
+        <CardImg top width="100%" src={cardimg} alt="Card image cap" />
+        <CardBody>
+          <CardTitle tag="h5"> <img src={courseCompany} alt="img"/> <span>
+            <b>FREE</b>
+        </span>
+        <span>
+            $ <strike>250</strike>
+        </span>
+        </CardTitle>
+        <CardText> <h4> UI/UX Design | How to design with professional.</h4> </CardText>
+          <button className="button1">Add to cart</button> <br/>
+ <button> Buy Now</button>
+        </CardBody>
+      </Card>
+      <Card className="Card">
+        <CardImg top width="100%" src={cardimg} alt="Card image cap" />
+        <CardBody>
+          <CardTitle tag="h5"> <img src={courseCompany} alt="img"/> <span>
+            <b>FREE</b>
+        </span>
+        <span>
+            $ <strike>250</strike>
+        </span>
+        </CardTitle>
+        <CardText> <h4> UI/UX Design | How to design with professional.</h4> </CardText>
+          <button className="button1">Add to cart</button> <br/>
+ <button> Buy Now</button>
+        </CardBody>
+      </Card>
+      <Card className="Card">
+        <CardImg top width="100%" src={cardimg} alt="Card image cap" />
+        <CardBody>
+          <CardTitle tag="h5"> <img src={courseCompany} alt="img"/> <span>
+            <b>FREE</b>
+        </span>
+        <span>
+            $ <strike>250</strike>
+        </span>
+        </CardTitle>
+        <CardText> <h4> UI/UX Design | How to design with professional.</h4> </CardText>
+          <button className="button1">Add to cart</button> <br/>
+ <button> Buy Now</button>
+        </CardBody>
+      </Card>
+    </CardDeck>
+    <CardDeck className="CardDeck">
+    <Card className="Card">
+        <CardImg top width="100%" src={cardimg} alt="Card image cap" />
+        <CardBody>
+          <CardTitle tag="h5"> <img src={courseCompany} alt="img"/> <span>
+            <b>FREE</b>
+        </span>
+        <span>
+            $ <strike>250</strike>
+        </span>
+        </CardTitle>
+        <CardText> <h4> UI/UX Design | How to design with professional.</h4> </CardText>
+          <button className="button1">Add to cart</button> <br/>
+ <button> Buy Now</button>
+        </CardBody>
+      </Card>
+      <Card className="Card">
+        <CardImg top width="100%" src={cardimg} alt="Card image cap" />
+        <CardBody>
+          <CardTitle tag="h5"> <img src={courseCompany} alt="img"/> <span>
+            <b>FREE</b>
+        </span>
+        <span>
+            $ <strike>250</strike>
+        </span>
+        </CardTitle>
+        <CardText> <h4> UI/UX Design | How to design with professional.</h4> </CardText>
+          <button className="button1">Add to cart</button> <br/>
+ <button> Buy Now</button>
+        </CardBody>
+      </Card>
+      <Card className="Card">
+        <CardImg top width="100%" src={cardimg} alt="Card image cap" />
+        <CardBody>
+          <CardTitle tag="h5"> <img src={courseCompany} alt="img"/> <span>
+            <b>FREE</b>
+        </span>
+        <span>
+            $ <strike>250</strike>
+        </span>
+        </CardTitle>
+        <CardText> <h4> UI/UX Design | How to design with professional.</h4> </CardText>
+          <button className="button1">Add to cart</button> <br/>
+ <button> Buy Now</button>
+        </CardBody>
+      </Card>
+    </CardDeck>
                     </div>
                 </Col>
                 <Col sm={{ size: 'auto', offset: 1}} className="profile-section-2">

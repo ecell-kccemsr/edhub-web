@@ -2,7 +2,8 @@
     table {
         height: 100%;
         width: 100%;
-        table-layout: fixed;
+        border-collapse: collapse;
+        overflow: scroll;
 
         tr {
             background: #f6f7f8;
