@@ -1,0 +1,203 @@
+.landing-page-section {
+    margin: 30px;
+    text-align: center;
+    .top-left {
+        background-color: #706a64;
+        border-radius: 20px;
+        color: white;
+        padding: 10px;
+        .top-left-sub-section-a {
+            background-color: #f05454;
+            padding: 5px;
+            border-radius: 10px;
+            font-family: "Poppins", sans-serif;
+        }
+        .top-left-sub-section-b {
+            padding: 6px;
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+        }
+    }
+
+    .top-left-1 {
+        color: white;
+        font-family: "Margarine", cursive;
+        font-weight: 400;
+        font-size: 50px;
+        text-align: left;
+        word-spacing: 5px;
+        letter-spacing: 2px;
+    }
+    .top-left-2 {
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+    }
+}
+.help-section {
+    height: 100vh;
+    .help-section-header {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 52px;
+        font-weight: bold;
+    }
+    .browse-section {
+        padding: 50px 150px;
+        .browse-section-image {
+            margin-left: 70px;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px -1px #8888;
+            align-items: center;
+        }
+        .browse-section-text {
+            color: black;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+    }
+}
+
+.popular-choice-section {
+    margin: 50px;
+    .popular-choice-sub-section {
+        justify-content: space-between;
+    }
+    .popular-choice-header {
+        font-family: "Poppins", sans-serif;
+        font-size: 28px;
+    }
+    .popular-choice-content {
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+    }
+    .view-all-btnn {
+        padding: 10px 60px;
+        background-color: #f05454;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        border: none;
+        font-size: 24px;
+    }
+}
+.slider-outmost-section {
+    padding: 50px;
+
+    .slider-section {
+        margin: 20px;
+        border-radius: 20px;
+        padding: 10px;
+        width: 100%;
+        background-color: #f6f7f8;
+        border: none;
+        box-shadow: 0px 4px 8px -1px #8888;
+        .slider-section-image {
+            padding: 20px;
+        }
+    }
+    .course-content {
+        justify-content: space-between;
+        .course-title {
+            padding: 6px 8px 6px 10px;
+            background-color: #ffffff;
+            border-radius: 40px;
+            margin-top: -7px;
+        }
+    }
+    .hr-line {
+        height: 2px;
+        border-width: 0;
+        color: rgb(0, 0, 0);
+        background-color: rgb(3, 3, 3);
+    }
+    .description {
+        font-family: "Poppins", sans-serif;
+        font-size: 25px;
+    }
+    .compare {
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+    }
+    .lessons {
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+    }
+}
+.promotions-section {
+    padding: 50px 100px;
+    .community-divison {
+        justify-content: center;
+    }
+    .community-divison-image {
+        padding: 1px 60px 80px 0px;
+        margin-top: 20px;
+    }
+    .community-divison-content {
+        padding: 20px;
+        .community-divison-content-1 {
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            font-size: 36px;
+            color: #f05454;
+        }
+        .community-divison-content-2 {
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            font-size: 36px;
+            color: #000000;
+        }
+    }
+
+    .colab-content {
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+        word-spacing: 3px;
+        margin-left: 100px;
+    }
+    .brand-section {
+        justify-content: center;
+        margin-left: 100px;
+        padding: 10px;
+    }
+    .feature-in-header {
+        text-align: center;
+        margin: 50px;
+        font-family: "Poppins", sans-serif;
+        font-size: 32px;
+    }
+    .newspaper-images {
+        justify-content: center;
+    }
+}
+.header-testimonials {
+    font-family: "Margarine", cursive;
+    font-size: 32px;
+    text-align: center;
+}
+.testimonial-section {
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 30px;
+    padding: 50px;
+    margin: 40px 50px 10px 150px;
+
+    .testimonial-image-section {
+        .user-image {
+            border-radius: 50%;
+            margin-top: -70px;
+        }
+    }
+
+    .testimonial-content-section {
+        background-color: beige;
+        .testimonial-content {
+            margin-top: 50px;
+            padding: 10px;
+        }
+    }
+}

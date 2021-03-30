@@ -25,6 +25,7 @@ import Compare from "../compare/Compare";
 import Cart from "../cart/Cart";
 import Checkout from "../checkout/Checkout";
 import CourseDetail from "../courseDetail/CourseDetail";
+import LandingPage from "../homepage/LandingPage";
 const App = props => {
     return (
         <Fragment>
@@ -88,32 +89,20 @@ const App = props => {
                     <Route path="/profile-1" exact component={Profile1} />
                     <Route path="/profile-2" exact component={Profile2} />
 
-
                     <Route
                         path="/notification"
                         exact
                         component={Notification}
                     />
-                    <Route
-                        path="/compare"
-                        exact
-                        component={Compare}
-                    />
-                    <Route
-                        path="/cart"
-                        exact
-                        component={Cart}
-                    />
-                    <Route
-                        path="/checkout"
-                        exact
-                        component={Checkout}
-                    />
+                    <Route path="/compare" exact component={Compare} />
+                    <Route path="/cart" exact component={Cart} />
+                    <Route path="/checkout" exact component={Checkout} />
                     <Route
                         path="/courseDetail"
                         exact
                         component={CourseDetail}
                     />
+                    <Route path="/landingPage" exact component={LandingPage} />
                 </Layout>
             </Switch>
         </Fragment>
