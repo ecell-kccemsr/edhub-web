@@ -7,6 +7,7 @@ import icon3 from "../Images/landingpage/icon3.png";
 import cardimg from "../Images/compare/cardheader.png";
 import Vector from "../Images/landingpage/Vector.png";
 import star from "../Images/landingpage/star.png";
+import star5 from "../Images/landingpage/star5.png";
 import circleicon from "../Images/landingpage/circle icon.png";
 import duke from "../Images/landingpage/duke.png";
 import google from "../Images/landingpage/google.png";
@@ -16,6 +17,14 @@ import hd from "../Images/landingpage/hd.png";
 import hindustan from "../Images/landingpage/hindustan.png";
 import toi from "../Images/landingpage/toi.png";
 import courseCompany from "../Images/courseDetail/courseDetailCompany.png";
+import {
+    CarouselProvider,
+    Slider,
+    Slide,
+    ButtonBack,
+    ButtonNext
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 import {
     Row,
     Col,
@@ -29,26 +38,46 @@ import {
 } from "reactstrap";
 function LandingPage() {
     return (
-        <div>
-            <div className="landing-page-section">
-                <img src={landingpage} alt="Snow" style={{ width: "100%" }} />
-                <div className="d-flex top-left">
-                    <div className="top-left-sub-section-a">New</div>
-                    <div className="top-left-sub-section-b">
-                        Avail latest discounts on courses
-                    </div>
+        <div className="landing-page-section">
+            <div className="landing-page-div">
+                <div className="landing-page-hero-section">
+                    <Row>
+                        <Col sm="12" md="8" lg="6">
+                            <div className="landing-page-hero-section-top">
+                                <span className="top-button">New</span>
+                                <span className="top-text">
+                                    Avail latest discounts on courses
+                                </span>
+                            </div>
+                            <h4 className="hero-section-main-text">
+                                Let’s Grow Your Education Level up with Edhub.
+                            </h4>
+                            <p className="hero-section-sub-text">
+                                Learn anytime anywhere with experts.
+                            </p>
+                            <div className="hero-section-input-box">
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    placeholder="Search your course"
+                                />
+                                <button>
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </Col>
+                    </Row>
                 </div>
-                <h4 className="top-left-1">
-                    Let’s Grow Your <br /> Education Level up with <br /> Edhub.
-                </h4>
-                <p className="top-left-2">
-                    Learn anytime anywhere with experts.
-                </p>
             </div>
-            <div className="help-section">
-                <p className="help-section-header">
-                    How Edhub helps you choose the <br /> best course
-                </p>
+            {/* <div className="landing-page-help-section">
+                <Row className="landing-page-help-section-row">
+                    <Col sm="12" md="8">
+                        <h1 className="landing-page-help-section-header">
+                            How Edhub helps you choose the best course
+                        </h1>
+                    </Col>
+                </Row>
                 <Row>
                     <Col xs="6" sm="2" lg="4" className="browse-section">
                         <div className="browse-section-1">
@@ -57,7 +86,7 @@ function LandingPage() {
                                     src={icon1}
                                     alt="category"
                                     className="browse-section-image"
-                                />{" "}
+                                />
                                 <div className="browse-section-text">
                                     <p>BROWSE</p>
                                     <p style={{ color: "#868686" }}>
@@ -113,21 +142,29 @@ function LandingPage() {
                 </Row>
 
                 <div className="popular-choice-section">
-                    <p className="popular-choice-header">Popular Choices</p>
-                    <div className="d-flex popular-choice-sub-section">
-                        <div className="popular-choice-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit.
-                            <br />
-                            Habitant volutpat elementum facilisi mattis et. At
-                        </div>
-                        <div>
-                            <Button className="view-all-btnn">View all</Button>
-                        </div>
-                    </div>
+                    <h3 className="popular-choice-header">Popular Choices</h3>
+                    <Row className=" popular-choice-sub-section">
+                        <Col sm="12" md="6" lg="5">
+                            <p className="popular-choice-content">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Habitant volutpat elementum
+                                facilisi mattis et. At
+                            </p>
+                        </Col>
+                        <Col
+                            sm="12"
+                            md="6"
+                            lg="5"
+                            className="popular-choice-btn-container"
+                        >
+                            <Button className="popular-choice-btn">
+                                View all
+                            </Button>
+                        </Col>
+                    </Row>
                 </div>
-            </div>
-            <div className="d-flex slider-outmost-section">
+            </div> */}
+            {/* <div className="d-flex slider-outmost-section">
                 <Card className="slider-section">
                     <CardImg
                         top
@@ -138,7 +175,6 @@ function LandingPage() {
                     />
                     <CardBody>
                         <CardTitle tag="h5">
-                            {" "}
                             <div className="d-flex course-content">
                                 <div className="course-title ">Udemy</div>
                                 <b>Free</b>
@@ -148,11 +184,9 @@ function LandingPage() {
                             </div>
                         </CardTitle>
                         <CardText>
-                            {" "}
                             <p className="description">
-                                {" "}
                                 UI/UX Design | How to design with professional.
-                            </p>{" "}
+                            </p>
                         </CardText>
                         <div className="d-flex">
                             <div className="d-flex">
@@ -162,7 +196,6 @@ function LandingPage() {
                             <div className="d-flex ml-2">
                                 <img src={Vector} alt="" />
                                 <div className="ml-2 lessons">
-                                    {" "}
                                     Guided Courses
                                 </div>
                             </div>
@@ -171,7 +204,6 @@ function LandingPage() {
                             <div className="d-flex mt-3">
                                 <img src={Vector} alt="" />
                                 <div className="ml-3 compare">
-                                    {" "}
                                     Add to compare
                                 </div>
                             </div>
@@ -190,210 +222,28 @@ function LandingPage() {
                         </div>
                     </CardBody>
                 </Card>
-                <Card className="slider-section">
-                    <CardImg
-                        top
-                        width="100%"
-                        src={cardimg}
-                        alt="Card image cap"
-                        className="slider-section-image"
-                    />
-                    <CardBody>
-                        <CardTitle tag="h5">
-                            {" "}
-                            <div className="d-flex course-content">
-                                <div className="course-title ">Udemy</div>
-                                <b>Free</b>
-                                <div>
-                                    $ <strike>250</strike>
-                                </div>
-                            </div>
-                        </CardTitle>
-                        <CardText>
-                            {" "}
-                            <p className="description">
-                                {" "}
-                                UI/UX Design | How to design with professional.
-                            </p>{" "}
-                        </CardText>
-                        <div className="d-flex">
-                            <div className="d-flex">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons"> 20 Lessons</div>
-                            </div>
-                            <div className="d-flex ml-2">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons">
-                                    {" "}
-                                    Guided Courses
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={Vector} alt="" />
-                                <div className="ml-3 compare">
-                                    {" "}
-                                    Add to compare
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="hr-line" />
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={star} alt="" className="" />
-                                <div className="ml-3 compare"> 32 Reviews</div>
-                                <img
-                                    src={Vector}
-                                    alt=""
-                                    style={{ marginLeft: "30px" }}
-                                />
-                            </div>
-                        </div>
-                    </CardBody>
-                </Card>
-                <Card className="slider-section">
-                    <CardImg
-                        top
-                        width="100%"
-                        src={cardimg}
-                        alt="Card image cap"
-                        className="slider-section-image"
-                    />
-                    <CardBody>
-                        <CardTitle tag="h5">
-                            {" "}
-                            <div className="d-flex course-content">
-                                <div className="course-title ">Udemy</div>
-                                <b>Free</b>
-                                <div>
-                                    $ <strike>250</strike>
-                                </div>
-                            </div>
-                        </CardTitle>
-                        <CardText>
-                            {" "}
-                            <p className="description">
-                                {" "}
-                                UI/UX Design | How to design with professional.
-                            </p>{" "}
-                        </CardText>
-                        <div className="d-flex">
-                            <div className="d-flex">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons"> 20 Lessons</div>
-                            </div>
-                            <div className="d-flex ml-2">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons">
-                                    {" "}
-                                    Guided Courses
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={Vector} alt="" />
-                                <div className="ml-3 compare">
-                                    {" "}
-                                    Add to compare
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="hr-line" />
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={star} alt="" className="" />
-                                <div className="ml-3 compare"> 32 Reviews</div>
-                                <img
-                                    src={Vector}
-                                    alt=""
-                                    style={{ marginLeft: "30px" }}
-                                />
-                            </div>
-                        </div>
-                    </CardBody>
-                </Card>
-                <Card className="slider-section">
-                    <CardImg
-                        top
-                        width="100%"
-                        src={cardimg}
-                        alt="Card image cap"
-                        className="slider-section-image"
-                    />
-                    <CardBody>
-                        <CardTitle tag="h5">
-                            {" "}
-                            <div className="d-flex course-content">
-                                <div className="course-title ">Udemy</div>
-                                <b>Free</b>
-                                <div>
-                                    $ <strike>250</strike>
-                                </div>
-                            </div>
-                        </CardTitle>
-                        <CardText>
-                            {" "}
-                            <p className="description">
-                                {" "}
-                                UI/UX Design | How to design with professional.
-                            </p>{" "}
-                        </CardText>
-                        <div className="d-flex">
-                            <div className="d-flex">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons"> 20 Lessons</div>
-                            </div>
-                            <div className="d-flex ml-2">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons">
-                                    {" "}
-                                    Guided Courses
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={Vector} alt="" />
-                                <div className="ml-3 compare">
-                                    {" "}
-                                    Add to compare
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="hr-line" />
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={star} alt="" className="" />
-                                <div className="ml-3 compare"> 32 Reviews</div>
-                                <img
-                                    src={Vector}
-                                    alt=""
-                                    style={{ marginLeft: "30px" }}
-                                />
-                            </div>
-                        </div>
-                    </CardBody>
-                </Card>
-            </div>
-
+            </div> */}
             <div className="popular-choice-section">
-                <p className="popular-choice-header">
-                    Get started with free courses
-                </p>
-                <div className="d-flex popular-choice-sub-section">
-                    <div className="popular-choice-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <br />
-                        Habitant volutpat elementum facilisi mattis et. At
-                    </div>
-                    <div>
-                        <Button className="view-all-btnn">View all</Button>
-                    </div>
-                </div>
+                <h3 className="popular-choice-header">Popular Choices</h3>
+                <Row className=" popular-choice-sub-section">
+                    <Col sm="12" md="6" lg="5">
+                        <p className="popular-choice-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Habitant volutpat elementum facilisi mattis
+                            et. At
+                        </p>
+                    </Col>
+                    <Col
+                        sm="12"
+                        md="6"
+                        lg="5"
+                        className="popular-choice-btn-container"
+                    >
+                        <Button className="popular-choice-btn">View all</Button>
+                    </Col>
+                </Row>
             </div>
-            <div className="d-flex slider-outmost-section">
+            {/* <div className="d-flex slider-outmost-section">
                 <Card className="slider-section">
                     <CardImg
                         top
@@ -404,7 +254,6 @@ function LandingPage() {
                     />
                     <CardBody>
                         <CardTitle tag="h5">
-                            {" "}
                             <div className="d-flex course-content">
                                 <div className="course-title ">Udemy</div>
                                 <b>Free</b>
@@ -414,11 +263,9 @@ function LandingPage() {
                             </div>
                         </CardTitle>
                         <CardText>
-                            {" "}
                             <p className="description">
-                                {" "}
                                 UI/UX Design | How to design with professional.
-                            </p>{" "}
+                            </p>
                         </CardText>
                         <div className="d-flex">
                             <div className="d-flex">
@@ -428,7 +275,6 @@ function LandingPage() {
                             <div className="d-flex ml-2">
                                 <img src={Vector} alt="" />
                                 <div className="ml-2 lessons">
-                                    {" "}
                                     Guided Courses
                                 </div>
                             </div>
@@ -437,7 +283,6 @@ function LandingPage() {
                             <div className="d-flex mt-3">
                                 <img src={Vector} alt="" />
                                 <div className="ml-3 compare">
-                                    {" "}
                                     Add to compare
                                 </div>
                             </div>
@@ -456,281 +301,158 @@ function LandingPage() {
                         </div>
                     </CardBody>
                 </Card>
-                <Card className="slider-section">
-                    <CardImg
-                        top
-                        width="100%"
-                        src={cardimg}
-                        alt="Card image cap"
-                        className="slider-section-image"
-                    />
-                    <CardBody>
-                        <CardTitle tag="h5">
-                            {" "}
-                            <div className="d-flex course-content">
-                                <div className="course-title ">Udemy</div>
-                                <b>Free</b>
-                                <div>
-                                    $ <strike>250</strike>
-                                </div>
-                            </div>
-                        </CardTitle>
-                        <CardText>
-                            {" "}
-                            <p className="description">
-                                {" "}
-                                UI/UX Design | How to design with professional.
-                            </p>{" "}
-                        </CardText>
-                        <div className="d-flex">
-                            <div className="d-flex">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons"> 20 Lessons</div>
-                            </div>
-                            <div className="d-flex ml-2">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons">
-                                    {" "}
-                                    Guided Courses
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={Vector} alt="" />
-                                <div className="ml-3 compare">
-                                    {" "}
-                                    Add to compare
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="hr-line" />
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={star} alt="" className="" />
-                                <div className="ml-3 compare"> 32 Reviews</div>
-                                <img
-                                    src={Vector}
-                                    alt=""
-                                    style={{ marginLeft: "30px" }}
-                                />
-                            </div>
-                        </div>
-                    </CardBody>
-                </Card>
-                <Card className="slider-section">
-                    <CardImg
-                        top
-                        width="100%"
-                        src={cardimg}
-                        alt="Card image cap"
-                        className="slider-section-image"
-                    />
-                    <CardBody>
-                        <CardTitle tag="h5">
-                            {" "}
-                            <div className="d-flex course-content">
-                                <div className="course-title ">Udemy</div>
-                                <b>Free</b>
-                                <div>
-                                    $ <strike>250</strike>
-                                </div>
-                            </div>
-                        </CardTitle>
-                        <CardText>
-                            {" "}
-                            <p className="description">
-                                {" "}
-                                UI/UX Design | How to design with professional.
-                            </p>{" "}
-                        </CardText>
-                        <div className="d-flex">
-                            <div className="d-flex">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons"> 20 Lessons</div>
-                            </div>
-                            <div className="d-flex ml-2">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons">
-                                    {" "}
-                                    Guided Courses
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={Vector} alt="" />
-                                <div className="ml-3 compare">
-                                    {" "}
-                                    Add to compare
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="hr-line" />
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={star} alt="" className="" />
-                                <div className="ml-3 compare"> 32 Reviews</div>
-                                <img
-                                    src={Vector}
-                                    alt=""
-                                    style={{ marginLeft: "30px" }}
-                                />
-                            </div>
-                        </div>
-                    </CardBody>
-                </Card>
-                <Card className="slider-section">
-                    <CardImg
-                        top
-                        width="100%"
-                        src={cardimg}
-                        alt="Card image cap"
-                        className="slider-section-image"
-                    />
-                    <CardBody>
-                        <CardTitle tag="h5">
-                            {" "}
-                            <div className="d-flex course-content">
-                                <div className="course-title ">Udemy</div>
-                                <b>Free</b>
-                                <div>
-                                    $ <strike>250</strike>
-                                </div>
-                            </div>
-                        </CardTitle>
-                        <CardText>
-                            {" "}
-                            <p className="description">
-                                {" "}
-                                UI/UX Design | How to design with professional.
-                            </p>{" "}
-                        </CardText>
-                        <div className="d-flex">
-                            <div className="d-flex">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons"> 20 Lessons</div>
-                            </div>
-                            <div className="d-flex ml-2">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons">
-                                    {" "}
-                                    Guided Courses
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={Vector} alt="" />
-                                <div className="ml-3 compare">
-                                    {" "}
-                                    Add to compare
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="hr-line" />
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={star} alt="" className="" />
-                                <div className="ml-3 compare"> 32 Reviews</div>
-                                <img
-                                    src={Vector}
-                                    alt=""
-                                    style={{ marginLeft: "30px" }}
-                                />
-                            </div>
-                        </div>
-                    </CardBody>
-                </Card>
-            </div>
+            </div> */}
             <div className="promotions-section">
-                <div className="d-flex community-divison">
-                    <img
-                        src={circleicon}
-                        alt=""
-                        className="community-divison-image"
-                    />
+                <div className="community-divison">
                     <div className="community-divison-content">
-                        <p className="community-divison-content-1">
+                        <p className="community-divison-content-maintext">
+                            <img
+                                src={circleicon}
+                                alt=""
+                                className="community-divison-image"
+                            />
                             Join the community
                         </p>
-                        <p className="community-divison-content-2">
-                            of more than 100,000 students
+                        <p className="community-divison-content-subtext">
+                            of more than <span>100,000</span> students
                         </p>
                     </div>
-                </div>
-                <p className="colab-content">
-                    We collaborate with 200+ leading universities and companies
-                </p>
-                <div className="d-flex brand-section">
-                    <img src={google} alt="" className="brand-image" />
-                    <img src={ibm} alt="" className="brand-image" />
-                    <img src={duke} alt="" className="brand-image" />
-                </div>
-                <p className="feature-in-header">Featured In</p>
-                <div className="d-flex newspaper-images">
-                    <img src={hindustan} alt="" />
-                    <img src={toi} alt="" />
-                    <img src={hd} alt="" />
-                    <img src={guardian} alt="" />
+                    <p className="colab-content">
+                        We collaborate with 200+ leading universities and
+                        companies
+                    </p>
+                    <div className="brand-section">
+                        <img src={google} alt="" className="brand-image" />
+                        <img src={ibm} alt="" className="brand-image" />
+                        <img src={duke} alt="" className="brand-image" />
+                    </div>
+                    <p className="feature-in-header">Featured In</p>
+                    <div className="newspaper-images">
+                        <img src={hindustan} alt="" />
+                        <img src={toi} alt="" />
+                        <img src={hd} alt="" />
+                        <img src={guardian} alt="" />
+                    </div>
                 </div>
             </div>
-            <div className="mt-4">
+            <div className="landing-page-testimonial-section ">
                 <p className="header-testimonials">
-                    Testimonials from our happy customers{" "}
+                    Testimonials from our happy customers
                 </p>
-                <div className="d-flex">
-                    <div className="d-flex testimonial-section">
-                        <div className="testimonial-image-section">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                                className="user-image"
-                            />
-                        </div>
-                        <div className="testimonial-content-section">
-                            <p className="testimonial-content">
-                                <h6>shubbham singh</h6>
-                                <p>20:00 pm 8/02</p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                    <div className="d-flex testimonial-section">
-                        <div className="testimonial-image-section">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                                className="user-image"
-                            />
-                        </div>
-
-                        <div className="testimonial-content-section">
-                            <p className="testimonial-content">
-                                <h6>shubbham singh</h6>
-                                <p>20:00 pm 8/02</p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <CarouselProvider
+                    naturalSlideWidth={80}
+                    naturalSlideHeight={30}
+                    totalSlides={4}
+                    visibleSlides={2}
+                    infinite={true}
+                >
+                    <Slider>
+                        <Slide index={0}>
+                            <div className="course-detail-testimonial-cards-outer">
+                                <img
+                                    src={star5}
+                                    alt=""
+                                    className="review-stars"
+                                />
+                                <div className="course-detail-testimonial-cards-inner">
+                                    <img
+                                        src="https://randomuser.me/api/portraits/women/81.jpg"
+                                        alt=""
+                                    />
+                                    <h6>Devika Olkar</h6>
+                                    <p>
+                                        “Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. A fusce lacus non in
+                                        tortor, libero do”
+                                    </p>
+                                </div>
+                            </div>
+                        </Slide>
+                        <Slide index={1}>
+                            <div className="course-detail-testimonial-cards-outer">
+                                <img
+                                    src={star5}
+                                    alt=""
+                                    className="review-stars"
+                                />
+                                <div className="course-detail-testimonial-cards-inner">
+                                    <img
+                                        src="https://randomuser.me/api/portraits/women/81.jpg"
+                                        alt=""
+                                    />
+                                    <h6>Devika Olkar</h6>
+                                    <p>
+                                        “Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. A fusce lacus non in
+                                        tortor, libero do”
+                                    </p>
+                                </div>
+                            </div>
+                        </Slide>
+                        <Slide index={2}>
+                            <div className="course-detail-testimonial-cards-outer">
+                                <img
+                                    src={star5}
+                                    alt=""
+                                    className="review-stars"
+                                />
+                                <div className="course-detail-testimonial-cards-inner">
+                                    <img
+                                        src="https://randomuser.me/api/portraits/women/81.jpg"
+                                        alt=""
+                                    />
+                                    <h6>Devika Olkar</h6>
+                                    <p>
+                                        “Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. A fusce lacus non in
+                                        tortor, libero do”
+                                    </p>
+                                </div>
+                            </div>
+                        </Slide>
+                        <Slide index={3}>
+                            <div className="course-detail-testimonial-cards-outer">
+                                <img
+                                    src={star5}
+                                    alt=""
+                                    className="review-stars"
+                                />
+                                <div className="course-detail-testimonial-cards-inner">
+                                    <img
+                                        src="https://randomuser.me/api/portraits/women/81.jpg"
+                                        alt=""
+                                    />
+                                    <h6>Devika Olkar</h6>
+                                    <p>
+                                        “Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. A fusce lacus non in
+                                        tortor, libero do”
+                                    </p>
+                                </div>
+                            </div>
+                        </Slide>
+                    </Slider>
+                </CarouselProvider>
             </div>
             <div className="popular-choice-section">
-                <p className="popular-choice-header">Recommended for you</p>
-                <div className="d-flex popular-choice-sub-section">
-                    <div className="popular-choice-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <br />
-                        Habitant volutpat elementum facilisi mattis et. At
-                    </div>
-                    <div>
-                        <Button className="view-all-btnn">View all</Button>
-                    </div>
-                </div>
+                <h3 className="popular-choice-header">Popular Choices</h3>
+                <Row className=" popular-choice-sub-section">
+                    <Col sm="12" md="6" lg="5">
+                        <p className="popular-choice-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Habitant volutpat elementum facilisi mattis
+                            et. At
+                        </p>
+                    </Col>
+                    <Col
+                        sm="12"
+                        md="6"
+                        lg="5"
+                        className="popular-choice-btn-container"
+                    >
+                        <Button className="popular-choice-btn">View all</Button>
+                    </Col>
+                </Row>
             </div>
         </div>
     );
