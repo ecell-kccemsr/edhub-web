@@ -18,6 +18,7 @@ class CreateCourseProvidersTable extends Migration
             $table->string('name');
             $table->string('url');
             $table->string('image');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

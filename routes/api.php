@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CourseController;
 use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\API\ExamResultController;
 use App\Http\Controllers\API\ExamCalendarController;
@@ -71,3 +72,10 @@ Route::get('/examresults',[ExamResultController::class,'get']);
 //RegisterForFreeUpdates
 Route::post('/register_for_free_updates/add',[RegisterForFreeUpdatesController::class,'add']);
 
+//Course
+Route::get('/api/courses',[CourseController::class,'get']);
+Route::get('/api/courses/{course}',[CourseController::class,'show']);
+
+//CourseProvider
+Route::get('/api/courseprovider',[CourseProviderController::class,'get']);
+Route::get('/api/courseprovider/{courseprovider}',[CourseProviderController::class,'show']);

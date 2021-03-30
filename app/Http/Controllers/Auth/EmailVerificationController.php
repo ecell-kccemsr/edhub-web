@@ -16,16 +16,13 @@ class EmailVerificationController extends Controller
     * This endpoint allows you to verify email.
     * @group Authenticating requests
     *
-    * @bodyParam email string required The email of the user.
-    * @bodyParam password string required The password of the user.
+    * @bodyParam verified_token string required The verified_token of the user.
     *      
     * @response 401 {
-    *  "message" : "Unauthorized"
+    *  "message" : "Wrong token passed"
     * }
     * @response {
-    *  "access_token" : "<ACCESS_TOKEN>",
-    *  "token_type" : "Bearer",
-    *  "expires_at" : "<EXPIRES_AT>",
+    *  "success" : "true",
     * }
     */
     public function verify(Request $request)
