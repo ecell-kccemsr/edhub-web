@@ -74,3 +74,87 @@
         content: "|";
     }
 }
+
+//Course Card
+.coursecard-section {
+    background: #f6f7f8;
+    padding: 20px 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px 1px #00000026;
+    .card-header-img {
+        width: 100%;
+    }
+    .card-header-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+    }
+    .card-title {
+        font-weight: 400;
+        padding: 5px;
+        font-size: 22px;
+    }
+    .card-overview {
+        padding: 5px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        div {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            img {
+                margin-right: 4px;
+                object-fit: contain;
+            }
+            p {
+                margin-bottom: 0;
+                font-weight: 500;
+            }
+        }
+    }
+    .compare-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 10px 0;
+        cursor: pointer;
+        img {
+            margin-right: 10px;
+            object-fit: contain;
+        }
+        h5 {
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+    }
+    hr {
+        border: 0.5px solid #1f1f1e45;
+    }
+    .coursecard-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            img {
+                margin-right: 10px;
+                object-fit: contain;
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
+        img {
+            object-fit: contain;
+            cursor: pointer;
+        }
+    }
+}

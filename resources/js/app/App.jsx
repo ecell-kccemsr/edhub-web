@@ -26,6 +26,7 @@ import Cart from "../cart/Cart";
 import Checkout from "../checkout/Checkout";
 import CourseDetail from "../courseDetail/CourseDetail";
 import LandingPage from "../homepage/LandingPage";
+import courseCategory from "../courseCategory/courseCategory";
 const App = props => {
     return (
         <Fragment>
@@ -103,6 +104,11 @@ const App = props => {
                         component={CourseDetail}
                     />
                     <Route path="/landingPage" exact component={LandingPage} />
+                    <Route
+                        path="/course-category"
+                        exact
+                        component={courseCategory}
+                    />
                 </Layout>
             </Switch>
         </Fragment>

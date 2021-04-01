@@ -44,6 +44,7 @@ Route::view('/compare','app');
 Route::view('/cart','app');
 Route::view('/checkout','app');
 Route::view('/courseDetail','app');
+Route::view('/course-category','app');
 
 
 Route::group(['prefix' => 'admin'], function () {
