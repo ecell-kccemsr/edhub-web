@@ -827,6 +827,86 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-21 17:54:19',
                 'updated_at' => '2021-03-21 17:54:19',
             ),
+            101 => 
+            array (
+                'id' => 107,
+                'key' => 'browse_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-02 15:30:50',
+                'updated_at' => '2021-04-02 15:30:50',
+            ),
+            102 => 
+            array (
+                'id' => 108,
+                'key' => 'read_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-02 15:30:50',
+                'updated_at' => '2021-04-02 15:30:50',
+            ),
+            103 => 
+            array (
+                'id' => 109,
+                'key' => 'edit_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-02 15:30:50',
+                'updated_at' => '2021-04-02 15:30:50',
+            ),
+            104 => 
+            array (
+                'id' => 110,
+                'key' => 'add_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-02 15:30:50',
+                'updated_at' => '2021-04-02 15:30:50',
+            ),
+            105 => 
+            array (
+                'id' => 111,
+                'key' => 'delete_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-02 15:30:50',
+                'updated_at' => '2021-04-02 15:30:50',
+            ),
+            106 => 
+            array (
+                'id' => 112,
+                'key' => 'browse_course_providers',
+                'table_name' => 'course_providers',
+                'created_at' => '2021-04-02 15:32:55',
+                'updated_at' => '2021-04-02 15:32:55',
+            ),
+            107 => 
+            array (
+                'id' => 113,
+                'key' => 'read_course_providers',
+                'table_name' => 'course_providers',
+                'created_at' => '2021-04-02 15:32:55',
+                'updated_at' => '2021-04-02 15:32:55',
+            ),
+            108 => 
+            array (
+                'id' => 114,
+                'key' => 'edit_course_providers',
+                'table_name' => 'course_providers',
+                'created_at' => '2021-04-02 15:32:55',
+                'updated_at' => '2021-04-02 15:32:55',
+            ),
+            109 => 
+            array (
+                'id' => 115,
+                'key' => 'add_course_providers',
+                'table_name' => 'course_providers',
+                'created_at' => '2021-04-02 15:32:55',
+                'updated_at' => '2021-04-02 15:32:55',
+            ),
+            110 => 
+            array (
+                'id' => 116,
+                'key' => 'delete_course_providers',
+                'table_name' => 'course_providers',
+                'created_at' => '2021-04-02 15:32:55',
+                'updated_at' => '2021-04-02 15:32:55',
+            ),
         ));
         
         

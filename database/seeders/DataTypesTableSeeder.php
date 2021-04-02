@@ -343,6 +343,42 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-03-21 17:54:19',
                 'updated_at' => '2021-03-21 17:54:19',
             ),
+            18 => 
+            array (
+                'id' => 21,
+                'name' => 'courses',
+                'slug' => 'courses',
+                'display_name_singular' => 'Course',
+                'display_name_plural' => 'Courses',
+                'icon' => 'voyager-book',
+                'model_name' => 'App\\Models\\Course',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-02 15:30:50',
+                'updated_at' => '2021-04-02 15:55:44',
+            ),
+            19 => 
+            array (
+                'id' => 23,
+                'name' => 'course_providers',
+                'slug' => 'course-providers',
+                'display_name_singular' => 'Course Provider',
+                'display_name_plural' => 'Course Providers',
+                'icon' => 'voyager-book',
+                'model_name' => 'App\\Models\\CourseProvider',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-02 15:32:55',
+                'updated_at' => '2021-04-02 15:38:03',
+            ),
         ));
         
         

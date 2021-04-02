@@ -435,6 +435,38 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.register-for-free-updates.index',
                 'parameters' => NULL,
             ),
+            26 => 
+            array (
+                'id' => 28,
+                'menu_id' => 1,
+                'title' => 'Courses',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-book',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 31,
+                'created_at' => '2021-04-02 15:30:51',
+                'updated_at' => '2021-04-02 15:30:51',
+                'route' => 'voyager.courses.index',
+                'parameters' => NULL,
+            ),
+            27 => 
+            array (
+                'id' => 29,
+                'menu_id' => 1,
+                'title' => 'Course Providers',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-book',
+                'color' => '#000000',
+                'parent_id' => NULL,
+                'order' => 32,
+                'created_at' => '2021-04-02 15:32:55',
+                'updated_at' => '2021-04-02 15:38:49',
+                'route' => 'voyager.course-providers.index',
+                'parameters' => 'null',
+            ),
         ));
         
         

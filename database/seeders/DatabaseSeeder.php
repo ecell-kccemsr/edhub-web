@@ -34,5 +34,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NewsSubCategoriesTableSeeder::class);
         $this->call(NewsCategoriesTableSeeder::class);
         Schema::enableForeignKeyConstraints();
+        $this->call(CourseProvidersTableSeeder::class);
     }
 }

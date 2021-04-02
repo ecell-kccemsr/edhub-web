@@ -73,9 +73,9 @@ Route::get('/examresults',[ExamResultController::class,'get']);
 Route::post('/register_for_free_updates/add',[RegisterForFreeUpdatesController::class,'add']);
 
 //Course
-Route::get('/api/courses',[CourseController::class,'get']);
-Route::get('/api/courses/{course}',[CourseController::class,'show']);
+Route::get('/courses',[CourseController::class,'get']);
+Route::get('/courses/{course}',[CourseController::class,'show']);
 
 //CourseProvider
-Route::get('/api/courseprovider',[CourseProviderController::class,'get']);
-Route::get('/api/courseprovider/{courseprovider}',[CourseProviderController::class,'show']);
+Route::get('/course-providers',[CourseProviderController::class,'get']);
+Route::get('/course-providers/{courseprovider}',[CourseProviderController::class,'show']);

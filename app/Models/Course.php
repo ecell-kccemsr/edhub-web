@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    use HasFactory;
+    use HasFactory, HasSlug;
 
     public function course_provider()
     {
