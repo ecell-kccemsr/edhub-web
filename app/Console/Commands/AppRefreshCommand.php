@@ -3,8 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Artisan;
 
 class AppRefreshCommand extends Command
 {
@@ -39,7 +40,9 @@ class AppRefreshCommand extends Command
      */
     public function handle()
     {
-        File::delete(storage_path('app/public'));
+        $file = new Filesystem;
+        $file->cleanDirectory(storage_path('app/public'));
+        File::copyDirectory(base_path('assets'), storage_path('app/public'));
         Artisan::call('db:wipe');
         Artisan::call('migrate --seed');
         Artisan::call('cache:clear');
