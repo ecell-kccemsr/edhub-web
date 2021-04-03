@@ -2,7 +2,10 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Support\Facades\Storage;
+use App\Http\Resources\CourseProviderResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use TCG\Voyager\Facades\Voyager;
 
 class CourseResource extends JsonResource
 {
@@ -16,9 +19,9 @@ class CourseResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'titile' => $this->titile,
+            'title' => $this->title,
             'subtitle' => $this->subtitle,
-            'image' => $this->image,
+            'image' => url(Voyager::image($this->image)),
             'url' => $this->url,
             'course_provider' => new CourseProviderResource($this->course_provider),
             'skills' => $this->skills,

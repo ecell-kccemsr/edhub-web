@@ -2391,9 +2391,9 @@ class DataRowsTableSeeder extends Seeder
             array (
                 'id' => 158,
                 'data_type_id' => 21,
-                'field' => 'subtitles',
+                'field' => 'subtitle',
                 'type' => 'text',
-                'display_name' => 'Subtitles',
+                'display_name' => 'Subtitle',
                 'required' => 1,
                 'browse' => 0,
                 'read' => 1,
