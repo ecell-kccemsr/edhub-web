@@ -25,11 +25,9 @@ class CourseResource extends JsonResource
             'url' => $this->url,
             'course_provider' => new CourseProviderResource($this->course_provider),
             'skills' => $this->skills,
-            'learners_outcome' => $this->learners_outcome,
-            'job_opportunities' => $this->job_opportunities,
-            'description' => $this->description,
             'career_outcome' => $this->career_outcome,
             'job_opportunities' => $this->job_opportunities,
+            'description' => $this->description,
             'course_content' => $this->course_content,
             'prerequisites' => $this->prerequisites,
             'instructor_name' => $this->instructor_name,
@@ -43,7 +41,6 @@ class CourseResource extends JsonResource
             'rating' => $this->rating,
             'price' => $this->price,
             'slug' => $this->slug,
-
         ];
     }
 }
