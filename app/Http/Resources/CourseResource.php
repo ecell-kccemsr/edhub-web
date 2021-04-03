@@ -20,7 +20,7 @@ class CourseResource extends JsonResource
             'subtitle' => $this->subtitle,
             'image' => $this->image,
             'url' => $this->url,
-            'course_provider' => new CourseResource($this->course_provider),
+            'course_provider' => new CourseProviderResource($this->course_provider),
             'skills' => $this->skills,
             'learners_outcome' => $this->learners_outcome,
             'job_opportunities' => $this->job_opportunities,
