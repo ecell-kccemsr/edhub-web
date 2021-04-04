@@ -99,3 +99,29 @@
         }
     }
 }
+//navbar-1
+.main-navbar1 {
+    padding: 0px 40px;
+    .navbar1-logo {
+        padding-left: 30px;
+    }
+    .navbar1-item {
+        padding: 12px;
+        .navbar1-link {
+            color: #000;
+            font-size: 16px;
+        }
+        .navbar1-sublink {
+            color: #000;
+            font-size: 16px;
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .main-navbar1 {
+        padding: 10px 20px;
+        .navbar1-logo {
+            padding: 0px;
+        }
+    }
+}
