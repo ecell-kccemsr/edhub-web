@@ -10,6 +10,15 @@ class CourseProvider extends Model
 {
     use HasFactory, HasSlug;
 
+    /**
+    * The attributes that aren't mass assignable.
+    *
+    * @var array
+    */
+    protected $guarded = [
+        'id'
+    ];
+    
     public function courses()
     {
         return $this->hasMany("App\Models\Course");

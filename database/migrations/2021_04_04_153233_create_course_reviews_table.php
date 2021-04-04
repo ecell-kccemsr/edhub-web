@@ -15,10 +15,10 @@ class CreateCourseReviewsTable extends Migration
     {
         Schema::create('course_reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
+            $table->longText('content')->nullable();
             $table->integer('course_id');
             $table->integer('rating');
-            $table->string('user_name');
+            $table->string('user_name')->nullable();
             $table->timestamps();
         });
     }

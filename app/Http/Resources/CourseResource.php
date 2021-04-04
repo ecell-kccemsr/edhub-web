@@ -21,7 +21,7 @@ class CourseResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'subtitle' => $this->subtitle,
-            'image' => url(Voyager::image($this->image)),
+            'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
             'url' => $this->url,
             'course_provider' => new CourseProviderResource($this->course_provider),
             'course_instructor' => new CourseInstructorResourceCollection($this->course_instructors),

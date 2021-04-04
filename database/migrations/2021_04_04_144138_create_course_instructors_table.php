@@ -16,7 +16,7 @@ class CreateCourseInstructorsTable extends Migration
         Schema::create('course_instructors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('designation');
+            $table->string('designation')->nullable();
             $table->string('image');
             $table->string('url');
             $table->integer('course_id');

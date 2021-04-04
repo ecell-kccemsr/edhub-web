@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CourseInstructorResource extends JsonResource
@@ -18,7 +19,7 @@ class CourseInstructorResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'designation' => $this->designation,
-            'image' => $this->image,
+            'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
             'url' => $this->url,
         ];
     }

@@ -16,7 +16,7 @@ class CreateCourseCurriculumTable extends Migration
         Schema::create('course_curriculum', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->integer('course_id');
             $table->enum('type',['chapter','lecture']);
             $table->timestamps();
