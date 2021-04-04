@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class CourseProvider extends Model
 {
     use HasFactory, HasSlug;
+
+    public function courses()
+    {
+        return $this->hasMany("App\Models\Course");
+    }
 }
