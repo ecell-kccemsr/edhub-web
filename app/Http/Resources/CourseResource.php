@@ -24,7 +24,7 @@ class CourseResource extends JsonResource
             'image' => url(Voyager::image($this->image)),
             'url' => $this->url,
             'course_provider' => new CourseProviderResource($this->course_provider),
-            'course_instructor' => new CourseInstructorResourceCollection($this->course_instructor),
+            'course_instructor' => new CourseInstructorResourceCollection($this->course_instructors),
             'skills' => $this->skills,
             'career_outcome' => $this->career_outcome,
             'job_opportunities' => $this->job_opportunities,

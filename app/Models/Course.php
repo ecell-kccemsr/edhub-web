@@ -20,10 +20,13 @@ class Course extends Model
         return $this->hasMany('App\Models\CourseCurriculum','course_id');
     }
 
-    public function course_instructor()
+    public function course_instructors()
     {
         return $this->hasMany('App\Models\CourseInstructor','course_id');
     }
 
-    
+    public function course_reviews()
+    {
+        return $this->hasMany('App\Models\CourseReview','course_id');
+    }
 }
