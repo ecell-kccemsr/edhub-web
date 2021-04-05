@@ -27,6 +27,11 @@ import Checkout from "../checkout/Checkout";
 import CourseDetail from "../courseDetail/CourseDetail";
 import LandingPage from "../homepage/LandingPage";
 import courseCategory from "../courseCategory/courseCategory";
+import Guide1 from "../guide/Guide1";
+import Guide2 from "../guide/Guide2";
+import Guide3 from "../guide/Guide3";
+import Guide4 from "../guide/Guide4";
+import Guide5 from "../guide/Guide5";
 const App = props => {
     return (
         <Fragment>
@@ -109,6 +114,11 @@ const App = props => {
                         exact
                         component={courseCategory}
                     />
+                    <Route path="/guide1" exact component={Guide1} />
+                    <Route path="/guide2" exact component={Guide2} />
+                    <Route path="/guide3" exact component={Guide3} />
+                    <Route path="/guide4" exact component={Guide4} />
+                    <Route path="/guide5" exact component={Guide5} />
                 </Layout>
             </Switch>
         </Fragment>
