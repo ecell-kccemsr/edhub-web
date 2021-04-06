@@ -33,6 +33,7 @@ import Guide3 from "../guide/Guide3";
 import Guide4 from "../guide/Guide4";
 import Guide5 from "../guide/Guide5";
 import Newfooter from "../layout/newfooter/Newfooter";
+import GuideModal from "../guide/Guide";
 const App = props => {
     return (
         <Fragment>
@@ -115,11 +116,8 @@ const App = props => {
                         exact
                         component={courseCategory}
                     />
-                    <Route path="/guide1" exact component={Guide1} />
-                    <Route path="/guide2" exact component={Guide2} />
-                    <Route path="/guide3" exact component={Guide3} />
-                    <Route path="/guide4" exact component={Guide4} />
-                    <Route path="/guide5" exact component={Guide5} />
+                    <Route path="/guide" exact component={GuideModal} />
+
                     <Route path="/footer" exact component={Newfooter} />
                 </Layout>
             </Switch>
