@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import {
     List,
     Row,
@@ -12,6 +13,7 @@ import {
     Input
 } from "reactstrap";
 import CourseCard from "../components/course-card/CourseCard";
+
 const priceFilter = [
     {
         id: "d95d4514-538a-4b57-85d5-f9072dc80bef",
@@ -114,10 +116,21 @@ const CourseCategoryCarousel = props => {
 };
 const courseCategory = () => {
     const [sliderVal, setSliderVal] = useState(5000);
+    const [courseCategory, setCourseCategory] = useState([]);
     const onSliderChange = e => {
         const newVal = parseInt(e.target.value);
         setSliderVal(newVal);
     };
+    useEffect(() => {
+        axios
+            .get("/api/courses")
+            .then(res => {
+                setCourseCategory(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
     return (
         <>
             <div className="course-category-section">
@@ -157,14 +170,14 @@ const courseCategory = () => {
                                     </div>
                                 </div>
                                 <div
-                                    class="accordion course-category-accordion"
+                                    className="accordion course-category-accordion"
                                     id="courseCategoryParent"
                                 >
                                     {priceFilter &&
                                         priceFilter.map(
                                             priceFilterIndividual => (
                                                 <div
-                                                    class="card"
+                                                    className="card"
                                                     key={
                                                         priceFilterIndividual?.id
                                                     }
@@ -172,9 +185,9 @@ const courseCategory = () => {
                                                     <div
                                                         id={`heading${priceFilterIndividual?.id}`}
                                                     >
-                                                        <h2 class="mb-0">
+                                                        <h2 className="mb-0">
                                                             <a
-                                                                class="btn btn-link course-category-card-headerlink"
+                                                                className="btn btn-link course-category-card-headerlink"
                                                                 type="button"
                                                                 data-toggle="collapse"
                                                                 data-target={`#collapse${priceFilterIndividual?.id}`}
@@ -185,7 +198,7 @@ const courseCategory = () => {
                                                                     priceFilterIndividual?.title
                                                                 }
                                                                 <i
-                                                                    class="fas fa-chevron-down ml-2"
+                                                                    className="fas fa-chevron-down ml-2"
                                                                     style={{
                                                                         color:
                                                                             "#000"
@@ -197,11 +210,11 @@ const courseCategory = () => {
 
                                                     <div
                                                         id={`collapse${priceFilterIndividual?.id}`}
-                                                        class="collapse show"
+                                                        className="collapse show"
                                                         aria-labelledby={`heading${priceFilterIndividual?.id}`}
                                                         data-parent="#courseCategoryParent"
                                                     >
-                                                        <div class="card-body">
+                                                        <div className="card-body">
                                                             <List
                                                                 type="unstyled"
                                                                 className="mb-0"
@@ -237,16 +250,11 @@ const courseCategory = () => {
                         </Col>
                         <Col sm="12" lg="9">
                             <Row>
-                                <Col sm="12" md="4">
-                                    <CourseCard />
-                                    {/* <CourseCard data={categoryData}/> */}
-                                </Col>
-                                <Col sm="12" md="4">
-                                    <CourseCard />
-                                </Col>
-                                <Col sm="12" md="4">
-                                    <CourseCard />
-                                </Col>
+                                {courseCategory.map(course => (
+                                    <Col sm="12" md="4" key={course?.id}>
+                                        <CourseCard data={course} />
+                                    </Col>
+                                ))}
                             </Row>
                         </Col>
                     </Row>

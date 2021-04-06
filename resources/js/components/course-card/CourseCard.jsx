@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import cardHeader from "../../Images/courseCategory/cardHeader.png";
 import cardHeaderCompany from "../../Images/courseCategory/card-header-company.png";
 import play from "../../Images/courseCategory/play.png";
@@ -6,25 +7,45 @@ import guide from "../../Images/courseCategory/guide.png";
 import star from "../../Images/courseCategory/star.png";
 import reviewArrow from "../../Images/courseCategory/reviewArrow.png";
 import addtoCompare from "../../Images/courseCategory/addcompare.png";
-const CourseCard = props => {
+const CourseCard = ({ data }) => {
+    const [reviews, setReviews] = useState([]);
+    if (data) {
+        useEffect(() => {
+            axios
+                .get(`/api/courses/${data.id}/reviews`)
+                .then(res => {
+                    console.log(res);
+                    setReviews(res.data.data[0]);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }, []);
+    }
+    console.log(data);
     return (
         <>
-            <div className="coursecard-section">
+            <div className="coursecard-section h-100">
                 <img
-                    src={cardHeader}
+                    src={data?.image}
                     className="card-header-img"
                     alt="card header image"
                 />
                 <div className="card-header-top">
-                    <img src={cardHeaderCompany} alt="" />
+                    <div>
+                        <img
+                            src={data?.course_provider.image}
+                            alt=""
+                            style={{ height: "25px" }}
+                        />
+                    </div>
+
                     <h5>Free</h5>
                     <h5 style={{ fontWeight: "400" }}>
-                        $ <strike>250</strike>
+                        $ <strike>{data?.price}</strike>
                     </h5>
                 </div>
-                <h4 className="card-title">
-                    UI/UX Design | How to design with professional
-                </h4>
+                <h4 className="card-title">{data?.title}</h4>
                 <div className="card-overview">
                     <div>
                         <img src={play} alt="" />
@@ -43,7 +64,7 @@ const CourseCard = props => {
                 <div className="coursecard-footer">
                     <div>
                         <img src={star} alt="" />
-                        <p>32 Reviews</p>
+                        <p>{reviews.rating} Reviews</p>
                     </div>
                     <img src={reviewArrow} alt="" />
                 </div>
