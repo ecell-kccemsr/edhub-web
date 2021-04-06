@@ -16,10 +16,6 @@ import Examcalendar from "../examcalendar/Examcalendar";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
 import Newsdetails from "../news/NewsDetails";
-import Profile from "../profile/Profile";
-import Profile1 from "../profile/Profile-1";
-import Profile2 from "../profile/Profile-2";
-
 import Notification from "../notification/notification";
 import Compare from "../compare/Compare";
 import Cart from "../cart/Cart";
@@ -27,13 +23,13 @@ import Checkout from "../checkout/Checkout";
 import CourseDetail from "../courseDetail/CourseDetail";
 import LandingPage from "../homepage/LandingPage";
 import courseCategory from "../courseCategory/courseCategory";
-import Guide1 from "../guide/Guide1";
-import Guide2 from "../guide/Guide2";
-import Guide3 from "../guide/Guide3";
-import Guide4 from "../guide/Guide4";
-import Guide5 from "../guide/Guide5";
 import Newfooter from "../layout/newfooter/Newfooter";
 import GuideModal from "../guide/Guide";
+
+import ProfileBasic from "../profile/ProfileBasic";
+import ProfileWishlist from "../profile/ProfileWishlist";
+import ProfileCourses from "../profile/ProfileCourses";
+
 const App = props => {
     return (
         <Fragment>
@@ -93,9 +89,21 @@ const App = props => {
                         exact
                         component={Examcalendar}
                     />
-                    <Route path="/profile" exact component={Profile} />
-                    <Route path="/profile-1" exact component={Profile1} />
-                    <Route path="/profile-2" exact component={Profile2} />
+                    <Route
+                        path="/profile/basic"
+                        exact
+                        component={ProfileBasic}
+                    />
+                    <Route
+                        path="/profile/wishlist"
+                        exact
+                        component={ProfileWishlist}
+                    />
+                    <Route
+                        path="/profile/my-courses"
+                        exact
+                        component={ProfileCourses}
+                    />
 
                     <Route
                         path="/notification"

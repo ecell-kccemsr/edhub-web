@@ -34,9 +34,9 @@ Route::view('/questionpaper/{category_slug}', 'app');
 
 Route::view('/exam/calendar', 'app');
 Route::view('/landingPage','app');
-Route::view('/profile','app');
-Route::view('/profile-1','app');
-Route::view('/profile-2','app');
+Route::view('/profile/basic','app');
+Route::view('/profile/wishlist','app');
+Route::view('/profile/my-courses','app');
 
 
 Route::view('/notification','app');
