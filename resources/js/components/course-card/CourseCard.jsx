@@ -6,7 +6,7 @@ import guide from "../../Images/courseCategory/guide.png";
 import star from "../../Images/courseCategory/star.png";
 import reviewArrow from "../../Images/courseCategory/reviewArrow.png";
 import addtoCompare from "../../Images/courseCategory/addcompare.png";
-const CourseCard = () => {
+const CourseCard = props => {
     return (
         <>
             <div className="coursecard-section">

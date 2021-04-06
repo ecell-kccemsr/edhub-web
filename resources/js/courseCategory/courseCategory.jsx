@@ -239,6 +239,7 @@ const courseCategory = () => {
                             <Row>
                                 <Col sm="12" md="4">
                                     <CourseCard />
+                                    {/* <CourseCard data={categoryData}/> */}
                                 </Col>
                                 <Col sm="12" md="4">
                                     <CourseCard />

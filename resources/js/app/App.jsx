@@ -32,6 +32,7 @@ import Guide2 from "../guide/Guide2";
 import Guide3 from "../guide/Guide3";
 import Guide4 from "../guide/Guide4";
 import Guide5 from "../guide/Guide5";
+import Newfooter from "../layout/newfooter/Newfooter";
 const App = props => {
     return (
         <Fragment>
@@ -119,6 +120,7 @@ const App = props => {
                     <Route path="/guide3" exact component={Guide3} />
                     <Route path="/guide4" exact component={Guide4} />
                     <Route path="/guide5" exact component={Guide5} />
+                    <Route path="/footer" exact component={Newfooter} />
                 </Layout>
             </Switch>
         </Fragment>
