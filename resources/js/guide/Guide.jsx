@@ -82,6 +82,13 @@ const GuideModal = () => {
                                 <span className="guide-modal-step">
                                     {step} of 5
                                 </span>
+                                <div className="guide-modal-step-dot">
+                                    <span style={{color:`${step>=1?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span style={{color:`${step>=2?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span style={{color:`${step>=3?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span style={{color:`${step>=4?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span style={{color:`${step>=5?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                </div>
                             </b>
                         </Col>
                         <Col sm="12" md="9">
