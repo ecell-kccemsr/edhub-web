@@ -1,65 +1,68 @@
-import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-import { Link } from "react-router-dom";
-
-function Guide4() {
+import React, { useState } from "react";
+import { Button, Modal, Row, Col, FormGroup, Label, Input } from "reactstrap";
+const Guide4 = () => {
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
     return (
-        <div>
-            <div className="guide-outermost-section">
-                <div className="guide-section">
-                    <hr className="hr-start" />
-                    <div className="guide-header">Let us guide you!</div>
-                    <p className="category-title">
+        <>
+            <Button color="primary" onClick={toggle}>
+                open modal
+            </Button>
+            <Modal
+                isOpen={modal}
+                toggle={toggle}
+                className="guide-modal-container"
+            >
+                <button className="close-modal-btn" onClick={toggle}>
+                    X
+                </button>
+                <div className="guide-modal">
+                    <hr className="modal-hr" />
+                    <Row>
+                        <Col sm="12" md="3" className="text-center">
+                            <b>
+                                Step <br />
+                                <span className="guide-modal-step">4 of 5</span>
+                            </b>
+                        </Col>
+                        <Col sm="12" md="9">
+                            <h4 className="guide-modal-title">
+                                Let us guide you !
+                            </h4>
+                        </Col>
+                    </Row>
+                    <h5 className="guide-modal-subtitle">
                         Select according to your requirement
-                    </p>
-                    <div className="type-of-course">Type of course</div>
-                    <div className="text-center">
-                        <form action="">
-                            <FormGroup check className="p-1">
-                                <Label check>
-                                    <Input
-                                        type="checkbox"
-                                        className="courses"
-                                    />{" "}
+                    </h5>
+                    <Row className="guide-modal-mainsection">
+                        <Col sm="12" md="8" lg="6">
+                            <FormGroup className="guideStep3FG">
+                                <Label>
+                                    <b>Level of Difficulty</b>
+                                </Label>
+                                <Label check className="d-block">
+                                    <Input type="checkbox" />
                                     Expert
                                 </Label>
-                            </FormGroup>
-                            <FormGroup
-                                check
-                                className="p-1"
-                                style={{ marginLeft: "44px" }}
-                            >
-                                <Label check>
-                                    <Input
-                                        type="checkbox"
-                                        className="courses"
-                                    />{" "}
+                                <Label check className="d-block">
+                                    <Input type="checkbox" />
                                     Intermediate
                                 </Label>
-                            </FormGroup>
-                            <FormGroup
-                                check
-                                className="p-1"
-                                style={{ marginLeft: "18px" }}
-                            >
-                                <Label check>
-                                    <Input
-                                        type="checkbox"
-                                        className="courses"
-                                    />{" "}
+                                <Label check className="d-block">
+                                    <Input type="checkbox" />
                                     Beginner
                                 </Label>
                             </FormGroup>
-                        </form>
-                    </div>
-
-                    <div className="button-section">
-                        <Button className="next">Next</Button>{" "}
+                        </Col>
+                    </Row>
+                    <div className="modal-footer-btns">
+                        <button className="skip">skip</button>
+                        <button className="next">next</button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </Modal>
+        </>
     );
-}
+};
 
 export default Guide4;

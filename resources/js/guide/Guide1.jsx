@@ -1,55 +1,75 @@
-import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-function Guide() {
+import React, { useState } from "react";
+import { Button, Modal, Row, Col, FormGroup, Label, Input } from "reactstrap";
+const Guide = () => {
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
     return (
-        // 1 guide page
-        <div>
-            <div className="guide-outermost-section">
-                <form action="">
-                    <div className="guide-section">
-                        <hr className="hr-start" />
-                        <div className="guide-header">Let us guide you!</div>
-                        <p className="category-title">
-                            Select Category to your requirement
-                        </p>
-                        <div className="category">Category</div>
-                        <FormGroup className="dropdown-category">
-                            <Input
-                                type="select"
-                                name="select"
-                                id="exampleSelect"
-                                className="dropdown-border"
-                            >
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </Input>
-                        </FormGroup>
-                        <FormGroup className="dropdown-category">
-                            <Input
-                                type="select"
-                                name="select"
-                                id="exampleSelect"
-                                className="dropdown-border"
-                            >
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </Input>
-                        </FormGroup>
-                        <div className="button-section">
-                            <Button className="skip">Skip</Button>{" "}
-                            <Button className="next">Next</Button>{" "}
-                        </div>
+        <>
+            <Button color="primary" onClick={toggle}>
+                open modal
+            </Button>
+            <Modal
+                isOpen={modal}
+                toggle={toggle}
+                className="guide-modal-container"
+            >
+                <button className="close-modal-btn" onClick={toggle}>
+                    X
+                </button>
+                <div className="guide-modal">
+                    <hr className="modal-hr" />
+                    <Row>
+                        <Col sm="12" md="3" className="text-center">
+                            <b>
+                                Step <br />
+                                <span className="guide-modal-step">1 of 5</span>
+                            </b>
+                        </Col>
+                        <Col sm="12" md="9">
+                            <h4 className="guide-modal-title">
+                                Let us guide you !
+                            </h4>
+                        </Col>
+                    </Row>
+                    <h5 className="guide-modal-subtitle">
+                        Select according to your requirement
+                    </h5>
+                    <Row className="guide-modal-mainsection">
+                        <Col sm="12" md="8" lg="6">
+                            <FormGroup>
+                                <Label>
+                                    <b>Category</b>
+                                </Label>
+                                <Input
+                                    type="select"
+                                    name="development"
+                                    className="mb-3"
+                                >
+                                    <option>Development</option>
+                                    <option>Development</option>
+                                    <option>Development</option>
+                                    <option>Development</option>
+                                    <option>Development</option>
+                                </Input>
+                                <Input type="select" name="frontenddev">
+                                    <option>Front end Dev</option>
+                                    <option>Front end Dev</option>
+                                    <option>Front end Dev</option>
+                                    <option>Front end Dev</option>
+                                    <option>Front end Dev</option>
+                                </Input>
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                    <div className="modal-footer-btns">
+                        <button className="skip">skip</button>
+                        <button className="next">next</button>
                     </div>
-                </form>
-            </div>
-        </div>
+                </div>
+            </Modal>
+        </>
     );
-}
+};
 
 export default Guide;

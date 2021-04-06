@@ -1,49 +1,88 @@
-import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-function Guide2() {
+import React, { useState } from "react";
+import { Button, Modal, Row, Col, FormGroup, Label, Input } from "reactstrap";
+const Guide2 = () => {
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
+    const [sliderVal, setSliderVal] = useState(5000);
+    const onSliderChange = e => {
+        const newVal = parseInt(e.target.value);
+        setSliderVal(newVal);
+    };
     return (
-        <div>
-            <div className="guide-outermost-section">
-                <form action="">
-                    <div className="guide-section">
-                        <hr className="hr-start" />
-                        <div className="guide-header">Let us guide you!</div>
-                        <p className="category-title">
-                            Select Category to your requirement
-                        </p>
-                        <h4 className="pricing">Pricing</h4>
-                        <input
-                            type="range"
-                            min="1"
-                            max="100"
-                            value="50"
-                            className="slider"
-                            id="myRange"
-                        />
-                        <div className="d-flex price-slider-content">
-                            <b className="free">Free</b>
-                            <b className="lac">1.5 Lac</b>
-                        </div>
-                        <div className="d-flex min-max-section">
-                            <div className="min-max-sub-section">
-                                <p className="min-max-content">Min</p>
-                                <input type="text" className="min-max-input" />
-                            </div>
-                            <p className="to-header">To</p>
-                            <div className="min-max-sub-section">
-                                <p className="min-max-content">Max</p>
-                                <input type="text" className="min-max-input" />
-                            </div>
-                        </div>
-                        <div className="button-section">
-                            <Button className="skip">Skip</Button>{" "}
-                            <Button className="next">Next</Button>{" "}
-                        </div>
+        <>
+            <Button color="primary" onClick={toggle}>
+                open modal
+            </Button>
+            <Modal
+                isOpen={modal}
+                toggle={toggle}
+                className="guide-modal-container"
+            >
+                <button className="close-modal-btn" onClick={toggle}>
+                    X
+                </button>
+                <div className="guide-modal">
+                    <hr className="modal-hr" />
+                    <Row>
+                        <Col sm="12" md="3" className="text-center">
+                            <b>
+                                Step <br />
+                                <span className="guide-modal-step">2 of 5</span>
+                            </b>
+                        </Col>
+                        <Col sm="12" md="9">
+                            <h4 className="guide-modal-title">
+                                Let us guide you !
+                            </h4>
+                        </Col>
+                    </Row>
+                    <h5 className="guide-modal-subtitle">
+                        Select according to your requirement
+                    </h5>
+                    <Row className="guide-modal-mainsection">
+                        <Col sm="12" md="8" lg="8">
+                            <FormGroup>
+                                <div style={{ padding: "5px 20px" }}>
+                                    <Label>
+                                        <b>Pricing</b>
+                                    </Label>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="150000"
+                                        step="100"
+                                        className="course-pricing-slider"
+                                        value={sliderVal}
+                                        onChange={onSliderChange}
+                                    ></input>
+                                </div>
+                                <div className="pricing-slider-div">
+                                    <span>Free</span>
+                                    <span>1.5 Lakh</span>
+                                </div>
+                                <div className="pricing-input-div">
+                                    <div className="pricing-div">
+                                        <label htmlFor="from">Min</label>
+                                        <input type="text" id="from" />
+                                    </div>
+                                    <p>To</p>
+                                    <div className="pricing-div">
+                                        <label htmlFor="to">Max</label>
+                                        <input type="text" id="to" />
+                                    </div>
+                                </div>
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                    <div className="modal-footer-btns">
+                        <button className="skip">skip</button>
+                        <button className="next">next</button>
                     </div>
-                </form>
-            </div>
-        </div>
+                </div>
+            </Modal>
+        </>
     );
-}
+};
 
 export default Guide2;
