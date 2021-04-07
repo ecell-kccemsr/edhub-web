@@ -248,17 +248,19 @@ const courseCategory = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col sm="12" lg="9">
+                        <Col sm="12" lg="9" >
                             <Row>
                                 {courseCategory.map(course => (
-                                    <Col sm="12" md="4" key={course?.id}>
+                                    <Col sm="12" md="4" style={{marginBottom:"25px"}} key={course?.id}>
                                         <CourseCard data={course} />
                                     </Col>
                                 ))}
                             </Row>
                         </Col>
                     </Row>
+                   
                 </div>
+               
             </div>
         </>
     );

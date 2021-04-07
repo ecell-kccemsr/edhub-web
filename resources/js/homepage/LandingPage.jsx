@@ -95,7 +95,7 @@ function LandingPage ()  {
                     </Col>
                 </Row>
                 <Row style={{padding:"70px"}}>
-                    <Col xs="6" sm="2" lg="5" className="browse-section">
+                    <Col xs="12" sm="2" lg="5" className="browse-section">
                         <div className="browse-section-1">
                             <div className="browse-section-image-section">
                                 <img
@@ -114,11 +114,11 @@ function LandingPage ()  {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div className="arrow-landing-page">
                             <img src={arrow1} alt=""/>
                         </div>
                     </Col>
-                    <Col xs="6" sm="2" md="2" lg="5" className="browse-section">
+                    <Col xs="12" sm="2" md="2" lg="5" className="browse-section">
                         <div className="browse-section-1">
                             <div className="browse-section-image-section">
                                 <img
@@ -137,11 +137,11 @@ function LandingPage ()  {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div className="arrow-landing-page">
                         <img src={arrow2} alt=""/>
                         </div>
                     </Col>
-                    <Col xs="6" sm="2" md="2" lg="2" className="browse-section">
+                    <Col xs="12" sm="2" md="2" lg="2" className="browse-section">
                         <div className="browse-section-1">
                             <div className="browse-section-image-section">
                                 <img
@@ -187,12 +187,14 @@ function LandingPage ()  {
                 </div>
             </div>
             <Row className="course-card-landing-page-row">
-                                {Course.map(course => (
+                                                
+                                                {Course.map(course => (
                                     <Col sm="12" md="3" key={course?.id}>
                                         <CourseCard data={course} />
                                     </Col>
                                 ))}
                             </Row>
+                            
            
             <div className="popular-choice-section">
                 <h3 className="popular-choice-header">Get Started With Free Courses</h3>
