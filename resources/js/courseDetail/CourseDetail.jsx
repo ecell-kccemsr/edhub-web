@@ -1,5 +1,6 @@
-import React from "react";
-import { Col, Container, Row, List, Progress } from "reactstrap";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
+import { Col, Container, Row, List, Progress,Button } from "reactstrap";
 import stat1 from "../Images/courseDetail/stat1.png";
 import stat2 from "../Images/courseDetail/stat2.png";
 import playbutton from "../Images/courseDetail/playbutton.png";
@@ -13,6 +14,7 @@ import star1 from "../Images/courseDetail/1star.png";
 import user1 from "../Images/courseDetail/user1.png";
 import user2 from "../Images/courseDetail/user2.png";
 import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
+import CourseCard from "../components/course-card/CourseCard";
 
 const courseContent = [
     {
@@ -111,8 +113,19 @@ const userTestimonials = [
     }
 ];
 
-const CourseDetail = () => {
-    return (
+function CourseDetail ()  {
+    const [Course, setCourse] = useState([]);
+    useEffect(() => {
+        axios
+            .get("/api/courses")
+            .then(res => {
+                setCourse(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+        return (
         <>
             <div className="course-detail-section">
                 <div className="course-detail-hero-section">
@@ -502,6 +515,33 @@ const CourseDetail = () => {
                         </Col>
                     </Row>
                 </Container>
+                <div className="popular-choice-section-course-details">
+                <h3 className="popular-choice-header">Recommended for you</h3>
+                <Row className=" popular-choice-sub-section">
+                    <Col sm="12" md="6" lg="5">
+                        <p className="popular-choice-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Habitant volutpat elementum facilisi mattis
+                            et. At
+                        </p>
+                    </Col>
+                    <Col
+                        sm="12"
+                        md="6"
+                        lg="5"
+                        className="popular-choice-btn-container"
+                    >
+                        <Button className="popular-choice-btn">View all</Button>
+                    </Col>
+                </Row>
+                <Row className="course-card-landing-page-row">
+                                {Course.map(course => (
+                                    <Col sm="12" md="3" key={course?.id}>
+                                        <CourseCard data={course} />
+                                    </Col>
+                                ))}
+                            </Row>
+            </div>
             </div>
         </>
     );

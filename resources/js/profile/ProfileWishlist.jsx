@@ -31,9 +31,9 @@ function ProfileWishlist() {
                     {!loadingCourses && (
                         <Col sm="12" className="wishlist-profile-loading-col">
                             <h4>You don't have any courses in wishlist !</h4>
-                            <Link className="add-course-wishlist-btn" to="#">
+                            {/* <Link className="add-course-wishlist-btn" to="#">
                                 Add Course
-                            </Link>
+                            </Link> */}
                         </Col>
                     )}
                     {courseCategory &&

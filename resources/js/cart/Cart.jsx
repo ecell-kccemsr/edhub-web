@@ -1,9 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import { Container, Row, Col } from "reactstrap";
 import cart1 from "../Images/cart/cart1.png";
 import cart2 from "../Images/cart/cart2.png";
-const Cart = () => {
-    return (
+import CourseCard from "../components/course-card/CourseCard";
+
+function Cart ()  {
+    const [Course, setCourse] = useState([]);
+    useEffect(() => {
+        axios
+            .get("/api/courses")
+            .then(res => {
+                setCourse(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);    return (
         <>
             <div className="cart-section">
                 <Container className="containerSection">
@@ -174,7 +187,18 @@ const Cart = () => {
                             </div>
                         </Col>
                     </Row>
+                    <div className="you-may-like-cart">
+                    <h4>You may also like</h4>
+                    <Row className="course-card-landing-page-row">
+                                {Course.map(course => (
+                                    <Col sm="12" md="3" key={course?.id}>
+                                        <CourseCard data={course} />
+                                    </Col>
+                                ))}
+                            </Row>
+                </div>
                 </Container>
+                
             </div>
         </>
     );
