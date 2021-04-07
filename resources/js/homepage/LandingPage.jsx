@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import landingpage from "../Images/landingpage/landingpage.png";
 import { Link } from "react-router-dom";
 import icon1 from "../Images/landingpage/icon1.png";
@@ -17,6 +18,10 @@ import hd from "../Images/landingpage/hd.png";
 import hindustan from "../Images/landingpage/hindustan.png";
 import toi from "../Images/landingpage/toi.png";
 import courseCompany from "../Images/courseDetail/courseDetailCompany.png";
+import CourseCard from "../components/course-card/CourseCard";
+import arrow1 from "../Images/landingpage/Arrow1.png";
+import arrow2 from "../Images/landingpage/Arrow2.png";
+
 import {
     CarouselProvider,
     Slider,
@@ -36,7 +41,18 @@ import {
     CardSubtitle,
     CardBody
 } from "reactstrap";
-function LandingPage() {
+function LandingPage ()  {
+    const [Course, setCourse] = useState([]);
+    useEffect(() => {
+        axios
+            .get("/api/courses")
+            .then(res => {
+                setCourse(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
     return (
         <div className="landing-page-section">
             <div className="landing-page-div">
@@ -70,7 +86,7 @@ function LandingPage() {
                     </Row>
                 </div>
             </div>
-            {/* <div className="landing-page-help-section">
+            <div className="landing-page-help-section">
                 <Row className="landing-page-help-section-row">
                     <Col sm="12" md="8">
                         <h1 className="landing-page-help-section-header">
@@ -78,8 +94,8 @@ function LandingPage() {
                         </h1>
                     </Col>
                 </Row>
-                <Row>
-                    <Col xs="6" sm="2" lg="4" className="browse-section">
+                <Row style={{padding:"70px"}}>
+                    <Col xs="6" sm="2" lg="5" className="browse-section">
                         <div className="browse-section-1">
                             <div className="browse-section-image-section">
                                 <img
@@ -89,7 +105,7 @@ function LandingPage() {
                                 />
                                 <div className="browse-section-text">
                                     <p>BROWSE</p>
-                                    <p style={{ color: "#868686" }}>
+                                    <p style={{ color: "#868686"}}>
                                         Find your perfect
                                         <br /> course among
                                         <br />
@@ -98,8 +114,11 @@ function LandingPage() {
                                 </div>
                             </div>
                         </div>
+                        <div>
+                            <img src={arrow1} alt=""/>
+                        </div>
                     </Col>
-                    <Col xs="6" sm="2" md="2" lg="4" className="browse-section">
+                    <Col xs="6" sm="2" md="2" lg="5" className="browse-section">
                         <div className="browse-section-1">
                             <div className="browse-section-image-section">
                                 <img
@@ -118,8 +137,11 @@ function LandingPage() {
                                 </div>
                             </div>
                         </div>
+                        <div>
+                        <img src={arrow2} alt=""/>
+                        </div>
                     </Col>
-                    <Col xs="6" sm="2" md="2" lg="4" className="browse-section">
+                    <Col xs="6" sm="2" md="2" lg="2" className="browse-section">
                         <div className="browse-section-1">
                             <div className="browse-section-image-section">
                                 <img
@@ -163,68 +185,17 @@ function LandingPage() {
                         </Col>
                     </Row>
                 </div>
-            </div> */}
-            {/* <div className="d-flex slider-outmost-section">
-                <Card className="slider-section">
-                    <CardImg
-                        top
-                        width="100%"
-                        src={cardimg}
-                        alt="Card image cap"
-                        className="slider-section-image"
-                    />
-                    <CardBody>
-                        <CardTitle tag="h5">
-                            <div className="d-flex course-content">
-                                <div className="course-title ">Udemy</div>
-                                <b>Free</b>
-                                <div>
-                                    $ <strike>250</strike>
-                                </div>
-                            </div>
-                        </CardTitle>
-                        <CardText>
-                            <p className="description">
-                                UI/UX Design | How to design with professional.
-                            </p>
-                        </CardText>
-                        <div className="d-flex">
-                            <div className="d-flex">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons"> 20 Lessons</div>
-                            </div>
-                            <div className="d-flex ml-2">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons">
-                                    Guided Courses
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={Vector} alt="" />
-                                <div className="ml-3 compare">
-                                    Add to compare
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="hr-line" />
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={star} alt="" className="" />
-                                <div className="ml-3 compare"> 32 Reviews</div>
-                                <img
-                                    src={Vector}
-                                    alt=""
-                                    style={{ marginLeft: "30px" }}
-                                />
-                            </div>
-                        </div>
-                    </CardBody>
-                </Card>
-            </div> */}
+            </div>
+            <Row className="course-card-landing-page-row">
+                                {Course.map(course => (
+                                    <Col sm="12" md="3" key={course?.id}>
+                                        <CourseCard data={course} />
+                                    </Col>
+                                ))}
+                            </Row>
+           
             <div className="popular-choice-section">
-                <h3 className="popular-choice-header">Popular Choices</h3>
+                <h3 className="popular-choice-header">Get Started With Free Courses</h3>
                 <Row className=" popular-choice-sub-section">
                     <Col sm="12" md="6" lg="5">
                         <p className="popular-choice-content">
@@ -243,65 +214,13 @@ function LandingPage() {
                     </Col>
                 </Row>
             </div>
-            {/* <div className="d-flex slider-outmost-section">
-                <Card className="slider-section">
-                    <CardImg
-                        top
-                        width="100%"
-                        src={cardimg}
-                        alt="Card image cap"
-                        className="slider-section-image"
-                    />
-                    <CardBody>
-                        <CardTitle tag="h5">
-                            <div className="d-flex course-content">
-                                <div className="course-title ">Udemy</div>
-                                <b>Free</b>
-                                <div>
-                                    $ <strike>250</strike>
-                                </div>
-                            </div>
-                        </CardTitle>
-                        <CardText>
-                            <p className="description">
-                                UI/UX Design | How to design with professional.
-                            </p>
-                        </CardText>
-                        <div className="d-flex">
-                            <div className="d-flex">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons"> 20 Lessons</div>
-                            </div>
-                            <div className="d-flex ml-2">
-                                <img src={Vector} alt="" />
-                                <div className="ml-2 lessons">
-                                    Guided Courses
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={Vector} alt="" />
-                                <div className="ml-3 compare">
-                                    Add to compare
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="hr-line" />
-                        <div>
-                            <div className="d-flex mt-3">
-                                <img src={star} alt="" className="" />
-                                <div className="ml-3 compare"> 32 Reviews</div>
-                                <img
-                                    src={Vector}
-                                    alt=""
-                                    style={{ marginLeft: "30px" }}
-                                />
-                            </div>
-                        </div>
-                    </CardBody>
-                </Card>
-            </div> */}
+            <Row className="course-card-landing-page-row">
+                                {Course.map(course => (
+                                    <Col sm="12" md="3" key={course?.id}>
+                                        <CourseCard data={course} />
+                                    </Col>
+                                ))}
+                            </Row>
             <div className="promotions-section">
                 <div className="community-divison">
                     <div className="community-divison-content">
@@ -435,7 +354,7 @@ function LandingPage() {
                 </CarouselProvider>
             </div>
             <div className="popular-choice-section">
-                <h3 className="popular-choice-header">Popular Choices</h3>
+                <h3 className="popular-choice-header">Recommended for you</h3>
                 <Row className=" popular-choice-sub-section">
                     <Col sm="12" md="6" lg="5">
                         <p className="popular-choice-content">
@@ -453,7 +372,15 @@ function LandingPage() {
                         <Button className="popular-choice-btn">View all</Button>
                     </Col>
                 </Row>
+                <Row className="course-card-landing-page-row">
+                                {Course.map(course => (
+                                    <Col sm="12" md="3" key={course?.id}>
+                                        <CourseCard data={course} />
+                                    </Col>
+                                ))}
+                            </Row>
             </div>
+
         </div>
     );
 }

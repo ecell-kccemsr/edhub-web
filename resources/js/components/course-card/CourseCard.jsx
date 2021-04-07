@@ -22,6 +22,7 @@ const CourseCard = ({ data }) => {
                 });
         }, []);
     }
+    
     console.log(data);
     return (
         <>
