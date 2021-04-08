@@ -29,6 +29,7 @@ import GuideModal from "../guide/Guide";
 import ProfileBasic from "../profile/ProfileBasic";
 import ProfileWishlist from "../profile/ProfileWishlist";
 import ProfileCourses from "../profile/ProfileCourses";
+import Degree from "../degree/Degree";
 
 const App = props => {
     return (
@@ -125,8 +126,7 @@ const App = props => {
                         component={courseCategory}
                     />
                     <Route path="/guide" exact component={GuideModal} />
-
-                    <Route path="/footer" exact component={Newfooter} />
+                    <Route path="/degree" exact component={Degree} />
                 </Layout>
             </Switch>
         </Fragment>

@@ -24,7 +24,7 @@ function LandingPage() {
 
             <HelpSection />
 
-            <PopularChoice title="Popular Choices" />
+            {course && <PopularChoice data={course} title="Popular Choices" />}
             {/* <Row className="course-card-landing-page-row">
                 {course.map(course => (
                     <Col sm="12" md="3" key={course?.id}>
@@ -32,7 +32,12 @@ function LandingPage() {
                     </Col>
                 ))}
             </Row> */}
-            <PopularChoice title="Get Started With Free Courses" />
+            {course && (
+                <PopularChoice
+                    data={course}
+                    title="Get Started With Free Courses"
+                />
+            )}
 
             {/* <Row className="course-card-landing-page-row">
                 {course.map(course => (
@@ -45,7 +50,9 @@ function LandingPage() {
 
             <Testimonial />
 
-            <PopularChoice title="Recommended for you" />
+            {course && (
+                <PopularChoice data={course} title="Recommended for you" />
+            )}
         </div>
     );
 }

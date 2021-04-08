@@ -22,8 +22,7 @@ const CourseCard = ({ data }) => {
                 });
         }, []);
     }
-    
-    console.log(data);
+
     return (
         <>
             <div className="coursecard-section h-100">
@@ -46,26 +45,29 @@ const CourseCard = ({ data }) => {
                         $ <strike>{data?.price}</strike>
                     </h5>
                 </div>
-                <h4 className="card-title">{data?.title}</h4>
-                <div className="card-overview">
-                    <div>
-                        <img src={play} alt="" />
-                        <p>20 Lessons</p>
+                <div>
+                    <h4 className="card-title">{data?.title}</h4>
+                    <div className="card-overview">
+                        <div>
+                            <img src={play} alt="" />
+                            <p>20 Lessons</p>
+                        </div>
+                        <div>
+                            <img src={guide} alt="" />
+                            <p>Guided Course</p>
+                        </div>
                     </div>
-                    <div>
-                        <img src={guide} alt="" />
-                        <p>Guided Course</p>
+                    <div className="compare-section">
+                        <img src={addtoCompare} alt="" />
+                        <h5>Add to compare</h5>
                     </div>
+                    <hr />
                 </div>
-                <div className="compare-section">
-                    <img src={addtoCompare} alt="" />
-                    <h5>Add to compare</h5>
-                </div>
-                <hr />
+
                 <div className="coursecard-footer">
                     <div>
                         <img src={star} alt="" />
-                        <p>{reviews.rating} Reviews</p>
+                        <p>{reviews?.rating} Reviews</p>
                     </div>
                     <img src={reviewArrow} alt="" />
                 </div>

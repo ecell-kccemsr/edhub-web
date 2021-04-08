@@ -148,6 +148,16 @@
             }
         }
     }
+    .landingpage-popular-card-carousel {
+        .slick-dots {
+            display: none !important;
+        }
+
+        .carousel-slider-div {
+            display: flex !important;
+            justify-content: center;
+        }
+    }
     .slider-outmost-section {
         padding: 50px;
 

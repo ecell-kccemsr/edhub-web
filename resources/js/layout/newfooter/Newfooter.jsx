@@ -7,7 +7,7 @@ import udemy from "../../Images/footer/udemy-icon 1.png";
 import amazon from "../../Images/footer/amazon-icon 1.png";
 function Newfooter() {
     return (
-        <div className="footer-section">
+        <div className="footer-section-new">
             <div className="footer-header-content">
                 <b>
                     Discover various online courses from top universities,
