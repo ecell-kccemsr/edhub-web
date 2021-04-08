@@ -68,36 +68,51 @@
         }
     }
     .landing-page-help-section {
-        .landing-page-help-section-row {
-            justify-content: center;
-            .landing-page-help-section-header {
-                font-weight: 700;
-                text-align: center;
-                font-family: "Poppins", sans-serif;
-                font-size: 52px;
-                color: #1f1f1e;
-            }
+        .landing-page-help-section-header {
+            font-weight: 700;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            font-size: 40px;
+            color: #1f1f1e;
+            margin: 40px 0;
         }
-
-        .browse-section {
-            display: flex;
-            justify-content: space-evenly;
-            .browse-section-image {
-                margin-left: 30px;
-                padding: 30px;
-                width: 150px;
-                height: 150px;
-                border-radius: 20px;
-                background-color: #fff;
-                box-shadow: 0px 4px 8px -1px #8888;
-                align-items: center;
+        .landingpage-help-section-row {
+            align-items: baseline;
+            justify-content: center;
+            .image-container {
+                .help-section-main-img {
+                    box-shadow: -2px 2px 5px 0px darkgrey;
+                    background: #f6f7f8;
+                    padding: 20px;
+                    border-radius: 4px;
+                    max-width: 100%;
+                    height: 100px;
+                    width: 100px;
+                    object-fit: contain;
+                }
+                .text-container {
+                    text-align: center;
+                    h4 {
+                        color: #1f1f1e;
+                        font-size: 18px;
+                        margin-top: 30px;
+                    }
+                    p {
+                        color: #1f1f1e;
+                    }
+                }
             }
-            .browse-section-text {
-                color: black;
-                font-family: "Poppins", sans-serif;
+            .image-one,
+            .image-two,
+            .image-three {
                 text-align: center;
-                margin-top: 20px;
-                font-size: 22px;
+            }
+
+            .landingpage-help-section-arrow-image {
+                img {
+                    max-width: 100%;
+                    object-fit: contain;
+                }
             }
         }
     }
@@ -296,7 +311,11 @@
         }
     }
 }
-
+@media only screen and (max-width: 1000px) {
+    .landingpage-help-section-arrow-image {
+        display: none;
+    }
+}
 @media only screen and (max-width: 800px) {
     .landing-page-section {
         .landing-page-div {
