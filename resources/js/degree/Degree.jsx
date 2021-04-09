@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Col, Container, Row, List, Progress, Button, Nav, NavItem, NavLink } from "reactstrap";
+import {
+    Col,
+    Container,
+    Row,
+    List,
+    Progress,
+    Button,
+    Nav,
+    NavItem,
+    NavLink
+} from "reactstrap";
 import harvard from "../Images/footer/harvard.png";
 import author from "../Images/courseDetail/author.png";
 import stat1 from "../Images/courseDetail/stat1.png";
@@ -18,6 +28,7 @@ import CourseCard from "../components/course-card/CourseCard";
 import vector1 from "../Images/degree/CompleteOnline.png";
 import vector2 from "../Images/degree/Group.png";
 import vector3 from "../Images/degree/Group 470.png";
+import star from "../Images/courseCategory/star.png";
 const courseContent = [
     {
         id: "9198ce8a-772a-425d-8cd8-86ade1d1f0c8",
@@ -111,6 +122,7 @@ const authorOverview = [
 
 function Degree() {
     const [Course, setCourse] = useState([]);
+    const [data, setData] = useState([]);
     useEffect(() => {
         axios
             .get("/api/courses")
@@ -120,13 +132,24 @@ function Degree() {
             .catch(err => {
                 console.log(err);
             });
+        if (data) {
+            axios
+                .get(`/api/courses/${data.id}`)
+                .then(res => {
+                    console.log(res);
+                    setData(res.data.data[0]);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
     }, []);
     return (
         <div className="course-detail-section">
             <div className="course-detail-hero-section">
                 <Container className="containerClass">
                     <Row>
-                        <Col sm="12" md="8">
+                        <Col sm="12" md="8" lg="9">
                             <div className="d-flex university-btn-section">
                                 <img
                                     src="https://www.wemu.org/sites/wemu/files/202004/U-M-logo-preview.jpg"
@@ -168,6 +191,36 @@ function Degree() {
                                         Provided By
                                     </h5>
                                     <img src={courseDetailCompany} alt="" />
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs="12" md="6" lg="3">
+                            <div className="add-to-cart-section-degree">
+                                <img
+                                    src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg"
+                                    className="card-header-image-degree"
+                                />
+                                <div>
+                                    <div>
+                                        <img src={star} alt="" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 style={{ fontWeight: "400" }}>$400</h5>
+                                    <h6>EMI Available*</h6>
+                                    <p>
+                                        Get 5% extra cashback if you buy through
+                                        us
+                                    </p>
+
+                                    <h5>April,5</h5>
+                                    <p>Start Date</p>
+
+                                    <h5>8 Months*</h5>
+                                    <p>programme Duration</p>
+
+                                    <h5>Online Bootcamp</h5>
+                                    <p>Learning format</p>
                                 </div>
                             </div>
                         </Col>
@@ -229,39 +282,63 @@ function Degree() {
                 </div>
             </div>
             <Container className="containerClass">
-            <Nav>
-        <NavItem>
-          <NavLink className="navlink-degree" href="#Overview">Overview</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-degree" href="#ProgramCurriculum">Program curriculum</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-degree" href="#Instructors"> Instructors</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-degree" href="#Benefits"> Benefits</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-degree" href="#fees"> fees </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-degree" href="#Reviews"> Reviews</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-degree" href="#FAQs"> FAQs</NavLink>
-        </NavItem>
-      </Nav>
-</Container>
+                <Nav>
+                    <NavItem>
+                        <NavLink className="navlink-degree" href="#Overview">
+                            Overview
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink
+                            className="navlink-degree"
+                            href="#ProgramCurriculum"
+                        >
+                            Program curriculum
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="navlink-degree" href="#Instructors">
+                            {" "}
+                            Instructors
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="navlink-degree" href="#Benefits">
+                            {" "}
+                            Benefits
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="navlink-degree" href="#fees">
+                            {" "}
+                            fees{" "}
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="navlink-degree" href="#Reviews">
+                            {" "}
+                            Reviews
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="navlink-degree" href="#FAQs">
+                            {" "}
+                            FAQs
+                        </NavLink>
+                    </NavItem>
+                </Nav>
+            </Container>
             <Container className="containerClass">
                 <Row>
                     <Col sm="12" md="8">
                         <div
                             className="course-overview-card"
                             style={{ backgroundColor: "transparent" }}
-                           
                         >
-                            <h5 className="course-overview-card-title" id="Overview">
+                            <h5
+                                className="course-overview-card-title"
+                                id="Overview"
+                            >
                                 Skills you'll gain
                             </h5>
                             <div className="course-overview-card-descriptionbox">
@@ -298,7 +375,10 @@ function Degree() {
                 <Row>
                     <Col sm="12" md="8" lg="9">
                         <Container className="containerClass">
-                            <h5 className="program-details-header" id="ProgramCurriculum">
+                            <h5
+                                className="program-details-header"
+                                id="ProgramCurriculum"
+                            >
                                 Program Details
                             </h5>
                             <p className="program-details-para">
@@ -413,8 +493,8 @@ function Degree() {
             <h5
                 className="course-content-top-header container"
                 style={{ marginTop: "30px", marginBottom: "0px" }}
-         id="Instructors"
-         >
+                id="Instructors"
+            >
                 Instructors
             </h5>
             <div className="d-flex" style={{ marginLeft: "280px" }}>
@@ -493,9 +573,11 @@ function Degree() {
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <h5 className="course-content-top-header" id="Benefits">
+                            <h5
+                                className="course-content-top-header"
+                                id="Benefits"
+                            >
                                 Benefits
-                                
                             </h5>
                             <div className="author-overview">
                                 <div className="author-overview-list">
@@ -545,7 +627,10 @@ function Degree() {
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <h5 className="course-content-top-header" id="Reviews">
+                            <h5
+                                className="course-content-top-header"
+                                id="Reviews"
+                            >
                                 Reviews
                             </h5>
                             <div className="course-detail-review-section">
@@ -624,7 +709,10 @@ function Degree() {
             <Container className="containerClass">
                 <Row>
                     <Col sm="12" md="8">
-                        <h5 className="course-content-top-header text-center pt-2" id="FAQs">
+                        <h5
+                            className="course-content-top-header text-center pt-2"
+                            id="FAQs"
+                        >
                             FAQs
                         </h5>
                         <div
