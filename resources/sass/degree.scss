@@ -119,3 +119,12 @@
     background-color: white;
     margin: 0px;
 }
+.navlink-degree {
+    color: #818181;
+    font-size: 20px;
+    &:hover {
+        color: #000;
+        font-size: 24px;
+        border-bottom: 1px solid #000;
+    }
+}

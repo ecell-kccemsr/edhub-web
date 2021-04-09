@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Col, Container, Row, List, Progress, Button } from "reactstrap";
+import { Col, Container, Row, List, Progress, Button, Nav, NavItem, NavLink } from "reactstrap";
 import harvard from "../Images/footer/harvard.png";
 import author from "../Images/courseDetail/author.png";
 import stat1 from "../Images/courseDetail/stat1.png";
@@ -228,15 +228,40 @@ function Degree() {
                     </div>
                 </div>
             </div>
-
+            <Container className="containerClass">
+            <Nav>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#Overview">Overview</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#ProgramCurriculum">Program curriculum</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#Instructors"> Instructors</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#Benefits"> Benefits</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#fees"> fees </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#Reviews"> Reviews</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#FAQs"> FAQs</NavLink>
+        </NavItem>
+      </Nav>
+</Container>
             <Container className="containerClass">
                 <Row>
                     <Col sm="12" md="8">
                         <div
                             className="course-overview-card"
                             style={{ backgroundColor: "transparent" }}
+                           
                         >
-                            <h5 className="course-overview-card-title">
+                            <h5 className="course-overview-card-title" id="Overview">
                                 Skills you'll gain
                             </h5>
                             <div className="course-overview-card-descriptionbox">
@@ -273,7 +298,7 @@ function Degree() {
                 <Row>
                     <Col sm="12" md="8" lg="9">
                         <Container className="containerClass">
-                            <h5 className="program-details-header">
+                            <h5 className="program-details-header" id="ProgramCurriculum">
                                 Program Details
                             </h5>
                             <p className="program-details-para">
@@ -388,7 +413,8 @@ function Degree() {
             <h5
                 className="course-content-top-header container"
                 style={{ marginTop: "30px", marginBottom: "0px" }}
-            >
+         id="Instructors"
+         >
                 Instructors
             </h5>
             <div className="d-flex" style={{ marginLeft: "280px" }}>
@@ -467,8 +493,9 @@ function Degree() {
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <h5 className="course-content-top-header">
+                            <h5 className="course-content-top-header" id="Benefits">
                                 Benefits
+                                
                             </h5>
                             <div className="author-overview">
                                 <div className="author-overview-list">
@@ -489,7 +516,7 @@ function Degree() {
                                     </List>
                                 </div>
                             </div>
-                            <h5>Fees and Financing</h5>
+                            <h5 id="fees">Fees and Financing</h5>
                             <p className="course-author-designations mb-0">
                                 Lorem ipsum dolor sit amet consectetur,
                                 adipisicing elit. Eveniet reprehenderit,
@@ -518,7 +545,7 @@ function Degree() {
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <h5 className="course-content-top-header">
+                            <h5 className="course-content-top-header" id="Reviews">
                                 Reviews
                             </h5>
                             <div className="course-detail-review-section">
@@ -597,7 +624,7 @@ function Degree() {
             <Container className="containerClass">
                 <Row>
                     <Col sm="12" md="8">
-                        <h5 className="course-content-top-header text-center pt-2">
+                        <h5 className="course-content-top-header text-center pt-2" id="FAQs">
                             FAQs
                         </h5>
                         <div
