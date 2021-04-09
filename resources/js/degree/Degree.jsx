@@ -15,7 +15,7 @@ import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png"
 import prereq from "../Images/courseDetail/prereq.png";
 import user1 from "../Images/courseDetail/user1.png";
 import CourseCard from "../components/course-card/CourseCard";
-import vector1 from "../Images/degree/Vector.png";
+import vector1 from "../Images/degree/CompleteOnline.png";
 import vector2 from "../Images/degree/Group.png";
 import vector3 from "../Images/degree/Group 470.png";
 const courseContent = [

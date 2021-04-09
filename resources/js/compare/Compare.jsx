@@ -69,14 +69,24 @@ const Compare = () => {
                         <td>
                             <p className="compare-title">Course Rating</p>
                         </td>
-                        <td>
-                            <img src={star4} alt="" />
+                        <td >
+                            <div style={{display:"flex"}}>
+                               <img src={star4} alt="" />
+                            <p>5.0</p>   
+                            </div>
+                          
                         </td>
-                        <td>
-                            <img src={star4} alt="" />
+                        <td >
+                        <div style={{display:"flex"}}>
+                               <img src={star4} alt="" />
+                            <p>5.0</p>   
+                            </div>
                         </td>
-                        <td>
-                            <img src={star4} alt="" />
+                        <td >
+                        <div style={{display:"flex"}}>
+                               <img src={star4} alt="" />
+                            <p>5.0</p>   
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -85,6 +95,7 @@ const Compare = () => {
                         </td>
                         <td>
                             <img src={courseDetailCompany} alt="" />
+                            
                         </td>
                         <td>
                             <img src={courseDetailCompany} alt="" />
@@ -171,12 +182,21 @@ const Compare = () => {
                         </td>
                         <td>
                             <p>Raj Sharma </p>
+                            <button className="compare-buy-btn"> Buy Now</button>
+                            <button className="compare-addCart-btn"> Add To Cart</button>
+                    
                         </td>
                         <td>
                             <p>Raj Sharma </p>
+                            <button className="compare-buy-btn"> Buy Now</button>
+                            <button className="compare-addCart-btn"> Add To Cart</button>
+                    
                         </td>
                         <td>
                             <p>Raj Sharma </p>
+                            <button className="compare-buy-btn"> Buy Now</button>
+                            <button className="compare-addCart-btn"> Add To Cart</button>
+                    
                         </td>
                     </tr>
                 </table>

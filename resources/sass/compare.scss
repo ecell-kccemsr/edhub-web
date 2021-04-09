@@ -15,6 +15,29 @@
                 .compare-title {
                     font-weight: 500;
                 }
+                .compare-buy-btn {
+                    display: block;
+                    border: none;
+                    outline: none;
+                    background: #f05454;
+                    width: 100%;
+                    padding: 10px;
+                    color: #fff;
+                    border-radius: 4px;
+                    margin-top: 20px;
+                }
+                .compare-addCart-btn {
+                    display: block;
+                    border: none;
+                    outline: #3c64b1;
+                    outline: 1px solid #3c64b1;
+                    background: #f6f7f8;
+                    width: 100%;
+                    padding: 10px;
+                    color: #3c64b1;
+                    border-radius: 4px;
+                    margin-top: 20px;
+                }
                 .compare-card {
                     background: #eeeeee;
                     padding: 20px;
