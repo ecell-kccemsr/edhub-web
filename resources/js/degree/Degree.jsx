@@ -29,6 +29,7 @@ import vector1 from "../Images/degree/CompleteOnline.png";
 import vector2 from "../Images/degree/Group.png";
 import vector3 from "../Images/degree/Group 470.png";
 import star from "../Images/courseCategory/star.png";
+import ellipse from "../Images/degree/Ellipse.png";
 const courseContent = [
     {
         id: "9198ce8a-772a-425d-8cd8-86ade1d1f0c8",
@@ -194,9 +195,10 @@ function Degree() {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs="12" md="6" lg="3">
+                        <Col xs="12" md="4" lg="3">
                             <div className="add-to-cart-section-degree">
                                 <img
+                                style={{marginBottom:"5px"}}
                                     src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg"
                                     className="card-header-image-degree"
                                 />
@@ -205,28 +207,56 @@ function Degree() {
                                         <img src={star} alt="" />
                                     </div>
                                 </div>
-                                <div>
-                                    <h5 style={{ fontWeight: "400" }}>$400</h5>
+                                <div className="card-section-degree-content">
+                                    <div className="card-section-degree-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                         <h5>$25000 /-</h5>   
+                                        </div>
+                                     
                                     <h6>EMI Available*</h6>
                                     <p>
-                                        Get 5% extra cashback if you buy through
+                                        Get <strong> 5% extra cashback</strong>  if you buy through
                                         us
                                     </p>
-
-                                    <h5>April,5</h5>
-                                    <p>Start Date</p>
-
-                                    <h5>8 Months*</h5>
-                                    <p>programme Duration</p>
-
-                                    <h5>Online Bootcamp</h5>
-                                    <p>Learning format</p>
+                                    </div>
+                                    <div className="card-section-degree-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                         <h5>April 5, 2021</h5>   
+                                        </div>
+                                     
+                                    <h6>Start Date</h6>
+                                    </div>
+                                    <div className="card-section-degree-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                         <h5>8 Months*</h5>   
+                                        </div>
+                                     
+                                    <h6>programme Duration</h6>
+                                   
+                                    </div>
+                                    <div className="card-section-degree-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                         <h5>Online Bootcamp</h5>   
+                                        </div>
+                                     
+                                    <h6>Learning format</h6>
+                                    </div>
                                 </div>
+                                <div>
+                                   <button className="card-section-degree-buy-btn"> Buy Now</button>
+                                    <button className="card-section-degree-addCart-btn"> Add To Cart</button>
+                                   </div>
+
                             </div>
                         </Col>
                     </Row>
                 </Container>
             </div>
+<div style={{backgroundColor:"#F6F7F8"}}>
 
             <div className="d-flex degree-subsection">
                 <div className="degree-subsection-indv-div">
@@ -371,6 +401,7 @@ function Degree() {
                     </Col>
                 </Row>
             </Container>
+            </div>
             <div className="program-details-section">
                 <Row>
                     <Col sm="12" md="8" lg="9">
