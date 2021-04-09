@@ -23,13 +23,12 @@ import Checkout from "../checkout/Checkout";
 import CourseDetail from "../courseDetail/CourseDetail";
 import LandingPage from "../homepage/LandingPage";
 import courseCategory from "../courseCategory/courseCategory";
-import Newfooter from "../layout/newfooter/Newfooter";
 import GuideModal from "../guide/Guide";
-
 import ProfileBasic from "../profile/ProfileBasic";
 import ProfileWishlist from "../profile/ProfileWishlist";
 import ProfileCourses from "../profile/ProfileCourses";
 import Degree from "../degree/Degree";
+import LayoutCourse from "../layoutCourse/LayoutCourse";
 
 const App = props => {
     return (
@@ -128,6 +127,9 @@ const App = props => {
                     <Route path="/guide" exact component={GuideModal} />
                     <Route path="/degree" exact component={Degree} />
                 </Layout>
+                {/* <LayoutCourse>
+                    
+                </LayoutCourse> */}
             </Switch>
         </Fragment>
     );

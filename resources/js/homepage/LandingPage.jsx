@@ -9,6 +9,7 @@ import Testimonial from "./landingPageComponents/Testimonial";
 function LandingPage() {
     const [course, setCourse] = useState([]);
     useEffect(() => {
+        console.log("landing");
         axios
             .get("/api/courses")
             .then(res => {
