@@ -607,7 +607,7 @@ function CourseDetail(props) {
                                             md="2"
                                             className="rating-container"
                                         >
-                                            <h4>{singleCourse.rating}</h4>
+                                            <h4>{singleCourse?.rating}</h4>
                                             <img src={star4} alt="" />
                                             <p>course rating</p>
                                         </Col>
