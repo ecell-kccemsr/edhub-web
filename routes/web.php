@@ -34,6 +34,7 @@ Route::view('/questionpaper/{category_slug}', 'app');
 
 Route::view('/exam/calendar', 'app');
 Route::view('/landingPage','app');
+Route::view('/courseDetail/{course_slug}','app');
 Route::view('/profile/basic','app');
 Route::view('/profile/wishlist','app');
 Route::view('/profile/my-courses','app');
@@ -43,7 +44,6 @@ Route::view('/notification','app');
 Route::view('/compare','app');
 Route::view('/cart','app');
 Route::view('/checkout','app');
-Route::view('/courseDetail','app');
 Route::view('/course-category','app');
 Route::view('/guide','app');
 Route::view('/degree','app');

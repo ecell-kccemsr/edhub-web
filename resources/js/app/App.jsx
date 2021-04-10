@@ -114,7 +114,7 @@ const App = props => {
                     <Route path="/cart" exact component={Cart} />
                     <Route path="/checkout" exact component={Checkout} />
                     <Route
-                        path="/courseDetail"
+                        path="/courseDetail/:course_slug"
                         exact
                         component={CourseDetail}
                     />

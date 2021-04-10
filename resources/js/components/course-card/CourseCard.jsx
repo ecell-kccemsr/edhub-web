@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import cardHeader from "../../Images/courseCategory/cardHeader.png";
 import cardHeaderCompany from "../../Images/courseCategory/card-header-company.png";
 import play from "../../Images/courseCategory/play.png";
@@ -69,7 +70,11 @@ const CourseCard = ({ data }) => {
                         <img src={star} alt="" />
                         <p>{reviews?.rating} Reviews</p>
                     </div>
-                    <img src={reviewArrow} alt="" />
+                    <Link 
+                    to={`/courseDetail/${data?.slug}`}
+                    >
+                     <img src={reviewArrow} alt="" />
+                    </Link>
                 </div>
             </div>
         </>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Button } from "reactstrap";
+import { Link } from "react-router-dom";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -34,7 +36,10 @@ const PopularChoice = ({ title, data }) => {
                         lg="5"
                         className="popular-choice-btn-container"
                     >
-                        <Button className="popular-choice-btn">View all</Button>
+                        <Link 
+                        to={`/course-category`}>
+                          <Button className="popular-choice-btn">View all</Button>
+                        </Link>
                     </Col>
                 </Row>
             </div>

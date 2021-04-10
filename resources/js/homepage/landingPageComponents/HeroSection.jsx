@@ -26,9 +26,14 @@ const HeroSection = () => {
                                 id=""
                                 placeholder="Search your course"
                             />
-                            <button>
+                            <Link
+                        to={`/course-category`}
+                        >
+                              <button>
                                 <i class="fas fa-search"></i>
                             </button>
+                            </Link>
+                          
                         </div>
                     </Col>
                 </Row>
