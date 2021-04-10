@@ -70,10 +70,8 @@ const CourseCard = ({ data }) => {
                         <img src={star} alt="" />
                         <p>{reviews?.rating} Reviews</p>
                     </div>
-                    <Link 
-                    to={`/courseDetail/${data?.slug}`}
-                    >
-                     <img src={reviewArrow} alt="" />
+                    <Link to={`/courseDetail/${data?.slug}`}>
+                        <img src={reviewArrow} alt="" />
                     </Link>
                 </div>
             </div>

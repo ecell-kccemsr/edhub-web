@@ -114,18 +114,26 @@ const userTestimonials = [
     }
 ];
 
-function CourseDetail() {
-const [course_slug, setCourseSlug] = useState("");
+function CourseDetail(props) {
+    const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
+    const [singleCourse, setSingleCourse] = useState([]);
+
     useEffect(() => {
+        const { course_slug } = props.match.params;
+        setCourseSlug(course_slug);
         axios
             .get(`/api/courses/${course_slug}`)
             .then(res => {
-                setCourse(res.data.data);
+                console.log(res);
+                setSingleCourse(res.data.data);
             })
             .catch(err => {
                 console.log(err);
             });
+        axios.get("/api/courses").then(res => {
+            setCourse(res.data.data);
+        });
     }, []);
     return (
         <>
@@ -134,92 +142,224 @@ const [course_slug, setCourseSlug] = useState("");
                     <Container className="containerClass">
                         <Row>
                             <Col sm="12" md="8">
-                                
                                 <>
-                                <img src={courseDetailCompany} alt="" />
-                                <h2>
-                                The Complete Android R + Java Developer Course™ : 2021
-                                </h2>
-                                <h4>Course by: Dr. makn vjyvhj</h4>
-                                <h5>Subtitiles</h5>
-                                <h6>English , Hindi , Espanol</h6>
-                                <button className="share-btn">Share</button>
-                                <button className="compare-btn">
-                                    Add to compare
-                                </button>
+                                    <img src={courseDetailCompany} alt="" />
+                                    <h2>{singleCourse?.title}</h2>
+                                    {singleCourse.course_instructor &&
+                                        singleCourse.course_instructor.length >
+                                            0 &&
+                                        singleCourse.course_instructor.map(
+                                            courseinstructor => (
+                                                <h4>
+                                                    {courseinstructor?.name}
+                                                </h4>
+                                            )
+                                        )}
+
+                                    <h5>Subtitiles</h5>
+                                    <h6>English , Hindi , Espanol</h6>
+                                    <button className="share-btn">Share</button>
+                                    <button className="compare-btn">
+                                        Add to compare
+                                    </button>
                                 </>
-                              
                             </Col>
                             <Col xs="12" md="4" lg="3">
-                            <div className="add-to-cart-section-details">
-                                <img
-                                style={{marginBottom:"5px"}}
-                                    src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg"
-                                    className="card-header-image-details"
-                                />
-                             
-                                <div className="card-section-details-content">
-                                    <div className="card-section-details-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                         <h5>$25000 /-</h5>   
-                                         <p style={{color:"#7B7B7B", padding:"17px"}}> 96% off</p>
+                                <div className="add-to-cart-section-details">
+                                    <img
+                                        style={{ marginBottom: "5px" }}
+                                        src={singleCourse?.image}
+                                        className="card-header-image-details"
+                                    />
 
+                                    <div className="card-section-details-content">
+                                        <div className="card-section-details-content-price">
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    marginBottom: "-10px"
+                                                }}
+                                            >
+                                                <h5>
+                                                    ${singleCourse.price} /-
+                                                </h5>
+                                                <p
+                                                    style={{
+                                                        color: "#7B7B7B",
+                                                        padding: "17px"
+                                                    }}
+                                                >
+                                                    {" "}
+                                                    96% off
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="card-section-details-content-price">
+                                            <p>
+                                                Get{" "}
+                                                <strong>
+                                                    {" "}
+                                                    5% extra cashback
+                                                </strong>{" "}
+                                                if you buy through us
+                                            </p>
+                                        </div>
+                                        <div style={{ marginTop: "-10px" }}>
+                                            <img src={star} alt="" />
+                                        </div>
+                                        <div className="card-section-details-content-price">
+                                            <div style={{ marginTop: "-20px" }}>
+                                                {singleCourse.course_instructor &&
+                                                    singleCourse
+                                                        .course_instructor
+                                                        .length > 0 &&
+                                                    singleCourse.course_instructor.map(
+                                                        courseinstructor => (
+                                                            <h5>
+                                                                {
+                                                                    courseinstructor.name
+                                                                }
+                                                            </h5>
+                                                        )
+                                                    )}
+                                                <p style={{ color: "#818181" }}>
+                                                    Course provided by:
+                                                </p>
+                                                <div className="course-provider">
+                                                    <img
+                                                        src={
+                                                            singleCourse
+                                                                ?.course_provider
+                                                                ?.image
+                                                        }
+                                                        alt=""
+                                                        style={{
+                                                            height: "30px",
+                                                            padding: "1px",
+                                                            width: "100px"
+                                                        }}
+                                                    />
+                                                </div>
+                                                {/* {singleCourse.course_provider &&
+                                                    singleCourse.course_provider
+                                                        .length > 0 &&
+                                                    singleCourse.course_provider.map(
+                                                        course_provider => (
+                                                            <img
+                                                                src={
+                                                                    course_provider.image
+                                                                }
+                                                                alt=""
+                                                            />
+                                                        )
+                                                    )} */}
+                                            </div>
+                                        </div>
+                                        <div className="card-section-details-content-price">
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    marginBottom: "-10px"
+                                                }}
+                                            >
+                                                <img
+                                                    src={ellipse}
+                                                    alt="ellipse"
+                                                    style={{
+                                                        margin:
+                                                            "5px 11px 23px 0px"
+                                                    }}
+                                                />
+                                                <h6>Full time access</h6>
+                                            </div>
+                                        </div>
+                                        <div className="card-section-details-content-price">
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    marginBottom: "-10px"
+                                                }}
+                                            >
+                                                <img
+                                                    src={ellipse}
+                                                    alt="ellipse"
+                                                    style={{
+                                                        margin:
+                                                            "5px 11px 23px 0px"
+                                                    }}
+                                                />
+                                                <h6>Mentored Course</h6>
+                                            </div>
+                                        </div>
+                                        <div className="card-section-details-content-price">
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    marginBottom: "-10px"
+                                                }}
+                                            >
+                                                <img
+                                                    src={ellipse}
+                                                    alt="ellipse"
+                                                    style={{
+                                                        margin:
+                                                            "5px 11px 23px 0px"
+                                                    }}
+                                                />
+                                                <h6>22.5 hrs Total</h6>
+                                            </div>
+                                        </div>
+                                        <div className="card-section-details-content-price">
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    marginBottom: "-10px"
+                                                }}
+                                            >
+                                                <img
+                                                    src={ellipse}
+                                                    alt="ellipse"
+                                                    style={{
+                                                        margin:
+                                                            "5px 11px 23px 0px"
+                                                    }}
+                                                />
+                                                <h6>24/7 Support</h6>
+                                            </div>
+                                        </div>
+                                        <div className="card-section-details-content-price">
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    marginBottom: "-10px"
+                                                }}
+                                            >
+                                                <img
+                                                    src={ellipse}
+                                                    alt="ellipse"
+                                                    style={{
+                                                        margin:
+                                                            "5px 11px 23px 0px"
+                                                    }}
+                                                />
+                                                <h6>
+                                                    Watch on desktop, laptop
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="card-section-details-content-price">
-                                    <p>
-                                        Get <strong> 5% extra cashback</strong>  if you buy through
-                                        us
-                                    </p>
-                                    </div>
-                                    <div style={{marginTop:"-10px"}}>
-                                        <img src={star} alt="" />
-                                    </div>
-                                    <div className="card-section-details-content-price">
-                                        <div style={{marginTop:"-20px"}}>
-                                         <h5>Course by: Dr. makn vjyvhj</h5>   
-                                         <p>Course provided by:</p>
-                                         {/* <img src="" alt=""/> */}
-                                        </div>
-                                    </div>
-                                    <div className="card-section-details-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                            <h6>Full time access</h6>
-                                        </div>
-                                    </div>
-                                    <div className="card-section-details-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                            <h6>Mentored Course</h6>
-                                        </div>
-                                    </div>
-                                    <div className="card-section-details-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                            <h6>22.5 hrs Total</h6>
-                                        </div>
-                                    </div>
-                                    <div className="card-section-details-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                            <h6>24/7 Support</h6>
-                                        </div>
-                                    </div>
-                                    <div className="card-section-details-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                            <h6>Watch on desktop, laptop</h6>
-                                        </div>
+                                    <div>
+                                        <button className="card-section-details-buy-btn">
+                                            {" "}
+                                            Buy Now
+                                        </button>
+                                        <button className="card-section-details-addCart-btn">
+                                            {" "}
+                                            Add To Cart
+                                        </button>
                                     </div>
                                 </div>
-                                <div>
-                                   <button className="card-section-details-buy-btn"> Buy Now</button>
-                                    <button className="card-section-details-addCart-btn"> Add To Cart</button>
-                                   </div>
-
-                            </div>
-                        </Col>
+                            </Col>
                         </Row>
                     </Container>
                 </div>
@@ -261,25 +401,7 @@ const [course_slug, setCourseSlug] = useState("");
                                     DESCRIPTION
                                 </h5>
                                 <p className="course-description">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quasi, maiores eius natus
-                                    provident magni adipisci hic eligendi cum
-                                    sit asperiores! Rem vitae minus, ducimus
-                                    repellendus architecto consequuntur illo
-                                    officiis nihil nemo quis! Officia
-                                    repudiandae, distinctio at expedita repellat
-                                    obcaecati. Dolore, incidunt. Libero
-                                    delectus, sit saepe similique, laboriosam a
-                                    voluptates officia accusantium dolorum,
-                                    praesentium corporis reprehenderit?
-                                    Accusantium magni suscipit doloribus velit
-                                    unde harum quis officiis dolor eos, eum
-                                    architecto officia repudiandae omnis ad vel
-                                    quia tenetur provident dolore adipisci
-                                    libero voluptatem magnam modi voluptatum.
-                                    Minima laboriosam rerum, at facilis neque
-                                    explicabo ad saepe expedita adipisci.
-                                    Corporis sequi cumque neque modi temporibus?
+                                    {singleCourse.description}
                                 </p>
                                 <p className="course-description-readmore">
                                     Read more
@@ -398,40 +520,63 @@ const [course_slug, setCourseSlug] = useState("");
                                 <h5 className="course-content-top-header">
                                     Instructor
                                 </h5>
-                                <h5 className="course-content-top-header">
-                                    Dr. ytyct vktuv
-                                </h5>
-                                <h6 className="course-author-designations">
-                                    Web developer, Digital Marketer, Business
-                                    Expert and Teacher
-                                </h6>
-                                <div className="author-overview">
-                                    <img
-                                        src={author}
-                                        alt=""
-                                        className="author-img"
-                                    />
-                                    <div className="author-overview-list">
-                                        <List type="unstyled" className="mb-0">
-                                            {authorOverview &&
-                                                authorOverview.map(a => (
-                                                    <li
-                                                        key={a}
-                                                        className="my-2"
-                                                    >
-                                                        <img
-                                                            src={prereq}
-                                                            className="mr-2 author-overview-list-img"
-                                                            alt=""
-                                                        />
-                                                        <span className="author-overview-title">
-                                                            {a}
-                                                        </span>
-                                                    </li>
-                                                ))}
-                                        </List>
-                                    </div>
-                                </div>
+                                {singleCourse.course_instructor &&
+                                    singleCourse.course_instructor.length > 0 &&
+                                    singleCourse.course_instructor.map(
+                                        courseinstructor => (
+                                            <>
+                                                <h5 className="course-content-top-header">
+                                                    {courseinstructor?.name}
+                                                </h5>
+                                                <h6 className="course-author-designations">
+                                                    {
+                                                        courseinstructor?.designation
+                                                    }
+                                                </h6>
+                                                <div className="author-overview">
+                                                    <img
+                                                        src={
+                                                            courseinstructor?.image
+                                                        }
+                                                        alt=""
+                                                        className="author-img"
+                                                    />
+                                                    <div className="author-overview-list">
+                                                        <List
+                                                            type="unstyled"
+                                                            className="mb-0"
+                                                        >
+                                                            {authorOverview &&
+                                                                authorOverview.map(
+                                                                    a => (
+                                                                        <li
+                                                                            key={
+                                                                                a
+                                                                            }
+                                                                            className="my-2"
+                                                                        >
+                                                                            <img
+                                                                                src={
+                                                                                    prereq
+                                                                                }
+                                                                                className="mr-2 author-overview-list-img"
+                                                                                alt=""
+                                                                            />
+                                                                            <span className="author-overview-title">
+                                                                                {
+                                                                                    a
+                                                                                }
+                                                                            </span>
+                                                                        </li>
+                                                                    )
+                                                                )}
+                                                        </List>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )
+                                    )}
+
                                 <p className="course-author-designations mb-0">
                                     Lorem ipsum dolor sit amet consectetur,
                                     adipisicing elit. Eveniet reprehenderit,
@@ -462,7 +607,7 @@ const [course_slug, setCourseSlug] = useState("");
                                             md="2"
                                             className="rating-container"
                                         >
-                                            <h4>4.5</h4>
+                                            <h4>{singleCourse.rating}</h4>
                                             <img src={star4} alt="" />
                                             <p>course rating</p>
                                         </Col>
