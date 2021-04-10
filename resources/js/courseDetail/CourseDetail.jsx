@@ -15,7 +15,8 @@ import user1 from "../Images/courseDetail/user1.png";
 import user2 from "../Images/courseDetail/user2.png";
 import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
 import CourseCard from "../components/course-card/CourseCard";
-
+import star from "../Images/courseCategory/star.png";
+import ellipse from "../Images/degree/Ellipse.png";
 const courseContent = [
     {
         id: "9198ce8a-772a-425d-8cd8-86ade1d1f0c8",
@@ -114,10 +115,11 @@ const userTestimonials = [
 ];
 
 function CourseDetail() {
+const [course_slug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
     useEffect(() => {
         axios
-            .get("/api/courses")
+            .get(`/api/courses/${course_slug}`)
             .then(res => {
                 setCourse(res.data.data);
             })
@@ -132,10 +134,11 @@ function CourseDetail() {
                     <Container className="containerClass">
                         <Row>
                             <Col sm="12" md="8">
+                                
+                                <>
                                 <img src={courseDetailCompany} alt="" />
                                 <h2>
-                                    The Complete Android R + Java Developer
-                                    Course™ : 2021
+                                The Complete Android R + Java Developer Course™ : 2021
                                 </h2>
                                 <h4>Course by: Dr. makn vjyvhj</h4>
                                 <h5>Subtitiles</h5>
@@ -144,7 +147,79 @@ function CourseDetail() {
                                 <button className="compare-btn">
                                     Add to compare
                                 </button>
+                                </>
+                              
                             </Col>
+                            <Col xs="12" md="4" lg="3">
+                            <div className="add-to-cart-section-details">
+                                <img
+                                style={{marginBottom:"5px"}}
+                                    src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg"
+                                    className="card-header-image-details"
+                                />
+                             
+                                <div className="card-section-details-content">
+                                    <div className="card-section-details-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                         <h5>$25000 /-</h5>   
+                                         <p style={{color:"#7B7B7B", padding:"17px"}}> 96% off</p>
+
+                                        </div>
+                                    </div>
+                                    <div className="card-section-details-content-price">
+                                    <p>
+                                        Get <strong> 5% extra cashback</strong>  if you buy through
+                                        us
+                                    </p>
+                                    </div>
+                                    <div style={{marginTop:"-10px"}}>
+                                        <img src={star} alt="" />
+                                    </div>
+                                    <div className="card-section-details-content-price">
+                                        <div style={{marginTop:"-20px"}}>
+                                         <h5>Course by: Dr. makn vjyvhj</h5>   
+                                         <p>Course provided by:</p>
+                                         {/* <img src="" alt=""/> */}
+                                        </div>
+                                    </div>
+                                    <div className="card-section-details-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                            <h6>Full time access</h6>
+                                        </div>
+                                    </div>
+                                    <div className="card-section-details-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                            <h6>Mentored Course</h6>
+                                        </div>
+                                    </div>
+                                    <div className="card-section-details-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                            <h6>22.5 hrs Total</h6>
+                                        </div>
+                                    </div>
+                                    <div className="card-section-details-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                            <h6>24/7 Support</h6>
+                                        </div>
+                                    </div>
+                                    <div className="card-section-details-content-price">
+                                        <div style={{display:"flex", marginBottom:"-10px"}}>
+                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
+                                            <h6>Watch on desktop, laptop</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                   <button className="card-section-details-buy-btn"> Buy Now</button>
+                                    <button className="card-section-details-addCart-btn"> Add To Cart</button>
+                                   </div>
+
+                            </div>
+                        </Col>
                         </Row>
                     </Container>
                 </div>
