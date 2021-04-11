@@ -1,195 +1,365 @@
-.university-btn-section {
-    background-color: #818181;
-    padding: 10px;
-    width: 34%;
-    height: 50px;
-    border-radius: 7px;
-    margin-bottom: 20px;
-    .university-btn-degree {
-        height: 30px;
-        color: white;
-        border: none;
-        outline: none;
-        background-color: transparent;
-    }
-}
+.degree-page-section {
+    background: #eeeeee;
+    //Hero Section
+    .degree-page-hero-section {
+        background: url("../js/Images/degree/courseDegreeHeader.png");
+        background-position: center;
+        background-size: cover;
+        padding: 30px 50px;
+        .containerClass {
+            box-shadow: none;
 
-.header-content-degree {
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-}
-.add-to-compare-btn-degree {
-    padding: 6px 20px 6px 20px;
-    margin: 5px 20px 0px 0px;
-    color: white;
-    background-color: #3c64b1;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-}
-.share-btn-degree {
-    padding: 6px 50px 6px 50px;
-    margin: 5px;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: #818181;
-    border-radius: 4px;
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-}
-.degree-subsection {
-    padding: 20px;
-    background-color: #fff;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px -1px #8888;
-
-    .degree-subsection-indv-div {
-        padding: 2px;
-        margin: 5px;
-        font-size: 14px;
-        font-family: "Poppins", sans-serif;
-        .red-header {
-            color: #f05454;
-            margin: 0px;
-        }
-        .grey-header-degree {
-            margin: 0px;
-            color: #7b7b7b;
-        }
-        .black-header-degree {
-            color: black;
-            margin: 0px;
-        }
-    }
-}
-.add-to-cart-section-degree {
-    position: fixed;
-    width: 298px;
-    background: #f6f7f8;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 16px;
-    padding: 17px;
-    .card-header-image-degree {
-        width: 266px;
-        height: 160px;
-        justify-content: center;
-        border-radius: 4px;
-        padding: 1px;
-    }
-    .card-section-degree-content {
-        .card-section-degree-content-price {
-            h5 {
-                color: #000;
-                font-weight: 500;
-                font-size: 20px;
+            .course-degree-company-div {
+                display: inline-block;
+                background: #595754;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                .companyimg {
+                    margin-bottom: 0;
+                }
+                span {
+                    margin-left: 5px;
+                    color: #fff;
+                    font-weight: 500;
+                }
             }
+            h2,
+            p,
+            h5,
             h6 {
-                color: #7b7b7b;
-                font-size: 18px;
-                padding-left: 22px;
+                color: #fff;
+            }
+            img {
+                margin-bottom: 30px;
+            }
+            h2 {
+                font-size: 35px;
+                font-weight: 500;
+                margin-bottom: 10px;
             }
             p {
-                padding-left: 22px;
-                color: #f05454;
-                font-size: 14px;
-                margin-top: -15px;
+                font-weight: 400;
+            }
+
+            .share-btn,
+            .compare-btn {
+                color: #fff;
+                border: none;
+                outline: none;
+                padding: 5px 10px;
+                font-weight: 300;
+                margin: 2px 4px 2px 0;
+                border-radius: 2px;
+                width: 90%;
+            }
+            .share-btn {
+                background: #808080;
+            }
+            .compare-btn {
+                background: #3c64b1;
+            }
+
+            .degree-hero-footer {
+                justify-content: space-between;
+                margin-top: 20px;
+                h5 {
+                    font-weight: 400;
+                    margin-bottom: 15px;
+                }
+                h6 {
+                    font-weight: 300;
+                    margin-bottom: 15px;
+                }
+                img {
+                    max-width: 100%;
+                }
             }
         }
-        .ellipse-degree {
-            object-fit: contain;
-            padding: 2px;
-            margin: 5px 5px 20px 0px;
-        }
     }
-    .card-section-degree-buy-btn {
-        display: block;
-        border: none;
-        outline: none;
-        background: #f05454;
-        width: 100%;
-        padding: 10px;
-        color: #fff;
-        border-radius: 4px;
-        margin-top: 20px;
-    }
-    .card-section-degree-addCart-btn {
-        display: block;
-        border: none;
-        outline: #3c64b1;
-        outline: 1px solid #3c64b1;
-        background: #f6f7f8;
-        width: 100%;
-        padding: 10px;
-        color: #3c64b1;
-        border-radius: 4px;
-        margin-top: 20px;
-    }
-}
 
-.program-details-section {
-    background-image: linear-gradient();
-    background-image: linear-gradient(
-        to bottom right,
-        #27a2e8,
-        #3baae5,
-        #69bedf,
-        #94d0da,
-        #a6d7d9
-    );
-    padding: 30px 0px 0px 280px;
-    .program-details-header {
-        color: black;
-        padding: 5px 0px 10px 0px;
+    //Course Overview Section
+    .containerClass {
+        margin-top: 0;
+        margin-bottom: 0;
+        box-shadow: none;
+        .course-overview-card:first-child {
+            padding: 30px 0 20px;
+        }
+        .course-overview-card {
+            padding: 10px 0 0 10px;
+            .course-overview-card-title {
+                font-weight: 400;
+                text-transform: capitalize;
+                color: #333333;
+            }
+            .course-overview-card-descriptionbox {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 15px 0;
+                p {
+                    background: #fdf5ad;
+                    padding: 4px 10px;
+                    font-weight: 200;
+                    text-transform: capitalize;
+                    margin: 2px 10px 2px 0;
+                    border-radius: 100px;
+                }
+            }
+        }
+
+        .course-overview-card-stats {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0;
+            .stat-container {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                margin: 2px 10px 2px 0;
+                img {
+                    object-fit: contain;
+                }
+                p {
+                    color: #818181;
+                    margin-left: 5px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .course-description {
+            margin-top: 20px;
+            color: #818181;
+        }
+        .course-description-readmore {
+            color: #f05454;
+            margin: 0;
+            text-align: center;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .course-content-top-header {
+            font-weight: 400;
+            color: #333333;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+        }
+        .course-content-top-overview {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            span {
+                color: #f05454;
+                margin-right: 5px;
+            }
+        }
+        .course-content-accordion {
+            margin-bottom: 30px;
+            .card {
+                margin: 5px 0;
+                padding: 10px 20px;
+                background: #f6f7f8;
+                border-radius: 10px;
+                border: none;
+
+                .course-content-card-headerlink {
+                    color: #333333;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                .card-body {
+                    .courseContent-list {
+                        display: flex;
+                        color: #818181;
+                        margin: 10px 0;
+                        align-items: center;
+                        img {
+                            object-fit: contain;
+                        }
+                        .duration {
+                            color: #f05454;
+                            flex: 1;
+                            text-align: end;
+                        }
+                    }
+                }
+            }
+        }
+        .course-prereq-section {
+            margin-bottom: 30px;
+            .course-prereq-title {
+                color: #818181;
+            }
+        }
+
+        .course-author-designations {
+            font-weight: 400;
+            color: #818181;
+        }
+        .author-overview {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px 0;
+            .author-img {
+                border-radius: 50%;
+                max-height: 100px;
+                margin-right: 20px;
+            }
+            .author-overview-list {
+                .author-overview-list-img {
+                    max-height: 16px;
+                }
+                .author-overview-title {
+                    color: #818181;
+                }
+            }
+        }
+        .degree-page-review-section {
+            .rating-container {
+                h4 {
+                    font-size: 60px;
+                }
+                p {
+                    text-transform: capitalize;
+                    font-weight: 400;
+                    font-size: 15px;
+                }
+            }
+            .progress-container {
+                .indi-progress {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .progress {
+                        flex: 1;
+                        max-width: 460px;
+                    }
+                    img {
+                        object-fit: contain;
+                        margin-left: 10px;
+                    }
+                    span {
+                        color: #333333;
+                        font-weight: 600;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+        .degree-page-testimonial-section {
+            padding: 50px 0 20px;
+            .degree-page-testimonial-cards {
+                background: #fbf6c0;
+                padding: 10px 20px 10px 40px;
+                position: relative;
+                border-radius: 10px 20px;
+                img {
+                    position: absolute;
+                    border-radius: 50%;
+                    max-height: 60px;
+                    top: -25px;
+                    left: -25px;
+                }
+                h6 {
+                    font-weight: 400;
+                    color: #333333;
+                }
+                p {
+                    color: #818181;
+                    margin-bottom: 0;
+                }
+            }
+            .course-testimonial-readmore {
+                color: #f05454;
+                margin: 0;
+                text-align: center;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        //Course Instructor
+        .degree-instructor-section {
+            padding: 30px 0;
+            h6 {
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #1f1f1e;
+                font-weight: 400;
+                text-transform: capitalize;
+                margin-bottom: 15px;
+            }
+            .degreecarousel-slider-div {
+                display: flex !important;
+                justify-content: center;
+                .degree-instructor-card {
+                    margin: 0 10px;
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 4px;
+
+                    span {
+                        margin: 15px 0;
+                    }
+
+                    span {
+                        color: #818181;
+                    }
+                    .degreeinstructor-overview-list {
+                        display: flex;
+                        flex-wrap: wrap;
+                        .instructor-overview-span {
+                            color: #818181;
+                        }
+
+                        .degree-instructor-dot-img {
+                            object-fit: contain;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            .slick-dots {
+                display: none;
+            }
+        }
     }
-    .program-details-para {
-        color: #fff;
-    }
-    .course-content-top-overview-degree {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-        span {
-            color: #fff;
-            margin-right: 5px;
+    .popular-choice-section-course-details {
+        padding: 50px;
+        .popular-choice-header {
+            font-family: "Poppins", sans-serif;
+            font-size: 28px;
+            color: #1f1f1e;
+        }
+        .popular-choice-sub-section {
+            justify-content: space-between;
+
+            .popular-choice-content {
+                color: #1f1f1e;
+                font-family: "Poppins", sans-serif;
+                font-size: 20px;
+            }
+            .popular-choice-btn-container {
+                text-align: right;
+
+                .popular-choice-btn {
+                    padding: 10px 60px;
+                    background-color: #f05454;
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    border: none;
+                    font-size: 24px;
+                }
+            }
         }
     }
 }
-.course-content-top-header {
-    margin: 30px 0px 30px 280px;
-}
-.instructor-section {
-    background-color: white;
-    width: 25%;
-    height: 100%;
-    padding: 50px;
-    margin: 30px 40px 10px 0px;
-    border-radius: 10px;
-    .instructor-profile-image {
-        height: 100px;
-        padding: 5px;
-        border-radius: 50%;
-        margin-left: 70px;
-    }
-    .instructor-profile-name {
-        margin-top: 30px;
-    }
-}
-.review-section-degree {
-    background-color: white;
-    margin: 0px;
-}
-.navlink-degree {
-    color: #818181;
-    font-size: 20px;
-    &:hover {
-        color: #000;
-        font-size: 24px;
-        border-bottom: 1px solid #000;
+.progress {
+    margin: 5px 0;
+    .progress-bar {
+        background: #ead628;
+        height: 20px;
     }
 }

@@ -1,88 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-    Col,
-    Container,
-    Row,
-    List,
-    Progress,
-    Button,
-    Nav,
-    NavItem,
-    NavLink
-} from "reactstrap";
-import harvard from "../Images/footer/harvard.png";
-import author from "../Images/courseDetail/author.png";
+import { Col, Container, Row, List, Progress, Button } from "reactstrap";
 import stat1 from "../Images/courseDetail/stat1.png";
 import stat2 from "../Images/courseDetail/stat2.png";
+import author from "../Images/courseDetail/author.png";
 import star5 from "../Images/courseDetail/5star.png";
 import star4 from "../Images/courseDetail/4star.png";
 import star3 from "../Images/courseDetail/3star.png";
 import star2 from "../Images/courseDetail/2star.png";
 import star1 from "../Images/courseDetail/1star.png";
-import playbutton from "../Images/courseDetail/playbutton.png";
-import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
-import prereq from "../Images/courseDetail/prereq.png";
 import user1 from "../Images/courseDetail/user1.png";
+import user2 from "../Images/courseDetail/user2.png";
+import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
+import coursedegreecompany from "../Images/degree/coursedegreecompany.png";
+import CourseCard from "../components/course-card/CourseCard";
+import DegreeHeroSection from "./DegreeComponents/DegreeHeroSection";
+import DegreeDetail from "./DegreeComponents/DegreeDetail";
+import DegreeBenefitSection from "./DegreeComponents/DegreeBenefitSection";
+import DegreeInstructorSection from "./DegreeComponents/DegreeInstructorSection";
 
-import vector1 from "../Images/degree/CompleteOnline.png";
-import vector2 from "../Images/degree/Group.png";
-import vector3 from "../Images/degree/Group 470.png";
-import star from "../Images/courseCategory/star.png";
-import ellipse from "../Images/degree/Ellipse.png";
-const courseContent = [
-    {
-        id: "9198ce8a-772a-425d-8cd8-86ade1d1f0c8",
-        title: "Welcome to Android R",
-        duration: "02:11",
-        content: [
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            },
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            }
-        ]
-    },
-    {
-        id: "fc793560-73a8-4cb1-9237-e803c925aaad",
-        title: "Welcome to Android R",
-        duration: "02:11",
-        content: [
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            },
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            }
-        ]
-    },
-    {
-        id: "5871eb25-dc78-4df5-854b-8e6f7e9e5d1a",
-        title: "Welcome to Android R",
-        duration: "02:11",
-        content: [
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            },
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            }
-        ]
-    }
-];
 const faq = [
     {
         id: "d95d4514-538a-4b57-85d5-f9072dc80bef",
@@ -103,6 +39,13 @@ const faq = [
             "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. "
     }
 ];
+
+const authorOverview = [
+    "4.2 Instructor Rating",
+    "5,680 Reviews",
+    "73,742 Students"
+];
+
 const userTestimonials = [
     {
         name: "Abhishek Mogaveera",
@@ -115,15 +58,9 @@ const userTestimonials = [
             "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”"
     }
 ];
-const authorOverview = [
-    "4.2 Instructor Rating",
-    "5,680 Reviews",
-    "73,742 Students"
-];
 
-function Degree() {
+function CourseDetail() {
     const [Course, setCourse] = useState([]);
-    const [data, setData] = useState([]);
     useEffect(() => {
         axios
             .get("/api/courses")
@@ -133,320 +70,25 @@ function Degree() {
             .catch(err => {
                 console.log(err);
             });
-        if (data) {
-            axios
-                .get(`/api/courses/${data.id}`)
-                .then(res => {
-                    console.log(res);
-                    setData(res.data.data[0]);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        }
     }, []);
     return (
-        <div className="course-detail-section">
-            <div className="course-detail-hero-section">
-                <Container className="containerClass">
-                    <Row>
-                        <Col sm="12" md="8" lg="9">
-                            <div className="d-flex university-btn-section">
-                                <img
-                                    src="https://www.wemu.org/sites/wemu/files/202004/U-M-logo-preview.jpg"
-                                    alt=""
-                                    style={{ height: "30px", width: "50px" }}
-                                />
-                                <button className="university-btn-degree">
-                                    University of Michigan
-                                </button>
-                            </div>
-
-                            <h2>Master of Science in Computer Science</h2>
-                            <p className="header-content-degree">
-                                Learn in-demand skills and grow your Software
-                                Development career with a Master's in Computer
-                                Science from Liverpool John Moores University, a
-                                globally recognized university. Start your
-                                journey today by paying Rs.13,095/- per month.
-                            </p>
-                            <button className="add-to-compare-btn-degree">
-                                Add to compare
-                            </button>
-                            <button className="share-btn-degree">Share</button>
-                            <div
-                                className="d-flex"
-                                style={{
-                                    justifyContent: "space-between",
-                                    margin: "0px 0px 40px"
-                                }}
-                            >
-                                <div>
-                                    <h5 style={{ marginTop: "30px" }}>
-                                        Subtitiles
-                                    </h5>
-                                    <h6>English , Hindi , Espanol</h6>
-                                </div>
-                                <div>
-                                    <h5 style={{ marginTop: "30px" }}>
-                                        Provided By
-                                    </h5>
-                                    <img src={courseDetailCompany} alt="" />
-                                </div>
-                            </div>
-                            <div>
-                                <div className="d-flex degree-subsection">
-                                    <div className="degree-subsection-indv-div">
-                                        <div className="d-flex">
-                                            <img
-                                                src={vector2}
-                                                alt=""
-                                                style={{
-                                                    padding: "2px 5px 5px 3px",
-                                                    marginTop: "-5px"
-                                                }}
-                                            />
-                                            <p className="red-header">
-                                                $25,000 USD
-                                            </p>
-                                        </div>
-                                        <p className="grey-header-degree">
-                                            for full degree | Each credit hour
-                                            $667 USD
-                                        </p>
-                                        <p className="black-header-degree">
-                                            *EMI and other options available
-                                        </p>
-                                    </div>
-                                    <div className="degree-subsection-indv-div">
-                                        <div className="d-flex">
-                                            <img
-                                                src={vector3}
-                                                alt=""
-                                                style={{
-                                                    padding: "2px 5px 5px 3px",
-                                                    marginTop: "-5px"
-                                                }}
-                                            />
-                                            <p className="red-header">
-                                                8 Months
-                                            </p>
-                                        </div>
-                                        <p className="grey-header-degree">
-                                            for full degree | Each credit hour
-                                            $667 USD
-                                        </p>
-                                        <p className="grey-header-degree">
-                                            *EMI and other options available
-                                        </p>
-                                    </div>
-                                    <div className="degree-subsection-indv-div">
-                                        <div className="d-flex">
-                                            <img
-                                                src={vector1}
-                                                alt=""
-                                                style={{
-                                                    padding: "2px 5px 5px 3px",
-                                                    marginTop: "-5px"
-                                                }}
-                                            />
-                                            <p className="red-header">
-                                                Completly Online
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col xs="12" md="4" lg="3">
-                            <div className="add-to-cart-section-degree">
-                                <img
-                                    src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg"
-                                    className="card-header-image-degree"
-                                />
-                                <div>
-                                    <div>
-                                        <img src={star} alt="" />
-                                    </div>
-                                </div>
-                                <div className="card-section-degree-content">
-                                    <div className="card-section-degree-content-price">
-                                        <div
-                                            style={{
-                                                display: "flex",
-                                                marginBottom: "-10px"
-                                            }}
-                                        >
-                                            <img
-                                                src={ellipse}
-                                                alt="ellipse"
-                                                className="ellipse-degree"
-                                            />
-                                            <h5>$25000 /-</h5>
-                                        </div>
-
-                                        <h6>EMI Available*</h6>
-                                        <p>
-                                            Get{" "}
-                                            <strong> 5% extra cashback</strong>{" "}
-                                            if you buy through us
-                                        </p>
-                                    </div>
-                                    <div className="card-section-degree-content-price">
-                                        <div
-                                            style={{
-                                                display: "flex",
-                                                marginBottom: "-10px"
-                                            }}
-                                        >
-                                            <img
-                                                src={ellipse}
-                                                alt="ellipse"
-                                                style={{
-                                                    margin: "5px 11px 23px 0px"
-                                                }}
-                                                className="ellipse-degree"
-                                            />
-                                            <h5>April 5, 2021</h5>
-                                        </div>
-
-                                        <h6>Start Date</h6>
-                                    </div>
-                                    <div className="card-section-degree-content-price">
-                                        <div
-                                            style={{
-                                                display: "flex",
-                                                marginBottom: "-10px"
-                                            }}
-                                        >
-                                            <img
-                                                src={ellipse}
-                                                alt="ellipse"
-                                                className="ellipse-degree"
-                                            />
-                                            <h5>8 Months*</h5>
-                                        </div>
-
-                                        <h6>programme Duration</h6>
-                                    </div>
-                                    <div className="card-section-degree-content-price">
-                                        <div
-                                            style={{
-                                                display: "flex",
-                                                marginBottom: "-10px"
-                                            }}
-                                        >
-                                            <img
-                                                src={ellipse}
-                                                alt="ellipse"
-                                                className="ellipse-degree"
-                                            />
-                                            <h5>Online Bootcamp</h5>
-                                        </div>
-
-                                        <h6>Learning format</h6>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button className="card-section-degree-buy-btn">
-                                        {" "}
-                                        Buy Now
-                                    </button>
-                                    <button className="card-section-degree-addCart-btn">
-                                        {" "}
-                                        Add To Cart
-                                    </button>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-            <div style={{ backgroundColor: "#F6F7F8" }}>
-                <Container className="containerClass">
-                    <Nav>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-degree"
-                                href="#Overview"
-                            >
-                                Overview
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-degree"
-                                href="#ProgramCurriculum"
-                            >
-                                Program curriculum
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-degree"
-                                href="#Instructors"
-                            >
-                                {" "}
-                                Instructors
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-degree"
-                                href="#Benefits"
-                            >
-                                {" "}
-                                Benefits
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="navlink-degree" href="#fees">
-                                {" "}
-                                fees{" "}
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="navlink-degree" href="#Reviews">
-                                {" "}
-                                Reviews
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="navlink-degree" href="#FAQs">
-                                {" "}
-                                FAQs
-                            </NavLink>
-                        </NavItem>
-                    </Nav>
-                </Container>
+        <>
+            <div className="degree-page-section">
+                <DegreeHeroSection />
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <div
-                                className="course-overview-card"
-                                style={{ backgroundColor: "transparent" }}
-                            >
-                                <h5
-                                    className="course-overview-card-title"
-                                    id="Overview"
-                                >
+                            <div className="course-overview-card">
+                                <h5 className="course-overview-card-title">
                                     Skills you'll gain
                                 </h5>
                                 <div className="course-overview-card-descriptionbox">
                                     <p>Web development</p>
                                     <p>Web development</p>
+                                    <p>Web development</p>
                                 </div>
-
                                 <h5 className="course-overview-card-title">
                                     Learner's career outcome
-                                </h5>
-                                <div className="course-overview-card-descriptionbox">
-                                    <p>Web development</p>
-                                    <p>Web development</p>
-                                    <p>Web development</p>
-                                </div>
-                                <h5 className="course-overview-card-title">
-                                    Job opportunities
                                 </h5>
                                 <div className="course-overview-card-stats">
                                     <div className="stat-container">
@@ -458,61 +100,131 @@ function Degree() {
                                         <p>12 % New career</p>
                                     </div>
                                 </div>
+                                <h5 className="course-overview-card-title">
+                                    Job opportunities
+                                </h5>
+                                <div className="course-overview-card-descriptionbox">
+                                    <p>Web development</p>
+                                    <p>Web development</p>
+                                </div>
                             </div>
                         </Col>
                     </Row>
                 </Container>
-            </div>
-            <div className="program-details-section">
-                <Row style={{ margin: "0px" }}>
-                    <Col sm="12" md="8" lg="9">
-                        <Container className="containerClass">
-                            <h5
-                                className="program-details-header"
-                                id="ProgramCurriculum"
-                            >
-                                Program Details
+
+                <DegreeDetail />
+
+                <DegreeInstructorSection />
+
+                <DegreeBenefitSection />
+
+                <div style={{ background: "#F6F7F8", padding: "30px 0" }}>
+                    <Container className="containerClass">
+                        <Row>
+                            <Col sm="12" md="8">
+                                <h5 className="course-content-top-header">
+                                    Reviews
+                                </h5>
+                                <div className="degree-page-review-section">
+                                    <Row>
+                                        <Col
+                                            sm="12"
+                                            md="2"
+                                            className="rating-container"
+                                        >
+                                            <h4>4.5</h4>
+                                            <img src={star4} alt="" />
+                                            <p>course rating</p>
+                                        </Col>
+                                        <Col
+                                            sm="12"
+                                            md="10"
+                                            className="progress-container"
+                                        >
+                                            <div className="indi-progress">
+                                                <Progress value="65" />
+                                                <img src={star5} alt="" />
+                                                <span>65%</span>
+                                            </div>
+                                            <div className="indi-progress">
+                                                <Progress value="35" />
+                                                <img src={star4} alt="" />
+                                                <span>35%</span>
+                                            </div>
+                                            <div className="indi-progress">
+                                                <Progress value="15" />
+                                                <img src={star3} alt="" />
+                                                <span>15%</span>
+                                            </div>
+                                            <div className="indi-progress">
+                                                <Progress value="10" />
+                                                <img src={star2} alt="" />
+                                                <span>10%</span>
+                                            </div>
+                                            <div className="indi-progress">
+                                                <Progress value="5" />
+                                                <img src={star1} alt="" />
+                                                <span>5%</span>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row className="degree-page-testimonial-section">
+                            <Col sm="12" md="8">
+                                <Row className="justify-content-center">
+                                    {userTestimonials &&
+                                        userTestimonials.map(u => (
+                                            <Col
+                                                sm="12"
+                                                md="6"
+                                                key={u?.name}
+                                                className="my-4"
+                                            >
+                                                <div className="degree-page-testimonial-cards">
+                                                    <img src={user1} alt="" />
+                                                    <h6>{u?.name}</h6>
+                                                    <p>{u?.review}</p>
+                                                </div>
+                                            </Col>
+                                        ))}
+                                </Row>
+                                <p className="course-testimonial-readmore">
+                                    Read more
+                                    <i class="fas fa-chevron-down ml-2"></i>
+                                </p>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+                <Container className="containerClass">
+                    <Row>
+                        <Col sm="12" md="8">
+                            <h5 className="course-content-top-header text-center pt-2">
+                                FAQs
                             </h5>
-                            <p className="program-details-para">
-                                orem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero donec id a. Elit tortor leo, eu tortor
-                                sociis a erat potenti. Euismod eget morbi
-                                aliquet interdum diam lobortis massa. Tellus a
-                                mauris pulvinar consectetur praesent convallis
-                                hendrerit a dolor. Ut viverra massa aliquet elit
-                                sit proin. Est mauris mattis arcu, a ullamcorper
-                                elit amet montes. Odio quis cursus enim magna.
-                                Vitae ipsum curabitur bibendum ut. Amet, duis
-                                proin lorem{" "}
-                            </p>
-                            <h5 className="program-details-header">
-                                Course Content
-                            </h5>
-                            <div
-                                className="course-content-top-overview-degree"
-                                style={{ color: "#fff" }}
-                            >
-                                <span>41 sections •</span>
-                                <span>692 lectures •</span>
-                                <span>173h 31m total length</span>
-                            </div>
                             <div
                                 class="accordion course-content-accordion"
-                                id="courseContentParent"
+                                id="courseFAQParent"
                             >
-                                {courseContent &&
-                                    courseContent.map(detail => (
-                                        <div class="card" key={detail?.id}>
-                                            <div id={`heading${detail?.id}`}>
+                                {faq &&
+                                    faq.map(faqIndividual => (
+                                        <div
+                                            class="card"
+                                            key={faqIndividual?.id}
+                                        >
+                                            <div
+                                                id={`heading${faqIndividual?.id}`}
+                                            >
                                                 <h2 class="mb-0">
                                                     <a
                                                         class="btn btn-link course-content-card-headerlink"
                                                         type="button"
                                                         data-toggle="collapse"
-                                                        data-target={`#collapse${detail?.id}`}
+                                                        data-target={`#collapse${faqIndividual?.id}`}
                                                         aria-expanded="true"
-                                                        aria-controls={`collapse${detail?.id}`}
+                                                        aria-controls={`collapse${faqIndividual?.id}`}
                                                     >
                                                         <i
                                                             class="fas fa-chevron-down mr-2"
@@ -520,367 +232,68 @@ function Degree() {
                                                                 color: "#F05454"
                                                             }}
                                                         ></i>
-
-                                                        {detail?.title}
-                                                        <span
-                                                            className="duration ml-2"
-                                                            style={{
-                                                                color: "red"
-                                                            }}
-                                                        >
-                                                            {detail?.duration}
-                                                        </span>
+                                                        {
+                                                            faqIndividual?.question
+                                                        }
                                                     </a>
                                                 </h2>
                                             </div>
 
                                             <div
-                                                id={`collapse${detail?.id}`}
+                                                id={`collapse${faqIndividual?.id}`}
                                                 class="collapse"
-                                                aria-labelledby={`heading${detail?.id}`}
-                                                data-parent="#courseContentParent"
+                                                aria-labelledby={`heading${faqIndividual?.id}`}
+                                                data-parent="#courseFAQParent"
                                             >
                                                 <div class="card-body">
                                                     <List
                                                         type="unstyled"
                                                         className="mb-0"
                                                     >
-                                                        {detail?.content &&
-                                                            detail?.content.map(
-                                                                c => (
-                                                                    <li
-                                                                        className="courseContent-list"
-                                                                        key={
-                                                                            c?.title
-                                                                        }
-                                                                    >
-                                                                        <img
-                                                                            src={
-                                                                                playbutton
-                                                                            }
-                                                                            alt=""
-                                                                            className="mr-2"
-                                                                        />
-                                                                        {
-                                                                            c?.title
-                                                                        }
-                                                                        <span className="duration ml-2">
-                                                                            {
-                                                                                c?.duration
-                                                                            }
-                                                                        </span>
-                                                                    </li>
-                                                                )
-                                                            )}
+                                                        {faqIndividual?.answer}
                                                     </List>
                                                 </div>
                                             </div>
                                         </div>
                                     ))}
                             </div>
-                        </Container>
-                    </Col>
-                </Row>
-            </div>
-            <h5 className="course-content-top-header" id="Instructors">
-                Instructors
-            </h5>
-            <div className="d-flex" style={{ marginLeft: "280px" }}>
-                <div className="instructor-section ">
-                    <img
-                        src="https://qph.fs.quoracdn.net/main-qimg-6291c3a117fc230c82785148baef7eed"
-                        alt=""
-                        className="instructor-profile-image"
-                    />
-                    <h5 className="instructor-profile-name">Dr. ytyct vktuv</h5>
-                    <p className="instructor-profile-content">
-                        {" "}
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit.
-                    </p>
-                    <div className="author-overview">
-                        <div className="author-overview-list">
-                            <List type="unstyled" className="mb-0">
-                                {authorOverview &&
-                                    authorOverview.map(a => (
-                                        <li key={a} className="my-2">
-                                            <img
-                                                src={prereq}
-                                                className="mr-2 author-overview-list-img"
-                                                alt=""
-                                            />
-                                            <span className="author-overview-title">
-                                                {a}
-                                            </span>
-                                        </li>
-                                    ))}
-                            </List>
-                        </div>
-                    </div>
-                </div>
-                <div className="instructor-section">
-                    <img
-                        src="https://qph.fs.quoracdn.net/main-qimg-6291c3a117fc230c82785148baef7eed"
-                        alt=""
-                        className="instructor-profile-image"
-                    />
-                    <h5 className="instructor-profile-name">Dr. ytyct vktuv</h5>
-                    <p className="instructor-profile-content">
-                        {" "}
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit.
-                    </p>
-                    <div className="author-overview">
-                        <div className="author-overview-list">
-                            <List type="unstyled" className="mb-0">
-                                {authorOverview &&
-                                    authorOverview.map(a => (
-                                        <li key={a} className="my-2">
-                                            <img
-                                                src={prereq}
-                                                className="mr-2 author-overview-list-img"
-                                                alt=""
-                                            />
-                                            <span className="author-overview-title">
-                                                {a}
-                                            </span>
-                                        </li>
-                                    ))}
-                            </List>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div
-                style={{
-                    background: "#fff",
-                    padding: "30px 0",
-                    margin: "40px 0px 40px 0px"
-                }}
-            >
-                <Container className="containerClass">
-                    <Row>
-                        <Col sm="12" md="8">
-                            <h5
-                                className="course-content-top-header"
-                                id="Benefits"
-                            >
-                                Benefits
-                            </h5>
-                            <div className="author-overview">
-                                <div className="author-overview-list">
-                                    <List type="unstyled" className="mb-0">
-                                        {authorOverview &&
-                                            authorOverview.map(a => (
-                                                <li key={a} className="my-2">
-                                                    <img
-                                                        src={prereq}
-                                                        className="mr-2 author-overview-list-img"
-                                                        alt=""
-                                                    />
-                                                    <span className="author-overview-title">
-                                                        {a}
-                                                    </span>
-                                                </li>
-                                            ))}
-                                    </List>
-                                </div>
-                            </div>
-                            <h5 id="fees">Fees and Financing</h5>
-                            <p className="course-author-designations mb-0">
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Eveniet reprehenderit,
-                                temporibus aut dicta rerum natus provident
-                                cumque necessitatibus alias nam numquam a
-                                tempore minus perspiciatis praesentium magnam
-                                neque? Reiciendis tempore et ratione facilis
-                                nesciunt provident corrupti facere dolore
-                                voluptas alias optio
-                            </p>
-                            <p className="course-author-designations mb-1">
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Eveniet reprehenderit,
-                            </p>
                         </Col>
                     </Row>
                 </Container>
-            </div>
-            <div
-                style={{
-                    background: "#fff",
-                    padding: "30px 0",
-                    margin: "40px 0px 40px 0px"
-                }}
-            >
-                <Container className="containerClass">
-                    <Row>
-                        <Col sm="12" md="8">
-                            <h5
-                                className="course-content-top-header"
-                                id="Reviews"
-                            >
-                                Reviews
-                            </h5>
-                            <div className="course-detail-review-section">
-                                <Row>
-                                    <Col
-                                        sm="12"
-                                        md="2"
-                                        className="rating-container"
-                                    >
-                                        <h4>4.5</h4>
-                                        <img src={star4} alt="" />
-                                        <p>course rating</p>
-                                    </Col>
-                                    <Col
-                                        sm="12"
-                                        md="10"
-                                        className="progress-container"
-                                    >
-                                        <div className="indi-progress">
-                                            <Progress value="65" />
-                                            <img src={star5} alt="" />
-                                            <span>65%</span>
-                                        </div>
-                                        <div className="indi-progress">
-                                            <Progress value="35" />
-                                            <img src={star4} alt="" />
-                                            <span>35%</span>
-                                        </div>
-                                        <div className="indi-progress">
-                                            <Progress value="15" />
-                                            <img src={star3} alt="" />
-                                            <span>15%</span>
-                                        </div>
-                                        <div className="indi-progress">
-                                            <Progress value="10" />
-                                            <img src={star2} alt="" />
-                                            <span>10%</span>
-                                        </div>
-                                        <div className="indi-progress">
-                                            <Progress value="5" />
-                                            <img src={star1} alt="" />
-                                            <span>5%</span>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row className="course-detail-testimonial-section">
-                        <Col sm="12" md="8">
-                            <Row className="justify-content-center">
-                                {userTestimonials &&
-                                    userTestimonials.map(u => (
-                                        <Col
-                                            sm="12"
-                                            md="6"
-                                            key={u?.name}
-                                            className="my-4"
-                                        >
-                                            <div className="course-detail-testimonial-cards">
-                                                <img src={user1} alt="" />
-                                                <h6>{u?.name}</h6>
-                                                <p>{u?.review}</p>
-                                            </div>
-                                        </Col>
-                                    ))}
-                            </Row>
-                            <p className="course-testimonial-readmore">
-                                Read more
-                                <i class="fas fa-chevron-down ml-2"></i>
+                <div className="popular-choice-section-course-details">
+                    <h3 className="popular-choice-header">
+                        Recommended for you
+                    </h3>
+                    <Row className=" popular-choice-sub-section">
+                        <Col sm="12" md="6" lg="5">
+                            <p className="popular-choice-content">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Habitant volutpat elementum
+                                facilisi mattis et. At
                             </p>
                         </Col>
-                    </Row>
-                </Container>
-            </div>
-            <Container className="containerClass">
-                <Row>
-                    <Col sm="12" md="8">
-                        <h5
-                            className="course-content-top-header text-center pt-2"
-                            id="FAQs"
+                        <Col
+                            sm="12"
+                            md="6"
+                            lg="5"
+                            className="popular-choice-btn-container"
                         >
-                            FAQs
-                        </h5>
-                        <div
-                            class="accordion course-content-accordion"
-                            id="courseFAQParent"
-                        >
-                            {faq &&
-                                faq.map(faqIndividual => (
-                                    <div class="card" key={faqIndividual?.id}>
-                                        <div id={`heading${faqIndividual?.id}`}>
-                                            <h2 class="mb-0">
-                                                <a
-                                                    class="btn btn-link course-content-card-headerlink"
-                                                    type="button"
-                                                    data-toggle="collapse"
-                                                    data-target={`#collapse${faqIndividual?.id}`}
-                                                    aria-expanded="true"
-                                                    aria-controls={`collapse${faqIndividual?.id}`}
-                                                >
-                                                    <i
-                                                        class="fas fa-chevron-down mr-2"
-                                                        style={{
-                                                            color: "#F05454"
-                                                        }}
-                                                    ></i>
-                                                    {faqIndividual?.question}
-                                                </a>
-                                            </h2>
-                                        </div>
-
-                                        <div
-                                            id={`collapse${faqIndividual?.id}`}
-                                            class="collapse"
-                                            aria-labelledby={`heading${faqIndividual?.id}`}
-                                            data-parent="#courseFAQParent"
-                                        >
-                                            <div class="card-body">
-                                                <List
-                                                    type="unstyled"
-                                                    className="mb-0"
-                                                >
-                                                    {faqIndividual?.answer}
-                                                </List>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-            <div className="popular-choice-section-course-details">
-                <h3 className="popular-choice-header">Recommended for you</h3>
-                <Row className=" popular-choice-sub-section">
-                    <Col sm="12" md="6" lg="5">
-                        <p className="popular-choice-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Habitant volutpat elementum facilisi mattis
-                            et. At
-                        </p>
-                    </Col>
-                    <Col
-                        sm="12"
-                        md="6"
-                        lg="5"
-                        className="popular-choice-btn-container"
-                    >
-                        <Button className="popular-choice-btn">View all</Button>
-                    </Col>
-                </Row>
-                {/* <Row className="course-card-landing-page-row">
-                    {Course.map(course => (
-                        <Col sm="12" md="3" key={course?.id}>
-                            <CourseCard data={course} />
+                            <Button className="popular-choice-btn">
+                                View all
+                            </Button>
                         </Col>
-                    ))}
-                </Row> */}
+                    </Row>
+                    <Row className="course-card-landing-page-row">
+                        {Course.map(course => (
+                            <Col sm="12" md="3" key={course?.id}>
+                                <CourseCard data={course} />
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
-export default Degree;
+export default CourseDetail;
