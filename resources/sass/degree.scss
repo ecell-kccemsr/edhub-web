@@ -81,6 +81,7 @@
         height: 160px;
         justify-content: center;
         border-radius: 4px;
+        padding: 1px;
     }
     .card-section-degree-content {
         .card-section-degree-content-price {
@@ -100,6 +101,11 @@
                 font-size: 14px;
                 margin-top: -15px;
             }
+        }
+        .ellipse-degree {
+            object-fit: contain;
+            padding: 2px;
+            margin: 5px 5px 20px 0px;
         }
     }
     .card-section-degree-buy-btn {
@@ -154,6 +160,9 @@
             margin-right: 5px;
         }
     }
+}
+.course-content-top-header {
+    margin: 30px 0px 30px 280px;
 }
 .instructor-section {
     background-color: white;

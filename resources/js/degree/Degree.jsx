@@ -198,7 +198,6 @@ function Degree() {
                         <Col xs="12" md="4" lg="3">
                             <div className="add-to-cart-section-degree">
                                 <img
-                                style={{marginBottom:"5px"}}
                                     src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg"
                                     className="card-header-image-degree"
                                 />
@@ -209,201 +208,253 @@ function Degree() {
                                 </div>
                                 <div className="card-section-degree-content">
                                     <div className="card-section-degree-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                         <h5>$25000 /-</h5>   
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                marginBottom: "-10px"
+                                            }}
+                                        >
+                                            <img
+                                                src={ellipse}
+                                                alt="ellipse"
+                                                className="ellipse-degree"
+                                            />
+                                            <h5>$25000 /-</h5>
                                         </div>
-                                     
-                                    <h6>EMI Available*</h6>
-                                    <p>
-                                        Get <strong> 5% extra cashback</strong>  if you buy through
-                                        us
-                                    </p>
+
+                                        <h6>EMI Available*</h6>
+                                        <p>
+                                            Get{" "}
+                                            <strong> 5% extra cashback</strong>{" "}
+                                            if you buy through us
+                                        </p>
                                     </div>
                                     <div className="card-section-degree-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                         <h5>April 5, 2021</h5>   
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                marginBottom: "-10px"
+                                            }}
+                                        >
+                                            <img
+                                                src={ellipse}
+                                                alt="ellipse"
+                                                style={{
+                                                    margin: "5px 11px 23px 0px"
+                                                }}
+                                                className="ellipse-degree"
+                                            />
+                                            <h5>April 5, 2021</h5>
                                         </div>
-                                     
-                                    <h6>Start Date</h6>
+
+                                        <h6>Start Date</h6>
                                     </div>
                                     <div className="card-section-degree-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                         <h5>8 Months*</h5>   
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                marginBottom: "-10px"
+                                            }}
+                                        >
+                                            <img
+                                                src={ellipse}
+                                                alt="ellipse"
+                                                className="ellipse-degree"
+                                            />
+                                            <h5>8 Months*</h5>
                                         </div>
-                                     
-                                    <h6>programme Duration</h6>
-                                   
+
+                                        <h6>programme Duration</h6>
                                     </div>
                                     <div className="card-section-degree-content-price">
-                                        <div style={{display:"flex", marginBottom:"-10px"}}>
-                                            <img src={ellipse} alt="ellipse" style={{margin:"5px 11px 23px 0px"}} />
-                                         <h5>Online Bootcamp</h5>   
+                                        <div
+                                            style={{
+                                                display: "flex",
+                                                marginBottom: "-10px"
+                                            }}
+                                        >
+                                            <img
+                                                src={ellipse}
+                                                alt="ellipse"
+                                                className="ellipse-degree"
+                                            />
+                                            <h5>Online Bootcamp</h5>
                                         </div>
-                                     
-                                    <h6>Learning format</h6>
+
+                                        <h6>Learning format</h6>
                                     </div>
                                 </div>
                                 <div>
-                                   <button className="card-section-degree-buy-btn"> Buy Now</button>
-                                    <button className="card-section-degree-addCart-btn"> Add To Cart</button>
-                                   </div>
-
+                                    <button className="card-section-degree-buy-btn">
+                                        {" "}
+                                        Buy Now
+                                    </button>
+                                    <button className="card-section-degree-addCart-btn">
+                                        {" "}
+                                        Add To Cart
+                                    </button>
+                                </div>
                             </div>
                         </Col>
                     </Row>
                 </Container>
             </div>
-<div style={{backgroundColor:"#F6F7F8"}}>
-
-            <div className="d-flex degree-subsection">
-                <div className="degree-subsection-indv-div">
-                    <div className="d-flex">
-                        <img
-                            src={vector2}
-                            alt=""
-                            style={{
-                                padding: "2px 5px 5px 3px",
-                                marginTop: "-5px"
-                            }}
-                        />
-                        <p className="red-header">$25,000 USD</p>
-                    </div>
-                    <p className="grey-header-degree">
-                        for full degree | Each credit hour $667 USD
-                    </p>
-                    <p className="black-header-degree">
-                        *EMI and other options available
-                    </p>
-                </div>
-                <div className="degree-subsection-indv-div">
-                    <div className="d-flex">
-                        <img
-                            src={vector3}
-                            alt=""
-                            style={{
-                                padding: "2px 5px 5px 3px",
-                                marginTop: "-5px"
-                            }}
-                        />
-                        <p className="red-header">8 Months</p>
-                    </div>
-                    <p className="grey-header-degree">
-                        for full degree | Each credit hour $667 USD
-                    </p>
-                    <p className="grey-header-degree">
-                        *EMI and other options available
-                    </p>
-                </div>
-                <div className="degree-subsection-indv-div">
-                    <div className="d-flex">
-                        <img
-                            src={vector1}
-                            alt=""
-                            style={{
-                                padding: "2px 5px 5px 3px",
-                                marginTop: "-5px"
-                            }}
-                        />
-                        <p className="red-header">Completly Online</p>
-                    </div>
-                </div>
-            </div>
-            <Container className="containerClass">
-                <Nav>
-                    <NavItem>
-                        <NavLink className="navlink-degree" href="#Overview">
-                            Overview
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink
-                            className="navlink-degree"
-                            href="#ProgramCurriculum"
-                        >
-                            Program curriculum
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="navlink-degree" href="#Instructors">
-                            {" "}
-                            Instructors
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="navlink-degree" href="#Benefits">
-                            {" "}
-                            Benefits
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="navlink-degree" href="#fees">
-                            {" "}
-                            fees{" "}
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="navlink-degree" href="#Reviews">
-                            {" "}
-                            Reviews
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink className="navlink-degree" href="#FAQs">
-                            {" "}
-                            FAQs
-                        </NavLink>
-                    </NavItem>
-                </Nav>
-            </Container>
-            <Container className="containerClass">
-                <Row>
-                    <Col sm="12" md="8">
-                        <div
-                            className="course-overview-card"
-                            style={{ backgroundColor: "transparent" }}
-                        >
-                            <h5
-                                className="course-overview-card-title"
-                                id="Overview"
-                            >
-                                Skills you'll gain
-                            </h5>
-                            <div className="course-overview-card-descriptionbox">
-                                <p>Web development</p>
-                                <p>Web development</p>
-                            </div>
-
-                            <h5 className="course-overview-card-title">
-                                Learner's career outcome
-                            </h5>
-                            <div className="course-overview-card-descriptionbox">
-                                <p>Web development</p>
-                                <p>Web development</p>
-                                <p>Web development</p>
-                            </div>
-                            <h5 className="course-overview-card-title">
-                                Job opportunities
-                            </h5>
-                            <div className="course-overview-card-stats">
-                                <div className="stat-container">
-                                    <img src={stat1} alt="" />
-                                    <p>50 % Promotions</p>
-                                </div>
-                                <div className="stat-container">
-                                    <img src={stat2} alt="" />
-                                    <p>12 % New career</p>
-                                </div>
-                            </div>
+            <div style={{ backgroundColor: "#F6F7F8" }}>
+                <div className="d-flex degree-subsection">
+                    <div className="degree-subsection-indv-div">
+                        <div className="d-flex">
+                            <img
+                                src={vector2}
+                                alt=""
+                                style={{
+                                    padding: "2px 5px 5px 3px",
+                                    marginTop: "-5px"
+                                }}
+                            />
+                            <p className="red-header">$25,000 USD</p>
                         </div>
-                    </Col>
-                </Row>
-            </Container>
+                        <p className="grey-header-degree">
+                            for full degree | Each credit hour $667 USD
+                        </p>
+                        <p className="black-header-degree">
+                            *EMI and other options available
+                        </p>
+                    </div>
+                    <div className="degree-subsection-indv-div">
+                        <div className="d-flex">
+                            <img
+                                src={vector3}
+                                alt=""
+                                style={{
+                                    padding: "2px 5px 5px 3px",
+                                    marginTop: "-5px"
+                                }}
+                            />
+                            <p className="red-header">8 Months</p>
+                        </div>
+                        <p className="grey-header-degree">
+                            for full degree | Each credit hour $667 USD
+                        </p>
+                        <p className="grey-header-degree">
+                            *EMI and other options available
+                        </p>
+                    </div>
+                    <div className="degree-subsection-indv-div">
+                        <div className="d-flex">
+                            <img
+                                src={vector1}
+                                alt=""
+                                style={{
+                                    padding: "2px 5px 5px 3px",
+                                    marginTop: "-5px"
+                                }}
+                            />
+                            <p className="red-header">Completly Online</p>
+                        </div>
+                    </div>
+                </div>
+                <Container className="containerClass">
+                    <Nav>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-degree"
+                                href="#Overview"
+                            >
+                                Overview
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-degree"
+                                href="#ProgramCurriculum"
+                            >
+                                Program curriculum
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-degree"
+                                href="#Instructors"
+                            >
+                                {" "}
+                                Instructors
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-degree"
+                                href="#Benefits"
+                            >
+                                {" "}
+                                Benefits
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className="navlink-degree" href="#fees">
+                                {" "}
+                                fees{" "}
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className="navlink-degree" href="#Reviews">
+                                {" "}
+                                Reviews
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className="navlink-degree" href="#FAQs">
+                                {" "}
+                                FAQs
+                            </NavLink>
+                        </NavItem>
+                    </Nav>
+                </Container>
+                <Container className="containerClass">
+                    <Row>
+                        <Col sm="12" md="8">
+                            <div
+                                className="course-overview-card"
+                                style={{ backgroundColor: "transparent" }}
+                            >
+                                <h5
+                                    className="course-overview-card-title"
+                                    id="Overview"
+                                >
+                                    Skills you'll gain
+                                </h5>
+                                <div className="course-overview-card-descriptionbox">
+                                    <p>Web development</p>
+                                    <p>Web development</p>
+                                </div>
+
+                                <h5 className="course-overview-card-title">
+                                    Learner's career outcome
+                                </h5>
+                                <div className="course-overview-card-descriptionbox">
+                                    <p>Web development</p>
+                                    <p>Web development</p>
+                                    <p>Web development</p>
+                                </div>
+                                <h5 className="course-overview-card-title">
+                                    Job opportunities
+                                </h5>
+                                <div className="course-overview-card-stats">
+                                    <div className="stat-container">
+                                        <img src={stat1} alt="" />
+                                        <p>50 % Promotions</p>
+                                    </div>
+                                    <div className="stat-container">
+                                        <img src={stat2} alt="" />
+                                        <p>12 % New career</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
             <div className="program-details-section">
-                <Row>
+                <Row style={{ margin: "0px" }}>
                     <Col sm="12" md="8" lg="9">
                         <Container className="containerClass">
                             <h5
@@ -521,11 +572,7 @@ function Degree() {
                     </Col>
                 </Row>
             </div>
-            <h5
-                className="course-content-top-header container"
-                style={{ marginTop: "30px", marginBottom: "0px" }}
-                id="Instructors"
-            >
+            <h5 className="course-content-top-header" id="Instructors">
                 Instructors
             </h5>
             <div className="d-flex" style={{ marginLeft: "280px" }}>
