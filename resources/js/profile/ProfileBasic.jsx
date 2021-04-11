@@ -1,37 +1,48 @@
-import React from "react";
 import { FormGroup, Input } from "reactstrap";
 import ProfileLayout from "./ProfileLayout";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import http from "../utils/http";
 const ProfileBasic = () => {
+    const [token, setUserToken] = useState([]);
+    useEffect(() => {
+        const accessToken = localStorage.getItem("accessToken");
+        http.setToken(accessToken);
+        http.get("auth/user").then(res => {
+            setUserToken(res.data.data);
+        });
+    }, []);
+
     return (
         <ProfileLayout>
             <h3 className="profile-title">BASIC</h3>
             <div className="profile-section-1">
                 <FormGroup>
-                    <p className="input-headers">First Name</p>
+                    <p className="input-headers">Name</p>
                     <Input
                         type="name"
                         name="name"
-                        placeholder="Mona"
+                        placeholder={token.name}
                         className="input-group"
                         disabled={true}
                     />
                 </FormGroup>
-                <FormGroup>
+                {/* <FormGroup>
                     <p className="input-headers">Last Name</p>
                     <Input
                         type="name"
                         name="email"
-                        placeholder="Singh"
+                        placeholder={token.name}
                         className="input-group"
                         disabled={true}
                     />
-                </FormGroup>
+                </FormGroup> */}
                 <FormGroup>
                     <p className="input-headers">Email</p>
                     <Input
                         type="email"
                         name="email"
-                        placeholder="abc@gmail.com"
+                        placeholder={token.email}
                         className="input-group"
                         disabled={true}
                     />

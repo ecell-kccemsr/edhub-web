@@ -3,6 +3,7 @@ import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import loginBackground from "../../Images/loginBackground.png";
+import http from "../../utils/http";
 const Login = () => {
     let history = useHistory();
 
@@ -13,21 +14,11 @@ const Login = () => {
         e.preventDefault();
         let form = e.nativeEvent.target;
         let data = new FormData(form);
-        // const data = JSON.stringify({
-        //     email,
-        //     password,
-        //     remember_me
-        // });
-        axios
-            .post("/api/auth/login", data, {
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
+        http.post("auth/login", data)
             .then(res => {
-                if (res.data?.access_token) {
-                    history.push("/");
-                }
+                const accessToken = res.data.access_token;
+                localStorage.setItem("accessToken", accessToken);
+                window.location.href = "/";
             })
             .catch(err => console.log(err));
     };
@@ -101,11 +92,7 @@ const Login = () => {
                         md={{ size: 6, offset: 2 }}
                         className="auth-img-col"
                     >
-                        <img
-                            src={loginBackground}
-                            alt=""
-                            className="w-100"
-                        />
+                        <img src={loginBackground} alt="" className="w-100" />
                     </Col>
                 </Row>
             </Container>

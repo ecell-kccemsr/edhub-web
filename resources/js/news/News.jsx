@@ -36,6 +36,7 @@ function News() {
             .catch(err => {
                 console.log(err);
             });
+
         axios
             .get("/api/news")
             .then(res => {
