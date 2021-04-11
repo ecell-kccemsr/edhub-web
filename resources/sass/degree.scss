@@ -325,6 +325,78 @@
                 display: none;
             }
         }
+
+        //Degree Card
+        .degree-main-card-section {
+            position: relative;
+            padding: 20px;
+            background: #fff;
+            .degree-bookmark-button {
+                position: absolute;
+                background: #fff;
+                top: -15px;
+                left: -15px;
+                height: 50px;
+                border: none;
+                outline: none;
+                border-radius: 50%;
+                width: 50px;
+                box-shadow: 2px 2px 2px 2px #0000003d;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    max-width: 100%;
+                    object-fit: contain;
+                }
+            }
+            .degreecard-header-image {
+                width: 100%;
+            }
+            .card-section-degree-content {
+                .degreecard-container {
+                    margin: 15px 0;
+                    .degreecard-maintitle {
+                        display: flex;
+                        img {
+                            object-fit: contain;
+                            margin-right: 10px;
+                        }
+                        h5 {
+                            font-weight: 500;
+                        }
+                    }
+                    .degreecard-subtitle {
+                        color: #7b7b7b;
+                        padding-left: 20px;
+                        font-weight: 400;
+                    }
+                    p {
+                        color: #f05454;
+                        padding-left: 20px;
+                    }
+                }
+            }
+            .card-section-degree-footer {
+                button {
+                    width: 100%;
+                    padding: 10px 20px;
+                    outline: none;
+                    margin-bottom: 10px;
+                    border-radius: 4px;
+                }
+                .apply-button {
+                    background: #f05454;
+                    color: #fff;
+                    border: none;
+                }
+                .cart-btn {
+                    background: #fff;
+                    color: #5377ba;
+                    border: 1px solid #5377ba;
+                }
+            }
+        }
     }
     .popular-choice-section-course-details {
         padding: 50px;
@@ -361,5 +433,22 @@
     .progress-bar {
         background: #ead628;
         height: 20px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .degree-page-section {
+        .degree-page-hero-section {
+            padding: 20px;
+        }
+        .popular-choice-section-course-details {
+            .popular-choice-header {
+                .popular-choice-sub-section {
+                    .popular-choice-btn-container {
+                        text-align: left;
+                    }
+                }
+            }
+        }
     }
 }

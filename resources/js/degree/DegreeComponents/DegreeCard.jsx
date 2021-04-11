@@ -1,102 +1,66 @@
 import React from "react";
 
-import star from "../../Images/courseCategory/star.png";
+import star from "../../Images/degree/star.png";
 import ellipse from "../../Images/degree/Ellipse.png";
+import cardheader from "../../Images/degree/cardheader.png";
+import bookmark from "../../Images/degree/bookmark.png";
+
 const DegreeCard = () => {
     return (
-        <div className="add-to-cart-section-degree">
-            <img
-                src="https://thumbs.dreamstime.com/b/spring-flowers-blue-crocuses-drops-water-backgro-background-tracks-rain-113784722.jpg"
-                className="card-header-image-degree"
-            />
-            <div>
-                <div>
-                    <img src={star} alt="" />
-                </div>
-            </div>
+        <div className="degree-main-card-section">
+            <button className="degree-bookmark-button">
+                <img src={bookmark} alt="Bookmark" />
+            </button>
+            <img src={cardheader} className="degreecard-header-image" />
+            <img src={star} alt="Degree Rating" />
             <div className="card-section-degree-content">
-                <div className="card-section-degree-content-price">
-                    <div
-                        style={{
-                            display: "flex",
-                            marginBottom: "-10px"
-                        }}
-                    >
-                        <img
-                            src={ellipse}
-                            alt="ellipse"
-                            className="ellipse-degree"
-                        />
+                <div className="degreecard-container">
+                    <div className="degreecard-maintitle">
+                        <img src={ellipse} alt="ellipse" />
                         <h5>$25000 /-</h5>
                     </div>
 
-                    <h6>EMI Available*</h6>
+                    <h6 className="degreecard-subtitle">EMI Available*</h6>
                     <p>
                         Get
-                        <strong> 5% extra cashback</strong>
+                        <strong> 5% extra cashback </strong>
                         if you buy through us
                     </p>
                 </div>
-                <div className="card-section-degree-content-price">
-                    <div
-                        style={{
-                            display: "flex",
-                            marginBottom: "-10px"
-                        }}
-                    >
+                <div className="degreecard-container">
+                    <div className="degreecard-maintitle">
                         <img
                             src={ellipse}
                             alt="ellipse"
                             style={{
                                 margin: "5px 11px 23px 0px"
                             }}
-                            className="ellipse-degree"
                         />
                         <h5>April 5, 2021</h5>
                     </div>
 
-                    <h6>Start Date</h6>
+                    <h6 className="degreecard-subtitle">Start Date</h6>
                 </div>
-                <div className="card-section-degree-content-price">
-                    <div
-                        style={{
-                            display: "flex",
-                            marginBottom: "-10px"
-                        }}
-                    >
-                        <img
-                            src={ellipse}
-                            alt="ellipse"
-                            className="ellipse-degree"
-                        />
+                <div className="degreecard-container">
+                    <div className="degreecard-maintitle">
+                        <img src={ellipse} alt="ellipse" />
                         <h5>8 Months*</h5>
                     </div>
 
-                    <h6>programme Duration</h6>
+                    <h6 className="degreecard-subtitle">programme Duration</h6>
                 </div>
-                <div className="card-section-degree-content-price">
-                    <div
-                        style={{
-                            display: "flex",
-                            marginBottom: "-10px"
-                        }}
-                    >
-                        <img
-                            src={ellipse}
-                            alt="ellipse"
-                            className="ellipse-degree"
-                        />
+                <div className="degreecard-container">
+                    <div className="degreecard-maintitle">
+                        <img src={ellipse} alt="ellipse" />
                         <h5>Online Bootcamp</h5>
                     </div>
 
-                    <h6>Learning format</h6>
+                    <h6 className="degreecard-subtitle">Learning format</h6>
                 </div>
             </div>
-            <div>
-                <button className="card-section-degree-buy-btn">Buy Now</button>
-                <button className="card-section-degree-addCart-btn">
-                    Add To Cart
-                </button>
+            <div className="card-section-degree-footer">
+                <button className="apply-button">Buy Now</button>
+                <button className="cart-btn">Add To Cart</button>
             </div>
         </div>
     );
