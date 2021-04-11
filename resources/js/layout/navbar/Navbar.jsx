@@ -18,10 +18,10 @@ import {
     Col
 } from "reactstrap";
 import notificationIcon from "../../Images/notificationIcon.png";
-
+import { useStoreState } from "easy-peasy";
 const NavbarComponent = props => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const authUser = useStoreState(state => state.authUser);
     const toggle = () => setIsOpen(!isOpen);
 
     return (
@@ -55,9 +55,16 @@ const NavbarComponent = props => {
                             xs="6"
                             md="3"
                         >
-                            <Link to="/login" className="top-navbar-signin ">
-                                Sign in
-                            </Link>
+                            {authUser ? (
+                                <h5>{`Hello ${authUser?.name}`}</h5>
+                            ) : (
+                                <Link
+                                    to="/login"
+                                    className="top-navbar-signin "
+                                >
+                                    Sign in
+                                </Link>
+                            )}
                         </Col>
                     </Row>
                 </div>

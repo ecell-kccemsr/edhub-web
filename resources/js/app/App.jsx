@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import Layout from "../layout/Layout";
 import "../../sass/app.scss";
 import Homepage from "../home/Homepage";
@@ -29,8 +29,11 @@ import ProfileWishlist from "../profile/ProfileWishlist";
 import ProfileCourses from "../profile/ProfileCourses";
 import Degree from "../degree/Degree";
 import LayoutCourse from "../layoutCourse/LayoutCourse";
-
+import store from "../store/store";
 const App = props => {
+    useEffect(() => {
+        store.getActions().getAuthUser();
+    }, []);
     return (
         <Fragment>
             <Switch>
