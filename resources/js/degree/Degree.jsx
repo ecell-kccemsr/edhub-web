@@ -194,6 +194,69 @@ function Degree() {
                                     <img src={courseDetailCompany} alt="" />
                                 </div>
                             </div>
+                            <div>
+                                <div className="d-flex degree-subsection">
+                                    <div className="degree-subsection-indv-div">
+                                        <div className="d-flex">
+                                            <img
+                                                src={vector2}
+                                                alt=""
+                                                style={{
+                                                    padding: "2px 5px 5px 3px",
+                                                    marginTop: "-5px"
+                                                }}
+                                            />
+                                            <p className="red-header">
+                                                $25,000 USD
+                                            </p>
+                                        </div>
+                                        <p className="grey-header-degree">
+                                            for full degree | Each credit hour
+                                            $667 USD
+                                        </p>
+                                        <p className="black-header-degree">
+                                            *EMI and other options available
+                                        </p>
+                                    </div>
+                                    <div className="degree-subsection-indv-div">
+                                        <div className="d-flex">
+                                            <img
+                                                src={vector3}
+                                                alt=""
+                                                style={{
+                                                    padding: "2px 5px 5px 3px",
+                                                    marginTop: "-5px"
+                                                }}
+                                            />
+                                            <p className="red-header">
+                                                8 Months
+                                            </p>
+                                        </div>
+                                        <p className="grey-header-degree">
+                                            for full degree | Each credit hour
+                                            $667 USD
+                                        </p>
+                                        <p className="grey-header-degree">
+                                            *EMI and other options available
+                                        </p>
+                                    </div>
+                                    <div className="degree-subsection-indv-div">
+                                        <div className="d-flex">
+                                            <img
+                                                src={vector1}
+                                                alt=""
+                                                style={{
+                                                    padding: "2px 5px 5px 3px",
+                                                    marginTop: "-5px"
+                                                }}
+                                            />
+                                            <p className="red-header">
+                                                Completly Online
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </Col>
                         <Col xs="12" md="4" lg="3">
                             <div className="add-to-cart-section-degree">
@@ -300,59 +363,6 @@ function Degree() {
                 </Container>
             </div>
             <div style={{ backgroundColor: "#F6F7F8" }}>
-                <div className="d-flex degree-subsection">
-                    <div className="degree-subsection-indv-div">
-                        <div className="d-flex">
-                            <img
-                                src={vector2}
-                                alt=""
-                                style={{
-                                    padding: "2px 5px 5px 3px",
-                                    marginTop: "-5px"
-                                }}
-                            />
-                            <p className="red-header">$25,000 USD</p>
-                        </div>
-                        <p className="grey-header-degree">
-                            for full degree | Each credit hour $667 USD
-                        </p>
-                        <p className="black-header-degree">
-                            *EMI and other options available
-                        </p>
-                    </div>
-                    <div className="degree-subsection-indv-div">
-                        <div className="d-flex">
-                            <img
-                                src={vector3}
-                                alt=""
-                                style={{
-                                    padding: "2px 5px 5px 3px",
-                                    marginTop: "-5px"
-                                }}
-                            />
-                            <p className="red-header">8 Months</p>
-                        </div>
-                        <p className="grey-header-degree">
-                            for full degree | Each credit hour $667 USD
-                        </p>
-                        <p className="grey-header-degree">
-                            *EMI and other options available
-                        </p>
-                    </div>
-                    <div className="degree-subsection-indv-div">
-                        <div className="d-flex">
-                            <img
-                                src={vector1}
-                                alt=""
-                                style={{
-                                    padding: "2px 5px 5px 3px",
-                                    marginTop: "-5px"
-                                }}
-                            />
-                            <p className="red-header">Completly Online</p>
-                        </div>
-                    </div>
-                </div>
                 <Container className="containerClass">
                     <Nav>
                         <NavItem>
