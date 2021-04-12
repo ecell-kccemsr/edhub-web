@@ -28,7 +28,7 @@ const faq = [
     {
         id: "f56739d4-fbea-46cb-b2db-5511b1d744a2",
         question: "When will I have access to my course",
-        answer:
+        answer: 
             "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. "
     }
 ];
@@ -64,7 +64,6 @@ function CourseDetail() {
         <>
             <div className="degree-page-section">
                 <DegreeHeroSection />
-
                 <DegreeAboutSection />
 
                 <DegreeDetail />

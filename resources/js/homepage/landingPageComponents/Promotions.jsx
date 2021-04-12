@@ -7,6 +7,8 @@ import guardian from "../../Images/landingpage/guardian.png";
 import hd from "../../Images/landingpage/hd.png";
 import hindustan from "../../Images/landingpage/hindustan.png";
 import toi from "../../Images/landingpage/toi.png";
+import CountUp from 'react-countup';
+
 const Promotions = () => {
     return (
         <div className="promotions-section">
@@ -21,7 +23,10 @@ const Promotions = () => {
                         Join the community
                     </p>
                     <p className="community-divison-content-subtext">
-                        of more than <span>100,000</span> students
+                        of more than <span><CountUp start={0}
+  delay={2}
+  end={100000}
+  duration={5} /></span> students
                     </p>
                 </div>
                 <p className="colab-content">
