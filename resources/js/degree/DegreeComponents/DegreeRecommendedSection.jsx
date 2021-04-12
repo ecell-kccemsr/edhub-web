@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Button } from "reactstrap";
-
+import CourseCard from "../../components/course-card/CourseCard";
 const DegreeRecommendedSection = ({ course }) => {
     return (
         <div className="popular-choice-section-course-details">

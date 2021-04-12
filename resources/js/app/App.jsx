@@ -34,20 +34,22 @@ import ProfileBasic from "../profile/ProfileBasic";
 import ProfileWishlist from "../profile/ProfileWishlist";
 import ProfileCourses from "../profile/ProfileCourses";
 import Degree from "../degree/Degree";
-
-//Store
-import store from "../store/store";
+import http from "../utils/http";
+import { useStoreActions } from "easy-peasy";
 
 const App = props => {
+    const setUser = useStoreActions(actions => actions.setUser);
     useEffect(() => {
-        store.getActions().getAuthUser();
+        const accessToken = localStorage.getItem("accessToken");
+        http.setToken(accessToken);
+        http.get("auth/user").then(res => setUser(res.data.data));
     }, []);
     return (
         <Fragment>
             <Switch>
                 <Route path="/login" exact component={Login} />
                 <Route path="/register" exact component={Register} />\
-                //JobLayoutRoutes
+                {/* //JobLayoutRoutes */}
                 <JobLayoutRoute path="/" exact component={Homepage} />
                 <JobLayoutRoute
                     path="/govermentjobs"
