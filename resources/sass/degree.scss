@@ -83,6 +83,35 @@
         margin-top: 0;
         margin-bottom: 0;
         box-shadow: none;
+        .course-overview-card-top {
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0px 3px 6px 0px #00000054;
+            margin: -50px 0 30px;
+            .topcard-flex-container {
+                padding: 0 5px;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: baseline;
+                img {
+                    object-fit: contain;
+                    margin-right: 8px;
+                }
+                .text-container {
+                    h5 {
+                        color: #f05454;
+                    }
+                    p {
+                        color: #7b7b7b;
+                        margin-bottom: 0;
+                    }
+                    b {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
         .course-overview-card:first-child {
             padding: 30px 0 20px;
         }
