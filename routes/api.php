@@ -28,6 +28,7 @@ use App\Http\Controllers\API\RegisterForFreeUpdatesController;
 
 Route::group(['middleware' => ['auth:api']], function () {
     Route::get('/auth/user', [AuthController::class,'user']);
+    Route::post('/auth/update',[AuthController::class,'update']);
   });
 
 //Auth Controller

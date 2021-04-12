@@ -139,4 +139,14 @@ class AuthController extends Controller
         return new UserResource(Auth::user());
     }
 
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+        if($request->has('name'))
+            $user->name = $request->input('name');
+        if($request->has('gender'))
+            $user->gender = $request->input('gender');
+        $user->save();
+        return new UserResource(Auth::user());
+    }
 }
