@@ -1,17 +1,32 @@
 import React from "react";
+import { Route } from "react-router";
 import FooterCourse from "./Footer/FooterCourse";
 import Newfooter from "./Footer/Newfooter";
 import Navbar1 from "./Navbar/Navbar1";
-function LayoutCourse(props) {
-    console.log(props.children);
+
+const CourseLayoutRoutes = ({ component: Component, ...rest }) => {
+    return (
+        <Route
+            {...rest}
+            render={props => (
+                <LayoutCourse>
+                    <Component {...props} />
+                </LayoutCourse>
+            )}
+        />
+    );
+};
+
+function LayoutCourse({ children }) {
+    console.log(children);
     return (
         <>
             <Navbar1 />
-            {props.children}
+            {children}
             <Newfooter />
             <FooterCourse />
         </>
     );
 }
 
-export default LayoutCourse;
+export default CourseLayoutRoutes;
