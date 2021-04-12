@@ -2,7 +2,11 @@ import React from "react";
 import star4 from "../Images/courseDetail/4star.png";
 import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
 import cardHeader from "../Images/compare/cardheader.png";
+import { useStoreActions, useStoreState } from "easy-peasy";
 const Compare = () => {
+    const compares = useStoreState(state => state.compares);
+    const addToCompare = useStoreActions(actions => actions.addToCompare);
+    console.log("compares", compares);
     return (
         <>
             <div className="compare-section">
@@ -69,23 +73,22 @@ const Compare = () => {
                         <td>
                             <p className="compare-title">Course Rating</p>
                         </td>
-                        <td >
-                            <div style={{display:"flex"}}>
-                               <img src={star4} alt="" />
-                            <p>5.0</p>   
-                            </div>
-                          
-                        </td>
-                        <td >
-                        <div style={{display:"flex"}}>
-                               <img src={star4} alt="" />
-                            <p>5.0</p>   
+                        <td>
+                            <div style={{ display: "flex" }}>
+                                <img src={star4} alt="" />
+                                <p>5.0</p>
                             </div>
                         </td>
-                        <td >
-                        <div style={{display:"flex"}}>
-                               <img src={star4} alt="" />
-                            <p>5.0</p>   
+                        <td>
+                            <div style={{ display: "flex" }}>
+                                <img src={star4} alt="" />
+                                <p>5.0</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div style={{ display: "flex" }}>
+                                <img src={star4} alt="" />
+                                <p>5.0</p>
                             </div>
                         </td>
                     </tr>
@@ -95,7 +98,6 @@ const Compare = () => {
                         </td>
                         <td>
                             <img src={courseDetailCompany} alt="" />
-                            
                         </td>
                         <td>
                             <img src={courseDetailCompany} alt="" />
@@ -182,21 +184,36 @@ const Compare = () => {
                         </td>
                         <td>
                             <p>Raj Sharma </p>
-                            <button className="compare-buy-btn"> Buy Now</button>
-                            <button className="compare-addCart-btn"> Add To Cart</button>
-                    
+                            <button className="compare-buy-btn">
+                                {" "}
+                                Buy Now
+                            </button>
+                            <button className="compare-addCart-btn">
+                                {" "}
+                                Add To Cart
+                            </button>
                         </td>
                         <td>
                             <p>Raj Sharma </p>
-                            <button className="compare-buy-btn"> Buy Now</button>
-                            <button className="compare-addCart-btn"> Add To Cart</button>
-                    
+                            <button className="compare-buy-btn">
+                                {" "}
+                                Buy Now
+                            </button>
+                            <button className="compare-addCart-btn">
+                                {" "}
+                                Add To Cart
+                            </button>
                         </td>
                         <td>
                             <p>Raj Sharma </p>
-                            <button className="compare-buy-btn"> Buy Now</button>
-                            <button className="compare-addCart-btn"> Add To Cart</button>
-                    
+                            <button className="compare-buy-btn">
+                                {" "}
+                                Buy Now
+                            </button>
+                            <button className="compare-addCart-btn">
+                                {" "}
+                                Add To Cart
+                            </button>
                         </td>
                     </tr>
                 </table>

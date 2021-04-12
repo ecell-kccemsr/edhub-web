@@ -39,10 +39,11 @@ import { useStoreActions } from "easy-peasy";
 
 const App = props => {
     const setUser = useStoreActions(actions => actions.setUser);
+    const setCompares = useStoreActions(actions => actions.setCompares);
     useEffect(() => {
-        const accessToken = localStorage.getItem("accessToken");
-        http.setToken(accessToken);
+        http.setToken(localStorage.getItem("accessToken"));
         http.get("auth/user").then(res => setUser(res.data.data));
+        setCompares(JSON.parse(localStorage.getItem("compares")));
     }, []);
     return (
         <Fragment>

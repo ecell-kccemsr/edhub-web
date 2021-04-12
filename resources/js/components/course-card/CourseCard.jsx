@@ -8,22 +8,12 @@ import guide from "../../Images/courseCategory/guide.png";
 import star from "../../Images/courseCategory/star.png";
 import reviewArrow from "../../Images/courseCategory/reviewArrow.png";
 import addtoCompare from "../../Images/courseCategory/addcompare.png";
+import { useStoreActions, useStoreState } from "easy-peasy";
 const CourseCard = ({ data }) => {
-    const [reviews, setReviews] = useState([]);
-    if (data) {
-        useEffect(() => {
-            axios
-                .get(`/api/courses/${data.id}/reviews`)
-                .then(res => {
-                    console.log(res);
-                    setReviews(res.data.data[0]);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        }, []);
-    }
-
+    const compares = useStoreState(state => state.compares);
+    const addToCompare = useStoreActions(actions => actions.addToCompare);
+    const isAlreadyInCompares =
+        compares.findIndex(course => course.id === data.id) !== -1;
     return (
         <>
             <div className="coursecard-section h-100">
@@ -58,9 +48,16 @@ const CourseCard = ({ data }) => {
                             <p>Guided Course</p>
                         </div>
                     </div>
-                    <div className="compare-section">
+                    <div
+                        className="compare-section"
+                        onClick={e => addToCompare(data)}
+                    >
                         <img src={addtoCompare} alt="" />
-                        <h5>Add to compare</h5>
+                        {isAlreadyInCompares === false ? (
+                            <h5>Add to compare</h5>
+                        ) : (
+                            <h5>Remove from compare</h5>
+                        )}
                     </div>
                     <hr />
                 </div>
@@ -68,7 +65,7 @@ const CourseCard = ({ data }) => {
                 <div className="coursecard-footer">
                     <div>
                         <img src={star} alt="" />
-                        <p>{reviews?.rating} Reviews</p>
+                        <p>{data?.rating} Reviews</p>
                     </div>
                     <Link to={`/courseDetail/${data?.slug}`}>
                         <img src={reviewArrow} alt="" />
