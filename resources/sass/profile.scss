@@ -59,7 +59,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 85px;
             }
             .update-btn {
                 background-color: #4a6eb3;
@@ -85,6 +84,11 @@
 
             .profile-hr {
                 width: 100%;
+            }
+            @media screen and (max-width: 650px) {
+                .profile-hr {
+                    margin: 5px 0;
+                }
             }
 
             .profile-links {
@@ -168,11 +172,23 @@
     border-radius: 16px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
     .profile-outer-part {
         padding: 5px;
         .profile-section {
             padding: 10px !important;
+            .update-btn {
+                padding: 5px 10px !important;
+            }
+        }
+        .profile-section-2 {
+            margin-top: 10px;
+            .img-container {
+                padding: 10px 5px 5px;
+                .profile-section-profile-image {
+                    max-width: 100px !important;
+                }
+            }
         }
     }
 }

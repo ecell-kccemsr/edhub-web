@@ -8,13 +8,13 @@ const ProfileLayout = ({ children }) => {
     return (
         <div className="profile-outer-part">
             <div className="outermost-section">
-                <Row className="profile-section">
-                    <Col xs="12" md="6" lg="9">
+                <Row className="profile-section m-0">
+                    <Col xs="12" md="8" lg="9">
                         {children}
                     </Col>
                     <Col
                         xs="12"
-                        md="6"
+                        md="4"
                         lg="3"
                         className="profile-section-2 p-0 pb-4"
                     >

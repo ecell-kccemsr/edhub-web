@@ -22,7 +22,7 @@
 //Footer-Course
 .footer-course-section {
     background: #f05454;
-    height: 320px;
+    padding: 40px 0;
     .footer-course-header {
         color: #fff;
         text-align: center;
@@ -36,21 +36,23 @@
     }
     .footer-course-row {
         margin-top: 40px;
-        padding: 20px;
-        width: 120%;
-        .footer-course-email-input {
-            height: 70px;
-            border-radius: 16px;
-            width: 415px;
-        }
-        .footer-course-btn {
-            background-color: #3c64b1;
-            position: absolute;
-            right: 26px;
-            top: 10px;
-            width: 120px;
-            padding: 12px;
-            border-radius: 8px;
+        justify-content: current;
+        .form-group {
+            display: flex;
+            position: relative;
+            .footer-course-email-input {
+                height: 70px;
+                border-radius: 16px;
+                width: 100%;
+            }
+            .footer-course-btn {
+                background-color: #3c64b1;
+                position: absolute;
+                top: 13%;
+                right: 2%;
+                padding: 10px 20px;
+                border-radius: 8px;
+            }
         }
     }
 }
