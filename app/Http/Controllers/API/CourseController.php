@@ -14,8 +14,20 @@ class CourseController extends Controller
 {
     public function get(Request $request)
     {
-        $courses = Course::paginate($request->input('per_page',10));
-        return new CourseResourceCollection($courses);
+        $courses = Course::query();
+        if($request->has('course_provider_id')) {
+            $courses = $courses->where('course_provider_id',$request->input('course_provider_id'));
+        }
+         if($request->has('price_min')) {
+            $courses = $courses->where('price', '>=', $request->input('price_min'));
+        }
+        if($request->has('price_max')) {
+            $courses = $courses->where('price', '<=', $request->input('price_max'));
+        }
+        if($request->has('rating')) {
+            $courses = $courses->where('rating','>=', $request->input('rating'));
+        }
+        return new CourseResourceCollection($courses->paginate($request->input('per_page',10)));
     }
 
     public function show($course)
