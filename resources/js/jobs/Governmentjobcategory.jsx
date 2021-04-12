@@ -18,7 +18,7 @@ const Governmentjobcategory = props => {
     const [subCategory, setSubCategory] = useState([]);
     const [categoryslug, setSlug] = useState("");
     const [categoryJobs, setCategoryJobs] = useState([]);
-    const [categoryJobsLoading,setCategoryJobsLoading] = useState(true);
+    const [categoryJobsLoading, setCategoryJobsLoading] = useState(true);
     const [category, setCategory] = useState([]);
     const [age, setAge] = useState(null);
     const [qualification, setQualification] = useState(null);
@@ -29,8 +29,12 @@ const Governmentjobcategory = props => {
 
         axios
             .get("/api/government_jobs/categories")
-            .then(res => {setCategory(res.data.data);})
-            .catch(err => {console.log(err);});
+            .then(res => {
+                setCategory(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
 
     const getData = (ageVal = null, qualificationVal = null) => {
@@ -44,52 +48,83 @@ const Governmentjobcategory = props => {
                 else age = `&age_limit=${ageVal}`;
                 if (qualificationVal == null) qualification = "";
                 else qualification = `&qualification=${qualificationVal}`;
-                axios.get(`/api/government_jobs/sub_categories?category_id=${cats[0].id}`)
-                    .then(res => {setSubCategory(res.data.data);})
-                    .catch(err => {console.log(err);});
+                axios
+                    .get(
+                        `/api/government_jobs/sub_categories?category_id=${cats[0].id}`
+                    )
+                    .then(res => {
+                        setSubCategory(res.data.data);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
 
-                axios.get(`/api/government_jobs?category_id=${cats[0].id}${age}${qualification}`)
-                    .then(res => {setCategoryJobs(res.data.data);setCategoryJobsLoading(false)})
-                    .catch(err => {console.log(err);});
+                axios
+                    .get(
+                        `/api/government_jobs?category_id=${cats[0].id}${age}${qualification}`
+                    )
+                    .then(res => {
+                        setCategoryJobs(res.data.data);
+                        setCategoryJobsLoading(false);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
             }
         });
     };
 
-    const getDatawithActiveFilters = (subcategory_id=null,age_limit=null,qualifcation=null)=>{
+    const getDatawithActiveFilters = (
+        subcategory_id = null,
+        age_limit = null,
+        qualifcation = null
+    ) => {
         let age, qualificationn;
         if (age_limit == null) age = "";
         else age = `&age_limit=${age_limit}`;
         if (qualifcation == null) qualificationn = "";
         else qualificationn = `&qualification=${qualifcation}`;
-        if(subcategory_id){
-            axios.get(`/api/government_jobs?subcategory_id=${subcategory_id}${age}${qualificationn}`)
-            .then(res=>{setCategoryJobs(res.data.data);setCategoryJobsLoading(false)})
-            .catch(err=>console.log(err))
+        if (subcategory_id) {
+            axios
+                .get(
+                    `/api/government_jobs?subcategory_id=${subcategory_id}${age}${qualificationn}`
+                )
+                .then(res => {
+                    setCategoryJobs(res.data.data);
+                    setCategoryJobsLoading(false);
+                })
+                .catch(err => console.log(err));
         }
-    }
+    };
 
     const filterJobs = subcategory_id => {
-        setActiveSubCategory(subcategory_id)
-        let ageVal="",qualificationVal="";
-        if(age!=null){
-            ageVal=`&age_limit=${age}`
+        setActiveSubCategory(subcategory_id);
+        let ageVal = "",
+            qualificationVal = "";
+        if (age != null) {
+            ageVal = `&age_limit=${age}`;
         }
-        if(qualification!=null){
-            qualificationVal=`&qualifcation=${qualification}`
+        if (qualification != null) {
+            qualificationVal = `&qualifcation=${qualification}`;
         }
-        axios.get(`/api/government_jobs?subcategory_id=${subcategory_id}${ageVal}${qualificationVal}`)
-            .then(res => {setCategoryJobs(res.data.data);setCategoryJobsLoading(false)});
+        axios
+            .get(
+                `/api/government_jobs?subcategory_id=${subcategory_id}${ageVal}${qualificationVal}`
+            )
+            .then(res => {
+                setCategoryJobs(res.data.data);
+                setCategoryJobsLoading(false);
+            });
     };
 
     const filterByAge = age_limit => {
-        if(activeSubCategory!=null){
-            getDatawithActiveFilters(activeSubCategory,age_limit,null)
-            setAge(age_limit)
-        }
-        else{
+        if (activeSubCategory != null) {
+            getDatawithActiveFilters(activeSubCategory, age_limit, null);
+            setAge(age_limit);
+        } else {
             getData(age_limit, null);
-            setAge(age_limit)
-        }  
+            setAge(age_limit);
+        }
     };
 
     const handleSubmit = e => {
@@ -217,13 +252,21 @@ const Governmentjobcategory = props => {
                         className="mb-3"
                     >
                         <div className="questionpaper-main-section">
-                            {
-                                categoryJobs && categoryJobsLoading==true && ( <h6 className="text-center py-3">Loading Jobs!</h6> )
-                            }
-                               {
-                                categoryJobs && categoryJobs.length==0 && categoryJobsLoading==false && ( <h6 className="text-center  py-3">No Jobs Found !</h6> )
-                            }
-                            {categoryJobs && categoryJobs.length>0 && categoryJobsLoading==false &&
+                            {categoryJobs && categoryJobsLoading == true && (
+                                <h6 className="text-center py-3">
+                                    Loading Jobs!
+                                </h6>
+                            )}
+                            {categoryJobs &&
+                                categoryJobs.length == 0 &&
+                                categoryJobsLoading == false && (
+                                    <h6 className="text-center  py-3">
+                                        No Jobs Found !
+                                    </h6>
+                                )}
+                            {categoryJobs &&
+                                categoryJobs.length > 0 &&
+                                categoryJobsLoading == false &&
                                 categoryJobs.map(c => (
                                     <div
                                         className="questionpaper-news-details"

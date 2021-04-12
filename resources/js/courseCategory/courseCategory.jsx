@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
     List,
     Row,
@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 import CourseCard from "../components/course-card/CourseCard";
 
-const priceFilter = [
+const price = [
     {
         id: "d95d4514-538a-4b57-85d5-f9072dc80bef",
         title: "Type of course"
@@ -117,20 +117,56 @@ const CourseCategoryCarousel = props => {
 const courseCategory = () => {
     const [sliderVal, setSliderVal] = useState(5000);
     const [courseCategory, setCourseCategory] = useState([]);
-    const onSliderChange = e => {
-        const newVal = parseInt(e.target.value);
-        setSliderVal(newVal);
+    const minValue = useRef(null);
+    const maxValue = useRef(null);
+    const sliderValue = useRef(null);
+    const [priceFilter, setPriceFilter] = useState({
+        min: 0,
+        max: 150000
+    });
+    const onSliderChange = value => {
+        setPriceFilter({
+            ...priceFilter,
+            max: isNaN(parseInt(value)) ? 0 : parseInt(value)
+        });
+        setSliderVal(value);
+        getCourses(true, value);
     };
     useEffect(() => {
+        getCourses(false);
+    }, []);
+    const getCourses = (filter, max, min) => {
+        let pricefilter = "";
+        let minV = min || minValue.current.value;
+        let maxv = max || maxValue.current.value;
+        if (filter) {
+            pricefilter = `?price_min=${minV}&price_max=${maxv}`;
+        }
         axios
-            .get("/api/courses")
+            .get(`/api/courses${pricefilter}`)
             .then(res => {
                 setCourseCategory(res.data.data);
             })
             .catch(err => {
                 console.log(err);
             });
-    }, []);
+    };
+    const onPriceChange = (name, value) => {
+        if (name == "min") {
+            setPriceFilter({
+                ...priceFilter,
+                min: isNaN(parseInt(value)) ? 0 : parseInt(value)
+            });
+        } else {
+            setPriceFilter({
+                ...priceFilter,
+                max: isNaN(parseInt(value)) ? 0 : parseInt(value)
+            });
+            setSliderVal(isNaN(parseInt(value)) ? 0 : parseInt(value));
+        }
+        getCourses(true);
+    };
+
     return (
         <>
             <div className="course-category-section">
@@ -151,7 +187,11 @@ const courseCategory = () => {
                                         step="100"
                                         className="course-pricing-slider"
                                         value={sliderVal}
-                                        onChange={onSliderChange}
+                                        step={10000}
+                                        onChange={e =>
+                                            onSliderChange(e.target.value)
+                                        }
+                                        ref={sliderValue}
                                     ></input>
                                 </div>
                                 <div className="pricing-slider-div">
@@ -161,106 +201,119 @@ const courseCategory = () => {
                                 <div className="pricing-input-div">
                                     <div className="pricing-div">
                                         <label htmlFor="from">Min</label>
-                                        <input type="text" id="from" />
+                                        <input
+                                            type="text"
+                                            id="from"
+                                            value={priceFilter.min}
+                                            ref={minValue}
+                                            onChange={e =>
+                                                onPriceChange(
+                                                    "min",
+                                                    e.target.value
+                                                )
+                                            }
+                                        />
                                     </div>
                                     <p>To</p>
                                     <div className="pricing-div">
                                         <label htmlFor="to">Max</label>
-                                        <input type="text" id="to" />
+                                        <input
+                                            type="text"
+                                            id="to"
+                                            value={priceFilter.max}
+                                            ref={maxValue}
+                                            onChange={e =>
+                                                onPriceChange(
+                                                    "max",
+                                                    e.target.value
+                                                )
+                                            }
+                                        />
                                     </div>
                                 </div>
                                 <div
                                     className="accordion course-category-accordion"
                                     id="courseCategoryParent"
                                 >
-                                    {priceFilter &&
-                                        priceFilter.map(
-                                            priceFilterIndividual => (
+                                    {price &&
+                                        price.map(priceFilterIndividual => (
+                                            <div
+                                                className="card"
+                                                key={priceFilterIndividual?.id}
+                                            >
                                                 <div
-                                                    className="card"
-                                                    key={
-                                                        priceFilterIndividual?.id
-                                                    }
+                                                    id={`heading${priceFilterIndividual?.id}`}
                                                 >
-                                                    <div
-                                                        id={`heading${priceFilterIndividual?.id}`}
-                                                    >
-                                                        <h2 className="mb-0">
-                                                            <a
-                                                                className="btn btn-link course-category-card-headerlink"
-                                                                type="button"
-                                                                data-toggle="collapse"
-                                                                data-target={`#collapse${priceFilterIndividual?.id}`}
-                                                                aria-expanded="true"
-                                                                aria-controls={`collapse${priceFilterIndividual?.id}`}
-                                                            >
-                                                                {
-                                                                    priceFilterIndividual?.title
-                                                                }
-                                                                <i
-                                                                    className="fas fa-chevron-down ml-2"
-                                                                    style={{
-                                                                        color:
-                                                                            "#000"
-                                                                    }}
-                                                                ></i>
-                                                            </a>
-                                                        </h2>
-                                                    </div>
+                                                    <h2 className="mb-0">
+                                                        <a
+                                                            className="btn btn-link course-category-card-headerlink"
+                                                            type="button"
+                                                            data-toggle="collapse"
+                                                            data-target={`#collapse${priceFilterIndividual?.id}`}
+                                                            aria-expanded="true"
+                                                            aria-controls={`collapse${priceFilterIndividual?.id}`}
+                                                        >
+                                                            {
+                                                                priceFilterIndividual?.title
+                                                            }
+                                                            <i
+                                                                className="fas fa-chevron-down ml-2"
+                                                                style={{
+                                                                    color:
+                                                                        "#000"
+                                                                }}
+                                                            ></i>
+                                                        </a>
+                                                    </h2>
+                                                </div>
 
-                                                    <div
-                                                        id={`collapse${priceFilterIndividual?.id}`}
-                                                        className="collapse show"
-                                                        aria-labelledby={`heading${priceFilterIndividual?.id}`}
-                                                        data-parent="#courseCategoryParent"
-                                                    >
-                                                        <div className="card-body">
-                                                            <List
-                                                                type="unstyled"
-                                                                className="mb-0"
-                                                            >
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input type="checkbox" />
-                                                                        Test 1
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input type="checkbox" />
-                                                                        Test 2
-                                                                    </Label>
-                                                                </FormGroup>
-                                                            </List>
-                                                        </div>
+                                                <div
+                                                    id={`collapse${priceFilterIndividual?.id}`}
+                                                    className="collapse show"
+                                                    aria-labelledby={`heading${priceFilterIndividual?.id}`}
+                                                    data-parent="#courseCategoryParent"
+                                                >
+                                                    <div className="card-body">
+                                                        <List
+                                                            type="unstyled"
+                                                            className="mb-0"
+                                                        >
+                                                            <FormGroup check>
+                                                                <Label check>
+                                                                    <Input type="checkbox" />
+                                                                    Test 1
+                                                                </Label>
+                                                            </FormGroup>
+                                                            <FormGroup check>
+                                                                <Label check>
+                                                                    <Input type="checkbox" />
+                                                                    Test 2
+                                                                </Label>
+                                                            </FormGroup>
+                                                        </List>
                                                     </div>
                                                 </div>
-                                            )
-                                        )}
+                                            </div>
+                                        ))}
                                 </div>
                             </div>
                         </Col>
-                        <Col sm="12" lg="9" >
+                        <Col sm="12" lg="9">
                             <Row>
                                 {courseCategory.map(course => (
-                                    <Col sm="12" md="4" style={{marginBottom:"25px"}} key={course?.id}>
+                                    <Col
+                                        sm="12"
+                                        md="4"
+                                        style={{ marginBottom: "25px" }}
+                                        key={course?.id}
+                                    >
                                         <CourseCard data={course} />
                                     </Col>
                                 ))}
                             </Row>
                         </Col>
                     </Row>
-                   
                 </div>
-               
             </div>
         </>
     );
