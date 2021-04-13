@@ -99,40 +99,59 @@
         }
     }
 }
-//navbar-1
-.main-navbar1 {
-    padding: 0px 40px;
-    .navbar1-logo {
-        padding-left: 30px;
+
+//course navbar
+.course-navbar {
+    .megamenu-btn {
+        background: #3c64b1;
+        color: #fff !important;
+        padding: 5px 20px !important;
+        border-radius: 6px;
     }
-    .navbar1-item {
-        padding: 12px;
-        .navbar1-link {
-            color: #000;
-            font-size: 16px;
+    .navbar-nav {
+        align-items: center;
+
+        .dropdown-item {
+            color: #818181;
+            &:hover {
+                color: #f05454;
+                background: #fff !important;
+            }
         }
-        .navbar1-sublink {
-            color: #000;
-            font-size: 16px;
+
+        .courseNavLink {
+            color: #1f1f1e;
+            font-weight: 500;
+            padding: 0 15px;
+
+            img {
+                max-width: 40px;
+            }
         }
     }
 }
-.course-category-dropdownbtn {
-    margin: 10px 0px 10px 50px;
-    background-color: #3c64b1;
-    color: white;
-    padding: 2px 10px 5px 14px;
-    border-radius: 6px;
+.megasubmenu,
+.megasubmenu-2 {
+    padding: 1rem;
 }
-.inside-dropdown-course {
-    padding: 10px;
-    margin: 7px;
-}
-@media only screen and (max-width: 500px) {
-    .main-navbar1 {
-        padding: 10px 20px;
-        .navbar1-logo {
-            padding: 0px;
+@media all and (max-width: 1000px) {
+    .course-navbar {
+        .navbar-nav {
+            align-items: stretch;
         }
+    }
+}
+@media all and (min-width: 992px) {
+    .megasubmenu,
+    .megasubmenu-2 {
+        left: 100%;
+        top: 0;
+        min-height: 100%;
+        min-width: 10rem;
+    }
+
+    .dropdown-menu > li:hover .megasubmenu,
+    .has-megasubmenu-2:hover .megasubmenu-2 {
+        display: block;
     }
 }
