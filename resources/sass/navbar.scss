@@ -128,6 +128,34 @@
                 max-width: 40px;
             }
         }
+
+        .recommened-header {
+            color: #3c64b1;
+            font-size: 16px;
+        }
+
+        .recommended-course-navsection {
+            display: flex;
+            padding: 8px;
+            align-items: flex-start;
+            .text-container {
+                margin-left: 5px;
+                h6 {
+                    color: #1f1f1e;
+                    font-size: 14px;
+                    margin-bottom: 0;
+                }
+                p {
+                    color: #808080;
+                    margin-bottom: 0;
+                    font-size: 12px;
+                }
+            }
+
+            img {
+                object-fit: contain;
+            }
+        }
     }
 }
 .megasubmenu,
@@ -148,6 +176,9 @@
         top: 0;
         min-height: 100%;
         min-width: 10rem;
+    }
+    .megasubmenu-2 {
+        min-width: 25rem !important;
     }
 
     .dropdown-menu > li:hover .megasubmenu,

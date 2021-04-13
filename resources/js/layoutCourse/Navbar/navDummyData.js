@@ -1,6 +1,6 @@
 export const navDummyData = [
     {
-        mainlink: "Developement",
+        mainlink: "Development",
         children: [
             {
                 childlinkname: "All Developement",
@@ -126,5 +126,16 @@ export const navDummyData = [
     {
         mainlink: "Teaching & acad ",
         children: []
+    }
+];
+
+export const recommendedCourse = [
+    {
+        provider: "University Of Michigan ",
+        name: "Global master of web development"
+    },
+    {
+        provider: "University Of Michigan ",
+        name: "Global master of web development"
     }
 ];

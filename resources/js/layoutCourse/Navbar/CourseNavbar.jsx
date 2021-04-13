@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
+    Row,
+    Col,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -14,12 +17,13 @@ import {
     NavbarText,
     Dropdown
 } from "reactstrap";
+import { navDummyData, recommendedCourse } from "./navDummyData";
+//images
 import edhub1 from "../../Images/landingpage/Edhub-1.png";
 import user from "../../Images/landingpage/user.png";
 import cartNotification from "../../Images/landingpage/cartNotification.png";
 import bookmark from "../../Images/landingpage/bookmark.png";
-import { Link } from "react-router-dom";
-import { navDummyData } from "./navDummyData";
+import provider from "../../Images/landingpage/provider.png";
 
 const CourseNavbar = props => {
     const [isOpen, setIsOpen] = useState(false);
@@ -69,9 +73,9 @@ const CourseNavbar = props => {
                                                             : ""
                                                     }`}
                                                 >
-                                                    <Link
+                                                    <a
                                                         className="dropdown-item d-flex align-items-center"
-                                                        to="#"
+                                                        href="#"
                                                     >
                                                         <span className="flex-fill">
                                                             {navl.mainlink}
@@ -81,7 +85,7 @@ const CourseNavbar = props => {
                                                         ) : (
                                                             ""
                                                         )}
-                                                    </Link>
+                                                    </a>
                                                     {ismegamenu && (
                                                         <div className="megasubmenu dropdown-menu">
                                                             <ul className="list-unstyled">
@@ -104,9 +108,9 @@ const CourseNavbar = props => {
                                                                                         : ""
                                                                                 }`}
                                                                             >
-                                                                                <Link
+                                                                                <a
                                                                                     className="dropdown-item d-flex align-items-center"
-                                                                                    to="#"
+                                                                                    href="#"
                                                                                 >
                                                                                     <span className="flex-fill">
                                                                                         {
@@ -118,27 +122,68 @@ const CourseNavbar = props => {
                                                                                     ) : (
                                                                                         ""
                                                                                     )}
-                                                                                </Link>
+                                                                                </a>
                                                                                 {ismegamenu2 && (
                                                                                     <div className="megasubmenu-2 dropdown-menu">
-                                                                                        <ul className="list-unstyled">
-                                                                                            {child.subchild.map(
-                                                                                                subc => {
-                                                                                                    return (
-                                                                                                        <li>
-                                                                                                            <Link
-                                                                                                                className="dropdown-item"
-                                                                                                                to="#"
-                                                                                                            >
-                                                                                                                {
-                                                                                                                    subc.subchildlinkname
+                                                                                        <Row>
+                                                                                            <Col
+                                                                                                sm="12"
+                                                                                                md="6"
+                                                                                            >
+                                                                                                <ul className="list-unstyled">
+                                                                                                    {child.subchild.map(
+                                                                                                        subc => {
+                                                                                                            return (
+                                                                                                                <li>
+                                                                                                                    <Link
+                                                                                                                        className="dropdown-item"
+                                                                                                                        to="#"
+                                                                                                                    >
+                                                                                                                        {
+                                                                                                                            subc.subchildlinkname
+                                                                                                                        }
+                                                                                                                    </Link>
+                                                                                                                </li>
+                                                                                                            );
+                                                                                                        }
+                                                                                                    )}
+                                                                                                </ul>
+                                                                                            </Col>
+                                                                                            <Col
+                                                                                                sm="12"
+                                                                                                md="6"
+                                                                                            >
+                                                                                                <h6 className="recommened-header">
+                                                                                                    Related
+                                                                                                    Degrees
+                                                                                                </h6>
+                                                                                                <hr className="recommened-header-hr" />
+                                                                                                {recommendedCourse.map(
+                                                                                                    r => (
+                                                                                                        <div className="recommended-course-navsection">
+                                                                                                            <img
+                                                                                                                src={
+                                                                                                                    provider
                                                                                                                 }
-                                                                                                            </Link>
-                                                                                                        </li>
-                                                                                                    );
-                                                                                                }
-                                                                                            )}
-                                                                                        </ul>
+                                                                                                                alt=""
+                                                                                                            />
+                                                                                                            <div className="text-container">
+                                                                                                                <h6>
+                                                                                                                    {
+                                                                                                                        r.provider
+                                                                                                                    }
+                                                                                                                </h6>
+                                                                                                                <p>
+                                                                                                                    {
+                                                                                                                        r.name
+                                                                                                                    }
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    )
+                                                                                                )}
+                                                                                            </Col>
+                                                                                        </Row>
                                                                                     </div>
                                                                                 )}
                                                                             </li>
