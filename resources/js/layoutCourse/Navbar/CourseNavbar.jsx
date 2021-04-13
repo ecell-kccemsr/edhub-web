@@ -11,7 +11,8 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    NavbarText
+    NavbarText,
+    Dropdown
 } from "reactstrap";
 import edhub1 from "../../Images/landingpage/Edhub-1.png";
 import user from "../../Images/landingpage/user.png";
@@ -19,14 +20,56 @@ import cartNotification from "../../Images/landingpage/cartNotification.png";
 import bookmark from "../../Images/landingpage/bookmark.png";
 const CourseNavbar = props => {
     const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () => setIsOpen(!isOpen);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+    // const toggle = () => setIsOpen(!isOpen);
 
     return (
         <div>
             <Navbar color="light" className="main-navbar1" light expand="md">
                 <NavbarBrand href="/landingPage" className="navbar1-logo">
-                    <img src={edhub1} alt="edhub1" />
+                    <div className="d-flex">
+                        <img src={edhub1} alt="edhub1" />
+                        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                            <DropdownToggle
+                                tag="span"
+                                data-toggle="dropdown"
+                                aria-expanded={dropdownOpen}
+                                className="course-category-dropdownbtn "
+                            >
+                                Courses
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                <div className="d-flex">
+                                    <div
+                                        onClick={toggle}
+                                        className="inside-dropdown-course"
+                                    >
+                                        Custom dropdown item
+                                        <img src="" alt="" />
+                                    </div>
+                                </div>
+                                <div
+                                    onClick={toggle}
+                                    className="inside-dropdown-course"
+                                >
+                                    Custom dropdown item
+                                </div>
+                                <div
+                                    onClick={toggle}
+                                    className="inside-dropdown-course"
+                                >
+                                    Custom dropdown item
+                                </div>
+                                <div
+                                    onClick={toggle}
+                                    className="inside-dropdown-course"
+                                >
+                                    Custom dropdown item
+                                </div>
+                            </DropdownMenu>
+                        </Dropdown>
+                    </div>
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
