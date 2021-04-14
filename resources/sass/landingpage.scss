@@ -156,7 +156,7 @@
         }
     }
     .landingpage-popular-card-carousel {
-        padding: 0px 53px 0px 25px;
+        padding: 40px;
         .slick-dots {
             display: none !important;
         }
@@ -170,6 +170,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             font-size: 35px;
+            margin: -9px;
         }
         .carousel-slider-div {
             display: flex !important;
@@ -300,6 +301,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             font-size: 35px;
+            margin: -9px;
         }
 
         .carousel-slider-div {
@@ -371,6 +373,11 @@
         }
         .popular-choice-section {
             padding: 20px;
+
+            .carousel-slider-div {
+                justify-content: center;
+            }
+
             .popular-choice-sub-section {
                 .popular-choice-btn-container {
                     text-align: left;

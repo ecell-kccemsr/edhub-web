@@ -14,6 +14,17 @@ const CourseCard = ({ data }) => {
     const addToCompare = useStoreActions(actions => actions.addToCompare);
     const isAlreadyInCompares =
         compares.findIndex(course => course.id === data.id) !== -1;
+
+        const handleCompare = (data)=>{
+            if(compares.length>2){
+                alert("Cant add more")
+                return;
+            }
+            else{
+                addToCompare(data)
+            }
+        }
+
     return (
         <>
             <div className="coursecard-section h-100">
@@ -50,7 +61,8 @@ const CourseCard = ({ data }) => {
                     </div>
                     <div
                         className="compare-section"
-                        onClick={e => addToCompare(data)}
+                      
+                    onClick={()=>handleCompare(data)}
                     >
                         <img src={addtoCompare} alt="" />
                         {isAlreadyInCompares === false ? (
@@ -58,6 +70,8 @@ const CourseCard = ({ data }) => {
                         ) : (
                             <h5>Remove from compare</h5>
                         )}
+                        
+                           
                     </div>
                     <hr />
                 </div>

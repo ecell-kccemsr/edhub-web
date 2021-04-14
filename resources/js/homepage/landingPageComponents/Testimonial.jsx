@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import Slider from "react-slick";
 import star5 from "../../Images/landingpage/star5.png";
 import "slick-carousel/slick/slick.css";
@@ -15,182 +17,49 @@ const Testimonial = () => {
         slidesToShow: windowWidth <= 1200 ? 1 : 2,
         slidesToScroll: 1
     };
+    const [testimonial, setTestimonial] = useState([]);
+    useEffect(() => {
+        axios
+            .get("/api/testimonies")
+            .then(res => {
+                setTestimonial(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
     return (
         <div className="landing-page-testimonial-section ">
             <p className="header-testimonials">
                 Testimonials from our happy customers
             </p>
             <Slider {...settings}>
+                    {testimonial.map(testimonials => (
+
                 <div className="carousel-slider-div">
+               
+
                     <div className="course-detail-testimonial-cards-outer">
+                        <>
                         <img src={star5} alt="" className="review-stars" />
                         <div className="course-detail-testimonial-cards-inner">
                             <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
+                                src={testimonials.image}
                                 alt=""
                             />
-                            <h6>Devika Olkar</h6>
+                            <h6>{testimonials.name}</h6>
                             <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
+                                “{testimonials.review}”
                             </p>
                         </div>
+                        </>
+                        
                     </div>
+                   
                 </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="carousel-slider-div">
-                    <div className="course-detail-testimonial-cards-outer">
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/81.jpg"
-                                alt=""
-                            />
-                            <h6>Devika Olkar</h6>
-                            <p>
-                                “Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A fusce lacus non in tortor,
-                                libero do”
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                 ))}
+               
+                
             </Slider>
         </div>
     );
