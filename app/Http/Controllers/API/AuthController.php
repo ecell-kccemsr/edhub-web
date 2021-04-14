@@ -144,6 +144,8 @@ class AuthController extends Controller
         $user = Auth::user();
         if($request->has('name'))
             $user->name = $request->input('name');
+        if($request->has('image'))
+            $user->image = $request->input('image');
         if($request->has('gender'))
             $user->gender = $request->input('gender');
         $user->save();

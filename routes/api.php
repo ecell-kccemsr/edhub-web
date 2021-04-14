@@ -83,3 +83,7 @@ Route::get('/courses/{course}/reviews',[CourseController::class,'reviews']);
 //CourseProvider
 Route::get('/course-providers',[CourseProviderController::class,'get']);
 Route::get('/course-providers/{courseprovider}',[CourseProviderController::class,'show']);
+
+//Testimony
+Route::get('/testimonies',[TestimonyController::class,'get']);
+Route::get('/testimonies/{testimony}',[TestimonyController::class,'show']);

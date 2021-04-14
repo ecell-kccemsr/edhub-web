@@ -6,6 +6,7 @@ use App\Models\News;
 use App\Models\ExamCalendar;
 use App\Models\GovernmentJob;
 use App\Models\QuestionPaper;
+use App\Models\Testimony;
 use Illuminate\Console\Command;
 
 class AppFakerCommand extends Command
@@ -46,6 +47,7 @@ class AppFakerCommand extends Command
         GovernmentJob::factory()->count($count)->create();
         QuestionPaper::factory()->count($count)->create();
         ExamCalendar::factory()->count($count)->create();
+        Testimony::factory()->count($count)->create();
         $this->line("Fake data added.");
         return 0;
     }
