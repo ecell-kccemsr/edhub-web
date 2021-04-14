@@ -32,7 +32,9 @@ const Compare = () => {
                                                     }
                                                     alt=""
                                                     style={{
-                                                        maxWidth: "250px"
+                                                        borderRadius:"16px",
+                                                        width:"100%"
+                                                    
                                                     }}
                                                 />
                                                 <h5>{cmp?.title}</h5>

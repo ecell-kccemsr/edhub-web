@@ -89,11 +89,14 @@
                     height: 100px;
                     width: 100px;
                     object-fit: contain;
+                    transition: 300ms linear;
+
                     &:hover {
                         height: 150px;
                         width: 200px;
                     }
                 }
+
                 .text-container {
                     text-align: center;
                     h4 {

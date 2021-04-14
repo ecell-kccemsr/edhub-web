@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Col, Container, Row, List, Progress, Button } from "reactstrap";
+import { Link } from "react-router-dom";
+
 import stat1 from "../Images/courseDetail/stat1.png";
 import stat2 from "../Images/courseDetail/stat2.png";
 import playbutton from "../Images/courseDetail/playbutton.png";
@@ -363,6 +365,9 @@ function CourseDetail(props) {
                             </Col>
                         </Row>
                     </Container>
+                    <Link to={`/compare`}>
+                       <button className="compare-btn-detail">Compare</button>
+                    </Link>
                 </div>
                 <Container className="containerClass">
                     <Row>

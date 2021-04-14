@@ -12,6 +12,8 @@ import {
     FormGroup,
     Input
 } from "reactstrap";
+import { Link } from "react-router-dom";
+
 import CourseCard from "../components/course-card/CourseCard";
 
 const price = [
@@ -172,6 +174,9 @@ const courseCategory = () => {
             <div className="course-category-section">
                 <div className="course-category-hero-slider">
                     <CourseCategoryCarousel />
+                    <Link to={`/compare`}>
+                       <button className="compare-btn-category">Compare</button>
+                    </Link>
                 </div>
                 <div className="course-category-main-section">
                     <Row>

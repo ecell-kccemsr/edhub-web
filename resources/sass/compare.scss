@@ -12,8 +12,13 @@
             td {
                 padding: 20px;
                 border-right: 1px solid gainsboro;
+                p {
+                    font-size: 24px;
+                    margin-bottom: -1px;
+                }
                 .compare-title {
                     font-weight: 500;
+                    font-size: 20px;
                 }
                 .compare-buy-btn {
                     display: block;
@@ -41,7 +46,7 @@
                 .compare-card {
                     background: #eeeeee;
                     padding: 20px;
-                    border-radius: 20px;
+                    border-radius: 16px;
                     h5 {
                         padding: 10px 0px;
                         font-weight: 400;
@@ -68,5 +73,11 @@
         width: 100px;
         padding: 7px;
         margin: 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .compare-section {
+        width: 100%;
+        height: 100%;
     }
 }

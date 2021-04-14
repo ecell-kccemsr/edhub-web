@@ -2,7 +2,29 @@
     background: #eaeaea;
     .course-category-hero-slider {
         padding: 30px 50px;
+        .compare-btn-category {
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+            display: block;
+            background: #3c64b1;
+            text-align: center;
+            height: 48px;
+            width: 150px;
+            color: #f6f7f8;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 10px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            left: 1420px;
+            position: fixed;
+            border: none;
+        }
     }
+
     .course-category-main-section {
         padding: 30px 50px;
         .course-category-filter-section {
@@ -107,5 +129,8 @@
     }
     .course-category-main-section {
         padding: 20px !important;
+    }
+    .compare-btn-category {
+        display: none;
     }
 }

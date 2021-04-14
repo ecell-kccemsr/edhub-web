@@ -118,6 +118,27 @@
             }
         }
     }
+    .compare-btn-detail {
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        display: block;
+        background: #3c64b1;
+        text-align: center;
+        height: 48px;
+        width: 150px;
+        color: #f6f7f8;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 10px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        left: 1420px;
+        position: fixed;
+        border: none;
+    }
     .containerClass {
         margin-top: 0;
         margin-bottom: 0;
@@ -353,5 +374,10 @@
     .progress-bar {
         background: #ead628;
         height: 20px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .compare-btn-detail {
+        display: none;
     }
 }

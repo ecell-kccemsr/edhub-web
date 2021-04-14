@@ -43,7 +43,7 @@ const App = props => {
     useEffect(() => {
         http.setToken(localStorage.getItem("accessToken"));
         http.get("auth/user").then(res => setUser(res.data.data));
-        setCompares(JSON.parse(localStorage.getItem("compares")));
+        setCompares(JSON.parse(localStorage.getItem("compares")) || []);
     }, []);
     return (
         <Fragment>
