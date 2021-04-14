@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\API\CourseController;
+use App\Http\Controllers\API\TestimonyController;
 use App\Http\Controllers\API\ExamResultController;
 use App\Http\Controllers\API\ExamCalendarController;
 use App\Http\Controllers\API\GovernmentJobController;
