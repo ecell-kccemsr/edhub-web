@@ -287,17 +287,31 @@ const CourseNavbar = props => {
                                     href="#"
                                     data-bs-toggle="dropdown"
                                 >
-                                    Government Job
+                                    Govt. Jobs
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-end">
                                     <li>
-                                        <Link className="dropdown-item" to="#">
-                                            Submenu item 1
+                                        <Link
+                                            className="dropdown-item"
+                                            to="/govermentjobs"
+                                        >
+                                            Govt Jobs
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="#">
-                                            Submenu item 2
+                                        <Link
+                                            className="dropdown-item"
+                                            to="/questionpaper"
+                                        >
+                                            Question Paper
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            className="dropdown-item"
+                                            to="/exam/calendar"
+                                        >
+                                            Exam Calendar
                                         </Link>
                                     </li>
                                 </ul>

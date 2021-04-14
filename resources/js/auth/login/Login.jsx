@@ -18,7 +18,7 @@ const Login = () => {
             .then(res => {
                 const accessToken = res.data.access_token;
                 localStorage.setItem("accessToken", accessToken);
-                window.location.href = "/";
+                window.location.href = "/landingPage";
             })
             .catch(err => console.log(err));
     };

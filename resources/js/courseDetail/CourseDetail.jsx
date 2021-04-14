@@ -17,6 +17,7 @@ import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png"
 import CourseCard from "../components/course-card/CourseCard";
 import star from "../Images/courseCategory/star.png";
 import ellipse from "../Images/degree/Ellipse.png";
+import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 const courseContent = [
     {
         id: "9198ce8a-772a-425d-8cd8-86ade1d1f0c8",
@@ -736,34 +737,13 @@ function CourseDetail(props) {
                     </Row>
                 </Container>
                 <div className="popular-choice-section-course-details">
-                    <h3 className="popular-choice-header">
-                        Recommended for you
-                    </h3>
-                    <Row className=" popular-choice-sub-section">
-                        <Col sm="12" md="6" lg="5">
-                            <p className="popular-choice-content">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Habitant volutpat elementum
-                                facilisi mattis et. At
-                            </p>
-                        </Col>
-                        <Col
-                            sm="12"
-                            md="6"
-                            lg="5"
-                            className="popular-choice-btn-container"
-                        >
-                            <Button className="popular-choice-btn">
-                                View all
-                            </Button>
-                        </Col>
-                    </Row>
                     <Row className="course-card-landing-page-row">
-                        {Course.map(course => (
-                            <Col sm="12" md="3" key={course?.id}>
-                                <CourseCard data={course} />
-                            </Col>
-                        ))}
+                        {Course && (
+                            <PopularChoice
+                                data={Course}
+                                title="Recommended for you"
+                            />
+                        )}
                     </Row>
                 </div>
             </div>

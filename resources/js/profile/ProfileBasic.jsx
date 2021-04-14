@@ -9,6 +9,7 @@ const ProfileBasic = () => {
     if (user === null) {
         return "Not Authenticated";
     }
+    console.log(user);
     const onSubmit = e => {
         e.preventDefault();
         http.post("auth/update", new FormData(e.nativeEvent.target)).then(res =>

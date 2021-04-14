@@ -14,7 +14,7 @@ const Register = () => {
         axios
             .post("/api/auth/signup", data)
             .then(res => {
-                history.push("/");
+                history.push("/landingPage");
             })
             .catch(err => console.log(err.response.data.message));
     };
