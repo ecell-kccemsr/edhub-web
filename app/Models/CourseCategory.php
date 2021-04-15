@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class CourseCategory extends Model
 {
     use HasFactory, HasSlug;
-    public function course_sub_category()
+    public function course_sub_categories()
     {
         return $this->hasMany('App\Models\CourseSubCategory','course_category_id');
     }

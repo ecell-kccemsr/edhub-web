@@ -18,6 +18,7 @@ class CourseCategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'slug' => $this->slug,
+            'sub_categories' => CourseSubCategoryResource::collection($this->course_sub_categories)
         ];
     }
 }

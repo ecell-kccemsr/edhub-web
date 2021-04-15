@@ -5,10 +5,12 @@ namespace App\Http\Controllers\API;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CourseCategoryResource;
 use App\Http\Resources\CourseResource;
 use App\Http\Resources\CourseResourceCollection;
 use App\Http\Resources\CourseReviewResourceCollection;
 use App\Http\Resources\CourseCurriculumResourceCollection;
+use App\Models\CourseCategory;
 
 class CourseController extends Controller
 {
@@ -17,6 +19,12 @@ class CourseController extends Controller
         $courses = Course::query();
         if($request->has('course_provider_id')) {
             $courses = $courses->where('course_provider_id',$request->input('course_provider_id'));
+        }
+        if($request->has('course_category_id')) {
+            $courses = $courses->where('course_category_id',$request->input('course_category_id'));
+        }
+        if($request->has('course_sub_category_id')) {
+            $courses = $courses->where('course_sub_category_id',$request->input('course_sub_category_id'));
         }
          if($request->has('price_min')) {
             $courses = $courses->where('price', '>=', $request->input('price_min'));
@@ -27,6 +35,7 @@ class CourseController extends Controller
         if($request->has('rating')) {
             $courses = $courses->where('rating','>=', $request->input('rating'));
         }
+        
         return new CourseResourceCollection($courses->paginate($request->input('per_page',10)));
     }
 
@@ -46,5 +55,11 @@ class CourseController extends Controller
     {
         $course = Course::where('id',$course)->orWhere('slug',$course)->firstOrFail();
         return new CourseReviewResourceCollection($course->course_reviews()->paginate($request->input('per_page',10)));
+    }
+
+    public function categories(Request $request)
+    {
+        $query = CourseCategory::paginate($request->input('per_page',10));
+        return CourseCategoryResource::collection($query);
     }
 }
