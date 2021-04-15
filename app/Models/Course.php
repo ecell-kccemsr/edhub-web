@@ -18,6 +18,20 @@ class Course extends Model
     protected $guarded = [
         'id'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'faq' => 'json',
+        'prerequisites' => 'array',
+        'outcome' => 'array',
+        'captions' => 'array',
+        'rating_distribution' => 'json',
+        'certification' => 'boolean',
+    ];
     
     public function course_provider()
     {
