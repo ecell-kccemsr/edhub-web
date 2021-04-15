@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {
     Row,
     Col,
+    Button,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -30,7 +31,9 @@ const CourseNavbar = props => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen(prevState => !prevState);
     // const toggle = () => setIsOpen(!isOpen);
-
+    const handleChange = ()=>{
+        localStorage.clear();
+    }
     return (
         <>
             <nav className="navbar course-navbar navbar-expand-lg">
@@ -335,6 +338,13 @@ const CourseNavbar = props => {
                                 <Link className="nav-link courseNavLink" to="#">
                                     <img src={user} alt="" />
                                 </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link courseNavLink" to="/">
+                                <Button outline color="danger" 
+                                 onClick={()=>handleChange()}
+                                >LogOut</Button>
+                               </Link>
                             </li>
                         </ul>
                     </div>
