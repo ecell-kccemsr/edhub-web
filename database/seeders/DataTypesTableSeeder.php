@@ -345,24 +345,6 @@ class DataTypesTableSeeder extends Seeder
             ),
             18 => 
             array (
-                'id' => 21,
-                'name' => 'courses',
-                'slug' => 'courses',
-                'display_name_singular' => 'Course',
-                'display_name_plural' => 'Courses',
-                'icon' => 'voyager-book',
-                'model_name' => 'App\\Models\\Course',
-                'policy_name' => NULL,
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'created_at' => '2021-04-02 15:30:50',
-                'updated_at' => '2021-04-15 16:10:30',
-            ),
-            19 => 
-            array (
                 'id' => 23,
                 'name' => 'course_providers',
                 'slug' => 'course-providers',
@@ -379,7 +361,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:32:55',
                 'updated_at' => '2021-04-02 15:38:03',
             ),
-            20 => 
+            19 => 
             array (
                 'id' => 24,
                 'name' => 'course_categories',
@@ -397,7 +379,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:04:22',
                 'updated_at' => '2021-04-15 17:51:34',
             ),
-            21 => 
+            20 => 
             array (
                 'id' => 25,
                 'name' => 'course_sub_categories',
@@ -415,7 +397,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:05:04',
                 'updated_at' => '2021-04-15 16:10:54',
             ),
-            22 => 
+            21 => 
             array (
                 'id' => 26,
                 'name' => 'course_topics',
@@ -432,6 +414,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-04-15 17:52:15',
                 'updated_at' => '2021-04-15 17:57:52',
+            ),
+            22 => 
+            array (
+                'id' => 27,
+                'name' => 'courses',
+                'slug' => 'courses',
+                'display_name_singular' => 'Course',
+                'display_name_plural' => 'Courses',
+                'icon' => 'voyager-book',
+                'model_name' => 'App\\Models\\Course',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-16 01:12:21',
+                'updated_at' => '2021-04-16 01:18:49',
             ),
         ));
         

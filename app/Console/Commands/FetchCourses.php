@@ -6,6 +6,8 @@ use App\Models\CourseReview;
 use Illuminate\Console\Command;
 use App\Models\CourseCurriculum;
 use App\Models\CourseInstructor;
+use App\Models\CurriculumChapter;
+use App\Models\CurriculumLecture;
 use Illuminate\Support\Facades\Http;
 
 class FetchCourses extends Command
@@ -78,13 +80,25 @@ class FetchCourses extends Command
                     if ($response->successful())
                     {
                         $curriculum_array = $response->json() ['results'];
+                        $chapter = null;
                         foreach ($curriculum_array as $curriculum)
                         {
-                            CourseCurriculum::create(['title' => $curriculum['title'],
-                                'description' => isset($curriculum['description']) ? $curriculum['description'] : '',
-                                'course_id' => $dbCourse->id,
-                                'type' => $curriculum['_class'] == 'chapter' ? 'chapter' : 'lecture',
-                            ]);
+                            if($curriculum['_class'] === 'chapter') {
+                                $chapter = CurriculumChapter::create([
+                                    'title' => $curriculum['title'],
+                                    'description' => isset($curriculum['description']) ? $curriculum['description'] : '',
+                                    'course_id' => $dbCourse->id,
+                                ]);
+                            } else {
+                                if( $chapter !== null) {
+                                    CurriculumLecture::create([
+                                        'title' => $curriculum['title'],
+                                        'description' => isset($curriculum['description']) ? $curriculum['description'] : '',
+                                        'curriculum_chapter_id' => $chapter->id,
+                                    ]);
+                                }
+                            }
+                            
                         }
                     }
     

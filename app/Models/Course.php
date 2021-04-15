@@ -38,9 +38,9 @@ class Course extends Model
         return $this->belongsTo('App\Models\CourseProvider','course_provider_id');
     }
     
-    public function course_curriculum()
+    public function course_chapters()
     {
-        return $this->hasMany('App\Models\CourseCurriculum','course_id');
+        return $this->hasMany('App\Models\CurriculumChapter','course_id');
     }
     
     public function course_instructors()

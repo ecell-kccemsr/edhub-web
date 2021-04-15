@@ -2357,294 +2357,6 @@ class DataRowsTableSeeder extends Seeder
             ),
             146 => 
             array (
-                'id' => 156,
-                'data_type_id' => 21,
-                'field' => 'id',
-                'type' => 'text',
-                'display_name' => 'Id',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 1,
-            ),
-            147 => 
-            array (
-                'id' => 157,
-                'data_type_id' => 21,
-                'field' => 'title',
-                'type' => 'text',
-                'display_name' => 'Title',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 2,
-            ),
-            148 => 
-            array (
-                'id' => 158,
-                'data_type_id' => 21,
-                'field' => 'subtitle',
-                'type' => 'text',
-                'display_name' => 'Subtitle',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 3,
-            ),
-            149 => 
-            array (
-                'id' => 159,
-                'data_type_id' => 21,
-                'field' => 'image',
-                'type' => 'image',
-                'display_name' => 'Image',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 4,
-            ),
-            150 => 
-            array (
-                'id' => 160,
-                'data_type_id' => 21,
-                'field' => 'url',
-                'type' => 'text',
-                'display_name' => 'Url',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 5,
-            ),
-            151 => 
-            array (
-                'id' => 161,
-                'data_type_id' => 21,
-                'field' => 'skills',
-                'type' => 'text_area',
-                'display_name' => 'Skills',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 6,
-            ),
-            152 => 
-            array (
-                'id' => 162,
-                'data_type_id' => 21,
-                'field' => 'career_outcome',
-                'type' => 'text_area',
-                'display_name' => 'Career Outcome',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 7,
-            ),
-            153 => 
-            array (
-                'id' => 163,
-                'data_type_id' => 21,
-                'field' => 'job_opportunities',
-                'type' => 'text_area',
-                'display_name' => 'Job Opportunities',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 8,
-            ),
-            154 => 
-            array (
-                'id' => 164,
-                'data_type_id' => 21,
-                'field' => 'description',
-                'type' => 'text_area',
-                'display_name' => 'Description',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 9,
-            ),
-            155 => 
-            array (
-                'id' => 166,
-                'data_type_id' => 21,
-                'field' => 'prerequisites',
-                'type' => 'text_area',
-                'display_name' => 'Prerequisites',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 11,
-            ),
-            156 => 
-            array (
-                'id' => 173,
-                'data_type_id' => 21,
-                'field' => 'FAQs',
-                'type' => 'text_area',
-                'display_name' => 'FAQs',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 18,
-            ),
-            157 => 
-            array (
-                'id' => 174,
-                'data_type_id' => 21,
-                'field' => 'certification',
-                'type' => 'checkbox',
-                'display_name' => 'Certification',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 19,
-            ),
-            158 => 
-            array (
-                'id' => 175,
-                'data_type_id' => 21,
-                'field' => 'rating',
-                'type' => 'number',
-                'display_name' => 'Rating',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 20,
-            ),
-            159 => 
-            array (
-                'id' => 176,
-                'data_type_id' => 21,
-                'field' => 'price',
-                'type' => 'number',
-                'display_name' => 'Price',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 21,
-            ),
-            160 => 
-            array (
-                'id' => 177,
-                'data_type_id' => 21,
-                'field' => 'course_provider_id',
-                'type' => 'text',
-                'display_name' => 'Course Provider Id',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 22,
-            ),
-            161 => 
-            array (
-                'id' => 178,
-                'data_type_id' => 21,
-                'field' => 'slug',
-                'type' => 'text',
-                'display_name' => 'Slug',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 23,
-            ),
-            162 => 
-            array (
-                'id' => 179,
-                'data_type_id' => 21,
-                'field' => 'created_at',
-                'type' => 'timestamp',
-                'display_name' => 'Created At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 24,
-            ),
-            163 => 
-            array (
-                'id' => 180,
-                'data_type_id' => 21,
-                'field' => 'updated_at',
-                'type' => 'timestamp',
-                'display_name' => 'Updated At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 25,
-            ),
-            164 => 
-            array (
                 'id' => 181,
                 'data_type_id' => 23,
                 'field' => 'id',
@@ -2659,7 +2371,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            165 => 
+            147 => 
             array (
                 'id' => 182,
                 'data_type_id' => 23,
@@ -2675,7 +2387,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 2,
             ),
-            166 => 
+            148 => 
             array (
                 'id' => 183,
                 'data_type_id' => 23,
@@ -2691,7 +2403,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 3,
             ),
-            167 => 
+            149 => 
             array (
                 'id' => 184,
                 'data_type_id' => 23,
@@ -2707,7 +2419,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 4,
             ),
-            168 => 
+            150 => 
             array (
                 'id' => 185,
                 'data_type_id' => 23,
@@ -2723,7 +2435,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 5,
             ),
-            169 => 
+            151 => 
             array (
                 'id' => 186,
                 'data_type_id' => 23,
@@ -2739,7 +2451,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 6,
             ),
-            170 => 
+            152 => 
             array (
                 'id' => 187,
                 'data_type_id' => 23,
@@ -2755,23 +2467,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 7,
             ),
-            171 => 
-            array (
-                'id' => 188,
-                'data_type_id' => 21,
-                'field' => 'course_belongsto_course_provider_relationship',
-                'type' => 'relationship',
-                'display_name' => 'Course Provider',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"model":"App\\\\Models\\\\CourseProvider","table":"course_providers","type":"belongsTo","column":"course_provider_id","key":"id","label":"name","pivot_table":"course_providers","pivot":"0","taggable":"0"}',
-                'order' => 26,
-            ),
-            172 => 
+            153 => 
             array (
                 'id' => 189,
                 'data_type_id' => 24,
@@ -2787,7 +2483,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            173 => 
+            154 => 
             array (
                 'id' => 190,
                 'data_type_id' => 24,
@@ -2803,7 +2499,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 2,
             ),
-            174 => 
+            155 => 
             array (
                 'id' => 191,
                 'data_type_id' => 24,
@@ -2819,7 +2515,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 3,
             ),
-            175 => 
+            156 => 
             array (
                 'id' => 192,
                 'data_type_id' => 24,
@@ -2835,7 +2531,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 4,
             ),
-            176 => 
+            157 => 
             array (
                 'id' => 193,
                 'data_type_id' => 24,
@@ -2851,7 +2547,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 5,
             ),
-            177 => 
+            158 => 
             array (
                 'id' => 194,
                 'data_type_id' => 25,
@@ -2867,7 +2563,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            178 => 
+            159 => 
             array (
                 'id' => 195,
                 'data_type_id' => 25,
@@ -2883,7 +2579,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 2,
             ),
-            179 => 
+            160 => 
             array (
                 'id' => 196,
                 'data_type_id' => 25,
@@ -2899,7 +2595,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 3,
             ),
-            180 => 
+            161 => 
             array (
                 'id' => 197,
                 'data_type_id' => 25,
@@ -2915,7 +2611,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 4,
             ),
-            181 => 
+            162 => 
             array (
                 'id' => 198,
                 'data_type_id' => 25,
@@ -2931,7 +2627,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 5,
             ),
-            182 => 
+            163 => 
             array (
                 'id' => 199,
                 'data_type_id' => 25,
@@ -2947,7 +2643,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 6,
             ),
-            183 => 
+            164 => 
             array (
                 'id' => 200,
                 'data_type_id' => 25,
@@ -2963,71 +2659,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Models\\\\CourseCategory","table":"course_categories","type":"belongsTo","column":"course_category_id","key":"id","label":"name","pivot_table":"course_categories","pivot":"0","taggable":"0"}',
                 'order' => 7,
             ),
-            184 => 
-            array (
-                'id' => 201,
-                'data_type_id' => 21,
-                'field' => 'course_belongsto_course_category_relationship',
-                'type' => 'relationship',
-                'display_name' => 'Course Category',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"model":"App\\\\Models\\\\CourseCategory","table":"course_categories","type":"belongsTo","column":"course_category_id","key":"id","label":"name","pivot_table":"course_categories","pivot":"0","taggable":"0"}',
-                'order' => 27,
-            ),
-            185 => 
-            array (
-                'id' => 202,
-                'data_type_id' => 21,
-                'field' => 'course_belongsto_course_sub_category_relationship',
-                'type' => 'relationship',
-                'display_name' => 'Course Sub Category',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"model":"App\\\\Models\\\\CourseSubCategory","table":"course_sub_categories","type":"belongsTo","column":"course_sub_category_id","key":"id","label":"name","pivot_table":"course_categories","pivot":"0","taggable":"0"}',
-                'order' => 28,
-            ),
-            186 => 
-            array (
-                'id' => 203,
-                'data_type_id' => 21,
-                'field' => 'course_category_id',
-                'type' => 'text',
-                'display_name' => 'Course Category Id',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 16,
-            ),
-            187 => 
-            array (
-                'id' => 204,
-                'data_type_id' => 21,
-                'field' => 'course_sub_category_id',
-                'type' => 'text',
-                'display_name' => 'Course Sub Category Id',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 17,
-            ),
-            188 => 
+            165 => 
             array (
                 'id' => 205,
                 'data_type_id' => 26,
@@ -3043,7 +2675,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            189 => 
+            166 => 
             array (
                 'id' => 206,
                 'data_type_id' => 26,
@@ -3059,7 +2691,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 2,
             ),
-            190 => 
+            167 => 
             array (
                 'id' => 207,
                 'data_type_id' => 26,
@@ -3075,7 +2707,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 3,
             ),
-            191 => 
+            168 => 
             array (
                 'id' => 208,
                 'data_type_id' => 26,
@@ -3091,7 +2723,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 4,
             ),
-            192 => 
+            169 => 
             array (
                 'id' => 209,
                 'data_type_id' => 26,
@@ -3107,7 +2739,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 5,
             ),
-            193 => 
+            170 => 
             array (
                 'id' => 210,
                 'data_type_id' => 26,
@@ -3123,7 +2755,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 6,
             ),
-            194 => 
+            171 => 
             array (
                 'id' => 211,
                 'data_type_id' => 26,
@@ -3138,6 +2770,406 @@ class DataRowsTableSeeder extends Seeder
                 'delete' => 1,
                 'details' => '{"model":"App\\\\Models\\\\CourseSubCategory","table":"course_sub_categories","type":"belongsTo","column":"course_sub_category_id","key":"id","label":"name","pivot_table":"course_categories","pivot":"0","taggable":"0"}',
                 'order' => 7,
+            ),
+            172 => 
+            array (
+                'id' => 212,
+                'data_type_id' => 27,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 1,
+            ),
+            173 => 
+            array (
+                'id' => 213,
+                'data_type_id' => 27,
+                'field' => 'title',
+                'type' => 'text',
+                'display_name' => 'Title',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 2,
+            ),
+            174 => 
+            array (
+                'id' => 214,
+                'data_type_id' => 27,
+                'field' => 'subtitle',
+                'type' => 'text',
+                'display_name' => 'Subtitle',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 3,
+            ),
+            175 => 
+            array (
+                'id' => 215,
+                'data_type_id' => 27,
+                'field' => 'locale',
+                'type' => 'text',
+                'display_name' => 'Locale',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 4,
+            ),
+            176 => 
+            array (
+                'id' => 216,
+                'data_type_id' => 27,
+                'field' => 'captions',
+                'type' => 'text_area',
+                'display_name' => 'Captions',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 5,
+            ),
+            177 => 
+            array (
+                'id' => 217,
+                'data_type_id' => 27,
+                'field' => 'image',
+                'type' => 'image',
+                'display_name' => 'Image',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 6,
+            ),
+            178 => 
+            array (
+                'id' => 218,
+                'data_type_id' => 27,
+                'field' => 'url',
+                'type' => 'text',
+                'display_name' => 'Url',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 7,
+            ),
+            179 => 
+            array (
+                'id' => 219,
+                'data_type_id' => 27,
+                'field' => 'outcome',
+                'type' => 'text_area',
+                'display_name' => 'Outcome',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 8,
+            ),
+            180 => 
+            array (
+                'id' => 220,
+                'data_type_id' => 27,
+                'field' => 'description',
+                'type' => 'text_area',
+                'display_name' => 'Description',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 9,
+            ),
+            181 => 
+            array (
+                'id' => 221,
+                'data_type_id' => 27,
+                'field' => 'prerequisites',
+                'type' => 'text_area',
+                'display_name' => 'Prerequisites',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 10,
+            ),
+            182 => 
+            array (
+                'id' => 222,
+                'data_type_id' => 27,
+                'field' => 'faq',
+                'type' => 'text_area',
+                'display_name' => 'Faq',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 11,
+            ),
+            183 => 
+            array (
+                'id' => 223,
+                'data_type_id' => 27,
+                'field' => 'rating_distribution',
+                'type' => 'text_area',
+                'display_name' => 'Rating Distribution',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 12,
+            ),
+            184 => 
+            array (
+                'id' => 224,
+                'data_type_id' => 27,
+                'field' => 'certification',
+                'type' => 'number',
+                'display_name' => 'Certification',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 13,
+            ),
+            185 => 
+            array (
+                'id' => 225,
+                'data_type_id' => 27,
+                'field' => 'rating',
+                'type' => 'number',
+                'display_name' => 'Rating',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 14,
+            ),
+            186 => 
+            array (
+                'id' => 226,
+                'data_type_id' => 27,
+                'field' => 'price',
+                'type' => 'number',
+                'display_name' => 'Price',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 15,
+            ),
+            187 => 
+            array (
+                'id' => 227,
+                'data_type_id' => 27,
+                'field' => 'discount_price',
+                'type' => 'number',
+                'display_name' => 'Discount Price',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 16,
+            ),
+            188 => 
+            array (
+                'id' => 228,
+                'data_type_id' => 27,
+                'field' => 'course_provider_id',
+                'type' => 'number',
+                'display_name' => 'Course Provider Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 17,
+            ),
+            189 => 
+            array (
+                'id' => 229,
+                'data_type_id' => 27,
+                'field' => 'course_category_id',
+                'type' => 'text',
+                'display_name' => 'Course Category Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 18,
+            ),
+            190 => 
+            array (
+                'id' => 230,
+                'data_type_id' => 27,
+                'field' => 'course_sub_category_id',
+                'type' => 'text',
+                'display_name' => 'Course Sub Category Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 19,
+            ),
+            191 => 
+            array (
+                'id' => 231,
+                'data_type_id' => 27,
+                'field' => 'course_topic_id',
+                'type' => 'text',
+                'display_name' => 'Course Topic Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 20,
+            ),
+            192 => 
+            array (
+                'id' => 232,
+                'data_type_id' => 27,
+                'field' => 'slug',
+                'type' => 'text',
+                'display_name' => 'Slug',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 21,
+            ),
+            193 => 
+            array (
+                'id' => 233,
+                'data_type_id' => 27,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Created At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 22,
+            ),
+            194 => 
+            array (
+                'id' => 234,
+                'data_type_id' => 27,
+                'field' => 'updated_at',
+                'type' => 'timestamp',
+                'display_name' => 'Updated At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 23,
+            ),
+            195 => 
+            array (
+                'id' => 235,
+                'data_type_id' => 27,
+                'field' => 'course_belongsto_course_provider_relationship',
+                'type' => 'relationship',
+                'display_name' => 'course_providers',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"model":"App\\\\Models\\\\CourseProvider","table":"course_providers","type":"belongsTo","column":"course_provider_id","key":"id","label":"name","pivot_table":"course_categories","pivot":"0","taggable":"0"}',
+                'order' => 24,
+            ),
+            196 => 
+            array (
+                'id' => 236,
+                'data_type_id' => 27,
+                'field' => 'course_hasmany_curriculum_chapter_relationship',
+                'type' => 'relationship',
+                'display_name' => 'curriculum_chapters',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"model":"App\\\\Models\\\\CurriculumChapter","table":"curriculum_chapters","type":"hasMany","column":"course_id","key":"id","label":"title","pivot_table":"course_categories","pivot":"0","taggable":"0"}',
+                'order' => 25,
             ),
         ));
         
