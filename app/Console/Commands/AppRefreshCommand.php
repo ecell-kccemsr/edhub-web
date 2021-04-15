@@ -47,6 +47,7 @@ class AppRefreshCommand extends Command
         Artisan::call('migrate --seed');
         Artisan::call('cache:clear');
         Artisan::call('app:setup');
+        Artisan::call('passport:install');
         $this->line("Application refreshed.");
         return 0;
     }
