@@ -6,7 +6,15 @@ import { useStoreActions, useStoreState } from "easy-peasy";
 const Compare = () => {
     const compares = useStoreState(state => state.compares);
     const addToCompare = useStoreActions(actions => actions.addToCompare);
-    console.log("compares", compares);
+
+    if (compares.length == 0) {
+        return (
+            <div className="no-course-compare-section">
+                <h3>No course present to compare</h3>
+                <h4>Add course to compare now </h4>
+            </div>
+        );
+    }
     return (
         <>
             <div className="compare-section">
@@ -16,9 +24,8 @@ const Compare = () => {
                             <td style={{ border: "none" }}>
                                 <p className="compare-title">
                                     <b>Compare</b>
-                                    <br /> UI/UX Design | How to design with
-                                    professional vs Seth Godin's Freelancer
-                                    Course vs Others
+                                    <br />
+                                    {compares.map(c => c.title).join(" vs ")}
                                 </p>
                             </td>
                             {compares &&
@@ -32,9 +39,8 @@ const Compare = () => {
                                                     }
                                                     alt=""
                                                     style={{
-                                                        borderRadius:"16px",
-                                                        width:"100%"
-                                                    
+                                                        borderRadius: "16px",
+                                                        width: "100%"
                                                     }}
                                                 />
                                                 <h5>{cmp?.title}</h5>
@@ -42,7 +48,7 @@ const Compare = () => {
                                                     <b>FREE</b>
                                                 </span>
                                                 <span>
-                                                    ${" "}
+                                                    $
                                                     <strike>
                                                         {cmp?.price}
                                                     </strike>
@@ -198,11 +204,9 @@ const Compare = () => {
                                         )
                                     )}
                                     <button className="compare-buy-btn">
-                                        {" "}
                                         Buy Now
                                     </button>
                                     <button className="compare-addCart-btn">
-                                        {" "}
                                         Add To Cart
                                     </button>
                                 </td>

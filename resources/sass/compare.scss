@@ -1,3 +1,20 @@
+.no-course-compare-section {
+    padding: 50px 0;
+    text-align: center;
+    h3 {
+        font-size: 32px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h3,
+    h4 {
+        text-transform: uppercase;
+        color: #444;
+        font-weight: 400;
+    }
+}
+
 .compare-section {
     table {
         height: 100%;
@@ -21,6 +38,7 @@
                     font-size: 20px;
                 }
                 .compare-buy-btn {
+                    max-width: 300px;
                     display: block;
                     border: none;
                     outline: none;
@@ -32,6 +50,7 @@
                     margin-top: 20px;
                 }
                 .compare-addCart-btn {
+                    max-width: 300px;
                     display: block;
                     border: none;
                     outline: #3c64b1;
@@ -44,6 +63,7 @@
                     margin-top: 20px;
                 }
                 .compare-card {
+                    max-width: 300px;
                     background: #eeeeee;
                     padding: 20px;
                     border-radius: 16px;
