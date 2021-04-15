@@ -49,7 +49,7 @@ const App = props => {
         <Fragment>
             <Switch>
                 <Route path="/login" exact component={Login} />
-                <Route path="/register" exact component={Register} />\
+                <Route path="/register" exact component={Register} />
                 {/* //JobLayoutRoutes */}
                 <JobLayoutRoute path="/" exact component={Homepage} />
                 <JobLayoutRoute
