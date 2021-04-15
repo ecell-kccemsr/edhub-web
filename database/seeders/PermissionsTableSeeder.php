@@ -829,53 +829,13 @@ class PermissionsTableSeeder extends Seeder
             ),
             101 => 
             array (
-                'id' => 107,
-                'key' => 'browse_courses',
-                'table_name' => 'courses',
-                'created_at' => '2021-04-02 15:30:50',
-                'updated_at' => '2021-04-02 15:30:50',
-            ),
-            102 => 
-            array (
-                'id' => 108,
-                'key' => 'read_courses',
-                'table_name' => 'courses',
-                'created_at' => '2021-04-02 15:30:50',
-                'updated_at' => '2021-04-02 15:30:50',
-            ),
-            103 => 
-            array (
-                'id' => 109,
-                'key' => 'edit_courses',
-                'table_name' => 'courses',
-                'created_at' => '2021-04-02 15:30:50',
-                'updated_at' => '2021-04-02 15:30:50',
-            ),
-            104 => 
-            array (
-                'id' => 110,
-                'key' => 'add_courses',
-                'table_name' => 'courses',
-                'created_at' => '2021-04-02 15:30:50',
-                'updated_at' => '2021-04-02 15:30:50',
-            ),
-            105 => 
-            array (
-                'id' => 111,
-                'key' => 'delete_courses',
-                'table_name' => 'courses',
-                'created_at' => '2021-04-02 15:30:50',
-                'updated_at' => '2021-04-02 15:30:50',
-            ),
-            106 => 
-            array (
                 'id' => 112,
                 'key' => 'browse_course_providers',
                 'table_name' => 'course_providers',
                 'created_at' => '2021-04-02 15:32:55',
                 'updated_at' => '2021-04-02 15:32:55',
             ),
-            107 => 
+            102 => 
             array (
                 'id' => 113,
                 'key' => 'read_course_providers',
@@ -883,7 +843,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:32:55',
                 'updated_at' => '2021-04-02 15:32:55',
             ),
-            108 => 
+            103 => 
             array (
                 'id' => 114,
                 'key' => 'edit_course_providers',
@@ -891,7 +851,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:32:55',
                 'updated_at' => '2021-04-02 15:32:55',
             ),
-            109 => 
+            104 => 
             array (
                 'id' => 115,
                 'key' => 'add_course_providers',
@@ -899,7 +859,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:32:55',
                 'updated_at' => '2021-04-02 15:32:55',
             ),
-            110 => 
+            105 => 
             array (
                 'id' => 116,
                 'key' => 'delete_course_providers',
@@ -907,7 +867,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:32:55',
                 'updated_at' => '2021-04-02 15:32:55',
             ),
-            111 => 
+            106 => 
             array (
                 'id' => 117,
                 'key' => 'browse_course_categories',
@@ -915,7 +875,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:04:22',
                 'updated_at' => '2021-04-15 16:04:22',
             ),
-            112 => 
+            107 => 
             array (
                 'id' => 118,
                 'key' => 'read_course_categories',
@@ -923,7 +883,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:04:22',
                 'updated_at' => '2021-04-15 16:04:22',
             ),
-            113 => 
+            108 => 
             array (
                 'id' => 119,
                 'key' => 'edit_course_categories',
@@ -931,7 +891,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:04:22',
                 'updated_at' => '2021-04-15 16:04:22',
             ),
-            114 => 
+            109 => 
             array (
                 'id' => 120,
                 'key' => 'add_course_categories',
@@ -939,7 +899,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:04:22',
                 'updated_at' => '2021-04-15 16:04:22',
             ),
-            115 => 
+            110 => 
             array (
                 'id' => 121,
                 'key' => 'delete_course_categories',
@@ -947,7 +907,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:04:22',
                 'updated_at' => '2021-04-15 16:04:22',
             ),
-            116 => 
+            111 => 
             array (
                 'id' => 122,
                 'key' => 'browse_course_sub_categories',
@@ -955,7 +915,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:05:04',
                 'updated_at' => '2021-04-15 16:05:04',
             ),
-            117 => 
+            112 => 
             array (
                 'id' => 123,
                 'key' => 'read_course_sub_categories',
@@ -963,7 +923,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:05:04',
                 'updated_at' => '2021-04-15 16:05:04',
             ),
-            118 => 
+            113 => 
             array (
                 'id' => 124,
                 'key' => 'edit_course_sub_categories',
@@ -971,7 +931,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:05:04',
                 'updated_at' => '2021-04-15 16:05:04',
             ),
-            119 => 
+            114 => 
             array (
                 'id' => 125,
                 'key' => 'add_course_sub_categories',
@@ -979,7 +939,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:05:04',
                 'updated_at' => '2021-04-15 16:05:04',
             ),
-            120 => 
+            115 => 
             array (
                 'id' => 126,
                 'key' => 'delete_course_sub_categories',
@@ -987,7 +947,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:05:04',
                 'updated_at' => '2021-04-15 16:05:04',
             ),
-            121 => 
+            116 => 
             array (
                 'id' => 127,
                 'key' => 'browse_course_topics',
@@ -995,7 +955,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 17:52:15',
                 'updated_at' => '2021-04-15 17:52:15',
             ),
-            122 => 
+            117 => 
             array (
                 'id' => 128,
                 'key' => 'read_course_topics',
@@ -1003,7 +963,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 17:52:15',
                 'updated_at' => '2021-04-15 17:52:15',
             ),
-            123 => 
+            118 => 
             array (
                 'id' => 129,
                 'key' => 'edit_course_topics',
@@ -1011,7 +971,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 17:52:15',
                 'updated_at' => '2021-04-15 17:52:15',
             ),
-            124 => 
+            119 => 
             array (
                 'id' => 130,
                 'key' => 'add_course_topics',
@@ -1019,13 +979,53 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 17:52:15',
                 'updated_at' => '2021-04-15 17:52:15',
             ),
-            125 => 
+            120 => 
             array (
                 'id' => 131,
                 'key' => 'delete_course_topics',
                 'table_name' => 'course_topics',
                 'created_at' => '2021-04-15 17:52:15',
                 'updated_at' => '2021-04-15 17:52:15',
+            ),
+            121 => 
+            array (
+                'id' => 132,
+                'key' => 'browse_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-16 01:12:21',
+                'updated_at' => '2021-04-16 01:12:21',
+            ),
+            122 => 
+            array (
+                'id' => 133,
+                'key' => 'read_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-16 01:12:21',
+                'updated_at' => '2021-04-16 01:12:21',
+            ),
+            123 => 
+            array (
+                'id' => 134,
+                'key' => 'edit_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-16 01:12:21',
+                'updated_at' => '2021-04-16 01:12:21',
+            ),
+            124 => 
+            array (
+                'id' => 135,
+                'key' => 'add_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-16 01:12:21',
+                'updated_at' => '2021-04-16 01:12:21',
+            ),
+            125 => 
+            array (
+                'id' => 136,
+                'key' => 'delete_courses',
+                'table_name' => 'courses',
+                'created_at' => '2021-04-16 01:12:21',
+                'updated_at' => '2021-04-16 01:12:21',
             ),
         ));
         
