@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Button } from "reactstrap";
+import { Row, Col, Button,FormGroup, Label, Input,Modal } from "reactstrap";
+//Components
+import Guide1 from "../../guide/Guide1";
+import Guide2 from "../../guide/Guide2";
+import Guide3 from "../../guide/Guide3";
+import Guide4 from "../../guide/Guide4";
+import Guide5 from "../../guide/Guide5";
 //dummyData
 import { navDummyData, recommendedCourse } from "./navDummyData";
 //images
@@ -11,11 +17,105 @@ import bookmark from "../../Images/landingpage/bookmark.png";
 import provider from "../../Images/landingpage/provider.png";
 
 const CourseNavbar = props => {
+    const [modal, setModal] = useState(false);
+    const [step, setStep] = useState(1);
+
+    const toggle = () => {
+        setModal(!modal);
+        setStep(1);
+    };
+
+    const nextStep = () => setStep(prev => prev + 1);
+
+    const prevStep = () => setStep(prev => prev - 1);
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log("MULTISTEP FORM SUBMITTED");
+        setModal(false);
+    };
+
     const handleChange = () => {
         localStorage.clear();
     };
+
+    const currentModalForm = step => {
+        switch (step) {
+            case 1:
+                return (
+                    <>
+                        <Guide1 nextStep={nextStep} />
+                    </>
+                );
+            case 2:
+                return (
+                    <>
+                        <Guide2 nextStep={nextStep} />
+                    </>
+                );
+            case 3:
+                return (
+                    <>
+                        <Guide3 nextStep={nextStep} />
+                    </>
+                );
+            case 4:
+                return (
+                    <>
+                        <Guide4 nextStep={nextStep} />
+                    </>
+                );
+            case 5:
+                return (
+                    <>
+                        <Guide5 handleSubmit={handleSubmit} />
+                    </>
+                );
+            default:
+                console.log("This is a multi-step form built with React.");
+        }
+    };
+
     return (
         <>
+        <Modal
+                isOpen={modal}
+                toggle={toggle}
+                className="guide-modal-container"
+            >
+                <button className="close-modal-btn" onClick={toggle}>
+                    X
+                </button>
+                <div className="guide-modal">
+                    <hr className="modal-hr" />
+                    <Row>
+                        <Col sm="12" md="3" className="text-center">
+                            <b>
+                                Step <br />
+                                <span className="guide-modal-step">
+                                    {step} of 5
+                                </span>
+                                <div className="guide-modal-step-dot">
+                                    <span style={{color:`${step>=1?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span style={{color:`${step>=2?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span style={{color:`${step>=3?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span style={{color:`${step>=4?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span style={{color:`${step>=5?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                </div>
+                            </b>
+                        </Col>
+                        <Col sm="12" md="9">
+                            <h4 className="guide-modal-title">
+                                Let us guide you !
+                            </h4>
+                        </Col>
+                    </Row>
+                    <h5 className="guide-modal-subtitle">
+                        Select according to your requirement
+                    </h5>
+                    {currentModalForm(step)}
+                </div>
+            </Modal>
             <nav className="navbar course-navbar navbar-expand-lg">
                 <div className="container">
                     <Link className="navbar-brand" to="/landingPage">
@@ -300,7 +400,7 @@ const CourseNavbar = props => {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="#">
+                                <Link className="nav-link courseNavLink" to="#" onClick={toggle}>
                                     Guide Me
                                 </Link>
                             </li>
