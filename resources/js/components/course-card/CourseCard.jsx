@@ -7,6 +7,9 @@ import play from "../../Images/courseCategory/play.png";
 import guide from "../../Images/courseCategory/guide.png";
 import star from "../../Images/courseCategory/star.png";
 import reviewArrow from "../../Images/courseCategory/reviewArrow.png";
+import bookmark from "../../Images/landingpage/bookmark.png";
+import bookmark1 from "../../Images/landingpage/bookmark1.png";
+
 import addtoCompare from "../../Images/courseCategory/addcompare.png";
 import { useStoreActions, useStoreState } from "easy-peasy";
 const CourseCard = ({ data }) => {
@@ -22,7 +25,6 @@ const CourseCard = ({ data }) => {
 
     const handleWishlist = data => {
         addtoWishlist(data);
-        console.log(addtoWishlist);
     };
 
     const handleCompare = data => {
@@ -36,6 +38,16 @@ const CourseCard = ({ data }) => {
 
     return (
         <>
+         <button 
+         className="wishlist-section"
+                        onClick={() => handleWishlist(data)}
+                    >
+                        {isAlreadyInWishlist === false ? (
+                        <img src={bookmark} alt="bookmark" />
+                        ) : (
+                            <img src={bookmark1} alt="bookmark1" className="wishlist-section-bookmark1" />
+                            )}
+            </button>
             <div className="coursecard-section h-100">
                 <img
                     src={data?.image}
@@ -80,17 +92,7 @@ const CourseCard = ({ data }) => {
                         )}
                     </div>
 
-                    <div
-                        className="compare-section"
-                        onClick={() => handleWishlist(data)}
-                    >
-                        <img src={addtoCompare} alt="" />
-                        {isAlreadyInWishlist === false ? (
-                            <h5>Add to wishlist</h5>
-                        ) : (
-                            <h5>Remove from wishlist</h5>
-                        )}
-                    </div>
+                   
 
                     <hr />
                 </div>

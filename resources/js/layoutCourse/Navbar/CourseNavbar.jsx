@@ -324,18 +324,14 @@ const CourseNavbar = props => {
                                     Guide Me
                                 </Link>
                             </li>
+                            
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="#">
-                                    <img src={cartNotification} alt="" />
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="#">
+                                <Link className="nav-link courseNavLink" to="/profile/wishlist">
                                     <img src={bookmark} alt="" />
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="#">
+                                <Link className="nav-link courseNavLink" to="/profile/basic">
                                     <img src={user} alt="" />
                                 </Link>
                             </li>
@@ -343,7 +339,7 @@ const CourseNavbar = props => {
                                 <Link className="nav-link courseNavLink" to="/">
                                 <Button outline color="danger" 
                                  onClick={()=>handleChange()}
-                                >LogOut</Button>
+                                >Logout</Button>
                                </Link>
                             </li>
                         </ul>

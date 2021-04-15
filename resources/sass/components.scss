@@ -76,6 +76,29 @@
 }
 
 //Course Card
+.wishlist-section {
+    position: absolute;
+    background: #fff;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 50px;
+    box-shadow: 2px 2px 2px 2px #0000003d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 280px;
+    top: -1px;
+    img {
+        max-width: 100%;
+        object-fit: contain;
+    }
+    .wishlist-section-bookmark1 {
+        max-width: 180%;
+        padding-top: 9px;
+    }
+}
 .coursecard-section {
     background: #f6f7f8;
     padding: 20px 10px;
