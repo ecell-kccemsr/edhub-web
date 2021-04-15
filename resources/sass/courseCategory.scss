@@ -1,23 +1,26 @@
-.compare-btn-category {
-    transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    display: block;
+.compare-btn {
+    z-index: 1000;
+    display: flex;
+    top: 50%;
+    position: fixed;
+    right: -4%;
+    color: #fff;
     background: #3c64b1;
     text-align: center;
     height: 48px;
-    width: 150px;
-    color: #f6f7f8;
-    font-size: 20px;
-    text-decoration: none;
-    padding: 10px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    right: 0;
-    position: fixed;
-    border: none;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+    }
 }
 .course-category-section {
     background: #eaeaea;
@@ -130,5 +133,10 @@
 
     .course-category-main-section {
         padding: 20px !important;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .compare-btn {
+        display: none !important;
     }
 }

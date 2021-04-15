@@ -154,12 +154,10 @@ const courseCategory = props => {
         if (filter) {
             pricefilter = `price_min=${minV}&price_max=${maxv}`;
         }
-        console.log(`URL - ${url}${pricefilter}`);
         axios
             .get(`${url}${pricefilter}`)
             .then(res => {
                 setCourseCategory(res.data.data);
-                console.log("req done ");
             })
             .catch(err => {
                 console.log(err);
@@ -183,9 +181,6 @@ const courseCategory = props => {
 
     return (
         <>
-            <Link to={`/compare`}>
-                <button className="compare-btn-category">Compare</button>
-            </Link>
             <div className="course-category-section">
                 <div className="course-category-hero-slider">
                     <CourseCategoryCarousel />
