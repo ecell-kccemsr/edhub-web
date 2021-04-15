@@ -63,9 +63,8 @@ const CourseCard = ({ data }) => {
                         />
                     </div>
 
-                    <h5>Free</h5>
                     <h5 style={{ fontWeight: "400" }}>
-                        $ <strike>{data?.price}</strike>
+                        Rs {data?.price}
                     </h5>
                 </div>
                 <div>

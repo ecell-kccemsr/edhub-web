@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Row, Col } from "reactstrap";
 const ProfileLayout = ({ children }) => {
-    const handleLogout = () => {
-        console.log("LOGOUT");
+    const handleChange = ()=>{
+        localStorage.clear();
     };
     return (
         <div className="profile-outer-part">
@@ -47,6 +47,7 @@ const ProfileLayout = ({ children }) => {
                                             : "#808080"
                                     }`
                                 }}
+                                to="/profile/basic"
                             >
                                 Basic
                             </Link>
@@ -62,6 +63,8 @@ const ProfileLayout = ({ children }) => {
                                             : "#808080"
                                     }`
                                 }}
+                                to="/profile/my-courses"
+
                             >
                                 My courses
                             </Link>
@@ -77,14 +80,17 @@ const ProfileLayout = ({ children }) => {
                                             : "#808080"
                                     }`
                                 }}
+                                to="/profile/wishlist"
+
                             >
                                 Wishlist
                             </Link>
                             <hr className="profile-hr" />
                             <Link
                                 className="profile-links"
-                                onClick={handleLogout}
-                            >
+                                onClick={()=>handleChange()}
+                                to="/"
+                                >
                                 Signout
                             </Link>
                         </div>
