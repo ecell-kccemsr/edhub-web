@@ -29,6 +29,8 @@ class CreateCoursesTable extends Migration
             $table->unsignedDouble('rating');
             $table->unsignedDouble('price');
             $table->unsignedInteger('course_provider_id');
+            $table->unsignedInteger('course_category_id')->nullable();
+            $table->unsignedInteger('course_sub_category_id')->nullable();
             $table->string('slug')->unique();
             $table->timestamps();
         });

@@ -907,6 +907,86 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:32:55',
                 'updated_at' => '2021-04-02 15:32:55',
             ),
+            111 => 
+            array (
+                'id' => 117,
+                'key' => 'browse_course_categories',
+                'table_name' => 'course_categories',
+                'created_at' => '2021-04-15 16:04:22',
+                'updated_at' => '2021-04-15 16:04:22',
+            ),
+            112 => 
+            array (
+                'id' => 118,
+                'key' => 'read_course_categories',
+                'table_name' => 'course_categories',
+                'created_at' => '2021-04-15 16:04:22',
+                'updated_at' => '2021-04-15 16:04:22',
+            ),
+            113 => 
+            array (
+                'id' => 119,
+                'key' => 'edit_course_categories',
+                'table_name' => 'course_categories',
+                'created_at' => '2021-04-15 16:04:22',
+                'updated_at' => '2021-04-15 16:04:22',
+            ),
+            114 => 
+            array (
+                'id' => 120,
+                'key' => 'add_course_categories',
+                'table_name' => 'course_categories',
+                'created_at' => '2021-04-15 16:04:22',
+                'updated_at' => '2021-04-15 16:04:22',
+            ),
+            115 => 
+            array (
+                'id' => 121,
+                'key' => 'delete_course_categories',
+                'table_name' => 'course_categories',
+                'created_at' => '2021-04-15 16:04:22',
+                'updated_at' => '2021-04-15 16:04:22',
+            ),
+            116 => 
+            array (
+                'id' => 122,
+                'key' => 'browse_course_sub_categories',
+                'table_name' => 'course_sub_categories',
+                'created_at' => '2021-04-15 16:05:04',
+                'updated_at' => '2021-04-15 16:05:04',
+            ),
+            117 => 
+            array (
+                'id' => 123,
+                'key' => 'read_course_sub_categories',
+                'table_name' => 'course_sub_categories',
+                'created_at' => '2021-04-15 16:05:04',
+                'updated_at' => '2021-04-15 16:05:04',
+            ),
+            118 => 
+            array (
+                'id' => 124,
+                'key' => 'edit_course_sub_categories',
+                'table_name' => 'course_sub_categories',
+                'created_at' => '2021-04-15 16:05:04',
+                'updated_at' => '2021-04-15 16:05:04',
+            ),
+            119 => 
+            array (
+                'id' => 125,
+                'key' => 'add_course_sub_categories',
+                'table_name' => 'course_sub_categories',
+                'created_at' => '2021-04-15 16:05:04',
+                'updated_at' => '2021-04-15 16:05:04',
+            ),
+            120 => 
+            array (
+                'id' => 126,
+                'key' => 'delete_course_sub_categories',
+                'table_name' => 'course_sub_categories',
+                'created_at' => '2021-04-15 16:05:04',
+                'updated_at' => '2021-04-15 16:05:04',
+            ),
         ));
         
         

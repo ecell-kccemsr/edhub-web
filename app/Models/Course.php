@@ -38,4 +38,12 @@ class Course extends Model
     {
         return $this->hasMany('App\Models\CourseReview','course_id');
     }
+    public function course_category()
+    {
+        return $this->belongsTo('App\Models\CourseCategory','course_category_id');
+    }
+    public function course_sub_category()
+    {
+        return $this->belongsTo('App\Models\CourseSubCategory','course_sub_category_id');
+    }
 }
