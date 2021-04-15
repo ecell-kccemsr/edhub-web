@@ -393,9 +393,9 @@ class DataTypesTableSeeder extends Seeder
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-04-15 16:04:22',
-                'updated_at' => '2021-04-15 16:04:22',
+                'updated_at' => '2021-04-15 17:51:34',
             ),
             21 => 
             array (
@@ -414,6 +414,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-04-15 16:05:04',
                 'updated_at' => '2021-04-15 16:10:54',
+            ),
+            22 => 
+            array (
+                'id' => 26,
+                'name' => 'course_topics',
+                'slug' => 'course-topics',
+                'display_name_singular' => 'Course Topic',
+                'display_name_plural' => 'Course Topics',
+                'icon' => 'voyager-book',
+                'model_name' => 'App\\Models\\CourseTopic',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-15 17:52:15',
+                'updated_at' => '2021-04-15 17:57:52',
             ),
         ));
         

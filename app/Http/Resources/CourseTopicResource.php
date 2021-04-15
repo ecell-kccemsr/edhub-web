@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CourseSubCategoryResource extends JsonResource
+class CourseTopicResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,8 +17,7 @@ class CourseSubCategoryResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'course_category_id' => $this->course_category_id,
-            'course_topics' => CourseTopicResource::collection($this->course_topics),
+            'topics' => $this->course_sub_category_id,
             'slug' => $this->slug,
         ];
     }

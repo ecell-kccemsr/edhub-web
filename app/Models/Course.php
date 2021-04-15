@@ -46,4 +46,8 @@ class Course extends Model
     {
         return $this->belongsTo('App\Models\CourseSubCategory','course_sub_category_id');
     }
+    public function course_topic()
+    {
+        return $this->belongsTo('App\Models\CourseTopic','course_topic_id');
+    }
 }

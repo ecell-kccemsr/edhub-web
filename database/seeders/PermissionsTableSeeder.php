@@ -987,6 +987,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-15 16:05:04',
                 'updated_at' => '2021-04-15 16:05:04',
             ),
+            121 => 
+            array (
+                'id' => 127,
+                'key' => 'browse_course_topics',
+                'table_name' => 'course_topics',
+                'created_at' => '2021-04-15 17:52:15',
+                'updated_at' => '2021-04-15 17:52:15',
+            ),
+            122 => 
+            array (
+                'id' => 128,
+                'key' => 'read_course_topics',
+                'table_name' => 'course_topics',
+                'created_at' => '2021-04-15 17:52:15',
+                'updated_at' => '2021-04-15 17:52:15',
+            ),
+            123 => 
+            array (
+                'id' => 129,
+                'key' => 'edit_course_topics',
+                'table_name' => 'course_topics',
+                'created_at' => '2021-04-15 17:52:15',
+                'updated_at' => '2021-04-15 17:52:15',
+            ),
+            124 => 
+            array (
+                'id' => 130,
+                'key' => 'add_course_topics',
+                'table_name' => 'course_topics',
+                'created_at' => '2021-04-15 17:52:15',
+                'updated_at' => '2021-04-15 17:52:15',
+            ),
+            125 => 
+            array (
+                'id' => 131,
+                'key' => 'delete_course_topics',
+                'table_name' => 'course_topics',
+                'created_at' => '2021-04-15 17:52:15',
+                'updated_at' => '2021-04-15 17:52:15',
+            ),
         ));
         
         

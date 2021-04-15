@@ -499,6 +499,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.course-sub-categories.index',
                 'parameters' => NULL,
             ),
+            30 => 
+            array (
+                'id' => 32,
+                'menu_id' => 1,
+                'title' => 'Course Topics',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-book',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 35,
+                'created_at' => '2021-04-15 17:52:15',
+                'updated_at' => '2021-04-15 17:52:15',
+                'route' => 'voyager.course-topics.index',
+                'parameters' => NULL,
+            ),
         ));
         
         

@@ -14,4 +14,8 @@ class CourseSubCategory extends Model
     {
         return $this->belongsTo('App\Models\CourseCategory');
     }
+    public function course_topics()
+    {
+        return $this->hasMany('App\Models\CourseTopic','course_sub_category_id');
+    }
 }
