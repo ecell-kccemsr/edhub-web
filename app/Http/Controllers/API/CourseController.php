@@ -10,7 +10,9 @@ use App\Http\Resources\CourseResource;
 use App\Http\Resources\CourseResourceCollection;
 use App\Http\Resources\CourseReviewResourceCollection;
 use App\Http\Resources\CourseCurriculumResourceCollection;
+use App\Http\Resources\CurriculumChapterResource;
 use App\Models\CourseCategory;
+use App\Models\CurriculumChapter;
 
 class CourseController extends Controller
 {
@@ -51,7 +53,7 @@ class CourseController extends Controller
     public function curriculum($course, Request $request)
     {
         $course = Course::where('id',$course)->orWhere('slug',$course)->firstOrFail();
-        return new CourseCurriculumResourceCollection($course->course_curriculum()->paginate($request->input('per_page',10)));
+        return CurriculumChapterResource::collection($course->course_chapters()->paginate($request->input('per_page',10)));
     }
      
     public function reviews($course, Request $request)

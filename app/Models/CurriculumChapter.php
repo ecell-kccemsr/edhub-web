@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CourseCurriculum extends Model
+class CurriculumChapter extends Model
 {
     use HasFactory;
-
-    protected $table = "course_curriculum";
 
     /**
     * The attributes that aren't mass assignable.
@@ -19,9 +17,10 @@ class CourseCurriculum extends Model
     protected $guarded = [
         'id'
     ];
-    
-    public function course()
+
+
+    public function curriculum_lectures()
     {
-        return $this->belongsTo('App\Models\Course','course_id');
+        return $this->hasMany('App\Models\CurriculumLecture','curriculum_chapter_id');
     }
 }
