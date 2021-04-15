@@ -50,7 +50,6 @@ const CourseCard = ({ data }) => {
                             <img src={bookmark1} alt="bookmark1" className="wishlist-section-bookmark1" />
                             )}
             </button>
-            <div className="course-card">
                 <div className="coursecard-section h-100">
                 <img
                     src={data?.image}
@@ -109,48 +108,7 @@ const CourseCard = ({ data }) => {
                     </Link>
                 </div>
             </div>
-            <div className="coursecard-section-1 h-100">
-               
-                <div className="card-header-top">
-                    
-
-                   
-                </div>
-                <div>
-                    <h4 className="card-title">{data?.title}</h4>
-                    <h5 style={{ fontWeight: "400" }}>
-                        Rs {data?.price}
-                    </h5>
-                    <div className="card-overview">
-                        <div>
-                            <img src={play} alt="" />
-                            <p>20 Lessons</p>
-                        </div>
-                        <div>
-                            <img src={guide} alt="" />
-                            <p>Guided Course</p>
-                        </div>
-                    </div>
-              
-
-                   
-
-                    <hr />
-                </div>
-
-                <div className="coursecard-footer">
-                    
-                <a
-                                        href={data?.url}
-                                         target="_blank"
-                                         className="card-buy-btn"
-                                     >
-                                         {" "}
-                                         Buy Now
-                                     </a>
-                </div>
-            </div>
-            </div>
+            
             
 
         </>
