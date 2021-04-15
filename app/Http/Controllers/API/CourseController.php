@@ -35,6 +35,9 @@ class CourseController extends Controller
         if($request->has('rating')) {
             $courses = $courses->where('rating','>=', $request->input('rating'));
         }
+        if($request->has('search')) {
+            $courses = $courses->where('title','like','%' . $request->input('search') . '%');
+        }
         
         return new CourseResourceCollection($courses->paginate($request->input('per_page',10)));
     }
