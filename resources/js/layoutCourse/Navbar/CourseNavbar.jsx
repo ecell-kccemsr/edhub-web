@@ -64,7 +64,7 @@ const CourseNavbar = props => {
                                                             {navl.mainlink}
                                                         </span>
                                                         {ismegamenu ? (
-                                                            <i class="fas fa-chevron-right"></i>
+                                                            <i className="fas fa-chevron-right"></i>
                                                         ) : (
                                                             ""
                                                         )}
@@ -101,7 +101,7 @@ const CourseNavbar = props => {
                                                                                         }
                                                                                     </span>
                                                                                     {ismegamenu2 ? (
-                                                                                        <i class="fas fa-chevron-right"></i>
+                                                                                        <i className="fas fa-chevron-right"></i>
                                                                                     ) : (
                                                                                         ""
                                                                                     )}

@@ -10,16 +10,16 @@ const DegreeFAQSection = ({ faq }) => {
                         FAQs
                     </h5>
                     <div
-                        class="accordion course-content-accordion"
+                        className="accordion course-content-accordion"
                         id="courseFAQParent"
                     >
                         {faq &&
                             faq.map(faqIndividual => (
-                                <div class="card" key={faqIndividual?.id}>
+                                <div className="card" key={faqIndividual?.id}>
                                     <div id={`heading${faqIndividual?.id}`}>
-                                        <h2 class="mb-0">
+                                        <h2 className="mb-0">
                                             <a
-                                                class="btn btn-link course-content-card-headerlink"
+                                                className="btn btn-link course-content-card-headerlink"
                                                 type="button"
                                                 data-toggle="collapse"
                                                 data-target={`#collapse${faqIndividual?.id}`}
@@ -27,7 +27,7 @@ const DegreeFAQSection = ({ faq }) => {
                                                 aria-controls={`collapse${faqIndividual?.id}`}
                                             >
                                                 <i
-                                                    class="fas fa-chevron-down mr-2"
+                                                    className="fas fa-chevron-down mr-2"
                                                     style={{
                                                         color: "#F05454"
                                                     }}
@@ -39,11 +39,11 @@ const DegreeFAQSection = ({ faq }) => {
 
                                     <div
                                         id={`collapse${faqIndividual?.id}`}
-                                        class="collapse"
+                                        className="collapse"
                                         aria-labelledby={`heading${faqIndividual?.id}`}
                                         data-parent="#courseFAQParent"
                                     >
-                                        <div class="card-body">
+                                        <div className="card-body">
                                             <List
                                                 type="unstyled"
                                                 className="mb-0"

@@ -81,7 +81,7 @@ const DegreeTestimonialSection = ({ userTestimonials }) => {
                         </Row>
                         <p className="course-testimonial-readmore">
                             Read more
-                            <i class="fas fa-chevron-down ml-2"></i>
+                            <i className="fas fa-chevron-down ml-2"></i>
                         </p>
                     </Col>
                 </Row>
