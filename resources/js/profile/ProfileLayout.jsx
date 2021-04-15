@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button, Row, Col } from "reactstrap";
+import http from "../utils/http";
+import { useStoreState } from "easy-peasy";
+
 const ProfileLayout = ({ children }) => {
-    const handleChange = ()=>{
+    const handleChange = () => {
         localStorage.clear();
     };
+
+    const onSubmit = e => {
+        e.preventDefault();
+        const selectedFile = e.target.files[0];
+        let formData = new FormData();
+        formData.append("myFile", selectedFile, selectedFile.name);
+        http.post("auth/update", formData).then(res =>
+            alert("Profile pic Updated")
+        );
+    };
+
     return (
         <div className="profile-outer-part">
             <div className="outermost-section">
@@ -26,15 +40,18 @@ const ProfileLayout = ({ children }) => {
                                     className="profile-section-profile-image"
                                 />
                             </div>
-                            <div className="update-btn-section">
-                                <Button
-                                    className="update-btn"
-                                    type="submit"
-                                    value="submit"
-                                >
-                                    Update Profile Image
-                                </Button>
-                            </div>
+                            <form action="" onSubmit={onSubmit}>
+                                <div className="update-btn-section">
+                                    <input
+                                        type="file"
+                                        // onChange={fileChangedHandler}
+                                    />
+
+                                    <button className="update-btn">
+                                        Upload!
+                                    </button>
+                                </div>
+                            </form>
                             <hr className="profile-hr" />
                             <Link
                                 className="profile-links"
@@ -64,7 +81,6 @@ const ProfileLayout = ({ children }) => {
                                     }`
                                 }}
                                 to="/profile/my-courses"
-
                             >
                                 My courses
                             </Link>
@@ -81,16 +97,15 @@ const ProfileLayout = ({ children }) => {
                                     }`
                                 }}
                                 to="/profile/wishlist"
-
                             >
                                 Wishlist
                             </Link>
                             <hr className="profile-hr" />
                             <Link
                                 className="profile-links"
-                                onClick={()=>handleChange()}
+                                onClick={() => handleChange()}
                                 to="/"
-                                >
+                            >
                                 Signout
                             </Link>
                         </div>
@@ -102,3 +117,34 @@ const ProfileLayout = ({ children }) => {
 };
 
 export default ProfileLayout;
+// import React, { Component } from "react";
+// import http from "../utils/http";
+// class ProfileLayout extends Component {
+//     state = { selectedFile: null };
+
+//     fileChangedHandler = event => {
+//         this.setState({ selectedFile: event.target.files[0] });
+//     };
+
+//     uploadHandler = () => {
+//         const formData = new FormData();
+//         formData.append(
+//             "myFile",
+//             this.state.selectedFile,
+//             this.state.selectedFile.name
+//         );
+//         http.post("auth/update", formData).then(res =>
+//             alert("Profile pic Updated")
+//         );
+//     };
+//     render() {
+//         return (
+//             <div>
+//                 <input type="file" onChange={this.fileChangedHandler} />
+//                 <button onClick={this.uploadHandler}>Upload!</button>
+//             </div>
+//         );
+//     }
+// }
+
+// export default ProfileLayout;

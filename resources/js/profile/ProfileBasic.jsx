@@ -7,7 +7,7 @@ import { useStoreState } from "easy-peasy";
 const ProfileBasic = () => {
     const user = useStoreState(state => state.user);
     if (user === null) {
-        alert("Not Authenticated");
+        return "Not authenticated";
     }
     console.log(user);
     const onSubmit = e => {
