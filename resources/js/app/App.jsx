@@ -40,16 +40,18 @@ import { useStoreActions } from "easy-peasy";
 const App = props => {
     const setUser = useStoreActions(actions => actions.setUser);
     const setCompares = useStoreActions(actions => actions.setCompares);
+    const setWishList = useStoreActions(actions => actions.setWishList);
     useEffect(() => {
         http.setToken(localStorage.getItem("accessToken"));
         http.get("auth/user").then(res => setUser(res.data.data));
         setCompares(JSON.parse(localStorage.getItem("compares")) || []);
+        setWishList(JSON.parse(localStorage.getItem("wishlist")) || []);
     }, []);
     return (
         <Fragment>
             <Switch>
                 <Route path="/login" exact component={Login} />
-                <Route path="/register" exact component={Register} />\
+                <Route path="/register" exact component={Register} />
                 {/* //JobLayoutRoutes */}
                 <JobLayoutRoute path="/" exact component={Homepage} />
                 <JobLayoutRoute
@@ -100,7 +102,7 @@ const App = props => {
                     exact
                     component={Examcalendar}
                 />
-                //CourseLayoutRoutes
+                {/*CourseLayoutRoutes */}
                 <CourseLayoutRoutes
                     path="/profile/basic"
                     exact

@@ -12,18 +12,27 @@ import { useStoreActions, useStoreState } from "easy-peasy";
 const CourseCard = ({ data }) => {
     const compares = useStoreState(state => state.compares);
     const addToCompare = useStoreActions(actions => actions.addToCompare);
+    const wishlist = useStoreState(state => state.wishlist);
+    const addtoWishlist = useStoreActions(actions => actions.addtoWishlist);
+
     const isAlreadyInCompares =
         compares.findIndex(course => course.id === data.id) !== -1;
+    const isAlreadyInWishlist =
+        wishlist.findIndex(course => course.id === data.id) !== -1;
 
-        const handleCompare = (data)=>{
-            if(compares.length>2){
-                alert("Cant add more")
-                return;
-            }
-            else{
-                addToCompare(data)
-            }
+    const handleWishlist = data => {
+        addtoWishlist(data);
+        console.log(addtoWishlist);
+    };
+
+    const handleCompare = data => {
+        if (compares.length > 2) {
+            alert("Cant add more");
+            return;
+        } else {
+            addToCompare(data);
         }
+    };
 
     return (
         <>
@@ -61,8 +70,7 @@ const CourseCard = ({ data }) => {
                     </div>
                     <div
                         className="compare-section"
-                      
-                    onClick={()=>handleCompare(data)}
+                        onClick={() => handleCompare(data)}
                     >
                         <img src={addtoCompare} alt="" />
                         {isAlreadyInCompares === false ? (
@@ -70,9 +78,20 @@ const CourseCard = ({ data }) => {
                         ) : (
                             <h5>Remove from compare</h5>
                         )}
-                        
-                           
                     </div>
+
+                    <div
+                        className="compare-section"
+                        onClick={() => handleWishlist(data)}
+                    >
+                        <img src={addtoCompare} alt="" />
+                        {isAlreadyInWishlist === false ? (
+                            <h5>Add to wishlist</h5>
+                        ) : (
+                            <h5>Remove from wishlist</h5>
+                        )}
+                    </div>
+
                     <hr />
                 </div>
 

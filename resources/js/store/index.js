@@ -5,7 +5,27 @@ const store = createStore({
     setUser: action((state, payload) => {
         state.user = payload;
     }),
+    wishlist: [],
     compares: [],
+    addtoWishlist: action((state, payload) => {
+        let wishlist = state.wishlist;
+        if (wishlist.filter(course => course.id == payload.id).length > 0) {
+            wishlist = [];
+            state.wishlist.forEach(course => {
+                if (course.id !== payload.id) {
+                    wishlist.push(course);
+                }
+            });
+        } else {
+            wishlist.push(payload);
+        }
+        state.wishlist = [...wishlist];
+        localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
+    }),
+    setWishList: action((state, payload) => {
+        state.wishlist = payload;
+    }),
+
     addToCompare: action((state, payload) => {
         let compares = state.compares;
         if (compares.filter(course => course.id === payload.id).length > 0) {

@@ -7,7 +7,7 @@ import { useStoreState } from "easy-peasy";
 const ProfileBasic = () => {
     const user = useStoreState(state => state.user);
     if (user === null) {
-        return "Not Authenticated";
+        alert("Not Authenticated");
     }
     console.log(user);
     const onSubmit = e => {
@@ -37,7 +37,6 @@ const ProfileBasic = () => {
                             name="email"
                             defaultValue={user.email}
                             className="input-group"
-                            disabled={true}
                         />
                     </FormGroup>
                     <FormGroup>
@@ -45,9 +44,8 @@ const ProfileBasic = () => {
                         <Input
                             type="number"
                             name="mobile_no"
-                            placeholder="9837282813"
+                            defaultValue="9837282813"
                             className="input-group"
-                            disabled={true}
                         />
                     </FormGroup>
                     <button className="btn btn-primary">Save</button>

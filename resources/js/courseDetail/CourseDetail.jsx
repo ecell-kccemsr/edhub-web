@@ -121,7 +121,6 @@ function CourseDetail(props) {
     const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
     const [singleCourse, setSingleCourse] = useState([]);
-
     useEffect(() => {
         const { course_slug } = props.match.params;
         setCourseSlug(course_slug);
@@ -352,10 +351,14 @@ function CourseDetail(props) {
                                         </div>
                                     </div>
                                     <div>
-                                        <button className="card-section-details-buy-btn">
+                                        <a
+                                            href={singleCourse?.url}
+                                            target="_blank"
+                                            className="card-section-details-buy-btn"
+                                        >
                                             {" "}
                                             Buy Now
-                                        </button>
+                                        </a>
                                         <button className="card-section-details-addCart-btn">
                                             {" "}
                                             Add To Cart
@@ -366,7 +369,7 @@ function CourseDetail(props) {
                         </Row>
                     </Container>
                     <Link to={`/compare`}>
-                       <button className="compare-btn-detail">Compare</button>
+                        <button className="compare-btn-detail">Compare</button>
                     </Link>
                 </div>
                 <Container className="containerClass">

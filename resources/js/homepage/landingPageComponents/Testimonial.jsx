@@ -34,32 +34,25 @@ const Testimonial = () => {
                 Testimonials from our happy customers
             </p>
             <Slider {...settings}>
-                    {testimonial.map(testimonials => (
-
-                <div className="carousel-slider-div">
-               
-
-                    <div className="course-detail-testimonial-cards-outer">
-                        <>
-                        <img src={star5} alt="" className="review-stars" />
-                        <div className="course-detail-testimonial-cards-inner">
-                            <img
-                                src={testimonials.image}
-                                alt=""
-                            />
-                            <h6>{testimonials.name}</h6>
-                            <p>
-                                “{testimonials.review}”
-                            </p>
+                {testimonial &&
+                    testimonial.map(testimonials => (
+                        <div className="carousel-slider-div">
+                            <div className="course-detail-testimonial-cards-outer">
+                                <>
+                                    <img
+                                        src={star5}
+                                        alt=""
+                                        className="review-stars"
+                                    />
+                                    <div className="course-detail-testimonial-cards-inner">
+                                        <img src={testimonials.image} alt="" />
+                                        <h6>{testimonials.name}</h6>
+                                        <p>“{testimonials.review}”</p>
+                                    </div>
+                                </>
+                            </div>
                         </div>
-                        </>
-                        
-                    </div>
-                   
-                </div>
-                 ))}
-               
-                
+                    ))}
             </Slider>
         </div>
     );

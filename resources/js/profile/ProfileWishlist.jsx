@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import CourseCard from "../components/course-card/CourseCard";
 import ProfileLayout from "./ProfileLayout";
+import { useStoreActions, useStoreState } from "easy-peasy";
 function ProfileWishlist() {
     const [courseCategory, setCourseCategory] = useState([]);
     const [loadingCourses, setLoadingCourses] = useState(true);
+    const wishlist = useStoreState(state => state.wishlist);
+    const addtoWishlist = useStoreActions(actions => actions.addtoWishlist);
+    console.log("wishlist", wishlist);
     useEffect(() => {
         axios
             .get("/api/courses")
@@ -28,17 +32,15 @@ function ProfileWishlist() {
                             <h4>Loading Your Wishlist...</h4>
                         </Col>
                     )}
-                    {!loadingCourses && (
-                        <Col sm="12" className="wishlist-profile-loading-col">
-                            <h4>You don't have any courses in wishlist !</h4>
-                            {/* <Link className="add-course-wishlist-btn" to="#">
-                                Add Course
-                            </Link> */}
-                        </Col>
+
+                    {!loadingCourses && wishlist && wishlist.length == 0 && (
+                        <h4>You don't have any courses in wishlist !</h4>
                     )}
-                    {courseCategory &&
-                        courseCategory.length > 0 &&
-                        courseCategory.map(course => (
+
+                    {!loadingCourses &&
+                        wishlist &&
+                        wishlist.length > 0 &&
+                        wishlist.map(course => (
                             <Col sm="12" md="4" key={course?.id}>
                                 <CourseCard data={course} />
                             </Col>

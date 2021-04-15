@@ -171,12 +171,12 @@ const courseCategory = () => {
 
     return (
         <>
+            <Link to={`/compare`}>
+                <button className="compare-btn-category">Compare</button>
+            </Link>
             <div className="course-category-section">
                 <div className="course-category-hero-slider">
                     <CourseCategoryCarousel />
-                    <Link to={`/compare`}>
-                       <button className="compare-btn-category">Compare</button>
-                    </Link>
                 </div>
                 <div className="course-category-main-section">
                     <Row>
