@@ -18,6 +18,7 @@ class CreateCourseReviewsTable extends Migration
             $table->longText('content')->nullable();
             $table->integer('course_id');
             $table->integer('rating');
+            $table->string('user_image')->nullable();
             $table->string('user_name')->nullable();
             $table->timestamps();
         });
