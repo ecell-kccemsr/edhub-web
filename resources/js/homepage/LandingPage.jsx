@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
+//Components
 import HeroSection from "./landingPageComponents/HeroSection";
 import PopularChoice from "./landingPageComponents/PopularChoice";
 import HelpSection from "./landingPageComponents/HelpSection";
 import Promotions from "./landingPageComponents/Promotions";
 import Testimonial from "./landingPageComponents/Testimonial";
-
 function LandingPage() {
     const [course, setCourse] = useState([]);
+    const [searchText, setSearchText] = useState("");
+    const [redirectToCourse, setRedirect] = useState(false);
     useEffect(() => {
         axios
             .get("/api/courses")
@@ -18,9 +21,24 @@ function LandingPage() {
                 console.log(err);
             });
     }, []);
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        setRedirect(true);
+    };
+    const handleChange = e => {
+        setSearchText(e.target.value);
+    };
+
+    if (redirectToCourse) {
+        return <Redirect to={`/course-category?q=${searchText}`} />;
+    }
     return (
         <div className="landing-page-section">
-            <HeroSection />
+            <HeroSection
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
 
             <HelpSection />
 

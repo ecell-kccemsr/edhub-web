@@ -116,9 +116,10 @@ const CourseCategoryCarousel = props => {
         </Carousel>
     );
 };
-const courseCategory = () => {
+const courseCategory = props => {
     const [sliderVal, setSliderVal] = useState(5000);
     const [courseCategory, setCourseCategory] = useState([]);
+    const [apiURL, setApiURL] = useState("");
     const minValue = useRef(null);
     const maxValue = useRef(null);
     const sliderValue = useRef(null);
@@ -132,22 +133,33 @@ const courseCategory = () => {
             max: isNaN(parseInt(value)) ? 0 : parseInt(value)
         });
         setSliderVal(value);
-        getCourses(true, value);
+        getCourses(true, apiURL, value);
     };
     useEffect(() => {
-        getCourses(false);
+        if (props?.location?.search == "") {
+            setApiURL("/api/courses?");
+            getCourses(false, "/api/courses?");
+        } else {
+            let url = `/api/courses?search${props?.location?.search.substring(
+                2
+            )}&`;
+            setApiURL(url);
+            getCourses(false, url);
+        }
     }, []);
-    const getCourses = (filter, max, min) => {
+    const getCourses = (filter, url, max, min) => {
         let pricefilter = "";
         let minV = min || minValue.current.value;
         let maxv = max || maxValue.current.value;
         if (filter) {
-            pricefilter = `?price_min=${minV}&price_max=${maxv}`;
+            pricefilter = `price_min=${minV}&price_max=${maxv}`;
         }
+        console.log(`URL - ${url}${pricefilter}`);
         axios
-            .get(`/api/courses${pricefilter}`)
+            .get(`${url}${pricefilter}`)
             .then(res => {
                 setCourseCategory(res.data.data);
+                console.log("req done ");
             })
             .catch(err => {
                 console.log(err);
@@ -166,7 +178,7 @@ const courseCategory = () => {
             });
             setSliderVal(isNaN(parseInt(value)) ? 0 : parseInt(value));
         }
-        getCourses(true);
+        getCourses(true, apiURL);
     };
 
     return (
@@ -305,16 +317,17 @@ const courseCategory = () => {
                         </Col>
                         <Col sm="12" lg="9">
                             <Row>
-                                {courseCategory.map(course => (
-                                    <Col
-                                        sm="12"
-                                        md="4"
-                                        style={{ marginBottom: "25px" }}
-                                        key={course?.id}
-                                    >
-                                        <CourseCard data={course} />
-                                    </Col>
-                                ))}
+                                {courseCategory &&
+                                    courseCategory.map(course => (
+                                        <Col
+                                            sm="12"
+                                            md="4"
+                                            style={{ marginBottom: "25px" }}
+                                            key={course?.id}
+                                        >
+                                            <CourseCard data={course} />
+                                        </Col>
+                                    ))}
                             </Row>
                         </Col>
                     </Row>

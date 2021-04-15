@@ -146,6 +146,11 @@ const App = props => {
                     component={courseCategory}
                 />
                 <CourseLayoutRoutes
+                    path="/course-category/:query"
+                    exact
+                    component={courseCategory}
+                />
+                <CourseLayoutRoutes
                     path="/guide"
                     exact
                     component={GuideModal}

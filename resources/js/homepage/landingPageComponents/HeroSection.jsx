@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const HeroSection = () => {
+const HeroSection = ({handleSubmit,handleChange}) => {
     return (
         <div className="landing-page-div">
             <div className="landing-page-hero-section">
@@ -21,19 +21,18 @@ const HeroSection = () => {
                             Learn anytime anywhere with experts.
                         </p>
                         <div className="hero-section-input-box">
+                            <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
                                 name=""
                                 id=""
+                                onChange={handleChange}
                                 placeholder="Search your course"
                             />
-                            <Link
-                        to={`/course-category`}
-                        >
-                              <button>
+                           <button type="submit">
                                 <i class="fas fa-search"></i>
                             </button>
-                            </Link>
+                            </form>
                           
                         </div>
                     </Col>

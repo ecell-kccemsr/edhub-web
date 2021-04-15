@@ -1,23 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-    Row,
-    Col,
-    Button,
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText,
-    Dropdown
-} from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
+//dummyData
 import { navDummyData, recommendedCourse } from "./navDummyData";
 //images
 import edhub1 from "../../Images/landingpage/Edhub-1.png";
@@ -27,18 +11,14 @@ import bookmark from "../../Images/landingpage/bookmark.png";
 import provider from "../../Images/landingpage/provider.png";
 
 const CourseNavbar = props => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const toggle = () => setDropdownOpen(prevState => !prevState);
-    // const toggle = () => setIsOpen(!isOpen);
-    const handleChange = ()=>{
+    const handleChange = () => {
         localStorage.clear();
-    }
+    };
     return (
         <>
             <nav className="navbar course-navbar navbar-expand-lg">
                 <div className="container">
-                    <Link className="navbar-brand" to="/">
+                    <Link className="navbar-brand" to="/landingPage">
                         <img src={edhub1} alt="Eduhub" />
                     </Link>
                     <button
@@ -324,23 +304,33 @@ const CourseNavbar = props => {
                                     Guide Me
                                 </Link>
                             </li>
-                            
+
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="/profile/wishlist">
+                                <Link
+                                    className="nav-link courseNavLink"
+                                    to="/profile/wishlist"
+                                >
                                     <img src={bookmark} alt="" />
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="/profile/basic">
+                                <Link
+                                    className="nav-link courseNavLink"
+                                    to="/profile/basic"
+                                >
                                     <img src={user} alt="" />
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link courseNavLink" to="/">
-                                <Button outline color="danger" 
-                                 onClick={()=>handleChange()}
-                                >Logout</Button>
-                               </Link>
+                                    <Button
+                                        outline
+                                        color="danger"
+                                        onClick={() => handleChange()}
+                                    >
+                                        Logout
+                                    </Button>
+                                </Link>
                             </li>
                         </ul>
                     </div>
