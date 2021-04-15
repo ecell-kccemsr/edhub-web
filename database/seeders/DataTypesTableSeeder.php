@@ -359,7 +359,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-04-02 15:30:50',
-                'updated_at' => '2021-04-02 15:55:44',
+                'updated_at' => '2021-04-15 16:10:30',
             ),
             19 => 
             array (
@@ -378,6 +378,42 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-04-02 15:32:55',
                 'updated_at' => '2021-04-02 15:38:03',
+            ),
+            20 => 
+            array (
+                'id' => 24,
+                'name' => 'course_categories',
+                'slug' => 'course-categories',
+                'display_name_singular' => 'Course Category',
+                'display_name_plural' => 'Course Categories',
+                'icon' => 'voyager-book',
+                'model_name' => 'App\\Models\\CourseCategory',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-04-15 16:04:22',
+                'updated_at' => '2021-04-15 16:04:22',
+            ),
+            21 => 
+            array (
+                'id' => 25,
+                'name' => 'course_sub_categories',
+                'slug' => 'course-sub-categories',
+                'display_name_singular' => 'Course Sub Category',
+                'display_name_plural' => 'Course Sub Categories',
+                'icon' => 'voyager-book',
+                'model_name' => 'App\\Models\\CourseSubCategory',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-15 16:05:04',
+                'updated_at' => '2021-04-15 16:10:54',
             ),
         ));
         
