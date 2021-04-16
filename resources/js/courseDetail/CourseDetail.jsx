@@ -46,12 +46,14 @@ function CourseDetail(props) {
     // const CourseDetail = ({ data } , props) => {
     const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
+    const [CourseRev, setCourseRev] = useState([]);
     const [singleCourse, setSingleCourse] = useState([]);
     const [courseCurr, setCourseCurr] = useState([]);
-
+   
     useEffect(() => {
         const { course_slug } = props.match.params;
         setCourseSlug(course_slug);
+       
         axios
             .get(`/api/courses/${course_slug}`)
             .then(res => {
@@ -72,6 +74,15 @@ function CourseDetail(props) {
             .get("/api/courses")
             .then(res => {
                 setCourse(res.data.data.filter(c => c?.slug !== course_slug));
+            })
+            .catch(err => {
+                console.log(err);
+            });
+            axios
+            .get(`/api/courses/${course_slug}/reviews`)
+            .then(res => {
+                setCourseRev(res.data.data);
+                // console.log(res.data.data);
             })
             .catch(err => {
                 console.log(err);
@@ -146,7 +157,11 @@ function CourseDetail(props) {
                                             </h6>
                                         </>
                                     )}
-                                    <button className="share-btn">Share</button>
+                                    <button className="share-btn"
+                                    value="Copy Url" onclick={() =>
+                                        Copy()
+                                    }
+                                    >Share</button>
                                     <button
                                         className="compare-btn-1"
                                         onClick={() =>
@@ -390,22 +405,25 @@ function CourseDetail(props) {
                                 <h5 className="course-overview-card-title">
                                     Learner's career outcome
                                 </h5>
+                                {singleCourse?.outcome &&
+                                        singleCourse?.outcome.map(p => (
+                                            <>
                                 <div className="course-overview-card-descriptionbox">
-                                    <p>Web development</p>
-                                    <p>Web development</p>
-                                    <p>Web development</p>
+                                     <p>{p}</p>
                                 </div>
+                                </>
+                                        ))}
                                 <h5 className="course-overview-card-title">
                                     Job opportunities
                                 </h5>
                                 <div className="course-overview-card-stats">
                                     <div className="stat-container">
                                         <img src={stat1} alt="" />
-                                        <p>50 % Promotions</p>
+                                        <p>Upto 50 % Promotions</p>
                                     </div>
                                     <div className="stat-container">
                                         <img src={stat2} alt="" />
-                                        <p>12 % New career</p>
+                                        <p>Upto 12 % New career</p>
                                     </div>
                                 </div>
                                 <h5 className="course-overview-card-title">
@@ -413,8 +431,8 @@ function CourseDetail(props) {
                                 </h5>
                                 <div className="course-overview-card-descriptionbox">
                                     <p>Web development</p>
-                                    <p>Web development</p>
                                 </div>
+                              
                             </div>
                             <div className="course-overview-card">
                                 <h5 className="course-overview-card-title">
@@ -598,26 +616,7 @@ function CourseDetail(props) {
                                         )
                                     )}
 
-                                <p className="course-author-designations mb-0">
-                                    Lorem ipsum dolor sit amet consectetur,
-                                    adipisicing elit. Eveniet reprehenderit,
-                                    temporibus aut dicta rerum natus provident
-                                    cumque necessitatibus alias nam numquam a
-                                    tempore minus perspiciatis praesentium
-                                    magnam neque? Reiciendis tempore et ratione
-                                    facilis nesciunt provident corrupti facere
-                                    dolore voluptas alias optio
-                                </p>
-                                <p className="course-author-designations mb-1">
-                                    Lorem ipsum dolor sit amet consectetur,
-                                    adipisicing elit. Eveniet reprehenderit,
-                                    temporibus aut dicta rerum natus provident
-                                    cumque necessitatibus alias nam numquam a
-                                    tempore minus perspiciatis praesentium
-                                    magnam neque? Reiciendis tempore et ratione
-                                    facilis nesciunt provident corrupti facere
-                                    dolore voluptas alias optio
-                                </p>
+                               
                                 <h5 className="course-content-top-header">
                                     Reviews
                                 </h5>
@@ -682,8 +681,8 @@ function CourseDetail(props) {
                         <Row className="course-detail-testimonial-section">
                             <Col sm="12" md="8">
                                 <Row className="justify-content-center">
-                                    {userTestimonials &&
-                                        userTestimonials.map(u => (
+                                    {CourseRev &&
+                                        CourseRev.map(u => (
                                             <Col
                                                 sm="12"
                                                 md="6"
@@ -692,8 +691,8 @@ function CourseDetail(props) {
                                             >
                                                 <div className="course-detail-testimonial-cards">
                                                     <img src={user1} alt="" />
-                                                    <h6>{u?.name}</h6>
-                                                    <p>{u?.review}</p>
+                                                    <h6>{u?.user_name}</h6>
+                                                    <p>{u?.content}</p>
                                                 </div>
                                             </Col>
                                         ))}

@@ -347,6 +347,21 @@
     }
     .popular-choice-section-course-details {
         padding: 50px;
+        .slick-dots {
+            display: none !important;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: "slick";
+            font-size: 20px;
+            line-height: 1;
+            opacity: 0.75;
+            color: black;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 35px;
+            margin: -9px;
+        }
         .popular-choice-header {
             font-family: "Poppins", sans-serif;
             font-size: 28px;

@@ -66,7 +66,10 @@ const CourseCard = ({ data }) => {
                     </div>
 
                     <h5 style={{ fontWeight: "400" }}>
-                        Rs {data?.price}
+                    ₹ {data?.discount_price} 
+                    &nbsp;
+                    ₹ <strike >{data?.price}</strike> 
+                    
                     </h5>
                 </div>
                 <div>
