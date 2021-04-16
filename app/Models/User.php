@@ -43,4 +43,9 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function course_wishlist()
+    {
+        return $this->belongsToMany('App\Models\Course', 'course_wishlists', 'user_id', 'course_id');
+    }
 }

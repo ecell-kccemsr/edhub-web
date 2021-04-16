@@ -47,7 +47,6 @@ class Course extends Model
     {
         return $this->hasMany('App\Models\CourseInstructor','course_id');
     }
-    
     public function course_reviews()
     {
         return $this->hasMany('App\Models\CourseReview','course_id');
@@ -64,4 +63,5 @@ class Course extends Model
     {
         return $this->belongsTo('App\Models\CourseTopic','course_topic_id');
     }
+    
 }
