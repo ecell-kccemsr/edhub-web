@@ -28,6 +28,12 @@ class CourseController extends Controller
         if($request->has('course_sub_category_id')) {
             $courses = $courses->where('course_sub_category_id',$request->input('course_sub_category_id'));
         }
+        if($request->has('course_topic_id')) {
+            $courses = $courses->where('course_topic_id',$request->input('course_topic_id'));
+        }   
+        if($request->has('difficulty_level')) {
+            $courses = $courses->where('difficulty_level',$request->input('difficulty_level'));
+        }
          if($request->has('price_min')) {
             $courses = $courses->where('price', '>=', $request->input('price_min'));
         }
