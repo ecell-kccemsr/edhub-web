@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->longText('captions')->nullable();
             $table->longText('image')->nullable();
             $table->string('url');
+            $table->string('difficulty_level')->default('Beginner');
             $table->longText('outcome')->nullable();
             $table->longText('description')->nullable();
             $table->longText('prerequisites')->nullable();

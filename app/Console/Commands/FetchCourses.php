@@ -2,10 +2,13 @@
 namespace App\Console\Commands;
 
 use App\Models\Course;
+use App\Models\CourseTopic;
 use App\Models\CourseReview;
+use App\Models\CourseCategory;
 use Illuminate\Console\Command;
 use App\Models\CourseCurriculum;
 use App\Models\CourseInstructor;
+use App\Models\CourseSubCategory;
 use App\Models\CurriculumChapter;
 use App\Models\CurriculumLecture;
 use Illuminate\Support\Facades\Http;
@@ -64,7 +67,8 @@ class FetchCourses extends Command
                         'description' => $course['description'],
                         'prerequisites' => $course['prerequisites'],
                         'faq' => $course['faq'],
-                        'certification' => 1,
+                        'certification' => $course['has_certificate'],
+                        'difficulty_level' => $course['instructional_level_simple'],
                         'rating' => $course['avg_rating'],
                         'rating_distribution' => $course['rating_distribution'],
                         'price' => $course['price_detail']['amount'],
@@ -72,6 +76,15 @@ class FetchCourses extends Command
                         'course_provider_id' => 1,
                         'slug' => $course['published_title'],
                     ]);
+
+                    $category = CourseCategory::firstOrCreate(['name' => $course['primary_category']['title']]);
+                    $subCategory = CourseSubCategory::firstOrCreate(['name' => $course['primary_subcategory']['title'], 'course_category_id' => $category->id]);
+                    $topic = CourseTopic::firstOrCreate(['name' => $course['course_has_labels'][0]['label']['title'], 'course_sub_category_id' => $subCategory->id]);
+                    $dbCourse->course_category_id = $category->id;
+                    $dbCourse->course_sub_category_id = $subCategory->id;
+                    $dbCourse->course_topic_id = $topic->id;
+                    $dbCourse->save();
+
                     foreach ($course['visible_instructors'] as $instructor)
                     {
                         CourseInstructor::create(['name' => $instructor['display_name'], 'designation' => $instructor['job_title'], 'image' => $instructor['image_100x100'], 'url' => 'https://www.udemy.com' . $instructor['url'], 'course_id' => $dbCourse->id, ]);

@@ -33,10 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GovernmentJobSubCategoriesTableSeeder::class);
         $this->call(NewsSubCategoriesTableSeeder::class);
         $this->call(NewsCategoriesTableSeeder::class);
-        Schema::enableForeignKeyConstraints();
         $this->call(CourseProvidersTableSeeder::class);
-        $this->call(CourseCategoriesTableSeeder::class);
-        $this->call(CourseSubCategoriesTableSeeder::class);
-        $this->call(CourseTopicsTableSeeder::class);
+        Schema::enableForeignKeyConstraints();
     }
 }
