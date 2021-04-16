@@ -6,7 +6,7 @@ const DegreeFAQSection = ({ faq }) => {
         <Container className="containerClass">
             <Row>
                 <Col sm="12" md="8">
-                    <h5 className="course-content-top-header text-center pt-2">
+                    <h5 className="course-content-top-header text-center pt-2" id="FAQs">
                         FAQs
                     </h5>
                     <div

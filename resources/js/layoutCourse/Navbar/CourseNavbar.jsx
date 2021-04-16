@@ -355,7 +355,7 @@ const CourseNavbar = props => {
 
                             <li className="nav-item">
                                 <Link
-                                    className="nav-link courseNavLink"
+                                    className="nav-link courseNavLink-1"
                                     to="/profile/wishlist"
                                 >
                                     <img src={bookmark} alt="" />

@@ -43,7 +43,7 @@
             }
 
             .share-btn,
-            .compare-btn {
+            .compare-btn-degree {
                 color: #fff;
                 border: none;
                 outline: none;
@@ -56,7 +56,7 @@
             .share-btn {
                 background: #808080;
             }
-            .compare-btn {
+            .compare-btn-degree {
                 background: #3c64b1;
             }
 
@@ -83,6 +83,15 @@
         margin-top: 0;
         margin-bottom: 0;
         box-shadow: none;
+        .navlink-degree {
+            color: #818181;
+            font-size: 20px;
+            &:hover {
+                color: #000;
+                font-size: 24px;
+                border-bottom: 1px solid #000;
+            }
+        }
         .course-overview-card-top {
             background: #fff;
             padding: 20px;
@@ -357,9 +366,11 @@
 
         //Degree Card
         .degree-main-card-section {
-            position: relative;
+            position: absolute;
             padding: 20px;
             background: #fff;
+            border-radius: 25px;
+            width: 298px;
             .degree-bookmark-button {
                 position: absolute;
                 background: #fff;
@@ -377,10 +388,14 @@
                 img {
                     max-width: 100%;
                     object-fit: contain;
+                    padding: 0px 0px 0px 4px;
+                    margin-bottom: 0px;
                 }
             }
             .degreecard-header-image {
                 width: 100%;
+                border-radius: 4px;
+                margin-bottom: 3px;
             }
             .card-section-degree-content {
                 .degreecard-container {
@@ -393,6 +408,7 @@
                         }
                         h5 {
                             font-weight: 500;
+                            color: #1f1f1e;
                         }
                     }
                     .degreecard-subtitle {
@@ -427,13 +443,30 @@
             }
         }
     }
+    .slick-dots {
+        display: none !important;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+        font-family: "slick";
+        font-size: 20px;
+        line-height: 1;
+        opacity: 0.75;
+        color: black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 35px;
+        margin: 30px;
+    }
     .popular-choice-section-course-details {
         padding: 50px;
+
         .popular-choice-header {
             font-family: "Poppins", sans-serif;
             font-size: 28px;
             color: #1f1f1e;
         }
+
         .popular-choice-sub-section {
             justify-content: space-between;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col,  Nav, NavItem, NavLink } from "reactstrap";
 import money from "../../Images/degree/Group.png";
 import time from "../../Images/degree/Group 470.png";
 import stat1 from "../../Images/courseDetail/stat1.png";
@@ -57,9 +57,33 @@ const DegreeAboutSection = () => {
                                 </div>
                             </Col>
                         </Row>
+
                     </div>
-                    <div className="course-overview-card">
-                        <h5 className="course-overview-card-title">
+                    <Nav>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#Overview">Overview</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#ProgramCurriculum">Program curriculum</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#Instructors"> Instructors</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#Benefits"> Benefits</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#fees"> fees </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#Reviews"> Reviews</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-degree" href="#FAQs"> FAQs</NavLink>
+        </NavItem>
+      </Nav>       
+                   <div className="course-overview-card">
+                        <h5 className="course-overview-card-title" id="Overview">
                             Skills you'll gain
                         </h5>
                         <div className="course-overview-card-descriptionbox">

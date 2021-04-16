@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Redirect } from "react-router-dom";
 import { Col, Container, Row, List } from "reactstrap";
 import playbutton from "../../Images/degree/playbutton.png";
 
@@ -53,6 +55,7 @@ const courseContent = [
     }
 ];
 const DegreeDetail = () => {
+  
     return (
         <div
             style={{
@@ -63,7 +66,7 @@ const DegreeDetail = () => {
                 <Row>
                     <Col sm="12" md="8">
                         <div className="course-overview-card">
-                            <h5 className="course-overview-card-title">
+                            <h5 className="course-overview-card-title" id="ProgramCurriculum">
                                 Program Details
                             </h5>
                             <p className="course-description text-white">

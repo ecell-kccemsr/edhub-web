@@ -13,7 +13,7 @@ const DegreeTestimonialSection = ({ userTestimonials }) => {
             <Container className="containerClass">
                 <Row>
                     <Col sm="12" md="8">
-                        <h5 className="course-content-top-header">Reviews</h5>
+                        <h5 className="course-content-top-header" id="Reviews">Reviews</h5>
                         <div className="degree-page-review-section">
                             <Row>
                                 <Col

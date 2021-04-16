@@ -1,36 +1,58 @@
-import React from "react";
-import { Col, Row, Button } from "reactstrap";
+import React, { useState, useEffect } from "react";
+import { Row, Col, Button } from "reactstrap";
+import { Link } from "react-router-dom";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import CourseCard from "../../components/course-card/CourseCard";
-const DegreeRecommendedSection = ({ course }) => {
+const DegreeRecommendedSection = ({ title, data }) => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const updateSize = () => setWindowWidth(window.innerWidth);
+    useEffect(() => (window.onresize = updateSize), []);
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: windowWidth <= 1200 ? (windowWidth < 800 ? 1 : 2) : 4,
+        slidesToScroll: 1
+    };
     return (
-        <div className="popular-choice-section-course-details">
-            <h3 className="popular-choice-header">Recommended for you</h3>
-            <Row className=" popular-choice-sub-section">
-                <Col sm="12" md="6" lg="5">
-                    <p className="popular-choice-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Habitant volutpat elementum facilisi mattis et. At
-                    </p>
-                </Col>
-                <Col
-                    sm="12"
-                    md="6"
-                    lg="5"
-                    className="popular-choice-btn-container"
-                >
-                    <Button className="popular-choice-btn">View all</Button>
-                </Col>
-            </Row>
-            <Row className="course-card-landing-page-row">
-                {course &&
-                    course.length > 0 &&
-                    course.map(c => (
-                        <Col sm="12" md="3" key={c?.id}>
-                            <CourseCard data={c} />
-                        </Col>
+        <>
+            <div className="popular-choice-section-course-details">
+                <h3 className="popular-choice-header">{title}</h3>
+                <Row className=" popular-choice-sub-section">
+                    <Col sm="12" md="6" lg="5">
+                        <p className="popular-choice-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Habitant volutpat elementum facilisi mattis
+                            et. At
+                        </p>
+                    </Col>
+                    <Col
+                        sm="12"
+                        md="6"
+                        lg="5"
+                        className="popular-choice-btn-container"
+                    >
+                        <Link 
+                        to={`/course-category`}>
+                          <Button className="popular-choice-btn">View all</Button>
+                        </Link>
+                    </Col>
+                </Row>
+            </div>
+            <div className="landingpage-popular-card-carousel">
+                <Slider {...settings}>
+                    {data.map(course => (
+                        <div className="carousel-slider-div">
+                            <CourseCard data={course} />
+                        </div>
                     ))}
-            </Row>
-        </div>
+                </Slider>
+            </div>
+        </>
     );
 };
 

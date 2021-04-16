@@ -3,7 +3,7 @@ import React from "react";
 import star from "../../Images/degree/star.png";
 import ellipse from "../../Images/degree/Ellipse.png";
 import cardheader from "../../Images/degree/cardheader.png";
-import bookmark from "../../Images/degree/bookmark.png";
+import bookmark from "../../Images/degree/bookmark1.png";
 
 const DegreeCard = () => {
     return (

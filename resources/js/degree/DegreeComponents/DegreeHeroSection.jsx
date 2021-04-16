@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import courseDetailCompany from "../../Images/degree/courseDetailCompany.png";
 import coursedegreecompany from "../../Images/degree/coursedegreecompany.png";
+import Degreecard from "./DegreeCard";
 const DegreeHeroSection = () => {
     return (
         <div className="degree-page-hero-section">
@@ -26,7 +27,7 @@ const DegreeHeroSection = () => {
                         </p>
                         <Row>
                             <Col sm="12" md="3">
-                                <button className="compare-btn">
+                                <button className="compare-btn-degree">
                                     Add to compare
                                 </button>
                             </Col>
@@ -45,6 +46,10 @@ const DegreeHeroSection = () => {
                             </Col>
                         </Row>
                     </Col>
+                    <Col sm="12" md="4">
+                        <Degreecard />
+                    </Col>
+                    
                 </Row>
             </Container>
         </div>

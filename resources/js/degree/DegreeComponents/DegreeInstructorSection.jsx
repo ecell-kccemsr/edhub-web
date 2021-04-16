@@ -79,7 +79,7 @@ const DegreeInstructorSection = () => {
                 <Row>
                     <Col sm="12" md="8">
                         <div className="degree-instructor-section">
-                            <h6>Instructors</h6>
+                            <h6 id="Instructors">Instructors</h6>
 
                             <>
                                 <Slider {...settings}>

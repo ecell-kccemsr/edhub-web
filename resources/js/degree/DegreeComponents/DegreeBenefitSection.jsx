@@ -15,7 +15,7 @@ const DegreeBenefitSection = () => {
                 <Row>
                     <Col sm="12" md="8">
                         <div className="course-prereq-section">
-                            <h5 className="course-content-top-header">
+                            <h5 className="course-content-top-header" id="Benefits">
                                 Benfits
                             </h5>
                             <List type="unstyled" className="mb-0">
@@ -35,7 +35,7 @@ const DegreeBenefitSection = () => {
                             </List>
                         </div>
                         <div className="course-prereq-section">
-                            <h5 className="course-content-top-header">
+                            <h5 className="course-content-top-header" id="fees"> 
                                 Fees and Financing
                             </h5>
                             <p className="course-prereq-title">

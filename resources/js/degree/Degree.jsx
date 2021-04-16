@@ -4,6 +4,7 @@ import { Col, Container, Row, List, Button } from "reactstrap";
 //Components
 import CourseCard from "../components/course-card/CourseCard";
 import DegreeHeroSection from "./DegreeComponents/DegreeHeroSection";
+import DegreeCard from "./DegreeComponents/DegreeCard";
 import DegreeDetail from "./DegreeComponents/DegreeDetail";
 import DegreeBenefitSection from "./DegreeComponents/DegreeBenefitSection";
 import DegreeInstructorSection from "./DegreeComponents/DegreeInstructorSection";
@@ -76,7 +77,9 @@ function CourseDetail() {
 
                 <DegreeFAQSection faq={faq} />
 
-                <DegreeRecommendedSection course={course} />
+                {course && (
+                <DegreeRecommendedSection data={course} title="Recommended for you" />
+            )}
             </div>
         </>
     );
