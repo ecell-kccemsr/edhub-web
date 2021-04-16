@@ -20,6 +20,8 @@ import CourseCard from "../components/course-card/CourseCard";
 import star from "../Images/courseCategory/star.png";
 import ellipse from "../Images/degree/Ellipse.png";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
+import { useStoreActions, useStoreState } from "easy-peasy";
+
 const courseContent = [
     {
         id: "9198ce8a-772a-425d-8cd8-86ade1d1f0c8",
@@ -117,10 +119,12 @@ const userTestimonials = [
     }
 ];
 
-function CourseDetail(props) {
+function CourseDetail(props, data) {
+// const CourseDetail = ({ data } , props) => {
     const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
     const [singleCourse, setSingleCourse] = useState([]);
+   
     useEffect(() => {
         const { course_slug } = props.match.params;
         setCourseSlug(course_slug);
@@ -137,6 +141,21 @@ function CourseDetail(props) {
             setCourse(res.data.data);
         });
     }, []);
+    const compares = useStoreState(state => state.compares);
+    const addToCompare = useStoreActions(actions => actions.addToCompare);
+    
+
+    const isAlreadyInCompares =
+        compares.findIndex(course => course.id === data.id) !== -1;
+        const handleCompare = data => {
+            if (compares.length > 2) {
+                alert("Cant add more");
+                return;
+            } else {
+                addToCompare(data);
+            }
+        };
+    
     return (
         <>
             <div className="course-detail-section">
@@ -161,9 +180,15 @@ function CourseDetail(props) {
                                     <h5>Subtitiles</h5>
                                     <h6>English , Hindi , Espanol</h6>
                                     <button className="share-btn">Share</button>
-                                    <button className="compare-btn">
-                                        Add to compare
-                                    </button>
+                                    <button className="compare-btn-1"
+                        onClick={() => handleCompare(data)}
+                                    
+                                    >
+{isAlreadyInCompares === false ? (
+                            <h5>Add to compare</h5>
+                        ) : (
+                            <h5>Remove from compare</h5>
+                        )}                                    </button>
                                 </>
                             </Col>
                             <Col xs="12" md="4" lg="3">
@@ -368,9 +393,9 @@ function CourseDetail(props) {
                             </Col>
                         </Row>
                     </Container>
-                    <Link to={`/compare`}>
+                    {/* <Link to={`/compare`}>
                         <button className="compare-btn-detail">Compare</button>
-                    </Link>
+                    </Link> */}
                 </div>
                 <Container className="containerClass">
                     <Row>

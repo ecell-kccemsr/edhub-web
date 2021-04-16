@@ -43,15 +43,19 @@
                 margin: 2px 4px 2px 0;
                 border-radius: 10px;
             }
-            .compare-btn {
+            .compare-btn-1 {
                 background: #3c64b1;
                 color: #fff;
                 border: none;
                 outline: none;
-                padding: 5px 10px;
+                padding: 9px 10px;
                 font-weight: 300;
                 margin: 2px 4px 2px 0;
                 border-radius: 10px;
+                h5 {
+                    margin-bottom: 0px;
+                    font-size: 15px;
+                }
             }
         }
         .add-to-cart-section-details {
