@@ -2,21 +2,20 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button, Row, Col } from "reactstrap";
 import http from "../utils/http";
-import { useStoreState } from "easy-peasy";
+import { action, useStoreActions, useStoreState } from "easy-peasy";
 
 const ProfileLayout = ({ children }) => {
+    const user = useStoreState(state => state.user)
+    const setUser = useStoreActions(actions => actions.setUser)
     const handleChange = () => {
         localStorage.clear();
     };
 
     const onSubmit = e => {
         e.preventDefault();
-        const selectedFile = e.target.files[0];
-        let formData = new FormData();
-        formData.append("myFile", selectedFile, selectedFile.name);
-        http.post("auth/update", formData).then(res =>
-            alert("Profile pic Updated")
-        );
+        let formData = new FormData(e.nativeEvent.target);
+        http.post("auth/update", formData)
+        .then(res => setUser(res.data.data));
     };
 
     return (
@@ -35,21 +34,23 @@ const ProfileLayout = ({ children }) => {
                         <div>
                             <div className="img-container">
                                 <img
-                                    src="https://randomuser.me/api/portraits/women/81.jpg"
+                                    src={user.avatar}
+                                    id="img"
                                     alt="profile-pic"
                                     className="profile-section-profile-image"
                                 />
                             </div>
                             <form action="" onSubmit={onSubmit}>
                                 <div className="update-btn-section">
-                                    <input
-                                        type="file"
-                                        // onChange={fileChangedHandler}
-                                    />
+                                        <input
+                                            name="avatar"
+                                            type="file"
+                                            id="img"
+                                            />
 
-                                    <button className="update-btn">
-                                        Upload!
-                                    </button>
+                                        <button className="update-btn">
+                                            Upload!
+                                        </button>
                                 </div>
                             </form>
                             <hr className="profile-hr" />

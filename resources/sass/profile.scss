@@ -77,8 +77,9 @@
                 text-align: center;
                 .profile-section-profile-image {
                     border-radius: 50%;
-                    width: 100%;
-                    max-width: 220px;
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
                 }
             }
 

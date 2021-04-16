@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use TCG\Voyager\Facades\Voyager;
 
 class UserResource extends JsonResource
 {
@@ -19,6 +20,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'gender' => $this->gender,
+            'avatar' => str_starts_with($this->avatar, 'http') ? $this->avatar : Voyager::image($this->avatar),
             'seo_keywords' => $this->seo_keywords,
             'seo_description' => $this->seo_description,
         ];

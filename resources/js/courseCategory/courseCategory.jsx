@@ -147,6 +147,7 @@ const courseCategory = props => {
             getCourses(false, url);
         }
     }, []);
+  
     const getCourses = (filter, url, max, min) => {
         let pricefilter = "";
         let minV = min || minValue.current.value;
