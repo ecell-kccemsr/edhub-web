@@ -8,7 +8,7 @@ import guide from "../../Images/courseCategory/guide.png";
 import star from "../../Images/courseCategory/star.png";
 import reviewArrow from "../../Images/courseCategory/reviewArrow.png";
 import bookmark from "../../Images/landingpage/bookmark.png";
-import bookmark1 from "../../Images/landingpage/bookmark1.png";
+import bookmark1 from "../../Images/landingpage/bookmark2.png";
 import { Row, Col, Button } from "reactstrap";
 
 import addtoCompare from "../../Images/courseCategory/addcompare.png";
