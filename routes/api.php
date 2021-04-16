@@ -12,6 +12,7 @@ use App\Http\Controllers\API\ExamCalendarController;
 use App\Http\Controllers\API\GovernmentJobController;
 use App\Http\Controllers\API\QuestionPaperController;
 use App\Http\Controllers\API\CourseProviderController;
+use App\Http\Controllers\API\CourseWishlistController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\API\RegisterForFreeUpdatesController;
@@ -30,6 +31,9 @@ use App\Http\Controllers\API\RegisterForFreeUpdatesController;
 Route::group(['middleware' => ['auth:api']], function () {
     Route::get('/auth/user', [AuthController::class,'user']);
     Route::post('/auth/update',[AuthController::class,'update']);
+    Route::get('/wishlist',[CourseWishlistController::class,'get']);
+    Route::delete('/wishlist',[CourseWishlistController::class,'delete']);
+    Route::post('/wishlist',[CourseWishlistController::class,'add']);
   });
 
 //Auth Controller

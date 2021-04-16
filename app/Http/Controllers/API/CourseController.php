@@ -40,7 +40,9 @@ class CourseController extends Controller
         if($request->has('search')) {
             $courses = $courses->where('title','like','%' . $request->input('search') . '%');
         }
-        
+        if($request->has('trending')) {
+            $courses = $courses->orderBy('rating', 'desc');
+        }
         return new CourseResourceCollection($courses->paginate($request->input('per_page',10)));
     }
 
