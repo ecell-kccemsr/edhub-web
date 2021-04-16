@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Col, Container, Row, List, Progress, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 import stat1 from "../Images/courseDetail/stat1.png";
 import stat2 from "../Images/courseDetail/stat2.png";
@@ -21,84 +22,6 @@ import star from "../Images/courseCategory/star.png";
 import ellipse from "../Images/degree/Ellipse.png";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { useStoreActions, useStoreState } from "easy-peasy";
-
-const courseContent = [
-    {
-        id: "9198ce8a-772a-425d-8cd8-86ade1d1f0c8",
-        title: "Welcome to Android R",
-        content: [
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            },
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            }
-        ]
-    },
-    {
-        id: "fc793560-73a8-4cb1-9237-e803c925aaad",
-        title: "Welcome to Android R",
-        content: [
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            },
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            }
-        ]
-    },
-    {
-        id: "5871eb25-dc78-4df5-854b-8e6f7e9e5d1a",
-        title: "Welcome to Android R",
-        content: [
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            },
-            {
-                title:
-                    "How to use these amazing tutorials and how to learn android app development",
-                duration: "02:11"
-            }
-        ]
-    }
-];
-
-const preqreq = [
-    "No Programming Experience is Required",
-    "No Programming Experience is Required",
-    "No Programming Experience is Required"
-];
-
-const faq = [
-    {
-        id: "d95d4514-538a-4b57-85d5-f9072dc80bef",
-        question: "When will I have access to my course",
-        answer:
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. "
-    },
-    {
-        id: "15536c59-30ab-430e-b857-d02b416dedc7",
-        question: "When will I have access to my course",
-        answer:
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. "
-    },
-    {
-        id: "f56739d4-fbea-46cb-b2db-5511b1d744a2",
-        question: "When will I have access to my course",
-        answer:
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. "
-    }
-];
 
 const authorOverview = [
     "4.2 Instructor Rating",
@@ -120,12 +43,12 @@ const userTestimonials = [
 ];
 
 function CourseDetail(props) {
-// const CourseDetail = ({ data } , props) => {
+    // const CourseDetail = ({ data } , props) => {
     const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
     const [singleCourse, setSingleCourse] = useState([]);
     const [courseCurr, setCourseCurr] = useState([]);
-   
+
     useEffect(() => {
         const { course_slug } = props.match.params;
         setCourseSlug(course_slug);
@@ -145,27 +68,37 @@ function CourseDetail(props) {
             .catch(err => {
                 console.log(err);
             });
-        axios.get("/api/courses").then(res => {
-            setCourse(res.data.data);
-        }).catch(err => {
+        axios
+            .get("/api/courses")
+            .then(res => {
+                setCourse(res.data.data.filter(c => c?.slug !== course_slug));
+            })
+            .catch(err => {
                 console.log(err);
             });
     }, []);
     const compares = useStoreState(state => state.compares);
     const addToCompare = useStoreActions(actions => actions.addToCompare);
-    
 
     const isAlreadyInCompares =
         compares.findIndex(course => course.id === singleCourse.id) !== -1;
-        const handleCompare = singleCourse => {
-            if (compares.length > 2) {
-                alert("Cant add more");
-                return;
-            } else {
-                addToCompare(singleCourse);
-            }
-        };
-    
+    const handleCompare = singleCourse => {
+        if (compares.length > 2) {
+            alert("Cant add more");
+            return;
+        } else {
+            addToCompare(singleCourse);
+        }
+    };
+
+    let totalrating =
+        singleCourse?.rating_distribution &&
+        singleCourse?.rating_distribution.reduce(
+            (previousScore, currentScore, index) =>
+                previousScore + currentScore.count,
+            0
+        );
+
     return (
         <>
             <div className="course-detail-section">
@@ -174,7 +107,22 @@ function CourseDetail(props) {
                         <Row>
                             <Col sm="12" md="8">
                                 <>
-                                    <img src={courseDetailCompany} alt="" />
+                                    {singleCourse?.course_provider?.image && (
+                                        <img
+                                            src={
+                                                singleCourse?.course_provider
+                                                    ?.image
+                                            }
+                                            style={{
+                                                borderRadius: "8px",
+                                                maxWidth: "100px",
+                                                background: "#fff",
+                                                padding: "4px",
+                                                objectFit: "contain"
+                                            }}
+                                            alt=""
+                                        />
+                                    )}
                                     <h2>{singleCourse?.title}</h2>
                                     {singleCourse.course_instructor &&
                                         singleCourse.course_instructor.length >
@@ -187,18 +135,30 @@ function CourseDetail(props) {
                                             )
                                         )}
 
-                                    <h5>Subtitiles</h5>
-                                    <h6>English , Hindi , Espanol</h6>
+                                    {singleCourse?.captions && (
+                                        <>
+                                            <h5>Subtitles</h5>
+                                            <h6>
+                                                {singleCourse?.captions &&
+                                                    singleCourse?.captions
+                                                        .map(c => c)
+                                                        .join(",")}
+                                            </h6>
+                                        </>
+                                    )}
                                     <button className="share-btn">Share</button>
-                                    <button className="compare-btn-1"
-                        onClick={() => handleCompare(singleCourse)}
-                                    
+                                    <button
+                                        className="compare-btn-1"
+                                        onClick={() =>
+                                            handleCompare(singleCourse)
+                                        }
                                     >
-{isAlreadyInCompares === false ? (
-                            <h5>Add to compare</h5>
-                        ) : (
-                            <h5>Remove from compare</h5>
-                        )}                                    </button>
+                                        {isAlreadyInCompares === false ? (
+                                            <h5>Add to compare</h5>
+                                        ) : (
+                                            <h5>Remove from compare</h5>
+                                        )}
+                                    </button>
                                 </>
                             </Col>
                             <Col xs="12" md="4" lg="3">
@@ -217,25 +177,53 @@ function CourseDetail(props) {
                                                     marginBottom: "-10px"
                                                 }}
                                             >
-                                                <h5>
-                                                    ${singleCourse.price} /-
-                                                </h5>
-                                                <p
-                                                    style={{
-                                                        color: "#7B7B7B",
-                                                        padding: "17px"
-                                                    }}
-                                                >
-                                                    
-                                                    96% off
-                                                </p>
+                                                {singleCourse?.discount_price && (
+                                                    <h5>
+                                                        ₹
+                                                        {
+                                                            singleCourse?.discount_price
+                                                        }
+                                                        /-
+                                                    </h5>
+                                                )}
+                                                {singleCourse?.price && (
+                                                    <p
+                                                        style={{
+                                                            color: "#7B7B7B",
+                                                            padding: "17px"
+                                                        }}
+                                                    >
+                                                        <strike>
+                                                            ₹
+                                                            {
+                                                                singleCourse?.price
+                                                            }
+                                                        </strike>
+                                                    </p>
+                                                )}
+                                                {singleCourse?.discount_price &&
+                                                    singleCourse?.price && (
+                                                        <p
+                                                            style={{
+                                                                color:
+                                                                    "#7B7B7B",
+                                                                padding: "17px"
+                                                            }}
+                                                        >
+                                                            {`${Math.round(
+                                                                100 -
+                                                                    (singleCourse?.discount_price *
+                                                                        100) /
+                                                                        singleCourse?.price
+                                                            )} % off`}
+                                                        </p>
+                                                    )}
                                             </div>
                                         </div>
                                         <div className="card-section-details-content-price">
                                             <p>
-                                                Get
+                                                Get&nbsp;
                                                 <strong>
-                                                    
                                                     5% extra cashback
                                                 </strong>
                                                 if you buy through us
@@ -262,34 +250,24 @@ function CourseDetail(props) {
                                                 <p style={{ color: "#818181" }}>
                                                     Course provided by:
                                                 </p>
-                                                <div className="course-provider">
-                                                    <img
-                                                        src={
-                                                            singleCourse
-                                                                ?.course_provider
-                                                                ?.image
-                                                        }
-                                                        alt=""
-                                                        style={{
-                                                            height: "30px",
-                                                            padding: "1px",
-                                                            width: "100px"
-                                                        }}
-                                                    />
-                                                </div>
-                                                {/* {singleCourse.course_provider &&
-                                                    singleCourse.course_provider
-                                                        .length > 0 &&
-                                                    singleCourse.course_provider.map(
-                                                        course_provider => (
-                                                            <img
-                                                                src={
-                                                                    course_provider.image
-                                                                }
-                                                                alt=""
-                                                            />
-                                                        )
-                                                    )} */}
+                                                {singleCourse?.course_provider
+                                                    ?.image && (
+                                                    <div className="course-provider">
+                                                        <img
+                                                            src={
+                                                                singleCourse
+                                                                    ?.course_provider
+                                                                    ?.image
+                                                            }
+                                                            alt=""
+                                                            style={{
+                                                                height: "30px",
+                                                                padding: "1px",
+                                                                width: "100px"
+                                                            }}
+                                                        />
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                         <div className="card-section-details-content-price">
@@ -391,11 +369,9 @@ function CourseDetail(props) {
                                             target="_blank"
                                             className="card-section-details-buy-btn"
                                         >
-                                            
                                             Buy Now
                                         </a>
                                         <button className="card-section-details-addCart-btn">
-                                            
                                             Add To Cart
                                         </button>
                                     </div>
@@ -444,9 +420,13 @@ function CourseDetail(props) {
                                 <h5 className="course-overview-card-title">
                                     DESCRIPTION
                                 </h5>
-                                <p className="course-description" dangerouslySetInnerHTML={{__html: singleCourse.description}}>
-                                </p>
-                              {/* <p className="course-description-readmore">
+                                <p
+                                    className="course-description"
+                                    dangerouslySetInnerHTML={{
+                                        __html: singleCourse.description
+                                    }}
+                                ></p>
+                                {/* <p className="course-description-readmore">
                                     Read more
                                     <i className="fas fa-chevron-down ml-2"></i>
                                 </p> */}
@@ -535,8 +515,8 @@ function CourseDetail(props) {
                                     Prerequisites
                                 </h5>
                                 <List type="unstyled" className="mb-0">
-                                    {preqreq &&
-                                        preqreq.map(p => (
+                                    {singleCourse?.prerequisites &&
+                                        singleCourse?.prerequisites.map(p => (
                                             <li key={p} className="my-2">
                                                 <img
                                                     src={prereq}
@@ -657,31 +637,43 @@ function CourseDetail(props) {
                                             md="10"
                                             className="progress-container"
                                         >
-                                            <div className="indi-progress">
-                                                <Progress value="65" />
-                                                <img src={star5} alt="" />
-                                                <span>65%</span>
-                                            </div>
-                                            <div className="indi-progress">
-                                                <Progress value="35" />
-                                                <img src={star4} alt="" />
-                                                <span>35%</span>
-                                            </div>
-                                            <div className="indi-progress">
-                                                <Progress value="15" />
-                                                <img src={star3} alt="" />
-                                                <span>15%</span>
-                                            </div>
-                                            <div className="indi-progress">
-                                                <Progress value="10" />
-                                                <img src={star2} alt="" />
-                                                <span>10%</span>
-                                            </div>
-                                            <div className="indi-progress">
-                                                <Progress value="5" />
-                                                <img src={star1} alt="" />
-                                                <span>5%</span>
-                                            </div>
+                                            {singleCourse?.rating_distribution &&
+                                                singleCourse?.rating_distribution.map(
+                                                    r => {
+                                                        let percentage =
+                                                            totalrating &&
+                                                            Math.round(
+                                                                (r?.count *
+                                                                    100) /
+                                                                    totalrating
+                                                            );
+                                                        let star =
+                                                            r?.rating == 1
+                                                                ? star1
+                                                                : r?.rating == 2
+                                                                ? star2
+                                                                : r?.rating == 3
+                                                                ? star3
+                                                                : r?.rating == 4
+                                                                ? star4
+                                                                : star5;
+
+                                                        return (
+                                                            <div className="indi-progress">
+                                                                <Progress
+                                                                    value={
+                                                                        percentage
+                                                                    }
+                                                                />
+                                                                <img
+                                                                    src={star}
+                                                                    alt=""
+                                                                />
+                                                                <span>{`${percentage} %`}</span>
+                                                            </div>
+                                                        );
+                                                    }
+                                                )}
                                         </Col>
                                     </Row>
                                 </div>
@@ -724,54 +716,55 @@ function CourseDetail(props) {
                                 className="accordion course-content-accordion"
                                 id="courseFAQParent"
                             >
-                                {faq &&
-                                    faq.map(faqIndividual => (
-                                        <div
-                                            className="card"
-                                            key={faqIndividual?.id}
-                                        >
-                                            <div
-                                                id={`heading${faqIndividual?.id}`}
-                                            >
-                                                <h2 className="mb-0">
-                                                    <a
-                                                        className="btn btn-link course-content-card-headerlink"
-                                                        type="button"
-                                                        data-toggle="collapse"
-                                                        data-target={`#collapse${faqIndividual?.id}`}
-                                                        aria-expanded="true"
-                                                        aria-controls={`collapse${faqIndividual?.id}`}
-                                                    >
-                                                        <i
-                                                            className="fas fa-chevron-down mr-2"
-                                                            style={{
-                                                                color: "#F05454"
-                                                            }}
-                                                        ></i>
-                                                        {
-                                                            faqIndividual?.question
-                                                        }
-                                                    </a>
-                                                </h2>
-                                            </div>
+                                {singleCourse?.faq &&
+                                    singleCourse?.faq.map(faqIndividual => {
+                                        let id = uuidv4();
+                                        return (
+                                            <div className="card" key={id}>
+                                                <div id={`heading${id}`}>
+                                                    <h2 className="mb-0">
+                                                        <a
+                                                            className="btn btn-link course-content-card-headerlink"
+                                                            type="button"
+                                                            data-toggle="collapse"
+                                                            data-target={`#collapse${id}`}
+                                                            aria-expanded="true"
+                                                            aria-controls={`collapse${id}`}
+                                                        >
+                                                            <i
+                                                                className="fas fa-chevron-down mr-2"
+                                                                style={{
+                                                                    color:
+                                                                        "#F05454"
+                                                                }}
+                                                            ></i>
+                                                            {
+                                                                faqIndividual?.question
+                                                            }
+                                                        </a>
+                                                    </h2>
+                                                </div>
 
-                                            <div
-                                                id={`collapse${faqIndividual?.id}`}
-                                                className="collapse"
-                                                aria-labelledby={`heading${faqIndividual?.id}`}
-                                                data-parent="#courseFAQParent"
-                                            >
-                                                <div className="card-body">
-                                                    <List
-                                                        type="unstyled"
-                                                        className="mb-0"
-                                                    >
-                                                        {faqIndividual?.answer}
-                                                    </List>
+                                                <div
+                                                    id={`collapse${id}`}
+                                                    className="collapse"
+                                                    aria-labelledby={`heading${id}`}
+                                                    data-parent="#courseFAQParent"
+                                                >
+                                                    <div className="card-body">
+                                                        <List
+                                                            type="unstyled"
+                                                            className="mb-0"
+                                                        >
+                                                            {
+                                                                faqIndividual?.answer
+                                                            }
+                                                        </List>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
                             </div>
                         </Col>
                     </Row>
