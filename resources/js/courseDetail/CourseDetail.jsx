@@ -119,7 +119,7 @@ const userTestimonials = [
     }
 ];
 
-function CourseDetail(props, data) {
+function CourseDetail(props) {
 // const CourseDetail = ({ data } , props) => {
     const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
@@ -146,13 +146,13 @@ function CourseDetail(props, data) {
     
 
     const isAlreadyInCompares =
-        compares.findIndex(course => course.id === data.id) !== -1;
-        const handleCompare = data => {
+        compares.findIndex(course => course.id === singleCourse.id) !== -1;
+        const handleCompare = singleCourse => {
             if (compares.length > 2) {
                 alert("Cant add more");
                 return;
             } else {
-                addToCompare(data);
+                addToCompare(singleCourse);
             }
         };
     
@@ -181,7 +181,7 @@ function CourseDetail(props, data) {
                                     <h6>English , Hindi , Espanol</h6>
                                     <button className="share-btn">Share</button>
                                     <button className="compare-btn-1"
-                        onClick={() => handleCompare(data)}
+                        onClick={() => handleCompare(singleCourse)}
                                     
                                     >
 {isAlreadyInCompares === false ? (
