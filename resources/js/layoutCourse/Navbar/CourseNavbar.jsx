@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Button,FormGroup, Label, Input,Modal } from "reactstrap";
+import { action, useStoreActions, useStoreState } from "easy-peasy";
+
 //Components
 import Guide1 from "../../guide/Guide1";
 import Guide2 from "../../guide/Guide2";
@@ -16,10 +19,25 @@ import cartNotification from "../../Images/landingpage/cartNotification.png";
 import bookmark from "../../Images/landingpage/bookmark.png";
 import provider from "../../Images/landingpage/provider.png";
 
-const CourseNavbar = props => {
+const CourseNavbar = props => { 
     const [modal, setModal] = useState(false);
     const [step, setStep] = useState(1);
+    const [categories, setCategory] = useState([]);
+    const user = useStoreState(state => state.user)
 
+    useEffect(() => {
+        axios
+            .get("/api/courses/categories")
+            .then(res => {
+                setCategory(res.data.data);
+                console.log(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+
+    }, []);
+    
     const toggle = () => {
         setModal(!modal);
         setStep(1);
@@ -34,7 +52,7 @@ const CourseNavbar = props => {
         console.log("MULTISTEP FORM SUBMITTED");
         setModal(false);
     };
-
+  
     const handleChange = () => {
         localStorage.clear();
     };
@@ -142,10 +160,10 @@ const CourseNavbar = props => {
                                     Courses
                                 </a>
                                 <ul className="dropdown-menu">
-                                    {navDummyData &&
-                                        navDummyData.map(navl => {
+                                    {categories &&
+                                        categories.map(navl => {
                                             let ismegamenu = false;
-                                            if (navl.children.length > 0) {
+                                            if (navl.sub_categories.length > 0) {
                                                 ismegamenu = true;
                                             }
                                             return (
@@ -156,31 +174,32 @@ const CourseNavbar = props => {
                                                             : ""
                                                     }`}
                                                 >
-                                                    <a
+                                                    <Link
                                                         className="dropdown-item d-flex align-items-center"
-                                                        href="#"
+                                                        to={`/course-category?q=${navl.name}`}
                                                     >
                                                         <span className="flex-fill">
-                                                            {navl.mainlink}
+                                                            {navl.name}
                                                         </span>
                                                         {ismegamenu ? (
                                                             <i className="fas fa-chevron-right"></i>
                                                         ) : (
                                                             ""
                                                         )}
-                                                    </a>
+                                                    </Link>
                                                     {ismegamenu && (
                                                         <div className="megasubmenu dropdown-menu">
                                                             <ul className="list-unstyled">
-                                                                {navl.children.map(
+                                                                {navl.sub_categories.map(
                                                                     child => {
                                                                         let ismegamenu2 = false;
                                                                         if (
                                                                             child
-                                                                                .subchild
+                                                                                .course_topics
                                                                                 .length >
                                                                             0
-                                                                        ) {
+                                                                        )
+                                                                         {
                                                                             ismegamenu2 = true;
                                                                         }
                                                                         return (
@@ -191,13 +210,14 @@ const CourseNavbar = props => {
                                                                                         : ""
                                                                                 }`}
                                                                             >
-                                                                                <a
+                                                                                <Link
                                                                                     className="dropdown-item d-flex align-items-center"
-                                                                                    href="#"
+                                                                                    to={`/course-category?q=${child.name}`}
+                                                                                    
                                                                                 >
                                                                                     <span className="flex-fill">
                                                                                         {
-                                                                                            child.childlinkname
+                                                                                            child.name
                                                                                         }
                                                                                     </span>
                                                                                     {ismegamenu2 ? (
@@ -205,7 +225,7 @@ const CourseNavbar = props => {
                                                                                     ) : (
                                                                                         ""
                                                                                     )}
-                                                                                </a>
+                                                                                </Link>
                                                                                 {ismegamenu2 && (
                                                                                     <div className="megasubmenu-2 dropdown-menu">
                                                                                         <Row>
@@ -214,16 +234,18 @@ const CourseNavbar = props => {
                                                                                                 md="6"
                                                                                             >
                                                                                                 <ul className="list-unstyled">
-                                                                                                    {child.subchild.map(
+                                                                                                    {child.course_topics.map(
                                                                                                         subc => {
                                                                                                             return (
                                                                                                                 <li>
                                                                                                                     <Link
                                                                                                                         className="dropdown-item"
-                                                                                                                        to="#"
+                                                                                                                        
+                                                                                                                        to={`/course-category?q=${subc.name}`}
+
                                                                                                                     >
                                                                                                                         {
-                                                                                                                            subc.subchildlinkname
+                                                                                                                            subc.name
                                                                                                                         }
                                                                                                                     </Link>
                                                                                                                 </li>
@@ -279,80 +301,6 @@ const CourseNavbar = props => {
                                                 </li>
                                             );
                                         })}
-                                    {/* Non dynamic code  - dont delete  */}
-                                    {/* <li className="has-megasubmenu">
-                                        <a className="dropdown-item" href="#">
-                                            Dropdown item 4 &raquo;
-                                        </a>
-                                        <div className="megasubmenu dropdown-menu">
-                                            <ul className="list-unstyled">
-                                                <li>
-                                                    <Link
-                                                        className="dropdown-item"
-                                                        to="#"
-                                                    >
-                                                        Dropdown item 1
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="dropdown-item"
-                                                        to="#"
-                                                    >
-                                                        Dropdown item 2
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link
-                                                        className="dropdown-item"
-                                                        to="#"
-                                                    >
-                                                        Dropdown item 3
-                                                    </Link>
-                                                </li>
-                                                <li className="has-megasubmenu-2">
-                                                    <a
-                                                        className="dropdown-item"
-                                                        href="#"
-                                                    >
-                                                        Dropdown item 4 &raquo;
-                                                    </a>
-                                                    <div className="megasubmenu-2 dropdown-menu">
-                                                        <ul className="list-unstyled">
-                                                            <li>
-                                                                <Link
-                                                                    className="dropdown-item"
-                                                                    to="#"
-                                                                >
-                                                                    Dropdown
-                                                                    item 1
-                                                                </Link>
-                                                            </li>
-                                                            <li>
-                                                                <Link
-                                                                    className="dropdown-item"
-                                                                    to="#"
-                                                                >
-                                                                    Dropdown
-                                                                    item 2
-                                                                </Link>
-                                                            </li>
-                                                            <li>
-                                                                <Link
-                                                                    className="dropdown-item"
-                                                                    to="#"
-                                                                >
-                                                                    Dropdown
-                                                                    item 3
-                                                                </Link>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    */}
                                 </ul>
                             </li>
                         </ul>
@@ -418,7 +366,9 @@ const CourseNavbar = props => {
                                     className="nav-link courseNavLink"
                                     to="/profile/basic"
                                 >
-                                    <img src={user} alt="" />
+                                    <img 
+                                   src={user?.avatar}
+                                     alt="User" />
                                 </Link>
                             </li>
                             <li className="nav-item">

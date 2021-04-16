@@ -125,7 +125,10 @@
             padding: 0 15px;
 
             img {
-                max-width: 40px;
+                border-radius: 35px;
+                object-fit: cover;
+                width: 43px;
+                height: 43px;
             }
         }
 
