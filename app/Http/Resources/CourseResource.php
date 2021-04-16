@@ -33,7 +33,9 @@ class CourseResource extends JsonResource
             'faq' => $this->faq,
             'certification' => $this->certification,
             'rating' => $this->rating,
-            'rating_distribution' => $this->rating_distribution,
+            'rating_distribution' => collect($this->rating_distribution)->sortByDesc(function($distribution, $key) {
+                return $distribution['rating'];
+            })->toArray(),
             'price' => $this->price,
             'discount_price' => $this->discount_price,
             'slug' => $this->slug,
