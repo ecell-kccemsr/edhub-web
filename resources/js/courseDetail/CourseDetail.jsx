@@ -124,6 +124,7 @@ function CourseDetail(props) {
     const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
     const [singleCourse, setSingleCourse] = useState([]);
+    const [courseCurr, setCourseCurr] = useState([]);
    
     useEffect(() => {
         const { course_slug } = props.match.params;
@@ -131,15 +132,24 @@ function CourseDetail(props) {
         axios
             .get(`/api/courses/${course_slug}`)
             .then(res => {
-                console.log(res);
                 setSingleCourse(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        axios
+            .get(`/api/courses/${course_slug}/curriculum?per_page=10000`)
+            .then(res => {
+                setCourseCurr(res.data.data);
             })
             .catch(err => {
                 console.log(err);
             });
         axios.get("/api/courses").then(res => {
             setCourse(res.data.data);
-        });
+        }).catch(err => {
+                console.log(err);
+            });
     }, []);
     const compares = useStoreState(state => state.compares);
     const addToCompare = useStoreActions(actions => actions.addToCompare);
@@ -216,18 +226,18 @@ function CourseDetail(props) {
                                                         padding: "17px"
                                                     }}
                                                 >
-                                                    {" "}
+                                                    
                                                     96% off
                                                 </p>
                                             </div>
                                         </div>
                                         <div className="card-section-details-content-price">
                                             <p>
-                                                Get{" "}
+                                                Get
                                                 <strong>
-                                                    {" "}
+                                                    
                                                     5% extra cashback
-                                                </strong>{" "}
+                                                </strong>
                                                 if you buy through us
                                             </p>
                                         </div>
@@ -381,11 +391,11 @@ function CourseDetail(props) {
                                             target="_blank"
                                             className="card-section-details-buy-btn"
                                         >
-                                            {" "}
+                                            
                                             Buy Now
                                         </a>
                                         <button className="card-section-details-addCart-btn">
-                                            {" "}
+                                            
                                             Add To Cart
                                         </button>
                                     </div>
@@ -434,13 +444,12 @@ function CourseDetail(props) {
                                 <h5 className="course-overview-card-title">
                                     DESCRIPTION
                                 </h5>
-                                <p className="course-description">
-                                    {singleCourse.description}
+                                <p className="course-description" dangerouslySetInnerHTML={{__html: singleCourse.description}}>
                                 </p>
-                                <p className="course-description-readmore">
+                              {/* <p className="course-description-readmore">
                                     Read more
                                     <i className="fas fa-chevron-down ml-2"></i>
-                                </p>
+                                </p> */}
                             </div>
 
                             <h5 className="course-content-top-header">
@@ -455,8 +464,8 @@ function CourseDetail(props) {
                                 className="accordion course-content-accordion"
                                 id="courseContentParent"
                             >
-                                {courseContent &&
-                                    courseContent.map(detail => (
+                                {courseCurr &&
+                                    courseCurr.map(detail => (
                                         <div className="card" key={detail?.id}>
                                             <div id={`heading${detail?.id}`}>
                                                 <h2 className="mb-0">
@@ -490,8 +499,8 @@ function CourseDetail(props) {
                                                         type="unstyled"
                                                         className="mb-0"
                                                     >
-                                                        {detail?.content &&
-                                                            detail?.content.map(
+                                                        {detail?.lectures &&
+                                                            detail?.lectures.map(
                                                                 c => (
                                                                     <li
                                                                         className="courseContent-list"
@@ -510,9 +519,7 @@ function CourseDetail(props) {
                                                                             c?.title
                                                                         }
                                                                         <span className="duration ml-2">
-                                                                            {
-                                                                                c?.duration
-                                                                            }
+                                                                            time
                                                                         </span>
                                                                     </li>
                                                                 )

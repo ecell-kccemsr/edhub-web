@@ -25,7 +25,6 @@ function NewsSubCategory(props) {
         setSubSlug(subcategory_slug);
         axios.get("/api/news/sub_categories").then(res => {
             const cats = res.data.data.filter(c => c.slug == subcategory_slug);
-            // console.log(cats);
             if (cats.length > 0) {
                 axios
                     .get(`/api/news/?subcategory_id=${cats[0].id}`)

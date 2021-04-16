@@ -10,7 +10,6 @@ function ProfileWishlist() {
     const [loadingCourses, setLoadingCourses] = useState(true);
     const wishlist = useStoreState(state => state.wishlist);
     const addtoWishlist = useStoreActions(actions => actions.addtoWishlist);
-    console.log("wishlist", wishlist);
     useEffect(() => {
         axios
             .get("/api/courses")
