@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Col, Container, Row, List, Progress, Button } from "reactstrap";
+import { Col, Container, Row, List, Progress, Button, Nav, NavItem, NavLink  } from "reactstrap";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
@@ -19,13 +19,13 @@ import user2 from "../Images/courseDetail/user2.png";
 import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
 import CourseCard from "../components/course-card/CourseCard";
 import star from "../Images/courseCategory/star.png";
-import ellipse from "../Images/degree/Ellipse.png";
+import ellipse from "../Images/courseDetail/Ellipse.png";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { useStoreActions, useStoreState } from "easy-peasy";
 
 const authorOverview = [
     "4.2 Instructor Rating",
-    "5,680 Reviews",
+    "5,680 Reviews", 
     "73,742 Students"
 ];
 
@@ -399,6 +399,28 @@ function CourseDetail(props) {
                     </Link> */}
                 </div>
                 <Container className="containerClass">
+            <Nav>
+        <NavItem>
+          <NavLink className="navlink-course-detail" href="#Overview">About</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-course-detail" href="#Content">Course Content</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-course-detail" href="#Prerequisites"> Prerequisites</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-course-detail" href="#Instructor"> Instructor</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-course-detail" href="#Reviews"> Reviews </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="navlink-course-detail" href="#FAQs"> FAQs</NavLink>
+        </NavItem>
+      </Nav>
+</Container>
+                <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
                             <div className="course-overview-card">
@@ -435,7 +457,7 @@ function CourseDetail(props) {
                               
                             </div>
                             <div className="course-overview-card">
-                                <h5 className="course-overview-card-title">
+                                <h5 className="course-overview-card-title" id="Overview">
                                     DESCRIPTION
                                 </h5>
                                 <p
@@ -450,7 +472,7 @@ function CourseDetail(props) {
                                 </p> */}
                             </div>
 
-                            <h5 className="course-content-top-header">
+                            <h5 className="course-content-top-header" id="Content">
                                 Course Content
                             </h5>
                             <div className="course-content-top-overview">
@@ -529,7 +551,7 @@ function CourseDetail(props) {
                                     ))}
                             </div>
                             <div className="course-prereq-section">
-                                <h5 className="course-content-top-header">
+                                <h5 className="course-content-top-header" id="Prerequisites">
                                     Prerequisites
                                 </h5>
                                 <List type="unstyled" className="mb-0">
@@ -556,7 +578,7 @@ function CourseDetail(props) {
                     <Container className="containerClass">
                         <Row>
                             <Col sm="12" md="8">
-                                <h5 className="course-content-top-header">
+                                <h5 className="course-content-top-header" id="Instructor"> 
                                     Instructor
                                 </h5>
                                 {singleCourse.course_instructor &&
@@ -617,7 +639,7 @@ function CourseDetail(props) {
                                     )}
 
                                
-                                <h5 className="course-content-top-header">
+                                <h5 className="course-content-top-header" id="Reviews">
                                     Reviews
                                 </h5>
                                 <div className="course-detail-review-section">
@@ -708,7 +730,7 @@ function CourseDetail(props) {
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <h5 className="course-content-top-header text-center pt-2">
+                            <h5 className="course-content-top-header text-center pt-2" id="FAQs">
                                 FAQs
                             </h5>
                             <div
