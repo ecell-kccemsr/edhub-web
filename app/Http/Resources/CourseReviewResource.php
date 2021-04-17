@@ -20,7 +20,7 @@ class CourseReviewResource extends JsonResource
             'content' => $this->content,
             'rating' => $this->rating,
             'user_name' => $this->user_name,
-            'user_image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
+            'user_image' => str_starts_with($this->user_image, 'http') ? $this->user_image : Voyager::image($this->user_image),
             'course_id' => $this->course_id,
         ];
     }
