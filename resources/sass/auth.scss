@@ -28,17 +28,17 @@
         height: 50px;
         font-family: "Inter", sans-serif;
     }
-    .register-gender-block{
+    .register-gender-block {
         font-family: "Inter", sans-serif;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
 
-        .register-gender-label{
+        .register-gender-label {
             flex: 1;
             text-align: center;
         }
-        .register-gender-radio{
+        .register-gender-radio {
             display: flex;
             flex-wrap: wrap;
             flex: 2;
@@ -46,7 +46,7 @@
         }
     }
 
-    .register-login-link{
+    .register-login-link {
         font-family: "Inter", sans-serif;
         text-align: center;
         a,
@@ -57,7 +57,11 @@
             font-weight: 600;
         }
     }
-
+    .social-sign-in {
+        object-fit: cover;
+        width: 43px;
+        height: 40px;
+    }
     .auth-row {
         margin-bottom: 10px;
         font-family: "Inter", sans-serif;
@@ -83,7 +87,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    .auth-brand{
+    .auth-brand {
         margin: 20px;
         text-align: center;
     }

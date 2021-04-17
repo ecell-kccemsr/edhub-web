@@ -12,6 +12,8 @@ const TooltipComponent = ({ data }) => {
             effect="solid"
             type="light"
             clickable={true}
+            delayUpdate={1000}
+            delayHide={200}
         >
             <div className="course-card-tooltip-div">
                 <h3>{data?.title}</h3>
@@ -23,7 +25,10 @@ const TooltipComponent = ({ data }) => {
                             <p>{p}</p>
                         </div>
                     ))}
+                    <a  href={data?.url}
+                    target="_blank">
                 <button className="buy-now-btn-tooltip">Buy Now</button>
+                    </a>
                 <button className="add-cart-btn-tooltip">Add to Cart</button>
             </div>
         </ReactTooltip>
