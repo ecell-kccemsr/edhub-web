@@ -6,6 +6,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CourseCard from "../../components/course-card/CourseCard";
+import TooltipComponent from "./TooltipComponent";
+
 const PopularChoice = ({ title, data }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const updateSize = () => setWindowWidth(window.innerWidth);
@@ -36,9 +38,10 @@ const PopularChoice = ({ title, data }) => {
                         lg="5"
                         className="popular-choice-btn-container"
                     >
-                        <Link 
-                        to={`/course-category`}>
-                          <Button className="popular-choice-btn">View all</Button>
+                        <Link to={`/course-category`}>
+                            <Button className="popular-choice-btn">
+                                View all
+                            </Button>
                         </Link>
                     </Col>
                 </Row>
@@ -47,7 +50,11 @@ const PopularChoice = ({ title, data }) => {
                 <Slider {...settings}>
                     {data.map(course => (
                         <div className="carousel-slider-div">
-                            <CourseCard data={course} />
+                            <a data-tip data-for={course?.id.toString()}>
+                                <CourseCard data={course} />
+                            </a>
+
+                            <TooltipComponent data={course} />
                         </div>
                     ))}
                 </Slider>
