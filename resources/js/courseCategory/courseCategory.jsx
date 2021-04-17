@@ -16,20 +16,6 @@ import { Link } from "react-router-dom";
 
 import CourseCard from "../components/course-card/CourseCard";
 
-const price = [
-    {
-        id: "d95d4514-538a-4b57-85d5-f9072dc80bef",
-        title: "Type of course"
-    },
-    {
-        id: "15536c59-30ab-430e-b857-d02b416dedc7",
-        title: "Student's Ratings"
-    },
-    {
-        id: "f56739d4-fbea-46cb-b2db-5511b1d744a2",
-        title: "Provided By"
-    }
-];
 const carouselDummyData = [
     "https://i.ibb.co/HBWwCPK/Group-1.png",
     "https://i.ibb.co/HBWwCPK/Group-1.png",
@@ -118,6 +104,9 @@ const CourseCategoryCarousel = props => {
 };
 const courseCategory = props => {
     const [sliderVal, setSliderVal] = useState(5000);
+    const [ratingValue, setRating] = useState(1);
+    const [providerVal, setProviderVal] = useState("");
+    const [providerData, setProviderData] = useState([]);
     const [courseCategory, setCourseCategory] = useState([]);
     const [apiURL, setApiURL] = useState("");
     const minValue = useRef(null);
@@ -133,7 +122,7 @@ const courseCategory = props => {
             max: isNaN(parseInt(value)) ? 0 : parseInt(value)
         });
         setSliderVal(value);
-        getCourses(true, apiURL, value);
+        getCourses(true, apiURL, ratingValue, null, value);
     };
     useEffect(() => {
         if (props?.location?.search == "") {
@@ -146,17 +135,28 @@ const courseCategory = props => {
             setApiURL(url);
             getCourses(false, url);
         }
+        axios
+            .get("/api/course-providers")
+            .then(res => setProviderData(res.data.data))
+            .catch(err => console.log(err));
     }, []);
-  
-    const getCourses = (filter, url, max, min) => {
+
+    const getCourses = (filter, url, rating, provider, max, min) => {
         let pricefilter = "";
+        let ratingfilter = "";
+        let providerfilter = "";
         let minV = min || minValue.current.value;
         let maxv = max || maxValue.current.value;
+        let ratingV = rating || ratingValue;
+        let providerV = provider || providerVal;
         if (filter) {
             pricefilter = `price_min=${minV}&price_max=${maxv}`;
+            ratingfilter = `&rating=${ratingV}`;
+            providerfilter =
+                providerV == "" ? "" : `&course_provider_id=${providerV}`;
         }
         axios
-            .get(`${url}${pricefilter}`)
+            .get(`${url}${pricefilter}${ratingfilter}${providerfilter}`)
             .then(res => {
                 setCourseCategory(res.data.data);
             })
@@ -178,6 +178,16 @@ const courseCategory = props => {
             setSliderVal(isNaN(parseInt(value)) ? 0 : parseInt(value));
         }
         getCourses(true, apiURL);
+    };
+
+    const onRatingChange = ratingVal => {
+        setRating(ratingVal);
+        getCourses(true, apiURL, ratingVal);
+    };
+
+    const handleProviderFilter = providerVal => {
+        setProviderVal(providerVal);
+        getCourses(true, apiURL, null, providerVal);
     };
 
     return (
@@ -244,70 +254,180 @@ const courseCategory = props => {
                                         />
                                     </div>
                                 </div>
+
                                 <div
                                     className="accordion course-category-accordion"
                                     id="courseCategoryParent"
                                 >
-                                    {price &&
-                                        price.map(priceFilterIndividual => (
-                                            <div
-                                                className="card"
-                                                key={priceFilterIndividual?.id}
-                                            >
-                                                <div
-                                                    id={`heading${priceFilterIndividual?.id}`}
+                                    <div className="card" key="rating">
+                                        <div id={`heading-rating`}>
+                                            <h2 className="mb-0">
+                                                <a
+                                                    className="btn btn-link course-category-card-headerlink"
+                                                    type="button"
+                                                    data-toggle="collapse"
+                                                    data-target={`#collapse-rating`}
+                                                    aria-expanded="true"
+                                                    aria-controls={`collapse-rating`}
                                                 >
-                                                    <h2 className="mb-0">
-                                                        <a
-                                                            className="btn btn-link course-category-card-headerlink"
-                                                            type="button"
-                                                            data-toggle="collapse"
-                                                            data-target={`#collapse${priceFilterIndividual?.id}`}
-                                                            aria-expanded="true"
-                                                            aria-controls={`collapse${priceFilterIndividual?.id}`}
-                                                        >
-                                                            {
-                                                                priceFilterIndividual?.title
-                                                            }
-                                                            <i
-                                                                className="fas fa-chevron-down ml-2"
-                                                                style={{
-                                                                    color:
-                                                                        "#000"
-                                                                }}
-                                                            ></i>
-                                                        </a>
-                                                    </h2>
-                                                </div>
+                                                    Student’s Ratings
+                                                    <i
+                                                        className="fas fa-chevron-down ml-2"
+                                                        style={{
+                                                            color: "#000"
+                                                        }}
+                                                    ></i>
+                                                </a>
+                                            </h2>
+                                        </div>
 
-                                                <div
-                                                    id={`collapse${priceFilterIndividual?.id}`}
-                                                    className="collapse show"
-                                                    aria-labelledby={`heading${priceFilterIndividual?.id}`}
-                                                    data-parent="#courseCategoryParent"
+                                        <div
+                                            id={`collapse-rating`}
+                                            className="collapse show"
+                                            aria-labelledby={`heading-rating`}
+                                            data-parent="#courseCategoryParent"
+                                        >
+                                            <div className="card-body">
+                                                <List
+                                                    type="unstyled"
+                                                    className="mb-0"
                                                 >
-                                                    <div className="card-body">
-                                                        <List
-                                                            type="unstyled"
-                                                            className="mb-0"
-                                                        >
-                                                            <FormGroup check>
-                                                                <Label check>
-                                                                    <Input type="checkbox" />
-                                                                    Test 1
-                                                                </Label>
-                                                            </FormGroup>
-                                                            <FormGroup check>
-                                                                <Label check>
-                                                                    <Input type="checkbox" />
-                                                                    Test 2
-                                                                </Label>
-                                                            </FormGroup>
-                                                        </List>
-                                                    </div>
-                                                </div>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="checkbox"
+                                                                value="4"
+                                                                onChange={e =>
+                                                                    onRatingChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            4 * & above
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="checkbox"
+                                                                value="3"
+                                                                onChange={e =>
+                                                                    onRatingChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            3 * & above
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="checkbox"
+                                                                value="2"
+                                                                onChange={e =>
+                                                                    onRatingChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            2 * & above
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="checkbox"
+                                                                value="1"
+                                                                onChange={e =>
+                                                                    onRatingChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            1 * & above
+                                                        </Label>
+                                                    </FormGroup>
+                                                </List>
                                             </div>
-                                        ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    className="accordion course-category-accordion"
+                                    id="courseCategoryParent"
+                                >
+                                    <div className="card" key="provider">
+                                        <div id={`heading-provider`}>
+                                            <h2 className="mb-0">
+                                                <a
+                                                    className="btn btn-link course-category-card-headerlink"
+                                                    type="button"
+                                                    data-toggle="collapse"
+                                                    data-target={`#collapse-provider`}
+                                                    aria-expanded="true"
+                                                    aria-controls={`collapse-provider`}
+                                                >
+                                                    Provided by
+                                                    <i
+                                                        className="fas fa-chevron-down ml-2"
+                                                        style={{
+                                                            color: "#000"
+                                                        }}
+                                                    ></i>
+                                                </a>
+                                            </h2>
+                                        </div>
+
+                                        <div
+                                            id={`collapse-provider`}
+                                            className="collapse show"
+                                            aria-labelledby={`heading-provider`}
+                                            data-parent="#courseCategoryParent"
+                                        >
+                                            <div className="card-body">
+                                                <List
+                                                    type="unstyled"
+                                                    className="mb-0"
+                                                >
+                                                    {providerData &&
+                                                        providerData.map(p => {
+                                                            return (
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            value={
+                                                                                p?.id
+                                                                            }
+                                                                            onChange={e =>
+                                                                                handleProviderFilter(
+                                                                                    e
+                                                                                        .target
+                                                                                        .value
+                                                                                )
+                                                                            }
+                                                                        />
+                                                                        {
+                                                                            p?.name
+                                                                        }
+                                                                    </Label>
+                                                                </FormGroup>
+                                                            );
+                                                        })}
+                                                </List>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </Col>
