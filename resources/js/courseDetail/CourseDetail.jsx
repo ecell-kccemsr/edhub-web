@@ -712,17 +712,14 @@ function CourseDetail(props) {
                                                 className="my-4"
                                             >
                                                 <div className="course-detail-testimonial-cards">
-                                                    <img src={user1} alt="" />
+                                                    <img src={u?.user_image} alt="" />
                                                     <h6>{u?.user_name}</h6>
                                                     <p>{u?.content}</p>
                                                 </div>
                                             </Col>
                                         ))}
                                 </Row>
-                                <p className="course-testimonial-readmore">
-                                    Read more
-                                    <i className="fas fa-chevron-down ml-2"></i>
-                                </p>
+                            
                             </Col>
                         </Row>
                     </Container>
