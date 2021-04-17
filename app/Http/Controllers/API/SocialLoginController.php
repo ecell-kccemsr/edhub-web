@@ -27,8 +27,9 @@ class SocialLoginController extends Controller
         $user->email = $data->getEmail();
         $user->email_verified_at = now();
         $user->save();
-        return response()->json([
-            'success' => true,
-        ]);
+        $tokenResult = $user->createToken(config('app.name') . 'Personal Access Client');
+        $token = $tokenResult->token;
+        $token->save();
+        return view('social', ['accessToken' => $tokenResult->accessToken]);
     }
 }
