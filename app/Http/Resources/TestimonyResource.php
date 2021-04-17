@@ -20,7 +20,7 @@ class TestimonyResource extends JsonResource
         'name' => $this->name,
         'rating' => $this->rating,
         'review' => $this->review,
-        'image' =>  Voyager::image($this->image),
+        'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
         'slug' => $this->slug,
         ];
     }
