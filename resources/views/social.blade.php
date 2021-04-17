@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        localStorage.setItem("accessToken", {{$accessToken}})
+        localStorage.setItem("accessToken", "{{$accessToken}}")
         setTimeout(() => {
             window.close();
         }, 100);
