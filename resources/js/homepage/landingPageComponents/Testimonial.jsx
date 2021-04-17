@@ -45,9 +45,9 @@ const Testimonial = () => {
                                         className="review-stars"
                                     />
                                     <div className="course-detail-testimonial-cards-inner">
-                                        <img src={testimonials.image} alt="" />
-                                        <h6>{testimonials.name}</h6>
-                                        <p>“{testimonials.review}”</p>
+                                        <img src={testimonials?.image} alt="" />
+                                        <h6>{testimonials?.name}</h6>
+                                        <p>“{testimonials?.review}”</p>
                                     </div>
                                 </>
                             </div>
