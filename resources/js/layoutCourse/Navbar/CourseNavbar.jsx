@@ -30,7 +30,6 @@ const CourseNavbar = props => {
             .get("/api/courses/categories")
             .then(res => {
                 setCategory(res.data.data);
-                console.log(res.data.data);
             })
             .catch(err => {
                 console.log(err);

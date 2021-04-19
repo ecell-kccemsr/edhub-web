@@ -40,7 +40,7 @@ function ProfileWishlist() {
                         wishlist &&
                         wishlist.length > 0 &&
                         wishlist.map(course => (
-                            <Col sm="12" md="4" key={course?.id}>
+                            <Col sm="12" md="4" key={course?.id} style={{marginBottom:"15px"}}>
                                 <CourseCard data={course} />
                             </Col>
                         ))}

@@ -69,8 +69,8 @@ const ProfileLayout = ({ children }) => {
                             >
                                 Basic
                             </Link>
-                            <hr className="profile-hr" />
-                            <Link
+                            {/* <hr className="profile-hr" /> */}
+                            {/* <Link
                                 className="profile-links"
                                 style={{
                                     color: `${
@@ -84,7 +84,7 @@ const ProfileLayout = ({ children }) => {
                                 to="/profile/my-courses"
                             >
                                 My courses
-                            </Link>
+                            </Link> */}
                             <hr className="profile-hr" />
                             <Link
                                 className="profile-links"

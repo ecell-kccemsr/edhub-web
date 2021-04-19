@@ -53,7 +53,11 @@ const Compare = () => {
                                                         {cmp?.price}
                                                     </strike>
                                                 </span>
-                                                <button> Buy Now</button>
+                                                <a 
+                                                   href={cmp?.url}
+                                                   target="_blank">
+                                               <button> Buy Now</button>
+                                                </a>
                                             </div>
                                         </td>
                                     );

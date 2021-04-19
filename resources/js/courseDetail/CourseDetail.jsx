@@ -116,7 +116,7 @@ function CourseDetail(props) {
                 <div className="course-detail-hero-section">
                     <Container className="containerClass">
                         <Row>
-                            <Col sm="12" md="8">
+                            <Col sm="1" md="8">
                                 <>
                                     {singleCourse?.course_provider?.image && (
                                         <img
@@ -173,10 +173,20 @@ function CourseDetail(props) {
                                         ) : (
                                             <h5>Remove from compare</h5>
                                         )}
+                                    </button> 
+                                    <button className="share-btn-1">
+                                       <a
+                                            href={singleCourse?.url}
+                                            target="_blank"
+                                            
+                                        >
+                                            Buy Now
+                                        </a> 
                                     </button>
+                                    
                                 </>
                             </Col>
-                            <Col xs="12" md="4" lg="3">
+                            <Col sm="1" md="4" >
                                 <div className="add-to-cart-section-details">
                                     <img
                                         style={{ marginBottom: "5px" }}
