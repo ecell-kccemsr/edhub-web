@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Row, Col, Button, FormGroup, Label, Input, Modal } from "reactstrap";
 import { action, useStoreActions, useStoreState } from "easy-peasy";
+import http from "../../utils/http";
 
 //Components
 import Guide1 from "../../guide/Guide1";
@@ -36,8 +37,8 @@ const CourseNavbar = props => {
     });
 
     useEffect(() => {
-        axios
-            .get("/api/courses/categories")
+        http
+            .get("courses/categories")
             .then(res => {
                 setCategory(res.data.data);
             })
@@ -223,7 +224,7 @@ const CourseNavbar = props => {
                 </div>
             </Modal>
             <nav className="navbar course-navbar navbar-expand-lg">
-                <div className="container">
+                <div className="container" style={{marginLeft:"65px"}}>
                     <Link className="navbar-brand" to="/landingPage">
                         <img src={edhub1} alt="Eduhub" />
                     </Link>
@@ -404,7 +405,7 @@ const CourseNavbar = props => {
                             </li>
                         </ul>
 
-                        <ul className="navbar-nav ms-auto">
+                        <ul className="navbar-nav" style={{marginLeft:"550px"}}>
                             <li className="nav-item">
                                 <Link className="nav-link courseNavLink" to="#">
                                     News
@@ -452,10 +453,14 @@ const CourseNavbar = props => {
                                     to="#"
                                     onClick={toggle}
                                 >
-                                    Guide Me
+                                    Guide 
                                 </Link>
                             </li>
-
+                            <li className="nav-item">
+                                <Link className="nav-link courseNavLink" to="#">
+                                    Blogs
+                                </Link>
+                            </li>
                             <li className="nav-item">
                                 <Link
                                     className="nav-link courseNavLink-1"
@@ -483,6 +488,7 @@ const CourseNavbar = props => {
                                     </Button>
                                 </Link>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>

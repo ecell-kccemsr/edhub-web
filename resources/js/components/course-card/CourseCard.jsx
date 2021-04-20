@@ -30,7 +30,7 @@ const CourseCard = ({ data }) => {
     };
 
     const handleCompare = data => {
-        if (compares.length > 2) {
+        if (isAlreadyInCompares  === false && compares.length > 2) {
             alert("Can't add more than 3 courses");
             return;
         } else {

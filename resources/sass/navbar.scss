@@ -161,10 +161,14 @@
         }
     }
 }
-.megasubmenu,
-.megasubmenu-2 {
-    padding: 1rem;
+.dropdown-menu {
+    width: 350px;
+    .megasubmenu,
+    .megasubmenu-2 {
+        padding: 1rem;
+    }
 }
+
 @media all and (max-width: 1000px) {
     .course-navbar {
         .navbar-nav {
