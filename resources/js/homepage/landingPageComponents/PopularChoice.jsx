@@ -49,7 +49,7 @@ const PopularChoice = ({ title, data }) => {
             <div className="landingpage-popular-card-carousel">
                 <Slider {...settings}>
                     {data.map(course => (
-                        <div className="carousel-slider-div">
+                        <div className="carousel-slider-div" key={course?.id}>
                             <a data-tip data-for={course?.id.toString()}>
                                 <CourseCard data={course} />
                             </a>

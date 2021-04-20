@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { Row, Col, FormGroup, Label, Input } from "reactstrap";
-const Guide5 = ({ handleSubmit }) => {
+const Guide5 = ({ handleSubmit, modalVals, setModalVals }) => {
+    const [language, setLanguage] = useState("");
+    const handleNext = () => {
+        setModalVals({
+            ...modalVals,
+            language: language
+        });
+        handleSubmit();
+    };
     return (
         <>
             <Row className="guide-modal-mainsection">
@@ -9,7 +17,15 @@ const Guide5 = ({ handleSubmit }) => {
                         <Label>
                             <b>Language</b>
                         </Label>
-                        <Input type="select" name="language" className="mb-3">
+                        <Input
+                            type="select"
+                            name="language"
+                            className="mb-3"
+                            onChange={e => setLanguage(e.target.value)}
+                        >
+                            <option value="none" selected disabled hidden>
+                                Select Language
+                            </option>
                             <option>English</option>
                             <option>Hindi</option>
                             <option>Marathi</option>
@@ -20,7 +36,7 @@ const Guide5 = ({ handleSubmit }) => {
                 </Col>
             </Row>
             <div className="modal-footer-btns">
-                <button className="next" onClick={handleSubmit}>
+                <button className="next" onClick={handleNext}>
                     apply
                 </button>
             </div>

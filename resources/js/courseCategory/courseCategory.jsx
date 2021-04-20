@@ -103,7 +103,7 @@ const CourseCategoryCarousel = props => {
     );
 };
 const courseCategory = props => {
-    const [sliderVal, setSliderVal] = useState(5000);
+    const [sliderVal, setSliderVal] = useState(150000);
     const [ratingValue, setRating] = useState(1);
     const [providerVal, setProviderVal] = useState("");
     const [providerData, setProviderData] = useState([]);
@@ -125,7 +125,22 @@ const courseCategory = props => {
         getCourses(true, apiURL, ratingValue, null, value);
     };
     useEffect(() => {
-        if (props?.location?.search == "") {
+        console.log(props.location.state);
+
+        if (props?.location?.state?.modalValues) {
+            const modalVals = props?.location?.state?.modalValues;
+            let str = "/api/courses?";
+            if (modalVals?.category != "")
+                str = str.concat(`course_category_id=${modalVals?.category}&`);
+            if (modalVals?.subcategory != "")
+                str = str.concat(
+                    `course_sub_category_id=${modalVals?.subcategory}&`
+                );
+            if (modalVals?.difficulty != "")
+                str = str.concat(`difficulty_level=${modalVals?.difficulty}&`);
+            setApiURL("/api/courses?");
+            getCourses(true, str, 1, "", modalVals?.max, modalVals?.min);
+        } else if (props?.location?.search == "") {
             setApiURL("/api/courses?");
             getCourses(false, "/api/courses?");
         } else {

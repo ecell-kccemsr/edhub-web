@@ -20,15 +20,14 @@ const TooltipComponent = ({ data }) => {
                 <h6>{data?.subtitle}</h6>
                 {data?.prerequisites &&
                     data?.prerequisites.map(p => (
-                        <div className="tooltip-outcome">
+                        <div className="tooltip-outcome" key={p}>
                             <img src={prereq} alt="Prereq" />
                             <p>{p}</p>
                         </div>
                     ))}
-                    <a  href={data?.url}
-                    target="_blank">
-                <button className="buy-now-btn-tooltip">Buy Now</button>
-                    </a>
+                <a href={data?.url} target="_blank">
+                    <button className="buy-now-btn-tooltip">Buy Now</button>
+                </a>
                 <button className="add-cart-btn-tooltip">Add to Cart</button>
             </div>
         </ReactTooltip>

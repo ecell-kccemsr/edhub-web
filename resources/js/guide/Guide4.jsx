@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { Row, Col, FormGroup, Label, Input } from "reactstrap";
-const Guide4 = ({ nextStep }) => {
+const Guide4 = ({ nextStep, modalVals, setModalVals }) => {
+    const [difficulty, setDifficulty] = useState("");
+    const handleNext = () => {
+        setModalVals({
+            ...modalVals,
+            difficulty: difficulty
+        });
+        nextStep();
+    };
     return (
         <>
             <Row className="guide-modal-mainsection">
@@ -10,22 +18,34 @@ const Guide4 = ({ nextStep }) => {
                             <b>Level of Difficulty</b>
                         </Label>
                         <Label check className="d-block">
-                            <Input type="checkbox" />
+                            <Input
+                                type="checkbox"
+                                value="expert"
+                                onChange={e => setDifficulty(e.target.value)}
+                            />
                             Expert
                         </Label>
                         <Label check className="d-block">
-                            <Input type="checkbox" />
+                            <Input
+                                type="checkbox"
+                                value="intermediate"
+                                onChange={e => setDifficulty(e.target.value)}
+                            />
                             Intermediate
                         </Label>
                         <Label check className="d-block">
-                            <Input type="checkbox" />
+                            <Input
+                                type="checkbox"
+                                value="beginner"
+                                onChange={e => setDifficulty(e.target.value)}
+                            />
                             Beginner
                         </Label>
                     </FormGroup>
                 </Col>
             </Row>
             <div className="modal-footer-btns">
-                <button className="next" onClick={nextStep}>
+                <button className="next" onClick={handleNext}>
                     next
                 </button>
             </div>

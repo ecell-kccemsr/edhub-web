@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Row, Col, Button,FormGroup, Label, Input,Modal } from "reactstrap";
+import { Link, Redirect } from "react-router-dom";
+import { Row, Col, Button, FormGroup, Label, Input, Modal } from "reactstrap";
 import { action, useStoreActions, useStoreState } from "easy-peasy";
 
 //Components
@@ -19,11 +19,21 @@ import cartNotification from "../../Images/landingpage/cartNotification.png";
 import bookmark from "../../Images/landingpage/bookmark.png";
 import provider from "../../Images/landingpage/provider.png";
 
-const CourseNavbar = props => { 
+const CourseNavbar = props => {
     const [modal, setModal] = useState(false);
+    const [redirect, setRedirect] = useState(false);
     const [step, setStep] = useState(1);
     const [categories, setCategory] = useState([]);
-    const user = useStoreState(state => state.user)
+    const user = useStoreState(state => state.user);
+    const [modalVals, setModalVals] = useState({
+        category: "",
+        subcategory: "",
+        min: "",
+        max: "",
+        courseType: "",
+        difficulty: "",
+        language: ""
+    });
 
     useEffect(() => {
         axios
@@ -34,9 +44,8 @@ const CourseNavbar = props => {
             .catch(err => {
                 console.log(err);
             });
-
     }, []);
-    
+
     const toggle = () => {
         setModal(!modal);
         setStep(1);
@@ -46,12 +55,11 @@ const CourseNavbar = props => {
 
     const prevStep = () => setStep(prev => prev - 1);
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        console.log("MULTISTEP FORM SUBMITTED");
+    const handleSubmit = () => {
         setModal(false);
+        setRedirect(true);
     };
-  
+
     const handleChange = () => {
         localStorage.clear();
     };
@@ -61,31 +69,52 @@ const CourseNavbar = props => {
             case 1:
                 return (
                     <>
-                        <Guide1 nextStep={nextStep} />
+                        <Guide1
+                            nextStep={nextStep}
+                            categories={categories}
+                            setModalVals={setModalVals}
+                            modalVals={modalVals}
+                        />
                     </>
                 );
             case 2:
                 return (
                     <>
-                        <Guide2 nextStep={nextStep} />
+                        <Guide2
+                            nextStep={nextStep}
+                            setModalVals={setModalVals}
+                            modalVals={modalVals}
+                        />
                     </>
                 );
             case 3:
                 return (
                     <>
-                        <Guide3 nextStep={nextStep} />
+                        <Guide3
+                            nextStep={nextStep}
+                            setModalVals={setModalVals}
+                            modalVals={modalVals}
+                        />
                     </>
                 );
             case 4:
                 return (
                     <>
-                        <Guide4 nextStep={nextStep} />
+                        <Guide4
+                            nextStep={nextStep}
+                            setModalVals={setModalVals}
+                            modalVals={modalVals}
+                        />
                     </>
                 );
             case 5:
                 return (
                     <>
-                        <Guide5 handleSubmit={handleSubmit} />
+                        <Guide5
+                            handleSubmit={handleSubmit}
+                            setModalVals={setModalVals}
+                            modalVals={modalVals}
+                        />
                     </>
                 );
             default:
@@ -93,9 +122,19 @@ const CourseNavbar = props => {
         }
     };
 
+    if (redirect == true) {
+        return (
+            <Redirect
+                to={{
+                    pathname: "/course-category",
+                    state: { modalValues: modalVals }
+                }}
+            />
+        );
+    }
     return (
         <>
-        <Modal
+            <Modal
                 isOpen={modal}
                 toggle={toggle}
                 className="guide-modal-container"
@@ -113,11 +152,61 @@ const CourseNavbar = props => {
                                     {step} of 5
                                 </span>
                                 <div className="guide-modal-step-dot">
-                                    <span style={{color:`${step>=1?"#1f1f1e":"#808080"}`}}>&#8226;</span>
-                                    <span style={{color:`${step>=2?"#1f1f1e":"#808080"}`}}>&#8226;</span>
-                                    <span style={{color:`${step>=3?"#1f1f1e":"#808080"}`}}>&#8226;</span>
-                                    <span style={{color:`${step>=4?"#1f1f1e":"#808080"}`}}>&#8226;</span>
-                                    <span style={{color:`${step>=5?"#1f1f1e":"#808080"}`}}>&#8226;</span>
+                                    <span
+                                        style={{
+                                            color: `${
+                                                step >= 1
+                                                    ? "#1f1f1e"
+                                                    : "#808080"
+                                            }`
+                                        }}
+                                    >
+                                        &#8226;
+                                    </span>
+                                    <span
+                                        style={{
+                                            color: `${
+                                                step >= 2
+                                                    ? "#1f1f1e"
+                                                    : "#808080"
+                                            }`
+                                        }}
+                                    >
+                                        &#8226;
+                                    </span>
+                                    <span
+                                        style={{
+                                            color: `${
+                                                step >= 3
+                                                    ? "#1f1f1e"
+                                                    : "#808080"
+                                            }`
+                                        }}
+                                    >
+                                        &#8226;
+                                    </span>
+                                    <span
+                                        style={{
+                                            color: `${
+                                                step >= 4
+                                                    ? "#1f1f1e"
+                                                    : "#808080"
+                                            }`
+                                        }}
+                                    >
+                                        &#8226;
+                                    </span>
+                                    <span
+                                        style={{
+                                            color: `${
+                                                step >= 5
+                                                    ? "#1f1f1e"
+                                                    : "#808080"
+                                            }`
+                                        }}
+                                    >
+                                        &#8226;
+                                    </span>
                                 </div>
                             </b>
                         </Col>
@@ -162,7 +251,9 @@ const CourseNavbar = props => {
                                     {categories &&
                                         categories.map(navl => {
                                             let ismegamenu = false;
-                                            if (navl.sub_categories.length > 0) {
+                                            if (
+                                                navl.sub_categories.length > 0
+                                            ) {
                                                 ismegamenu = true;
                                             }
                                             return (
@@ -172,6 +263,7 @@ const CourseNavbar = props => {
                                                             ? "has-megasubmenu"
                                                             : ""
                                                     }`}
+                                                    key={navl?.id}
                                                 >
                                                     <Link
                                                         className="dropdown-item d-flex align-items-center"
@@ -197,8 +289,7 @@ const CourseNavbar = props => {
                                                                                 .course_topics
                                                                                 .length >
                                                                             0
-                                                                        )
-                                                                         {
+                                                                        ) {
                                                                             ismegamenu2 = true;
                                                                         }
                                                                         return (
@@ -208,11 +299,13 @@ const CourseNavbar = props => {
                                                                                         ? "has-megasubmenu-2"
                                                                                         : ""
                                                                                 }`}
+                                                                                key={
+                                                                                    child?.id
+                                                                                }
                                                                             >
                                                                                 <Link
                                                                                     className="dropdown-item d-flex align-items-center"
                                                                                     to={`/course-category?q=${child.name}`}
-                                                                                    
                                                                                 >
                                                                                     <span className="flex-fill">
                                                                                         {
@@ -236,12 +329,14 @@ const CourseNavbar = props => {
                                                                                                     {child.course_topics.map(
                                                                                                         subc => {
                                                                                                             return (
-                                                                                                                <li>
+                                                                                                                <li
+                                                                                                                    key={
+                                                                                                                        subc?.id
+                                                                                                                    }
+                                                                                                                >
                                                                                                                     <Link
                                                                                                                         className="dropdown-item"
-                                                                                                                        
                                                                                                                         to={`/course-category?q=${subc.name}`}
-
                                                                                                                     >
                                                                                                                         {
                                                                                                                             subc.name
@@ -264,7 +359,12 @@ const CourseNavbar = props => {
                                                                                                 <hr className="recommened-header-hr" />
                                                                                                 {recommendedCourse.map(
                                                                                                     r => (
-                                                                                                        <div className="recommended-course-navsection">
+                                                                                                        <div
+                                                                                                            className="recommended-course-navsection"
+                                                                                                            key={
+                                                                                                                r?.id
+                                                                                                            }
+                                                                                                        >
                                                                                                             <img
                                                                                                                 src={
                                                                                                                     provider
@@ -347,7 +447,11 @@ const CourseNavbar = props => {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="#" onClick={toggle}>
+                                <Link
+                                    className="nav-link courseNavLink"
+                                    to="#"
+                                    onClick={toggle}
+                                >
                                     Guide Me
                                 </Link>
                             </li>
@@ -365,9 +469,7 @@ const CourseNavbar = props => {
                                     className="nav-link courseNavLink"
                                     to="/profile/basic"
                                 >
-                                    <img 
-                                   src={user?.avatar}
-                                     alt="User" />
+                                    <img src={user?.avatar} alt="User" />
                                 </Link>
                             </li>
                             <li className="nav-item">

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Row, Col, FormGroup, Label, Input } from "reactstrap";
-const Guide3 = ({ nextStep }) => {
+const Guide3 = ({ nextStep, setModalVals, modalVals }) => {
     const [moreData, setMoreData] = useState(false);
+    const [selectedCourse, setSelectedCourse] = useState("");
     const toggleMoreData = () => setMoreData(!moreData);
+    const handleNext = () => {
+        setModalVals({
+            ...modalVals,
+            courseType: selectedCourse
+        });
+        nextStep();
+    };
     return (
         <>
             <Row className="guide-modal-mainsection">
@@ -12,15 +20,36 @@ const Guide3 = ({ nextStep }) => {
                             <b>Type of course</b>
                         </Label>
                         <Label check>
-                            <Input type="checkbox" />
+                            <Input
+                                type="checkbox"
+                                name="guided"
+                                value="guided"
+                                onChange={e =>
+                                    setSelectedCourse(e.target.value)
+                                }
+                            />
                             Guided Course
                         </Label>
                         <Label check>
-                            <Input type="checkbox" />
+                            <Input
+                                type="checkbox"
+                                name="mentored"
+                                value="mentored"
+                                onChange={e =>
+                                    setSelectedCourse(e.target.value)
+                                }
+                            />
                             Mentored Course
                         </Label>
                         <Label check>
-                            <Input type="checkbox" />
+                            <Input
+                                type="checkbox"
+                                name="tutored"
+                                value="tutored"
+                                onChange={e =>
+                                    setSelectedCourse(e.target.value)
+                                }
+                            />
                             Tutored Course
                         </Label>
                         {!moreData && (
@@ -71,10 +100,10 @@ const Guide3 = ({ nextStep }) => {
                 </Col>
             </Row>
             <div className="modal-footer-btns">
-                <button className="skip" onClick={nextStep}>
+                <button className="skip" onClick={handleNext}>
                     skip
                 </button>
-                <button className="next" onClick={nextStep}>
+                <button className="next" onClick={handleNext}>
                     next
                 </button>
             </div>
