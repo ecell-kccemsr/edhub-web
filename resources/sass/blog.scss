@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+//Blog Page  - HomePage
+
+.blog-section {
+    background: #fafafa;
+    padding: 50px 0;
+
+    .blog-sidebar {
+        padding: 20px;
+        background: #fffbfc;
+        border-radius: 6px;
+        box-shadow: 0px 2px 6px 0px #b5b5b5;
+        h6 {
+            color: #333333;
+            font-weight: 700;
+        }
+        hr {
+            border-color: #c4c4c4;
+        }
+        .blog-sidebar-list-el {
+            .sidebar-list-top {
+                display: flex;
+                align-items: flex-start;
+                i {
+                    color: #f05454;
+                    margin-right: 3px;
+                    margin-top: 2px;
+                }
+                p {
+                    color: #585858;
+                }
+            }
+
+            .blog-sidebar-pricesection {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                img {
+                    object-fit: contain;
+                    max-width: 60px;
+                }
+            }
+        }
+    }
+}
+
+//Single Blog Section
+.single-blog-section {
+    padding: 50px 0;
+    background: #fafafa;
+    h3 {
+        font-family: "Marcellus", serif;
+        text-align: center;
+    }
+    h6 {
+        text-align: center;
+        color: #808080;
+        margin-bottom: 15px;
+    }
+    img {
+        max-width: 100%;
+    }
+    .singleblog-like-section {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 10px 0;
+        .interaction-container {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            img {
+                object-fit: contain;
+                margin-right: 3px;
+            }
+        }
+    }
+    .singleBlog-author-section {
+        text-align: center;
+        margin: 20px 0;
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        p {
+            color: #808080;
+        }
+    }
+    .singleBlog-social {
+        .social-textcontainer {
+            h4 {
+                text-align: center;
+                span {
+                    font-size: 14px;
+                    display: block;
+                }
+            }
+        }
+
+        .social-container {
+            img {
+                display: block;
+                margin: 3px 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 775px) {
+    .single-blog-section {
+        .singleblog-like-section {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .singleBlog-social {
+            .social-container {
+                text-align: center;
+                img {
+                    display: inline-block;
+                    margin: 1px 2px;
+                }
+            }
+        }
+    }
+}

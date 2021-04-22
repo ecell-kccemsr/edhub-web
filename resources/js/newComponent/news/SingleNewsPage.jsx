@@ -28,7 +28,10 @@ const SingleNewsPage = props => {
                     <Col sm="12" md="8">
                         <h4 className="singlenewstitle-text">Politics</h4>
                         <div className="singlnews-main-card">
-                            <img src={singleNewsImg} alt="Single News Image" />
+                            <img
+                                src={categorynews.image}
+                                alt="Single News Image"
+                            />
                             <div className="news-overview-container">
                                 <p className="news-tag">#BILLS2020</p>
                                 <div className="news-interaction-container">

@@ -1,159 +1,119 @@
-.questionpapear-section {
-    padding: 30px 150px;
-
-    .questionpapaer-section-header {
-        color: #4f4f4f;
-    }
-    // Filter-QuestionPaper
-    .questionpaper-filter-section {
-        padding: 0;
-        border: 1px solid #444444;
-        border-radius: 4px;
-        height: fit-content;
-        margin-bottom: 20px;
-
-        .questionpaper-filter-header {
-            background: #ee6f57;
-            color: #fff;
-            padding: 10px;
+//Previous Year QPaper Homepage
+.prevQpaper-section {
+    padding: 50px 0;
+    background: #f8f8f8;
+    .tabs-section {
+        padding: 20px;
+        background: #fff;
+        .tab-header-text {
+            color: #00b862;
             text-align: center;
         }
-        .questionpaper-filter-ul {
-            padding: 5px 10px;
-
-            .questionpaper-subcategory {
-                border-bottom: 1px solid #000;
-                padding: 5px 10px;
-                font-size: 20px;
-                &:hover {
-                    cursor: pointer;
-                }
-
-                a {
-                    color: #000;
-                    text-decoration: none;
-                    &:hover {
-                        text-decoration: none;
-                    }
-                }
-                &:last-child {
-                    border-bottom: none;
-                }
-            }
-        }
-    }
-    // QuestionPaper-Content
-    .questionpaper-main-section {
-        box-shadow: 0px 5px 4px 0px #bebcbc;
-        padding: 10px 0 20px;
-
-        .questionpaper-main-header {
-            padding: 10px;
-            color: #4f4f4f;
-        }
-
-        .questionpaper-topics {
-            .questionpaper-topic-container {
-                padding: 20px 10px 40px;
-                margin: 10px 20px;
-                border-radius: 5px;
-
-                background: #f8f8f8;
-                .questionpaper-category-btn {
-                    background-color: #ffb342;
-                    font-weight: 200px;
-                    width: 120px;
-                    height: 50px;
-                    margin: 5px;
-                    font-size: 15px;
-                    box-sizing: border-box;
-                    border: #fff;
-                    border-radius: 10px;
-                    &:hover {
-                        background-color: #ffb342;
-                    }
-
-                    a,
-                    a:hover {
-                        text-decoration: none;
-                        color: #fff;
-                    }
-                }
-            }
-        }
-        .questionpaper-news-details {
-            border-bottom: 1px solid #000;
-            margin: 10px;
-
-            h5 {
-                a,
-                a:hover {
-                    text-decoration: none;
-                    color: #000;
-                }
-            }
-
-            h6 {
-                font-weight: 300;
-                font-size: 17px;
-            }
-            &:last-child {
-                border-bottom: none;
-            }
-        }
-    }
-    // questionpaper-register-form
-    .questionpaper-register-form-section {
-        border: 1px solid #000;
-        padding: 10px;
-        margin-top: 20px;
-        h5 {
-            font-size: 16px;
-        }
-
-        .btn-submit-questionpaper,
-        .btn-submit-questionpaper:hover {
-            outline: none;
+        .nav-link {
             border: none;
-            width: 100%;
-            padding: 5px;
-            color: #fff;
-            background-color: #ee6f57;
-            border-radius: 4px;
+            font-weight: 500;
+            color: #666666;
         }
-    }
-    // Trending-QuestionPaper
-    .questionpaper-trending {
-        padding: 10px;
-        margin-top: 10px;
-        box-shadow: 0px 5px 4px 0px #bebcbc;
-        h4 {
-            color: #4f4f4f;
+        .nav-link.active {
+            border-bottom: 2px solid #00b862;
+            color: #00b862;
         }
-        .questionpaper-news-trending {
-            h5 {
-                font-size: 16px;
-                font-weight: 600;
-
-                a {
-                    color: #000;
-                    text-decoration: none;
-                    &:hover {
-                        text-decoration: none;
-                    }
+        .tab-content {
+            padding: 20px 0;
+            .tab-el {
+                border: 1px solid #dadada;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                img {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    margin-right: 10px;
                 }
-            }
-
-            h6 {
-                font-weight: 300;
-                font-size: 15px;
+                p {
+                    margin-bottom: 0;
+                }
             }
         }
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .questionpapear-section {
+//PrevYear Qpaper singledata section
+.prev-qpaper-singledata-section {
+    background: #f8f8f8;
+    padding: 30px 0;
+
+    .left-sidebar {
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0px 2px 6px 0px #b5b5b5;
+        h4 {
+            padding: 10px;
+        }
+        .qpaper-accordion {
+            .card {
+                margin: 2px 0;
+                padding: 0;
+                background: #efefef;
+                border-radius: 0;
+
+                .qpaper-card-headerlink {
+                    color: #333333;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                .card-body {
+                    background: #fff;
+                    .courseContent-list {
+                        color: #333;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .prevQpaper-sidebar {
         padding: 20px;
+        background: #fffbfc;
+        border-radius: 6px;
+        box-shadow: 0px 2px 6px 0px #b5b5b5;
+        h6 {
+            color: #333333;
+            font-weight: 700;
+        }
+        hr {
+            border-color: #c4c4c4;
+        }
+        .prevQpaper-sidebar-list-el {
+            .sidebar-list-top {
+                display: flex;
+                align-items: flex-start;
+                i {
+                    color: #f05454;
+                    margin-right: 3px;
+                    margin-top: 2px;
+                }
+                p {
+                    color: #585858;
+                }
+            }
+
+            .prevQpaper-sidebar-pricesection {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                img {
+                    object-fit: contain;
+                    max-width: 60px;
+                }
+            }
+        }
     }
 }
