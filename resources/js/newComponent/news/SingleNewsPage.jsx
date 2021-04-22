@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Input, FormGroup } from "reactstrap";
 import singleNewsImg from "../../Images/news/singleNews.png";
 import tw from "../../Images/news/twitter.png";
-const SingleNewsPage = () => {
+import axios from "axios";
+const SingleNewsPage = props => {
+    const [categorynews, setcategorynews] = useState([]);
+
+    useEffect(() => {
+        const { news_slug } = props.match.params;
+        if (news_slug) {
+            axios
+                .get(`/api/news/${news_slug}`)
+                .then(res => {
+                    console.log(res);
+                    setcategorynews(res.data.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
+    }, []);
+
     return (
         <div className="singlenews-section">
             <Container>
@@ -28,48 +46,13 @@ const SingleNewsPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Non lectus porta urna venenatis
-                                tempus. Adipiscing s
-                            </h5>
+                            <h5>{categorynews.title}</h5>
                             <h6 className="news-author">By unnat bhatnagar</h6>
                             <h6 className="news-published-date">
                                 12:00 pm IST
                             </h6>
                             <p className="news-content">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. A a dolor netus urna ut mus
-                                donec enim. In netus massa libero, eget.
-                                Facilisi metus curabitur facilisis amet, dolor
-                                mollis duis proin. Tempus enim lobortis erat
-                                pellentesque id ac dignissim.Lorem ipsum dolor
-                                sit amet, consectetur adipiscing elit. A a dolor
-                                netus urna ut mus donec enim. In netus massa
-                                libero, eget. Facilisi metus curabitur facilisis
-                                amet, dolor mollis duis proin. Tempus enim
-                                lobortis erat pellentesque id ac dignissim.Lorem
-                                ipsum dolor sit amet, consectetur adipiscing
-                                elit. A a dolor netus urna ut mus donec enim. In
-                                netus massa libero, eget. Facilisi metus
-                                curabitur facilisis amet, dolor mollis duis
-                                proin. Tempus enim lobortis erat pellentesque id
-                                ac dignissim.Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. A a dolor netus
-                                urna ut mus donec enim. In netus massa libero,
-                                eget. Facilisi metus curabitur facilisis amet,
-                                dolor mollis duis proin. Tempus enim lobortis
-                                erat pellentesque id ac dignissim.Lorem ipsum
-                                dolor sit amet, consectetur adipiscing elit. A a
-                                dolor netus urna ut mus donec enim. In netus
-                                massa libero, eget. Facilisi metus curabitur
-                                facilisis amet, dolor mollis duis proin. Tempus
-                                enim lobortis erat pellentesque id ac
-                                dignissim.Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. A a dolor netus
-                                urna ut mus donec enim. In netus massa libero,
-                                eget. Facilisi metus curabitur facilisis amet,
-                                dolor mollis du
+                                {categorynews.description}
                             </p>
                             <h4 className="comment-titletext">Comments</h4>
                             <Row>

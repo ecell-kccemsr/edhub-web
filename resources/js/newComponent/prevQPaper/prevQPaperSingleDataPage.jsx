@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Col, List, Container, Row } from "reactstrap";
 import udemy from "../../Images/blogs/udemy.png";
 import { v4 as uuidv4 } from "uuid";
 import QPaperAccordion from "./QPaperAccordion";
+import axios from "axios";
 
 const dummyAccordionData = [
     {
@@ -43,6 +44,17 @@ const dummyAccordionData = [
 ];
 
 const prevQPaperSingleDataPage = () => {
+    const [categories, setCategory] = useState([]);
+    useEffect(() => {
+        axios
+            .get("/api/government_jobs/categories")
+            .then(res => {
+                console.log(res);
+                setCategory(res.data.data);
+            })
+
+            .catch(err => console.log(err));
+    }, []);
     return (
         <div className="prev-qpaper-singledata-section">
             <Container>
@@ -50,7 +62,11 @@ const prevQPaperSingleDataPage = () => {
                     <Col sm="12" lg="3">
                         <div className="left-sidebar">
                             <h4>JOBS</h4>
-                            <QPaperAccordion data={dummyAccordionData} />
+                            {categories &&
+                                categories?.length > 0 &&
+                                categories?.map(c => (
+                                    <QPaperAccordion data={c} />
+                                ))}
                         </div>
                     </Col>
                     <Col sm="12" lg="6">

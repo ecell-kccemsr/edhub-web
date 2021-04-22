@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import cardTopImg from "../../Images/blogs/maincard-top-img.png";
 import cardAuthor from "../../Images/blogs/card-author.png";
@@ -8,33 +8,35 @@ import tw from "../../Images/blogs/twitter.png";
 import ld from "../../Images/blogs/linkedin.png";
 import wa from "../../Images/blogs/whatsapp.png";
 import tag from "../../Images/news/tag.png";
-
-const BlogCard = ({ tags }) => {
+import { Link } from "react-router-dom";
+const BlogCard = ({ tags, data, key }) => {
+    console.log("news ", data);
     return (
-        <div className="blog-main-card">
+        <div className="blog-main-card mb-2">
             <div className="blog-card-top-section">
                 <Row>
                     <Col sm="12" md="6" lg="9">
                         <div className="blog-card-top-text-section">
                             <h6>#MARKETING</h6>
-                            <h4>
-                                Organic Marketing And Modern Marketing, What’s
-                                The Relation?
-                            </h4>
+                            <Link
+                                to={`/news/${data?.slug}`}
+                                style={{ color: "black" }}
+                            >
+                                <h4>{data?.title}</h4>
+                            </Link>
                         </div>
                     </Col>
                     <Col sm="12" md="6" lg="3">
-                        <img src={cardTopImg} alt="Card Image" />
+                        <img src={data.image} alt="Card Image" />
                     </Col>
                 </Row>
             </div>
             <p>
-                Amid the rising coronavirus COVID-19 cases in Mumbai and other
-                parts of Maharashtra, state Health Minister Rajesh Tope on
-                Sunday said that Chief Minister Uddhav Thackeray is likely to
-                take a final decision on reimposing lockdown after a cabinet
-                meeting on April 14.
+                {data?.description.length > 180
+                    ? data?.description.slice(0, 180) + "..."
+                    : data?.description}
             </p>
+            ;
             <div className="blog-card-footer-section">
                 {tags && (
                     <div className="tag">

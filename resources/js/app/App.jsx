@@ -15,7 +15,7 @@ import Governmentjobcategory from "../jobs/Governmentjobcategory";
 import Governmentjobsubcategory from "../jobs/Governmentjobsubcategory";
 import Questionpaper from "../Question papers/Questionpaper";
 import Questionpaper2 from "../Question papers/Questionpaper2";
-import News from "../news/News";
+// import News from "../news/News";
 import NewsCategory from "../news/NewsCategory";
 import NewsSubCategory from "../news/NewsSubCategory";
 import Examcalendar from "../examcalendar/Examcalendar";
@@ -36,6 +36,10 @@ import ProfileCourses from "../profile/ProfileCourses";
 import Degree from "../degree/Degree";
 import http from "../utils/http";
 import { useStoreActions } from "easy-peasy";
+import NewsHomePage from "../newComponent/news/NewsHomePage";
+import SingleNewsPage from "../newComponent/news/SingleNewsPage";
+import prevQPaperHomepage from "../newComponent/prevQPaper/prevQPaperHomepage";
+import prevQPaperSingleDataPage from "../newComponent/prevQPaper/prevQPaperSingleDataPage";
 
 const App = props => {
     const setUser = useStoreActions(actions => actions.setUser);
@@ -69,7 +73,7 @@ const App = props => {
                     exact
                     component={Governmentjobsubcategory}
                 />
-                <JobLayoutRoute
+                {/* <JobLayoutRoute
                     path="/questionpaper"
                     exact
                     component={Questionpaper}
@@ -78,25 +82,30 @@ const App = props => {
                     path="/questionpaper/:category_slug"
                     exact
                     component={Questionpaper2}
+                /> */}
+
+                <CourseLayoutRoutes
+                    path="/questionpaper"
+                    exact
+                    component={prevQPaperHomepage}
                 />
-                <JobLayoutRoute path="/news" exact component={News} />
-                <JobLayoutRoute
-                    path="/news/:category_slug"
-                    exact={true}
-                    component={NewsCategory}
+                <CourseLayoutRoutes
+                    path="/questionpaper/next"
+                    exact
+                    component={prevQPaperSingleDataPage}
                 />
-                <JobLayoutRoute
-                    path="/news/:category_slug/:subcategory_slug"
+                <CourseLayoutRoutes
+                    path="/news"
+                    exact
+                    component={NewsHomePage}
+                />
+                <CourseLayoutRoutes
+                    path="/news/:news_slug"
                     exact={true}
                     exact
-                    component={NewsSubCategory}
+                    component={SingleNewsPage}
                 />
-                <JobLayoutRoute
-                    path="/news/:category_slug/:subcategory_slug/:news_slug"
-                    exact={true}
-                    exact
-                    component={Newsdetails}
-                />
+
                 <JobLayoutRoute
                     path="/exam/calendar"
                     exact

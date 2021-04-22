@@ -20,17 +20,19 @@ Route::get('/login/{provider}/callback', [SocialLoginController::class,'callback
 Route::view('/', 'app');
 Route::view('/login', 'app');
 Route::view('/register', 'app');
+
+
+
+#newroutes for news
 Route::view('/news', 'app');
-Route::view('/news/{category_slug}', 'app');
-Route::view('/news/{category_slug}/{subcategory_slug}', 'app');
-Route::view('/news/{category_slug}/{subcategory_slug}/{news_slug}','app');
+Route::view('/news/{news_slug}','app');
 
 Route::view('/govermentjobs', 'app');
 Route::view('/govermentjobs/{category_slug}', 'app');
 Route::view('/govermentjobs/{category_slug}/{subcategory_slug}/{slug}', 'app');
 
 Route::view('/questionpaper', 'app');
-Route::view('/questionpaper/{category_slug}', 'app');
+Route::view('/questionpaper/next', 'app');
 
 Route::view('/exam/calendar', 'app');
 Route::view('/landingPage','app');
