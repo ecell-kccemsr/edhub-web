@@ -291,3 +291,123 @@
         }
     }
 }
+
+//Previous Year QPaper Homepage
+.prevQpaper-section {
+    padding: 50px 0;
+    background: #f8f8f8;
+    .tabs-section {
+        padding: 20px;
+        background: #fff;
+        .tab-header-text {
+            color: #00b862;
+            text-align: center;
+        }
+        .nav-link {
+            border: none;
+            font-weight: 500;
+            color: #666666;
+        }
+        .nav-link.active {
+            border-bottom: 2px solid #00b862;
+            color: #00b862;
+        }
+        .tab-content {
+            padding: 20px 0;
+            .tab-el {
+                border: 1px solid #dadada;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                img {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+//PrevYear Qpaper singledata section
+.prev-qpaper-singledata-section {
+    background: #f8f8f8;
+    padding: 30px 0;
+
+    .left-sidebar {
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0px 2px 6px 0px #b5b5b5;
+        h4 {
+            padding: 10px;
+        }
+        .qpaper-accordion {
+            .card {
+                margin: 2px 0;
+                padding: 0;
+                background: #efefef;
+                border-radius: 0;
+
+                .qpaper-card-headerlink {
+                    color: #333333;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                .card-body {
+                    background: #fff;
+                    .courseContent-list {
+                        color: #333;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .prevQpaper-sidebar {
+        padding: 20px;
+        background: #fffbfc;
+        border-radius: 6px;
+        box-shadow: 0px 2px 6px 0px #b5b5b5;
+        h6 {
+            color: #333333;
+            font-weight: 700;
+        }
+        hr {
+            border-color: #c4c4c4;
+        }
+        .prevQpaper-sidebar-list-el {
+            .sidebar-list-top {
+                display: flex;
+                align-items: flex-start;
+                i {
+                    color: #f05454;
+                    margin-right: 3px;
+                    margin-top: 2px;
+                }
+                p {
+                    color: #585858;
+                }
+            }
+
+            .prevQpaper-sidebar-pricesection {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                img {
+                    object-fit: contain;
+                    max-width: 60px;
+                }
+            }
+        }
+    }
+}
