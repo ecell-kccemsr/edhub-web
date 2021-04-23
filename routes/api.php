@@ -16,6 +16,7 @@ use App\Http\Controllers\API\CourseWishlistController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\API\RegisterForFreeUpdatesController;
+use App\Http\Controllers\API\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,3 +93,7 @@ Route::get('/course-providers/{courseprovider}',[CourseProviderController::class
 //Testimony
 Route::get('/testimonies',[TestimonyController::class,'get']);
 Route::get('/testimonies/{testimony}',[TestimonyController::class,'show']);
+
+//Blog
+Route::get('/blogs',[BlogController::class,'get']);
+Route::get('/blogs/{blog}',[BlogController::class,'show']);

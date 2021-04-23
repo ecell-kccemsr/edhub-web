@@ -433,6 +433,24 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-04-16 01:12:21',
                 'updated_at' => '2021-04-16 01:18:49',
             ),
+            23 => 
+            array (
+                'id' => 28,
+                'name' => 'blogs',
+                'slug' => 'blogs',
+                'display_name_singular' => 'Blog',
+                'display_name_plural' => 'Blogs',
+                'icon' => 'voyager-edit',
+                'model_name' => 'App\\Models\\Blog',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-23 16:03:56',
+                'updated_at' => '2021-04-23 16:33:48',
+            ),
         ));
         
         

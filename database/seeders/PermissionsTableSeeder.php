@@ -1027,6 +1027,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-16 01:12:21',
                 'updated_at' => '2021-04-16 01:12:21',
             ),
+            126 => 
+            array (
+                'id' => 137,
+                'key' => 'browse_blogs',
+                'table_name' => 'blogs',
+                'created_at' => '2021-04-23 16:03:56',
+                'updated_at' => '2021-04-23 16:03:56',
+            ),
+            127 => 
+            array (
+                'id' => 138,
+                'key' => 'read_blogs',
+                'table_name' => 'blogs',
+                'created_at' => '2021-04-23 16:03:56',
+                'updated_at' => '2021-04-23 16:03:56',
+            ),
+            128 => 
+            array (
+                'id' => 139,
+                'key' => 'edit_blogs',
+                'table_name' => 'blogs',
+                'created_at' => '2021-04-23 16:03:56',
+                'updated_at' => '2021-04-23 16:03:56',
+            ),
+            129 => 
+            array (
+                'id' => 140,
+                'key' => 'add_blogs',
+                'table_name' => 'blogs',
+                'created_at' => '2021-04-23 16:03:56',
+                'updated_at' => '2021-04-23 16:03:56',
+            ),
+            130 => 
+            array (
+                'id' => 141,
+                'key' => 'delete_blogs',
+                'table_name' => 'blogs',
+                'created_at' => '2021-04-23 16:03:56',
+                'updated_at' => '2021-04-23 16:03:56',
+            ),
         ));
         
         
