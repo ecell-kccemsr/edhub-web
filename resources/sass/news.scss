@@ -3,6 +3,36 @@
 .news-section-container {
     background: #fafafa;
     padding: 50px 0;
+    .category-btn-all {
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 5px;
+        margin: 7px;
+        color: grey;
+        font-family: "Oswald", sans-serif;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    .category-btn-all:hover {
+        color: #f05454;
+        text-decoration: underline;
+    }
+    .category-buttons-header {
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 5px;
+        margin: 7px;
+        color: grey;
+        font-size: 20px;
+        letter-spacing: 2px;
+        font-family: "Oswald", sans-serif;
+    }
+    .category-buttons-header:hover {
+        color: #f05454;
+        text-decoration: underline;
+    }
     .news-sidebar {
         .news-sidebar-el {
             padding: 15px;

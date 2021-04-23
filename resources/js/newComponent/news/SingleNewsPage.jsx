@@ -5,14 +5,21 @@ import tw from "../../Images/news/twitter.png";
 import axios from "axios";
 const SingleNewsPage = props => {
     const [categorynews, setcategorynews] = useState([]);
-
+    const [relatednews, setRelatedNews] = useState([]);
+    let id;
     useEffect(() => {
         const { news_slug } = props.match.params;
         if (news_slug) {
             axios
                 .get(`/api/news/${news_slug}`)
                 .then(res => {
+                    console.log(res);
                     setcategorynews(res.data.data);
+                    id = res.data.data?.category.id;
+                    axios.get(`/api/news?category_id=${id}`).then(res => {
+                        console.log("category", res);
+                        setRelatedNews(res.data.data);
+                    });
                 })
                 .catch(err => {
                     console.log(err);
@@ -35,15 +42,15 @@ const SingleNewsPage = props => {
                                 <p className="news-tag">#BILLS2020</p>
                                 <div className="news-interaction-container">
                                     <div className="news-interaction-el">
-                                        <i class="far fa-eye"></i>
+                                        <i className="far fa-eye"></i>
                                         <span>1.2K</span>
                                     </div>
                                     <div className="news-interaction-el">
-                                        <i class="far fa-comment-alt"></i>
+                                        <i className="far fa-comment-alt"></i>
                                         <span>1.2K</span>
                                     </div>
                                     <div className="news-interaction-el">
-                                        <i class="fas fa-share-alt"></i>
+                                        <i className="fas fa-share-alt"></i>
                                         <span>500</span>
                                     </div>
                                 </div>
@@ -106,26 +113,29 @@ const SingleNewsPage = props => {
                         <div className="singlenews-sidebar-container-top">
                             <div className="top-container-el">
                                 <div className="text-container">
-                                    <p className="tag">#BILLS2020</p>
-                                    <h4>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </h4>
-                                    <p className="author">
-                                        Hemant lamba on <span>twitter</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="top-container-el">
-                                <div className="text-container">
-                                    <p className="tag">#BILLS2020</p>
-                                    <h4>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </h4>
-                                    <p className="author">
-                                        Hemant lamba on <span>twitter</span>
-                                    </p>
+                                    {relatednews &&
+                                        relatednews.length > 0 &&
+                                        relatednews.map(r => (
+                                            <>
+                                                <p className="tag">
+                                                    #BILLS2020
+                                                </p>
+                                                <h4>{r?.title}</h4>
+                                                <p
+                                                    className="author"
+                                                    dangerouslySetInnerHTML={{
+                                                        __html:
+                                                            r?.details.length >
+                                                            100
+                                                                ? r?.details.slice(
+                                                                      0,
+                                                                      100
+                                                                  ) + "..."
+                                                                : r?.details
+                                                    }}
+                                                ></p>
+                                            </>
+                                        ))}
                                 </div>
                             </div>
                         </div>

@@ -1,20 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
 import BlogCard from "../../components/blogcard/BlogCard";
-import SidebarElTopImg from "../../Images/news/sidebar-card-top.png";
+import { Col, Container, Row, Nav, NavItem, NavLink } from "reactstrap";
 import axios from "axios";
 const NewsHomePage = () => {
     const [news, setNews] = useState([]);
     const [trending, setTrending] = useState([]);
-    useEffect(() => {
+    const [categories, setCategories] = useState([]);
+
+    const handleData = (id = null) => {
+        let idVal = "";
+        if (id) {
+            idVal = `?category_id=${id}`;
+        }
         axios
-            .get("/api/news")
+            .get(`/api/news${idVal}`)
             .then(res => {
                 setNews(res.data.data);
             })
             .catch(err => {
                 console.log(err);
             });
+    };
+
+    useEffect(() => {
+        handleData();
         axios
             .get("/api/news/trending")
             .then(res => {
@@ -23,11 +32,38 @@ const NewsHomePage = () => {
             .catch(err => {
                 console.log(err);
             });
+        axios
+            .get("/api/news/categories")
+            .then(res => {
+                setCategories(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
 
     return (
         <div className="news-section-container">
-            <Container>
+            <Container className="containerClass">
+                <div className=" d-flex justify-content-center flex-wrap mb-3">
+                    <button
+                        className="category-btn-all"
+                        onClick={() => handleData()}
+                    >
+                        All
+                    </button>
+                    {categories &&
+                        categories.length > 0 &&
+                        categories.map(c => (
+                            <button
+                                className="category-buttons-header"
+                                onClick={() => handleData(c?.id)}
+                            >
+                                {c.name}
+                            </button>
+                        ))}
+                </div>
+
                 <Row>
                     <Col sm="12" md="8" lg="9">
                         {news &&
