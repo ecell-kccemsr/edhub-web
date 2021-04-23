@@ -2,7 +2,9 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Blog;
 use TCG\Voyager\Facades\Voyager;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class BlogResource extends JsonResource
@@ -15,6 +17,10 @@ class BlogResource extends JsonResource
      */
     public function toArray($request)
     {
+        $hasLiked = false;
+        if(Auth::user()) {
+            $hasLiked = Auth::user()->hasLiked(Blog::find($this->id)); 
+        }
         return [
             'id' => $this->id,
             'title' => $this->title,
@@ -26,6 +32,8 @@ class BlogResource extends JsonResource
             'read_time' => $this->read_time,
             'published_at' => $this->published_at,
             'slug' => $this->slug,
+            'total_likes' => $this->likers()->count(),
+            'has_liked' => $hasLiked
         ];
     }
 }
