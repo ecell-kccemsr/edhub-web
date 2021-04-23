@@ -78,11 +78,13 @@ class FetchCourses extends Command
                     ]);
 
                     $category = CourseCategory::firstOrCreate(['name' => $course['primary_category']['title']]);
-                    $subCategory = CourseSubCategory::firstOrCreate(['name' => $course['primary_subcategory']['title'], 'course_category_id' => $category->id]);
-                    $topic = CourseTopic::firstOrCreate(['name' => $course['course_has_labels'][0]['label']['title'], 'course_sub_category_id' => $subCategory->id]);
                     $dbCourse->course_category_id = $category->id;
+                    $subCategory = CourseSubCategory::firstOrCreate(['name' => $course['primary_subcategory']['title'], 'course_category_id' => $category->id]);
                     $dbCourse->course_sub_category_id = $subCategory->id;
-                    $dbCourse->course_topic_id = $topic->id;
+                    if(isset($course['course_has_labels'][0])) {
+                        $topic = CourseTopic::firstOrCreate(['name' => $course['course_has_labels'][0]['label']['title'], 'course_sub_category_id' => $subCategory->id]);
+                        $dbCourse->course_topic_id = $topic->id;
+                    }
                     $dbCourse->save();
 
                     foreach ($course['visible_instructors'] as $instructor)
