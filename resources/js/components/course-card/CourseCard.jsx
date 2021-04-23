@@ -30,7 +30,7 @@ const CourseCard = ({ data }) => {
     };
 
     const handleCompare = data => {
-        if (isAlreadyInCompares  === false && compares.length > 2) {
+        if (isAlreadyInCompares === false && compares.length > 2) {
             alert("Can't add more than 3 courses");
             return;
         } else {
@@ -40,17 +40,21 @@ const CourseCard = ({ data }) => {
 
     return (
         <>
-         <button 
-         className="wishlist-section"
-                        onClick={() => handleWishlist(data)}
-                    >
-                        {isAlreadyInWishlist === false ? (
-                        <img src={bookmark} alt="bookmark" />
-                        ) : (
-                            <img src={bookmark1} alt="bookmark1" className="wishlist-section-bookmark1" />
-                            )}
+            <button
+                className="wishlist-section"
+                onClick={() => handleWishlist(data)}
+            >
+                {isAlreadyInWishlist === false ? (
+                    <img src={bookmark} alt="bookmark" />
+                ) : (
+                    <img
+                        src={bookmark1}
+                        alt="bookmark1"
+                        className="wishlist-section-bookmark1"
+                    />
+                )}
             </button>
-                <div className="coursecard-section h-100">
+            <div className="coursecard-section h-100">
                 <img
                     src={data?.image}
                     className="card-header-img"
@@ -66,10 +70,8 @@ const CourseCard = ({ data }) => {
                     </div>
 
                     <h5 style={{ fontWeight: "400" }}>
-                    ₹ {data?.discount_price} 
-                    &nbsp;
-                    ₹ <strike >{data?.price}</strike> 
-                    
+                        ₹ {data?.discount_price}
+                        &nbsp; ₹ <strike>{data?.price}</strike>
                     </h5>
                 </div>
                 <div>
@@ -96,8 +98,6 @@ const CourseCard = ({ data }) => {
                         )}
                     </div>
 
-                   
-
                     <hr />
                 </div>
 
@@ -111,9 +111,6 @@ const CourseCard = ({ data }) => {
                     </Link>
                 </div>
             </div>
-            
-            
-
         </>
     );
 };

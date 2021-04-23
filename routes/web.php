@@ -27,12 +27,21 @@ Route::view('/register', 'app');
 Route::view('/news', 'app');
 Route::view('/news/{news_slug}','app');
 
+#newroutes for questionpaper
+Route::view('/questionpaper', 'app');
+Route::view('/questionpaper/next', 'app');
+
+
+#newroutes for blog
+Route::view('/blogs', 'app');
+Route::view('/blog/{blog_slug}', 'app');
+
+
 Route::view('/govermentjobs', 'app');
 Route::view('/govermentjobs/{category_slug}', 'app');
 Route::view('/govermentjobs/{category_slug}/{subcategory_slug}/{slug}', 'app');
 
-Route::view('/questionpaper', 'app');
-Route::view('/questionpaper/next', 'app');
+
 
 Route::view('/exam/calendar', 'app');
 Route::view('/landingPage','app');

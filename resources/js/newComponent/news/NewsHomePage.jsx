@@ -18,7 +18,6 @@ const NewsHomePage = () => {
         axios
             .get("/api/news/trending")
             .then(res => {
-                console.log("trending", res);
                 setTrending(res.data.data);
             })
             .catch(err => {
@@ -33,7 +32,13 @@ const NewsHomePage = () => {
                     <Col sm="12" md="8" lg="9">
                         {news &&
                             news?.length > 0 &&
-                            news?.map(n => <BlogCard tags={true} data={n} />)}
+                            news?.map(n => (
+                                <BlogCard
+                                    tags={true}
+                                    data={n}
+                                    toUrl={`/news/${n.slug}`}
+                                />
+                            ))}
                     </Col>
                     <Col sm="12" md="4" lg="3">
                         <div className="news-sidebar">

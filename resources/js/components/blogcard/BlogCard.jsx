@@ -9,8 +9,7 @@ import ld from "../../Images/blogs/linkedin.png";
 import wa from "../../Images/blogs/whatsapp.png";
 import tag from "../../Images/news/tag.png";
 import { Link } from "react-router-dom";
-const BlogCard = ({ tags, data, key }) => {
-    console.log("news ", data);
+const BlogCard = ({ tags, data, toUrl }) => {
     return (
         <div className="blog-main-card mb-2">
             <div className="blog-card-top-section">
@@ -18,10 +17,7 @@ const BlogCard = ({ tags, data, key }) => {
                     <Col sm="12" md="6" lg="9">
                         <div className="blog-card-top-text-section">
                             <h6>#MARKETING</h6>
-                            <Link
-                                to={`/news/${data?.slug}`}
-                                style={{ color: "black" }}
-                            >
+                            <Link to={toUrl || "#"} style={{ color: "black" }}>
                                 <h4>{data?.title}</h4>
                             </Link>
                         </div>
@@ -31,12 +27,24 @@ const BlogCard = ({ tags, data, key }) => {
                     </Col>
                 </Row>
             </div>
-            <p>
-                {data?.description.length > 180
-                    ? data?.description.slice(0, 180) + "..."
-                    : data?.description}
-            </p>
-            ;
+            {data?.description && (
+                <p>
+                    {data?.description.length > 180
+                        ? data?.description.slice(0, 180) + "..."
+                        : data?.description}
+                </p>
+            )}
+            {data?.body && (
+                <p
+                    dangerouslySetInnerHTML={{
+                        __html:
+                            data?.body.length > 180
+                                ? data.body.slice(0, 180) + "..."
+                                : data?.body
+                    }}
+                ></p>
+            )}
+
             <div className="blog-card-footer-section">
                 {tags && (
                     <div className="tag">

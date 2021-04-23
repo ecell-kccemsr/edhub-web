@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import singleBlogImg from "../../Images/blogs/singleBlogTop.png";
 import singleBlogAuthor from "../../Images/blogs/singleBlogAuthor.png";
@@ -9,15 +9,30 @@ import ld from "../../Images/blogs/linkedin.png";
 import wa from "../../Images/blogs/whatsapp.png";
 import like from "../../Images/blogs/like.png";
 import comment from "../../Images/blogs/comment.png";
-const SingleBlog = () => {
+import axios from "axios";
+const SingleBlog = props => {
+    const [singleBlog, setSingleBlog] = useState([]);
+    console.log(props);
+
+    useEffect(() => {
+        const { blog_slug } = props.match.params;
+        if (blog_slug) {
+            axios
+                .get(`/api/blogs/${blog_slug}`)
+                .then(res => {
+                    setSingleBlog(res.data.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
+    }, []);
     return (
         <div className="single-blog-section">
             <Container>
-                <h3>
-                    Organic Marketing And Modern Marketing, What’s The Relation?
-                </h3>
-                <h6> 6 min read | October 30, 2020</h6>
-                <img src={singleBlogImg} alt="Single Blog Top Image" />
+                <h3>{singleBlog?.title}</h3>
+                <h6>{singleBlog?.read_time} read | October 30, 2020</h6>
+                <img src={singleBlog?.image} alt="Single Blog Top Image" />
                 <div className="singleblog-like-section">
                     <div className="interaction-container">
                         <img src={like} alt="Like" />
@@ -29,8 +44,11 @@ const SingleBlog = () => {
                     </div>
                 </div>
                 <div className="singleBlog-author-section">
-                    <img src={singleBlogAuthor} alt="Author Image" />
-                    <p>mkhuhbkjb| | Marketing manager </p>
+                    <img src={singleBlog?.author_image} alt="Author Image" />
+                    <p>
+                        {singleBlog?.author_name} | |{" "}
+                        {singleBlog?.autor_designation}{" "}
+                    </p>
                 </div>
                 <Row>
                     <Col sm="12" md="1">
@@ -51,120 +69,11 @@ const SingleBlog = () => {
                     </Col>
                     <Col sm="12" md="10">
                         <div className="singleBlog-maincontent-section">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis dignissim cras orci. Pulvinar
-                                non commodo euismod feugiat pharetra quis urna.
-                                Vitae vel elit sit at tellus faucibus malesuada
-                                sagittis. Enim, in amet sed consectetur nullam
-                                risus fringilla ac aliquam.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Venenatis,
-                                adipiscing et aliquam et quis dignissim cras
-                                orci. Pulvinar non commodo euismod feugiat
-                                pharetra quis urna. Vitae vel elit sit at tellus
-                                faucibus malesuada sagittis. Enim, in amet sed
-                                consectetur nullam risus fringilla ac
-                                aliquam.Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis dignissim cras orci. Pulvinar
-                                non commodo euismod feugiat pharetra quis urna.
-                                Vitae vel elit sit at tellus faucibus malesuada
-                                sagittis. Enim, in amet sed consectetur nullam
-                                risus fringilla ac aliquam.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Venenatis,
-                                adipiscing et aliquam et quis dignissim cras
-                                orci. Pulvinar non commodo euismod feugiat
-                                pharetra quis urna. Vitae vel elit sit at tellus
-                                faucibus malesuada sagittis. Enim, in amet sed
-                                consectetur nullam risus fringilla ac
-                                aliquam.Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis dignissim cras orci. Pulvinar
-                                non commodo euismod feugiat pharetra quis urna.
-                                Vitae vel elit sit at tellus faucibus malesuada
-                                sagittis. Enim, in amet sed consectetur nullam
-                                risus fringilla ac aliquam.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Venenatis,
-                                adipiscing et aliquam et quis dignissim cras
-                                orci. Pulvinar non commodo euismod feugiat
-                                pharetra quis urna. Vitae vel elit sit at tellus
-                                faucibus malesuada sagittis. Enim, in amet sed
-                                consectetur nullam risus fringilla ac
-                                aliquam.Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis dignissim cras orci. Pulvinar
-                                non commodo euismod feugiat pharetra quis urna.
-                                Vitae vel elit sit at tellus faucibus malesuada
-                                sagittis. Enim, in amet sed consectetur nullam
-                                risus fringilla ac aliquam.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Venenatis,
-                                adipiscing et aliquam et quis dignissim cras
-                                orci. Pulvinar non commodo euismod feugiat
-                                pharetra quis urna. Vitae vel elit sit at tellus
-                                faucibus malesuada sagittis. Enim, in amet sed
-                                consectetur nullam risus fringilla ac
-                                aliquam.Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis m.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis dignissim cras orci. Pulvinar
-                                non commodo euismod feugiat pharetra quis urna.
-                                Vitae vel elit sit at tellus faucibus malesuada
-                                sagittis. Enim, in amet sed consectetur nullam
-                                risus fringilla ac aliquam.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Venenatis,
-                                adipiscing et aliquam et quis dignissim cras
-                                orci. Pulvinar non commodo euismod feugiat
-                                pharetra quis urna. Vitae vel elit sit at tellus
-                                faucibus malesuada sagittis. Enim, in amet sed
-                                consectetur nullam risus fringilla ac
-                                aliquam.Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis dignissim cras orci. Pulvinar
-                                non commodo euismod feugiat pharetra quis urna.
-                                Vitae vel elit sit at tellus faucibus malesuada
-                                sagittis. Enim, in amet sed consectetur nullam
-                                risus fringilla ac aliquam.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Venenatis,
-                                adipiscing et aliquam et quis dignissim cras
-                                orci. Pulvinar non commodo euismod feugiat
-                                pharetra quis urna. Vitae vel elit sit at tellus
-                                faucibus malesuada sagittis. Enim, in amet sed
-                                consectetur nullam risus fringilla ac
-                                aliquam.Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis dignissim cras orci. Pulvinar
-                                non commodo euismod feugiat pharetra quis urna.
-                                Vitae vel elit sit at tellus faucibus malesuada
-                                sagittis. Enim, in amet sed consectetur nullam
-                                risus fringilla ac aliquam.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Venenatis,
-                                adipiscing et aliquam et quis dignissim cras
-                                orci. Pulvinar non commodo euismod feugiat
-                                pharetra quis urna. Vitae vel elit sit at tellus
-                                faucibus malesuada sagittis. Enim, in amet sed
-                                consectetur nullam risus fringilla ac
-                                aliquam.Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis dignissim cras orci. Pulvinar
-                                non commodo euismod feugiat pharetra quis urna.
-                                Vitae vel elit sit at tellus faucibus malesuada
-                                sagittis. Enim, in amet sed consectetur nullam
-                                risus fringilla ac aliquam.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Venenatis,
-                                adipiscing et aliquam et quis dignissim cras
-                                orci. Pulvinar non commodo euismod feugiat
-                                pharetra quis urna. Vitae vel elit sit at tellus
-                                faucibus malesuada sagittis. Enim, in amet sed
-                                consectetur nullam risus fringilla ac
-                                aliquam.Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Venenatis, adipiscing et
-                                aliquam et quis m.
-                            </p>
+                            <p
+                                dangerouslySetInnerHTML={{
+                                    __html: singleBlog?.body
+                                }}
+                            ></p>
                         </div>
                     </Col>
                 </Row>

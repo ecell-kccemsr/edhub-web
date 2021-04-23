@@ -87,14 +87,31 @@ const Login = () => {
                                 Don't have an account?{" "}
                                 <Link to="/register">Get Started</Link>
                             </p>
-                            <p className="register-login-link"> Login With Your Social Account</p>
-                            <div style={{marginLeft:"40%"}}>
-                                <a href="/login/Facebook/redirect" target="_blank">
-                                <img className="social-sign-in" src={facebookLogo} alt="signInFacebook" />
-                            </a>
-                            <a href="/login/google/redirect" target="_blank">
-                                <img className="social-sign-in" src={signInGoogle} alt="signInGoogle"/>
-                            </a>
+                            <p className="register-login-link">
+                                {" "}
+                                Login With Your Social Account
+                            </p>
+                            <div style={{ marginLeft: "40%" }}>
+                                <a
+                                    href="/login/Facebook/redirect"
+                                    target="_blank"
+                                >
+                                    <img
+                                        className="social-sign-in"
+                                        src={facebookLogo}
+                                        alt="signInFacebook"
+                                    />
+                                </a>
+                                <a
+                                    href="/login/google/redirect"
+                                    target="_blank"
+                                >
+                                    <img
+                                        className="social-sign-in"
+                                        src={signInGoogle}
+                                        alt="signInGoogle"
+                                    />
+                                </a>
                             </div>
                         </form>
                     </Col>

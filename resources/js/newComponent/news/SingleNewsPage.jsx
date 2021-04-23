@@ -12,7 +12,6 @@ const SingleNewsPage = props => {
             axios
                 .get(`/api/news/${news_slug}`)
                 .then(res => {
-                    console.log(res);
                     setcategorynews(res.data.data);
                 })
                 .catch(err => {

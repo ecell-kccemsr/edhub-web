@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 import BlogCard from "../../components/blogcard/BlogCard";
 import udemy from "../../Images/blogs/udemy.png";
+import axios from "axios";
 
 const BlogHomepage = () => {
+    const [blog, setBlogs] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get("/api/blogs")
+            .then(res => {
+                setBlogs(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
     return (
         <div className="blog-section">
             <Container>
                 <Row>
                     <Col sm="12" md="8" lg="9">
-                        <BlogCard tags={false} />
+                        {blog &&
+                            blog?.length > 0 &&
+                            blog?.map(b => (
+                                <BlogCard
+                                    tags={true}
+                                    data={b}
+                                    toUrl={`/blog/${b.slug}`}
+                                />
+                            ))}
                     </Col>
                     <Col sm="12" md="4" lg="3">
                         <div className="blog-sidebar">

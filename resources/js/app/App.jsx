@@ -40,6 +40,8 @@ import NewsHomePage from "../newComponent/news/NewsHomePage";
 import SingleNewsPage from "../newComponent/news/SingleNewsPage";
 import prevQPaperHomepage from "../newComponent/prevQPaper/prevQPaperHomepage";
 import prevQPaperSingleDataPage from "../newComponent/prevQPaper/prevQPaperSingleDataPage";
+import BlogHomepage from "../newComponent/blogs/BlogHomepage";
+import SingleBlog from "../newComponent/blogs/SingleBlog";
 
 const App = props => {
     const setUser = useStoreActions(actions => actions.setUser);
@@ -84,6 +86,7 @@ const App = props => {
                     component={Questionpaper2}
                 /> */}
 
+                {/*CourseLayoutRoutes */}
                 <CourseLayoutRoutes
                     path="/questionpaper"
                     exact
@@ -106,12 +109,22 @@ const App = props => {
                     component={SingleNewsPage}
                 />
 
-                <JobLayoutRoute
+                <CourseLayoutRoutes
                     path="/exam/calendar"
                     exact
                     component={Examcalendar}
                 />
-                {/*CourseLayoutRoutes */}
+                <CourseLayoutRoutes
+                    path="/blogs"
+                    exact
+                    component={BlogHomepage}
+                />
+                <CourseLayoutRoutes
+                    path="/blog/:blog_slug"
+                    exact
+                    component={SingleBlog}
+                />
+
                 <CourseLayoutRoutes
                     path="/profile/basic"
                     exact
