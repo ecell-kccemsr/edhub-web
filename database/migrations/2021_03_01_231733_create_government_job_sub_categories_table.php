@@ -18,6 +18,7 @@ class CreateGovernmentJobSubCategoriesTable extends Migration
             $table->string('name');
             $table->unsignedInteger('category_id');
             $table->string('slug')->unique();
+            $table->string('image')->nullable();
             $table->string('seo_keywords')->nullable();
             $table->longText('seo_description')->nullable();
             $table->timestamps();

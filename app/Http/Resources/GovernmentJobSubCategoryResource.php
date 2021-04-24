@@ -19,6 +19,7 @@ class GovernmentJobSubCategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'category' => new GovernmentJobCategoryResource($this->category),
+            'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
