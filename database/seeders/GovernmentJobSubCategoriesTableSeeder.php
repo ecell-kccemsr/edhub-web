@@ -23,6 +23,7 @@ class GovernmentJobSubCategoriesTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'HDFC Bank',
+                'image' => ' ',
                 'category_id' => 1,
                 'slug' => 'hdfc-bank',
                 'created_at' => '2021-03-10 18:44:53',
