@@ -98,7 +98,7 @@ Route::get('/testimonies/{testimony}',[TestimonyController::class,'show']);
 Route::get('/blogs',[BlogController::class,'get']);
 Route::get('/blogs/{blog}',[BlogController::class,'show']);
 Route::group(['middleware' => 'auth:api'], function() {
-  Route::get('/blogs/{blog}/like/toggle',[BlogController::class,'toggleLike']);
+  Route::post('/blogs/{blog}/like/toggle',[BlogController::class,'toggleLike']);
   Route::get('/blogs/{blog}/comments',[BlogController::class,'getComments']);
   Route::post('/blogs/{blog}/comments',[BlogController::class,'addComment']);
 });

@@ -1,70 +1,254 @@
 html {
     scroll-behavior: smooth;
 }
-// Government-Job-Section
-.government-section {
-    padding: 50px 150px 30px;
 
-    .government-top-card-header {
-        color: #4f4f4f;
-        text-transform: capitalize;
-        font-size: 24px;
-    }
-
-    .government-top-card {
-        background-color: #fff;
-        box-shadow: 0px 4px 8px -1px #8888;
-        padding: 20px 25px;
-
-        .category-button {
-            background: #f8f8f8;
-            border-radius: 5px;
-            padding: 20px 10px 15px;
-            box-shadow: 0px 5px 8px -5px #ee6f57;
-            text-align: center;
-            margin-bottom: 28px;
-            margin-left: 20px;
-
-            .category-button-img {
-                object-fit: cover;
-                height: 50px;
-                width: 50px;
+//  Job New
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+.job-page {
+    background-color: #f8f8f8;
+    padding: 30px 50px;
+    .job-hero-section {
+        background: url("../js/Images/Jobs/heroBg.png");
+        background-size: cover;
+        background-position: center;
+        padding: 50px 60px 100px;
+        border-radius: 50px;
+        margin-bottom: 50px;
+        .job-hero-section-top {
+            background-color: #706a6459;
+            display: inline-block;
+            border-radius: 20px;
+            color: white;
+            padding: 10px;
+            .job-top-button {
+                background-color: #f05454;
+                padding: 5px;
+                border-radius: 10px;
+                font-family: "Poppins", sans-serif;
             }
-
-            .category-btn-link,
-            .category-btn-link:hover {
-                text-decoration: none;
-                color: #333;
-                text-transform: capitalize;
+            .job-top-text {
+                padding: 6px;
+                font-family: "Poppins", sans-serif;
+                font-size: 16px;
             }
         }
+        .job-hero-section-main-text {
+            color: white;
+            font-family: "Margarine", cursive;
+            font-weight: 400;
+            font-size: 50px;
+            margin: 40px 0 30px;
+            letter-spacing: 2px;
+        }
+        .job-hero-section-sub-text {
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-size: 24px;
+        }
+        .job-hero-section-input-box {
+            position: relative;
+            margin-top: 20px;
+            display: inline-block;
+            input {
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                padding: 15px 30px 15px 10px;
+                min-width: 300px;
+            }
+            button {
+                position: absolute;
+                background: #f05454;
+                border: none;
+                outline: none;
+                padding: 10px 15px;
+                color: #fff;
+                border-radius: 10px;
+                right: 5px;
+                top: 5px;
+            }
+        }
+    }
+    .job-tabs-section {
+        padding: 20px;
+        background: #fff;
+        .job-tab-header-text {
+            color: #00b862;
+            text-align: center;
+        }
+        .nav-link {
+            border: none;
+            font-weight: 500;
+            color: #666666;
+        }
+        .nav-link.active {
+            border-bottom: 2px solid #00b862;
+            color: #00b862;
+        }
+        .job-tab-content {
+            padding: 20px 0;
+            .job-tab-el {
+                border: 1px solid #dadada;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                img {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .popular-choice-section {
+        padding: 40px 30px 30px 30px;
+        .popular-choice-header {
+            font-family: "Poppins", sans-serif;
+            font-size: 28px;
+            color: #1f1f1e;
+        }
+        .popular-choice-sub-section {
+            justify-content: space-between;
+
+            .popular-choice-content {
+                color: #1f1f1e;
+                font-family: "Poppins", sans-serif;
+                font-size: 20px;
+            }
+            .popular-choice-btn-container {
+                text-align: right;
+
+                .popular-choice-btn {
+                    padding: 10px 60px;
+                    background-color: #f05454;
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    border: none;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .landingpage-popular-card-carousel {
+        padding: 0px 40px 0px 40px;
+        .slick-dots {
+            display: none !important;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: "slick";
+            font-size: 20px;
+            line-height: 1;
+            opacity: 0.75;
+            color: black;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 35px;
+            margin: -9px;
+        }
+        .carousel-slider-div {
+            display: flex !important;
+            justify-content: center;
+        }
+    }
+}
+@media only screen and (max-width: 775px) {
+    .heroBg-img {
+        display: none;
     }
 }
 
 // Government-SubCategory
 .government-section {
-    padding: 50px 150px 30px;
+    padding: 50px 60px 30px;
     color: rgb(70, 70, 70);
-    .goverment-btn-section {
-        display: flex;
-        justify-content: space-around;
-        box-shadow: 0px 5px 4px 0px #bebcbc;
-        border-radius: 10px;
-        background: #f8f8f8;
-        padding: 20px;
+    .left-sidebar {
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0px 2px 6px 0px #b5b5b5;
+        h4 {
+            padding: 10px;
+        }
+        .job-detail-accordion {
+            .card {
+                margin: 2px 0;
+                padding: 0;
+                background: #efefef;
+                border-radius: 0;
 
-        .job-single-btn {
-            width: 100%;
-            margin: 5px;
-            border: none;
-            outline: none;
-            text-decoration: none;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #ffb342;
-            border-radius: 8px;
+                .job-detail-card-headerlink {
+                    color: #333333;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                .card-body {
+                    background: #fff;
+                    .courseContent-list {
+                        color: #333;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .job-course-sidebar {
+        padding: 20px;
+        background: #fffbfc;
+        border-radius: 6px;
+        box-shadow: 0px 2px 6px 0px #b5b5b5;
+        h6 {
+            color: #333333;
+            font-weight: 700;
+        }
+        hr {
+            border-color: #c4c4c4;
+        }
+        .job-course-sidebar-list-el {
+            .sidebar-list-top {
+                display: flex;
+                align-items: flex-start;
+                i {
+                    color: #f05454;
+                    margin-right: 3px;
+                    margin-top: 2px;
+                }
+                p {
+                    color: #585858;
+                }
+            }
+
+            .job-course-sidebar-pricesection {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                img {
+                    object-fit: contain;
+                    max-width: 60px;
+                }
+            }
+        }
+    }
+    .govrnment-job-detail {
+        font-weight: 600;
+        font-size: 12px;
+        text-align: center;
+        padding: 12px;
+        color: #4e4e4e;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        &:hover {
+            color: #f05454;
+            font-size: 16px;
+            border-bottom: 2px solid #f05454;
         }
     }
     .content-bankjoblast {

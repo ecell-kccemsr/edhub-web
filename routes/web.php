@@ -38,8 +38,8 @@ Route::view('/blog/{blog_slug}', 'app');
 
 
 Route::view('/govermentjobs', 'app');
-Route::view('/govermentjobs/{category_slug}', 'app');
-Route::view('/govermentjobs/{category_slug}/{subcategory_slug}/{slug}', 'app');
+// Route::view('/govermentjobs/{category_slug}', 'app');
+Route::view('/govermentjobs/next', 'app');
 
 
 

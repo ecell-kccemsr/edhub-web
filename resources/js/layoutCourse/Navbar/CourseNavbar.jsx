@@ -224,7 +224,7 @@ const CourseNavbar = props => {
                 </div>
             </Modal>
             <nav className="navbar course-navbar navbar-expand-lg">
-                <div className="container" style={{marginLeft:"65px"}}>
+                <div className="container" >
                     <Link className="navbar-brand" to="/landingPage">
                         <img src={edhub1} alt="Eduhub" />
                     </Link>
@@ -405,7 +405,7 @@ const CourseNavbar = props => {
                             </li>
                         </ul>
 
-                        <ul className="navbar-nav" style={{marginLeft:"550px"}}>
+                        <ul className="navbar-nav ms-auto" >
                             <li className="nav-item">
                                 <Link className="nav-link courseNavLink" to="#">
                                     News

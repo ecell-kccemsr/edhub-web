@@ -1,92 +1,85 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import {
-    ButtonDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    Row,
-    Col,
-    List,
-    Button,
-    Form,
-    FormGroup,
-    Label,
-    Input,
-    FormText,
-    Table
-} from "reactstrap";
-import BreadCrumb from "../components/breadcrumb/BreadCrumb";
-import LinkCard from "../components/link-card/LinkCard";
+import { Col, Container, Row, List, Progress, Button, Nav, NavItem, NavLink  } from "reactstrap";
+import { v4 as uuidv4 } from "uuid";
+import udemy from "../Images/blogs/udemy.png";
+import GovernmentjobAccordion from "./GovernmentjobAccordation";
 
 function Governmentjobsubcategory(props) {
-    const [categoryJobs, setCategoryJobs] = useState([]);
+    const [categories, setCategory] = useState([]);
     const [categoryslug, setCategorySlug] = useState("");
-    const [subcategoryslug, setSubSlug] = useState("");
-    const [slug, setSlug] = useState("");
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        const { category_slug } = props.match.params;
-        const { subcategory_slug } = props.match.params;
-        const { slug } = props.match.params;
-        setCategorySlug(category_slug);
-        setSubSlug(subcategory_slug);
-        setSlug(slug);
-
-        axios.get("/api/government_jobs/sub_categories").then(res => {
-            const cats = res.data.data.filter(c => c.slug == subcategory_slug);
-            if (cats.length > 0) {
-                axios
-                    .get(`/api/government_jobs?subcategory_id=${cats[0].id}`)
-
-                    .then(res => {
-                        setCategoryJobs(
-                            res.data.data.filter(c => c.slug == slug)[0]
-                        );
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
-            }
-        });
-
         axios
             .get("/api/government_jobs")
             .then(res => {
                 setJobs(res.data.data);
+                console.log(res.data.data);
             })
             .catch(err => {
                 console.log(err);
             });
+            axios
+            .get("/api/government_jobs/categories")
+            .then(res => setCategory(res.data.data)
+            )
+            .catch(err => console.log(err));
     }, []);
+    const dummyAccordionData = [
+        {
+            id: uuidv4(),
+            title: "Bank Jobs",
+            slug: "bankjobs",
+            children: [
+                {
+                    id: uuidv4(),
+                    title: "HDFC Bank Jobs",
+                    slug: "hdfc"
+                },
+                {
+                    id: uuidv4(),
+                    title: "SBI Jobs",
+                    slug: "sbi"
+                }
+            ]
+        },
+        {
+            id: uuidv4(),
+            title: "Judiciary Jobs",
+            slug: "judiciaryjobs",
+            children: [
+                {
+                    id: uuidv4(),
+                    title: "HDFC Bank Jobs",
+                    slug: "hdfc"
+                },
+                {
+                    id: uuidv4(),
+                    title: "SBI Jobs",
+                    slug: "sbi"
+                }
+            ]
+        }
+    ];
+    
     return (
         <>
             <div className="government-section">
-                {/* BreadCrumb */}
-                <BreadCrumb
-                    navData={[
-                        {
-                            title: "Home",
-                            link: "/"
-                        },
-                        {
-                            title: "Jobs",
-                            link: "/govermentjobs"
-                        },
-                        {
-                            title: `${categoryslug}`,
-                            link: `/govermentjobs/${categoryslug}`
-                        },
-                        {
-                            title: `${subcategoryslug}`,
-                            link: `/govermentjobs/${categoryslug}/${subcategoryslug}`,
-                            active: true
-                        }
-                    ]}
-                />
-                {categoryslug && (
+                
+
+                
+               
+
+                <Row>
+                    <Col sm="12" lg="3">
+                        <div className="left-sidebar">
+                            <h4>JOBS</h4>
+                            <GovernmentjobAccordion data={dummyAccordionData} />
+                        </div>
+                    </Col>
+                    <Col sm="12" lg="6">
+                    {categoryslug && (
                     <h5
                         style={{
                             color: "#4F4F4F",
@@ -96,71 +89,40 @@ function Governmentjobsubcategory(props) {
                         {categoryslug}
                     </h5>
                 )}
-                <div className="government-job-subcategory-details">
-                    <h3 className="title-bank-last">{categoryJobs.title}</h3>
-                    <section className="government-job-subcategory-section">
-                        <div className="d-flex  goverment-btn-section mb-2">
-                            <div className="job-single-btn">
-                                <p style={{ fontSize: "18px" }}>
-                                    <a href="#one" style={{ color: "white" }}>
-                                        Salary & <br /> job positions
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="job-single-btn">
-                                <p style={{ fontSize: "18px" }}>
-                                    <a href="#two" style={{ color: "white" }}>
-                                        Eligibility <br /> Criteria
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="job-single-btn">
-                                <p style={{ fontSize: "18px" }}>
-                                    <a href="#three" style={{ color: "white" }}>
-                                        Syllabus
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="job-single-btn">
-                                <p style={{ fontSize: "18px" }}>
-                                    <a href="#four" style={{ color: "white" }}>
-                                        Exam Pattern
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="job-single-btn">
-                                <p style={{ fontSize: "18px" }}>
-                                    <a href="#five" style={{ color: "white" }}>
-                                        Cutoff
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="job-single-btn">
-                                <p style={{ fontSize: "18px" }}>
-                                    <a href="#six" style={{ color: "white" }}>
-                                        Apply Online
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="job-single-btn">
-                                <p style={{ fontSize: "18px" }}>
-                                    <a href="#seven" style={{ color: "white" }}>
-                                        Admit Card
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="job-single-btn">
-                                <p style={{ fontSize: "18px" }}>
-                                    <a href="#eight" style={{ color: "white" }}>
-                                        Prev Year <br /> que.papers
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
+                          <div className="government-job-subcategory-details">
+                              
+                    <h3 className="title-bank-last">{jobs.title}</h3>
+                    <Container className="containerClass">
+            <Nav>
+        <NavItem>
+          <NavLink className="govrnment-job-detail" href="#Overview">Description</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="govrnment-job-detail" href="#one">Salary and <br/> Job positions</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="govrnment-job-detail" href="#two"> Eligibility</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="govrnment-job-detail" href="#three"> Apply Online</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="govrnment-job-detail" href="#four"> Admit card </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="govrnment-job-detail" href="#five"> Syllabus</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="govrnment-job-detail" href="#six"> Pattern</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink className="govrnment-job-detail" href="#seven"> Results</NavLink>
+        </NavItem>
+      </Nav>
+</Container>
                     <div className="content-bankjoblast">
                         <img
-                            src={categoryJobs.image}
+                            src={jobs.image}
                             className="subcategory-image"
                             style={{
                                 maxWidth: "100%",
@@ -179,7 +141,7 @@ function Governmentjobsubcategory(props) {
                                 <div
                                     dangerouslySetInnerHTML={{
                                         __html:
-                                            categoryJobs.salary_and_job_positions
+                                        jobs.salary_and_job_positions
                                     }}
                                 ></div>
                             </h5>
@@ -191,7 +153,7 @@ function Governmentjobsubcategory(props) {
                                 <div
                                     dangerouslySetInnerHTML={{
                                         __html:
-                                            categoryJobs.eligibility_criteria
+                                        jobs.eligibility_criteria
                                     }}
                                 ></div>
                             </h5>
@@ -202,7 +164,7 @@ function Governmentjobsubcategory(props) {
                                 Syllabus <br />
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: categoryJobs.syllabus
+                                        __html: jobs.syllabus
                                     }}
                                 ></div>
                             </h5>
@@ -213,7 +175,7 @@ function Governmentjobsubcategory(props) {
                                 Exam Pattern <br />
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: categoryJobs.exam_pattern
+                                        __html: jobs.exam_pattern
                                     }}
                                 ></div>
                             </h5>
@@ -224,7 +186,7 @@ function Governmentjobsubcategory(props) {
                                 Cutoff <br />
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: categoryJobs.cutoff
+                                        __html: jobs.cutoff
                                     }}
                                 ></div>
                             </h5>
@@ -235,7 +197,7 @@ function Governmentjobsubcategory(props) {
                                 Apply Online <br />
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: categoryJobs.apply_online
+                                        __html: jobs.apply_online
                                     }}
                                 ></div>
                             </h5>
@@ -246,24 +208,36 @@ function Governmentjobsubcategory(props) {
                                 Admit Card <br />
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: categoryJobs.admit_card
+                                        __html: jobs.admit_card
                                     }}
                                 ></div>
                             </h5>
                         </div>
                     </div>
-                    {jobs && jobs.length > 0 && (
-                        <LinkCard
-                            title="Related Notifications and Jobs For you"
-                            data={jobs}
-                            background={true}
-                            customPadding="0px"
-                            customMargin="50px 0 0"
-                            toggleTrue={true}
-                            governmentJobURL={true}
-                        />
-                    )}
+                   
                 </div>
+                    </Col>
+                    <Col sm="12" lg="3">
+                        <div className="job-course-sidebar">
+                            <h6>Recent Courses</h6>
+
+                            <div className="job-course-sidebar-list-el">
+                                <div className="sidebar-list-top">
+                                    <i className="fas fa-chevron-right"></i>
+                                    <p>
+                                        JPMorgan CEO Jamie Dimon shares his
+                                        thoughts on remote work
+                                    </p>
+                                </div>
+                                <div className="job-course-sidebar-pricesection">
+                                    <p>$250</p>
+                                    <img src={udemy} alt="Udemy" />
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+         
             </div>
         </>
     );
