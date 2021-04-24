@@ -323,7 +323,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-03-21 12:37:38',
-                'updated_at' => '2021-03-22 18:10:30',
+                'updated_at' => '2021-04-24 16:12:16',
             ),
             17 => 
             array (
@@ -450,6 +450,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-04-23 16:03:56',
                 'updated_at' => '2021-04-23 16:33:48',
+            ),
+            24 => 
+            array (
+                'id' => 29,
+                'name' => 'question_paper_sub_categories',
+                'slug' => 'question-paper-sub-categories',
+                'display_name_singular' => 'Question Paper Sub Category',
+                'display_name_plural' => 'Question Paper Sub Categories',
+                'icon' => 'voyager-company',
+                'model_name' => 'App\\Models\\QuestionPaperSubCategory',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-04-24 16:05:52',
+                'updated_at' => '2021-04-24 16:08:15',
             ),
         ));
         

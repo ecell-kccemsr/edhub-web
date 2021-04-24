@@ -1067,6 +1067,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-04-23 16:03:56',
                 'updated_at' => '2021-04-23 16:03:56',
             ),
+            131 => 
+            array (
+                'id' => 142,
+                'key' => 'browse_question_paper_sub_categories',
+                'table_name' => 'question_paper_sub_categories',
+                'created_at' => '2021-04-24 16:05:52',
+                'updated_at' => '2021-04-24 16:05:52',
+            ),
+            132 => 
+            array (
+                'id' => 143,
+                'key' => 'read_question_paper_sub_categories',
+                'table_name' => 'question_paper_sub_categories',
+                'created_at' => '2021-04-24 16:05:52',
+                'updated_at' => '2021-04-24 16:05:52',
+            ),
+            133 => 
+            array (
+                'id' => 144,
+                'key' => 'edit_question_paper_sub_categories',
+                'table_name' => 'question_paper_sub_categories',
+                'created_at' => '2021-04-24 16:05:52',
+                'updated_at' => '2021-04-24 16:05:52',
+            ),
+            134 => 
+            array (
+                'id' => 145,
+                'key' => 'add_question_paper_sub_categories',
+                'table_name' => 'question_paper_sub_categories',
+                'created_at' => '2021-04-24 16:05:52',
+                'updated_at' => '2021-04-24 16:05:52',
+            ),
+            135 => 
+            array (
+                'id' => 146,
+                'key' => 'delete_question_paper_sub_categories',
+                'table_name' => 'question_paper_sub_categories',
+                'created_at' => '2021-04-24 16:05:52',
+                'updated_at' => '2021-04-24 16:05:52',
+            ),
         ));
         
         

@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class QuestionPaperCategoryResource extends JsonResource
+class QuestionPaperSubCategoryResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +16,9 @@ class QuestionPaperCategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'question_paper_category_id' => $this->question_paper_category_id,
             'name' => $this->name,
-            'sub_categories' => QuestionPaperSubCategoryResource::collection($this->sub_categories),
+            'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,

@@ -6,12 +6,12 @@ use App\Traits\HasSlug;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class QuestionPaperCategory extends Model
+class QuestionPaperSubCategory extends Model
 {
     use HasFactory, HasSlug;
 
-    public function sub_categories()
+    public function category()
     {
-        return $this->hasMany('App\Models\QuestionPaperSubCategory','question_paper_category_id');
+        return $this->belongsTo('App\Models\QuestionPaperCategory','question_paper_category_id');
     }
 }

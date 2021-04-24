@@ -531,6 +531,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.blogs.index',
                 'parameters' => NULL,
             ),
+            32 => 
+            array (
+                'id' => 35,
+                'menu_id' => 1,
+                'title' => 'Question Paper Sub Categories',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-company',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 28,
+                'created_at' => '2021-04-24 16:05:52',
+                'updated_at' => '2021-04-24 16:05:52',
+                'route' => 'voyager.question-paper-sub-categories.index',
+                'parameters' => NULL,
+            ),
         ));
         
         
