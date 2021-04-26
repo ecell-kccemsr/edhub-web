@@ -71,6 +71,7 @@ Route::get('/examcalendar/{exam_calendar}',[ExamCalendarController::class,'show'
 //Question Paper
 Route::get('/questionpapers',[QuestionPaperController::class,'get']);
 Route::get('/questionpapers/categories',[QuestionPaperController::class,'categories']);
+Route::get('/questionpapers/sub_categories',[QuestionPaperController::class,'sub_categories']);
 Route::get('/questionpapers/{question_paper}',[QuestionPaperController::class,'show']);
 
 //ExamResult

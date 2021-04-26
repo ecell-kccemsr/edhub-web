@@ -12,6 +12,6 @@ class QuestionPaperCategory extends Model
 
     public function sub_categories()
     {
-        return $this->hasMany('App\Models\QuestionPaperSubCategory','question_paper_category_id');
+        return $this->hasMany('App\Models\QuestionPaperSubCategory','category_id');
     }
 }

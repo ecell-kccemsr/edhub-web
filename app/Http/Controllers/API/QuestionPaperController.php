@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\QuestionPaper;
 use App\Http\Controllers\Controller;
 use App\Models\QuestionPaperCategory;
+use App\Models\QuestionPaperSubCategory;
 use App\Http\Resources\QuestionPaperResource;
 use App\Http\Resources\QuestionPaperResourceCollection;
+use App\Http\Resources\QuestionPaperSubCategoryResource;
 use App\Http\Resources\QuestionPaperCategoryResourceCollection;
 
 /**
@@ -59,8 +61,19 @@ class QuestionPaperController extends Controller
      */
     public function categories(Request $request)
     {
-        $question_paper_categories = QuestionPaperCategory::paginate($request->input('per_page', 10));
+        $question_paper_categories = QuestionPaperSubCategory::paginate($request->input('per_page', 10));
         return new QuestionPaperCategoryResourceCollection($question_paper_categories);
+    }
+
+    public function sub_categories(Request $request)
+    {
+        $question_paper_subcategories = QuestionPaperSubCategory::query();
+        if($request->has('category_id'))
+        {
+            $question_paper_subcategories = $question_paper_subcategories->where('category_id',$request->input('category_id'));
+        }
+        $question_paper_subcategories = $question_paper_subcategories->paginate($request->input('per_page', 10));
+        return QuestionPaperSubCategoryResource::collection($question_paper_subcategories);
     }
 
     /**

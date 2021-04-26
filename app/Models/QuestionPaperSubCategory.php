@@ -12,6 +12,6 @@ class QuestionPaperSubCategory extends Model
 
     public function category()
     {
-        return $this->belongsTo('App\Models\QuestionPaperCategory','question_paper_category_id');
+        return $this->belongsTo('App\Models\QuestionPaperCategory','category_id');
     }
 }

@@ -16,7 +16,7 @@ class CreateQuestionPaperSubCategoriesTable extends Migration
         Schema::create('question_paper_sub_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedInteger('question_paper_category_id');
+            $table->unsignedInteger('category_id');
             $table->string('slug')->unique();
             $table->string('seo_keywords')->nullable();
             $table->string('image')->nullable();

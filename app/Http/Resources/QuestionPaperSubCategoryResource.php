@@ -16,7 +16,7 @@ class QuestionPaperSubCategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'question_paper_category_id' => $this->question_paper_category_id,
+            'category_id' => $this->category_id,
             'name' => $this->name,
             'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
             'created_at' => $this->created_at,
