@@ -56,7 +56,7 @@ function Govermentjob() {
             setsubCategoryFilter(values);
         }
     };
-
+    // console.log(handleTabFilter);
     return (
         <>
             <div className="job-page">
