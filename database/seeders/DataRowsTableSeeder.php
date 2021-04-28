@@ -3445,22 +3445,6 @@ class DataRowsTableSeeder extends Seeder
             ),
             214 => 
             array (
-                'id' => 254,
-                'data_type_id' => 29,
-                'field' => 'question_paper_category_id',
-                'type' => 'number',
-                'display_name' => 'Question Paper Category Id',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{}',
-                'order' => 3,
-            ),
-            215 => 
-            array (
                 'id' => 255,
                 'data_type_id' => 29,
                 'field' => 'slug',
@@ -3475,7 +3459,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 4,
             ),
-            216 => 
+            215 => 
             array (
                 'id' => 256,
                 'data_type_id' => 29,
@@ -3491,7 +3475,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 6,
             ),
-            217 => 
+            216 => 
             array (
                 'id' => 257,
                 'data_type_id' => 29,
@@ -3507,7 +3491,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 5,
             ),
-            218 => 
+            217 => 
             array (
                 'id' => 258,
                 'data_type_id' => 29,
@@ -3523,7 +3507,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 7,
             ),
-            219 => 
+            218 => 
             array (
                 'id' => 259,
                 'data_type_id' => 29,
@@ -3539,7 +3523,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 8,
             ),
-            220 => 
+            219 => 
             array (
                 'id' => 260,
                 'data_type_id' => 29,
@@ -3555,7 +3539,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 9,
             ),
-            221 => 
+            220 => 
             array (
                 'id' => 261,
                 'data_type_id' => 29,
@@ -3568,10 +3552,10 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"model":"App\\\\Models\\\\QuestionPaperCategory","table":"question_paper_categories","type":"belongsTo","column":"question_paper_category_id","key":"id","label":"name","pivot_table":"blogs","pivot":"0","taggable":"0"}',
+                'details' => '{"model":"App\\\\Models\\\\QuestionPaperCategory","table":"question_paper_categories","type":"belongsTo","column":"id","key":"id","label":"name","pivot_table":"blogs","pivot":"0","taggable":"0"}',
                 'order' => 10,
             ),
-            222 => 
+            221 => 
             array (
                 'id' => 262,
                 'data_type_id' => 18,
@@ -3587,7 +3571,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Models\\\\QuestionPaperSubCategory","table":"question_paper_sub_categories","type":"belongsTo","column":"sub_category_id","key":"id","label":"name","pivot_table":"blogs","pivot":"0","taggable":"0"}',
                 'order' => 14,
             ),
-            223 => 
+            222 => 
             array (
                 'id' => 263,
                 'data_type_id' => 18,
@@ -3603,7 +3587,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 8,
             ),
-            224 => 
+            223 => 
             array (
                 'id' => 264,
                 'data_type_id' => 18,
@@ -3619,7 +3603,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 11,
             ),
-            225 => 
+            224 => 
             array (
                 'id' => 265,
                 'data_type_id' => 18,
@@ -3634,6 +3618,22 @@ class DataRowsTableSeeder extends Seeder
                 'delete' => 1,
                 'details' => '{}',
                 'order' => 12,
+            ),
+            225 => 
+            array (
+                'id' => 266,
+                'data_type_id' => 29,
+                'field' => 'category_id',
+                'type' => 'number',
+                'display_name' => 'Category Id',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 3,
             ),
         ));
         
