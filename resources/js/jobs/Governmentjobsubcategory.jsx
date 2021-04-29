@@ -14,11 +14,11 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import udemy from "../Images/blogs/udemy.png";
 import GovernmentjobAccordion from "./GovernmentjobAccordation";
-
+import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 function Governmentjobsubcategory(props) {
     console.log(props);
     const [categories, setCategory] = useState([]);
-
+    const [course, setCourse] = useState([]);
     const [subcategory, setSubCategory] = useState([]);
     useEffect(() => {
         const { slug } = props.match.params;
@@ -33,6 +33,14 @@ function Governmentjobsubcategory(props) {
             .get("/api/government_jobs/categories")
             .then(res => setCategory(res.data.data))
             .catch(err => console.log(err));
+        axios
+            .get("/api/courses")
+            .then(res => {
+                setCourse(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
 
     return (
@@ -151,6 +159,12 @@ function Governmentjobsubcategory(props) {
                                     alt=""
                                 />
                                 <div className="government-job-subcategory-content">
+                                    {course && (
+                                        <PopularChoice
+                                            data={course}
+                                            title="Banking Exams Courses"
+                                        />
+                                    )}
                                     <h5
                                         className="government-job-subcategory-information"
                                         id="one"
