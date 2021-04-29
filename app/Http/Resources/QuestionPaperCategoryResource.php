@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\QuestionPaperSubCategoryResource;
 
 class QuestionPaperCategoryResource extends JsonResource
 {
@@ -17,7 +18,6 @@ class QuestionPaperCategoryResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'sub_categories' => QuestionPaperSubCategoryResource::collection($this->sub_categories),
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
