@@ -159,6 +159,17 @@ function Governmentjobsubcategory(props) {
                                     alt=""
                                 />
                                 <div className="government-job-subcategory-content">
+                                    <h5
+                                        className="government-job-subcategory-information"
+                                        id="one"
+                                    >
+                                        Description <br />
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: subcategory.description
+                                            }}
+                                        ></div>
+                                    </h5>
                                     {course && (
                                         <PopularChoice
                                             data={course}
