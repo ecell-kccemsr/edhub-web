@@ -59,34 +59,21 @@ const App = props => {
                 <Route path="/login" exact component={Login} />
                 <Route path="/register" exact component={Register} />
                 {/* //JobLayoutRoutes */}
+
                 <JobLayoutRoute path="/" exact component={Homepage} />
+
+                {/*CourseLayoutRoutes */}
                 <CourseLayoutRoutes
                     path="/govermentjobs"
                     exact
                     component={Govermentjob}
                 />
-                {/* <JobLayoutRoute
-                    path="/govermentjobs/:category_slug"
-                    exact
-                    component={Governmentjobcategory}
-                /> */}
+
                 <CourseLayoutRoutes
-                    path="/govermentjobs/next"
+                    path="/govermentjobs/:category_slug/:subcategory_slug/:slug"
                     exact
                     component={Governmentjobsubcategory}
                 />
-                {/* <JobLayoutRoute
-                    path="/questionpaper"
-                    exact
-                    component={Questionpaper}
-                />
-                <JobLayoutRoute
-                    path="/questionpaper/:category_slug"
-                    exact
-                    component={Questionpaper2}
-                /> */}
-
-                {/*CourseLayoutRoutes */}
                 <CourseLayoutRoutes
                     path="/questionpaper"
                     exact

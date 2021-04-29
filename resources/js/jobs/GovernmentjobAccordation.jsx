@@ -8,37 +8,36 @@ const GovernmentjobAccordation = ({ data }) => {
                 className="accordion job-detail-accordion"
                 id="job-detailaccordionparent"
             >
-                {data.map(d => (
-                    <>
-                        <div className="card" key={`${d?.slug}`}>
-                            <div id={`heading-${d?.slug}`}>
-                                <h2 className="mb-0">
-                                    <a
-                                        className="btn btn-link job-detail-card-headerlink"
-                                        type="button"
-                                        data-toggle="collapse"
-                                        data-target={`#collapse-${d?.slug}`}
-                                        aria-expanded="true"
-                                        aria-controls={`collapse-${d?.slug}`}
-                                    >
-                                        {d?.title}
-                                        <i
-                                            className="fas fa-chevron-down ml-2"
-                                            style={{
-                                                color: "#000"
-                                            }}
-                                        ></i>
-                                    </a>
-                                </h2>
-                            </div>
+                <>
+                    <div className="card" key={`${data?.slug}`}>
+                        <div id={`heading-${data?.slug}`}>
+                            <h2 className="mb-0">
+                                <a
+                                    className="btn btn-link job-detail-card-headerlink"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target={`#collapse-${data?.slug}`}
+                                    aria-expanded="true"
+                                    aria-controls={`collapse-${data?.slug}`}
+                                >
+                                    {data?.name}
+                                    <i
+                                        className="fas fa-chevron-down ml-2"
+                                        style={{
+                                            color: "#000"
+                                        }}
+                                    ></i>
+                                </a>
+                            </h2>
+                        </div>
 
-                            <div
-                                id={`collapse-${d?.slug}`}
-                                className="collapse "
-                                aria-labelledby={`heading-${d?.slug}`}
-                                data-parent="#job-detailaccordionparent"
-                            >
-                                <div className="card-body">
+                        <div
+                            id={`collapse-${data?.slug}`}
+                            className="collapse "
+                            aria-labelledby={`heading-${data?.slug}`}
+                            data-parent="#job-detailaccordionparent"
+                        >
+                            {/* <div className="card-body">
                                     {d?.children.map(child => (
                                         <List
                                             type="unstyled"
@@ -48,11 +47,10 @@ const GovernmentjobAccordation = ({ data }) => {
                                             {child?.title}
                                         </List>
                                     ))}
-                                </div>
-                            </div>
+                                </div> */}
                         </div>
-                    </>
-                ))}
+                    </div>
+                </>
             </div>
         </>
     );

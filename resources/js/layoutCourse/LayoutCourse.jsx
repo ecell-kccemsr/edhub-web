@@ -5,15 +5,18 @@ import { Link } from "react-router-dom";
 import CourseFooterSubscribe from "./Footer/CourseFooterSubscribe";
 import CourseFooter from "./Footer/CourseFooter";
 import CourseNavbar from "./Navbar/CourseNavbar";
+import ScrollToTop from "../components/scrolltotop/ScrollToTop";
 
 const CourseLayoutRoutes = ({ component: Component, ...rest }) => {
     return (
         <Route
             {...rest}
             render={props => (
-                <LayoutCourse>
-                    <Component {...props} />
-                </LayoutCourse>
+                <ScrollToTop>
+                    <LayoutCourse>
+                        <Component {...props} />
+                    </LayoutCourse>
+                </ScrollToTop>
             )}
         />
     );
