@@ -113,14 +113,14 @@ const CourseCard = ({ data }) => {
                     <div>
                         <img src={star} alt="" />
                         <p>
-                        {data?.rating
-                       .length > 2
-                       ? data?.rating.toString().slice(
-                             0,
-                             2
-                         ) 
+                        {
+                         Math.round(parseFloat
+                            (
+                                data?.rating 
+                            )
+                            )
 
-                       : data?.rating}
+                       }
                                 {" "}
                          Reviews</p>
                     </div>

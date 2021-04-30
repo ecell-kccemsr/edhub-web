@@ -22,6 +22,8 @@ function Govermentjob() {
                     .get("/api/government_jobs/sub_categories")
                     .then(response => {
                         setSubCategory(response.data.data);
+                        console.log("sub_categories", response);
+
                         setsubCategoryFilter(
                             response.data.data.filter(
                                 resp => resp.category.id == res.data.data[0].id
@@ -59,10 +61,11 @@ function Govermentjob() {
 
     return (
         <>
-            <div className="job-page">
+        <div className="governmentjob">
+                <div className="job-page">
                 <div className="job-hero-section">
                     <Row>
-                        <Col xs="6">
+                        <Col md="6">
                             <div className="job-hero-section-top">
                                 <span className="job-top-button">New</span>
                                 <span className="job-top-text">
@@ -91,7 +94,7 @@ function Govermentjob() {
                                 </form>
                             </div>
                         </Col>
-                        <Col xs="6">
+                        <Col md="6" >
                             <img className="heroBg-img" src={heroBg1} alt="" />
                         </Col>
                     </Row>
@@ -157,7 +160,9 @@ function Govermentjob() {
                     />
                 )}
 
-                {course && (
+            </div>
+            
+            {course && (
                     <PopularChoice
                         data={course}
                         title="Banking Exams Courses"
@@ -169,7 +174,8 @@ function Govermentjob() {
                         title="Defence Exams Courses"
                     />
                 )}
-            </div>
+        </div>
+        
         </>
     );
 }

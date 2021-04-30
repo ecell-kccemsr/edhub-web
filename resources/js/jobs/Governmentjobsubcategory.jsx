@@ -51,7 +51,8 @@ function Governmentjobsubcategory(props) {
 
     return (
         <>
-            <div className="government-section">
+        <div className="governmentjob">
+              <div className="government-section">
                 <Row>
                     <Col sm="12" lg="3">
                         <div className="left-sidebar">
@@ -147,7 +148,7 @@ function Governmentjobsubcategory(props) {
                                             href="#seven"
                                         >
                                             {" "}
-                                            Results
+                                            Cutoff
                                         </NavLink>
                                     </NavItem>
                                 </Nav>
@@ -167,21 +168,31 @@ function Governmentjobsubcategory(props) {
                                 <div className="government-job-subcategory-content">
                                     <h5
                                         className="government-job-subcategory-information"
-                                        id="one"
+                                        id="Overview"
                                     >
-                                        Description <br />
-                                        <div
+                                        Description 
+                                        </h5>
+                                        <h5 
+                                        className="government-job-subcategory-information-para"
+                                        >
+                                            <div
                                             dangerouslySetInnerHTML={{
                                                 __html: subcategory.description
                                             }}
                                         ></div>
-                                    </h5>
+                                        </h5>
+                                        
+                                    
                                  
                                     <h5
                                         className="government-job-subcategory-information"
                                         id="one"
                                     >
-                                        Salary and Job Position <br />
+                                        Salary and Job Position 
+                                        </h5>
+                                        <h5 
+                                        className="government-job-subcategory-information-para"
+                                        >
                                         <div
                                             dangerouslySetInnerHTML={{
                                                 __html:
@@ -193,7 +204,11 @@ function Governmentjobsubcategory(props) {
                                         className="government-job-subcategory-information"
                                         id="two"
                                     >
-                                        Eligibility Criteria <br />
+                                        Eligibility Criteria 
+                                        </h5>
+                                        <h5 
+                                        className="government-job-subcategory-information-para"
+                                        >
                                         <div
                                             dangerouslySetInnerHTML={{
                                                 __html:
@@ -205,40 +220,11 @@ function Governmentjobsubcategory(props) {
                                         className="government-job-subcategory-information"
                                         id="three"
                                     >
-                                        Syllabus <br />
-                                        <div
-                                            dangerouslySetInnerHTML={{
-                                                __html: subcategory.syllabus
-                                            }}
-                                        ></div>
-                                    </h5>
-                                    <h5
-                                        className="government-job-subcategory-information"
-                                        id="four"
-                                    >
-                                        Exam Pattern <br />
-                                        <div
-                                            dangerouslySetInnerHTML={{
-                                                __html: subcategory.exam_pattern
-                                            }}
-                                        ></div>
-                                    </h5>
-                                    <h5
-                                        className="government-job-subcategory-information"
-                                        id="five"
-                                    >
-                                        Cutoff <br />
-                                        <div
-                                            dangerouslySetInnerHTML={{
-                                                __html: subcategory.cutoff
-                                            }}
-                                        ></div>
-                                    </h5>
-                                    <h5
-                                        className="government-job-subcategory-information"
-                                        id="six"
-                                    >
-                                        Apply Online <br />
+                                        Apply Online 
+                                         </h5>
+                                        <h5 
+                                        className="government-job-subcategory-information-para"
+                                        >
                                         <div
                                             dangerouslySetInnerHTML={{
                                                 __html: subcategory.apply_online
@@ -247,15 +233,66 @@ function Governmentjobsubcategory(props) {
                                     </h5>
                                     <h5
                                         className="government-job-subcategory-information"
-                                        id="seven"
+                                        id="four"
                                     >
-                                        Admit Card <br />
+                                        Admit Card 
+                                         </h5>
+                                        <h5 
+                                        className="government-job-subcategory-information-para"
+                                        >
                                         <div
                                             dangerouslySetInnerHTML={{
                                                 __html: subcategory.admit_card
                                             }}
                                         ></div>
                                     </h5>
+                                    <h5
+                                        className="government-job-subcategory-information"
+                                        id="five"
+                                    >
+                                        Syllabus 
+                                         </h5>
+                                        <h5 
+                                        className="government-job-subcategory-information-para"
+                                        >
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: subcategory.syllabus
+                                            }}
+                                        ></div>
+                                    </h5>
+                                    <h5
+                                        className="government-job-subcategory-information"
+                                        id="six"
+                                    >
+                                        Exam Pattern 
+                                         </h5>
+                                        <h5 
+                                        className="government-job-subcategory-information-para"
+                                        >
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: subcategory.exam_pattern
+                                            }}
+                                        ></div>
+                                    </h5>
+                                    <h5
+                                        className="government-job-subcategory-information"
+                                        id="seven"
+                                    >
+                                        Cutoff 
+                                         </h5>
+                                        <h5 
+                                        className="government-job-subcategory-information-para"
+                                        >
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: subcategory.cutoff
+                                            }}
+                                        ></div>
+                                    </h5>
+                                   
+                                   
                                 </div>
                             </div>
                            
@@ -303,13 +340,16 @@ function Governmentjobsubcategory(props) {
                         
                     </Col>
                 </Row>
-                {course && (
+              
+            </div>
+            {course && (
                                         <PopularChoice
                                             data={course}
                                             title="Banking Exams Courses"
                                         />
                                     )}
-            </div>
+        </div>
+          
         </>
     );
 }

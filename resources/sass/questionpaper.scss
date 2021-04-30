@@ -1,41 +1,95 @@
 //Previous Year QPaper Homepage
-.prevQpaper-section {
-    padding: 50px 0;
-    background: #f8f8f8;
-    .tabs-section {
-        padding: 20px;
-        background: #fff;
-        .tab-header-text {
-            color: #00b862;
-            text-align: center;
-        }
-        .nav-link {
-            border: none;
-            font-weight: 500;
-            color: #666666;
-        }
-        .nav-link.active {
-            border-bottom: 2px solid #00b862;
-            color: #00b862;
-        }
-        .tab-content {
-            padding: 20px 0;
-            .tab-el {
-                border: 1px solid #dadada;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 10px;
-                img {
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                    margin-right: 10px;
-                }
-                p {
-                    margin-bottom: 0;
+.prevQpaper {
+    .prevQpaper-section {
+        padding: 30px 50px;
+        background: #f8f8f8;
+        .tabs-section {
+            padding: 20px;
+            background: #fff;
+            .tab-header-text {
+                color: #00b862;
+                text-align: center;
+            }
+            .nav-link {
+                border: none;
+                font-weight: 500;
+                color: #666666;
+            }
+            .nav-link.active {
+                border-bottom: 2px solid #00b862;
+                color: #00b862;
+            }
+            .tab-content {
+                padding: 20px 0;
+                .tab-el {
+                    border: 1px solid #dadada;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    img {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                    p {
+                        margin-bottom: 0;
+                    }
                 }
             }
+        }
+    }
+    .popular-choice-section {
+        padding: 40px 30px 30px 30px;
+        .popular-choice-header {
+            font-family: "Poppins", sans-serif;
+            font-size: 28px;
+            color: #1f1f1e;
+        }
+        .popular-choice-sub-section {
+            justify-content: space-between;
+
+            .popular-choice-content {
+                color: #1f1f1e;
+                font-family: "Poppins", sans-serif;
+                font-size: 20px;
+            }
+            .popular-choice-btn-container {
+                text-align: right;
+
+                .popular-choice-btn {
+                    padding: 10px 60px;
+                    background-color: #f05454;
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    border: none;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .landingpage-popular-card-carousel {
+        padding: 0px 40px 0px 40px;
+        .slick-dots {
+            display: none !important;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: "slick";
+            font-size: 20px;
+            line-height: 1;
+            opacity: 0.75;
+            color: black;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 35px;
+            margin: -9px;
+        }
+        .carousel-slider-div {
+            display: flex !important;
+            justify-content: center;
+            margin-bottom: 10px;
         }
     }
 }
@@ -167,6 +221,7 @@
         .carousel-slider-div {
             display: flex !important;
             justify-content: center;
+            margin-bottom: 10px;
         }
     }
 }
