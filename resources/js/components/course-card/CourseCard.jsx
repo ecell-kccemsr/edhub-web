@@ -75,7 +75,15 @@ const CourseCard = ({ data }) => {
                     </h5>
                 </div>
                 <div>
-                    <h4 className="card-title">{data?.title}</h4>
+                    <h4 className="card-title">
+                    {data?.title
+                       .length > 20
+                       ? data?.title.slice(
+                             0,
+                             20
+                         ) + "..."
+                       : data?.title}
+                        </h4>
                     <div className="card-overview">
                         <div>
                             <img src={play} alt="" />
@@ -104,7 +112,17 @@ const CourseCard = ({ data }) => {
                 <div className="coursecard-footer">
                     <div>
                         <img src={star} alt="" />
-                        <p>{data?.rating} Reviews</p>
+                        <p>
+                        {data?.rating
+                       .length > 2
+                       ? data?.rating.toString().slice(
+                             0,
+                             2
+                         ) 
+
+                       : data?.rating}
+                                {" "}
+                         Reviews</p>
                     </div>
                     <Link to={`/courseDetail/${data?.slug}`}>
                         <img src={reviewArrow} alt="" />
