@@ -20,6 +20,7 @@ function Governmentjobsubcategory(props) {
     // console.log(props);
     const [categories, setCategory] = useState([]);
     const [course, setCourse] = useState([]);
+    const [jobs, setJobs] = useState([]);
     const [subcategory, setSubCategory] = useState([]);
     useEffect(() => {
         const { slug } = props.match.params;
@@ -33,6 +34,10 @@ function Governmentjobsubcategory(props) {
         axios
             .get("/api/government_jobs/categories")
             .then(res => setCategory(res.data.data))
+            .catch(err => console.log(err));
+         axios
+            .get("/api/government_jobs")
+            .then(res => setJobs(res.data.data))
             .catch(err => console.log(err));
         axios
             .get("/api/courses")
@@ -277,6 +282,24 @@ function Governmentjobsubcategory(props) {
                             </div>
                         </div>
                         ))}
+                        
+                     
+                            <div className="job-course-sidebar" style={{marginTop:"100px"}}>
+                            <h6>Notifications</h6>
+                            {jobs.map(b=>(
+                            <div className="job-course-sidebar-list-el">
+                                <div className="sidebar-list-top">
+                                    <i className="fas fa-chevron-right"></i>
+                                    <Link  to={`/govermentjobs/${b?.category?.slug}/${b?.subcategory?.slug}/${b?.slug}`} target="_blank">
+                                   <p> {b?.title}</p> 
+                                    </Link>
+                                </div>
+                               
+                            </div>
+                            ))}
+                          
+                        </div>
+                    
                         
                     </Col>
                 </Row>
