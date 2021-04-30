@@ -61,7 +61,7 @@ class QuestionPaperController extends Controller
      */
     public function categories(Request $request)
     {
-        $question_paper_categories = QuestionPaperSubCategory::paginate($request->input('per_page', 10));
+        $question_paper_categories = QuestionPaperCategory::paginate($request->input('per_page', 10));
         return new QuestionPaperCategoryResourceCollection($question_paper_categories);
     }
 
