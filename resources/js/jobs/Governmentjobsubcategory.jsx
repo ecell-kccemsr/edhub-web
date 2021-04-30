@@ -15,8 +15,9 @@ import { v4 as uuidv4 } from "uuid";
 import udemy from "../Images/blogs/udemy.png";
 import GovernmentjobAccordion from "./GovernmentjobAccordation";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
+import { Link } from "react-router-dom";
 function Governmentjobsubcategory(props) {
-    console.log(props);
+    // console.log(props);
     const [categories, setCategory] = useState([]);
     const [course, setCourse] = useState([]);
     const [subcategory, setSubCategory] = useState([]);
@@ -24,7 +25,7 @@ function Governmentjobsubcategory(props) {
         const { slug } = props.match.params;
         if (slug) {
             axios.get(`/api/government_jobs/${slug}`).then(res => {
-                console.log(res);
+                // console.log(res);
                 setSubCategory(res.data.data);
             });
         }
@@ -170,12 +171,7 @@ function Governmentjobsubcategory(props) {
                                             }}
                                         ></div>
                                     </h5>
-                                    {course && (
-                                        <PopularChoice
-                                            data={course}
-                                            title="Banking Exams Courses"
-                                        />
-                                    )}
+                                 
                                     <h5
                                         className="government-job-subcategory-information"
                                         id="one"
@@ -257,28 +253,39 @@ function Governmentjobsubcategory(props) {
                                     </h5>
                                 </div>
                             </div>
+                           
                         </div>
+                  
                     </Col>
+                  
                     <Col sm="12" lg="3">
-                        <div className="job-course-sidebar">
-                            <h6>Recent Courses</h6>
+                        {course.map (a=>(
+                            <div className="job-course-sidebar">
+                            <h6>Related Courses</h6>
 
                             <div className="job-course-sidebar-list-el">
                                 <div className="sidebar-list-top">
                                     <i className="fas fa-chevron-right"></i>
-                                    <p>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </p>
+                                    <Link  to={`/courseDetail/${a?.slug}`}>
+                                   <p> {a?.title}</p> 
+                                    </Link>
                                 </div>
                                 <div className="job-course-sidebar-pricesection">
-                                    <p>$250</p>
-                                    <img src={udemy} alt="Udemy" />
+                                    <p>Rs. {a?.discount_price}</p>
+                                    <img src={a?.course_provider.image} alt="Udemy" />
                                 </div>
                             </div>
                         </div>
+                        ))}
+                        
                     </Col>
                 </Row>
+                {course && (
+                                        <PopularChoice
+                                            data={course}
+                                            title="Banking Exams Courses"
+                                        />
+                                    )}
             </div>
         </>
     );

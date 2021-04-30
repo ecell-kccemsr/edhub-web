@@ -60,7 +60,7 @@ const App = props => {
                 <Route path="/register" exact component={Register} />
                 {/* //JobLayoutRoutes */}
 
-                <JobLayoutRoute path="/" exact component={Homepage} />
+                <CourseLayoutRoutes path="/" exact component={LandingPage} />
 
                 {/*CourseLayoutRoutes */}
                 <CourseLayoutRoutes

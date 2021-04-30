@@ -203,6 +203,7 @@ html {
 
     .job-course-sidebar {
         padding: 20px;
+        margin-bottom: 15px;
         background: #fffbfc;
         border-radius: 6px;
         box-shadow: 0px 2px 6px 0px #b5b5b5;
@@ -224,6 +225,7 @@ html {
                 }
                 p {
                     color: #585858;
+                    border-bottom: none;
                 }
             }
 
@@ -264,6 +266,57 @@ html {
         }
         .government-job-subcategory-information {
             padding: 10px;
+        }
+    }
+    .popular-choice-section {
+        padding: 40px 30px 30px 30px;
+        .popular-choice-header {
+            font-family: "Poppins", sans-serif;
+            font-size: 28px;
+            color: #1f1f1e;
+        }
+        .popular-choice-sub-section {
+            justify-content: space-between;
+
+            .popular-choice-content {
+                color: #1f1f1e;
+                font-family: "Poppins", sans-serif;
+                font-size: 20px;
+            }
+            .popular-choice-btn-container {
+                text-align: right;
+
+                .popular-choice-btn {
+                    padding: 10px 60px;
+                    background-color: #f05454;
+                    color: white;
+                    font-family: "Poppins", sans-serif;
+                    border: none;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .landingpage-popular-card-carousel {
+        padding: 0px 40px 0px 40px;
+        .slick-dots {
+            display: none !important;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: "slick";
+            font-size: 20px;
+            line-height: 1;
+            opacity: 0.75;
+            color: black;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 35px;
+            margin: -9px;
+        }
+        .carousel-slider-div {
+            display: flex !important;
+            justify-content: center;
         }
     }
 }

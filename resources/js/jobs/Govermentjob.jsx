@@ -47,12 +47,12 @@ function Govermentjob() {
     }, []);
 
     const handleTabFilter = slug => {
-        console.log("slug", slug);
+        // console.log("slug", slug);
         if (slug == "all") {
             setsubCategoryFilter(subCategory);
         } else {
             let values = subCategory.filter(sc => sc.category.slug == slug);
-            console.log("values", values);
+            // console.log("values", values);
             setsubCategoryFilter(values);
         }
     };
