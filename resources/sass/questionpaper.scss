@@ -95,6 +95,7 @@
             .sidebar-list-top {
                 display: flex;
                 align-items: flex-start;
+                margin-top: 10px;
                 i {
                     color: #f05454;
                     margin-right: 3px;
@@ -109,6 +110,7 @@
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
+                border-bottom: 2px solid #c4c4c4;
                 img {
                     object-fit: contain;
                     max-width: 60px;

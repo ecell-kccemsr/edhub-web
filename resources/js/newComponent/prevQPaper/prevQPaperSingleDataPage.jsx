@@ -5,6 +5,8 @@ import udemy from "../../Images/blogs/udemy.png";
 import { v4 as uuidv4 } from "uuid";
 import QPaperAccordion from "./QPaperAccordion";
 import axios from "axios";
+import LinkCard from "../../components/link-card/LinkCard";
+import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 
 const dummyAccordionData = [
     {
@@ -45,6 +47,9 @@ const dummyAccordionData = [
 
 const prevQPaperSingleDataPage = () => {
     const [categories, setCategory] = useState([]);
+    const [paper, setPaper] = useState([]);
+    const [course, setCourse] = useState([]);
+    const [jobs, setJobs] = useState([]);
     useEffect(() => {
         axios
             .get("/api/government_jobs/categories")
@@ -54,6 +59,31 @@ const prevQPaperSingleDataPage = () => {
             })
 
             .catch(err => console.log(err));
+            axios
+            .get("/api/questionpapers")
+            .then(res => {
+                console.log(res);
+                setPaper(res.data.data);
+            })
+
+            .catch(err => console.log(err));
+            axios
+            .get("/api/courses")
+            .then(res => {
+                setCourse(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+            axios
+            .get("/api/government_jobs")
+            .then(res => {
+                console.log(res);
+                setJobs(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
     return (
         <div className="prev-qpaper-singledata-section">
@@ -71,49 +101,58 @@ const prevQPaperSingleDataPage = () => {
                     </Col>
                     <Col sm="12" lg="6">
                         <h5 className="mb-2">Previous Question papers</h5>
-                        <Link to="#">
+                        {paper.map (data=>{
+                            return(
+                                <a href={data?.url} target="_blank">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Neque malesuada id viverra
-                                velit sociis. Purus purus.
+                                {data?.title}
                             </p>
-                        </Link>
-                        <Link to="#">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Neque malesuada id viverra
-                                velit sociis. Purus purus.
-                            </p>
-                        </Link>
-                        <Link to="#">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Neque malesuada id viverra
-                                velit sociis. Purus purus.
-                            </p>
-                        </Link>
+                        </a>
+                            )
+                        })}
+                       
+                      
                     </Col>
                     <Col sm="12" lg="3">
                         <div className="prevQpaper-sidebar">
                             <h6>Recent Courses</h6>
-
-                            <div className="prevQpaper-sidebar-list-el">
+                                {course.map(a=>(
+                                    <div className="prevQpaper-sidebar-list-el">
                                 <div className="sidebar-list-top">
                                     <i className="fas fa-chevron-right"></i>
-                                    <p>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </p>
+                                    <Link  to={`/courseDetail/${a?.slug}`}>
+                                   <p> {a?.title}</p> 
+                                    </Link>
                                 </div>
                                 <div className="prevQpaper-sidebar-pricesection">
-                                    <p>$250</p>
-                                    <img src={udemy} alt="Udemy" />
+                                <p>Rs. {a?.discount_price}</p>
+                                    <img src={a?.course_provider.image} alt="Udemy" />
                                 </div>
                             </div>
+                                ))}
+                           
                         </div>
                     </Col>
                 </Row>
+                  {/* Latest Notifications */}
+                  {jobs && jobs.length > 0 && (
+                    <LinkCard
+                        title="Latest Notifications"
+                        data={jobs}
+                        background={true}
+                        governmentJobURL={true}
+                        toggleTrue={true}
+                    />
+                )}
+               
             </Container>
+             {/* Courses */}
+             {course && (
+                    <PopularChoice
+                        data={course}
+                        title="Latest Courses"
+                    />
+                )}
         </div>
     );
 };
