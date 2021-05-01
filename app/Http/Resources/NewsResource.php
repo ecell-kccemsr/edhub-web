@@ -24,6 +24,8 @@ class NewsResource extends JsonResource
             'image' =>  Voyager::image($this->image),
             'category' => new NewsCategoryResource($this->category),
             'subcategory' => new NewsSubCategoryResource($this->sub_category),
+            'published_by' => $this->published_by,
+            'published_at' => $this->published_at,
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
