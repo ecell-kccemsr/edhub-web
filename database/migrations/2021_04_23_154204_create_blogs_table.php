@@ -18,6 +18,7 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->longText('body');
             $table->string('image');
+            $table->string('tags');
             $table->string('author_name');
             $table->string('author_image');
             $table->string('autor_designation');
