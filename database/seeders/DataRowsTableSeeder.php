@@ -3699,6 +3699,38 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 5,
             ),
+            230 => 
+            array (
+                'id' => 271,
+                'data_type_id' => 14,
+                'field' => 'published_by',
+                'type' => 'text',
+                'display_name' => 'Published By',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 11,
+            ),
+            231 => 
+            array (
+                'id' => 272,
+                'data_type_id' => 14,
+                'field' => 'published_at',
+                'type' => 'timestamp',
+                'display_name' => 'Published At',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 12,
+            ),
         ));
         
         
