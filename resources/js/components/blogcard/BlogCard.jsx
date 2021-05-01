@@ -10,6 +10,7 @@ import wa from "../../Images/blogs/whatsapp.png";
 import tag from "../../Images/news/tag.png";
 import { Link } from "react-router-dom";
 const BlogCard = ({ tags, data, toUrl }) => {
+    console.log(data);
     return (
         <div className="blog-main-card mb-2">
             <div className="blog-card-top-section">
@@ -27,22 +28,39 @@ const BlogCard = ({ tags, data, toUrl }) => {
                     </Col>
                 </Row>
             </div>
-            {data?.description && (
+            {/* {data?.description && (
+                <>
                 <p>
                     {data?.description.length > 180
-                        ? data?.description.slice(0, 180) + "..."
+                        ? data?.description.slice(0, 180) + "..." 
                         : data?.description}
                 </p>
-            )}
+              
+               
+                </>
+               
+            )} */}
             {data?.body && (
-                <p
+                <>
+                
+                     <p
                     dangerouslySetInnerHTML={{
                         __html:
-                            data?.body.length > 180
-                                ? data.body.slice(0, 180) + "..."
+                            data?.body.length > 300
+                                ? data.body.slice(0, 300) + "..." 
                                 : data?.body
                     }}
-                ></p>
+                > 
+                
+                 </p>
+                 <p style={{marginBottom:"10px"}}> 
+                    <Link  to={toUrl || "#"} style={{ color: "#ff0000",fontSize:"21px"}}>
+                    Read more
+                    </Link>
+                    </p> 
+                  
+               
+                </>
             )}
 
             <div className="blog-card-footer-section">

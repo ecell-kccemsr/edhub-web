@@ -3,7 +3,7 @@
 
 .blog-section {
     background: #fafafa;
-    padding: 50px 0;
+    padding: 100px;
 
     .blog-sidebar {
         padding: 20px;
@@ -28,6 +28,13 @@
                 }
                 p {
                     color: #585858;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                h6 {
+                    font-weight: 600;
+                    font-size: 20px;
+                    color: #333333;
                 }
             }
 

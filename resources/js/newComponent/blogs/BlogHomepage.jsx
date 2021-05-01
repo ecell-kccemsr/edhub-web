@@ -3,9 +3,11 @@ import { Container, Row, Col } from "reactstrap";
 import BlogCard from "../../components/blogcard/BlogCard";
 import udemy from "../../Images/blogs/udemy.png";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const BlogHomepage = () => {
     const [blog, setBlogs] = useState([]);
+    const [course, setCourse] = useState([]);
 
     useEffect(() => {
         axios
@@ -16,10 +18,17 @@ const BlogHomepage = () => {
             .catch(err => {
                 console.log(err);
             });
+            axios
+            .get("/api/courses")
+            .then(res => {
+                setCourse(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
     return (
         <div className="blog-section">
-            <Container>
                 <Row>
                     <Col sm="12" md="8" lg="9">
                         {blog &&
@@ -34,39 +43,45 @@ const BlogHomepage = () => {
                     </Col>
                     <Col sm="12" md="4" lg="3">
                         <div className="blog-sidebar">
-                            <h6>Recent Posts</h6>
+                            {blog.map(b=>(
+                                <>
+                                <h6>Recent Posts</h6>
                             <hr />
                             <div className="blog-sidebar-list-el">
                                 <div className="sidebar-list-top">
                                     <i className="fas fa-chevron-right"></i>
-                                    <p>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </p>
+                                    <Link to={`/blog/${b.slug}`} style={{ color: "black" }}>
+                                         <p>{b?.title}</p>
+                                         </Link>
                                 </div>
                             </div>
-                            <hr />
-                            <h6>Recent Courses</h6>
+                            </>
+                            ))}
+                            
 
+                            <hr />
+                            {course.map(a=>(
+                              <>
+                             <h6>Recent Courses</h6>
                             <div className="blog-sidebar-list-el">
                                 <div className="sidebar-list-top">
                                     <i className="fas fa-chevron-right"></i>
-                                    <p>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </p>
+                                    <Link  to={`/courseDetail/${a?.slug}`}>
+                                   <p> {a?.title}</p> 
+                                    </Link>
                                 </div>
                                 <div className="blog-sidebar-pricesection">
-                                    <p>
-                                        <b>$250</b>
-                                    </p>
-                                    <img src={udemy} alt="Udemy" />
+                                <p>Rs. {a?.discount_price}</p>
+                                    <img src={a?.course_provider.image} alt="Udemy" />
                                 </div>
                             </div>
+                            </>
+                            ))}
+                          
+
                         </div>
                     </Col>
                 </Row>
-            </Container>
         </div>
     );
 };

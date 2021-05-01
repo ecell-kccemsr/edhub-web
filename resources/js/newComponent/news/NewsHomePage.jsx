@@ -103,7 +103,7 @@ const NewsHomePage = () => {
                                                   "..."
                                                 : t?.description}
                                         </p>
-                                        ;
+                                        
                                     </div>
                                 ))}
                         </div>

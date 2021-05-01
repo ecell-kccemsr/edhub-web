@@ -407,7 +407,7 @@ const CourseNavbar = props => {
 
                         <ul className="navbar-nav ms-auto" >
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="#">
+                                <Link className="nav-link courseNavLink" to="/news">
                                     News
                                 </Link>
                             </li>
@@ -457,7 +457,7 @@ const CourseNavbar = props => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="#">
+                                <Link className="nav-link courseNavLink" to="/blogs">
                                     Blogs
                                 </Link>
                             </li>

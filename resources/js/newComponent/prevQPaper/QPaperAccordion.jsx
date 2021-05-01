@@ -36,8 +36,8 @@ const QPaperAccordion = ({ data }) => {
                             aria-labelledby={`heading-${data?.slug}`}
                             data-parent="#qpaperaccordionparent"
                         >
-                            <div className="card-body">
-                                {/* {d?.children.map(child => (
+                            {/* <div className="card-body">
+                                {d?.children.map(child => (
                                     <List
                                         type="unstyled"
                                         key={child?.id}
@@ -45,8 +45,8 @@ const QPaperAccordion = ({ data }) => {
                                     >
                                         {child?.title}
                                     </List>
-                                ))} */}
-                            </div>
+                                ))}
+                            </div> */}
                         </div>
                     </div>
                 </>
