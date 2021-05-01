@@ -39,6 +39,10 @@ class QuestionPaperController extends Controller
         {
             $question_papers = $question_papers->where('category_id',$request->input('category_id'));
         }
+        if($request->has('subcategory_id'))
+        {
+            $question_papers = $question_papers->where('sub_category_id',$request->input('subcategory_id'));
+        }
         if($request->has('year'))
         {
             $question_papers = $question_papers->where('year',$request->input('year'));

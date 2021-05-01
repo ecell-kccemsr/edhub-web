@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\QuestionPaperCategoryResource;
+use App\Http\Resources\QuestionPaperSubCategoryResource;
 
 class QuestionPaperResource extends JsonResource
 {
@@ -21,6 +22,7 @@ class QuestionPaperResource extends JsonResource
             'description' => $this->description,
             'year' => $this->year,
             'category' => new QuestionPaperCategoryResource($this->category),
+            'sub_category' => new QuestionPaperSubCategoryResource($this->sub_category),
             'url' => $this->url,
             'created_at' => $this->created_at,
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
