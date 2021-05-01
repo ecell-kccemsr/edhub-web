@@ -132,11 +132,9 @@ const prevQPaperHomepage = () => {
                                     >
                                         <Row>
                                             <Col sm="12" md="4" lg="3">
-                                                <div className="tab-el" style={{display:"flex"}}>
-                                                    <Link to={ `/questionpaper/${d?.slug}`}>
+                                                <div className="tab-el" >
                                                       <img src={d?.image} alt="" />
                                                     <p>{d?.name}</p>
-                                                    </Link>
                                                   
                                                 </div>
                                             </Col>

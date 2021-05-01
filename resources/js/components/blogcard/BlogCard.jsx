@@ -66,8 +66,8 @@ const BlogCard = ({ tags, data, toUrl }) => {
             <div className="blog-card-footer-section">
                 {tags && (
                     <div className="tag">
-                        <img src={tag} alt="Tag Image" />
-                        <span>#MUMBAI</span>
+                        <img src={data?.author_image} alt="Tag Image" />
+                        <p>{data?.author_name} | {data?.autor_designation}</p>
                     </div>
                 )}
                 {!tags && (

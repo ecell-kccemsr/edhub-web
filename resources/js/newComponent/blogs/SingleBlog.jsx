@@ -9,6 +9,7 @@ import ld from "../../Images/blogs/linkedin.png";
 import wa from "../../Images/blogs/whatsapp.png";
 import like from "../../Images/blogs/like.png";
 import comment from "../../Images/blogs/comment.png";
+import Moment from 'react-moment';
 import axios from "axios";
 const SingleBlog = props => {
     const [singleBlog, setSingleBlog] = useState([]);
@@ -31,7 +32,9 @@ const SingleBlog = props => {
         <div className="single-blog-section">
             <Container>
                 <h3>{singleBlog?.title}</h3>
-                <h6>{singleBlog?.read_time} read | October 30, 2020</h6>
+                <h6>{singleBlog?.read_time} read | {" "}   
+                <Moment format="MMM D, YYYY" withTitle>{singleBlog?.published_at}</Moment>
+                </h6>
                 <img src={singleBlog?.image} alt="Single Blog Top Image" />
                 <div className="singleblog-like-section">
                     <div className="interaction-container">
@@ -46,7 +49,7 @@ const SingleBlog = props => {
                 <div className="singleBlog-author-section">
                     <img src={singleBlog?.author_image} alt="Author Image" />
                     <p>
-                        {singleBlog?.author_name} | |{" "}
+                        {singleBlog?.author_name}  |{" "}
                         {singleBlog?.autor_designation}{" "}
                     </p>
                 </div>
@@ -55,7 +58,9 @@ const SingleBlog = props => {
                         <div className="singleBlog-social">
                             <div className="social-textcontainer">
                                 <h4>
-                                    30 <span> OCT 21</span>
+                                    <span>
+                                    <Moment format="D MMM YYYY" withTitle>{singleBlog?.published_at}</Moment>
+                                    </span>
                                 </h4>
                             </div>
                             <div className="social-container">
