@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\QuestionPaperCategoryResource;
 
 class QuestionPaperSubCategoryResource extends JsonResource
 {
