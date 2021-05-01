@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import BlogCard from "../../components/blogcard/BlogCard";
+import NewsCard from "../../components/newscard/NewsCard";
 import { Col, Container, Row, Nav, NavItem, NavLink } from "reactstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 const NewsHomePage = () => {
     const [news, setNews] = useState([]);
     const [trending, setTrending] = useState([]);
@@ -69,7 +71,7 @@ const NewsHomePage = () => {
                         {news &&
                             news?.length > 0 &&
                             news?.map(n => (
-                                <BlogCard
+                                <NewsCard
                                     tags={true}
                                     data={n}
                                     toUrl={`/news/${n.slug}`}
@@ -91,7 +93,7 @@ const NewsHomePage = () => {
                                             alt="News Sidebar Card Image"
                                         />
                                         <div className="sidebar-el-tag-section">
-                                            <p>#NATURE</p>
+                                            <p>#{t?.tags}</p>
                                             <div className="sidebar-el-views-container">
                                                 <i className="far fa-eye"></i>
                                                 <span>1.2k</span>
@@ -103,7 +105,11 @@ const NewsHomePage = () => {
                                                   "..."
                                                 : t?.description}
                                         </p>
-                                        
+                                        <p style={{marginBottom:"10px"}}> 
+                                          <Link  to={`/news/${t?.slug}`} style={{ color: "#ff0000"}}>
+                                             Read more
+                                             </Link>
+                                             </p> 
                                     </div>
                                 ))}
                         </div>

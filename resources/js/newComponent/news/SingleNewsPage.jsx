@@ -3,6 +3,9 @@ import { Container, Row, Col, Input, FormGroup } from "reactstrap";
 import singleNewsImg from "../../Images/news/singleNews.png";
 import tw from "../../Images/news/twitter.png";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Moment from 'react-moment';
+
 const SingleNewsPage = props => {
     const [categorynews, setcategorynews] = useState([]);
     const [relatednews, setRelatedNews] = useState([]);
@@ -32,14 +35,14 @@ const SingleNewsPage = props => {
             <Container>
                 <Row>
                     <Col sm="12" md="8">
-                        <h4 className="singlenewstitle-text">Politics</h4>
+                        <h4 className="singlenewstitle-text">{categorynews?.category?.name}</h4>
                         <div className="singlnews-main-card">
                             <img
-                                src={categorynews.image}
+                                src={categorynews?.image}
                                 alt="Single News Image"
                             />
                             <div className="news-overview-container">
-                                <p className="news-tag">#BILLS2020</p>
+                                <p className="news-tag">#{categorynews?.tags}</p>
                                 <div className="news-interaction-container">
                                     <div className="news-interaction-el">
                                         <i className="far fa-eye"></i>
@@ -55,10 +58,14 @@ const SingleNewsPage = props => {
                                     </div>
                                 </div>
                             </div>
-                            <h5>{categorynews.title}</h5>
-                            <h6 className="news-author">By unnat bhatnagar</h6>
+                            <h5>{categorynews?.title}</h5>
+                            <h6 className="news-author">By {categorynews?.published_by}</h6>
                             <h6 className="news-published-date">
-                                12:00 pm IST
+                            <Moment format="D MMM YYYY" withTitle>
+                               {categorynews?.published_at}
+
+                            </Moment>
+
                             </h6>
                             <p className="news-content">
                                 {categorynews.description}
@@ -118,9 +125,11 @@ const SingleNewsPage = props => {
                                         relatednews.map(r => (
                                             <>
                                                 <p className="tag">
-                                                    #BILLS2020
+                                                    #{r?.tags}
                                                 </p>
+                                                <a  href={`/news/${r?.slug}`}>
                                                 <h4>{r?.title}</h4>
+                                             </a>
                                                 <p
                                                     className="author"
                                                     dangerouslySetInnerHTML={{

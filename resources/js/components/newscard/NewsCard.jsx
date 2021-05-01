@@ -9,7 +9,7 @@ import ld from "../../Images/blogs/linkedin.png";
 import wa from "../../Images/blogs/whatsapp.png";
 import tag from "../../Images/news/tag.png";
 import { Link } from "react-router-dom";
-const BlogCard = ({ tags, data, toUrl }) => {
+const NewsCard = ({ tags, data, toUrl }) => {
     console.log(data);
     return (
         <div className="blog-main-card mb-2">
@@ -17,7 +17,7 @@ const BlogCard = ({ tags, data, toUrl }) => {
                 <Row>
                     <Col sm="12" md="6" lg="9">
                         <div className="blog-card-top-text-section">
-                            <h6>#{data?.tags}</h6>
+                            <h6>#{data?.category?.name}</h6>
                             <Link to={toUrl || "#"} style={{ color: "black" }}>
                                 <h4>{data?.title}</h4>
                             </Link>
@@ -28,15 +28,31 @@ const BlogCard = ({ tags, data, toUrl }) => {
                     </Col>
                 </Row>
             </div>
-           
+            {data?.description && (
+                <>
+                <p>
+                    {data?.description.length > 180
+                        ? data?.description.slice(0, 180) + "..." 
+                        : data?.description}
+                </p>
+               <p style={{marginBottom:"10px"}}> 
+                    <Link  to={toUrl || "#"} style={{ color: "#ff0000",fontSize:"21px"}}>
+                    Read more
+                    </Link>
+                    </p> 
+                  
+               
+                </>
+               
+            )}
             {data?.body && (
                 <>
                 
-                     <p style={{ color: "#585858",fontSize:"21px"}}
+                     <p
                     dangerouslySetInnerHTML={{
                         __html:
-                            data?.body.length > 500
-                                ? data.body.slice(0, 500) + "..." 
+                            data?.body.length > 300
+                                ? data.body.slice(0, 300) + "..." 
                                 : data?.body
                     }}
                 > 
@@ -53,13 +69,12 @@ const BlogCard = ({ tags, data, toUrl }) => {
             )}
 
             <div className="blog-card-footer-section">
-                {tags && (
+                {data && (
                     <div className="tag">
-                        <img src={data?.author_image} alt="Tag Image" />
-                        <h5>{data?.author_name} | {data?.autor_designation}</h5>
+                       <p>#{data?.tags}</p>
                     </div>
                 )}
-               
+              
                 <div className="blog-footer-social">
                     <img src={insta} alt="Insta" />
                     <img src={ld} alt="Linkedin" />
@@ -72,4 +87,4 @@ const BlogCard = ({ tags, data, toUrl }) => {
     );
 };
 
-export default BlogCard;
+export default NewsCard;
