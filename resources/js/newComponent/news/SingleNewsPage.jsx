@@ -38,21 +38,24 @@ const SingleNewsPage = props => {
         e.preventDefault();
         let data = JSON.stringify({ comment });
         axios
-            .post(`/api/blogs/${news_slug}/comments`, data, {
+            .post(`/api/news/${news_slug}/comments`, data, {
                 headers: {
                     "Content-Type": "application/json"
                 }
             })
             .then(res => {
-                console.log(res);
+                console.log("post data", res);
             })
             .catch(err => console.log(err));
     };
 
-    const getComment = blog_slug => {
+    const getComment = news_slug => {
         axios
-            .get(`/api/blogs/${blog_slug}/comments`)
-            .then(res => console.log(res))
+            .get(`/api/news/${news_slug}/comments`)
+            .then(res => {
+                setComments(res.data.data);
+                console.log(res.data.data);
+            })
             .catch(err => console.log(err));
     };
 
@@ -80,7 +83,7 @@ const SingleNewsPage = props => {
                                     </div>
                                     <div className="news-interaction-el">
                                         <i className="far fa-comment-alt"></i>
-                                        <span>1.2K</span>
+                                        <span>{comments.length}</span>
                                     </div>
                                     <div className="news-interaction-el">
                                         <i className="fas fa-share-alt"></i>

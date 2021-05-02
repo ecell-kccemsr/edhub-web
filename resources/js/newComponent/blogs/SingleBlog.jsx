@@ -15,6 +15,7 @@ const SingleBlog = props => {
     const user = useStoreState(state => state.user);
     const [singleBlog, setSingleBlog] = useState([]);
     const [comment, setComment] = useState("");
+    const [comments, setComments] = useState([]);
     const { blog_slug } = props.match.params;
     useEffect(() => {
         if (blog_slug) {
@@ -27,6 +28,7 @@ const SingleBlog = props => {
                     console.log(err);
                 });
             getComment(blog_slug);
+            console.log("blog_slug", blog_slug);
         }
     }, []);
     const handleComment = e => {
@@ -39,7 +41,7 @@ const SingleBlog = props => {
                 }
             })
             .then(res => {
-                console.log(res);
+                console.log("post comment data", res);
             })
             .catch(err => console.log(err));
     };
@@ -47,7 +49,20 @@ const SingleBlog = props => {
     const getComment = blog_slug => {
         axios
             .get(`/api/blogs/${blog_slug}/comments`)
-            .then(res => console.log(res))
+            .then(res => {
+                setComments(res.data.data);
+                console.log(res.data.data);
+            })
+            .catch(err => console.log(err));
+    };
+
+    const handleLike = e => {
+        e.preventDefault();
+        axios
+            .post(`/api/blogs/${blog_slug}/like/toggle`)
+            .then(res => {
+                console.log("post like data", res);
+            })
             .catch(err => console.log(err));
     };
 
@@ -64,12 +79,12 @@ const SingleBlog = props => {
                 <img src={singleBlog?.image} alt="Single Blog Top Image" />
                 <div className="singleblog-like-section">
                     <div className="interaction-container">
-                        <img src={like} alt="Like" />
+                        <img src={like} alt="Like" onClick={handleLike} />
                         <b>1.2K</b>
                     </div>
                     <div className="interaction-container">
-                        <img src={comment} alt="Like" />
-                        <b>592</b>
+                        <img src={like} alt="Like" />
+                        <b>{comments.length}</b>
                     </div>
                 </div>
                 <div className="singleBlog-author-section">
@@ -128,7 +143,9 @@ const SingleBlog = props => {
                                     </FormGroup>
                                 </Col>
                                 <Col sm="12" md="4" lg="3">
-                                    <button type="submit">POST</button>
+                                    <button type="submit" className="">
+                                        POST
+                                    </button>
                                 </Col>
                             </Row>
                         </form>{" "}
