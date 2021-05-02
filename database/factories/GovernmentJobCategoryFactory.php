@@ -23,7 +23,9 @@ class GovernmentJobCategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'image' => $this->faker->image
+            'image' => $this->faker->image,
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

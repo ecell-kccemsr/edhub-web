@@ -25,6 +25,8 @@ class ExamResultFactory extends Factory
             'name' => $this->faker->name,
             'description' => $this->faker->description,
             'url' => $this->faker->url,
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

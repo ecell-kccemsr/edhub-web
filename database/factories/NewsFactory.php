@@ -25,6 +25,7 @@ class NewsFactory extends Factory
     {
         return [
             'title' => $this->faker->title,
+            'tags' => $this->faker->tags,
             'description' => $this->faker->sentence,
             'details' => $this->faker->paragraph,
             'image' => $this->faker->image,

@@ -23,6 +23,8 @@ class NewsCategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

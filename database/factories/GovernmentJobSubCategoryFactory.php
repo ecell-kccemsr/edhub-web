@@ -25,6 +25,9 @@ class GovernmentJobSubCategoryFactory extends Factory
         return [
             'name' => $this->faker->name,
             'category_id' => GovernmentJobCategory::first() ? GovernmentJobCategory::first()->id : null,
+            'image' => $this->faker->image,
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

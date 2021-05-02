@@ -2,19 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\QuestionPaper;
 use App\Models\QuestionPaperCategory;
 use App\Models\QuestionPaperSubCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class QuestionPaperFactory extends Factory
+class QuestionPaperSubCategoryFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = QuestionPaper::class;
+    protected $model = QuestionPaperSubCategory::class;
 
     /**
      * Define the model's default state.
@@ -24,14 +23,11 @@ class QuestionPaperFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title,
-            'description' => $this->faker->paragraph,
-            'year' => $this->faker->year,
-            'url' => $this->faker->url,
-            'category_id' => QuestionPaperCategory::inRandomOrder()->first(),
-            'sub_category_id' => QuestionPaperSubCategory::inRandomOrder()->first(),
+            'name' => $this->faker->name,
+            'category_id' => QuestionPaperCategory::first() ? QuestionPaperCategory::first()->id : null,
             'seo_keywords' => $this->faker->sentence,
             'seo_description' => $this->faker->sentence,
+            'image' => $this->faker->image,
         ];
     }
 }

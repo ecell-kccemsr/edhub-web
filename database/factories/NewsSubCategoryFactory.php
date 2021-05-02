@@ -25,6 +25,8 @@ class NewsSubCategoryFactory extends Factory
         return [
             'name' => $this->faker->name,
             'category_id' => NewsCategory::first() ? NewsCategory::first()->id : null,
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

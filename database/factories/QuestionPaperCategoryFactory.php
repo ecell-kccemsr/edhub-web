@@ -22,7 +22,9 @@ class QuestionPaperCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title,
+            'name' => $this->faker->name,
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }
