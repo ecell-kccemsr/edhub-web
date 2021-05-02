@@ -80,7 +80,7 @@ const SingleBlog = props => {
                 <div className="singleblog-like-section">
                     <div className="interaction-container">
                         <img src={like} alt="Like" onClick={handleLike} />
-                        <b>1.2K</b>
+                        <b>{singleBlog.total_likes}</b>
                     </div>
                     <div className="interaction-container">
                         <img src={like} alt="Like" />
