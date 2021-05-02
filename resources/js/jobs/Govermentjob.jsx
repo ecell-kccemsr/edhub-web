@@ -61,108 +61,121 @@ function Govermentjob() {
 
     return (
         <>
-        <div className="governmentjob">
+            <div className="governmentjob">
                 <div className="job-page">
-                <div className="job-hero-section">
-                    <Row>
-                        <Col md="6">
-                            <div className="job-hero-section-top">
-                                <span className="job-top-button">New</span>
-                                <span className="job-top-text">
-                                    Avail latest discounts on courses
-                                </span>
-                            </div>
+                    <div className="job-hero-section">
+                        <Row>
+                            <Col md="6">
+                                <div className="job-hero-section-top">
+                                    <span className="job-top-button">New</span>
+                                    <span className="job-top-text">
+                                        Avail latest discounts on courses
+                                    </span>
+                                </div>
 
-                            <h4 className="job-hero-section-main-text">
-                                Government Exams in India
-                            </h4>
-                            <p className="job-hero-section-sub-text">
-                                Start your prepararion by buying courses from
-                                our platform at an additional discount.
-                            </p>
-                            <div className="job-hero-section-input-box">
-                                <form>
-                                    <input
-                                        type="text"
-                                        name=""
-                                        id=""
-                                        placeholder="Search your Exam"
-                                    />
-                                    <button type="submit">
-                                        <i className="fas fa-search"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </Col>
-                        <Col md="6" >
-                            <img className="heroBg-img" src={heroBg1} alt="" />
-                        </Col>
-                    </Row>
-                </div>
-                <div className="job-tabs-section">
-                    <h5 className="job-tab-header-text">Select Your Exam</h5>
-                    <ul className="nav nav-tabs" id="myTab" role="tablist">
-                        {categories.map(d => {
-                            let isActive = d.id == categories[0].id;
-                            return (
-                                <li className="nav-item" role="presentation">
-                                    <a
-                                        className={`nav-link ${
+                                <h4 className="job-hero-section-main-text">
+                                    Government Exams in India
+                                </h4>
+                                <p className="job-hero-section-sub-text">
+                                    Start your prepararion by buying courses
+                                    from our platform at an additional discount.
+                                </p>
+                                <div className="job-hero-section-input-box">
+                                    <form>
+                                        <input
+                                            type="text"
+                                            name=""
+                                            id=""
+                                            placeholder="Search your Exam"
+                                        />
+                                        <button type="submit">
+                                            <i className="fas fa-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </Col>
+                            <Col md="6">
+                                <img
+                                    className="heroBg-img"
+                                    src={heroBg1}
+                                    alt=""
+                                />
+                            </Col>
+                        </Row>
+                    </div>
+                    <div className="job-tabs-section">
+                        <h5 className="job-tab-header-text">
+                            Select Your Exam
+                        </h5>
+                        <ul className="nav nav-tabs" id="myTab" role="tablist">
+                            {categories.map(d => {
+                                let isActive = d.id == categories[0].id;
+                                return (
+                                    <li
+                                        className="nav-item"
+                                        role="presentation"
+                                    >
+                                        <a
+                                            className={`nav-link ${
+                                                isActive ? "active" : ""
+                                            }`}
+                                            id={`${d?.slug}-tab`}
+                                            data-toggle="tab"
+                                            href={`#${d?.slug}`}
+                                            role="tab"
+                                            aria-controls={`${d?.slug}`}
+                                            aria-selected="true"
+                                            onClick={() =>
+                                                handleTabFilter(d?.slug)
+                                            }
+                                        >
+                                            {d?.name}
+                                        </a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                        <div className="job-tab-content" id="myTabContent">
+                            {subCategoryFilter.map(d => {
+                                let isActive = d.id == subCategoryFilter[0].id;
+                                return (
+                                    <div
+                                        className={`tab-pane fade show ${
                                             isActive ? "active" : ""
                                         }`}
-                                        id={`${d?.slug}-tab`}
-                                        data-toggle="tab"
-                                        href={`#${d?.slug}`}
-                                        role="tab"
-                                        aria-controls={`${d?.slug}`}
-                                        aria-selected="true"
-                                        onClick={() => handleTabFilter(d?.slug)}
+                                        id={`${d?.category?.slug}`}
+                                        role="tabpanel"
+                                        aria-labelledby={`${d?.category?.slug}-tab`}
                                     >
-                                        {d?.name}
-                                    </a>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                    <div className="job-tab-content" id="myTabContent">
-                        {subCategoryFilter.map(d => {
-                            let isActive = d.id == subCategoryFilter[0].id;
-                            return (
-                                <div
-                                    className={`tab-pane fade show ${
-                                        isActive ? "active" : ""
-                                    }`}
-                                    id={`${d?.category?.slug}`}
-                                    role="tabpanel"
-                                    aria-labelledby={`${d?.category?.slug}-tab`}
-                                >
-                                    <Row>
-                                        <Col sm="12" md="4" lg="3">
-                                            <div className="job-tab-el my-2">
-                                                <img src={d?.image} alt="" />{" "}
-                                                <p>{d?.name}</p>
-                                            </div>
-                                        </Col>
-                                    </Row>
-                                </div>
-                            );
-                        })}
+                                        <Row>
+                                            <Col sm="12" md="4" lg="3">
+                                                <div className="job-tab-el my-2">
+                                                    <img
+                                                        src={d?.image}
+                                                        alt=""
+                                                    />{" "}
+                                                    <p>{d?.name}</p>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
+                    {/* Latest Notifications */}
+                    {jobs && jobs.length > 0 && (
+                        <LinkCard
+                            title="Latest Notifications"
+                            data={jobs}
+                            background={true}
+                            governmentJobURL={true}
+                            toggleTrue={true}
+                        />
+                    )}
                 </div>
-                {/* Latest Notifications */}
-                {jobs && jobs.length > 0 && (
-                    <LinkCard
-                        title="Latest Notifications"
-                        data={jobs}
-                        background={true}
-                        governmentJobURL={true}
-                        toggleTrue={true}
-                    />
-                )}
 
-            </div>
-            
-            {course && (
+                {course && (
                     <PopularChoice
                         data={course}
                         title="Banking Exams Courses"
@@ -174,8 +187,7 @@ function Govermentjob() {
                         title="Defence Exams Courses"
                     />
                 )}
-        </div>
-        
+            </div>
         </>
     );
 }

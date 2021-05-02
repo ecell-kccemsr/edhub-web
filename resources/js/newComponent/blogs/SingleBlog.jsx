@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "reactstrap";
-import singleBlogImg from "../../Images/blogs/singleBlogTop.png";
-import singleBlogAuthor from "../../Images/blogs/singleBlogAuthor.png";
+import { Container, Row, Col, FormGroup, Input } from "reactstrap";
 import insta from "../../Images/blogs/instagram.png";
 import fb from "../../Images/blogs/facebook.png";
 import tw from "../../Images/blogs/twitter.png";
 import ld from "../../Images/blogs/linkedin.png";
 import wa from "../../Images/blogs/whatsapp.png";
 import like from "../../Images/blogs/like.png";
-import comment from "../../Images/blogs/comment.png";
-import Moment from 'react-moment';
+import Moment from "react-moment";
 import axios from "axios";
-const SingleBlog = props => {
-    const [singleBlog, setSingleBlog] = useState([]);
-    console.log(props);
+import { Link } from "react-router-dom";
+import { useStoreState } from "easy-peasy";
 
+const SingleBlog = props => {
+    const user = useStoreState(state => state.user);
+    const [singleBlog, setSingleBlog] = useState([]);
+    const [comment, setComment] = useState("");
+    const { blog_slug } = props.match.params;
     useEffect(() => {
-        const { blog_slug } = props.match.params;
         if (blog_slug) {
             axios
                 .get(`/api/blogs/${blog_slug}`)
@@ -26,14 +26,40 @@ const SingleBlog = props => {
                 .catch(err => {
                     console.log(err);
                 });
+            getComment(blog_slug);
         }
     }, []);
+    const handleComment = e => {
+        e.preventDefault();
+        let data = JSON.stringify({ comment });
+        axios
+            .post(`/api/blogs/${blog_slug}/comments`, data, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
+    };
+
+    const getComment = blog_slug => {
+        axios
+            .get(`/api/blogs/${blog_slug}/comments`)
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+    };
+
     return (
         <div className="single-blog-section">
             <Container>
                 <h3>{singleBlog?.title}</h3>
-                <h6>{singleBlog?.read_time} read | {" "}   
-                <Moment format="MMM D, YYYY" withTitle>{singleBlog?.published_at}</Moment>
+                <h6>
+                    {singleBlog?.read_time} read |{" "}
+                    <Moment format="MMM D, YYYY" withTitle>
+                        {singleBlog?.published_at}
+                    </Moment>
                 </h6>
                 <img src={singleBlog?.image} alt="Single Blog Top Image" />
                 <div className="singleblog-like-section">
@@ -49,7 +75,7 @@ const SingleBlog = props => {
                 <div className="singleBlog-author-section">
                     <img src={singleBlog?.author_image} alt="Author Image" />
                     <p>
-                        {singleBlog?.author_name}  |{" "}
+                        {singleBlog?.author_name} |{" "}
                         {singleBlog?.autor_designation}{" "}
                     </p>
                 </div>
@@ -59,7 +85,9 @@ const SingleBlog = props => {
                             <div className="social-textcontainer">
                                 <h4>
                                     <span>
-                                    <Moment format="D MMM YYYY" withTitle>{singleBlog?.published_at}</Moment>
+                                        <Moment format="D MMM YYYY" withTitle>
+                                            {singleBlog?.published_at}
+                                        </Moment>
                                     </span>
                                 </h4>
                             </div>
@@ -82,6 +110,32 @@ const SingleBlog = props => {
                         </div>
                     </Col>
                 </Row>
+                {user ? (
+                    <>
+                        {" "}
+                        <h4 className="comment-titletext">Comments</h4>
+                        <form onSubmit={handleComment}>
+                            <Row>
+                                <Col sm="12" md="8" lg="9">
+                                    <FormGroup>
+                                        <Input
+                                            type="text"
+                                            name="comment"
+                                            onChange={e =>
+                                                setComment(e.target.value)
+                                            }
+                                        />
+                                    </FormGroup>
+                                </Col>
+                                <Col sm="12" md="4" lg="3">
+                                    <button type="submit">POST</button>
+                                </Col>
+                            </Row>
+                        </form>{" "}
+                    </>
+                ) : (
+                    <Link to={"/login"}>Click here to login</Link>
+                )}
             </Container>
         </div>
     );
