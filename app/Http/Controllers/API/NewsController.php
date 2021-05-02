@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\NewsSubCategory;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\NewsResource;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\CommentResource;
 use App\Http\Resources\NewsResourceCollection;
 use App\Http\Resources\NewsCategoryResourceCollection;
 use App\Http\Resources\NewsSubCategoryResourceCollection;
@@ -112,5 +114,18 @@ class NewsController extends Controller
     {
         $news = News::where("created_at", ">=", date("Y-m-d H:i:s", strtotime('-24 hours', time())))->orderBy('total_views','desc')->limit(10)->get();
         return new NewsResourceCollection($news);
+    }
+
+    public function getComments($news, Request $request)
+    {
+        $news = News::where('id',$news)->orWhere('slug',$news)->firstOrFail();
+        return CommentResource::collection($news->comments()->paginate($request->input('per_page',10)));
+    }
+
+    public function addComment($news, Request $request)
+    {
+        $news = News::where('id',$news)->orWhere('slug',$news)->firstOrFail();
+        $news->commentAsUser(Auth::user(), $request->input('comment', ''));
+        return new NewsResource($news);
     }
 }

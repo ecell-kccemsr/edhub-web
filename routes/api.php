@@ -62,6 +62,10 @@ Route::get('/news/trending',[NewsController::class,'trending']);
 Route::get('/news/categories',[NewsController::class,'categories']);
 Route::get('/news/sub_categories',[NewsController::class,'sub_categories']);
 Route::get('/news/{news}',[NewsController::class,'show']);
+Route::get('/news/{news}/comments',[NewsController::class,'getComments']);
+Route::group(['middleware' => 'auth:api'], function() {
+  Route::post('/news/{news}/comments',[NewsController::class,'addComment']);
+});
 
 //ExamCalendar
 Route::get('/examcalendar',[ExamCalendarController::class,'get']);
@@ -98,8 +102,8 @@ Route::get('/testimonies/{testimony}',[TestimonyController::class,'show']);
 //Blog
 Route::get('/blogs',[BlogController::class,'get']);
 Route::get('/blogs/{blog}',[BlogController::class,'show']);
+Route::get('/blogs/{blog}/comments',[BlogController::class,'getComments']);
 Route::group(['middleware' => 'auth:api'], function() {
   Route::post('/blogs/{blog}/like/toggle',[BlogController::class,'toggleLike']);
-  Route::get('/blogs/{blog}/comments',[BlogController::class,'getComments']);
   Route::post('/blogs/{blog}/comments',[BlogController::class,'addComment']);
 });
