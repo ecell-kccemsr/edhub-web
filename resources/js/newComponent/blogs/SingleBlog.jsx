@@ -60,7 +60,10 @@ const SingleBlog = props => {
         axios
             .post(`/api/blogs/${blog_slug}/like/toggle`)
             .then(res => {
-                console.log("post like data", res);
+                setSingleBlog({
+                    ...singleBlog,
+                    total_likes: res.data.data.total_likes
+                });
             })
             .catch(err => console.log(err));
     };
