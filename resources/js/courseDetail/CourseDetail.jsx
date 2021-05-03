@@ -395,9 +395,9 @@ function CourseDetail(props) {
                                         >
                                             Buy Now
                                         </a>
-                                        <button className="card-section-details-addCart-btn">
+                                        {/* <button className="card-section-details-addCart-btn">
                                             Add To Cart
-                                        </button>
+                                        </button> */}
                                     </div>
                                 </div>
                             </Col>

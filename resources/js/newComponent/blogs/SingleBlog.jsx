@@ -82,7 +82,7 @@ const SingleBlog = props => {
                         <b>{singleBlog.total_likes}</b>
                     </div>
                     <div className="interaction-container">
-                        <img src={Scomments} alt="Like" />
+                        <img src={Scomments} alt="Comments" />
                         <b>{comments.length}</b>
                     </div>
                 </div>
@@ -130,7 +130,7 @@ const SingleBlog = props => {
                         <h4 className="comment-titletext">Comments</h4>
                         <form onSubmit={handleComment}>
                             <Row>
-                                <Col sm="12" md="8" lg="9">
+                                <Col sm="12" md={{ size: 6, offset: 1 }} lg="8">
                                     <FormGroup>
                                         <Input
                                             type="text"
@@ -141,7 +141,7 @@ const SingleBlog = props => {
                                         />
                                     </FormGroup>
                                 </Col>
-                                <Col sm="12" md="4" lg="3">
+                                <Col sm="12" md="4" lg="2">
                                     <button type="submit" className="">
                                         POST
                                     </button>

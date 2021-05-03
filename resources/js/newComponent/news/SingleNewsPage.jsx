@@ -137,7 +137,7 @@ const SingleNewsPage = props => {
                         </div>
                     </Col>
                     <Col sm="12" md="4">
-                        <h4 className="singlenewstitle-text">
+                        {/* <h4 className="singlenewstitle-text">
                             Ideas and opinion
                         </h4>
                         <div className="singlenews-sidebar-container-top">
@@ -168,7 +168,7 @@ const SingleNewsPage = props => {
                                 </div>
                             </div>
                         </div>
-                        <br />
+                        <br /> */}
                         <h4 className="singlenewstitle-text">Related News</h4>
                         <div className="singlenews-sidebar-container-top">
                             <div className="top-container-el">

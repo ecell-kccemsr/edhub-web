@@ -115,6 +115,20 @@
             }
         }
     }
+    .comment-titletext {
+        margin: 10px 0 20px;
+        text-align: center;
+        font-weight: 400;
+    }
+    button {
+        border: none;
+        outline: none;
+        background: #f05454;
+        color: #fff;
+        padding: 7px 10px;
+        border-radius: 8px;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 775px) {
