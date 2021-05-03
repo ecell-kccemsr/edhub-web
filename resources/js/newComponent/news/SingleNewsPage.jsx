@@ -54,7 +54,6 @@ const SingleNewsPage = props => {
             .get(`/api/news/${news_slug}/comments`)
             .then(res => {
                 setComments(res.data.data);
-                console.log(res.data.data);
             })
             .catch(err => console.log(err));
     };

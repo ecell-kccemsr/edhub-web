@@ -80,7 +80,7 @@ const App = props => {
                     component={prevQPaperHomepage}
                 />
                 <CourseLayoutRoutes
-                    path="/questionpaper/:subcategory_slug"
+                    path="/questionpaper/:subcategory_id"
                     exact
                     component={prevQPaperSingleDataPage}
                 />

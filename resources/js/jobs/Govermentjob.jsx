@@ -22,13 +22,6 @@ function Govermentjob() {
                     .get("/api/government_jobs/sub_categories")
                     .then(response => {
                         setSubCategory(response.data.data);
-                        console.log("sub_categories", response);
-
-                        setsubCategoryFilter(
-                            response.data.data.filter(
-                                resp => resp.category.id == res.data.data[0].id
-                            )
-                        );
                     })
                     .catch(err => console.log(err));
             })
@@ -44,19 +37,15 @@ function Govermentjob() {
                 setCourse(res.data.data);
             })
             .catch(err => {
+                
                 console.log(err);
             });
     }, []);
 
-    const handleTabFilter = slug => {
-        // console.log("slug", slug);
-        if (slug == "all") {
-            setsubCategoryFilter(subCategory);
-        } else {
-            let values = subCategory.filter(sc => sc.category.slug == slug);
-            // console.log("values", values);
-            setsubCategoryFilter(values);
-        }
+    const handleTabFilter = id => {
+        axios
+        .get(`/api/government_jobs/sub_categories?${id === 'all' ? '': `category_id=${id}`  }`)
+        .then(res => setsubCategoryFilter(res.data.data))
     };
 
     return (
@@ -126,7 +115,7 @@ function Govermentjob() {
                                             aria-controls={`${d?.slug}`}
                                             aria-selected="true"
                                             onClick={() =>
-                                                handleTabFilter(d?.slug)
+                                                handleTabFilter(d?.id)
                                             }
                                         >
                                             {d?.name}

@@ -17,7 +17,6 @@ import GovernmentjobAccordion from "./GovernmentjobAccordation";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { Link } from "react-router-dom";
 function Governmentjobsubcategory(props) {
-    // console.log(props);
     const [categories, setCategory] = useState([]);
     const [course, setCourse] = useState([]);
     const [jobs, setJobs] = useState([]);
@@ -26,7 +25,6 @@ function Governmentjobsubcategory(props) {
         const { slug } = props.match.params;
         if (slug) {
             axios.get(`/api/government_jobs/${slug}`).then(res => {
-                // console.log(res);
                 setSubCategory(res.data.data);
             });
         }

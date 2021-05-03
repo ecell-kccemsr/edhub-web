@@ -125,7 +125,6 @@ const courseCategory = props => {
         getCourses(true, apiURL, ratingValue, null, value);
     };
     useEffect(() => {
-        console.log(props.location.state);
 
         if (props?.location?.state?.modalValues) {
             const modalVals = props?.location?.state?.modalValues;

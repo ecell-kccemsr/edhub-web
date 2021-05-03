@@ -30,7 +30,7 @@ const BlogHomepage = () => {
     return (
         <div className="blog-section">
                 <Row>
-                    <Col sm="12" md="8" lg="9">
+                    <Col sm="1" md={{ size: 6, offset: 1 }} lg="7">
                         {blog &&
                             blog?.length > 0 &&
                             blog?.map(b => (
@@ -41,7 +41,7 @@ const BlogHomepage = () => {
                                 />
                             ))}
                     </Col>
-                    <Col sm="12" md="4" lg="3">
+                    <Col sm="1" md="4" lg="3">
                         <div className="blog-sidebar">
                             {blog.map(b=>(
                                 <>

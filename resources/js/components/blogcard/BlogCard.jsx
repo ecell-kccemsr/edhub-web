@@ -10,7 +10,6 @@ import wa from "../../Images/blogs/whatsapp.png";
 import tag from "../../Images/news/tag.png";
 import { Link } from "react-router-dom";
 const BlogCard = ({ tags, data, toUrl }) => {
-    console.log(data);
     return (
         <div className="blog-main-card mb-2">
             <div className="blog-card-top-section">

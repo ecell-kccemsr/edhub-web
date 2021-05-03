@@ -45,7 +45,7 @@ const dummyAccordionData = [
     }
 ];
 
-const prevQPaperSingleDataPage = () => {
+const prevQPaperSingleDataPage = (id) => {
     const [categories, setCategory] = useState([]);
     const [paper, setPaper] = useState([]);
     const [course, setCourse] = useState([]);
@@ -54,15 +54,13 @@ const prevQPaperSingleDataPage = () => {
         axios
             .get("/api/government_jobs/categories")
             .then(res => {
-                console.log(res);
                 setCategory(res.data.data);
             })
 
             .catch(err => console.log(err));
             axios
-            .get("/api/questionpapers")
+            .get(`/api/questionpapers/?${id}`)
             .then(res => {
-                console.log(res);
                 setPaper(res.data.data);
             })
 
@@ -78,7 +76,6 @@ const prevQPaperSingleDataPage = () => {
             axios
             .get("/api/government_jobs")
             .then(res => {
-                console.log(res);
                 setJobs(res.data.data);
             })
             .catch(err => {

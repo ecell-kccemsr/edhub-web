@@ -10,7 +10,6 @@ import wa from "../../Images/blogs/whatsapp.png";
 import tag from "../../Images/news/tag.png";
 import { Link } from "react-router-dom";
 const NewsCard = ({ tags, data, toUrl }) => {
-    console.log(data);
     return (
         <div className="blog-main-card mb-2">
             <div className="blog-card-top-section">
@@ -77,6 +76,9 @@ const NewsCard = ({ tags, data, toUrl }) => {
               
                 <div className="blog-footer-social">
                     <img src={insta} alt="Insta" />
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">
+                        Twitter
+                        </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     <img src={ld} alt="Linkedin" />
                     <img src={fb} alt="Facebook" />
                     <img src={tw} alt="Twitter" />

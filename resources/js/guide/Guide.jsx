@@ -20,7 +20,7 @@ const GuideModal = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("MULTISTEP FORM SUBMITTED");
+        // console.log("MULTISTEP FORM SUBMITTED");
         setModal(false);
     };
 
@@ -57,7 +57,7 @@ const GuideModal = () => {
                     </>
                 );
             default:
-                console.log("This is a multi-step form built with React.");
+                // console.log("This is a multi-step form built with React.");
         }
     };
     return (

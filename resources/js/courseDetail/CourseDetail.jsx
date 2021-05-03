@@ -82,7 +82,6 @@ function CourseDetail(props) {
             .get(`/api/courses/${course_slug}/reviews`)
             .then(res => {
                 setCourseRev(res.data.data);
-                // console.log(res.data.data);
             })
             .catch(err => {
                 console.log(err);

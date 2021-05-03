@@ -6,6 +6,7 @@ import tw from "../../Images/blogs/twitter.png";
 import ld from "../../Images/blogs/linkedin.png";
 import wa from "../../Images/blogs/whatsapp.png";
 import like from "../../Images/blogs/like.png";
+import Scomments from "../../Images/blogs/comment.png";
 import Moment from "react-moment";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -28,7 +29,6 @@ const SingleBlog = props => {
                     console.log(err);
                 });
             getComment(blog_slug);
-            console.log("blog_slug", blog_slug);
         }
     }, []);
     const handleComment = e => {
@@ -51,7 +51,6 @@ const SingleBlog = props => {
             .get(`/api/blogs/${blog_slug}/comments`)
             .then(res => {
                 setComments(res.data.data);
-                console.log(res.data.data);
             })
             .catch(err => console.log(err));
     };
@@ -83,7 +82,7 @@ const SingleBlog = props => {
                         <b>{singleBlog.total_likes}</b>
                     </div>
                     <div className="interaction-container">
-                        <img src={like} alt="Like" />
+                        <img src={Scomments} alt="Like" />
                         <b>{comments.length}</b>
                     </div>
                 </div>

@@ -19,47 +19,22 @@ const prevQPaperHomepage = () => {
         axios
             .get("/api/government_jobs")
             .then(res => {
-                console.log(res);
                 setJobs(res.data.data);
             })
             .catch(err => {
                 console.log(err);
             });
 
-        // axios
-        //     .get("/api/questionpapers/categories")
-        //     .then(res => {
-        //         console.log("categories", res);
-        //         setSubQuespapercategory(res.data.data);
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     });
-        //     axios
-        //     .get("/api/questionpapers/sub_categories")
-        //     .then(res => {
-        //         console.log("sub_categories", res);
-        //         setSubCategory(res.data.data);
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     });
+       
 
             axios
             .get("/api/questionpapers/categories")
             .then(res => {
                 setSubQuespapercategory(res.data.data);
-                console.log("categories", res);
                 axios
                     .get("/api/questionpapers/sub_categories")
                     .then(response => {
-                        setSubCategory(response.data.data);
-                        console.log("sub_categories", response);
-                        setsubCategoryFilter(
-                            response.data.data.filter(
-                                resp => resp.category.id == res.data.data[0].id
-                            )
-                        );
+                        setSubCategory(response.data.data);                     
                     })
                     .catch(err => console.log(err));
             })
@@ -73,15 +48,10 @@ const prevQPaperHomepage = () => {
                 console.log(err);
             });
     }, []);
-    const handleTabFilter = slug => {
-        console.log("slug", slug);
-        if (slug == "all") {
-            setsubCategoryFilter(subCategory);
-        } else {
-            let values = subCategory.filter(sc => sc.category.slug == slug);
-            console.log("values", values);
-            setsubCategoryFilter(values);
-        }
+    const handleTabFilter = id => {
+        axios
+        .get(`/api/questionpapers/sub_categories?${id === 'all' ? '': `category_id=${id}`  }`)
+        .then(res => setsubCategoryFilter(res.data.data))
     };
 
     return (
@@ -109,7 +79,7 @@ const prevQPaperHomepage = () => {
                                             role="tab"
                                             aria-controls={`${d?.slug}`}
                                             aria-selected="true"
-                                          onClick={() => handleTabFilter(d?.slug)}
+                                          onClick={() => handleTabFilter(d?.id)}
 
                                         >
                                             {d?.name}
@@ -133,8 +103,11 @@ const prevQPaperHomepage = () => {
                                         <Row>
                                             <Col sm="12" md="4" lg="3">
                                                 <div className="tab-el" >
-                                                      <img src={d?.image} alt="" />
+                                                    <Link to={`/questionpaper/${d?.id}`}>
+                                                     <img src={d?.image} alt="" />
                                                     <p>{d?.name}</p>
+                                                    </Link>
+                                                     
                                                   
                                                 </div>
                                             </Col>
