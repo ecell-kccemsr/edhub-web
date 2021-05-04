@@ -4,8 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\BlogController;
 use App\Http\Controllers\API\NewsController;
 use App\Http\Controllers\API\CourseController;
+use App\Http\Controllers\API\SearchController;
 use App\Http\Controllers\API\TestimonyController;
 use App\Http\Controllers\API\ExamResultController;
 use App\Http\Controllers\API\ExamCalendarController;
@@ -16,7 +18,6 @@ use App\Http\Controllers\API\CourseWishlistController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\API\RegisterForFreeUpdatesController;
-use App\Http\Controllers\API\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,4 +107,7 @@ Route::get('/blogs/{blog}/comments',[BlogController::class,'getComments']);
 Route::group(['middleware' => 'auth:api'], function() {
   Route::post('/blogs/{blog}/like/toggle',[BlogController::class,'toggleLike']);
   Route::post('/blogs/{blog}/comments',[BlogController::class,'addComment']);
+
+//Search 
+Route::get('/search',[SearchController::class,'search']);
 });
