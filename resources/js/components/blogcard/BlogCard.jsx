@@ -27,27 +27,26 @@ const BlogCard = ({ tags, data, toUrl }) => {
                     </Col>
                 </Row>
             </div>
-           
+
             {data?.body && (
                 <>
-                
-                     <p style={{ color: "#585858",fontSize:"21px"}}
-                    dangerouslySetInnerHTML={{
-                        __html:
-                            data?.body.length > 500
-                                ? data.body.slice(0, 500) + "..." 
-                                : data?.body
-                    }}
-                > 
-                
-                 </p>
-                 <p style={{marginBottom:"10px"}}> 
-                    <Link  to={toUrl || "#"} style={{ color: "#ff0000",fontSize:"21px"}}>
-                    Read more
-                    </Link>
-                    </p> 
-                  
-               
+                    <p
+                        style={{ color: "#585858", fontSize: "21px" }}
+                        dangerouslySetInnerHTML={{
+                            __html:
+                                data?.body.length > 500
+                                    ? data.body.slice(0, 500) + "..."
+                                    : data?.body
+                        }}
+                    ></p>
+                    <p style={{ marginBottom: "10px" }}>
+                        <Link
+                            to={toUrl || "#"}
+                            style={{ color: "#ff0000", fontSize: "21px" }}
+                        >
+                            Read more
+                        </Link>
+                    </p>
                 </>
             )}
 
@@ -55,16 +54,40 @@ const BlogCard = ({ tags, data, toUrl }) => {
                 {tags && (
                     <div className="tag">
                         <img src={data?.author_image} alt="Tag Image" />
-                        <h5>{data?.author_name} | {data?.autor_designation}</h5>
+                        <h5>
+                            {data?.author_name} | {data?.autor_designation}
+                        </h5>
                     </div>
                 )}
-               
+
                 <div className="blog-footer-social">
-                    <img src={insta} alt="Insta" />
-                    <img src={ld} alt="Linkedin" />
-                    <img src={fb} alt="Facebook" />
-                    <img src={tw} alt="Twitter" />
-                    <img src={wa} alt="Whatsapp" />
+                    <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}${toUrl}`}
+                        target="_blank"
+                    >
+                        <img src={ld} alt="Linkedin" />
+                    </a>
+                    <a
+                        href={`https://www.facebook.com/sharer.php?u=${window.location.href}${toUrl}`}
+                        target="_blank"
+                    >
+                        {" "}
+                        <img src={fb} alt="Facebook" />
+                    </a>
+                    <a
+                        href={`https://twitter.com/intent/tweet?url=${window.location.href}${toUrl}`}
+                        target="_blank"
+                    >
+                        {" "}
+                        <img src={tw} alt="Twitter" />
+                    </a>
+                    <a
+                        href={`https://api.whatsapp.com/send?text=${window.location.href}${toUrl}`}
+                        target="_blank"
+                    >
+                        {" "}
+                        <img src={wa} alt="Whatsapp" />
+                    </a>
                 </div>
             </div>
         </div>

@@ -57,15 +57,17 @@ const SingleBlog = props => {
 
     const handleLike = e => {
         e.preventDefault();
-        axios
-            .post(`/api/blogs/${blog_slug}/like/toggle`)
-            .then(res => {
-                setSingleBlog({
-                    ...singleBlog,
-                    total_likes: res.data.data.total_likes
-                });
-            })
-            .catch(err => console.log(err));
+        if (user) {
+            axios
+                .post(`/api/blogs/${blog_slug}/like/toggle`)
+                .then(res => {
+                    setSingleBlog({
+                        ...singleBlog,
+                        total_likes: res.data.data.total_likes
+                    });
+                })
+                .catch(err => console.log(err));
+        }
     };
 
     return (
@@ -109,11 +111,33 @@ const SingleBlog = props => {
                                 </h4>
                             </div>
                             <div className="social-container">
-                                <img src={insta} alt="Insta" />
-                                <img src={ld} alt="Linkedin" />
-                                <img src={fb} alt="Facebook" />
-                                <img src={tw} alt="Twitter" />
-                                <img src={wa} alt="Whatsapp" />
+                                <a
+                                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    <img src={ld} alt="Linkedin" />
+                                </a>
+                                <a
+                                    href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <img src={fb} alt="Facebook" />
+                                </a>
+                                <a
+                                    href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <img src={tw} alt="Twitter" />
+                                </a>
+                                <a
+                                    href={`https://api.whatsapp.com/send?text=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <img src={wa} alt="Whatsapp" />
+                                </a>
                             </div>
                         </div>
                     </Col>
@@ -127,10 +151,11 @@ const SingleBlog = props => {
                         </div>
                     </Col>
                 </Row>
-                {user ? (
-                    <>
-                        {" "}
-                        <h4 className="comment-titletext">Comments</h4>
+
+                <>
+                    {" "}
+                    <h4 className="comment-titletext">Comments</h4>
+                    {user ? (
                         <form onSubmit={handleComment}>
                             <Row>
                                 <Col sm="12" md={{ size: 6, offset: 1 }} lg="8">
@@ -150,11 +175,15 @@ const SingleBlog = props => {
                                     </button>
                                 </Col>
                             </Row>
-                        </form>{" "}
-                    </>
-                ) : (
-                    <Link to={"/login"}>Click here to login</Link>
-                )}
+                        </form>
+                    ) : (
+                        <div className="text-center">
+                            <Link to={"/login"} className="comment-login-btn">
+                                Login to comment
+                            </Link>
+                        </div>
+                    )}
+                </>
             </Container>
         </div>
     );
