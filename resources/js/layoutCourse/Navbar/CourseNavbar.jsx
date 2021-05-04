@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Row, Col, Button, FormGroup, Label, Input, Modal } from "reactstrap";
 import { action, useStoreActions, useStoreState } from "easy-peasy";
@@ -12,15 +12,63 @@ import Guide3 from "../../guide/Guide3";
 import Guide4 from "../../guide/Guide4";
 import Guide5 from "../../guide/Guide5";
 //dummyData
-import { navDummyData, recommendedCourse } from "./navDummyData";
+import { recommendedCourse } from "./navDummyData";
 //images
 import edhub1 from "../../Images/landingpage/Edhub-1.png";
-import user from "../../Images/landingpage/user.png";
-import cartNotification from "../../Images/landingpage/cartNotification.png";
 import bookmark from "../../Images/landingpage/bookmark.png";
 import provider from "../../Images/landingpage/provider.png";
 
+const SearchbarDropdown = props => {
+    const { options, onInputChange } = props;
+    const ulRef = useRef();
+    const inputRef = useRef();
+    useEffect(() => {
+        inputRef.current.addEventListener("click", event => {
+            event.stopPropagation();
+            ulRef.current.style.display = "flex";
+            onInputChange(event);
+        });
+        document.addEventListener("click", event => {
+            ulRef.current.style.display = "none";
+        });
+    }, []);
+    return (
+        <div className="search-bar-dropdown">
+            <input
+                id="search-bar"
+                type="text"
+                className="form-control"
+                placeholder="Search"
+                ref={inputRef}
+                onChange={onInputChange}
+            />
+            <ul id="results" className="list-group" ref={ulRef}>
+                {options.map((option, index) => {
+                    return (
+                        <button
+                            type="button"
+                            key={index}
+                            className="list-group-item list-group-item-action"
+                        >
+                            <Link to={`courseDetail/${option.slug}`}>
+                                {option?.title}
+                            </Link>
+                        </button>
+                    );
+                })}
+            </ul>
+        </div>
+    );
+};
+
 const CourseNavbar = props => {
+    const [options, setOptions] = useState([]);
+    const onInputChange = event => {
+        axios
+            .get(`/api/search?search=${event.target.value}`)
+            .then(res => setOptions(res.data))
+            .catch(err => console.log(err));
+    };
     const [modal, setModal] = useState(false);
     const [redirect, setRedirect] = useState(false);
     const [step, setStep] = useState(1);
@@ -37,8 +85,7 @@ const CourseNavbar = props => {
     });
 
     useEffect(() => {
-        http
-            .get("courses/categories")
+        http.get("courses/categories")
             .then(res => {
                 setCategory(res.data.data);
             })
@@ -224,11 +271,13 @@ const CourseNavbar = props => {
                 </div>
             </Modal>
             <nav className="navbar course-navbar navbar-expand-lg">
-                <div className="container" >
+                <div className="container">
                     <Link className="navbar-brand" to="/landingPage">
-                    <img src="/images/landingpage/Edhub-1.png" alt="Eduhub" /> 
+                        <img
+                            src="/images/landingpage/Edhub-1.png"
+                            alt="Eduhub"
+                        />
                     </Link>
-
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -404,11 +453,20 @@ const CourseNavbar = props => {
                                         })}
                                 </ul>
                             </li>
+                            <li className="navbar-search-dropdown">
+                                <SearchbarDropdown
+                                    options={options}
+                                    onInputChange={onInputChange}
+                                />
+                            </li>
                         </ul>
 
-                        <ul className="navbar-nav ms-auto" >
+                        <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="/news">
+                                <Link
+                                    className="nav-link courseNavLink"
+                                    to="/news"
+                                >
                                     News
                                 </Link>
                             </li>
@@ -454,11 +512,14 @@ const CourseNavbar = props => {
                                     to="#"
                                     onClick={toggle}
                                 >
-                                    Guide 
+                                    Guide
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="/blogs">
+                                <Link
+                                    className="nav-link courseNavLink"
+                                    to="/blogs"
+                                >
                                     Blogs
                                 </Link>
                             </li>
@@ -489,7 +550,6 @@ const CourseNavbar = props => {
                                     </Button>
                                 </Link>
                             </li>
-                            
                         </ul>
                     </div>
                 </div>
