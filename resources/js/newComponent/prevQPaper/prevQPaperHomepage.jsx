@@ -103,7 +103,7 @@ const prevQPaperHomepage = () => {
                                         <Row>
                                             <Col sm="12" md="4" lg="3">
                                                 <div className="tab-el" >
-                                                    <Link to={`/questionpaper/${d?.id}`}>
+                                                    <Link to={`/questionpaper/${d?.slug}`}>
                                                      <img src={d?.image} alt="" />
                                                     <p>{d?.name}</p>
                                                     </Link>
