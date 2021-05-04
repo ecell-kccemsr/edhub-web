@@ -33,6 +33,8 @@ class NewsResource extends JsonResource
             'slug' => $this->slug,
             'seo_keywords' => $this->seo_keywords,
             'seo_description' => $this->seo_description,
+            'total_likes' => $this->likers()->count(),
+            'has_liked' => $hasLiked
         ];
     }
 }

@@ -66,6 +66,7 @@ Route::get('/news/{news}',[NewsController::class,'show']);
 Route::get('/news/{news}/comments',[NewsController::class,'getComments']);
 Route::group(['middleware' => 'auth:api'], function() {
   Route::post('/news/{news}/comments',[NewsController::class,'addComment']);
+  Route::post('news/{news}/like/toggle',[NewsController::class,'toggleLike']);
 });
 
 //ExamCalendar

@@ -128,4 +128,11 @@ class NewsController extends Controller
         $news->commentAsUser(Auth::user(), $request->input('comment', ''));
         return new NewsResource($news);
     }
+
+    public function toggleLike($news)
+    {
+        $news = News::where('id',$news)->orWhere('slug',$news)->firstOrFail();
+        Auth::user()->toggleLike($news);
+        return new NewsResource($news);
+    }
 }
