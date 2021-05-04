@@ -69,33 +69,35 @@ const NewsCard = ({ tags, data, toUrl }) => {
                 )}
 
                 <div className="blog-footer-social">
-                    <a
-                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}${toUrl}`}
-                        target="_blank"
-                    >
-                        <img src={ld} alt="Linkedin" />
-                    </a>
-                    <a
-                        href={`https://www.facebook.com/sharer.php?u=${window.location.href}${toUrl}`}
-                        target="_blank"
-                    >
-                        {" "}
-                        <img src={fb} alt="Facebook" />
-                    </a>
-                    <a
-                        href={`https://twitter.com/intent/tweet?url=${window.location.href}${toUrl}`}
-                        target="_blank"
-                    >
-                        {" "}
-                        <img src={tw} alt="Twitter" />
-                    </a>
-                    <a
-                        href={`https://api.whatsapp.com/send?text=${window.location.href}${toUrl}`}
-                        target="_blank"
-                    >
-                        {" "}
-                        <img src={wa} alt="Whatsapp" />
-                    </a>
+                <div className="social-container">
+                                <a
+                                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                   <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a
+                                    href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a
+                                    href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a
+                                    href={`https://api.whatsapp.com/send?text=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
                 </div>
             </div>
         </div>

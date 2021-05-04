@@ -94,10 +94,7 @@ const NewsHomePage = () => {
                                         />
                                         <div className="sidebar-el-tag-section">
                                             <p>#{t?.tags}</p>
-                                            <div className="sidebar-el-views-container">
-                                                <i className="far fa-eye"></i>
-                                                <span>1.2k</span>
-                                            </div>
+                                            
                                         </div>
                                         <p>
                                             {t?.description.length > 100

@@ -117,13 +117,39 @@
                 align-items: center;
                 .news-interaction-el {
                     margin-left: 10px;
-                    i {
+                    display: flex;
+                    align-items: center;
+                    img {
                         margin-right: 3px;
                         color: #c6c6c6;
                     }
-                    span {
+                    b {
                         color: #686868;
                         font-weight: 500;
+                    }
+                }
+                .news-interaction-el-1 {
+                    margin-left: 10px;
+                    align-items: center;
+                    display: flex;
+
+                    img {
+                        margin-right: 3px;
+                        margin-left: 4px;
+                        color: #c6c6c6;
+                        width: 30px;
+                    }
+                    b {
+                        color: #686868;
+                        font-weight: 500;
+                    }
+
+                    .social-container {
+                        .fab,
+                        .far {
+                            font-weight: 400;
+                            font-size: 25px;
+                        }
                     }
                 }
             }

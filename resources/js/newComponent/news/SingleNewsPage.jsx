@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Input, FormGroup } from "reactstrap";
 import singleNewsImg from "../../Images/news/singleNews.png";
-import tw from "../../Images/news/twitter.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
-
+import like from "../../Images/blogs/like.png";
+import Scomments from "../../Images/blogs/comment.png";
+import Share from "../../Images/news/share.png";
+import { Collapse } from 'reactstrap';
+import fb from "../../Images/blogs/facebook.png";
+import tw from "../../Images/blogs/twitter.png";
+import ld from "../../Images/blogs/linkedin.png";
+import wa from "../../Images/blogs/whatsapp.png";
 import { useStoreState } from "easy-peasy";
 const SingleNewsPage = props => {
     const user = useStoreState(state => state.user);
@@ -13,7 +19,9 @@ const SingleNewsPage = props => {
     const [relatednews, setRelatedNews] = useState([]);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState("");
-
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
+  
     let id;
     const { news_slug } = props.match.params;
     useEffect(() => {
@@ -54,6 +62,20 @@ const SingleNewsPage = props => {
             })
             .catch(err => console.log(err));
     };
+    const handleLike = e => {
+        e.preventDefault();
+        if (user) {
+            axios
+                .post(`/api/news/${news_slug}/like/toggle`)
+                .then(res => {
+                    setcategorynews({
+                        ...categorynews,
+                        total_likes: res.data.data.total_likes
+                    });
+                })
+                .catch(err => console.log(err));
+        }
+    };
 
     return (
         <div className="singlenews-section">
@@ -74,16 +96,47 @@ const SingleNewsPage = props => {
                                 </p>
                                 <div className="news-interaction-container">
                                     <div className="news-interaction-el">
-                                        <i className="far fa-eye"></i>
-                                        <span>1.2K</span>
+                                      <img src={like} alt="Like" onClick={handleLike} />
+                                    <b>{categorynews?.total_likes}</b>
                                     </div>
                                     <div className="news-interaction-el">
-                                        <i className="far fa-comment-alt"></i>
+                                       <img src={Scomments} alt="Comments" />
                                         <span>{comments.length}</span>
                                     </div>
-                                    <div className="news-interaction-el">
-                                        <i className="fas fa-share-alt"></i>
-                                        <span>500</span>
+                                    <div className="news-interaction-el-1">
+                                    <img src={Share} alt="Share" onClick={toggle} />
+                                    <Collapse isOpen={isOpen}>
+                                    <div className="social-container">
+                                <a
+                                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                   <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a
+                                    href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a
+                                    href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a
+                                    href={`https://api.whatsapp.com/send?text=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                    {" "}
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+
+                                 </Collapse>
                                     </div>
                                 </div>
                             </div>
@@ -107,8 +160,8 @@ const SingleNewsPage = props => {
                                         <Row>
                                             <Col
                                                 sm="12"
-                                                md={{ size: 6, offset: 1 }}
-                                                lg="8"
+                                                md={{ size: 6, offset: 0 }}
+                                                lg="9"
                                             >
                                                 <FormGroup>
                                                     <Input
@@ -122,7 +175,7 @@ const SingleNewsPage = props => {
                                                     />
                                                 </FormGroup>
                                             </Col>
-                                            <Col sm="12" md="4" lg="2">
+                                            <Col sm="12" md="4" lg="3">
                                                 <button
                                                     type="submit"
                                                     className=""

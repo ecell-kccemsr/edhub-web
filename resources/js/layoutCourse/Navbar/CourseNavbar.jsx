@@ -226,8 +226,9 @@ const CourseNavbar = props => {
             <nav className="navbar course-navbar navbar-expand-lg">
                 <div className="container" >
                     <Link className="navbar-brand" to="/landingPage">
-                        <img src={edhub1} alt="Eduhub" />
+                    <img src="/images/landingpage/Edhub-1.png" alt="Eduhub" /> 
                     </Link>
+
                     <button
                         className="navbar-toggler"
                         type="button"

@@ -9,6 +9,8 @@ import like from "../../Images/blogs/like.png";
 import Scomments from "../../Images/blogs/comment.png";
 import Moment from "react-moment";
 import axios from "axios";
+import Share from "../../Images/news/share.png";
+import { Collapse } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { useStoreState } from "easy-peasy";
 
@@ -17,6 +19,8 @@ const SingleBlog = props => {
     const [singleBlog, setSingleBlog] = useState([]);
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
     const { blog_slug } = props.match.params;
     useEffect(() => {
         if (blog_slug) {
@@ -107,35 +111,41 @@ const SingleBlog = props => {
                                     </span>
                                 </h4>
                             </div>
-                            <div className="social-container">
+                            <div className="news-interaction-el-1">
+                                    <img src={Share} alt="Share" onClick={toggle} />
+                                    <Collapse isOpen={isOpen}>
+                                    <div className="social-container" style={{padding:"6px"}}>
                                 <a
                                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                     target="_blank"
                                 >
-                                    <img src={ld} alt="Linkedin" />
+                                   <i class="fab fa-linkedin"></i>
                                 </a>
                                 <a
                                     href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
                                     target="_blank"
                                 >
                                     {" "}
-                                    <img src={fb} alt="Facebook" />
+                                    <i class="fab fa-facebook"></i>
                                 </a>
                                 <a
                                     href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
                                     target="_blank"
                                 >
                                     {" "}
-                                    <img src={tw} alt="Twitter" />
+                                    <i class="fab fa-twitter"></i>
                                 </a>
                                 <a
                                     href={`https://api.whatsapp.com/send?text=${window.location.href}`}
                                     target="_blank"
                                 >
                                     {" "}
-                                    <img src={wa} alt="Whatsapp" />
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
                             </div>
+
+                                 </Collapse>
+                                    </div>
                         </div>
                     </Col>
                     <Col sm="12" md="10">

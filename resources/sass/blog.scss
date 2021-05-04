@@ -108,10 +108,25 @@
             }
         }
 
-        .social-container {
+        .news-interaction-el-1 {
+            margin-left: 10px;
+            align-items: center;
             img {
-                display: block;
-                margin: 3px 0;
+                margin-left: 6px;
+                color: #c6c6c6;
+                width: 30px;
+            }
+            b {
+                color: #686868;
+                font-weight: 500;
+            }
+
+            .social-container {
+                .fab,
+                .far {
+                    font-weight: 400;
+                    font-size: 30px;
+                }
             }
         }
     }
