@@ -40,9 +40,6 @@ const SingleBlog = props => {
                     "Content-Type": "application/json"
                 }
             })
-            .then(res => {
-                console.log("post comment data", res);
-            })
             .catch(err => console.log(err));
     };
 

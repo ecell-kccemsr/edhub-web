@@ -9,19 +9,14 @@ import CourseLayoutRoutes from "../layoutCourse/LayoutCourse";
 import "../../sass/app.scss";
 
 //Components
-import Homepage from "../home/Homepage";
 import Govermentjob from "../jobs/Govermentjob";
-import Governmentjobcategory from "../jobs/Governmentjobcategory";
 import Governmentjobsubcategory from "../jobs/Governmentjobsubcategory";
-import Questionpaper from "../Question papers/Questionpaper";
-import Questionpaper2 from "../Question papers/Questionpaper2";
+
 // import News from "../news/News";
-import NewsCategory from "../news/NewsCategory";
-import NewsSubCategory from "../news/NewsSubCategory";
+
 import Examcalendar from "../examcalendar/Examcalendar";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
-import Newsdetails from "../news/NewsDetails";
 import Notification from "../notification/notification";
 import Compare from "../compare/Compare";
 import Cart from "../cart/Cart";

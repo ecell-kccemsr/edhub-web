@@ -14,7 +14,6 @@ const prevQPaperHomepage = () => {
     const [subCategoryFilter, setsubCategoryFilter] = useState([]);
     const [course, setCourse] = useState([]);
 
-
     useEffect(() => {
         axios
             .get("/api/government_jobs")
@@ -25,21 +24,24 @@ const prevQPaperHomepage = () => {
                 console.log(err);
             });
 
-       
-
-            axios
+        axios
             .get("/api/questionpapers/categories")
             .then(res => {
                 setSubQuespapercategory(res.data.data);
                 axios
                     .get("/api/questionpapers/sub_categories")
                     .then(response => {
-                        setSubCategory(response.data.data);                     
+                        setSubCategory(response.data.data);
+                        setsubCategoryFilter(
+                            response.data.data.filter(
+                                resp => resp.category.id == res.data.data[0].id
+                            )
+                        );
                     })
                     .catch(err => console.log(err));
             })
             .catch(err => console.log(err));
-            axios
+        axios
             .get("/api/courses")
             .then(res => {
                 setCourse(res.data.data);
@@ -50,75 +52,69 @@ const prevQPaperHomepage = () => {
     }, []);
     const handleTabFilter = id => {
         axios
-        .get(`/api/questionpapers/sub_categories?${id === 'all' ? '': `category_id=${id}`  }`)
-        .then(res => setsubCategoryFilter(res.data.data))
+            .get(
+                `/api/questionpapers/sub_categories?${
+                    id === "all" ? "" : `category_id=${id}`
+                }`
+            )
+            .then(res => setsubCategoryFilter(res.data.data));
     };
 
     return (
-        <div className="prevQpaper">
-            <div className="prevQpaper-section">
+        <div className="governmentjob">
+            <div className="job-page">
                 <h4 className="text-center">Previous Question papers</h4>
-                <div className="tabs-section">
-                    <h5 className="tab-header-text">Select Your Exam</h5>
+                <div className="job-tabs-section">
+                    <h5 className="job-tab-header-text">Select Your Exam</h5>
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
-                    {subQuespapercategory.map(d => {
+                        {subQuespapercategory.map(d => {
                             let isActive = d.id == subQuespapercategory[0].id;
-                                return (
-                                    <li
-                                        className="nav-item"
-                                        role="presentation"
-                                        key={d?.id}
-                                    >
-                                        <a
-                                            className={`nav-link ${
-                                                isActive ? "active" : ""
-                                            }`}
-                                            id={`${d?.slug}-tab`}
-                                            data-toggle="tab"
-                                            href={`#${d?.slug}`}
-                                            role="tab"
-                                            aria-controls={`${d?.slug}`}
-                                            aria-selected="true"
-                                          onClick={() => handleTabFilter(d?.id)}
-
-                                        >
-                                            {d?.name}
-                                        </a>
-                                    </li>
-                                );
-                            })}
-                    </ul>
-                    <div className="tab-content" id="myTabContent">
-                    {subCategoryFilter.map(d => {
-                            let isActive = d.id == subCategoryFilter[0].id;
-                                return (
-                                    <div
-                                        className={`tab-pane fade show ${
+                            return (
+                                <li className="nav-item" role="presentation">
+                                    <a
+                                        className={`nav-link ${
                                             isActive ? "active" : ""
                                         }`}
-                                        id={`${d?.category?.slug}`}
-                                        role="tabpanel"
-                                        aria-labelledby={`${d?.category?.slug}-tab`}
+                                        id={`${d?.slug}-tab`}
+                                        data-toggle="tab"
+                                        href={`#${d?.slug}`}
+                                        role="tab"
+                                        aria-controls={`${d?.slug}`}
+                                        aria-selected="true"
+                                        onClick={() => handleTabFilter(d?.id)}
                                     >
-                                        <Row>
-                                            <Col sm="12" md="4" lg="3">
-                                                <div className="tab-el" >
-                                                    <Link to={`/questionpaper/${d?.slug}`}>
-                                                     <img src={d?.image} alt="" />
-                                                    <p>{d?.name}</p>
-                                                    </Link>
-                                                     
-                                                  
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                );
-                            })}
+                                        {d?.name}
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                    <div className="job-tab-content" id="myTabContent">
+                        {subCategoryFilter.map(d => {
+                            let isActive = d.id == subCategoryFilter[0].id;
+                            return (
+                                <div
+                                    className={`tab-pane fade show ${
+                                        isActive ? "active" : ""
+                                    }`}
+                                    id={`${d?.category?.slug}`}
+                                    role="tabpanel"
+                                    aria-labelledby={`${d?.category?.slug}-tab`}
+                                >
+                                    <Row>
+                                        <Col sm="12" md="4" lg="3">
+                                            <div className="job-tab-el my-2">
+                                                <img src={d?.image} alt="" />{" "}
+                                                <p>{d?.name}</p>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
-                <Container >
-                     {/* Latest Notifications */}
+                {/* Latest Notifications */}
                 {jobs && jobs.length > 0 && (
                     <LinkCard
                         title="Latest Notifications"
@@ -128,18 +124,15 @@ const prevQPaperHomepage = () => {
                         toggleTrue={true}
                     />
                 )}
-                </Container>
-          
+            </div>
+
+            {course && (
+                <PopularChoice data={course} title="Banking Exams Courses" />
+            )}
+            {course && (
+                <PopularChoice data={course} title="Defence Exams Courses" />
+            )}
         </div>
-           {/* Courses */}
-           {course && (
-                    <PopularChoice
-                        data={course}
-                        title="Latest Courses"
-                    />
-                )}
-        </div>
-        
     );
 };
 

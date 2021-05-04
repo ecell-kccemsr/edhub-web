@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
-import cardTopImg from "../../Images/blogs/maincard-top-img.png";
-import cardAuthor from "../../Images/blogs/card-author.png";
-import insta from "../../Images/blogs/instagram.png";
+import React from "react";
+import { Row, Col } from "reactstrap";
 import fb from "../../Images/blogs/facebook.png";
 import tw from "../../Images/blogs/twitter.png";
 import ld from "../../Images/blogs/linkedin.png";
 import wa from "../../Images/blogs/whatsapp.png";
-import tag from "../../Images/news/tag.png";
 import { Link } from "react-router-dom";
 const NewsCard = ({ tags, data, toUrl }) => {
     return (
@@ -29,60 +25,77 @@ const NewsCard = ({ tags, data, toUrl }) => {
             </div>
             {data?.description && (
                 <>
-                <p>
-                    {data?.description.length > 180
-                        ? data?.description.slice(0, 180) + "..." 
-                        : data?.description}
-                </p>
-               <p style={{marginBottom:"10px"}}> 
-                    <Link  to={toUrl || "#"} style={{ color: "#ff0000",fontSize:"21px"}}>
-                    Read more
-                    </Link>
-                    </p> 
-                  
-               
+                    <p>
+                        {data?.description.length > 180
+                            ? data?.description.slice(0, 180) + "..."
+                            : data?.description}
+                    </p>
+                    <p style={{ marginBottom: "10px" }}>
+                        <Link
+                            to={toUrl || "#"}
+                            style={{ color: "#ff0000", fontSize: "21px" }}
+                        >
+                            Read more
+                        </Link>
+                    </p>
                 </>
-               
             )}
             {data?.body && (
                 <>
-                
-                     <p
-                    dangerouslySetInnerHTML={{
-                        __html:
-                            data?.body.length > 300
-                                ? data.body.slice(0, 300) + "..." 
-                                : data?.body
-                    }}
-                > 
-                
-                 </p>
-                 <p style={{marginBottom:"10px"}}> 
-                    <Link  to={toUrl || "#"} style={{ color: "#ff0000",fontSize:"21px"}}>
-                    Read more
-                    </Link>
-                    </p> 
-                  
-               
+                    <p
+                        dangerouslySetInnerHTML={{
+                            __html:
+                                data?.body.length > 300
+                                    ? data.body.slice(0, 300) + "..."
+                                    : data?.body
+                        }}
+                    ></p>
+                    <p style={{ marginBottom: "10px" }}>
+                        <Link
+                            to={toUrl || "#"}
+                            style={{ color: "#ff0000", fontSize: "21px" }}
+                        >
+                            Read more
+                        </Link>
+                    </p>
                 </>
             )}
 
             <div className="blog-card-footer-section">
                 {data && (
                     <div className="tag">
-                       <p>#{data?.tags}</p>
+                        <p>#{data?.tags}</p>
                     </div>
                 )}
-              
+
                 <div className="blog-footer-social">
-                    <img src={insta} alt="Insta" />
-                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">
-                        Twitter
-                        </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <img src={ld} alt="Linkedin" />
-                    <img src={fb} alt="Facebook" />
-                    <img src={tw} alt="Twitter" />
-                    <img src={wa} alt="Whatsapp" />
+                    <a
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}${toUrl}`}
+                        target="_blank"
+                    >
+                        <img src={ld} alt="Linkedin" />
+                    </a>
+                    <a
+                        href={`https://www.facebook.com/sharer.php?u=${window.location.href}${toUrl}`}
+                        target="_blank"
+                    >
+                        {" "}
+                        <img src={fb} alt="Facebook" />
+                    </a>
+                    <a
+                        href={`https://twitter.com/intent/tweet?url=${window.location.href}${toUrl}`}
+                        target="_blank"
+                    >
+                        {" "}
+                        <img src={tw} alt="Twitter" />
+                    </a>
+                    <a
+                        href={`https://api.whatsapp.com/send?text=${window.location.href}${toUrl}`}
+                        target="_blank"
+                    >
+                        {" "}
+                        <img src={wa} alt="Whatsapp" />
+                    </a>
                 </div>
             </div>
         </div>

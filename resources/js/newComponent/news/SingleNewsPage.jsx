@@ -43,9 +43,6 @@ const SingleNewsPage = props => {
                     "Content-Type": "application/json"
                 }
             })
-            .then(res => {
-                console.log("post data", res);
-            })
             .catch(err => console.log(err));
     };
 
@@ -102,15 +99,17 @@ const SingleNewsPage = props => {
                             <p className="news-content">
                                 {categorynews.description}
                             </p>
-                            {user ? (
-                                <>
-                                    {" "}
-                                    <h4 className="comment-titletext">
-                                        Comments
-                                    </h4>
+                            <>
+                                {" "}
+                                <h4 className="comment-titletext">Comments</h4>
+                                {user ? (
                                     <form onSubmit={handleComment}>
                                         <Row>
-                                            <Col sm="12" md="8" lg="9">
+                                            <Col
+                                                sm="12"
+                                                md={{ size: 6, offset: 1 }}
+                                                lg="8"
+                                            >
                                                 <FormGroup>
                                                     <Input
                                                         type="text"
@@ -123,17 +122,27 @@ const SingleNewsPage = props => {
                                                     />
                                                 </FormGroup>
                                             </Col>
-                                            <Col sm="12" md="4" lg="3">
-                                                <button type="submit">
+                                            <Col sm="12" md="4" lg="2">
+                                                <button
+                                                    type="submit"
+                                                    className=""
+                                                >
                                                     POST
                                                 </button>
                                             </Col>
                                         </Row>
-                                    </form>{" "}
-                                </>
-                            ) : (
-                                <Link to={"/login"}>Click here to login</Link>
-                            )}
+                                    </form>
+                                ) : (
+                                    <div className="text-center">
+                                        <Link
+                                            to={"/login"}
+                                            className="comment-login-btn"
+                                        >
+                                            Login to comment
+                                        </Link>
+                                    </div>
+                                )}
+                            </>
                         </div>
                     </Col>
                     <Col sm="12" md="4">

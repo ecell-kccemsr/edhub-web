@@ -18,10 +18,16 @@ function Govermentjob() {
             .get("/api/government_jobs/categories")
             .then(res => {
                 setCategory(res.data.data);
+
                 axios
                     .get("/api/government_jobs/sub_categories")
                     .then(response => {
                         setSubCategory(response.data.data);
+                        setsubCategoryFilter(
+                            response.data.data.filter(
+                                resp => resp.category.id == res.data.data[0].id
+                            )
+                        );
                     })
                     .catch(err => console.log(err));
             })
@@ -37,15 +43,18 @@ function Govermentjob() {
                 setCourse(res.data.data);
             })
             .catch(err => {
-                
                 console.log(err);
             });
     }, []);
 
     const handleTabFilter = id => {
         axios
-        .get(`/api/government_jobs/sub_categories?${id === 'all' ? '': `category_id=${id}`  }`)
-        .then(res => setsubCategoryFilter(res.data.data))
+            .get(
+                `/api/government_jobs/sub_categories?${
+                    id === "all" ? "" : `category_id=${id}`
+                }`
+            )
+            .then(res => setsubCategoryFilter(res.data.data));
     };
 
     return (

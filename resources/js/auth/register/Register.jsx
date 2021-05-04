@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import registerBackground from "../../Images/registerBackground.png";
 import signInGoogle from "../../Images/signInGoogle.png";
 import facebookLogo from "../../Images/FacebookLogo.png";
-
+import http from "../../utils/http";
 const Register = () => {
     let history = useHistory();
 
@@ -14,10 +14,11 @@ const Register = () => {
         e.preventDefault();
         let form = e.nativeEvent.target;
         let data = new FormData(form);
-        axios
-            .post("/api/auth/signup", data)
+        http.post("auth/signup", data)
             .then(res => {
-                history.push("/landingPage");
+                const accessToken = res.data.access_token;
+                localStorage.setItem("accessToken", accessToken);
+                window.location.href = "/landingPage";
             })
             .catch(err => console.log(err.response.data.message));
     };
@@ -117,17 +118,32 @@ const Register = () => {
                                 Already have an account?{" "}
                                 <Link to="/login">Login</Link>
                             </p>
-                            <p className="register-login-link"> Register With Your Social Account</p>
-                            <div style={{marginLeft:"40%"}}>
-                                <a href="/login/Facebook/redirect" target="_blank">
-                                <img className="social-sign-in" src={facebookLogo} alt="signInFacebook" />
-                            </a>
-                            <a href="/login/google/redirect" target="_blank">
-                                <img className="social-sign-in" src={signInGoogle} alt="signInGoogle"/>
-                            </a>
+                            <p className="register-login-link">
+                                {" "}
+                                Register With Your Social Account
+                            </p>
+                            <div style={{ marginLeft: "40%" }}>
+                                <a
+                                    href="/login/Facebook/redirect"
+                                    target="_blank"
+                                >
+                                    <img
+                                        className="social-sign-in"
+                                        src={facebookLogo}
+                                        alt="signInFacebook"
+                                    />
+                                </a>
+                                <a
+                                    href="/login/google/redirect"
+                                    target="_blank"
+                                >
+                                    <img
+                                        className="social-sign-in"
+                                        src={signInGoogle}
+                                        alt="signInGoogle"
+                                    />
+                                </a>
                             </div>
-                            
-
                         </form>
                     </Col>
                     <Col
