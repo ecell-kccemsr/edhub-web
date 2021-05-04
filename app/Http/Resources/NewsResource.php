@@ -2,8 +2,10 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\News;
 use TCG\Voyager\Facades\Voyager;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class NewsResource extends JsonResource
 {
@@ -15,6 +17,10 @@ class NewsResource extends JsonResource
      */
     public function toArray($request)
     {
+        $hasLiked = false;
+        if(Auth::user()) {
+            $hasLiked = Auth::user()->hasLiked(News::find($this->id)); 
+        }
         return [
             'id' => $this->id,
             'title' => $this->title,
@@ -34,7 +40,7 @@ class NewsResource extends JsonResource
             'seo_keywords' => $this->seo_keywords,
             'seo_description' => $this->seo_description,
             'total_likes' => $this->likers()->count(),
-            'has_liked' => $hasLiked
+            'has_liked' => $hasLiked,
         ];
     }
 }
