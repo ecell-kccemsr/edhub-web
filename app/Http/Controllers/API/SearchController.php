@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\News;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\News;
 use App\Models\Course;
 use App\Models\ExamCalendar;
+use Illuminate\Http\Request;
 use App\Models\GovernmentJob;
 use App\Models\QuestionPaper;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\CourseProviderResource;
 
 class SearchController extends Controller
 {
@@ -55,7 +56,7 @@ class SearchController extends Controller
         foreach ($course as $c) {
             $sub_data['title'] = $c->title;
             $sub_data['slug'] = $c->slug;
-            $sub_data['provider'] = $c->course_provider()->image;
+            $sub_data['provider'] = new CourseProviderResource($c->course_provider);
             $sub_data['type'] = 'course';
             array_push($data, $sub_data);
         }
