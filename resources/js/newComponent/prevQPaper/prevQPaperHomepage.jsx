@@ -104,8 +104,11 @@ const prevQPaperHomepage = () => {
                                     <Row>
                                         <Col sm="12" md="4" lg="3">
                                             <div className="job-tab-el my-2">
-                                                <img src={d?.image} alt="" />{" "}
-                                                <p>{d?.name}</p>
+                                            <Link to={`/questionpaper/${d?.category?.slug}/${d?.slug}`}>
+                                                     <img src={d?.image} alt="" />
+                                                    <p>{d?.name}</p>
+                                                    </Link>
+                                               
                                             </div>
                                         </Col>
                                     </Row>

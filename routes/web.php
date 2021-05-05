@@ -29,7 +29,7 @@ Route::view('/news/{news_slug}','app');
 
 #newroutes for questionpaper
 Route::view('/questionpaper', 'app');
-Route::view('/questionpaper/{subcategory_id}', 'app');
+Route::view('/questionpaper/{category_slug}/{subcategory_slug}', 'app');
 
 
 #newroutes for blog

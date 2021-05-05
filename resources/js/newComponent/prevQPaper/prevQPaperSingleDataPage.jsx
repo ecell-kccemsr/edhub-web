@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Col, List, Container, Row } from "reactstrap";
 import axios from "axios";
 import LinkCard from "../../components/link-card/LinkCard";
@@ -11,6 +11,7 @@ const prevQPaperSingleDataPage = id => {
     const [paper, setPaper] = useState([]);
     const [course, setCourse] = useState([]);
     const [jobs, setJobs] = useState([]);
+    const {subcategory_slug} = useParams();
     useEffect(() => {
         axios
             .get("/api/government_jobs/categories")
@@ -20,9 +21,10 @@ const prevQPaperSingleDataPage = id => {
 
             .catch(err => console.log(err));
         axios
-            .get(`/api/questionpapers/?${id}`)
+            .get(`/api/questionpapers?subcategory_slug=${subcategory_slug}`)
             .then(res => {
                 setPaper(res.data.data);
+                console.log(res.data.data);
             })
 
             .catch(err => console.log(err));

@@ -75,7 +75,7 @@ const App = props => {
                     component={prevQPaperHomepage}
                 />
                 <CourseLayoutRoutes
-                    path="/questionpaper/:subcategory_id"
+                    path="/questionpaper/:category_slug/:subcategory_slug"
                     exact
                     component={prevQPaperSingleDataPage}
                 />
