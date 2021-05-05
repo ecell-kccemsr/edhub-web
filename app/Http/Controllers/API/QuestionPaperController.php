@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\QuestionPaper;
 use App\Http\Controllers\Controller;
 use App\Models\QuestionPaperCategory;
+
+use Illuminate\Database\Query\Builder;
 use App\Models\QuestionPaperSubCategory;
 use App\Http\Resources\QuestionPaperResource;
 use App\Http\Resources\QuestionPaperResourceCollection;
@@ -46,6 +48,13 @@ class QuestionPaperController extends Controller
         if($request->has('year'))
         {
             $question_papers = $question_papers->where('year',$request->input('year'));
+        }
+        if($request->has('subcategory_slug'))
+        {
+            $question_papers = $question_papers->whereHas('sub_category', function (Builder $query) use($request)
+            {    
+                $query->where('slug', $request->input('subcategory_slug'));
+            });
         }
         $question_papers = $question_papers->paginate($request->input('per_page', 10));
         return new QuestionPaperResourceCollection($question_papers);
