@@ -28,6 +28,7 @@ class NewsResource extends JsonResource
             'details' => $this->details,
             'tags' => $this->tags,
             'image' =>  Voyager::image($this->image),
+            'total_views' => $this->total_views,
             'category' => new NewsCategoryResource($this->category),
             'subcategory' => new NewsSubCategoryResource($this->sub_category),
             'published_by' => $this->published_by,
