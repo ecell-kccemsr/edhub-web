@@ -10,7 +10,7 @@ import Scomments from "../../Images/blogs/comment.png";
 import Moment from "react-moment";
 import axios from "axios";
 import Share from "../../Images/news/share.png";
-import { Collapse } from 'reactstrap';
+import { Collapse } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useStoreState } from "easy-peasy";
 
@@ -44,6 +44,7 @@ const SingleBlog = props => {
                     "Content-Type": "application/json"
                 }
             })
+
             .catch(err => console.log(err));
     };
 
@@ -112,40 +113,42 @@ const SingleBlog = props => {
                                 </h4>
                             </div>
                             <div className="news-interaction-el-1">
-                                    <img src={Share} alt="Share" onClick={toggle} />
-                                    <Collapse isOpen={isOpen}>
-                                    <div className="social-container" style={{padding:"6px"}}>
-                                <a
-                                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
-                                    target="_blank"
-                                >
-                                   <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a
-                                    href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
-                                    target="_blank"
-                                >
-                                    {" "}
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a
-                                    href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
-                                    target="_blank"
-                                >
-                                    {" "}
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a
-                                    href={`https://api.whatsapp.com/send?text=${window.location.href}`}
-                                    target="_blank"
-                                >
-                                    {" "}
-                                    <i class="fab fa-whatsapp"></i>
-                                </a>
-                            </div>
-
-                                 </Collapse>
+                                <img src={Share} alt="Share" onClick={toggle} />
+                                <Collapse isOpen={isOpen}>
+                                    <div
+                                        className="social-container"
+                                        style={{ padding: "6px" }}
+                                    >
+                                        <a
+                                            href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
+                                            target="_blank"
+                                        >
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                        <a
+                                            href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
+                                            target="_blank"
+                                        >
+                                            {" "}
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                        <a
+                                            href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
+                                            target="_blank"
+                                        >
+                                            {" "}
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a
+                                            href={`https://api.whatsapp.com/send?text=${window.location.href}`}
+                                            target="_blank"
+                                        >
+                                            {" "}
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
                                     </div>
+                                </Collapse>
+                            </div>
                         </div>
                     </Col>
                     <Col sm="12" md="10">
@@ -191,6 +194,19 @@ const SingleBlog = props => {
                         </div>
                     )}
                 </>
+                <div className="user-comment-section">
+                    <h4 className="user-comments">User Comments </h4>
+
+                    <div className="container comment-section">
+                        {comments &&
+                            comments.length &&
+                            comments.slice(0, 4).map(c => {
+                                return (
+                                    <div className="comments">{c.comment} </div>
+                                );
+                            })}
+                    </div>
+                </div>
             </Container>
         </div>
     );

@@ -146,6 +146,22 @@
         width: 100%;
     }
 }
+.user-comment-section {
+    background-color: whitesmoke;
+    padding: 30px;
+    margin: 0px 10px 0px 92px;
+    .user-comments {
+        margin: 5px 0px 0px 92px;
+    }
+    .comment-section {
+        margin: 5px 0px 5px 77px;
+        padding: 3px;
+        .comments {
+            padding: 10px;
+            width: 900px;
+        }
+    }
+}
 
 @media only screen and (max-width: 775px) {
     .single-blog-section {

@@ -72,6 +72,7 @@
         }
     }
 }
+
 @media only screen and (max-width: 775px) {
     .news-section-container {
         .news-sidebar {
@@ -217,6 +218,22 @@
         }
         .top-container-el:last-child .text-container {
             border-bottom: none;
+        }
+    }
+}
+
+.user-comment-section-news {
+    background-color: whitesmoke;
+    padding: 30px;
+    .user-comments-news {
+        margin: 5px 0px 0px 0px;
+    }
+    .comment-section-news {
+        margin: 5px 0px 5px 0px;
+        padding: 3px;
+        .comments-news {
+            padding: 10px;
+            width: 900px;
         }
     }
 }
