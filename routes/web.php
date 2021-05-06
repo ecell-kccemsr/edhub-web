@@ -25,25 +25,25 @@ Route::view('/register', 'app');
 
 #newroutes for news
 Route::view('/news', 'app');
-Route::view('/news/{news_slug}','app');
+Route::view('/news/{news_slug}','app')->name('news.show');
 
 #newroutes for questionpaper
 Route::view('/questionpaper', 'app');
-Route::view('/questionpaper/{category_slug}/{subcategory_slug}', 'app');
+Route::view('/questionpaper/{category_slug}/{subcategory_slug}', 'app')->name('question_paper.show');
 
 
 #newroutes for blog
 Route::view('/blogs', 'app');
-Route::view('/blog/{blog_slug}', 'app');
+Route::view('/blog/{blog_slug}', 'app')->name('blog.show');
 
 
 Route::view('/govermentjobs', 'app');
-Route::view('/govermentjobs/{category_slug}/{subcategory_slug}/{slug}', 'app');
+Route::view('/govermentjobs/{category_slug}/{subcategory_slug}/{slug}', 'app')->name('government_job.show');
 
 
-Route::view('/exam/calendar', 'app');
+Route::view('/exam/calendar', 'app')->name('exam_calendar.show');
 Route::view('/landingPage','app');
-Route::view('/courseDetail/{course_slug}','app');
+Route::view('/courseDetail/{course_slug}','app')->name('course.show');
 Route::view('/profile/basic','app');
 Route::view('/profile/wishlist','app');
 Route::view('/profile/my-courses','app');
