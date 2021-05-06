@@ -41,6 +41,7 @@ const SearchbarDropdown = props => {
                 placeholder="Search"
                 ref={inputRef}
                 onChange={onInputChange}
+                autocomplete="off"
             />
             <ul id="results" className="list-group" ref={ulRef}>
                 {options.map((option, index) => {
@@ -53,9 +54,9 @@ const SearchbarDropdown = props => {
                             <p style={{textTransform:"uppercase"}}>
                             {option?.type}
                             </p>
-                            <Link to={`courseDetail/${option.slug}`}>
+                            <a href={`${option?.url}`}>
                                 {option?.title}
-                            </Link>
+                            </a>
                         </button>
                     );
                 })}
