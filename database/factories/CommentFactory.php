@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Testimony;
+use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TestimonyFactory extends Factory
+class CommentFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Testimony::class;
+    protected $model = Model::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,10 @@ class TestimonyFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word,
-            'rating' => $this->faker->randomFloat(1,0,5),
-            'review' => $this->faker->sentence,
-            'image' => $this->faker->imageUrl,
+            'commentable' => $this->faker->commentable,
+            'comment' => $this->faker->comment,
+            'is_approved' => $this->faker->is_approved,
+            'user_id' => $this->faker->user_id,
         ];
     }
 }

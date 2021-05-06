@@ -24,16 +24,18 @@ class NewsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title,
-            'tags' => $this->faker->tags,
+            'title' => $this->faker->realText(50),
+            'tags' => $this->faker->word(),                                            
             'description' => $this->faker->sentence,
             'details' => $this->faker->paragraph,
-            'image' => $this->faker->image,
+            'image' => $this->faker->imageUrl,
             'total_views' => random_int(0, 60),
-            'category_id' => NewsCategory::inRandomOrder()->first(),
-            'subcategory_id' => NewsSubCategory::inRandomOrder()->first(),
+            'category_id' => NewsCategory::inRandomOrder()->first()->id,
+            'subcategory_id' => NewsSubCategory::inRandomOrder()->first()->id,
             'seo_keywords' => $this->faker->sentence,
             'seo_description' => $this->faker->sentence,
+            'published_by' => $this->faker->name,
+            'published_at' => $this->faker->dateTime,
         ];
     }
 }

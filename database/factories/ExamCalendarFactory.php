@@ -23,12 +23,12 @@ class ExamCalendarFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->word,
             'date' => $this->faker->date,
-            'image' => $this->faker->image,
+            'image' => $this->faker->imageUrl,
             'official' => random_int(0, 1),
             'url' => $this->faker->url,
-            'category_id' => ExamCalendarCategory::inRandomOrder()->first(),
+            'category_id' => ExamCalendarCategory::inRandomOrder()->first()->id,
             'age_limit' => random_int(0, 60),
             'qualification' => random_int(10,12),
             'seo_keywords' => $this->faker->sentence,

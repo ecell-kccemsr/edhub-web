@@ -24,9 +24,9 @@ class GovernmentJobFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title,
+            'title' => $this->faker->realText(50),
             'description' => $this->faker->paragraph,
-            'image' => $this->faker->image,
+            'image' => $this->faker->imageUrl,
             'salary_and_job_positions' => $this->faker->sentence,
             'eligibility_criteria' => $this->faker->sentence,
             'syllabus' => $this->faker->sentence,
@@ -34,8 +34,8 @@ class GovernmentJobFactory extends Factory
             'cutoff' => $this->faker->sentence,
             'admit_card' => $this->faker->sentence,
             'apply_online' => $this->faker->sentence,
-            'category_id' => GovernmentJobCategory::inRandomOrder()->first(),
-            'subcategory_id' => GovernmentJobSubCategory::inRandomOrder()->first(),
+            'category_id' => GovernmentJobCategory::inRandomOrder()->first()->id,
+            'subcategory_id' => GovernmentJobSubCategory::inRandomOrder()->first()->id,
             'age_limit' => random_int(0, 60),
             'qualification' => random_int(10,12),
             'seo_keywords' => $this->faker->sentence,

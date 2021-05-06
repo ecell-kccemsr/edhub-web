@@ -22,7 +22,9 @@ class ExamCalendarCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->word,
+            'seo_keywords' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,
         ];
     }
 }

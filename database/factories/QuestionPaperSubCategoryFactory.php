@@ -23,11 +23,11 @@ class QuestionPaperSubCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'category_id' => QuestionPaperCategory::first() ? QuestionPaperCategory::first()->id : null,
+            'name' => $this->faker->word,
+            'category_id' => QuestionPaperCategory::inRandomOrder()->first()->id,
             'seo_keywords' => $this->faker->sentence,
             'seo_description' => $this->faker->sentence,
-            'image' => $this->faker->image,
+            'image' => $this->faker->imageUrl,
         ];
     }
 }

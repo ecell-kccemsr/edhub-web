@@ -22,11 +22,11 @@ class ExamResultFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'description' => $this->faker->description,
+            'name' => $this->faker->word,
+            'description' => $this->faker->paragraph,
             'url' => $this->faker->url,
             'seo_keywords' => $this->faker->sentence,
-            'seo_description' => $this->faker->sentence,
+            'seo_description' => $this->faker->sentence,        
         ];
     }
 }

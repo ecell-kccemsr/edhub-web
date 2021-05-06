@@ -23,8 +23,8 @@ class NewsSubCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'category_id' => NewsCategory::first() ? NewsCategory::first()->id : null,
+            'name' => $this->faker->word,
+            'category_id' => NewsCategory::inRandomOrder()->first()->id,
             'seo_keywords' => $this->faker->sentence,
             'seo_description' => $this->faker->sentence,
         ];
