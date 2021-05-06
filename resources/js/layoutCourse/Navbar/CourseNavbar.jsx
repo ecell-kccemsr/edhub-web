@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { Row, Col, Button, FormGroup, Label, Input, Modal } from "reactstrap";
-import { action, useStoreActions, useStoreState } from "easy-peasy";
-import http from "../../utils/http";
+import { Button,Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+import { useStoreState } from "easy-peasy";
+import http from "../../utils/http";
+import Login from "../../auth/login/Login";
+import signUp from "../../auth/register/Register";
 //Components
 import Guide1 from "../../guide/Guide1";
 import Guide2 from "../../guide/Guide2";
@@ -14,9 +16,6 @@ import Guide5 from "../../guide/Guide5";
 //dummyData
 import { recommendedCourse } from "./navDummyData";
 //images
-import edhub1 from "../../Images/landingpage/Edhub-1.png";
-import bookmark from "../../Images/landingpage/bookmark.png";
-import provider from "../../Images/landingpage/provider.png";
 
 const SearchbarDropdown = props => {
     const { options, onInputChange } = props;
@@ -103,8 +102,14 @@ const CourseNavbar = props => {
         setStep(1);
     };
 
-    const nextStep = () => setStep(prev => prev + 1);
+    // Login modal 
+    const [modallogin, setModalLogin] = useState(false);
+    const toggleLogin = () => setModalLogin(!modallogin);
+    const [isLogin, setIsLogin] = useState(true);
 
+
+
+    const nextStep = () => setStep(prev => prev + 1);
     const prevStep = () => setStep(prev => prev - 1);
 
     const handleSubmit = () => {
@@ -274,6 +279,9 @@ const CourseNavbar = props => {
                     {currentModalForm(step)}
                 </div>
             </Modal>
+
+
+            
             <nav className="navbar course-navbar navbar-expand-lg">
                 <div className="container">
                     <Link className="navbar-brand" to="/landingPage">
@@ -533,15 +541,35 @@ const CourseNavbar = props => {
                                     <img src="/Images/landingpage/bookmark.png" alt="bookmark" />
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link
-                                    className="nav-link courseNavLink"
-                                    to="/profile/basic"
-                                >
-                                    <img src={user?.avatar} alt="User" />
-                                </Link>
-                            </li>
+                         
+                           <li>
+                           {user ? (
+                                  <li className="nav-item">
+                                  <Link
+                                      className="nav-link courseNavLink"
+                                      to="/profile/basic"
+                                  >
+                                      <img src={user?.avatar} alt="User" />
+                                  </Link>
+                              </li>
+                            ) : (
+                                <div className="login-toggle-form">
+
+                                 <Button outline color="success" onClick={toggleLogin}>login</Button>
+                                 <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
+                                 <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
+                                   <ModalBody>
+                                    <Login />                                   
+                                   </ModalBody>
+                                 </Modal>
+                                       
+                                 
+                             </div>
+                            )}
+                              
+                           </li>
                            
+
                         </ul>
                     </div>
                 </div>
