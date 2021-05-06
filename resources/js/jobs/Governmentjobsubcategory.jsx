@@ -146,7 +146,7 @@ function Governmentjobsubcategory(props) {
                                             marginRight: "auto",
                                             display: "block"
                                         }}
-                                        alt=""
+                                        alt="sub-image"
                                     />
                                     <div className="government-job-subcategory-content">
                                         <h5

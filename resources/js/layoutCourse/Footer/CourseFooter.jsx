@@ -30,8 +30,8 @@ function CourseFooter() {
                             <Col sm="12" lg="6">
                                 <div className=" footer-section-one">
                                     <img
-                                        src={harvard}
-                                        alt=""
+                                        src="/Images/footer/harvard.png"
+                                        alt="harvard"
                                         className="footer-icons"
                                     />
                                     <p className="footer-header-name ml-2 mb-0">
@@ -42,8 +42,8 @@ function CourseFooter() {
                             <Col sm="12" lg="6">
                                 <div className=" footer-section-one">
                                     <img
-                                        src={harvard}
-                                        alt=""
+                                        src="/Images/footer/harvard.png"
+                                        alt="harvard"
                                         className="footer-icons"
                                     />
                                     <p className="footer-header-name ml-2 mb-0">
@@ -63,11 +63,11 @@ function CourseFooter() {
                             <b>50+ Providers</b>
                         </div>
                         <div className=" footer-section-one">
-                            <img src={Vector} alt="" />
+                            <img src="/Images/footer/Vector.png" alt="Vector" />
                             <p className="provider-name ml-2 mb-0">Coursera</p>
                         </div>
                         <div className=" footer-section-one">
-                            <img src={udemy} alt="" className="footer-icons" />
+                            <img src="/Images/footer/udemy-icon 1.png" alt="Udemy" className="footer-icons" />
                             <p className="provider-name ml-2 mb-0">Udemy</p>
                         </div>
                     </Col>
@@ -82,8 +82,8 @@ function CourseFooter() {
                         </div>
                         <div className=" footer-section-one">
                             <img
-                                src={microsoft}
-                                alt=""
+                                src="/Images/footer/microsoft-icon 1.png"
+                                alt="microsoft"
                                 className="footer-icons"
                             />
                             <p className="footer-header-name ml-2 mb-0">
@@ -91,7 +91,7 @@ function CourseFooter() {
                             </p>
                         </div>
                         <div className=" footer-section-one">
-                            <img src={amazon} alt="" className="footer-icons" />
+                            <img src="/Images/footer/amazon-icon 1.png" alt="Amazon" className="footer-icons" />
                             <p className="footer-header-name ml-2 mb-0">
                                 Amazon
                             </p>

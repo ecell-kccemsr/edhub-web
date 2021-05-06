@@ -45,11 +45,11 @@ const CourseCard = ({ data }) => {
                 onClick={() => handleWishlist(data)}
             >
                 {isAlreadyInWishlist === false ? (
-                    <img src={bookmark} alt="bookmark" />
+                    <img src="/Images/landingpage/bookmark.png" alt="bookmark" />
                 ) : (
                     <img
-                        src={bookmark1}
-                        alt="bookmark1"
+                        src="/Images/landingpage/bookmark2.png"
+                        alt="bookmark"
                         className="wishlist-section-bookmark1"
                     />
                 )}
@@ -64,7 +64,7 @@ const CourseCard = ({ data }) => {
                     <div>
                         <img
                             src={data?.course_provider.image}
-                            alt=""
+                            alt="course-provider"
                             style={{ height: "25px" }}
                         />
                     </div>
@@ -86,11 +86,11 @@ const CourseCard = ({ data }) => {
                         </h4>
                     <div className="card-overview">
                         <div>
-                            <img src={play} alt="" />
+                            <img src="/Images/courseCategory/play.png" alt="play" />
                             <p>20 Lessons</p>
                         </div>
                         <div>
-                            <img src={guide} alt="" />
+                            <img src="/Images/courseCategory/guide.png" alt="guide" />
                             <p>Guided Course</p>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ const CourseCard = ({ data }) => {
                         className="compare-section"
                         onClick={() => handleCompare(data)}
                     >
-                        <img src={addtoCompare} alt="" />
+                        <img src="/Images/courseCategory/addcompare.png" alt="addcompare" />
                         {isAlreadyInCompares === false ? (
                             <h5>Add to compare</h5>
                         ) : (
@@ -111,7 +111,7 @@ const CourseCard = ({ data }) => {
 
                 <div className="coursecard-footer">
                     <div>
-                        <img src={star} alt="" />
+                        <img src="/Images/courseCategory/star.png" alt="star" />
                         <p>
                         {
                          Math.round(parseFloat
@@ -125,7 +125,7 @@ const CourseCard = ({ data }) => {
                          Reviews</p>
                     </div>
                     <Link to={`/courseDetail/${data?.slug}`}>
-                        <img src={reviewArrow} alt="" />
+                        <img src="/Images/courseCategory/reviewArrow.png" alt="reviewArrow" />
                     </Link>
                 </div>
             </div>

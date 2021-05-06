@@ -24,7 +24,7 @@ const TooltipComponent = ({ data }) => {
                       
 
                         <div className="tooltip-outcome" key={p}>
-                            <img src={prereq} alt="Prereq" />
+                            <img src="/Images/courseDetail/prereq.png" alt="Prereq" />
                             <p>
                             {p
                             .length > 40

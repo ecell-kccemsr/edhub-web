@@ -95,8 +95,8 @@ function Govermentjob() {
                             <Col md="6">
                                 <img
                                     className="heroBg-img"
-                                    src={heroBg1}
-                                    alt=""
+                                    src="/Images/Jobs/heroBg1.png"
+                                    alt="Hero"
                                 />
                             </Col>
                         </Row>
@@ -150,7 +150,7 @@ function Govermentjob() {
                                                 <div className="job-tab-el my-2">
                                                     <img
                                                         src={d?.image}
-                                                        alt=""
+                                                        alt="Sub-Image"
                                                     />{" "}
                                                     <p>{d?.name}</p>
                                                 </div>

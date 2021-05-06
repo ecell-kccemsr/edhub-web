@@ -89,8 +89,8 @@ const DegreeInstructorSection = () => {
                                                 <div className="degree-instructor-card">
                                                     <div className="d-flex justify-content-center mb-3">
                                                         <img
-                                                            src={instructor}
-                                                            alt=""
+                                                            src="/Images/degree/instructor.png"
+                                                            alt="instructor"
                                                         />
                                                     </div>
                                                     <h5>{i?.name}</h5>
@@ -103,10 +103,8 @@ const DegreeInstructorSection = () => {
                                                                 overview => (
                                                                     <li className="degreeinstructor-overview-list">
                                                                         <img
-                                                                            src={
-                                                                                instructorDot
-                                                                            }
-                                                                            alt=""
+                                                                            src="/Images/degree/instructor-dot.png"
+                                                                            alt="instructor"
                                                                             className="degree-instructor-dot-img"
                                                                         />
                                                                         <span className="instructor-overview-span">

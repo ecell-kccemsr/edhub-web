@@ -16,8 +16,8 @@ const Promotions = () => {
                 <div className="community-divison-content">
                     <p className="community-divison-content-maintext">
                         <img
-                            src={circleicon}
-                            alt=""
+                            src="/Images/landingpage/circle icon.png"
+                            alt="circle"
                             className="community-divison-image"
                         />
                         Join the community
@@ -33,16 +33,16 @@ const Promotions = () => {
                     We collaborate with 200+ leading universities and companies
                 </p>
                 <div className="brand-section">
-                    <img src={google} alt="" className="brand-image" />
-                    <img src={ibm} alt="" className="brand-image" />
-                    <img src={duke} alt="" className="brand-image" />
+                    <img src="/Images/landingpage/google.png" alt="" className="brand-image" />
+                    <img src="/Images/landingpage/ibm.png" alt="" className="brand-image" />
+                    <img src="/Images/landingpage/duke.png" alt="" className="brand-image" />
                 </div>
                 <p className="feature-in-header">Featured In</p>
                 <div className="newspaper-images">
-                    <img src={hindustan} alt="" />
-                    <img src={toi} alt="" />
-                    <img src={hd} alt="" />
-                    <img src={guardian} alt="" />
+                    <img src="/Images/landingpage/hindustan.png" alt="hindustan" />
+                    <img src="/Images/landingpage/toi.png" alt="toi" />
+                    <img src="/Images/landingpage/hd.png" alt="hd" />
+                    <img src="/Images/landingpage/guardian.png" alt="guardian" />
                 </div>
             </div>
         </div>

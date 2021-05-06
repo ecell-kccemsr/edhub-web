@@ -39,13 +39,9 @@ const Testimonial = () => {
                         <div className="carousel-slider-div">
                             <div className="course-detail-testimonial-cards-outer">
                                 <>
-                                    <img
-                                        src={star5}
-                                        alt=""
-                                        className="review-stars"
-                                    />
+                                   
                                     <div className="course-detail-testimonial-cards-inner">
-                                        <img src={testimonials?.image} alt="" />
+                                        <img src={testimonials?.image} alt="testimonials" />
                                         <h6>{testimonials?.name}</h6>
                                         <p>“{testimonials?.review}”</p>
                                     </div>

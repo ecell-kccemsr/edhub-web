@@ -85,11 +85,11 @@ const SingleBlog = props => {
                 <img src={singleBlog?.image} alt="Single Blog Top Image" />
                 <div className="singleblog-like-section">
                     <div className="interaction-container">
-                        <img src={like} alt="Like" onClick={handleLike} />
+                        <img src="/Images/blogs/like.png" alt="Like" onClick={handleLike} />
                         <b>{singleBlog.total_likes}</b>
                     </div>
                     <div className="interaction-container">
-                        <img src={Scomments} alt="Comments" />
+                        <img src="/Images/blogs/comment.png" alt="Comments" />
                         <b>{comments.length}</b>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ const SingleBlog = props => {
                                 </h4>
                             </div>
                             <div className="news-interaction-el-1">
-                                <img src={Share} alt="Share" onClick={toggle} />
+                                <img src="/Images/news/share.png" alt="Share" onClick={toggle} />
                                 <Collapse isOpen={isOpen}>
                                     <div
                                         className="social-container"

@@ -69,8 +69,8 @@ const Checkout = () => {
                                                     </Col>
                                                     <Col sm="12" md="4" lg="4">
                                                         <img
-                                                            src={upi}
-                                                            alt=""
+                                                            src="/Images/checkout/upi.png"
+                                                            alt="upi"
                                                             className="ml-2"
                                                         />
                                                     </Col>
@@ -102,8 +102,8 @@ const Checkout = () => {
                                                     </Col>
                                                     <Col sm="12" md="4" lg="4">
                                                         <img
-                                                            src={visa}
-                                                            alt=""
+                                                            src="/Images/checkout/visa.png"
+                                                            alt="visa"
                                                             className="ml-2"
                                                         />
                                                     </Col>
@@ -122,8 +122,8 @@ const Checkout = () => {
                                                     </Col>
                                                     <Col sm="12" md="4" lg="4">
                                                         <img
-                                                            src={paytm}
-                                                            alt=""
+                                                            src="/Images/checkout/paytm.png"
+                                                            alt="Paytym"
                                                             className="ml-2"
                                                         />
                                                     </Col>
@@ -142,8 +142,8 @@ const Checkout = () => {
                                                     </Col>
                                                     <Col sm="12" md="4" lg="4">
                                                         <img
-                                                            src={paypal}
-                                                            alt=""
+                                                            src="/Images/checkout/paypal.png"
+                                                            alt="paypal"
                                                             className="ml-2"
                                                         />
                                                     </Col>
@@ -162,8 +162,8 @@ const Checkout = () => {
                                                     </Col>
                                                     <Col sm="12" md="4" lg="4">
                                                         <img
-                                                            src={phonepay}
-                                                            alt=""
+                                                            src="/Images/checkout/phonepay.png"
+                                                            alt="phonepay"
                                                             className="ml-2"
                                                         />
                                                     </Col>

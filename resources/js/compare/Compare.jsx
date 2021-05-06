@@ -37,7 +37,7 @@ const Compare = () => {
                                                     src={
                                                         cmp?.image || cardHeader
                                                     }
-                                                    alt=""
+                                                    alt="course"
                                                     style={{
                                                         borderRadius: "16px",
                                                         width: "100%"
@@ -72,8 +72,8 @@ const Compare = () => {
                                     <td key={key}>
                                         <div style={{ display: "flex" }}>
                                             <img
-                                                src={star4}
-                                                alt=""
+                                                src="/Images/courseDetail/4star.png"
+                                                alt="Star"
                                                 style={{ objectFit: "contain" }}
                                             />
                                             <p>
@@ -100,7 +100,7 @@ const Compare = () => {
                                     <td key={key}>
                                         <img
                                             src={compare.course_provider.image}
-                                            alt=""
+                                            alt="course_provider"
                                             className="compare-course-by-image"
                                         />
                                     </td>

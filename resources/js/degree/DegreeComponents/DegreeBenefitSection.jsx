@@ -23,9 +23,9 @@ const DegreeBenefitSection = () => {
                                     benefits.map(p => (
                                         <li key={p} className="my-2">
                                             <img
-                                                src={prereq}
+                                                src="/Images/degree/prereq.png"
                                                 className="mr-2"
-                                                alt=""
+                                                alt="Prereq"
                                             />
                                             <span className="course-prereq-title">
                                                 {p}

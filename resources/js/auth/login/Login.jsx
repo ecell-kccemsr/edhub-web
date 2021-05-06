@@ -98,7 +98,7 @@ const Login = () => {
                                 >
                                     <img
                                         className="social-sign-in"
-                                        src={facebookLogo}
+                                        src="/Images/FacebookLogo.png"
                                         alt="signInFacebook"
                                     />
                                 </a>
@@ -108,7 +108,7 @@ const Login = () => {
                                 >
                                     <img
                                         className="social-sign-in"
-                                        src={signInGoogle}
+                                        src="/Images/signInGoogle.png"
                                         alt="signInGoogle"
                                     />
                                 </a>
@@ -120,7 +120,8 @@ const Login = () => {
                         md={{ size: 6, offset: 2 }}
                         className="auth-img-col"
                     >
-                        <img src={loginBackground} alt="" className="w-100" />
+                        
+                        <img src="/images/loginBackground.png" alt="loginBackground" className="w-100" />
                     </Col>
                 </Row>
             </Container>

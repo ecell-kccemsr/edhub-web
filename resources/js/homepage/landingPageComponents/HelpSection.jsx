@@ -22,8 +22,8 @@ const HelpSection = () => {
                         className="image-container image-one"
                     >
                         <img
-                            src={icon1}
-                            alt=""
+                            src="/Images/landingpage/icon1.png"
+                            alt="Icon"
                             className="help-section-main-img "
                         />
                         <div className="text-container">
@@ -40,7 +40,7 @@ const HelpSection = () => {
                         lg="2"
                         className="landingpage-help-section-arrow-image"
                     >
-                        <img src={arrow1} alt="" />
+                        <img src="/Images/landingpage/Arrow1.png" alt="Arrow" />
                     </Col>
                     <Col
                         sm="12"
@@ -49,8 +49,8 @@ const HelpSection = () => {
                         className="image-container image-two"
                     >
                         <img
-                            src={icon2}
-                            alt=""
+                            src="/Images/landingpage/icon2.png"
+                            alt="Icon"
                             className="help-section-main-img "
                         />
                         <div className="text-container">
@@ -67,7 +67,7 @@ const HelpSection = () => {
                         lg="2"
                         className="landingpage-help-section-arrow-image"
                     >
-                        <img src={arrow2} alt="" />
+                        <img src="/Images/landingpage/Arrow2.png" alt="Arrow" />
                     </Col>
                     <Col
                         sm="12"
@@ -76,8 +76,8 @@ const HelpSection = () => {
                         className="image-container image-three"
                     >
                         <img
-                            src={icon3}
-                            alt=""
+                            src="/Images/landingpage/icon3.png"
+                            alt="Icon"
                             className="help-section-main-img "
                         />
                         <div className="text-container">

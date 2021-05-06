@@ -22,6 +22,7 @@ import star from "../Images/courseCategory/star.png";
 import ellipse from "../Images/courseDetail/Ellipse.png";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { useStoreActions, useStoreState } from "easy-peasy";
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const authorOverview = [
     "4.2 Instructor Rating",
@@ -47,12 +48,13 @@ function CourseDetail(props) {
     const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
     const [CourseRev, setCourseRev] = useState([]);
+    const [categories, setCategory] = useState([]);
     const [singleCourse, setSingleCourse] = useState([]);
     const [courseCurr, setCourseCurr] = useState([]);
-   
     useEffect(() => {
         const { course_slug } = props.match.params;
         setCourseSlug(course_slug);
+       
        
         axios
             .get(`/api/courses/${course_slug}`)
@@ -108,6 +110,7 @@ function CourseDetail(props) {
                 previousScore + currentScore.count,
             0
         );
+        const url = window.location.href
 
     return (
         <>
@@ -130,7 +133,7 @@ function CourseDetail(props) {
                                                 padding: "4px",
                                                 objectFit: "contain"
                                             }}
-                                            alt=""
+                                            alt="course_provider"
                                         />
                                     )}
                                     <h2>{singleCourse?.title}</h2>
@@ -156,11 +159,9 @@ function CourseDetail(props) {
                                             </h6>
                                         </>
                                     )}
-                                    <button className="share-btn"
-                                    value="Copy Url" onclick={() =>
-                                        Copy()
-                                    }
-                                    >Share</button>
+                                    <CopyToClipboard text={url}>
+                                <button className="share-btn">Share</button>
+                                    </CopyToClipboard>
                                     <button
                                         className="compare-btn-1"
                                         onClick={() =>
@@ -191,6 +192,7 @@ function CourseDetail(props) {
                                         style={{ marginBottom: "5px" }}
                                         src={singleCourse?.image}
                                         className="card-header-image-details"
+                                        alt="singleCourse"
                                     />
 
                                     <div className="card-section-details-content">
@@ -254,7 +256,7 @@ function CourseDetail(props) {
                                             </p>
                                         </div>
                                         <div style={{ marginTop: "-10px" }}>
-                                            <img src={star} alt="" />
+                                            <img src="/Images/courseCategory/star.png" alt="star" />
                                         </div>
                                         <div className="card-section-details-content-price">
                                             <div style={{ marginTop: "-20px" }}>
@@ -266,7 +268,7 @@ function CourseDetail(props) {
                                                         courseinstructor => (
                                                             <h5>
                                                                 {
-                                                                    courseinstructor.name
+                                                                    courseinstructor?.name
                                                                 }
                                                             </h5>
                                                         )
@@ -283,7 +285,7 @@ function CourseDetail(props) {
                                                                     ?.course_provider
                                                                     ?.image
                                                             }
-                                                            alt=""
+                                                            alt="course_provider"
                                                             style={{
                                                                 height: "30px",
                                                                 padding: "1px",
@@ -302,7 +304,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src={ellipse}
+                                                    src="/Images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -320,7 +322,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src={ellipse}
+                                                    src="/Images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -338,7 +340,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src={ellipse}
+                                                    src="/Images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -356,7 +358,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src={ellipse}
+                                                    src="/Images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -374,7 +376,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src={ellipse}
+                                                    src="/Images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -449,11 +451,11 @@ function CourseDetail(props) {
                                 </h5>
                                 <div className="course-overview-card-stats">
                                     <div className="stat-container">
-                                        <img src={stat1} alt="" />
+                                        <img src="/Images/courseDetail/stat1.png" alt="stat1" />
                                         <p>Upto 50 % Promotions</p>
                                     </div>
                                     <div className="stat-container">
-                                        <img src={stat2} alt="" />
+                                        <img src="/Images/courseDetail/stat2.png" alt="stat2" />
                                         <p>Upto 12 % New career</p>
                                     </div>
                                 </div>
@@ -461,7 +463,7 @@ function CourseDetail(props) {
                                     Skills you'll gain
                                 </h5>
                                 <div className="course-overview-card-descriptionbox">
-                                    <p>Web development</p>
+                                <p>{singleCourse?.title}</p>
                                 </div>
                               
                             </div>
@@ -484,11 +486,11 @@ function CourseDetail(props) {
                             <h5 className="course-content-top-header" id="Content">
                                 Course Content
                             </h5>
-                            <div className="course-content-top-overview">
+                            {/* <div className="course-content-top-overview">
                                 <span>41 sections •</span>
                                 <span>692 lectures •</span>
                                 <span>173h 31m total length</span>
-                            </div>
+                            </div> */}
                             <div
                                 className="accordion course-content-accordion"
                                 id="courseContentParent"
@@ -538,10 +540,8 @@ function CourseDetail(props) {
                                                                         }
                                                                     >
                                                                         <img
-                                                                            src={
-                                                                                playbutton
-                                                                            }
-                                                                            alt=""
+                                                                            src="/Images/courseDetail/playbutton.png"
+                                                                            alt="playbutton"
                                                                             className="mr-2"
                                                                         />
                                                                         {
@@ -568,9 +568,9 @@ function CourseDetail(props) {
                                         singleCourse?.prerequisites.map(p => (
                                             <li key={p} className="my-2">
                                                 <img
-                                                    src={prereq}
+                                                    src="/Images/courseDetail/prereq.png"
                                                     className="mr-2"
-                                                    alt=""
+                                                    alt="prereq"
                                                 />
                                                 <span className="course-prereq-title">
                                                     {p}
@@ -608,7 +608,7 @@ function CourseDetail(props) {
                                                         src={
                                                             courseinstructor?.image
                                                         }
-                                                        alt=""
+                                                        alt="courseinstructor"
                                                         className="author-img"
                                                     />
                                                     <div className="author-overview-list">
@@ -626,11 +626,9 @@ function CourseDetail(props) {
                                                                             className="my-2"
                                                                         >
                                                                             <img
-                                                                                src={
-                                                                                    prereq
-                                                                                }
+                                                                                src="/Images/courseDetail/prereq.png"
                                                                                 className="mr-2 author-overview-list-img"
-                                                                                alt=""
+                                                                                alt="prereq"
                                                                             />
                                                                             <span className="author-overview-title">
                                                                                 {
@@ -658,8 +656,17 @@ function CourseDetail(props) {
                                             md="2"
                                             className="rating-container"
                                         >
-                                            <h4>{singleCourse?.rating}</h4>
-                                            <img src={star4} alt="" />
+                                            <h4>
+                                            {
+                                                  Math.round(parseFloat
+                                                     (
+                                                        singleCourse?.rating 
+                                                     )
+                                                        )
+
+                                                 }
+                                            </h4>
+                                            <img src="/Images/courseDetail/4star.png" alt="Star" />
                                             <p>course rating</p>
                                         </Col>
                                         <Col
@@ -679,14 +686,14 @@ function CourseDetail(props) {
                                                             );
                                                         let star =
                                                             r?.rating == 1
-                                                                ? star1
+                                                                ? "/Images/courseDetail/1star.png"
                                                                 : r?.rating == 2
-                                                                ? star2
+                                                                ? "/Images/courseDetail/2star.png"
                                                                 : r?.rating == 3
-                                                                ? star3
+                                                                ? "/Images/courseDetail/3star.png"
                                                                 : r?.rating == 4
-                                                                ? star4
-                                                                : star5;
+                                                                ? "/Images/courseDetail/4star.png"
+                                                                : "/Images/courseDetail/5star.png";
 
                                                         return (
                                                             <div className="indi-progress">
@@ -697,7 +704,7 @@ function CourseDetail(props) {
                                                                 />
                                                                 <img
                                                                     src={star}
-                                                                    alt=""
+                                                                    alt="Star"
                                                                 />
                                                                 <span>{`${percentage} %`}</span>
                                                             </div>
@@ -721,7 +728,7 @@ function CourseDetail(props) {
                                                 className="my-4"
                                             >
                                                 <div className="course-detail-testimonial-cards">
-                                                    <img src={u?.user_image} alt="" />
+                                                    <img src={u?.user_image} alt="user_image" />
                                                     <h6>{u?.user_name}</h6>
                                                     <p>{u?.content}</p>
                                                 </div>

@@ -46,7 +46,7 @@ const NavbarComponent = props => {
                             <Link to="/" className="navbar-navlink">
                                 <img
                                     src="https://i.ibb.co/hRbkfvr/Group-102.png"
-                                    alt=""
+                                    alt="Group"
                                 />
                             </Link>
                         </Col>

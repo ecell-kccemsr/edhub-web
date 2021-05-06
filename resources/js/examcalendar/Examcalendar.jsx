@@ -63,8 +63,10 @@ const Examcalendar = props => {
                 <div className="d-flex">
                     <img
                         className="exam-calendar-icon p-2"
-                        src="../Images/calendar-icon.png"
-                        alt=""
+                        src="/Images/calendar-icon.png"
+                       
+
+                        alt="calendar"
                     />
                     <h4 className="pt-4">Upcoming Exams 2021</h4>
                 </div>
@@ -154,9 +156,10 @@ const Examcalendar = props => {
                                                             <div className="d-flex exam-toggle-content-section-2">
                                                                 <img
                                                                     src={
-                                                                        cal.image
+                                                                        cal?.image
                                                                     }
                                                                     className="exam-toggle-content-section-2-icon"
+                                                                    alt="Calender"
                                                                 />
                                                                 <h6 className="exam-toggle-content-section-header">
                                                                     {cal.name}
