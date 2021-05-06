@@ -244,3 +244,12 @@
         display: block;
     }
 }
+@media only screen and (max-width: 600px) {
+    .navbar-search-dropdown {
+        position: relative;
+        .search-bar-dropdown {
+            width: 15em;
+            padding: 12px;
+        }
+    }
+}

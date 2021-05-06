@@ -191,6 +191,11 @@ html {
         }
     }
 }
+@media only screen and (min-width: 775px) {
+    .heroBg-img {
+        width: 100%;
+    }
+}
 
 // Government-SubCategory
 .government-section {
