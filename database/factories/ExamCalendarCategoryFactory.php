@@ -23,6 +23,7 @@ class ExamCalendarCategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
+            'image' => $this->faker->imageUrl,
             'seo_keywords' => $this->faker->sentence,
             'seo_description' => $this->faker->sentence,
         ];
