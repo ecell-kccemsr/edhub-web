@@ -9,10 +9,11 @@
         outline: none;
         padding: 5px;
         margin: 7px;
-        color: grey;
+        color: #adadad;
         font-family: "Oswald", sans-serif;
-        font-size: 20px;
         letter-spacing: 2px;
+        font-weight: 300;
+        font-size: 24px;
     }
     .category-btn-all:hover {
         color: #f05454;
@@ -24,8 +25,9 @@
         outline: none;
         padding: 5px;
         margin: 7px;
-        color: grey;
-        font-size: 20px;
+        color: #adadad;
+        font-weight: 300;
+        font-size: 24px;
         letter-spacing: 2px;
         font-family: "Oswald", sans-serif;
     }
@@ -98,6 +100,7 @@
         img {
             width: 100%;
             object-fit: contain;
+            border-radius: 16px;
         }
         .news-overview-container {
             display: flex;
@@ -225,15 +228,25 @@
 .user-comment-section-news {
     background-color: whitesmoke;
     padding: 30px;
+    border-radius: 16px;
     .user-comments-news {
         margin: 5px 0px 0px 0px;
+        font-weight: 400;
     }
     .comment-section-news {
         margin: 5px 0px 5px 0px;
         padding: 3px;
         .comments-news {
             padding: 10px;
-            width: 900px;
+            display: flex;
+            align-items: center;
+            img {
+                border-radius: 35px;
+                object-fit: cover;
+                width: 43px;
+                height: 43px;
+                margin-right: 10px;
+            }
         }
     }
 }

@@ -440,8 +440,281 @@ const courseCategory = props => {
                                                 </List>
                                             </div>
                                         </div>
+
+                                        
                                     </div>
                                 </div>
+
+                                
+                                <div
+                                    className="accordion course-category-accordion"
+                                    id="courseCategoryParent"
+                                >
+                                    <div className="card" key="language">
+                                        <div id={`heading-language`}>
+                                            <h2 className="mb-0">
+                                                <a
+                                                    className="btn btn-link course-category-card-headerlink"
+                                                    type="button"
+                                                    data-toggle="collapse"
+                                                    data-target={`#collapse-language`}
+                                                    aria-expanded="true"
+                                                    aria-controls={`collapse-language`}
+                                                >
+                                                    Language
+                                                    <i
+                                                        className="fas fa-chevron-down ml-2"
+                                                        style={{
+                                                            color: "#000"
+                                                        }}
+                                                    ></i>
+                                                </a>
+                                            </h2>
+                                        </div>
+
+                                        <div
+                                            id={`collapse-language`}
+                                            className="collapse show"
+                                            aria-labelledby={`heading-language`}
+                                            data-parent="#courseCategoryParent"
+                                        >
+                                            <div className="card-body">
+                                                <List
+                                                    type="unstyled"
+                                                    className="mb-0"
+                                                >
+                                                    
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            
+                                                                        />
+                                                                       English
+                                                                    </Label>
+                                                                </FormGroup>
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            
+                                                                        />
+                                                                       Hindi
+                                                                    </Label>
+                                                                </FormGroup>
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            
+                                                                        />
+                                                                       Marathi
+                                                                    </Label>
+                                                                </FormGroup>
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            
+                                                                        />
+                                                                       Punjabi
+                                                                    </Label>
+                                                                </FormGroup>
+                                                             
+                                                          
+                                                        
+                                                </List>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    className="accordion course-category-accordion"
+                                    id="courseCategoryParent"
+                                >
+                                    <div className="card" key="offers">
+                                        <div id={`heading-offers`}>
+                                            <h2 className="mb-0">
+                                                <a
+                                                    className="btn btn-link course-category-card-headerlink"
+                                                    type="button"
+                                                    data-toggle="collapse"
+                                                    data-target={`#collapse-offers`}
+                                                    aria-expanded="true"
+                                                    aria-controls={`collapse-offers`}
+                                                >
+                                                    Offers/Discounts
+                                                    <i
+                                                        className="fas fa-chevron-down ml-2"
+                                                        style={{
+                                                            color: "#000"
+                                                        }}
+                                                    ></i>
+                                                </a>
+                                            </h2>
+                                        </div>
+
+                                        <div
+                                            id={`collapse-offers`}
+                                            className="collapse show"
+                                            aria-labelledby={`heading-offers`}
+                                            data-parent="#courseCategoryParent"
+                                        >
+                                            <div className="card-body">
+                                                <List
+                                                    type="unstyled"
+                                                    className="mb-0"
+                                                >
+                                                    
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            
+                                                                        />
+                                                                       20% off
+                                                                    </Label>
+                                                                </FormGroup>
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            
+                                                                        />
+                                                                       30% off
+                                                                    </Label>
+                                                                </FormGroup>
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            
+                                                                        />
+                                                                       40% off
+                                                                    </Label>
+                                                                </FormGroup>
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="checkbox"
+                                                                            
+                                                                        />
+                                                                       50% + off
+                                                                    </Label>
+                                                                </FormGroup>
+                                                             
+                                                          
+                                                        
+                                                </List>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    className="accordion course-category-accordion"
+                                    id="courseCategoryParent"
+                                >
+                                    <div className="card" key="certificates">
+                                        <div id={`heading-certificates`}>
+                                            <h2 className="mb-0">
+                                                <a
+                                                    className="btn btn-link course-category-card-headerlink"
+                                                    type="button"
+                                                    data-toggle="collapse"
+                                                    data-target={`#collapse-certificates`}
+                                                    aria-expanded="true"
+                                                    aria-controls={`collapse-certificates`}
+                                                >
+                                                    Certificates
+                                                    <i
+                                                        className="fas fa-chevron-down ml-2"
+                                                        style={{
+                                                            color: "#000"
+                                                        }}
+                                                    ></i>
+                                                </a>
+                                            </h2>
+                                        </div>
+
+                                        <div
+                                            id={`collapse-certificates`}
+                                            className="collapse show"
+                                            aria-labelledby={`heading-certificates`}
+                                            data-parent="#courseCategoryParent"
+                                        >
+                                            <div className="card-body">
+                                                <List
+                                                    type="unstyled"
+                                                    className="mb-0"
+                                                >
+                                                    
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="radio"
+                                                                            name="radio1"
+                                                                        />
+                                                                       Yes
+                                                                    </Label>
+                                                                </FormGroup>
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                            type="radio"
+                                                                            name="radio1"
+                                                                        />
+                                                                      No
+                                                                    </Label>
+                                                                </FormGroup>
+                                                             
+                                                </List>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </Col>
                         <Col sm="12" lg="9">

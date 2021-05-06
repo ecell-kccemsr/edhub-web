@@ -43,9 +43,9 @@ const BlogHomepage = () => {
                     </Col>
                     <Col sm="1" md="4" lg="3">
                         <div className="blog-sidebar">
+                        <h6>Recent Posts</h6>
                             {blog.map(b=>(
                                 <>
-                                <h6>Recent Posts</h6>
                             <hr />
                             <div className="blog-sidebar-list-el">
                                 <div className="sidebar-list-top">
@@ -59,10 +59,11 @@ const BlogHomepage = () => {
                             ))}
                             
 
+                           
+                            <h6>Recent Courses</h6>
                             <hr />
                             {course.map(a=>(
                               <>
-                             <h6>Recent Courses</h6>
                             <div className="blog-sidebar-list-el">
                                 <div className="sidebar-list-top">
                                     <i className="fas fa-chevron-right"></i>

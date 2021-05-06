@@ -64,6 +64,7 @@ const NewsCard = ({ tags, data, toUrl }) => {
             <div className="blog-card-footer-section">
                 {data && (
                     <div className="tag">
+                    <img src="/images/news/tag.png" alt="tags"/>
                         <p>#{data?.tags}</p>
                     </div>
                 )}

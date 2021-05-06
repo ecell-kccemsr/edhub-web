@@ -78,7 +78,7 @@ function Govermentjob() {
                                     Start your prepararion by buying courses
                                     from our platform at an additional discount.
                                 </p>
-                                <div className="job-hero-section-input-box">
+                                {/* <div className="job-hero-section-input-box">
                                     <form>
                                         <input
                                             type="text"
@@ -90,7 +90,7 @@ function Govermentjob() {
                                             <i className="fas fa-search"></i>
                                         </button>
                                     </form>
-                                </div>
+                                </div> */}
                             </Col>
                             <Col md="6">
                                 <img

@@ -77,10 +77,10 @@ const CourseCard = ({ data }) => {
                 <div>
                     <h4 className="card-title">
                     {data?.title
-                       .length > 20
+                       .length > 40
                        ? data?.title.slice(
                              0,
-                             20
+                             40
                          ) + "..."
                        : data?.title}
                         </h4>

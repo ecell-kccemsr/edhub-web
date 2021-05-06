@@ -86,7 +86,7 @@ const LinkCard = props => {
                 {visible < data.length && props?.toggleTrue && (
                     <div className="text-center">
                         <p
-                            className="jobs-section-btn mb-0 pb-0"
+                            className="link-card-section-btn mb-0 pb-0"
                             style={{ cursor: "pointer" }}
                             onClick={viewAll}
                         >
@@ -98,7 +98,7 @@ const LinkCard = props => {
                 {visible >= data.length && props?.toggleTrue && (
                     <div className="text-center">
                         <p
-                            className="jobs-section-btn mb-0 pb-0"
+                            className="link-card-section-btn mb-0 pb-0"
                             style={{ cursor: "pointer" }}
                             onClick={viewLess}
                         >

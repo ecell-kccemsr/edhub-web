@@ -202,7 +202,10 @@ const SingleBlog = props => {
                             comments.length &&
                             comments.slice(0, 4).map(c => {
                                 return (
-                                    <div className="comments">{c.comment} </div>
+                                    <div className="comments">
+                                        <img src={user?.avatar} alt="User"/>
+                                        {c.comment}
+                                         </div>
                                 );
                             })}
                     </div>

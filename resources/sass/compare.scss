@@ -29,6 +29,7 @@
             td {
                 padding: 20px;
                 border-right: 1px solid gainsboro;
+                width: 30%;
                 p {
                     font-size: 24px;
                     margin-bottom: -1px;
@@ -48,6 +49,10 @@
                     color: #fff;
                     border-radius: 4px;
                     margin-top: 20px;
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
                 }
                 .compare-addCart-btn {
                     max-width: 300px;
@@ -63,7 +68,7 @@
                     margin-top: 20px;
                 }
                 .compare-card {
-                    max-width: 300px;
+                    width: 308px;
                     background: #eeeeee;
                     padding: 20px;
                     border-radius: 16px;

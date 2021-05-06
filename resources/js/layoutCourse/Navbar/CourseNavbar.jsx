@@ -539,17 +539,7 @@ const CourseNavbar = props => {
                                     <img src={user?.avatar} alt="User" />
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link courseNavLink" to="/">
-                                    <Button
-                                        outline
-                                        color="danger"
-                                        onClick={() => handleChange()}
-                                    >
-                                        Logout
-                                    </Button>
-                                </Link>
-                            </li>
+                           
                         </ul>
                     </div>
                 </div>

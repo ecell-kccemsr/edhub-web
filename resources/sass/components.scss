@@ -152,6 +152,7 @@
         align-items: center;
         margin: 10px 0;
         cursor: pointer;
+
         img {
             margin-right: 10px;
             object-fit: contain;
@@ -205,6 +206,7 @@
         }
         img {
             width: 50%;
+            border-radius: 6px;
             object-fit: contain;
         }
     }
@@ -225,18 +227,24 @@
             padding: 5px 10px;
             border-radius: 100px;
             margin: 0 5px;
+            background-color: #ffc3bd;
+
             img {
                 width: 35px;
                 height: 35px;
                 object-fit: cover;
                 border-radius: 54%;
-                margin-right: 11px;
             }
             p {
                 color: #ff0000;
-                background-color: #ffc3bd;
                 border-radius: 10px;
                 padding: 0px 10px 0px 10px;
+            }
+            h5 {
+                color: #ff0000;
+                font-weight: 400;
+                font-size: 21px;
+                margin-left: 11px;
             }
         }
         .blog-footer-author-section {

@@ -31,7 +31,7 @@ const Compare = () => {
                             {compares &&
                                 compares.map(cmp => {
                                     return (
-                                        <td style={{ border: "none" }}>
+                                        <td style={{ border: "none"}}>
                                             <div className="compare-card">
                                                 <img
                                                     src={
@@ -45,7 +45,7 @@ const Compare = () => {
                                                 />
                                                 <h5>{cmp?.title}</h5>
                                                 <span>
-                                                    <b>FREE</b>
+                                                    <b>{cmp?.discount_price}</b>
                                                 </span>
                                                 <span>
                                                     $
@@ -76,7 +76,16 @@ const Compare = () => {
                                                 alt=""
                                                 style={{ objectFit: "contain" }}
                                             />
-                                            <p>{compare.rating}</p>
+                                            <p>
+                                            {
+                         Math.round(parseFloat
+                            (
+                                compare?.rating 
+                            )
+                            )
+
+                       }
+                       </p>
                                         </div>
                                     </td>
                                 );
@@ -101,45 +110,31 @@ const Compare = () => {
                         <tr>
                             <td>
                                 <p className="compare-title">
-                                    Job Oportunities
+                                    Language
                                 </p>
                             </td>
                             {compares.map((compare, key) => {
-                                if (compare.prerequisites) {
-                                    return (
-                                        <td key={key}>
-                                            <p>{compare.job_opportunities}</p>
-                                        </td>
-                                    );
-                                } else {
-                                    return (
-                                        <td key={key}>
-                                            <p>No Job job opportunities</p>
-                                        </td>
-                                    );
-                                }
+                                return(
+                                     <td key={key}> 
+                                <p>{compare?.locale}</p>
+                             </td>
+                                )
+                            
                             })}
                         </tr>
                         <tr>
                             <td>
                                 <p className="compare-title">
-                                    Skills You will gain
+                                    Captions
                                 </p>
                             </td>
                             {compares.map((compare, key) => {
-                                if (compare.prerequisites) {
-                                    return (
-                                        <td key={key}>
-                                            <p>{compare.skills}</p>
-                                        </td>
-                                    );
-                                } else {
-                                    return (
-                                        <td key={key}>
-                                            <p>No Skills</p>
-                                        </td>
-                                    );
-                                }
+                                return(
+                                     <td key={key}> 
+                                <p>{compare?.captions}</p>
+                                 </td>
+                                )
+                            
                             })}
                         </tr>
                         <tr>
@@ -198,21 +193,25 @@ const Compare = () => {
                         </tr>
                         <tr>
                             <td>
-                                <p className="compare-title">Top Review</p>
+                                <p className="compare-title">Instructor Designation</p>
                             </td>
                             {compares.map((compare, key) => (
                                 <td key={key}>
                                     {compare.course_instructor.map(
                                         (cinstructor, key) => (
-                                            <p key={key}>{cinstructor.name}</p>
+                                            <p key={key}>{cinstructor.designation}</p>
                                         )
                                     )}
                                     <button className="compare-buy-btn">
-                                        Buy Now
+                                    <a
+                                            href={compare?.url}
+                                            target="_blank"
+                                            
+                                        >
+                                            Buy Now
+                                        </a> 
                                     </button>
-                                    <button className="compare-addCart-btn">
-                                        Add To Cart
-                                    </button>
+                                   
                                 </td>
                             ))}
                         </tr>

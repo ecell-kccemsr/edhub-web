@@ -19,9 +19,9 @@ const SingleNewsPage = props => {
     const [relatednews, setRelatedNews] = useState([]);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState("");
+
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-
     let id;
     const { news_slug } = props.match.params;
     useEffect(() => {
@@ -209,16 +209,21 @@ const SingleNewsPage = props => {
                                 </h4>
 
                                 <div className="container comment-section-news">
-                                    {comments &&
+                                {comments &&
                                         comments.length &&
                                         comments.slice(0, 4).map(c => {
                                             return (
                                                 <div className="comments-news">
+                                                    <img src={user?.avatar} alt="User"/>
                                                     {c.comment}{" "}
                                                 </div>
                                             );
+                                            
                                         })}
+             
+
                                 </div>
+           
                             </div>
                         </div>
                     </Col>
