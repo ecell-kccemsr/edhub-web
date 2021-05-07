@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewsCard from "../../components/newscard/NewsCard";
-import { Col, Container, Row, Nav, NavItem, NavLink } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 

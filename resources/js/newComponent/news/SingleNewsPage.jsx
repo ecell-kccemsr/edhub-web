@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Input, FormGroup } from "reactstrap";
-import singleNewsImg from "../../Images/news/singleNews.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
-import like from "../../Images/blogs/like.png";
-import Scomments from "../../Images/blogs/comment.png";
-import Share from "../../Images/news/share.png";
 import { Collapse } from "reactstrap";
-import fb from "../../Images/blogs/facebook.png";
-import tw from "../../Images/blogs/twitter.png";
-import ld from "../../Images/blogs/linkedin.png";
-import wa from "../../Images/blogs/whatsapp.png";
 import { useStoreState } from "easy-peasy";
 const SingleNewsPage = props => {
     const user = useStoreState(state => state.user);

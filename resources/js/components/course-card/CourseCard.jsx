@@ -1,17 +1,6 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, {  } from "react";
 import { Link } from "react-router-dom";
-import cardHeader from "../../Images/courseCategory/cardHeader.png";
-import cardHeaderCompany from "../../Images/courseCategory/card-header-company.png";
-import play from "../../Images/courseCategory/play.png";
-import guide from "../../Images/courseCategory/guide.png";
-import star from "../../Images/courseCategory/star.png";
-import reviewArrow from "../../Images/courseCategory/reviewArrow.png";
-import bookmark from "../../Images/landingpage/bookmark.png";
-import bookmark1 from "../../Images/landingpage/bookmark2.png";
-import { Row, Col, Button } from "reactstrap";
 
-import addtoCompare from "../../Images/courseCategory/addcompare.png";
 import { useStoreActions, useStoreState } from "easy-peasy";
 // import { Button } from "bootstrap";
 const CourseCard = ({ data }) => {

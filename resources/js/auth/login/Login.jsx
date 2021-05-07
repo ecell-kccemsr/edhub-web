@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
-import loginBackground from "../../Images/loginBackground.png";
 import http from "../../utils/http";
-import signInGoogle from "../../Images/signInGoogle.png";
-import facebookLogo from "../../Images/FacebookLogo.png";
 const Login = () => {
     let history = useHistory();
 
@@ -26,12 +22,12 @@ const Login = () => {
     };
     return (
         <>
-            <h3 className="auth-brand">
+            {/* <h3 className="auth-brand">
                 edu<span>hub</span>
-            </h3>
+            </h3> */}
             <Container style={{ boxShadow: "none" }} className="auth">
                 <Row className="align-items-center">
-                    <Col sm="12" md="4">
+                    <Col sm="12" md="12">
                         <h4 className="auth-header ">
                             Welcome to edu<span>hub</span>
                         </h4>
@@ -115,14 +111,14 @@ const Login = () => {
                             </div>
                         </form>
                     </Col>
-                    <Col
+                    {/* <Col
                         sm="12"
                         md={{ size: 6, offset: 2 }}
                         className="auth-img-col"
                     >
                         
                         <img src="/images/loginBackground.png" alt="loginBackground" className="w-100" />
-                    </Col>
+                    </Col> */}
                 </Row>
             </Container>
         </>

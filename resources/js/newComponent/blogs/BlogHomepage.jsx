@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import BlogCard from "../../components/blogcard/BlogCard";
-import udemy from "../../Images/blogs/udemy.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 

@@ -1,10 +1,5 @@
 import React from "react";
 import { Container, Row, Col,  Nav, NavItem, NavLink } from "reactstrap";
-import money from "../../Images/degree/Group.png";
-import time from "../../Images/degree/Group 470.png";
-import stat1 from "../../Images/courseDetail/stat1.png";
-import stat2 from "../../Images/courseDetail/stat2.png";
-import completeOnline from "../../Images/degree/CompleteOnline.png";
 
 const DegreeAboutSection = () => {
     return (

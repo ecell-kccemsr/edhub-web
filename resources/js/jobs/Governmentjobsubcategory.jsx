@@ -4,9 +4,6 @@ import {
     Col,
     Container,
     Row,
-    List,
-    Progress,
-    Button,
     Nav,
     NavItem,
     NavLink

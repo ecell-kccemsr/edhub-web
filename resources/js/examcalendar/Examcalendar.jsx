@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Collapse, Button, CardBody, Card, Row, Col } from "reactstrap";
+import { Collapse, Button, Row, Col } from "reactstrap";
 import axios from "axios";
-import image1 from "../Images/calendar-icon.png";
-import { Link } from "react-router-dom";
 
 const Examcalendar = props => {
     const [isOpen, setIsOpen] = useState({

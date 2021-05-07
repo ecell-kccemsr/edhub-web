@@ -1,9 +1,5 @@
 import React from "react";
 import { Row, Col } from "reactstrap";
-import fb from "../../Images/blogs/facebook.png";
-import tw from "../../Images/blogs/twitter.png";
-import ld from "../../Images/blogs/linkedin.png";
-import wa from "../../Images/blogs/whatsapp.png";
 import { Link } from "react-router-dom";
 const NewsCard = ({ tags, data, toUrl }) => {
     return (

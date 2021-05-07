@@ -1,10 +1,5 @@
 import React from "react";
 import { Container, Row, Col, FormGroup, Label, Input } from "reactstrap";
-import upi from "../Images/checkout/upi.png";
-import phonepay from "../Images/checkout/phonepay.png";
-import visa from "../Images/checkout/visa.png";
-import paytm from "../Images/checkout/paytm.png";
-import paypal from "../Images/checkout/paypal.png";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 const Checkout = () => {

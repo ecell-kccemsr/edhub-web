@@ -1,12 +1,5 @@
 import React from "react";
 import { Row, Col, Container, Progress } from "reactstrap";
-import star5 from "../../Images/courseDetail/5star.png";
-import star4 from "../../Images/courseDetail/4star.png";
-import star3 from "../../Images/courseDetail/3star.png";
-import star2 from "../../Images/courseDetail/2star.png";
-import star1 from "../../Images/courseDetail/1star.png";
-import user1 from "../../Images/courseDetail/user1.png";
-import user2 from "../../Images/courseDetail/user2.png";
 const DegreeTestimonialSection = ({ userTestimonials }) => {
     return (
         <div style={{ background: "#F6F7F8", padding: "30px 0" }}>

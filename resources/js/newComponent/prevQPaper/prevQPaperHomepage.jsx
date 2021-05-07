@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
-import sbi from "../../Images/qpaper/sbi.png";
+import { Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
-import { v4 as uuidv4 } from "uuid";
 import LinkCard from "../../components/link-card/LinkCard";
 import axios from "axios";
 

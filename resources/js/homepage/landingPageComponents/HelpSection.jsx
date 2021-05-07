@@ -1,10 +1,5 @@
 import React from "react";
 import { Row, Col, Container } from "reactstrap";
-import icon1 from "../../Images/landingpage/icon1.png";
-import icon2 from "../../Images/landingpage/icon2.png";
-import icon3 from "../../Images/landingpage/icon3.png";
-import arrow1 from "../../Images/landingpage/Arrow1.png";
-import arrow2 from "../../Images/landingpage/Arrow2.png";
 
 const HelpSection = () => {
     return (

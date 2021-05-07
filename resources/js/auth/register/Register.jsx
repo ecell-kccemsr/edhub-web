@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 import { Link } from "react-router-dom";
-import registerBackground from "../../Images/registerBackground.png";
-import signInGoogle from "../../Images/signInGoogle.png";
-import facebookLogo from "../../Images/FacebookLogo.png";
 import http from "../../utils/http";
 const Register = () => {
     let history = useHistory();

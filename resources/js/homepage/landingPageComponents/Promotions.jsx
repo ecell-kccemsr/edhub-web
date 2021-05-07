@@ -1,12 +1,4 @@
 import React from "react";
-import circleicon from "../../Images/landingpage/circle icon.png";
-import duke from "../../Images/landingpage/duke.png";
-import google from "../../Images/landingpage/google.png";
-import ibm from "../../Images/landingpage/ibm.png";
-import guardian from "../../Images/landingpage/guardian.png";
-import hd from "../../Images/landingpage/hd.png";
-import hindustan from "../../Images/landingpage/hindustan.png";
-import toi from "../../Images/landingpage/toi.png";
 import CountUp from 'react-countup';
 
 const Promotions = () => {

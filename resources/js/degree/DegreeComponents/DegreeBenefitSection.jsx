@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col, List } from "reactstrap";
-import prereq from "../../Images/degree/prereq.png";
 
 const benefits = [
     "No Programming Experience is Required",

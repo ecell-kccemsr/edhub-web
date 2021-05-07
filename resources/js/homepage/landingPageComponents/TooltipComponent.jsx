@@ -1,7 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 //Image
-import prereq from "../../Images/courseDetail/prereq.png";
 
 const TooltipComponent = ({ data }) => {
     return (

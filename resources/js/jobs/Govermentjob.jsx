@@ -1,10 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Row, Col } from "reactstrap";
 import LinkCard from "../components/link-card/LinkCard";
-import heroBg1 from "../Images/Jobs/heroBg1.png";
-import sbi from "../Images/qpaper/sbi.png";
 
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 function Govermentjob() {

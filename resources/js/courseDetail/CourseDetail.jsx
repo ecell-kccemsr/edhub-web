@@ -1,25 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Col, Container, Row, List, Progress, Button, Nav, NavItem, NavLink  } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Col, Container, Row, List, Progress, Nav, NavItem, NavLink  } from "reactstrap";
 import { v4 as uuidv4 } from "uuid";
 
-import stat1 from "../Images/courseDetail/stat1.png";
-import stat2 from "../Images/courseDetail/stat2.png";
-import playbutton from "../Images/courseDetail/playbutton.png";
-import prereq from "../Images/courseDetail/prereq.png";
-import author from "../Images/courseDetail/author.png";
-import star5 from "../Images/courseDetail/5star.png";
-import star4 from "../Images/courseDetail/4star.png";
-import star3 from "../Images/courseDetail/3star.png";
-import star2 from "../Images/courseDetail/2star.png";
-import star1 from "../Images/courseDetail/1star.png";
-import user1 from "../Images/courseDetail/user1.png";
-import user2 from "../Images/courseDetail/user2.png";
-import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
-import CourseCard from "../components/course-card/CourseCard";
-import star from "../Images/courseCategory/star.png";
-import ellipse from "../Images/courseDetail/Ellipse.png";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import { CopyToClipboard } from 'react-copy-to-clipboard'

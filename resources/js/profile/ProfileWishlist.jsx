@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import CourseCard from "../components/course-card/CourseCard";
 import ProfileLayout from "./ProfileLayout";

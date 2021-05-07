@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Col, List, Container, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import axios from "axios";
 import LinkCard from "../../components/link-card/LinkCard";
 import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";

@@ -1,5 +1,4 @@
 import React from 'react'
-import notfound from "../Images/404/404.png"
 const NotFound = () =>{
     return (
         <div className="not-found-page">

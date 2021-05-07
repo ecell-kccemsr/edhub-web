@@ -1,7 +1,6 @@
 import { FormGroup, Input } from "reactstrap";
 import ProfileLayout from "./ProfileLayout";
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, {  } from "react";
 import http from "../utils/http";
 import { useStoreState } from "easy-peasy";
 const ProfileBasic = () => {

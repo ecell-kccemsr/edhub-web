@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Redirect } from "react-router-dom";
+import React, {  } from "react";
 import { Col, Container, Row, List } from "reactstrap";
-import playbutton from "../../Images/degree/playbutton.png";
 
 const courseContent = [
     {

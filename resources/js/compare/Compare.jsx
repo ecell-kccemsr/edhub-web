@@ -1,7 +1,4 @@
 import React from "react";
-import star4 from "../Images/courseDetail/4star.png";
-import courseDetailCompany from "../Images/courseDetail/courseDetailCompany.png";
-import cardHeader from "../Images/compare/cardheader.png";
 import { useStoreActions, useStoreState } from "easy-peasy";
 const Compare = () => {
     const compares = useStoreState(state => state.compares);
@@ -12,7 +9,7 @@ const Compare = () => {
             <div className="no-course-compare-section">
                 <h3>No course present to compare</h3>
                 <h4>Add course to compare now </h4>
-            </div>
+            </div> 
         );
     }
     return (
@@ -35,7 +32,7 @@ const Compare = () => {
                                             <div className="compare-card">
                                                 <img
                                                     src={
-                                                        cmp?.image || cardHeader
+                                                        cmp?.image || "/Images/compare/cardheader.png"
                                                     }
                                                     alt="course"
                                                     style={{

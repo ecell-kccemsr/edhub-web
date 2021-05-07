@@ -3,9 +3,6 @@ import { Container, Row, Col, List } from "reactstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import instructor from "../../Images/degree/instructor.png";
-import instructorDot from "../../Images/degree/instructor-dot.png";
-import { divide } from "lodash";
 const DegreeInstructorSection = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const updateSize = () => setWindowWidth(window.innerWidth);

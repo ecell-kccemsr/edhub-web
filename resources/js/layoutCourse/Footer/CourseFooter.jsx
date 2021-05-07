@@ -1,10 +1,5 @@
 import React from "react";
 import { Col, Row, Container } from "reactstrap";
-import Vector from "../../Images/footer/Vector.png";
-import microsoft from "../../Images/footer/microsoft-icon 1.png";
-import harvard from "../../Images/footer/harvard.png";
-import udemy from "../../Images/footer/udemy-icon 1.png";
-import amazon from "../../Images/footer/amazon-icon 1.png";
 function CourseFooter() {
     return (
         <div className="footer-section-new">
@@ -63,7 +58,7 @@ function CourseFooter() {
                             <b>50+ Providers</b>
                         </div>
                         <div className=" footer-section-one">
-                            <img src="/Images/footer/Vector.png" alt="Vector" />
+                            <img src="/images/footer/Vector.png" alt="Vector" />
                             <p className="provider-name ml-2 mb-0">Coursera</p>
                         </div>
                         <div className=" footer-section-one">

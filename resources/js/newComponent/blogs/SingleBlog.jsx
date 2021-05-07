@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, FormGroup, Input } from "reactstrap";
-import insta from "../../Images/blogs/instagram.png";
-import fb from "../../Images/blogs/facebook.png";
-import tw from "../../Images/blogs/twitter.png";
-import ld from "../../Images/blogs/linkedin.png";
-import wa from "../../Images/blogs/whatsapp.png";
-import like from "../../Images/blogs/like.png";
-import Scomments from "../../Images/blogs/comment.png";
 import Moment from "react-moment";
 import axios from "axios";
-import Share from "../../Images/news/share.png";
 import { Collapse } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useStoreState } from "easy-peasy";

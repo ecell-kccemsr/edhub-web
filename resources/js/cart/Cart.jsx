@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { Container, Row, Col } from "reactstrap";
-import cart1 from "../Images/cart/cart1.png";
-import cart2 from "../Images/cart/cart2.png";
 import CourseCard from "../components/course-card/CourseCard";
 
 function Cart ()  {
