@@ -5,12 +5,18 @@ import axios from "axios";
 import { Collapse } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useStoreState } from "easy-peasy";
-
+// import { toast, ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.min.css";
 const SingleBlog = props => {
     const user = useStoreState(state => state.user);
     const [singleBlog, setSingleBlog] = useState([]);
+
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
+    const [commentPage, setCommentPage] = useState({
+        current_page: 1,
+        last_page: null
+    });
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const { blog_slug } = props.match.params;
@@ -36,15 +42,22 @@ const SingleBlog = props => {
                     "Content-Type": "application/json"
                 }
             })
-
+            .then(res => {
+                getComment(blog_slug);
+            })
             .catch(err => console.log(err));
     };
 
-    const getComment = blog_slug => {
+    const getComment = (blog_slug, pageNumber = 1) => {
         axios
-            .get(`/api/blogs/${blog_slug}/comments`)
+            .get(`/api/blogs/${blog_slug}/comments?page=${pageNumber}`)
             .then(res => {
-                setComments(res.data.data);
+                let combinedArr = [...comments, ...res.data.data];
+                setComments(combinedArr);
+                setCommentPage({
+                    current_page: res.data.meta.current_page,
+                    last_page: res.data.meta.last_page
+                });
             })
             .catch(err => console.log(err));
     };
@@ -63,9 +76,17 @@ const SingleBlog = props => {
                 .catch(err => console.log(err));
         }
     };
+    const viewAll = () => {
+        setVisible(data.length);
+    };
+
+    const viewLess = () => {
+        setVisible(initialPosts);
+    };
 
     return (
         <div className="single-blog-section">
+            {/* <ToastContainer /> */}
             <Container>
                 <h3>{singleBlog?.title}</h3>
                 <h6>
@@ -77,7 +98,11 @@ const SingleBlog = props => {
                 <img src={singleBlog?.image} alt="Single Blog Top Image" />
                 <div className="singleblog-like-section">
                     <div className="interaction-container">
-                        <img src="/Images/blogs/like.png" alt="Like" onClick={handleLike} />
+                        <img
+                            src="/Images/blogs/like.png"
+                            alt="Like"
+                            onClick={handleLike}
+                        />
                         <b>{singleBlog.total_likes}</b>
                     </div>
                     <div className="interaction-container">
@@ -105,7 +130,11 @@ const SingleBlog = props => {
                                 </h4>
                             </div>
                             <div className="news-interaction-el-1">
-                                <img src="/Images/news/share.png" alt="Share" onClick={toggle} />
+                                <img
+                                    src="/Images/news/share.png"
+                                    alt="Share"
+                                    onClick={toggle}
+                                />
                                 <Collapse isOpen={isOpen}>
                                     <div
                                         className="social-container"
@@ -192,14 +221,27 @@ const SingleBlog = props => {
                     <div className="container comment-section">
                         {comments &&
                             comments.length &&
-                            comments.slice(0, 4).map(c => {
+                            comments.map(c => {
                                 return (
                                     <div className="comments">
-                                        <img src={user?.avatar} alt="User"/>
+                                        <img src={user?.avatar} alt="User" />
                                         {c.comment}
-                                         </div>
+                                    </div>
                                 );
                             })}
+
+                        {commentPage?.current_page < commentPage?.last_page && (
+                            <button
+                                onClick={() =>
+                                    getComment(
+                                        blog_slug,
+                                        commentPage.current_page + 1
+                                    )
+                                }
+                            >
+                                load more
+                            </button>
+                        )}
                     </div>
                 </div>
             </Container>

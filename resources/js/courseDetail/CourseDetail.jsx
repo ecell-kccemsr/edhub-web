@@ -1,29 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Col, Container, Row, List, Progress, Nav, NavItem, NavLink  } from "reactstrap";
+import {
+    Col,
+    Container,
+    Row,
+    List,
+    Progress,
+    Nav,
+    NavItem,
+    NavLink
+} from "reactstrap";
 import { v4 as uuidv4 } from "uuid";
 
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { useStoreActions, useStoreState } from "easy-peasy";
-import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const authorOverview = [
     "4.2 Instructor Rating",
-    "5,680 Reviews", 
+    "5,680 Reviews",
     "73,742 Students"
-];
-
-const userTestimonials = [
-    {
-        name: "Abhishek Mogaveera",
-        review:
-            "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”"
-    },
-    {
-        name: "Abhishek Mogaveera",
-        review:
-            "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero do”"
-    }
 ];
 
 function CourseDetail(props) {
@@ -37,8 +33,7 @@ function CourseDetail(props) {
     useEffect(() => {
         const { course_slug } = props.match.params;
         setCourseSlug(course_slug);
-       
-       
+
         axios
             .get(`/api/courses/${course_slug}`)
             .then(res => {
@@ -63,7 +58,7 @@ function CourseDetail(props) {
             .catch(err => {
                 console.log(err);
             });
-            axios
+        axios
             .get(`/api/courses/${course_slug}/reviews`)
             .then(res => {
                 setCourseRev(res.data.data);
@@ -93,7 +88,7 @@ function CourseDetail(props) {
                 previousScore + currentScore.count,
             0
         );
-        const url = window.location.href
+    const url = window.location.href;
 
     return (
         <>
@@ -143,7 +138,9 @@ function CourseDetail(props) {
                                         </>
                                     )}
                                     <CopyToClipboard text={url}>
-                                <button className="share-btn">Share</button>
+                                        <button className="share-btn">
+                                            Share
+                                        </button>
                                     </CopyToClipboard>
                                     <button
                                         className="compare-btn-1"
@@ -156,20 +153,18 @@ function CourseDetail(props) {
                                         ) : (
                                             <h5>Remove from compare</h5>
                                         )}
-                                    </button> 
+                                    </button>
                                     <button className="share-btn-1">
-                                       <a
+                                        <a
                                             href={singleCourse?.url}
                                             target="_blank"
-                                            
                                         >
                                             Buy Now
-                                        </a> 
+                                        </a>
                                     </button>
-                                    
                                 </>
                             </Col>
-                            <Col sm="1" md="4" >
+                            <Col sm="1" md="4">
                                 <div className="add-to-cart-section-details">
                                     <img
                                         style={{ marginBottom: "5px" }}
@@ -239,7 +234,10 @@ function CourseDetail(props) {
                                             </p>
                                         </div>
                                         <div style={{ marginTop: "-10px" }}>
-                                            <img src="/Images/courseCategory/star.png" alt="star" />
+                                            <img
+                                                src="/Images/courseCategory/star.png"
+                                                alt="star"
+                                            />
                                         </div>
                                         <div className="card-section-details-content-price">
                                             <div style={{ marginTop: "-20px" }}>
@@ -393,27 +391,61 @@ function CourseDetail(props) {
                     </Link> */}
                 </div>
                 <Container className="containerClass">
-            <Nav>
-        <NavItem>
-          <NavLink className="navlink-course-detail" href="#Overview">About</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-course-detail" href="#Content">Course Content</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-course-detail" href="#Prerequisites"> Prerequisites</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-course-detail" href="#Instructor"> Instructor</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-course-detail" href="#Reviews"> Reviews </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink className="navlink-course-detail" href="#FAQs"> FAQs</NavLink>
-        </NavItem>
-      </Nav>
-</Container>
+                    <Nav>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-course-detail"
+                                href="#Overview"
+                            >
+                                About
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-course-detail"
+                                href="#Content"
+                            >
+                                Course Content
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-course-detail"
+                                href="#Prerequisites"
+                            >
+                                {" "}
+                                Prerequisites
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-course-detail"
+                                href="#Instructor"
+                            >
+                                {" "}
+                                Instructor
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-course-detail"
+                                href="#Reviews"
+                            >
+                                {" "}
+                                Reviews{" "}
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                className="navlink-course-detail"
+                                href="#FAQs"
+                            >
+                                {" "}
+                                FAQs
+                            </NavLink>
+                        </NavItem>
+                    </Nav>
+                </Container>
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
@@ -422,23 +454,29 @@ function CourseDetail(props) {
                                     Learner's career outcome
                                 </h5>
                                 {singleCourse?.outcome &&
-                                        singleCourse?.outcome.map(p => (
-                                            <>
-                                <div className="course-overview-card-descriptionbox">
-                                     <p>{p}</p>
-                                </div>
-                                </>
-                                        ))}
+                                    singleCourse?.outcome.map(p => (
+                                        <>
+                                            <div className="course-overview-card-descriptionbox">
+                                                <p>{p}</p>
+                                            </div>
+                                        </>
+                                    ))}
                                 <h5 className="course-overview-card-title">
                                     Job opportunities
                                 </h5>
                                 <div className="course-overview-card-stats">
                                     <div className="stat-container">
-                                        <img src="/Images/courseDetail/stat1.png" alt="stat1" />
+                                        <img
+                                            src="/Images/courseDetail/stat1.png"
+                                            alt="stat1"
+                                        />
                                         <p>Upto 50 % Promotions</p>
                                     </div>
                                     <div className="stat-container">
-                                        <img src="/Images/courseDetail/stat2.png" alt="stat2" />
+                                        <img
+                                            src="/Images/courseDetail/stat2.png"
+                                            alt="stat2"
+                                        />
                                         <p>Upto 12 % New career</p>
                                     </div>
                                 </div>
@@ -446,12 +484,14 @@ function CourseDetail(props) {
                                     Skills you'll gain
                                 </h5>
                                 <div className="course-overview-card-descriptionbox">
-                                <p>{singleCourse?.title}</p>
+                                    <p>{singleCourse?.title}</p>
                                 </div>
-                              
                             </div>
                             <div className="course-overview-card">
-                                <h5 className="course-overview-card-title" id="Overview">
+                                <h5
+                                    className="course-overview-card-title"
+                                    id="Overview"
+                                >
                                     DESCRIPTION
                                 </h5>
                                 <p
@@ -466,7 +506,10 @@ function CourseDetail(props) {
                                 </p> */}
                             </div>
 
-                            <h5 className="course-content-top-header" id="Content">
+                            <h5
+                                className="course-content-top-header"
+                                id="Content"
+                            >
                                 Course Content
                             </h5>
                             {/* <div className="course-content-top-overview">
@@ -543,7 +586,10 @@ function CourseDetail(props) {
                                     ))}
                             </div>
                             <div className="course-prereq-section">
-                                <h5 className="course-content-top-header" id="Prerequisites">
+                                <h5
+                                    className="course-content-top-header"
+                                    id="Prerequisites"
+                                >
                                     Prerequisites
                                 </h5>
                                 <List type="unstyled" className="mb-0">
@@ -570,7 +616,10 @@ function CourseDetail(props) {
                     <Container className="containerClass">
                         <Row>
                             <Col sm="12" md="8">
-                                <h5 className="course-content-top-header" id="Instructor"> 
+                                <h5
+                                    className="course-content-top-header"
+                                    id="Instructor"
+                                >
                                     Instructor
                                 </h5>
                                 {singleCourse.course_instructor &&
@@ -628,8 +677,10 @@ function CourseDetail(props) {
                                         )
                                     )}
 
-                               
-                                <h5 className="course-content-top-header" id="Reviews">
+                                <h5
+                                    className="course-content-top-header"
+                                    id="Reviews"
+                                >
                                     Reviews
                                 </h5>
                                 <div className="course-detail-review-section">
@@ -640,16 +691,16 @@ function CourseDetail(props) {
                                             className="rating-container"
                                         >
                                             <h4>
-                                            {
-                                                  Math.round(parseFloat
-                                                     (
-                                                        singleCourse?.rating 
-                                                     )
-                                                        )
-
-                                                 }
+                                                {Math.round(
+                                                    parseFloat(
+                                                        singleCourse?.rating
+                                                    )
+                                                )}
                                             </h4>
-                                            <img src="/Images/courseDetail/4star.png" alt="Star" />
+                                            <img
+                                                src="/Images/courseDetail/4star.png"
+                                                alt="Star"
+                                            />
                                             <p>course rating</p>
                                         </Col>
                                         <Col
@@ -711,14 +762,16 @@ function CourseDetail(props) {
                                                 className="my-4"
                                             >
                                                 <div className="course-detail-testimonial-cards">
-                                                    <img src={u?.user_image} alt="user_image" />
+                                                    <img
+                                                        src={u?.user_image}
+                                                        alt="user_image"
+                                                    />
                                                     <h6>{u?.user_name}</h6>
                                                     <p>{u?.content}</p>
                                                 </div>
                                             </Col>
                                         ))}
                                 </Row>
-                            
                             </Col>
                         </Row>
                     </Container>
@@ -726,7 +779,10 @@ function CourseDetail(props) {
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <h5 className="course-content-top-header text-center pt-2" id="FAQs">
+                            <h5
+                                className="course-content-top-header text-center pt-2"
+                                id="FAQs"
+                            >
                                 FAQs
                             </h5>
                             <div
