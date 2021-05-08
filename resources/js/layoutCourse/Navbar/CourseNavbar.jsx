@@ -283,7 +283,7 @@ const CourseNavbar = props => {
             
             <nav className="navbar course-navbar navbar-expand-lg">
                 <div className="container">
-                    <Link className="navbar-brand" to="/landingPage">
+                    <Link className="navbar-brand" to="/">
                         <img
                             src="/images/landingpage/Edhub-1.png"
                             alt="Eduhub"

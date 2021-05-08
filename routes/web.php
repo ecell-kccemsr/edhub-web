@@ -42,7 +42,6 @@ Route::view('/govermentjobs/{category_slug}/{subcategory_slug}/{slug}', 'app')->
 
 
 Route::view('/exam/calendar', 'app')->name('exam_calendar.show');
-Route::view('/landingPage','app');
 Route::view('/courseDetail/{course_slug}','app')->name('course.show');
 Route::view('/profile/basic','app');
 Route::view('/profile/wishlist','app');

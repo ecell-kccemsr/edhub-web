@@ -16,7 +16,7 @@ const Register = () => {
             .then(res => {
                 const accessToken = res.data.access_token;
                 localStorage.setItem("accessToken", accessToken);
-                window.location.href = "/landingPage";
+                window.location.href = "/";
             })
             .catch(err => console.log(err.response.data.message));
     };

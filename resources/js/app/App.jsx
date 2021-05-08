@@ -140,11 +140,6 @@ const App = props => {
                     component={CourseDetail}
                 />
                 <CourseLayoutRoutes
-                    path="/landingPage"
-                    exact
-                    component={LandingPage}
-                />
-                <CourseLayoutRoutes
                     path="/course-category"
                     exact
                     component={courseCategory}
