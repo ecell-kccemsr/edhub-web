@@ -109,7 +109,8 @@ const courseCategory = props => {
     const [apiURL, setApiURL] = useState("");
     const [ratingValue, setRating] = useState(1);
     const [ceritificationVal, setCertificationVal] = useState(1);
-    const [lang, setLang] = useState("English");
+    const [lang, setLang] = useState("");
+    const [discount, setDiscount] = useState('0');
     const [sliderVal, setSliderVal] = useState(150000);
     const [providerVal, setProviderVal] = useState("");
     const [providerData, setProviderData] = useState([]);
@@ -176,12 +177,13 @@ const courseCategory = props => {
     }, []);
     
     //Function to get courese on basis of the various filter passed to it
-    const getCourses = (filter, url, rating, provider, max, min,perPage=9,pageNumber,certification,language) => {
+    const getCourses = (filter, url, rating, provider, max, min,perPage=9,pageNumber,certification,language,discountArg) => {
         let pricefilter = "";
         let ratingfilter = "";
         let providerfilter = "";
         let certificationfilter = "";
         let langfilter = "";
+        let discountfilter = "";
         let perpage = `&per_page=${perPage}`;
         let pagenumber = pageNumber?`&page=${pageNumber}`:`&page=${currentCoursePage?.current_page}`;
         let ratingV = rating || ratingValue;
@@ -190,18 +192,20 @@ const courseCategory = props => {
         let maxv = max || maxValue.current.value;
         let certificationV = certification==null?ceritificationVal: certification;
         let languageV = language==null?lang:language
+        let discountV = discountArg==null?discount:discountArg
 
         if (filter) {
             pricefilter = `price_min=${minV}&price_max=${maxv}`;
             ratingfilter = `&rating=${ratingV}`;
             certificationfilter = `&certification=${certificationV}`;
-            langfilter = `&language=${languageV}`;
+            discountfilter = `&discount_percentage=${discountV}`;
+            langfilter =languageV==""?"": `&locale=${languageV}`;
             providerfilter =
                 providerV == "" ? "" : `&course_provider_id=${providerV}`;
         }
         //Request Data
         axios
-            .get(`${url}${pricefilter}${ratingfilter}${providerfilter}${langfilter}${certificationfilter}${perpage}${pagenumber}`)
+            .get(`${url}${pricefilter}${ratingfilter}${providerfilter}${langfilter}${discountfilter}${certificationfilter}${perpage}${pagenumber}`)
             .then(res => {
                 setCourseCategory(res.data.data);
                 setCurrentCoursePage({
@@ -242,14 +246,22 @@ const courseCategory = props => {
         getCourses(true, apiURL, ratingVal);
     };
 
+    //Function to get courses by adding a certificate filter
     const onCertificationChange = val => {
         setCertificationVal(val);
         getCourses(true, apiURL,null,null,null,null,9,1,val);
     };
 
+    //Function to get courses by adding a language filter
     const onLangChange = val => {
         setLang(val);
         getCourses(true, apiURL,null,null,null,null,9,1,null,val);
+    };
+
+    //Function to get courses by adding a discount filter
+    const onDiscountChange = val => {
+        setDiscount(val);
+        getCourses(true, apiURL,null,null,null,null,9,1,null,null,val);
     };
 
     //Function to get courses by adding a provider filter
@@ -363,7 +375,7 @@ const courseCategory = props => {
                                                     <FormGroup check>
                                                         <Label check>
                                                             <Input
-                                                                type="checkbox"
+                                                                  type="radio" name="rating"
                                                                 value="4"
                                                                 onChange={e =>
                                                                     onRatingChange(
@@ -378,7 +390,7 @@ const courseCategory = props => {
                                                     <FormGroup check>
                                                         <Label check>
                                                             <Input
-                                                                type="checkbox"
+                                                                  type="radio" name="rating"
                                                                 value="3"
                                                                 onChange={e =>
                                                                     onRatingChange(
@@ -393,7 +405,7 @@ const courseCategory = props => {
                                                     <FormGroup check>
                                                         <Label check>
                                                             <Input
-                                                                type="checkbox"
+                                                                 type="radio" name="rating"
                                                                 value="2"
                                                                 onChange={e =>
                                                                     onRatingChange(
@@ -408,7 +420,7 @@ const courseCategory = props => {
                                                     <FormGroup check>
                                                         <Label check>
                                                             <Input
-                                                                type="checkbox"
+                                                                 type="radio" name="rating"
                                                                 value="1"
                                                                 onChange={e =>
                                                                     onRatingChange(
@@ -473,7 +485,8 @@ const courseCategory = props => {
                                                                         check
                                                                     >
                                                                         <Input
-                                                                            type="checkbox"
+                                                                         type="radio" name="provider"
+                                                                            
                                                                             value={
                                                                                 p?.id
                                                                             }
@@ -546,11 +559,12 @@ const courseCategory = props => {
                                                                         check
                                                                     >
                                                                         <Input
-                                                                            type="checkbox"
-                                                                            value="English"
+                                                                       
+                                                                       type="radio" name="language"
+                                                                            value="English (US)"
                                                                             onClick={(e)=>onLangChange(e.target.value)}
                                                                         />
-                                                                       English
+                                                                       English (US)
                                                                     </Label>
                                                                 </FormGroup>
                                                                 <FormGroup
@@ -560,7 +574,21 @@ const courseCategory = props => {
                                                                         check
                                                                     >
                                                                         <Input
-                                                                            type="checkbox"
+                                                                             type="radio" name="language"
+                                                                            value="English (UK)"
+                                                                            onClick={(e)=>onLangChange(e.target.value)}
+                                                                        />
+                                                                       English (UK)
+                                                                    </Label>
+                                                                </FormGroup>
+                                                                <FormGroup
+                                                                    check
+                                                                >
+                                                                    <Label
+                                                                        check
+                                                                    >
+                                                                        <Input
+                                                                             type="radio" name="language"
                                                                             value="Hindi"
                                                                             onClick={(e)=>onLangChange(e.target.value)}
                                                                         />
@@ -574,7 +602,7 @@ const courseCategory = props => {
                                                                         check
                                                                     >
                                                                         <Input
-                                                                            type="checkbox"
+                                                                             type="radio" name="language"
                                                                             value="Marathi"
                                                                             onClick={(e)=>onLangChange(e.target.value)}
                                                                         />
@@ -588,7 +616,7 @@ const courseCategory = props => {
                                                                         check
                                                                     >
                                                                         <Input
-                                                                            type="checkbox"
+                                                                             type="radio" name="language"
                                                                             value="Punjabi"
                                                                             onClick={(e)=>onLangChange(e.target.value)}
                                                                         />
@@ -637,66 +665,27 @@ const courseCategory = props => {
                                             data-parent="#courseCategoryParent"
                                         >
                                             <div className="card-body">
-                                                <List
-                                                    type="unstyled"
-                                                    className="mb-0"
-                                                >
-                                                    
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                            type="checkbox"
-                                                                            
-                                                                        />
-                                                                       20% off
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                            type="checkbox"
-                                                                            
-                                                                        />
-                                                                       30% off
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                            type="checkbox"
-                                                                            
-                                                                        />
-                                                                       40% off
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                            type="checkbox"
-                                                                            
-                                                                        />
-                                                                       50% + off
-                                                                    </Label>
-                                                                </FormGroup>
-                                                             
-                                                          
-                                                        
+                                                <List type="unstyled" className="mb-0">
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="20"/>20% off
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="30"/>30% off
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="40"/>40% off
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="50"/>50% off
+                                                        </Label>
+                                                    </FormGroup>
                                                 </List>
                                             </div>
                                         </div>
