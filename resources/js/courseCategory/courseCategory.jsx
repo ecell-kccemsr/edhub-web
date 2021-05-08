@@ -102,20 +102,31 @@ const CourseCategoryCarousel = props => {
         </Carousel>
     );
 };
+
 const courseCategory = props => {
-    const [sliderVal, setSliderVal] = useState(150000);
+
+    //State
+    const [apiURL, setApiURL] = useState("");
     const [ratingValue, setRating] = useState(1);
+    const [sliderVal, setSliderVal] = useState(150000);
     const [providerVal, setProviderVal] = useState("");
     const [providerData, setProviderData] = useState([]);
     const [courseCategory, setCourseCategory] = useState([]);
-    const [apiURL, setApiURL] = useState("");
-    const minValue = useRef(null);
-    const maxValue = useRef(null);
-    const sliderValue = useRef(null);
     const [priceFilter, setPriceFilter] = useState({
         min: 0,
         max: 150000
     });
+    const [currentCoursePage, setCurrentCoursePage] = useState({
+        current_page: 1,
+        last_page: null
+    });
+
+    //Refs
+    const minValue = useRef(null);
+    const maxValue = useRef(null);
+    const sliderValue = useRef(null);
+   
+    //Change price input and slider value when user slides. Also get all courses by adding price filter 
     const onSliderChange = value => {
         setPriceFilter({
             ...priceFilter,
@@ -124,59 +135,84 @@ const courseCategory = props => {
         setSliderVal(value);
         getCourses(true, apiURL, ratingValue, null, value);
     };
+
     useEffect(() => {
+        //If user comes from guide modal the passed values will be used
         if (props?.location?.state?.modalValues) {
             const modalVals = props?.location?.state?.modalValues;
-            let str = "/api/courses?";
+            let str = "/api/courses?"; //base url
             if (modalVals?.category != "")
-                str = str.concat(`course_category_id=${modalVals?.category}&`);
+                str = str.concat(`course_category_id=${modalVals?.category}&`); //If user selected category append to url
             if (modalVals?.subcategory != "")
                 str = str.concat(
-                    `course_sub_category_id=${modalVals?.subcategory}&`
+                    `course_sub_category_id=${modalVals?.subcategory}&`//If user selected subcategory append to url
                 );
             if (modalVals?.difficulty != "")
-                str = str.concat(`difficulty_level=${modalVals?.difficulty}&`);
+                str = str.concat(`difficulty_level=${modalVals?.difficulty}&`);//If user selected difficulty append to url
             setApiURL("/api/courses?");
             getCourses(true, str, 1, "", modalVals?.max, modalVals?.min);
-        } else if (props?.location?.search == "") {
+        } 
+        //If user comes from searching on landing page but entered empty string (show all courses)
+        else if (props?.location?.search == "") {
             setApiURL("/api/courses?");
             getCourses(false, "/api/courses?");
-        } else {
+        } 
+        //If user comes from searching on landing page (show courses as per user preference)
+        else {
             let url = `/api/courses?search${props?.location?.search.substring(
                 2
             )}&`;
             setApiURL(url);
             getCourses(false, url);
         }
+
+        // Get all course providers for filter
         axios
             .get("/api/course-providers")
             .then(res => setProviderData(res.data.data))
             .catch(err => console.log(err));
     }, []);
-
-    const getCourses = (filter, url, rating, provider, max, min) => {
+    
+    //Function to get courese on basis of the various filter passed to it
+    const getCourses = (filter, url, rating, provider, max, min,perPage=9,pageNumber) => {
         let pricefilter = "";
         let ratingfilter = "";
         let providerfilter = "";
-        let minV = min || minValue.current.value;
-        let maxv = max || maxValue.current.value;
+        let perpage = `per_page=${perPage}`;
+        let pagenumber = pageNumber?`&page=${pageNumber}`:`&page=${currentCoursePage?.current_page}`;
         let ratingV = rating || ratingValue;
         let providerV = provider || providerVal;
+        let minV = min || minValue.current.value;
+        let maxv = max || maxValue.current.value;
+
         if (filter) {
             pricefilter = `price_min=${minV}&price_max=${maxv}`;
             ratingfilter = `&rating=${ratingV}`;
             providerfilter =
                 providerV == "" ? "" : `&course_provider_id=${providerV}`;
         }
+        //Request Data
         axios
-            .get(`${url}${pricefilter}${ratingfilter}${providerfilter}`)
+            .get(`${url}${pricefilter}${ratingfilter}${providerfilter}${perpage}${pagenumber}`)
             .then(res => {
                 setCourseCategory(res.data.data);
+                setCurrentCoursePage({
+                    current_page: res.data.meta.current_page,
+                    last_page: res.data.meta.last_page
+                });
             })
             .catch(err => {
                 console.log(err);
             });
     };
+
+    const handlePagination = (pageNo)=>{
+        setApiURL("/api/courses?");
+            getCourses(false, "/api/courses?",null,null,null,null,9,pageNo);
+            window.scrollTo(0, 0)
+    }
+
+    //Function to set values of the range slider and input as user changes input and also call courses adding price filters
     const onPriceChange = (name, value) => {
         if (name == "min") {
             setPriceFilter({
@@ -193,11 +229,13 @@ const courseCategory = props => {
         getCourses(true, apiURL);
     };
 
+    //Function to get courses by adding a rating filter
     const onRatingChange = ratingVal => {
         setRating(ratingVal);
         getCourses(true, apiURL, ratingVal);
     };
 
+    //Function to get courses by adding a provider filter
     const handleProviderFilter = providerVal => {
         setProviderVal(providerVal);
         getCourses(true, apiURL, null, providerVal);
@@ -731,6 +769,25 @@ const courseCategory = props => {
                                         </Col>
                                     ))}
                             </Row>
+                            {
+                                courseCategory && courseCategory?.length>0 && (
+                                    <>
+                                    <button 
+                                    className="pg-btn"
+                                    disabled={currentCoursePage?.current_page==1}
+                                    onClick={()=>{
+                                        handlePagination(currentCoursePage?.current_page-1)
+                                    }}>PREV</button>
+                                    <button 
+                                    className="pg-btn"
+                                     disabled={currentCoursePage?.current_page==currentCoursePage?.last_page}
+                                    onClick={()=>{
+                                        handlePagination(currentCoursePage?.current_page+1)
+                                    }}>NEXT</button>
+                                    </>
+                                )
+                            }
+                            
                         </Col>
                     </Row>
                 </div>
