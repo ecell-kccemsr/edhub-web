@@ -160,9 +160,14 @@
         padding: 3px;
         .comments {
             padding: 10px;
-            width: 900px;
+            width: 100%;
             display: flex;
             align-items: center;
+            div{
+                display: flex;
+                flex-direction:column;
+                
+            }
             img {
                 border-radius: 35px;
                 object-fit: cover;

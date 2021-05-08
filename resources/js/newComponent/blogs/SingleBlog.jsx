@@ -5,8 +5,8 @@ import axios from "axios";
 import { Collapse } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useStoreState } from "easy-peasy";
-// import { toast, ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.min.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 const SingleBlog = props => {
     const user = useStoreState(state => state.user);
     const [singleBlog, setSingleBlog] = useState(null);
@@ -35,6 +35,7 @@ const SingleBlog = props => {
     }, []);
     const handleComment = e => {
         e.preventDefault();
+        let form = e.nativeEvent.target;
         let data = JSON.stringify({ comment });
         axios
             .post(`/api/blogs/${blog_slug}/comments`, data, {
@@ -43,16 +44,17 @@ const SingleBlog = props => {
                 }
             })
             .then(res => {
-                getComment(blog_slug);
+                toast.success("Comment Added Successfully !");
+                form.reset();
             })
-            .catch(err => console.log(err));
+            .catch(err =>  toast.error("Something went wrong while adding comment!"));
     };
 
     const getComment = (blog_slug, pageNumber = 1) => {
         axios
             .get(`/api/blogs/${blog_slug}/comments?page=${pageNumber}`)
             .then(res => {
-                let combinedArr = [...comments, ...res.data.data];
+                let combinedArr = [...comments,...res.data.data]
                 setComments(combinedArr);
                 setCommentPage({
                     current_page: res.data.meta.current_page,
@@ -97,8 +99,10 @@ const SingleBlog = props => {
     }
 
     return (
+        <>
+        <ToastContainer />
         <div className="single-blog-section">
-            {/* <ToastContainer /> */}
+            
             <Container>
                 <h3>{singleBlog?.title}</h3>
                 <h6>
@@ -238,8 +242,11 @@ const SingleBlog = props => {
                             comments.map(c => {
                                 return (
                                     <div className="comments">
-                                        <img src={user?.avatar} alt="User" />
-                                        {c.comment}
+                                        <img src={c?.user?.avatar} alt="User" />
+                                        <div>
+                                            <b className="mb-0">{c?.user?.name}</b>
+                                            <p className="mb-0">{c?.comment}</p>
+                                        </div>
                                     </div>
                                 );
                             })}
@@ -253,7 +260,7 @@ const SingleBlog = props => {
                                     )
                                 }
                             >
-                                load more
+                                Load More Comments
                             </button>
                         )}
                     </div>
@@ -261,6 +268,7 @@ const SingleBlog = props => {
                 }
             </Container>
         </div>
+        </>
     );
 };
 
