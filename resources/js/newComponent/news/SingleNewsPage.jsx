@@ -111,28 +111,28 @@ const SingleNewsPage = props => {
                                                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                                     target="_blank"
                                                 >
-                                                    <i className="fab fa-linkedin"></i>
+                                                    <i className="fab fa-linkedin" style={{color:"#2867B2"}}></i>
                                                 </a>
                                                 <a
                                                     href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
                                                     target="_blank"
                                                 >
                                                     {" "}
-                                                    <i className="fab fa-facebook"></i>
+                                                    <i className="fab fa-facebook" style={{color:"#3C5A99"}}></i>
                                                 </a>
                                                 <a
                                                     href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
                                                     target="_blank"
                                                 >
                                                     {" "}
-                                                    <i className="fab fa-twitter"></i>
+                                                    <i className="fab fa-twitter" style={{color:"#1DA1F2"}}></i>
                                                 </a>
                                                 <a
                                                     href={`https://api.whatsapp.com/send?text=${window.location.href}`}
                                                     target="_blank"
                                                 >
                                                     {" "}
-                                                    <i className="fab fa-whatsapp"></i>
+                                                    <i className="fab fa-whatsapp" style={{color:"#49C858"}}></i>
                                                 </a>
                                             </div>
                                         </Collapse>

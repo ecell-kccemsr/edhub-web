@@ -40,7 +40,7 @@ const SearchbarDropdown = props => {
                 placeholder="Search"
                 ref={inputRef}
                 onChange={onInputChange}
-                autocomplete="off"
+                autoComplete="off"
             />
             <ul id="results" className="list-group" ref={ulRef}>
                 {options.map((option, index) => {
@@ -105,7 +105,6 @@ const CourseNavbar = props => {
     // Login modal 
     const [modallogin, setModalLogin] = useState(false);
     const toggleLogin = () => setModalLogin(!modallogin);
-    const [isLogin, setIsLogin] = useState(true);
 
 
 
@@ -555,7 +554,7 @@ const CourseNavbar = props => {
                             ) : (
                                 <div className="login-toggle-form">
 
-                                 <Button outline color="success" onClick={toggleLogin}>login</Button>
+                                 <Button className="login-btn-navbar" onClick={toggleLogin}>login</Button>
                                  <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
                                  <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
                                    <ModalBody>

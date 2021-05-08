@@ -162,6 +162,14 @@
                 object-fit: contain;
             }
         }
+        .login-toggle-form {
+            .login-btn-navbar {
+                background: #3c64b1;
+                color: #fff !important;
+                padding: 4px 24px !important;
+                border-radius: 6px;
+            }
+        }
     }
 }
 .dropdown-menu {
@@ -188,7 +196,8 @@
 
     #results {
         position: absolute;
-        width: inherit;
+        // width: inherit;
+        width: 104%;
         overflow-y: scroll;
         height: 20em;
         z-index: 1000;

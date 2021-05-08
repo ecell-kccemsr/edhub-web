@@ -1,8 +1,10 @@
-import React from "react";
-import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
+import axios from "axios";
+import React, { useState, useEffect, useRef } from "react";
+import { Col, Container, Row, FormGroup, Input, Label, Modal, ModalHeader, ModalBody, Button } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import http from "../../utils/http";
+import Login from "../login/Login";
 const Register = () => {
     let history = useHistory();
 
@@ -18,7 +20,8 @@ const Register = () => {
             })
             .catch(err => console.log(err.response.data.message));
     };
-
+    const [modallogin, setModalLogin] = useState(false);
+    const toggleLogin = () => setModalLogin(!modallogin);
     return (
         <>
             <h3 className="auth-brand">
@@ -111,8 +114,14 @@ const Register = () => {
                                 next
                             </button>
                             <p className="register-login-link">
-                                Already have an account?{" "}
-                                <Link to="/login">Login</Link>
+                                Already have an account?
+                                <p style={{cursor:"pointer", color:"#F05454"}} onClick={toggleLogin}>login</p>
+                                 <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
+                                 <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
+                                   <ModalBody>
+                                    <Login />                                   
+                                   </ModalBody>
+                                 </Modal>
                             </p>
                             <p className="register-login-link">
                                 {" "}

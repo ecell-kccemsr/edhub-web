@@ -105,7 +105,7 @@ const ProfileLayout = ({ children }) => {
                             <Link
                                 className="profile-links"
                                 onClick={() => handleChange()}
-                                to="/"
+                                to="/landingPage"
                             >
                                 Signout
                             </Link>
