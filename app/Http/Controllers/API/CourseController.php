@@ -49,6 +49,17 @@ class CourseController extends Controller
         if($request->has('trending')) {
             $courses = $courses->orderBy('rating', 'desc');
         }
+        if($request->has('locale')){
+            $courses = $courses->where('locale',$request->input('locale'));
+        }
+        if($request->has('certification')){
+            $courses = $courses->where('certification',$request->input('certification'));
+        }
+        if($request->has('discount'))
+        {
+            $discount_price = ($courses->price*$request->input('discount'))/100;
+            $courses = $courses->where('discount_price',$discount_price);
+        }
         return new CourseResourceCollection($courses->paginate($request->input('per_page',10)));
     }
 
