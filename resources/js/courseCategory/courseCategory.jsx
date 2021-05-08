@@ -108,6 +108,8 @@ const courseCategory = props => {
     //State
     const [apiURL, setApiURL] = useState("");
     const [ratingValue, setRating] = useState(1);
+    const [ceritificationVal, setCertificationVal] = useState(1);
+    const [lang, setLang] = useState("English");
     const [sliderVal, setSliderVal] = useState(150000);
     const [providerVal, setProviderVal] = useState("");
     const [providerData, setProviderData] = useState([]);
@@ -174,26 +176,32 @@ const courseCategory = props => {
     }, []);
     
     //Function to get courese on basis of the various filter passed to it
-    const getCourses = (filter, url, rating, provider, max, min,perPage=9,pageNumber) => {
+    const getCourses = (filter, url, rating, provider, max, min,perPage=9,pageNumber,certification,language) => {
         let pricefilter = "";
         let ratingfilter = "";
         let providerfilter = "";
-        let perpage = `per_page=${perPage}`;
+        let certificationfilter = "";
+        let langfilter = "";
+        let perpage = `&per_page=${perPage}`;
         let pagenumber = pageNumber?`&page=${pageNumber}`:`&page=${currentCoursePage?.current_page}`;
         let ratingV = rating || ratingValue;
         let providerV = provider || providerVal;
         let minV = min || minValue.current.value;
         let maxv = max || maxValue.current.value;
+        let certificationV = certification==null?ceritificationVal: certification;
+        let languageV = language==null?lang:language
 
         if (filter) {
             pricefilter = `price_min=${minV}&price_max=${maxv}`;
             ratingfilter = `&rating=${ratingV}`;
+            certificationfilter = `&certification=${certificationV}`;
+            langfilter = `&language=${languageV}`;
             providerfilter =
                 providerV == "" ? "" : `&course_provider_id=${providerV}`;
         }
         //Request Data
         axios
-            .get(`${url}${pricefilter}${ratingfilter}${providerfilter}${perpage}${pagenumber}`)
+            .get(`${url}${pricefilter}${ratingfilter}${providerfilter}${langfilter}${certificationfilter}${perpage}${pagenumber}`)
             .then(res => {
                 setCourseCategory(res.data.data);
                 setCurrentCoursePage({
@@ -207,8 +215,7 @@ const courseCategory = props => {
     };
 
     const handlePagination = (pageNo)=>{
-        setApiURL("/api/courses?");
-            getCourses(false, "/api/courses?",null,null,null,null,9,pageNo);
+            getCourses(true, apiURL,null,null,null,null,9,pageNo);
             window.scrollTo(0, 0)
     }
 
@@ -233,6 +240,16 @@ const courseCategory = props => {
     const onRatingChange = ratingVal => {
         setRating(ratingVal);
         getCourses(true, apiURL, ratingVal);
+    };
+
+    const onCertificationChange = val => {
+        setCertificationVal(val);
+        getCourses(true, apiURL,null,null,null,null,9,1,val);
+    };
+
+    const onLangChange = val => {
+        setLang(val);
+        getCourses(true, apiURL,null,null,null,null,9,1,null,val);
     };
 
     //Function to get courses by adding a provider filter
@@ -530,7 +547,8 @@ const courseCategory = props => {
                                                                     >
                                                                         <Input
                                                                             type="checkbox"
-                                                                            
+                                                                            value="English"
+                                                                            onClick={(e)=>onLangChange(e.target.value)}
                                                                         />
                                                                        English
                                                                     </Label>
@@ -543,7 +561,8 @@ const courseCategory = props => {
                                                                     >
                                                                         <Input
                                                                             type="checkbox"
-                                                                            
+                                                                            value="Hindi"
+                                                                            onClick={(e)=>onLangChange(e.target.value)}
                                                                         />
                                                                        Hindi
                                                                     </Label>
@@ -556,7 +575,8 @@ const courseCategory = props => {
                                                                     >
                                                                         <Input
                                                                             type="checkbox"
-                                                                            
+                                                                            value="Marathi"
+                                                                            onClick={(e)=>onLangChange(e.target.value)}
                                                                         />
                                                                        Marathi
                                                                     </Label>
@@ -569,7 +589,8 @@ const courseCategory = props => {
                                                                     >
                                                                         <Input
                                                                             type="checkbox"
-                                                                            
+                                                                            value="Punjabi"
+                                                                            onClick={(e)=>onLangChange(e.target.value)}
                                                                         />
                                                                        Punjabi
                                                                     </Label>
@@ -729,6 +750,7 @@ const courseCategory = props => {
                                                                         <Input
                                                                             type="radio"
                                                                             name="radio1"
+                                                                            onChange={()=>onCertificationChange(1)}
                                                                         />
                                                                        Yes
                                                                     </Label>
@@ -742,6 +764,7 @@ const courseCategory = props => {
                                                                         <Input
                                                                             type="radio"
                                                                             name="radio1"
+                                                                            onChange={()=>onCertificationChange(0)}
                                                                         />
                                                                       No
                                                                     </Label>
