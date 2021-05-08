@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Container } from "reactstrap";
 import BlogCard from "../../components/blogcard/BlogCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const BlogHomepage = () => {
     const [blog, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [course, setCourse] = useState([]);
     const [currentBlogPage, setBlogCurrentPage] = useState({
         current_page: 1,
@@ -15,7 +16,7 @@ const BlogHomepage = () => {
     useEffect(() => {
             getBlogs()
             axios
-            .get("/api/courses")
+            .get("/api/courses?per_page=5")
             .then(res => {
                 setCourse(res.data.data);
             })
@@ -28,6 +29,7 @@ const BlogHomepage = () => {
         axios
             .get(`/api/blogs?per_page=5&page=${pageNo}`)
             .then(res => {
+                setLoading(false)
                 setBlogs(res.data.data);
                 setBlogCurrentPage({
                     current_page: res.data.meta.current_page,
@@ -43,11 +45,29 @@ const BlogHomepage = () => {
             getBlogs(pageNo)
             window.scrollTo(0, 0)
     }
+
+    if(loading){
+       return(
+        <div className="blog-section">
+        <Container>
+            <h4 className="text-center">Loading Blogs...</h4>
+        </Container>
+    </div>
+       )
+    }
+    
     return (
         <div className="blog-section">
                 <Row>
                     <Col sm="1" md={{ size: 6, offset: 1 }} lg="7">
-                        {blog &&
+                        { !loading && blog.length==0 && (
+                             <div className="blog-section">
+                             <Container>
+                                    <h4  className="text-center">No Blogs Found !</h4>
+                                </Container>
+                            </div>)
+                        }
+                        {!loading && blog &&
                             blog?.length > 0 &&
                             blog?.map((b) => (
                                 <BlogCard
@@ -79,7 +99,13 @@ const BlogHomepage = () => {
                     <Col sm="1" md="4" lg="3">
                         <div className="blog-sidebar">
                         <h6>Recent Posts</h6>
-                            {blog.map(b=>(
+                        { !loading && blog.length==0 && (
+                             <Container>
+                             <p >No Blogs Found !</p>
+                         </Container>)
+                        }
+                            {!loading && blog &&
+                            blog?.length > 0 && blog.map(b=>(
                                 <>
                             <hr />
                             <div className="blog-sidebar-list-el">
@@ -97,7 +123,12 @@ const BlogHomepage = () => {
                            
                             <h6 className="mt-4">Recent Courses</h6>
                             <hr />
-                            {course.map((a,key)=>(
+                            {
+                                course && course.length==0 && (
+                                    <p  className="mb-0">No Recent Courses Found!</p>
+                                )
+                            }
+                            {course?.length>0 && course.map((a,key)=>(
                               <div className="blog-sidebar-list-el my-3" key={key}>
                               <div className="sidebar-list-top">
                                   <i className="fas fa-chevron-right"></i>

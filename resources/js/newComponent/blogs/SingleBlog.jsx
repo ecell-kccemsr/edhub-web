@@ -13,6 +13,8 @@ const SingleBlog = props => {
 
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
     const [commentPage, setCommentPage] = useState({
         current_page: 1,
         last_page: null
@@ -26,9 +28,11 @@ const SingleBlog = props => {
                 .get(`/api/blogs/${blog_slug}`)
                 .then(res => {
                     setSingleBlog(res.data.data);
+                    setLoading(false)
                 })
                 .catch(err => {
-                    console.log(err);
+                    setLoading(false)
+                    setError(true)
                 });
             getComment(blog_slug);
         }
@@ -86,7 +90,7 @@ const SingleBlog = props => {
         setVisible(initialPosts);
     };
 
-    if(singleBlog==null){
+    if(loading){
         return (
             <>
             <div className="single-blog-section">
@@ -101,8 +105,18 @@ const SingleBlog = props => {
     return (
         <>
         <ToastContainer />
-        <div className="single-blog-section">
-            
+        {!loading && error && (
+             <>
+             <div className="single-blog-section">
+                 <Container>
+                     <h4 className="text-center">Something went wrong 🙁</h4>
+                 </Container>
+             </div>
+             </>
+        )}
+        {
+            !loading && !error && (
+                <div className="single-blog-section">
             <Container>
                 <h3>{singleBlog?.title}</h3>
                 <h6>
@@ -119,7 +133,7 @@ const SingleBlog = props => {
                             alt="Like"
                             onClick={handleLike}
                         />
-                        <b>{singleBlog.total_likes}</b>
+                        <b>{singleBlog?.total_likes}</b>
                     </div>
                     <div className="interaction-container">
                         <img src="/Images/blogs/comment.png" alt="Comments" />
@@ -268,6 +282,8 @@ const SingleBlog = props => {
                 }
             </Container>
         </div>
+            )
+        }
         </>
     );
 };
