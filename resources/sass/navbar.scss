@@ -205,7 +205,7 @@
     }
 
     #results > button {
-        background-color: #fafafa;
+        background-color: #fff;
     }
 
     /* width */
@@ -263,7 +263,7 @@
     .navbar-search-dropdown {
         position: relative;
         .search-bar-dropdown {
-            width: 15em;
+            width: 100%;
             padding: 12px;
         }
     }

@@ -50,7 +50,7 @@ const SearchbarDropdown = props => {
                             key={index}
                             className="list-group-item list-group-item-action"
                         >
-                            <p style={{textTransform:"uppercase"}}>
+                            <p style={{textTransform:"uppercase",marginBottom: 0,fontWeight: 600}}>
                             {option?.type}
                             </p>
                             <a href={`${option?.url}`}>
