@@ -123,6 +123,7 @@
                     margin-left: 10px;
                     display: flex;
                     align-items: center;
+                    cursor:pointer;
                     img {
                         margin-right: 3px;
                         color: #c6c6c6;
@@ -240,8 +241,12 @@
             padding: 10px;
             display: flex;
             align-items: center;
+            div{
+                display: flex;
+                flex-direction:column;
+            }
             img {
-                border-radius: 35px;
+                border-radius: 50%;
                 object-fit: cover;
                 width: 43px;
                 height: 43px;

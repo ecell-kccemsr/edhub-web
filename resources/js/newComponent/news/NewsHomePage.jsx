@@ -8,6 +8,7 @@ const NewsHomePage = () => {
     const [news, setNews] = useState([]);
     const [trending, setTrending] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const handleData = (id = null) => {
         let idVal = "";
@@ -18,8 +19,10 @@ const NewsHomePage = () => {
             .get(`/api/news${idVal}`)
             .then(res => {
                 setNews(res.data.data);
+                setLoading(false)
             })
             .catch(err => {
+                setLoading(false)
                 console.log(err);
             });
     };
@@ -44,31 +47,50 @@ const NewsHomePage = () => {
             });
     }, []);
 
+    if(loading){
+        <div className="news-section-container">
+        <Container className="containerClass">
+            <h4 className="text-center">Loading News...</h4>
+        </Container>
+        </div>
+    }
+
     return (
         <div className="news-section-container">
             <Container className="containerClass">
                 <div className=" d-flex justify-content-center flex-wrap mb-3">
-                    <button
-                        className="category-btn-all"
-                        onClick={() => handleData()}
-                    >
-                        All
-                    </button>
+                  
                     {categories &&
-                        categories.length > 0 &&
-                        categories.map(c => (
-                            <button
-                                className="category-buttons-header"
-                                onClick={() => handleData(c?.id)}
-                            >
-                                {c.name}
-                            </button>
-                        ))}
+                        categories.length > 0 && (
+                            <>
+                              <button
+                                    className="category-btn-all"
+                                    onClick={() => handleData()}
+                                >
+                                    All
+                                </button>
+                            {
+                                categories.map(c => (
+                                    <button
+                                        className="category-buttons-header"
+                                        onClick={() => handleData(c?.id)}
+                                    >
+                                        {c.name}
+                                    </button>
+                                ))
+                            }
+                            </>
+                        )    
+                    }
                 </div>
-
+                {!loading && news &&
+                            news?.length == 0 && (
+                                <h4 className="text-center">No News Found !</h4>
+                            )}
                 <Row>
                     <Col sm="12" md="8" lg="9">
-                        {news &&
+                   
+                        {!loading && news &&
                             news?.length > 0 &&
                             news?.map(n => (
                                 <NewsCard
@@ -78,7 +100,8 @@ const NewsHomePage = () => {
                                 />
                             ))}
                     </Col>
-                    <Col sm="12" md="4" lg="3">
+                    {trending?.length > 0 && 
+                        <Col sm="12" md="4" lg="3">
                         <div className="news-sidebar">
                             <h4>Trending</h4>
                             {trending &&
@@ -111,6 +134,7 @@ const NewsHomePage = () => {
                                 ))}
                         </div>
                     </Col>
+                    }
                 </Row>
             </Container>
         </div>

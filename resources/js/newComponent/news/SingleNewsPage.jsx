@@ -11,6 +11,8 @@ const SingleNewsPage = props => {
     const [relatednews, setRelatedNews] = useState([]);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState("");
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -21,6 +23,7 @@ const SingleNewsPage = props => {
             axios
                 .get(`/api/news/${news_slug}`)
                 .then(res => {
+                    setLoading(false)
                     setcategorynews(res.data.data);
                     id = res.data.data?.category.id;
                     axios.get(`/api/news?category_id=${id}`).then(res => {
@@ -28,7 +31,8 @@ const SingleNewsPage = props => {
                     });
                 })
                 .catch(err => {
-                    console.log(err);
+                    setLoading(false)
+                    setError(true)
                 });
             getComment(news_slug);
         }
@@ -69,19 +73,46 @@ const SingleNewsPage = props => {
         }
     };
 
+    
+    if(loading){
+        return (
+            <>
+            <div className="singlenews-section">
+                <Container>
+                    <h4 className="text-center">Loading News...</h4>
+                </Container>
+            </div>
+            </>
+        )
+    }
+
+
     return (
         <div className="singlenews-section">
             <Container>
+            {!loading && error && (
+             <>
+             <Container>
+                     <h4 className="text-center">Something went wrong 🙁</h4>
+                 </Container>
+             </>
+        )}
+         {
+            !loading && !error && (
                 <Row>
                     <Col sm="12" md="8">
                         <h4 className="singlenewstitle-text">
                             {categorynews?.category?.name}
                         </h4>
                         <div className="singlnews-main-card">
-                            <img
-                                src={categorynews?.image}
-                                alt="Single News Image"
-                            />
+                            {
+                              categorynews && (
+                                    <img
+                                        src={categorynews?.image}
+                                        alt="Single News Image"
+                                    />
+                                )
+                            }
                             <div className="news-overview-container">
                                 <p className="news-tag">
                                     #{categorynews?.tags}
@@ -117,21 +148,21 @@ const SingleNewsPage = props => {
                                                     href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
                                                     target="_blank"
                                                 >
-                                                    {" "}
+                                                    
                                                     <i className="fab fa-facebook" style={{color:"#3C5A99"}}></i>
                                                 </a>
                                                 <a
                                                     href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
                                                     target="_blank"
                                                 >
-                                                    {" "}
+                                                    
                                                     <i className="fab fa-twitter" style={{color:"#1DA1F2"}}></i>
                                                 </a>
                                                 <a
                                                     href={`https://api.whatsapp.com/send?text=${window.location.href}`}
                                                     target="_blank"
                                                 >
-                                                    {" "}
+                                                    
                                                     <i className="fab fa-whatsapp" style={{color:"#49C858"}}></i>
                                                 </a>
                                             </div>
@@ -152,7 +183,7 @@ const SingleNewsPage = props => {
                                 {categorynews.description}
                             </p>
                             <>
-                                {" "}
+                                
                                 <h4 className="comment-titletext">Comments</h4>
                                 {user ? (
                                     <form onSubmit={handleComment}>
@@ -186,37 +217,45 @@ const SingleNewsPage = props => {
                                     </form>
                                 ) : (
                                     <div className="text-center">
+                                        <button>
                                         <Link
                                             to={"/login"}
-                                            className="comment-login-btn"
+                                            className="text-white"
                                         >
                                             Login to comment
                                         </Link>
+                                        </button>
                                     </div>
                                 )}
                             </>
-                            <div className="user-comment-section-news">
-                                <h4 className="user-comments-news">
-                                    User Comments{" "}
-                                </h4>
+                            {
+                                comments &&
+                                comments.length>0 && (
+                                <div className="user-comment-section-news">
+                                    <h4 className="user-comments-news">
+                                        User Comments
+                                    </h4>
 
-                                <div className="container comment-section-news">
-                                {comments &&
-                                        comments.length &&
-                                        comments.slice(0, 4).map(c => {
-                                            return (
-                                                <div className="comments-news">
-                                                    <img src={user?.avatar} alt="User"/>
-                                                    {c.comment}{" "}
-                                                </div>
+                                    <div className="container comment-section-news">
+                                        {comments &&
+                                            comments.length>0 &&
+                                            comments.slice(0, 4).map(c => {
+                                                return (
+                                                    <div className="comments-news">
+                                                       <img src={c?.user?.avatar} alt="User" />
+                                                        <div>
+                                                            <b className="mb-0">{c?.user?.name}</b>
+                                                            <p className="mb-0">{c?.comment}</p>
+                                                        </div>
+                                                    </div>
                                             );
                                             
                                         })}
-             
-
+                                    </div>
                                 </div>
-           
-                            </div>
+                                )
+                            }
+                            
                         </div>
                     </Col>
                     <Col sm="12" md="4">
@@ -286,6 +325,7 @@ const SingleNewsPage = props => {
                         </div>
                     </Col>
                 </Row>
+                )}
             </Container>
         </div>
     );
