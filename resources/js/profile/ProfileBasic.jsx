@@ -35,6 +35,7 @@ const ProfileBasic = () => {
                             name="email"
                             defaultValue={user.email}
                             className="input-group"
+                            disabled
                         />
                     </FormGroup>
                     <FormGroup>

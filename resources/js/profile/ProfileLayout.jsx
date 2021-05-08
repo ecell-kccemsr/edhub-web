@@ -13,9 +13,10 @@ const ProfileLayout = ({ children }) => {
 
     const onSubmit = e => {
         e.preventDefault();
+        let form  = e.nativeEvent.target
         let formData = new FormData(e.nativeEvent.target);
         http.post("auth/update", formData)
-        .then(res => setUser(res.data.data));
+        .then(res => {form.reset();setUser(res.data.data)});
     };
 
     return (
@@ -33,21 +34,31 @@ const ProfileLayout = ({ children }) => {
                     >
                         <div>
                             <div className="img-container">
-                                <img
-                                    src={user.avatar}
-                                    id="img"
-                                    alt="profile-pic"
-                                    className="profile-section-profile-image"
-                                />
+                                {
+                                    !user && (
+                                        <img
+                                            src=" https://library.kissclipart.com/20181001/wbw/kissclipart-gsmnet-ro-clipart-computer-icons-user-avatar-4898c5072537d6e2.png"
+                                            id="img"
+                                            alt="profile-pic"
+                                            className="profile-section-profile-image"
+                                        />
+                                       
+                                    ) 
+                                }
+                                {
+                                    user && (
+                                        <img
+                                            src={user?.avatar}
+                                            id="img"
+                                            alt="profile-pic"
+                                            className="profile-section-profile-image"
+                                        />
+                                    )
+                                }
                             </div>
                             <form action="" onSubmit={onSubmit}>
                                 <div className="update-btn-section">
-                                        <input
-                                            name="avatar"
-                                            type="file"
-                                            id="img"
-                                            />
-
+                                <input class="form-control "  name="avatar" type="file" id="img"/>
                                         <button className="update-btn">
                                             Upload!
                                         </button>
