@@ -11,6 +11,22 @@ class Course extends Model
     use HasFactory, HasSlug;
     
     /**
+    * The "booting" method of the model.
+    */
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::creating(function (self $model): void {
+            $model->discount_percentage = 100-intval(($model->discount_price/$model->price)*100);
+        });
+
+        static::updating(function (self $model): void {
+            $model->discount_percentage = 100-intval(($model->discount_price/$model->price)*100);
+        });
+    }
+
+    /**
     * The attributes that aren't mass assignable.
     *
     * @var array

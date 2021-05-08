@@ -55,10 +55,9 @@ class CourseController extends Controller
         if($request->has('certification')){
             $courses = $courses->where('certification',$request->input('certification'));
         }
-        if($request->has('discount'))
+        if($request->has('discount_percentage'))
         {
-            $discount_price = ($courses->price*$request->input('discount'))/100;
-            $courses = $courses->where('discount_price',$discount_price);
+            $courses = $courses->where('discount_percentage','>=',$request->input('discount_percentage'));
         }
         return new CourseResourceCollection($courses->paginate($request->input('per_page',10)));
     }

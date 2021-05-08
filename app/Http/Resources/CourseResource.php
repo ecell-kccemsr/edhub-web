@@ -38,6 +38,7 @@ class CourseResource extends JsonResource
             })->toArray(),
             'price' => $this->price,
             'discount_price' => $this->discount_price,
+            'discount_percentage' => $this->discount_percentage,
             'slug' => $this->slug,
         ];
     }

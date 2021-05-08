@@ -36,6 +36,7 @@ class CreateCoursesTable extends Migration
             $table->unsignedInteger('course_sub_category_id')->nullable();
             $table->unsignedInteger('course_topic_id')->nullable();
             $table->string('slug')->unique();
+            $table->integer('discount_percentage');
             $table->timestamps();
         });
     }
