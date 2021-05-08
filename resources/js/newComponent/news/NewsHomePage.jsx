@@ -9,17 +9,27 @@ const NewsHomePage = () => {
     const [trending, setTrending] = useState([]);
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [categoryId, setCategoryId] = useState('');
+    const [currentBlogPage, setBlogCurrentPage] = useState({
+        current_page: 1,
+        last_page: null
+    });
 
-    const handleData = (id = null) => {
+    const handleData = (id = null,pageNo=1) => {
         let idVal = "";
         if (id) {
-            idVal = `?category_id=${id}`;
+            setCategoryId(id)
+            idVal = `category_id=${id}`;
         }
         axios
-            .get(`/api/news${idVal}`)
+            .get(`/api/news?per_page=5&page=${pageNo}&${idVal}`)
             .then(res => {
                 setNews(res.data.data);
                 setLoading(false)
+                setBlogCurrentPage({
+                    current_page: res.data.meta.current_page,
+                    last_page: res.data.meta.last_page
+                });
             })
             .catch(err => {
                 setLoading(false)
@@ -46,6 +56,12 @@ const NewsHomePage = () => {
                 console.log(err);
             });
     }, []);
+    
+
+    const handlePagination = (pageNo)=>{
+        handleData(categoryId,pageNo);
+        window.scrollTo(0, 0)
+}
 
     if(loading){
         <div className="news-section-container">
@@ -99,6 +115,24 @@ const NewsHomePage = () => {
                                     toUrl={`/news/${n.slug}`}
                                 />
                             ))}
+                             {
+                                news && news?.length>0 && (
+                                    <>
+                                    <button 
+                                        className="pg-btn"
+                                        disabled={currentBlogPage?.current_page==1}
+                                        onClick={()=>{
+                                            handlePagination(currentBlogPage?.current_page-1)
+                                        }}>PREV</button>
+                                    <button 
+                                        className="pg-btn"
+                                        disabled={currentBlogPage?.current_page==currentBlogPage?.last_page}
+                                        onClick={()=>{
+                                            handlePagination(currentBlogPage?.current_page+1)
+                                        }}>NEXT</button>
+                                    </>
+                                )
+                            }
                     </Col>
                     {trending?.length > 0 && 
                         <Col sm="12" md="4" lg="3">
