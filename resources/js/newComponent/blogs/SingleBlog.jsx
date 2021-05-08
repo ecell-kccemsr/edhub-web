@@ -9,7 +9,7 @@ import { useStoreState } from "easy-peasy";
 // import "react-toastify/dist/ReactToastify.min.css";
 const SingleBlog = props => {
     const user = useStoreState(state => state.user);
-    const [singleBlog, setSingleBlog] = useState([]);
+    const [singleBlog, setSingleBlog] = useState(null);
 
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
@@ -84,6 +84,18 @@ const SingleBlog = props => {
         setVisible(initialPosts);
     };
 
+    if(singleBlog==null){
+        return (
+            <>
+            <div className="single-blog-section">
+                <Container>
+                    <h4 className="text-center">Loading Blog...</h4>
+                </Container>
+            </div>
+            </>
+        )
+    }
+
     return (
         <div className="single-blog-section">
             {/* <ToastContainer /> */}
@@ -144,28 +156,28 @@ const SingleBlog = props => {
                                             href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                             target="_blank"
                                         >
-                                            <i class="fab fa-linkedin"></i>
+                                            <i className="fab fa-linkedin"></i>
                                         </a>
                                         <a
                                             href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
                                             target="_blank"
                                         >
                                             {" "}
-                                            <i class="fab fa-facebook"></i>
+                                            <i className="fab fa-facebook"></i>
                                         </a>
                                         <a
                                             href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
                                             target="_blank"
                                         >
                                             {" "}
-                                            <i class="fab fa-twitter"></i>
+                                            <i className="fab fa-twitter"></i>
                                         </a>
                                         <a
                                             href={`https://api.whatsapp.com/send?text=${window.location.href}`}
                                             target="_blank"
                                         >
                                             {" "}
-                                            <i class="fab fa-whatsapp"></i>
+                                            <i className="fab fa-whatsapp"></i>
                                         </a>
                                     </div>
                                 </Collapse>
@@ -215,12 +227,14 @@ const SingleBlog = props => {
                         </div>
                     )}
                 </>
-                <div className="user-comment-section">
-                    <h4 className="user-comments">User Comments </h4>
+                {comments &&
+                            comments.length>0 &&      <div className="user-comment-section">
+                 
+                    <h4 className="user-comments">User Comments </h4> 
 
                     <div className="container comment-section">
                         {comments &&
-                            comments.length &&
+                            comments.length>0 &&
                             comments.map(c => {
                                 return (
                                     <div className="comments">
@@ -244,6 +258,7 @@ const SingleBlog = props => {
                         )}
                     </div>
                 </div>
+                }
             </Container>
         </div>
     );

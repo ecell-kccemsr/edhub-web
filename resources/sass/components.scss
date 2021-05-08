@@ -261,6 +261,7 @@
             }
             p {
                 margin-bottom: 0;
+                font-size: 16px;
             }
         }
         .blog-footer-social {
@@ -275,6 +276,9 @@
                 margin-left: 3px;
             }
             .social-container {
+                a{
+                    margin: 0 3px ;
+                }
                 .fab,
                 .far {
                     font-weight: 400;

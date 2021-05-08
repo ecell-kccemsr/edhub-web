@@ -111,28 +111,28 @@ const SingleNewsPage = props => {
                                                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                                     target="_blank"
                                                 >
-                                                    <i class="fab fa-linkedin"></i>
+                                                    <i className="fab fa-linkedin"></i>
                                                 </a>
                                                 <a
                                                     href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
                                                     target="_blank"
                                                 >
                                                     {" "}
-                                                    <i class="fab fa-facebook"></i>
+                                                    <i className="fab fa-facebook"></i>
                                                 </a>
                                                 <a
                                                     href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
                                                     target="_blank"
                                                 >
                                                     {" "}
-                                                    <i class="fab fa-twitter"></i>
+                                                    <i className="fab fa-twitter"></i>
                                                 </a>
                                                 <a
                                                     href={`https://api.whatsapp.com/send?text=${window.location.href}`}
                                                     target="_blank"
                                                 >
                                                     {" "}
-                                                    <i class="fab fa-whatsapp"></i>
+                                                    <i className="fab fa-whatsapp"></i>
                                                 </a>
                                             </div>
                                         </Collapse>

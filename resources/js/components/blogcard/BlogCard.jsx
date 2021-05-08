@@ -31,14 +31,14 @@ const BlogCard = ({ tags, data, toUrl }) => {
                                     : data?.body
                         }}
                     ></p>
-                    <p style={{ marginBottom: "10px" }}>
+                    <span >
                         <Link
                             to={toUrl || "#"}
-                            style={{ color: "#ff0000", fontSize: "21px" }}
+                            style={{ color: "#F05454", fontSize: "16px" }}
                         >
                             Read more
                         </Link>
-                    </p>
+                    </span>
                 </>
             )}
 
@@ -52,34 +52,43 @@ const BlogCard = ({ tags, data, toUrl }) => {
                     </div>
                 )}
 
+                    {!tags && (
+                       <div className="blog-footer-author-section">
+                        <img src={data?.author_image} alt="Author Image" />
+                        <p>
+                            {data?.author_name} | {data?.autor_designation}
+                        </p>
+                    </div>
+                )}
+
                 <div className="blog-footer-social">
                 <div className="social-container">
                                 <a
                                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                     target="_blank"
                                 >
-                                   <i class="fab fa-linkedin"></i>
+                                   <i className="fab fa-linkedin"></i>
                                 </a>
                                 <a
                                     href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
                                     target="_blank"
                                 >
-                                    {" "}
-                                    <i class="fab fa-facebook"></i>
+                                    
+                                    <i className="fab fa-facebook"></i>
                                 </a>
                                 <a
                                     href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
                                     target="_blank"
                                 >
-                                    {" "}
-                                    <i class="fab fa-twitter"></i>
+                                    
+                                    <i className="fab fa-twitter"></i>
                                 </a>
                                 <a
                                     href={`https://api.whatsapp.com/send?text=${window.location.href}`}
                                     target="_blank"
                                 >
-                                    {" "}
-                                    <i class="fab fa-whatsapp"></i>
+                                    
+                                    <i className="fab fa-whatsapp" style={{color:"#24CC63"}}></i>
                                 </a>
                             </div>
                 </div>
