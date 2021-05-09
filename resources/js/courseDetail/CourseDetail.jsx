@@ -12,6 +12,8 @@ import {
 } from "reactstrap";
 import { v4 as uuidv4 } from "uuid";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -89,7 +91,7 @@ function CourseDetail(props) {
             0
         );
     const url = window.location.href;
-
+    const notify = () => toast("Link Copied!");
     return (
         <>
             <div className="course-detail-section">
@@ -138,10 +140,11 @@ function CourseDetail(props) {
                                         </>
                                     )}
                                     <CopyToClipboard text={url}>
-                                        <button className="share-btn">
+                                        <button className="share-btn"  onClick={notify}  >
                                             Share
                                         </button>
                                     </CopyToClipboard>
+                                    <ToastContainer />
                                     <button
                                         className="compare-btn-1"
                                         onClick={() =>

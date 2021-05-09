@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { Collapse } from "reactstrap";
 import { useStoreState } from "easy-peasy";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 const SingleNewsPage = props => {
     const user = useStoreState(state => state.user);
     const [categorynews, setcategorynews] = useState([]);
@@ -13,7 +15,10 @@ const SingleNewsPage = props => {
     const [comment, setComment] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-
+    const [commentPage, setCommentPage] = useState({
+        current_page: 1,
+        last_page: null
+    });
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     let id;
@@ -40,22 +45,31 @@ const SingleNewsPage = props => {
 
     const handleComment = e => {
         e.preventDefault();
+        let form = e.nativeEvent.target;
         let data = JSON.stringify({ comment });
         axios
             .post(`/api/news/${news_slug}/comments`, data, {
                 headers: {
                     "Content-Type": "application/json"
                 }
+            }).then(res=>{
+                toast.success("Comment Added Successfully !");
+                form.reset();
             })
             .catch(err => console.log(err));
     };
 
-    const getComment = news_slug => {
+    const getComment = (news_slug, pageNumber = 1) => {
         axios
-            .get(`/api/news/${news_slug}/comments`)
+            .get(`/api/news/${news_slug}/comments?page=${pageNumber}`)
             .then(res => {
-                setComments(res.data.data);
-            })
+                let combinedArr = [...comments,...res.data.data]
+                setComments(combinedArr);
+                setCommentPage({
+                    current_page: res.data.meta.current_page,
+                    last_page: res.data.meta.last_page
+            });
+        })
             .catch(err => console.log(err));
     };
     const handleLike = e => {
@@ -88,7 +102,9 @@ const SingleNewsPage = props => {
 
 
     return (
+        
         <div className="singlenews-section">
+        <ToastContainer />
             <Container>
             {!loading && error && (
              <>
@@ -208,7 +224,7 @@ const SingleNewsPage = props => {
                                             <Col sm="12" md="4" lg="3">
                                                 <button
                                                     type="submit"
-                                                    className=""
+                                                    className="comment-post-btn"
                                                 >
                                                     POST
                                                 </button>
@@ -230,7 +246,7 @@ const SingleNewsPage = props => {
                             </>
                             {
                                 comments &&
-                                comments.length>0 && (
+                                comments.length>0 && 
                                 <div className="user-comment-section-news">
                                     <h4 className="user-comments-news">
                                         User Comments
@@ -239,7 +255,7 @@ const SingleNewsPage = props => {
                                     <div className="container comment-section-news">
                                         {comments &&
                                             comments.length>0 &&
-                                            comments.slice(0, 4).map(c => {
+                                            comments.map(c => {
                                                 return (
                                                     <div className="comments-news">
                                                        <img src={c?.user?.avatar} alt="User" />
@@ -251,9 +267,22 @@ const SingleNewsPage = props => {
                                             );
                                             
                                         })}
+
+                            {commentPage?.current_page < commentPage?.last_page && (
+                            <button
+                                onClick={() =>
+                                    getComment(
+                                        news_slug,
+                                        commentPage.current_page + 1
+                                    )
+                                }
+                            >
+                                Load More Comments
+                            </button>
+                        )}
                                     </div>
                                 </div>
-                                )
+                                
                             }
                             
                         </div>

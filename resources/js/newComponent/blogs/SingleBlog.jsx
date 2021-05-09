@@ -231,7 +231,7 @@ const SingleBlog = props => {
                                     </FormGroup>
                                 </Col>
                                 <Col sm="12" md="4" lg="2">
-                                    <button type="submit" className="">
+                                    <button type="submit" className="comment-post-btn">
                                         POST
                                     </button>
                                 </Col>
@@ -246,7 +246,8 @@ const SingleBlog = props => {
                     )}
                 </>
                 {comments &&
-                            comments.length>0 &&      <div className="user-comment-section">
+                            comments.length>0 &&   
+                               <div className="user-comment-section">
                  
                     <h4 className="user-comments">User Comments </h4> 
 

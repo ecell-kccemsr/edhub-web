@@ -255,7 +255,7 @@
             img {
                 width: 40px;
                 height: 40px;
-                object-fit: contain;
+                object-fit: cover;
                 border-radius: 50%;
                 margin-right: 4px;
             }
@@ -276,8 +276,8 @@
                 margin-left: 3px;
             }
             .social-container {
-                a{
-                    margin: 0 3px ;
+                a {
+                    margin: 0 3px;
                 }
                 .fab,
                 .far {
