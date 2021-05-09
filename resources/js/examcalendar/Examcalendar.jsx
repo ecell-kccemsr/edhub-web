@@ -93,7 +93,8 @@ const Examcalendar = props => {
                                 key={examName.id}
                                 className="exam-single-btn mt-2"
                             >
-                                {examName.name}
+                               <img src={examName?.image} alt="Exams" /> 
+                                {examName?.name}
                             </button>
                         ))}
                 </div>
