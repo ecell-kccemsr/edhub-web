@@ -136,19 +136,19 @@ const SingleNewsPage = props => {
                                 <div className="news-interaction-container">
                                     <div className="news-interaction-el">
                                         <img
-                                            src="/Images/blogs/like.png"
+                                            src="/images/blogs/like.png"
                                             alt="Like"
                                             onClick={handleLike}
                                         />
                                         <b>{categorynews?.total_likes}</b>
                                     </div>
                                     <div className="news-interaction-el">
-                                        <img src="/Images/blogs/comment.png" alt="Comments" />
+                                        <img src="/images/blogs/comment.png" alt="Comments" />
                                         <span>{comments.length}</span>
                                     </div>
                                     <div className="news-interaction-el-1">
                                         <img
-                                            src="/Images/news/share.png"
+                                            src="/images/news/share.png"
                                             alt="Share"
                                             onClick={toggle}
                                         />

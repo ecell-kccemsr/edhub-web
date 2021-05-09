@@ -129,14 +129,14 @@ const SingleBlog = props => {
                 <div className="singleblog-like-section">
                     <div className="interaction-container">
                         <img
-                            src="/Images/blogs/like.png"
+                            src="/images/blogs/like.png"
                             alt="Like"
                             onClick={handleLike}
                         />
                         <b>{singleBlog?.total_likes}</b>
                     </div>
                     <div className="interaction-container">
-                        <img src="/Images/blogs/comment.png" alt="Comments" />
+                        <img src="/images/blogs/comment.png" alt="Comments" />
                         <b>{comments.length}</b>
                     </div>
                 </div>
@@ -161,7 +161,7 @@ const SingleBlog = props => {
                             </div>
                             <div className="news-interaction-el-1">
                                 <img
-                                    src="/Images/news/share.png"
+                                    src="/images/news/share.png"
                                     alt="Share"
                                     onClick={toggle}
                                 />

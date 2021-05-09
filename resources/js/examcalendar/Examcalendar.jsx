@@ -61,7 +61,7 @@ const Examcalendar = props => {
                 <div className="d-flex">
                     <img
                         className="exam-calendar-icon p-2"
-                        src="/Images/calendar-icon.png"
+                        src="/images/calendar-icon.png"
                        
 
                         alt="calendar"

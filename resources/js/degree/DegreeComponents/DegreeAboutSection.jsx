@@ -13,7 +13,7 @@ const DegreeAboutSection = () => {
                                 md="4"
                                 className="topcard-flex-container"
                             >
-                                <img src="/Images/degree/Group.png" alt="money" />
+                                <img src="/images/degree/Group.png" alt="money" />
                                 <div className="text-container">
                                     <h5>$25,000 USD</h5>
                                     <p>
@@ -28,7 +28,7 @@ const DegreeAboutSection = () => {
                                 md="4"
                                 className="topcard-flex-container"
                             >
-                                <img src="/Images/degree/Group 470.png" alt="Time" />
+                                <img src="/images/degree/Group 470.png" alt="Time" />
                                 <div className="text-container">
                                     <h5>$25,000 USD</h5>
                                     <p>
@@ -42,7 +42,7 @@ const DegreeAboutSection = () => {
                                 md="4"
                                 className="topcard-flex-container"
                             >
-                                <img src="/Images/degree/CompleteOnline.png" alt="CompleteOnline" />
+                                <img src="/images/degree/CompleteOnline.png" alt="CompleteOnline" />
                                 <div className="text-container">
                                     <h5>$25,000 USD</h5>
                                     <p>
@@ -91,11 +91,11 @@ const DegreeAboutSection = () => {
                         </h5>
                         <div className="course-overview-card-stats">
                             <div className="stat-container">
-                                <img src="/Images/courseDetail/stat1.png" alt="Stat" />
+                                <img src="/images/courseDetail/stat1.png" alt="Stat" />
                                 <p>50 % Promotions</p>
                             </div>
                             <div className="stat-container">
-                                <img src="/Images/courseDetail/stat2.png" alt="Stat" />
+                                <img src="/images/courseDetail/stat2.png" alt="Stat" />
                                 <p>12 % New career</p>
                             </div>
                         </div>

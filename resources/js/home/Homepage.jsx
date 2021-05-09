@@ -12,16 +12,16 @@
 //     CarouselCaption
 // } from "reactstrap";
 
-// import suitcase from "../Images/suitcase (1) 2.png";
-// import newspaper from "../Images/newspaper 1.png";
-// import question from "../Images/question 1.png";
-// import exam from "../Images/exam 1.png";
-// import bank from "../Images/Group (6).png";
-// import doctor from "../Images/doctor 1.png";
-// import architect from "../Images/architect 1.png";
-// import examPattern from "../Images/ExamPatternandSyllabus.png";
+// import suitcase from "../images/suitcase (1) 2.png";
+// import newspaper from "../images/newspaper 1.png";
+// import question from "../images/question 1.png";
+// import exam from "../images/exam 1.png";
+// import bank from "../images/Group (6).png";
+// import doctor from "../images/doctor 1.png";
+// import architect from "../images/architect 1.png";
+// import examPattern from "../images/ExamPatternandSyllabus.png";
 // import LinkCard from "../components/link-card/LinkCard";
-// import homepageBanner from "../Images/homepageBanner.png";
+// import homepageBanner from "../images/homepageBanner.png";
 // function Homepage() {
 //     const [news, setNews] = useState([]);
 //     const [jobs, setJobs] = useState([]);

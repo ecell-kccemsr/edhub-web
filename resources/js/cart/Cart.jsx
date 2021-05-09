@@ -27,7 +27,7 @@ function Cart ()  {
                                 <div className="cart-content-list">
                                     <Row>
                                         <Col sm="6" md="6" lg="2">
-                                            <img src="/Images/cart/cart1.png" alt="cart" />
+                                            <img src="/images/cart/cart1.png" alt="cart" />
                                         </Col>
                                         <Col sm="6" md="6" lg="7">
                                             <div className="cart-content-list-text">
@@ -56,7 +56,7 @@ function Cart ()  {
                                 <div className="cart-content-list">
                                     <Row>
                                         <Col sm="6" md="6" lg="2">
-                                            <img src="/Images/cart/cart2.png" alt="cart" />
+                                            <img src="/images/cart/cart2.png" alt="cart" />
                                         </Col>
                                         <Col sm="6" md="6" lg="7">
                                             <div className="cart-content-list-text">
@@ -90,7 +90,7 @@ function Cart ()  {
                                 <div className="cart-content-list">
                                     <Row>
                                         <Col sm="6" md="6" lg="2">
-                                            <img src="/Images/cart/cart1.png" alt="cart" />
+                                            <img src="/images/cart/cart1.png" alt="cart" />
                                         </Col>
                                         <Col sm="6" md="6" lg="7">
                                             <div className="cart-content-list-text">
@@ -119,7 +119,7 @@ function Cart ()  {
                                 <div className="cart-content-list">
                                     <Row>
                                         <Col sm="6" md="6" lg="2">
-                                            <img src="/Images/cart/cart2.png" alt="cart" />
+                                            <img src="/images/cart/cart2.png" alt="cart" />
                                         </Col>
                                         <Col sm="6" md="6" lg="7">
                                             <div className="cart-content-list-text">

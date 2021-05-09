@@ -134,7 +134,7 @@ const Register = () => {
                                 >
                                     <img
                                         className="social-sign-in"
-                                        src="/Images/FacebookLogo.png"
+                                        src="/images/FacebookLogo.png"
                                         alt="signInFacebook"
                                     />
                                 </a>
@@ -144,7 +144,7 @@ const Register = () => {
                                 >
                                     <img
                                         className="social-sign-in"
-                                        src="/Images/signInGoogle.png"
+                                        src="/images/signInGoogle.png"
                                         alt="signInGoogle"
                                     />
                                 </a>
@@ -157,7 +157,7 @@ const Register = () => {
                         className="auth-img-col"
                     >
                         <img
-                            src="/Images/registerBackground.png"
+                            src="/images/registerBackground.png"
                             alt="registerBackground"
                             className="w-100"
                         />

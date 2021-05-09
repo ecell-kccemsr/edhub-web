@@ -17,7 +17,7 @@
 //     Row,
 //     Col
 // } from "reactstrap";
-// import notificationIcon from "../../Images/notificationIcon.png";
+// import notificationIcon from "../../images/notificationIcon.png";
 // import { useStoreState } from "easy-peasy";
 // const NavbarComponent = props => {
 //     const [isOpen, setIsOpen] = useState(false);

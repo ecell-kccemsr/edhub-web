@@ -17,7 +17,7 @@ const HelpSection = () => {
                         className="image-container image-one"
                     >
                         <img
-                            src="/Images/landingpage/icon1.png"
+                            src="/images/landingpage/icon1.png"
                             alt="Icon"
                             className="help-section-main-img "
                         />
@@ -35,7 +35,7 @@ const HelpSection = () => {
                         lg="2"
                         className="landingpage-help-section-arrow-image"
                     >
-                        <img src="/Images/landingpage/Arrow1.png" alt="Arrow" />
+                        <img src="/images/landingpage/Arrow1.png" alt="Arrow" />
                     </Col>
                     <Col
                         sm="12"
@@ -44,7 +44,7 @@ const HelpSection = () => {
                         className="image-container image-two"
                     >
                         <img
-                            src="/Images/landingpage/icon2.png"
+                            src="/images/landingpage/icon2.png"
                             alt="Icon"
                             className="help-section-main-img "
                         />
@@ -62,7 +62,7 @@ const HelpSection = () => {
                         lg="2"
                         className="landingpage-help-section-arrow-image"
                     >
-                        <img src="/Images/landingpage/Arrow2.png" alt="Arrow" />
+                        <img src="/images/landingpage/Arrow2.png" alt="Arrow" />
                     </Col>
                     <Col
                         sm="12"
@@ -71,7 +71,7 @@ const HelpSection = () => {
                         className="image-container image-three"
                     >
                         <img
-                            src="/Images/landingpage/icon3.png"
+                            src="/images/landingpage/icon3.png"
                             alt="Icon"
                             className="help-section-main-img "
                         />

@@ -9,7 +9,7 @@ const DegreeHeroSection = () => {
                     <Col sm="12" md="8">
                         <div className="course-degree-company-div">
                             <img
-                                src="/Images/degree/coursedegreecompany.png"
+                                src="/images/degree/coursedegreecompany.png"
                                 className="companyimg"
                                 alt="companyimg"
                             />
@@ -40,7 +40,7 @@ const DegreeHeroSection = () => {
                             </Col>
                             <Col sm="12" md="3">
                                 <h6>Provided By</h6>
-                                <img src="/Images/degree/courseDetailCompany.png" alt="courseDetailCompany" />
+                                <img src="/images/degree/courseDetailCompany.png" alt="courseDetailCompany" />
                             </Col>
                         </Row>
                     </Col>

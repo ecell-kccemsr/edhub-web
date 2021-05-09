@@ -32,7 +32,7 @@ const Compare = () => {
                                             <div className="compare-card">
                                                 <img
                                                     src={
-                                                        cmp?.image || "/Images/compare/cardheader.png"
+                                                        cmp?.image || "/images/compare/cardheader.png"
                                                     }
                                                     alt="course"
                                                     style={{
@@ -69,7 +69,7 @@ const Compare = () => {
                                     <td key={key}>
                                         <div style={{ display: "flex" }}>
                                             <img
-                                                src="/Images/courseDetail/4star.png"
+                                                src="/images/courseDetail/4star.png"
                                                 alt="Star"
                                                 style={{ objectFit: "contain" }}
                                             />

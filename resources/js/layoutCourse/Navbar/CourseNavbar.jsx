@@ -428,7 +428,7 @@ const CourseNavbar = props => {
                                                                                                             }
                                                                                                         >
                                                                                                             <img
-                                                                                                                src="/Images/landingpage/provider.png"
+                                                                                                                src="/images/landingpage/provider.png"
                                                                                                                 alt="provider"
                                                                                                             />
                                                                                                             <div className="text-container">
@@ -537,7 +537,7 @@ const CourseNavbar = props => {
                                     className="nav-link courseNavLink-1"
                                     to="/profile/wishlist"
                                 >
-                                    <img src="/Images/landingpage/bookmark.png" alt="bookmark" />
+                                    <img src="/images/landingpage/bookmark.png" alt="bookmark" />
                                 </Link>
                             </li>
                          

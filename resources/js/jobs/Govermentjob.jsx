@@ -92,7 +92,7 @@ function Govermentjob() {
                             <Col md="6">
                                 <img
                                     className="heroBg-img"
-                                    src="/Images/Jobs/heroBg1.png"
+                                    src="/images/Jobs/heroBg1.png"
                                     alt="Hero"
                                 />
                             </Col>

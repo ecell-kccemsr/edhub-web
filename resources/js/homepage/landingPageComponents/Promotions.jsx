@@ -8,7 +8,7 @@ const Promotions = () => {
                 <div className="community-divison-content">
                     <p className="community-divison-content-maintext">
                         <img
-                            src="/Images/landingpage/circle icon.png"
+                            src="/images/landingpage/circle icon.png"
                             alt="circle"
                             className="community-divison-image"
                         />
@@ -25,16 +25,16 @@ const Promotions = () => {
                     We collaborate with 200+ leading universities and companies
                 </p>
                 <div className="brand-section">
-                    <img src="/Images/landingpage/google.png" alt="" className="brand-image" />
-                    <img src="/Images/landingpage/ibm.png" alt="" className="brand-image" />
-                    <img src="/Images/landingpage/duke.png" alt="" className="brand-image" />
+                    <img src="/images/landingpage/google.png" alt="" className="brand-image" />
+                    <img src="/images/landingpage/ibm.png" alt="" className="brand-image" />
+                    <img src="/images/landingpage/duke.png" alt="" className="brand-image" />
                 </div>
                 <p className="feature-in-header">Featured In</p>
                 <div className="newspaper-images">
-                    <img src="/Images/landingpage/hindustan.png" alt="hindustan" />
-                    <img src="/Images/landingpage/toi.png" alt="toi" />
-                    <img src="/Images/landingpage/hd.png" alt="hd" />
-                    <img src="/Images/landingpage/guardian.png" alt="guardian" />
+                    <img src="/images/landingpage/hindustan.png" alt="hindustan" />
+                    <img src="/images/landingpage/toi.png" alt="toi" />
+                    <img src="/images/landingpage/hd.png" alt="hd" />
+                    <img src="/images/landingpage/guardian.png" alt="guardian" />
                 </div>
             </div>
         </div>

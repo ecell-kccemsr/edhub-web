@@ -25,7 +25,7 @@ function CourseFooter() {
                             <Col sm="12" lg="6">
                                 <div className=" footer-section-one">
                                     <img
-                                        src="/Images/footer/harvard.png"
+                                        src="/images/footer/harvard.png"
                                         alt="harvard"
                                         className="footer-icons"
                                     />
@@ -37,7 +37,7 @@ function CourseFooter() {
                             <Col sm="12" lg="6">
                                 <div className=" footer-section-one">
                                     <img
-                                        src="/Images/footer/harvard.png"
+                                        src="/images/footer/harvard.png"
                                         alt="harvard"
                                         className="footer-icons"
                                     />
@@ -62,7 +62,7 @@ function CourseFooter() {
                             <p className="provider-name ml-2 mb-0">Coursera</p>
                         </div>
                         <div className=" footer-section-one">
-                            <img src="/Images/footer/udemy-icon 1.png" alt="Udemy" className="footer-icons" />
+                            <img src="/images/footer/udemy-icon 1.png" alt="Udemy" className="footer-icons" />
                             <p className="provider-name ml-2 mb-0">Udemy</p>
                         </div>
                     </Col>
@@ -77,7 +77,7 @@ function CourseFooter() {
                         </div>
                         <div className=" footer-section-one">
                             <img
-                                src="/Images/footer/microsoft-icon 1.png"
+                                src="/images/footer/microsoft-icon 1.png"
                                 alt="microsoft"
                                 className="footer-icons"
                             />
@@ -86,7 +86,7 @@ function CourseFooter() {
                             </p>
                         </div>
                         <div className=" footer-section-one">
-                            <img src="/Images/footer/amazon-icon 1.png" alt="Amazon" className="footer-icons" />
+                            <img src="/images/footer/amazon-icon 1.png" alt="Amazon" className="footer-icons" />
                             <p className="footer-header-name ml-2 mb-0">
                                 Amazon
                             </p>

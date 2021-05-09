@@ -146,7 +146,7 @@ const DegreeDetail = () => {
                                                                     }
                                                                 >
                                                                     <img
-                                                                        src="/Images/degree/playbutton.png"
+                                                                        src="/images/degree/playbutton.png"
                                                                         alt="playbutton"
                                                                         className="mr-2"
                                                                     />

@@ -281,7 +281,7 @@ function CourseDetail(props) {
                                         </div>
                                         <div style={{ marginTop: "-10px" }}>
                                             <img
-                                                src="/Images/courseCategory/star.png"
+                                                src="/images/courseCategory/star.png"
                                                 alt="star"
                                             />
                                         </div>
@@ -331,7 +331,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src="/Images/courseDetail/Ellipse.png"
+                                                    src="/images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -349,7 +349,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src="/Images/courseDetail/Ellipse.png"
+                                                    src="/images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -367,7 +367,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src="/Images/courseDetail/Ellipse.png"
+                                                    src="/images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -385,7 +385,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src="/Images/courseDetail/Ellipse.png"
+                                                    src="/images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -403,7 +403,7 @@ function CourseDetail(props) {
                                                 }}
                                             >
                                                 <img
-                                                    src="/Images/courseDetail/Ellipse.png"
+                                                    src="/images/courseDetail/Ellipse.png"
                                                     alt="ellipse"
                                                     style={{
                                                         margin:
@@ -510,14 +510,14 @@ function CourseDetail(props) {
                                 <div className="course-overview-card-stats">
                                     <div className="stat-container">
                                         <img
-                                            src="/Images/courseDetail/stat1.png"
+                                            src="/images/courseDetail/stat1.png"
                                             alt="stat1"
                                         />
                                         <p>Upto 50 % Promotions</p>
                                     </div>
                                     <div className="stat-container">
                                         <img
-                                            src="/Images/courseDetail/stat2.png"
+                                            src="/images/courseDetail/stat2.png"
                                             alt="stat2"
                                         />
                                         <p>Upto 12 % New career</p>
@@ -614,7 +614,7 @@ function CourseDetail(props) {
                                                                         }
                                                                     >
                                                                         <img
-                                                                            src="/Images/courseDetail/playbutton.png"
+                                                                            src="/images/courseDetail/playbutton.png"
                                                                             alt="playbutton"
                                                                             className="mr-2"
                                                                         />
@@ -645,7 +645,7 @@ function CourseDetail(props) {
                                         singleCourse?.prerequisites.map(p => (
                                             <li key={p} className="my-2">
                                                 <img
-                                                    src="/Images/courseDetail/prereq.png"
+                                                    src="/images/courseDetail/prereq.png"
                                                     className="mr-2"
                                                     alt="prereq"
                                                 />
@@ -706,7 +706,7 @@ function CourseDetail(props) {
                                                                             className="my-2"
                                                                         >
                                                                             <img
-                                                                                src="/Images/courseDetail/prereq.png"
+                                                                                src="/images/courseDetail/prereq.png"
                                                                                 className="mr-2 author-overview-list-img"
                                                                                 alt="prereq"
                                                                             />
@@ -751,7 +751,7 @@ function CourseDetail(props) {
                                             }
                                           
                                             <img
-                                                src="/Images/courseDetail/4star.png"
+                                                src="/images/courseDetail/4star.png"
                                                 alt="Star"
                                             />
                                             <p>course rating</p>
@@ -773,14 +773,14 @@ function CourseDetail(props) {
                                                             );
                                                         let star =
                                                             r?.rating == 1
-                                                                ? "/Images/courseDetail/1star.png"
+                                                                ? "/images/courseDetail/1star.png"
                                                                 : r?.rating == 2
-                                                                ? "/Images/courseDetail/2star.png"
+                                                                ? "/images/courseDetail/2star.png"
                                                                 : r?.rating == 3
-                                                                ? "/Images/courseDetail/3star.png"
+                                                                ? "/images/courseDetail/3star.png"
                                                                 : r?.rating == 4
-                                                                ? "/Images/courseDetail/4star.png"
-                                                                : "/Images/courseDetail/5star.png";
+                                                                ? "/images/courseDetail/4star.png"
+                                                                : "/images/courseDetail/5star.png";
 
                                                         return (
                                                             <div className="indi-progress">

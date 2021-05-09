@@ -94,7 +94,7 @@ const Login = () => {
                                 >
                                     <img
                                         className="social-sign-in"
-                                        src="/Images/FacebookLogo.png"
+                                        src="/images/FacebookLogo.png"
                                         alt="signInFacebook"
                                     />
                                 </a>
@@ -104,7 +104,7 @@ const Login = () => {
                                 >
                                     <img
                                         className="social-sign-in"
-                                        src="/Images/signInGoogle.png"
+                                        src="/images/signInGoogle.png"
                                         alt="signInGoogle"
                                     />
                                 </a>
