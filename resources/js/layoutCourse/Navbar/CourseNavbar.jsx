@@ -84,7 +84,7 @@ const CourseNavbar = props => {
         max: "",
         courseType: "",
         difficulty: "",
-        language: ""
+        locale: ""
     });
 
     useEffect(() => {

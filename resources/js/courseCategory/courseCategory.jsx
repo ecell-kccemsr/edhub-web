@@ -152,8 +152,11 @@ const courseCategory = props => {
                 );
             if (modalVals?.difficulty != "")
                 str = str.concat(`difficulty_level=${modalVals?.difficulty}&`);//If user selected difficulty append to url
+            if (modalVals?.locale != "")
+                str = str.concat(`locale=${modalVals?.locale}&`);//If user selected difficulty append to url
             setApiURL("/api/courses?");
             getCourses(true, str, 1, "", modalVals?.max, modalVals?.min);
+            window.history.replaceState(null, '')
         } 
         //If user comes from searching on landing page but entered empty string (show all courses)
         else if (props?.location?.search == "") {
@@ -174,7 +177,7 @@ const courseCategory = props => {
             .get("/api/course-providers")
             .then(res => setProviderData(res.data.data))
             .catch(err => console.log(err));
-    }, []);
+    }, [props?.location?.state]);
     
     //Function to get courese on basis of the various filter passed to it
     const getCourses = (filter, url, rating, provider, max, min,perPage=9,pageNumber,certification,language,discountArg) => {
@@ -193,7 +196,6 @@ const courseCategory = props => {
         let certificationV = certification==null?ceritificationVal: certification;
         let languageV = language==null?lang:language
         let discountV = discountArg==null?discount:discountArg
-
         if (filter) {
             pricefilter = `price_min=${minV}&price_max=${maxv}`;
             ratingfilter = `&rating=${ratingV}`;
@@ -476,10 +478,11 @@ const courseCategory = props => {
                                                     className="mb-0"
                                                 >
                                                     {providerData &&
-                                                        providerData.map(p => {
+                                                        providerData.map((p,key) => {
                                                             return (
                                                                 <FormGroup
                                                                     check
+                                                                    key={key}
                                                                 >
                                                                     <Label
                                                                         check

@@ -5,7 +5,7 @@ const Guide5 = ({ handleSubmit, modalVals, setModalVals }) => {
     const handleNext = () => {
         setModalVals({
             ...modalVals,
-            language: language
+            locale: language
         });
         handleSubmit();
     };
@@ -26,11 +26,11 @@ const Guide5 = ({ handleSubmit, modalVals, setModalVals }) => {
                             <option value="none" selected disabled hidden>
                                 Select Language
                             </option>
-                            <option>English</option>
-                            <option>Hindi</option>
-                            <option>Marathi</option>
-                            <option>English</option>
-                            <option>Hindi</option>
+                            <option value="English (US)">English(US)</option>
+                            <option value="English (UK)">English(UK)</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Marathi">Marathi</option>
+                            <option value="Hindi">Hindi</option>
                         </Input>
                     </FormGroup>
                 </Col>

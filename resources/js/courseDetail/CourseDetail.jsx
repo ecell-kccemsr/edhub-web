@@ -169,12 +169,26 @@ function CourseDetail(props) {
                             </Col>
                             <Col sm="1" md="4">
                                 <div className="add-to-cart-section-details">
-                                    <img
+                                    {
+                                        !singleCourse?.image && (
+                                            <img
+                                                style={{ marginBottom: "5px",objectFit:"contain" }}
+                                                src="https://i.stack.imgur.com/h6viz.gif"
+                                                className="card-header-image-details"
+                                                alt="d"
+                                            />
+                                            
+                                        )
+                                    }
+                                    {
+                                        singleCourse?.image && <img
                                         style={{ marginBottom: "5px" }}
                                         src={singleCourse?.image}
                                         className="card-header-image-details"
                                         alt="singleCourse"
                                     />
+                                    }
+                                    
 
                                     <div className="card-section-details-content">
                                         <div className="card-section-details-content-price">
@@ -456,14 +470,12 @@ function CourseDetail(props) {
                                 <h5 className="course-overview-card-title">
                                     Learner's career outcome
                                 </h5>
+                                <div className="course-overview-card-descriptionbox">
                                 {singleCourse?.outcome &&
-                                    singleCourse?.outcome.map(p => (
-                                        <>
-                                            <div className="course-overview-card-descriptionbox">
-                                                <p>{p}</p>
-                                            </div>
-                                        </>
+                                    singleCourse?.outcome.map((p,key) => (
+                                        <p key={key}>{p}</p>
                                     ))}
+                                    </div>
                                 <h5 className="course-overview-card-title">
                                     Job opportunities
                                 </h5>
