@@ -130,10 +130,14 @@ function Govermentjob() {
                                 );
                             })}
                         </ul>
+                        
                         <div className="job-tab-content" id="myTabContent">
+                         <Row >
                             {subCategoryFilter.map(d => {
                                 let isActive = d.id == subCategoryFilter[0].id;
                                 return (
+                                    <Col xs="12" sm="4" md="3"
+                                    >
                                     <div
                                         className={`tab-pane fade show ${
                                             isActive ? "active" : ""
@@ -142,21 +146,23 @@ function Govermentjob() {
                                         role="tabpanel"
                                         aria-labelledby={`${d?.category?.slug}-tab`}
                                     >
-                                        <Row>
-                                            <Col sm="12" md="4" lg="3">
+                                        
                                                 <div className="job-tab-el my-2">
                                                     <img
                                                         src={d?.image}
                                                         alt="Sub-Image"
                                                     />{" "}
                                                     <p>{d?.name}</p>
+                                                    
                                                 </div>
-                                            </Col>
-                                        </Row>
                                     </div>
+                                    </Col>
+                                
                                 );
                             })}
+                            </Row>
                         </div>
+                       
                     </div>
                     {/* Latest Notifications */}
                     {jobs && jobs.length > 0 && (

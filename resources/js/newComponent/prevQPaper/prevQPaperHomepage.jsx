@@ -88,9 +88,11 @@ const prevQPaperHomepage = () => {
                         })}
                     </ul>
                     <div className="job-tab-content" id="myTabContent">
+                         <Row>
                         {subCategoryFilter.map(d => {
                             let isActive = d.id == subCategoryFilter[0].id;
                             return (
+                                <Col sm="12" md="4" lg="3">
                                 <div
                                     className={`tab-pane fade show ${
                                         isActive ? "active" : ""
@@ -99,8 +101,7 @@ const prevQPaperHomepage = () => {
                                     role="tabpanel"
                                     aria-labelledby={`${d?.category?.slug}-tab`}
                                 >
-                                    <Row>
-                                        <Col sm="12" md="4" lg="3">
+                                   
                                             <div className="job-tab-el my-2">
                                             <Link to={`/questionpaper/${d?.category?.slug}/${d?.slug}`}>
                                                      <img src={d?.image} alt="sub-image" />
@@ -108,11 +109,11 @@ const prevQPaperHomepage = () => {
                                                     </Link>
                                                
                                             </div>
-                                        </Col>
-                                    </Row>
                                 </div>
+                                </Col>
                             );
                         })}
+                         </Row>
                     </div>
                 </div>
                 {/* Latest Notifications */}
