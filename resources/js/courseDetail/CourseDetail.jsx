@@ -28,6 +28,8 @@ function CourseDetail(props) {
     // const CourseDetail = ({ data } , props) => {
     const [courseslug, setCourseSlug] = useState("");
     const [Course, setCourse] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
     const [CourseRev, setCourseRev] = useState([]);
     const [categories, setCategory] = useState([]);
     const [singleCourse, setSingleCourse] = useState([]);
@@ -39,9 +41,12 @@ function CourseDetail(props) {
         axios
             .get(`/api/courses/${course_slug}`)
             .then(res => {
+                setLoading(false)
                 setSingleCourse(res.data.data);
             })
             .catch(err => {
+                setLoading(false)
+                setError(true)
                 console.log(err);
             });
         axios
@@ -92,11 +97,35 @@ function CourseDetail(props) {
         );
     const url = window.location.href;
     const notify = () => toast("Link Copied!");
+
+    if(loading){
+        return (
+            <> 
+              <Container >
+                        <h4 className="text-center text-dark py-4 my-4">Loading Course...</h4>
+                    </Container>
+            </>
+        )
+    }
+
     return (
         <>
+
+        {!loading && error && (
+                    <>
+                    <Container>
+                            <h4 className="text-center py-4  my-4">Something went wrong 🙁</h4>
+                        </Container>
+                    </>
+                )}
+         {!loading && !error && (
             <div className="course-detail-section">
+            
                 <div className="course-detail-hero-section">
+               
+               
                     <Container className="containerClass">
+                        
                         <Row>
                             <Col sm="1" md="8">
                                 <>
@@ -403,9 +432,8 @@ function CourseDetail(props) {
                             </Col>
                         </Row>
                     </Container>
-                    {/* <Link to={`/compare`}>
-                        <button className="compare-btn-detail">Compare</button>
-                    </Link> */}
+                
+  
                 </div>
                 <Container className="containerClass">
                     <Nav>
@@ -498,9 +526,14 @@ function CourseDetail(props) {
                                 <h5 className="course-overview-card-title">
                                     Skills you'll gain
                                 </h5>
-                                <div className="course-overview-card-descriptionbox">
-                                    <p>{singleCourse?.title}</p>
-                                </div>
+                                {
+                                    singleCourse?.title && (
+                                        <div className="course-overview-card-descriptionbox">
+                                        <p>{singleCourse?.title}</p>
+                                    </div>
+                                    )
+                                }
+                               
                             </div>
                             <div className="course-overview-card">
                                 <h5
@@ -705,13 +738,18 @@ function CourseDetail(props) {
                                             md="2"
                                             className="rating-container"
                                         >
-                                            <h4>
-                                                {Math.round(
-                                                    parseFloat(
-                                                        singleCourse?.rating
-                                                    )
-                                                )}
-                                            </h4>
+                                            {
+                                                singleCourse?.rating && (
+                                                    <h4>
+                                                    {Math.round(
+                                                        parseFloat(
+                                                            singleCourse?.rating
+                                                        )
+                                                    )}
+                                                </h4>
+                                                )
+                                            }
+                                          
                                             <img
                                                 src="/Images/courseDetail/4star.png"
                                                 alt="Star"
@@ -767,9 +805,9 @@ function CourseDetail(props) {
                         </Row>
                         <Row className="course-detail-testimonial-section">
                             <Col sm="12" md="8">
-                                <Row className="justify-content-center">
+                                <Row className="">
                                     {CourseRev &&
-                                        CourseRev.map(u => (
+                                        CourseRev.filter(c=>c?.content!=="").map(u => (
                                             <Col
                                                 sm="12"
                                                 md="6"
@@ -868,6 +906,7 @@ function CourseDetail(props) {
                     </Row>
                 </div>
             </div>
+            )}
         </>
     );
 }
