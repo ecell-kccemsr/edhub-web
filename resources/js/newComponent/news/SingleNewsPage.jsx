@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Input, FormGroup } from "reactstrap";
+import { Container, Row, Col, Input, FormGroup, Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { Collapse } from "reactstrap";
+import Login from "../../auth/login/Login";
 import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -15,6 +16,11 @@ const SingleNewsPage = props => {
     const [comment, setComment] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+
+      // Login modal 
+      const [modallogin, setModalLogin] = useState(false);
+      const toggleLogin = () => setModalLogin(!modallogin);
+
     const [commentPage, setCommentPage] = useState({
         current_page: 1,
         last_page: null
@@ -233,14 +239,14 @@ const SingleNewsPage = props => {
                                     </form>
                                 ) : (
                                     <div className="text-center">
-                                        <button>
-                                        <Link
-                                            to={"/login"}
-                                            className="text-white"
-                                        >
-                                            Login to comment
-                                        </Link>
-                                        </button>
+                                         <Button className="login-btn-navbar" onClick={toggleLogin}>login</Button>
+                                 <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
+                                 <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
+                                   <ModalBody>
+                                    <Login />                                   
+                                   </ModalBody>
+                                 </Modal>
+                                       
                                     </div>
                                 )}
                             </>

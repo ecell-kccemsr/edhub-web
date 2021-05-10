@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, FormGroup, Input } from "reactstrap";
+import { Container, Row, Col, FormGroup, Input, Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 import Moment from "react-moment";
 import axios from "axios";
 import { Collapse } from "reactstrap";
 import { Link } from "react-router-dom";
+import Login from "../../auth/login/Login";
+
 import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 const SingleBlog = props => {
     const user = useStoreState(state => state.user);
     const [singleBlog, setSingleBlog] = useState(null);
-
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+
+     // Login modal 
+     const [modallogin, setModalLogin] = useState(false);
+     const toggleLogin = () => setModalLogin(!modallogin);
+
     const [commentPage, setCommentPage] = useState({
         current_page: 1,
         last_page: null
@@ -239,9 +245,13 @@ const SingleBlog = props => {
                         </form>
                     ) : (
                         <div className="text-center">
-                            <Link to={"/login"} className="comment-login-btn">
-                                Login to comment
-                            </Link>
+                            <Button className="login-btn-navbar" onClick={toggleLogin}>login</Button>
+                                 <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
+                                 <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
+                                   <ModalBody>
+                                    <Login />                                   
+                                   </ModalBody>
+                                 </Modal>
                         </div>
                     )}
                 </>
