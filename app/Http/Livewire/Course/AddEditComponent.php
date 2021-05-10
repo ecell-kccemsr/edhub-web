@@ -45,7 +45,7 @@ class AddEditComponent extends Component
 
     public function submit()
     {
-        // $this->validate();
+        $this->validate();
         if($this->course === null) {
             $this->course = new Course();
         }
