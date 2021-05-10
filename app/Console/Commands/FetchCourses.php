@@ -136,11 +136,10 @@ class FetchCourses extends Command
             }
             else
             {
-                dd("Request Failed");
+                dd($response->status(), $response->body());
             }
         }
 
         return 0;
     }
 }
-
