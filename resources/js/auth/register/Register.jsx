@@ -157,7 +157,7 @@ const Register = () => {
                         className="auth-img-col"
                     >
                         <img
-                            src="/images/registerbackground.png"
+                            src="/images/register-background.png"
                             alt="registerBackground"
                             className="w-100"
                         />
