@@ -202,7 +202,7 @@ const SingleNewsPage = props => {
                                 </Moment>
                             </h6>
                             <p className="news-content">
-                                {categorynews.description}
+                                {categorynews.details}
                             </p>
                             <>
                                 
