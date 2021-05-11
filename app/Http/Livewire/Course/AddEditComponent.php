@@ -43,6 +43,8 @@ class AddEditComponent extends Component
         'course_provider_id' => 'required',
     ];
 
+    protected $listeners = ['outcomeUpdated','prerequitesUpdated','faqUpdated','ratingDistributionUpdated'];
+
     public function submit()
     {
         $this->validate();
@@ -104,5 +106,22 @@ class AddEditComponent extends Component
     public function render()
     {
         return view('livewire.course.add-edit-component');
+    }
+
+    public function outcomeUpdated($outcome)
+    {
+        $this->outcome = $outcome;
+    }
+    public function prerequitesUpdated($prerequisites)
+    {
+        $this->prerequisites = $prerequisites;
+    }
+    public function faqUpdated($faq)
+    {
+        $this->faq = $faq;
+    }
+    public function ratingDistributionUpdated($rating_distribution)
+    {
+        $this->rating_distribution = $rating_distribution;
     }
 }

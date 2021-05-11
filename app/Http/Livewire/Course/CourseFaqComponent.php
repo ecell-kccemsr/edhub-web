@@ -17,17 +17,22 @@ class CourseFaqComponent extends Component
               $newData[] = $this->data[$i];
           }
       }
-      $this->data = $newData;
+      $this->emit('faqUpdated', $newData);
     }
 
     public function add()
     {
         array_push($this->data, ["question"=>$this->input,"answer"=>""]);
         $this->input="";
+        $this->emit('faqUpdated', $this->data);
     }
 
     public function render()
     {
         return view('livewire.course.course-faq-component');
+    }
+    public function updatedData()
+    {
+        $this->emit('faqUpdated', $this->data);
     }
 }

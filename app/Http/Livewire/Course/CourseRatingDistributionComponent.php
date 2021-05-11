@@ -8,6 +8,11 @@ class CourseRatingDistributionComponent extends Component
 {
     public $data; 
 
+    public function updatedData()
+    {
+        $this->emit('ratingDistributionUpdated', $this->data);
+    }
+
     public function render()
     {
         return view('livewire.course.course-rating-distribution-component');

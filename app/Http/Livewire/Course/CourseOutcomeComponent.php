@@ -18,17 +18,24 @@ class CourseOutcomeComponent extends Component
               $newData[] = $this->data[$i];
           }
       }
-      $this->data = $newData;
+      $this->emit('outcomeUpdated', $newData);
     }
 
     public function add()
     {
         array_push($this->data,$this->input);
         $this->input="";
+        $this->emit('outcomeUpdated', $this->data);
     }
 
     public function render()
     {
         return view('livewire.course.course-outcome-component');
     }
+
+    public function updatedData()
+    {
+        $this->emit('outcomeUpdated', $this->data);
+    }
+    
 }

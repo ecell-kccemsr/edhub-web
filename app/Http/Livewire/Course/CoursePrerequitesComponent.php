@@ -17,17 +17,22 @@ class CoursePrerequitesComponent extends Component
               $newData[] = $this->data[$i];
           }
       }
-      $this->data = $newData;
+      $this->emit('prerequitesUpdated', $newData);    
     }
 
     public function add()
     {
         array_push($this->data,$this->input);
         $this->input="";
+        $this->emit('prerequitesUpdated', $this->data);    
     }
-
+    
     public function render()
     {
         return view('livewire.course.course-prerequites-component');
+    }
+    public function updatedData()
+    {
+        $this->emit('prerequitesUpdated', $this->data);
     }
 }
