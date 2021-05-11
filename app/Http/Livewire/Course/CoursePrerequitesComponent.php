@@ -6,12 +6,7 @@ use Livewire\Component;
 
 class CoursePrerequitesComponent extends Component
 {
-    public $data = [
-        'prerequites 1',
-        'prerequites 2',
-        'prerequites 3',
-        'prerequites 4',
-    ]; 
+    public $data; 
     public $input;
     
     public function delete($index)

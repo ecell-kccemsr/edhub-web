@@ -6,10 +6,7 @@ use Livewire\Component;
 
 class CourseRatingDistributionComponent extends Component
 {
-    public $data = [
-        ["count"=>"shubhra","rating"=>"female"],
-        ["count"=>"shubhra","rating"=>"female"],
-     ]; 
+    public $data; 
 
     public function render()
     {

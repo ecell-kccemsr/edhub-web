@@ -6,10 +6,7 @@ use Livewire\Component;
 
 class CourseFaqComponent extends Component
 {
-    public $data = [
-       ["question"=>"shubhra","answer"=>"female"],
-       ["question"=>"shubhra","answer"=>"female"],
-    ]; 
+    public $data; 
     public $input;
 
     public function delete($index)

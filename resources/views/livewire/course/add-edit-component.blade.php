@@ -53,13 +53,6 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        <div class="form-group col-12 @error('outcome') has-error has-feedback @enderror">
-            <label for="exampleInputEmail1">Outcome</label>
-            @livewire('course.course-outcome-component')
-            @error('outcome')
-            <div class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
         <div class="form-group col-12 @error('description') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Description</label>
             <textarea class="form-control " id="exampleFormControlTextarea1" rows="3" wire:model="description"></textarea>
@@ -67,23 +60,30 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        <div class="form-group col-12 @error('outcome') has-error has-feedback @enderror">
+            <label for="exampleInputEmail1">Outcome</label>
+            @livewire('course.course-outcome-component', ['data' => $outcome])
+            @error('outcome')
+            <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
         <div class="form-group col-12 @error('prerequisites') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Prerequisites</label>
-            @livewire('course.course-prerequites-component')
+            @livewire('course.course-prerequites-component', ['data' => $prerequisites])
             @error('prerequisites')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group col-12 @error('faq') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">FAQ</label>
-            @livewire('course.course-faq-component')
+            @livewire('course.course-faq-component', ['data' => $faq])
             @error('faq')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group col-12 @error('rating_distribution') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Rating Distribution</label>
-            @livewire('course.course-rating-distribution-component')
+            @livewire('course.course-rating-distribution-component', ['data' => $rating_distribution])
             @error('rating_distribution')
             <div class="text-danger">{{ $message }}</div>
             @enderror

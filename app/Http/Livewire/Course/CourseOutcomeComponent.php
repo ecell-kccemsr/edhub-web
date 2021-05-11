@@ -6,11 +6,8 @@ use Livewire\Component;
 
 class CourseOutcomeComponent extends Component
 {
-    public $data = [
-        'outcome 1',
-        'outcome 2',
-        'outcome 3',
-    ]; 
+    public $data;
+     
     public $input;
 
     public function delete($index)
