@@ -55,7 +55,7 @@
         </div>
         <div class="form-group col-12 @error('outcome') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Outcome</label>
-            <textarea class="form-control " id="exampleFormControlTextarea1" rows="3" wire:model="outcome"></textarea>
+            @livewire('course.course-outcome-component')
             @error('outcome')
             <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -69,14 +69,14 @@
         </div>
         <div class="form-group col-12 @error('prerequisites') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Prerequisites</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  wire:model="prerequisites"></textarea>
+            @livewire('course.course-prerequites-component')
             @error('prerequisites')
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group col-12 @error('faq') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">FAQ</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" wire:model="faq"></textarea>
+            @livewire('course.course-faq-component')
             @error('faq')
             <div class="text-danger">{{ $message }}</div>
             @enderror

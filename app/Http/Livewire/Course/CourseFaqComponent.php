@@ -4,12 +4,11 @@ namespace App\Http\Livewire\Course;
 
 use Livewire\Component;
 
-class CourseOutcomeComponent extends Component
+class CourseFaqComponent extends Component
 {
     public $data = [
-        'outcome 1',
-        'outcome 2',
-        'outcome 3',
+       ["question"=>"shubhra","answer"=>"female"],
+       ["question"=>"shubhra","answer"=>"female"],
     ]; 
     public $input;
 
@@ -26,12 +25,12 @@ class CourseOutcomeComponent extends Component
 
     public function add()
     {
-        array_push($this->data,$this->input);
+        array_push($this->data, ["question"=>$this->input,"answer"=>""]);
         $this->input="";
     }
 
     public function render()
     {
-        return view('livewire.course.course-outcome-component');
+        return view('livewire.course.course-faq-component');
     }
 }

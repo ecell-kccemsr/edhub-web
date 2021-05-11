@@ -4,15 +4,16 @@ namespace App\Http\Livewire\Course;
 
 use Livewire\Component;
 
-class CourseOutcomeComponent extends Component
+class CoursePrerequitesComponent extends Component
 {
     public $data = [
-        'outcome 1',
-        'outcome 2',
-        'outcome 3',
+        'prerequites 1',
+        'prerequites 2',
+        'prerequites 3',
+        'prerequites 4',
     ]; 
     public $input;
-
+    
     public function delete($index)
     {
       $newData = [];
@@ -32,6 +33,6 @@ class CourseOutcomeComponent extends Component
 
     public function render()
     {
-        return view('livewire.course.course-outcome-component');
+        return view('livewire.course.course-prerequites-component');
     }
 }
