@@ -81,6 +81,13 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        <div class="form-group col-12 @error('rating_distribution') has-error has-feedback @enderror">
+            <label for="exampleInputEmail1">Rating Distribution</label>
+            @livewire('course.course-rating-distribution-component')
+            @error('rating_distribution')
+            <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
         <div class="form-group col-12 @error('certification') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Certification</label>
             <div class="form-check">
