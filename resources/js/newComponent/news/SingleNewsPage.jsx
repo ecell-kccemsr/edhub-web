@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Input, FormGroup, Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
+import { Container, Row, Col, Input, FormGroup, Modal, ModalHeader, ModalBody, Button  } from "reactstrap";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { Collapse } from "reactstrap";
 import Login from "../../auth/login/Login";
@@ -160,6 +159,12 @@ const SingleNewsPage = props => {
                                         />
                                         <Collapse isOpen={isOpen}>
                                             <div className="social-container">
+                                            <a
+                                                  href={` https://t.me/share/url?url=${window.location.href}`}
+                                                  target="_blank"
+                                             >
+                                                 <i className="fab fa-telegram" style={{color:"#0088CC"}}></i>
+                                             </a>
                                                 <a
                                                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                                     target="_blank"
@@ -201,8 +206,11 @@ const SingleNewsPage = props => {
                                     {categorynews?.published_at}
                                 </Moment>
                             </h6>
-                            <p className="news-content">
-                                {categorynews.details}
+                            <p className="news-content"
+                            dangerouslySetInnerHTML={{
+                                __html: categorynews.details
+                            }}
+                            >
                             </p>
                             <>
                                 
@@ -263,6 +271,7 @@ const SingleNewsPage = props => {
                                             comments.length>0 &&
                                             comments.map(c => {
                                                 return (
+                                                    <>
                                                     <div className="comments-news">
                                                        <img src={c?.user?.avatar} alt="User" />
                                                         <div>
@@ -270,6 +279,8 @@ const SingleNewsPage = props => {
                                                             <p className="mb-0">{c?.comment}</p>
                                                         </div>
                                                     </div>
+                                                  </>
+                                                    
                                             );
                                             
                                         })}

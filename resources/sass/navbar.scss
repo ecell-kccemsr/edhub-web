@@ -102,6 +102,21 @@
 
 //course navbar
 .course-navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 3rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
     .megamenu-btn {
         background: #3c64b1;
         color: #fff !important;
@@ -125,7 +140,7 @@
         .courseNavLink {
             color: #1f1f1e;
             font-weight: 500;
-            padding: 0 15px;
+            padding: 0 25px;
 
             img {
                 border-radius: 35px;
@@ -191,7 +206,7 @@
     }
     .search-bar-dropdown {
         width: 15em;
-        padding-left: 82px;
+        padding-left: 110px;
     }
 
     #results {
@@ -260,6 +275,9 @@
     }
 }
 @media only screen and (max-width: 600px) {
+    .course-navbar {
+        padding: 15px;
+    }
     .navbar-search-dropdown {
         position: relative;
         .search-bar-dropdown {

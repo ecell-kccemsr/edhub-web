@@ -65,16 +65,16 @@ const NewsHomePage = () => {
 
     if(loading){
         <div className="news-section-container">
-        <Container className="containerClass">
+        <div className="containerClass">
             <h4 className="text-center">Loading News...</h4>
-        </Container>
+        </div>
         </div>
     }
 
     return (
         <div className="news-section-container">
-            <Container className="containerClass">
-                <div className=" d-flex justify-content-center flex-wrap mb-3">
+            <div className="containerClass">
+                <div className=" d-flex justify-content-center flex-wrap mb-5">
                   
                     {categories &&
                         categories.length > 0 && (
@@ -170,7 +170,7 @@ const NewsHomePage = () => {
                     </Col>
                     }
                 </Row>
-            </Container>
+            </div>
         </div>
     );
 };

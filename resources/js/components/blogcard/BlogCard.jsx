@@ -63,6 +63,13 @@ const BlogCard = ({ tags, data, toUrl }) => {
 
                 <div className="blog-footer-social">
                 <div className="social-container">
+
+                                  <a
+                                    href={` https://t.me/share/url?url=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                   <i className="fab fa-telegram" style={{color:"#0088CC"}}></i>
+                                </a>
                                 <a
                                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                     target="_blank"

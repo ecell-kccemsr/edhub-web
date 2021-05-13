@@ -5,7 +5,6 @@ import axios from "axios";
 import { Collapse } from "reactstrap";
 import { Link } from "react-router-dom";
 import Login from "../../auth/login/Login";
-
 import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -176,6 +175,12 @@ const SingleBlog = props => {
                                         className="social-container"
                                         style={{ padding: "6px" }}
                                     >
+                                           <a
+                                                  href={` https://t.me/share/url?url=${window.location.href}`}
+                                                  target="_blank"
+                                             >
+                                                 <i className="fab fa-telegram" style={{color:"#0088CC"}}></i>
+                                             </a>
                                         <a
                                             href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                             target="_blank"

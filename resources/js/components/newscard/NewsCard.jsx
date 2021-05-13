@@ -9,7 +9,7 @@ const NewsCard = ({ tags, data, toUrl }) => {
                     <Col sm="12" md="6" lg="9">
                         <div className="blog-card-top-text-section">
                             <h6>#{data?.category?.name}</h6>
-                            <Link to={toUrl || "#"} style={{ color: "black" }}>
+                            <Link to={toUrl || "#"} style={{ color: "#515151" }}>
                                 <h4>{data?.title}</h4>
                             </Link>
                         </div>
@@ -67,6 +67,12 @@ const NewsCard = ({ tags, data, toUrl }) => {
 
                 <div className="blog-footer-social">
                 <div className="social-container">
+                                  <a
+                                    href={` https://t.me/share/url?url=${window.location.href}`}
+                                    target="_blank"
+                                >
+                                   <i className="fab fa-telegram" style={{color:"#0088CC"}}></i>
+                                </a>
                                 <a
                                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
                                     target="_blank"

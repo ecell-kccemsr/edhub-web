@@ -205,13 +205,13 @@
             }
         }
         img {
-            width: 50%;
+            width: inherit;
             border-radius: 6px;
             object-fit: contain;
         }
     }
     p {
-        color: #585858;
+        color: #515151;
         font-size: 21px;
         margin-bottom: 0px;
     }

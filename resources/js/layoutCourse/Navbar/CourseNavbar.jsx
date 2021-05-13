@@ -282,7 +282,7 @@ const CourseNavbar = props => {
 
             
             <nav className="navbar course-navbar navbar-expand-lg">
-                <div className="container">
+                <div style={{display:"contents"}} >
                     <Link className="navbar-brand" to="/">
                         <img
                             src="/images/landingpage/Edhub-1.png"
@@ -534,7 +534,7 @@ const CourseNavbar = props => {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className="nav-link courseNavLink-1"
+                                    className="nav-link courseNavLink"
                                     to="/profile/wishlist"
                                 >
                                     <img src="/images/landingpage/bookmark.png" alt="bookmark" />
