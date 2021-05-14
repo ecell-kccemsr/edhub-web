@@ -9,6 +9,7 @@ const ProfileLayout = ({ children }) => {
     const setUser = useStoreActions(actions => actions.setUser)
     const handleChange = () => {
         localStorage.clear();
+        setUser(null)
     };
 
     const onSubmit = e => {
@@ -123,34 +124,3 @@ const ProfileLayout = ({ children }) => {
 };
 
 export default ProfileLayout;
-// import React, { Component } from "react";
-// import http from "../utils/http";
-// class ProfileLayout extends Component {
-//     state = { selectedFile: null };
-
-//     fileChangedHandler = event => {
-//         this.setState({ selectedFile: event.target.files[0] });
-//     };
-
-//     uploadHandler = () => {
-//         const formData = new FormData();
-//         formData.append(
-//             "myFile",
-//             this.state.selectedFile,
-//             this.state.selectedFile.name
-//         );
-//         http.post("auth/update", formData).then(res =>
-//             alert("Profile pic Updated")
-//         );
-//     };
-//     render() {
-//         return (
-//             <div>
-//                 <input type="file" onChange={this.fileChangedHandler} />
-//                 <button onClick={this.uploadHandler}>Upload!</button>
-//             </div>
-//         );
-//     }
-// }
-
-// export default ProfileLayout;

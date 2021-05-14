@@ -3,7 +3,11 @@ import { createStore, action } from "easy-peasy";
 const store = createStore({
     user: null,
     setUser: action((state, payload) => {
-        state.user = {...payload};
+        if(payload!=null){
+            state.user = {...payload};
+        }else{
+            state.user=null
+        }
     }),
     wishlist: [],
     compares: [],
