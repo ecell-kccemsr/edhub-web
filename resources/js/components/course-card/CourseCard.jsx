@@ -100,18 +100,35 @@ const CourseCard = ({ data }) => {
 
                 <div className="coursecard-footer">
                     <div>
-                        <img src="/images/courseCategory/star.png" alt="star" />
+                    {
+                        data?.rating <= 1
+                        ?  <img
+                            src="/images/courseDetail/1star.png"
+                            alt="Star"
+                        />
+                        : data?.rating <= 2
+                        ? <img
+                            src="/images/courseDetail/2star.png"
+                            alt="Star"
+                        />
+                        : data?.rating <= 3
+                        ?  <img
+                            src="/images/courseDetail/3star.png"
+                            alt="Star"
+                        />
+                        : data?.rating <= 4
+                        ?  <img
+                            src="/images/courseDetail/4star.png"
+                            alt="Star"
+                        />
+                        : <img
+                            src="/images/courseDetail/5star.png"
+                            alt="Star"
+                        />
+                }
                         <p>
-                        {
-                         Math.round(parseFloat
-                            (
-                                data?.rating 
-                            )
-                            )
-
-                       }
-                                {" "}
-                         Reviews</p>
+                        <b style={{color:"#EAD628"}}>{Math.ceil(data?.rating)}</b>
+                         </p>
                     </div>
                     <Link to={`/courseDetail/${data?.slug}`}>
                         <img src="/images/courseCategory/reviewArrow.png" alt="reviewArrow" />

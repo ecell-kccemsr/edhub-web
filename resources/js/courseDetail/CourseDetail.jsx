@@ -280,10 +280,36 @@ function CourseDetail(props) {
                                             </p>
                                         </div>
                                         <div style={{ marginTop: "-10px" }}>
-                                            <img
+                                              {
+                                                 singleCourse?.rating <= 1
+                                                 ?  <img
+                                                        src="/images/courseDetail/1star.png"
+                                                        alt="Star"
+                                                    />
+                                                 : singleCourse?.rating <= 2
+                                                 ? <img
+                                                        src="/images/courseDetail/2star.png"
+                                                        alt="Star"
+                                                    />
+                                                 : singleCourse?.rating <= 3
+                                                 ?  <img
+                                                        src="/images/courseDetail/3star.png"
+                                                        alt="Star"
+                                                    />
+                                                 : singleCourse?.rating <= 4
+                                                 ?  <img
+                                                        src="/images/courseDetail/4star.png"
+                                                        alt="Star"
+                                                    />
+                                                 : <img
+                                                        src="/images/courseDetail/5star.png"
+                                                        alt="Star"
+                                                    />
+                                            }
+                                            {/* <img
                                                 src="/images/courseCategory/star.png"
                                                 alt="star"
-                                            />
+                                            /> */}
                                         </div>
                                         <div className="card-section-details-content-price">
                                             <div style={{ marginTop: "-20px" }}>
@@ -741,7 +767,7 @@ function CourseDetail(props) {
                                             {
                                                 singleCourse?.rating && (
                                                     <h4>
-                                                    {Math.round(
+                                                    {Math.ceil(
                                                         parseFloat(
                                                             singleCourse?.rating
                                                         )
@@ -749,11 +775,32 @@ function CourseDetail(props) {
                                                 </h4>
                                                 )
                                             }
-                                          
-                                            <img
-                                                src="/images/courseDetail/4star.png"
-                                                alt="Star"
-                                            />
+                                            {
+                                                 singleCourse?.rating <= 1
+                                                 ?  <img
+                                                        src="/images/courseDetail/1star.png"
+                                                        alt="Star"
+                                                    />
+                                                 : singleCourse?.rating <= 2
+                                                 ? <img
+                                                        src="/images/courseDetail/2star.png"
+                                                        alt="Star"
+                                                    />
+                                                 : singleCourse?.rating <= 3
+                                                 ?  <img
+                                                        src="/images/courseDetail/3star.png"
+                                                        alt="Star"
+                                                    />
+                                                 : singleCourse?.rating <= 4
+                                                 ?  <img
+                                                        src="/images/courseDetail/4star.png"
+                                                        alt="Star"
+                                                    />
+                                                 : <img
+                                                        src="/images/courseDetail/5star.png"
+                                                        alt="Star"
+                                                    />
+                                            }
                                             <p>course rating</p>
                                         </Col>
                                         <Col
