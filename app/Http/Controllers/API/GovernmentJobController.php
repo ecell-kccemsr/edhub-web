@@ -52,7 +52,7 @@ class GovernmentJobController extends Controller
         {
             $government_jobs = $government_jobs->where('qualification',$request->input('qualification'));
         }
-        $government_jobs = $government_jobs->paginate($request->input('per_page', 10));
+        $government_jobs = $government_jobs->orderBy('updated_at','desc')->paginate($request->input('per_page', 10));
         return new GovernmentJobResourceCollection($government_jobs);
     }
 
