@@ -15,6 +15,7 @@ const SingleBlog = props => {
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const [showComments, setshowComments] = useState(false);
 
      // Login modal 
      const [modallogin, setModalLogin] = useState(false);
@@ -44,9 +45,10 @@ const SingleBlog = props => {
     }, []);
     const handleComment = e => {
         e.preventDefault();
-        let form = e.nativeEvent.target;
-        let data = JSON.stringify({ comment });
-        axios
+        if(comment!=""){
+            let form = e.nativeEvent.target;
+            let data = JSON.stringify({ comment });
+            axios
             .post(`/api/blogs/${blog_slug}/comments`, data, {
                 headers: {
                     "Content-Type": "application/json"
@@ -54,9 +56,13 @@ const SingleBlog = props => {
             })
             .then(res => {
                 toast.success("Comment Added Successfully !");
+                setComment("")
                 form.reset();
             })
             .catch(err =>  toast.error("Something went wrong while adding comment!"));
+        }else{
+            toast.error("Comment cannot be empty !")
+        }
     };
 
     const getComment = (blog_slug, pageNumber = 1) => {
@@ -235,6 +241,7 @@ const SingleBlog = props => {
                                         <Input
                                             type="text"
                                             name="comment"
+                                            required
                                             onChange={e =>
                                                 setComment(e.target.value)
                                             }
@@ -267,7 +274,13 @@ const SingleBlog = props => {
                     <h4 className="user-comments">User Comments </h4> 
 
                     <div className="container comment-section">
-                        {comments &&
+                        {
+                            !showComments && <button onClick={()=>setshowComments(true)}>Show {comments.length} comments</button>
+                        }
+                        {
+                            showComments && 
+                            <>
+                            {comments &&
                             comments.length>0 &&
                             comments.map(c => {
                                 return (
@@ -293,6 +306,8 @@ const SingleBlog = props => {
                                 Load More Comments
                             </button>
                         )}
+                            </>
+                        }
                     </div>
                 </div>
                 }

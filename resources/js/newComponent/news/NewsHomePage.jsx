@@ -74,7 +74,7 @@ const NewsHomePage = () => {
     return (
         <div className="news-section-container">
             <div className="containerClass">
-                <div className=" d-flex justify-content-center flex-wrap mb-5">
+                <div className=" d-flex justify-content-center flex-wrap mb-5" style={newsNavStyles}>
                   
                     {categories &&
                         categories.length > 0 && (
@@ -174,5 +174,14 @@ const NewsHomePage = () => {
         </div>
     );
 };
+
+const newsNavStyles = {
+    position:"sticky",
+    top:77,
+    left:0,
+    right:0,
+    zIndex:999,
+    background:"#FAFAFA"
+}
 
 export default NewsHomePage;

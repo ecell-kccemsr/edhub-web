@@ -15,7 +15,7 @@ const SingleNewsPage = props => {
     const [comment, setComment] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-
+    const [showComments, setshowComments] = useState(false);
       // Login modal 
       const [modallogin, setModalLogin] = useState(false);
       const toggleLogin = () => setModalLogin(!modallogin);
@@ -49,6 +49,7 @@ const SingleNewsPage = props => {
     }, []);
 
     const handleComment = e => {
+        if(comment!=""){
         e.preventDefault();
         let form = e.nativeEvent.target;
         let data = JSON.stringify({ comment });
@@ -60,8 +61,12 @@ const SingleNewsPage = props => {
             }).then(res=>{
                 toast.success("Comment Added Successfully !");
                 form.reset();
+                setComment("")
             })
             .catch(err => console.log(err));
+        }else{
+            toast.error("Comment cannot be empty !")
+        }
     };
 
     const getComment = (news_slug, pageNumber = 1) => {
@@ -227,6 +232,7 @@ const SingleNewsPage = props => {
                                                     <Input
                                                         type="text"
                                                         name="comment"
+                                                        required
                                                         onChange={e =>
                                                             setComment(
                                                                 e.target.value
@@ -267,7 +273,10 @@ const SingleNewsPage = props => {
                                     </h4>
 
                                     <div className="container comment-section-news">
-                                        {comments &&
+                                    {!showComments && <button onClick={()=>setshowComments(true)}>Show {comments.length} comments</button>}
+                                      {showComments
+                                          && <>
+                                            {comments &&
                                             comments.length>0 &&
                                             comments.map(c => {
                                                 return (
@@ -297,6 +306,8 @@ const SingleNewsPage = props => {
                                 Load More Comments
                             </button>
                         )}
+                                          </>
+                                      }
                                     </div>
                                 </div>
                                 
