@@ -56,46 +56,36 @@ const ProfileLayout = ({ children }) => {
                                     )
                                 }
                             </div>
-                            <form action="" onSubmit={onSubmit}>
-                                <div className="update-btn-section">
-                                <input class="form-control "  name="avatar" type="file" id="img"/>
-                                        <button className="update-btn">
-                                            Upload!
-                                        </button>
-                                </div>
-                            </form>
-                            <hr className="profile-hr" />
-                            <Link
-                                className="profile-links"
-                                style={{
-                                    color: `${
-                                        window.location.pathname.includes(
-                                            "basic"
-                                        )
-                                            ? "#F05454"
-                                            : "#808080"
-                                    }`
-                                }}
-                                to="/profile/basic"
-                            >
-                                Basic
-                            </Link>
-                            {/* <hr className="profile-hr" /> */}
-                            {/* <Link
-                                className="profile-links"
-                                style={{
-                                    color: `${
-                                        window.location.pathname.includes(
-                                            "courses"
-                                        )
-                                            ? "#F05454"
-                                            : "#808080"
-                                    }`
-                                }}
-                                to="/profile/my-courses"
-                            >
-                                My courses
-                            </Link> */}
+      
+                            {user && (
+                                <>
+                                 <form action="" onSubmit={onSubmit}>
+                                    <div className="update-btn-section">
+                                    <input class="form-control "  name="avatar" type="file" id="img"/>
+                                            <button className="update-btn">
+                                                Upload!
+                                            </button>
+                                    </div>
+                                 </form>
+                                <hr className="profile-hr" />
+                                    <Link
+                                    className="profile-links"
+                                    style={{
+                                        color: `${
+                                            window.location.pathname.includes(
+                                                "basic"
+                                            )
+                                                ? "#F05454"
+                                                : "#808080"
+                                        }`
+                                    }}
+                                    to="/profile/basic"
+                                    >
+                                    Basic
+                                    </Link>
+                                </>
+                            )}
+                           
                             <hr className="profile-hr" />
                             <Link
                                 className="profile-links"
@@ -112,14 +102,18 @@ const ProfileLayout = ({ children }) => {
                             >
                                 Wishlist
                             </Link>
-                            <hr className="profile-hr" />
-                            <Link
-                                className="profile-links"
-                                onClick={() => handleChange()}
-                                to="/"
-                            >
-                                Signout
-                            </Link>
+                            {user && (
+                                    <>
+                                        <hr className="profile-hr" />
+                                        <Link
+                                            className="profile-links"
+                                            onClick={() => handleChange()}
+                                            to="/"
+                                        >
+                                            Signout
+                                        </Link>
+                                    </>
+                            )}
                         </div>
                     </Col>
                 </Row>

@@ -6,7 +6,7 @@ import { useStoreState } from "easy-peasy";
 const ProfileBasic = () => {
     const user = useStoreState(state => state.user);
     if (user === null) {
-        return "Not authenticated";
+        return  <h3 className="py-4 my-4 text-center">Not Authenticated !</h3>
     }
     const onSubmit = e => {
         e.preventDefault();
