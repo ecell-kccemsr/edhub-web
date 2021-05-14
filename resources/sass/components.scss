@@ -10,6 +10,9 @@
         }
 
         .link-card-col {
+            p {
+                font-size: 18px;
+            }
             .link-card-colheader {
                 font-size: 18px;
 
@@ -226,7 +229,7 @@
             align-items: center;
             padding: 5px 10px;
             border-radius: 100px;
-            margin: 0 5px;
+            margin: 8px 5px;
             background-color: #ffc3bd;
 
             img {

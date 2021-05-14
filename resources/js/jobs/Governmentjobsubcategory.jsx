@@ -10,19 +10,18 @@ import {
 } from "reactstrap";
 import GovernmentjobAccordion from "./GovernmentjobAccordation";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 function Governmentjobsubcategory(props) {
     const [categories, setCategory] = useState([]);
     const [course, setCourse] = useState([]);
     const [jobs, setJobs] = useState([]);
     const [subcategory, setSubCategory] = useState([]);
+    const {subcategory_slug} = useParams();
     useEffect(() => {
-        const { slug } = props.match.params;
-        if (slug) {
-            axios.get(`/api/government_jobs/${slug}`).then(res => {
+            axios.get(`/api/government_jobs?subcategory_slug=${subcategory_slug}`).then(res => {
                 setSubCategory(res.data.data);
             });
-        }
+        
 
         axios
             .get("/api/government_jobs/categories")

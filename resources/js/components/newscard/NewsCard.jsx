@@ -26,7 +26,7 @@ const NewsCard = ({ tags, data, toUrl }) => {
                             ? data?.description.slice(0, 180) + "..."
                             : data?.description}
                     </p>
-                    <p style={{ marginBottom: "10px" }}>
+                    <p >
                         <Link
                             to={toUrl || "#"}
                             style={{ color: "#ff0000", fontSize: "21px" }}

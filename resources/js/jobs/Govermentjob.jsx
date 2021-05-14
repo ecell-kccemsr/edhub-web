@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Row, Col } from "reactstrap";
 import LinkCard from "../components/link-card/LinkCard";
 
@@ -75,19 +76,6 @@ function Govermentjob() {
                                     Start your prepararion by buying courses
                                     from our platform at an additional discount.
                                 </p>
-                                {/* <div className="job-hero-section-input-box">
-                                    <form>
-                                        <input
-                                            type="text"
-                                            name=""
-                                            id=""
-                                            placeholder="Search your Exam"
-                                        />
-                                        <button type="submit">
-                                            <i className="fas fa-search"></i>
-                                        </button>
-                                    </form>
-                                </div> */}
                             </Col>
                             <Col md="6">
                                 <img
@@ -146,15 +134,15 @@ function Govermentjob() {
                                         role="tabpanel"
                                         aria-labelledby={`${d?.category?.slug}-tab`}
                                     >
-                                        
-                                                <div className="job-tab-el my-2">
-                                                    <img
+                                             <div className="job-tab-el my-2">
+                                                    <Link to={`/govermentjobs/${d?.category?.slug}/${d?.slug}`}>
+                                                     <img
                                                         src={d?.image}
                                                         alt="Sub-Image"
                                                     />{" "}
                                                     <p>{d?.name}</p>
-                                                    
-                                                </div>
+                                                    </Link>
+                                                </div>                                            
                                     </div>
                                     </Col>
                                 

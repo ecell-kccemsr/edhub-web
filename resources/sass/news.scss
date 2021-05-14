@@ -9,11 +9,11 @@
             background: transparent;
             border: none;
             outline: none;
-            margin: 5px 10px;
+            margin: 5px 18px;
             color: #adadad;
             font-family: "Oswald", sans-serif;
             font-weight: 300;
-            font-size: 20px;
+            font-size: 24px;
         }
         .category-btn-all:hover {
             color: #f05454;
@@ -23,10 +23,10 @@
             background: transparent;
             border: none;
             outline: none;
-            margin: 5px 10px;
+            margin: 5px 18px;
             color: #adadad;
             font-weight: 300;
-            font-size: 20px;
+            font-size: 24px;
             font-family: "Oswald", sans-serif;
         }
         .category-buttons-header:hover {
@@ -76,8 +76,11 @@
 
 @media only screen and (max-width: 775px) {
     .news-section-container {
-        .news-sidebar {
-            margin-top: 20px;
+        .containerClass {
+            padding: 10px;
+            .news-sidebar {
+                margin-top: 20px;
+            }
         }
     }
 }

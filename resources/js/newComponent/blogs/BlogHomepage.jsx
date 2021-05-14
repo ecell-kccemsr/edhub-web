@@ -118,10 +118,12 @@ const BlogHomepage = () => {
                             </div>
                             </>
                             ))}
+                        </div>
                             
 
+                        <div className="blog-sidebar">
                            
-                            <h6 className="mt-4">Recent Courses</h6>
+                            <h6 className="mt-0">Recent Courses</h6>
                             <hr />
                             {
                                 course && course.length==0 && (
@@ -142,9 +144,9 @@ const BlogHomepage = () => {
                               </div>
                           </div>
                             ))}
+                        </div>
                           
 
-                        </div>
                     </Col>
                 </Row>
         </div>

@@ -225,6 +225,7 @@ const SingleBlog = props => {
                                 dangerouslySetInnerHTML={{
                                     __html: singleBlog?.body
                                 }}
+                                style={{fontSize:"20px", color:"#333333"}}
                             ></p>
                         </div>
                     </Col>

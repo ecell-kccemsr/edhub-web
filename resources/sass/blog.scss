@@ -9,6 +9,7 @@
         padding: 20px;
         background: #fffbfc;
         border-radius: 6px;
+        margin-bottom: 25px;
         box-shadow: 0px 2px 6px 0px #b5b5b5;
         h6 {
             color: #333333;
@@ -69,10 +70,11 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        border-radius: 10px;
     }
     .singleblog-like-section {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         margin: 10px 0;
         .interaction-container {
@@ -115,7 +117,7 @@
             img {
                 margin-left: 6px;
                 color: #c6c6c6;
-                width: 30px;
+                width: 35px;
             }
             b {
                 color: #686868;
@@ -127,6 +129,7 @@
                 .far {
                     font-weight: 400;
                     font-size: 30px;
+                    margin: 4px;
                 }
             }
         }
@@ -157,17 +160,18 @@
         font-weight: 400;
     }
     .comment-section {
-        margin: 5px 0px 5px 0px;
-        padding: 3px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        width: 89%;
         .comments {
             padding: 10px;
             width: 100%;
             display: flex;
             align-items: center;
-            div{
+            div {
                 display: flex;
-                flex-direction:column;
-                
+                flex-direction: column;
             }
             img {
                 border-radius: 35px;

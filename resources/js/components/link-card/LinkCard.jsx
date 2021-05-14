@@ -72,11 +72,19 @@ const LinkCard = props => {
                                             {d?.name}
                                         </a>
                                     </h5>
-                                    <p>
-                                        {d?.description.length > 180
-                                            ? d?.description.slice(0, 180) +
-                                              "..."
-                                            : d?.description}
+                                    <p
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                            d?.description.length >
+                                                250
+                                                    ? d?.description.slice(
+                                                          0,
+                                                          250
+                                                      ) + "..."
+                                                    : d?.description
+                                        }}
+                                        
+                                    >
                                     </p>
                                 </Col>
                             );

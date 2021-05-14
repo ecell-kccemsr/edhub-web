@@ -24,7 +24,6 @@ const prevQPaperSingleDataPage = id => {
             .get(`/api/questionpapers?subcategory_slug=${subcategory_slug}`)
             .then(res => {
                 setPaper(res.data.data);
-                console.log(res.data.data);
             })
 
             .catch(err => console.log(err));
@@ -47,7 +46,7 @@ const prevQPaperSingleDataPage = id => {
     }, []);
     return (
         <div className="prev-qpaper-singledata-section">
-            <Container>
+            <div>
                 <Row>
                     <Col sm="12" lg="3">
                         <div className="left-sidebar">
@@ -99,7 +98,7 @@ const prevQPaperSingleDataPage = id => {
                         toggleTrue={true}
                     />
                 )}
-            </Container>
+            </div>
             {/* Courses */}
             {course && <PopularChoice data={course} title="Latest Courses" />}
         </div>
