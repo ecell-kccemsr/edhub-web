@@ -15,6 +15,7 @@ import Guide4 from "../../guide/Guide4";
 import Guide5 from "../../guide/Guide5";
 //dummyData
 import { recommendedCourse } from "./navDummyData";
+import Auth from "../../auth/Auth";
 //images
 
 const SearchbarDropdown = props => {
@@ -556,9 +557,9 @@ const CourseNavbar = props => {
 
                                  <Button className="login-btn-navbar" onClick={toggleLogin}>login</Button>
                                  <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
-                                 <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
+                                 <ModalHeader toggle={toggleLogin}></ModalHeader>
                                    <ModalBody>
-                                    <Login />                                   
+                                    <Auth/>                                   
                                    </ModalBody>
                                  </Modal>
                                        
