@@ -24,7 +24,9 @@ function LandingPage() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        setRedirect(true);
+        if(searchText!=""){
+            setRedirect(true);
+        }
     };
     const handleChange = e => {
         setSearchText(e.target.value);
