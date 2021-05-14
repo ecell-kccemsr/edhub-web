@@ -5,6 +5,7 @@ import axios from "axios";
 import { Collapse } from "reactstrap";
 import { Link } from "react-router-dom";
 import Login from "../../auth/login/Login";
+import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -16,6 +17,7 @@ const SingleBlog = props => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [showComments, setshowComments] = useState(false);
+    const [course, setCourse] = useState([]);
 
      // Login modal 
      const [modallogin, setModalLogin] = useState(false);
@@ -42,6 +44,14 @@ const SingleBlog = props => {
                 });
             getComment(blog_slug);
         }
+        axios
+        .get("/api/courses")
+        .then(res => {
+            setCourse(res.data.data);
+        })
+        .catch(err => {
+            console.log(err);
+        });
     }, []);
     const handleComment = e => {
         e.preventDefault();
@@ -313,6 +323,12 @@ const SingleBlog = props => {
                 </div>
                 }
             </Container>
+            {course && (
+                    <PopularChoice
+                        data={course}
+                        title="Banking Exams Courses"
+                    />
+                )}
         </div>
             )
         }

@@ -4,6 +4,7 @@ import axios from "axios";
 import Moment from "react-moment";
 import { Collapse } from "reactstrap";
 import Login from "../../auth/login/Login";
+import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -15,6 +16,7 @@ const SingleNewsPage = props => {
     const [comment, setComment] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const [course, setCourse] = useState([]);
     const [showComments, setshowComments] = useState(false);
       // Login modal 
       const [modallogin, setModalLogin] = useState(false);
@@ -384,6 +386,12 @@ const SingleNewsPage = props => {
                 </Row>
                 )}
             </Container>
+            {course && (
+                    <PopularChoice
+                        data={course}
+                        title="Banking Exams Courses"
+                    />
+                )}
         </div>
     );
 };

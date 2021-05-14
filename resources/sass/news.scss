@@ -227,6 +227,29 @@
             border-bottom: none;
         }
     }
+    .landingpage-popular-card-carousel {
+        padding: 0px 40px 0px 40px;
+        .slick-dots {
+            display: none !important;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: "slick";
+            font-size: 20px;
+            line-height: 1;
+            opacity: 0.75;
+            color: black;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 35px;
+            margin: -9px;
+        }
+        .carousel-slider-div {
+            display: flex !important;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+    }
 }
 
 .user-comment-section-news {
