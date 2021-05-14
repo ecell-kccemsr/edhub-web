@@ -47,7 +47,7 @@ class FetchCourses extends Command
     public function handle()
     {
         $count=$this->argument('count');
-        $token = "eUR5ZXFoSnBvTkQwZkhkTjlaSTZsR3hUNVNjME1xV1NIYm9EMk5xMjpoWERicmpJUzR4VGU1dGtPSnd1Yk1FbHhnS1E5SzNMdjJ1RXhyYzZBTEF0b1pWSzRrWEhZNGk3aUlrbU5NYzNoOWRWRTc3dEk0N1FiNTlZakpKNXdOU2xkZndYZ01yVExFbWt0ZHFaM3M2Nm82NFZzazhGUGUxTHhhUEJlWnhqaA==";
+        $token = "VjFRYmJRWTJwYTQzSjQ0ZTZJSVVCYjU5dW9ueHZ2ckZtRmtZZ0hKdjpwTHdIOUE3YThhVDcyTTA5ZTVTbVRDTHFzcmxWaFRwYnNiRmUzZHE0dmhBdGVBdTN6akh2SnpmQ2VFeld0RTZra3VubFlSaDNwcUQxam9zdGpreEFzT2VKejg0VTZ1eVpXdzlFQ1M1S0o5UUpCWk85YlFCUGdmZkRwZEdGRTNaYQ==";
         $page = 1;
         while($page++ <= $count) {
             $response = Http::withHeaders(["Accept" => "application/json, text/plain, */*", "Authorization" => "Basic $token", "Content-Type" => "application/json;charset=utf-8"])->get("https://www.udemy.com/api-2.0/courses/?fields[course]=@all&page=$page");

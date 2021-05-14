@@ -18,7 +18,7 @@ class CreateTestimoniesTable extends Migration
             $table->string('name');
             $table->longText('review');
             $table->integer('rating');
-            $table->string('image');
+            $table->longText('image');
             $table->string('slug')->unique();
             $table->timestamps();
         });

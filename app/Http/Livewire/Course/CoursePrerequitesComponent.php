@@ -29,6 +29,10 @@ class CoursePrerequitesComponent extends Component
     
     public function render()
     {
+        if(is_array($this->data) === false)
+        {
+            $this->data = [];
+        }
         return view('livewire.course.course-prerequites-component');
     }
     public function updatedData()

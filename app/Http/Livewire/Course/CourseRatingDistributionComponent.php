@@ -15,6 +15,10 @@ class CourseRatingDistributionComponent extends Component
 
     public function render()
     {
+        if(is_array($this->data) === false)
+        {
+            $this->data = [];
+        }
         return view('livewire.course.course-rating-distribution-component');
     }
 }

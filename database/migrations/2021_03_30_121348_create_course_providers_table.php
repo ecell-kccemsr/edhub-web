@@ -17,7 +17,7 @@ class CreateCourseProvidersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('url');
-            $table->string('image')->nullable();
+            $table->longText('image')->nullable();
             $table->string('slug')->unique();
             $table->timestamps();
         });

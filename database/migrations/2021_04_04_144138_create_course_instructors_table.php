@@ -17,7 +17,7 @@ class CreateCourseInstructorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('designation')->nullable();
-            $table->string('image');
+            $table->longText('image');
             $table->string('url');
             $table->integer('course_id');
             $table->timestamps();
