@@ -7,7 +7,7 @@ use App\Models\GovernmentJob;
 use App\Http\Controllers\Controller;
 use App\Models\GovernmentJobCategory;
 use App\Models\GovernmentJobSubCategory;
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 use App\Http\Resources\GovernmentJobResource;
 use App\Http\Resources\GovernmentJobResourceCollection;
 use App\Http\Resources\GovernmentJobCategoryResourceCollection;
