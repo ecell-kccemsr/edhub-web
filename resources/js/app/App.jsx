@@ -37,7 +37,7 @@ import prevQPaperHomepage from "../newComponent/prevQPaper/prevQPaperHomepage";
 import prevQPaperSingleDataPage from "../newComponent/prevQPaper/prevQPaperSingleDataPage";
 import BlogHomepage from "../newComponent/blogs/BlogHomepage";
 import SingleBlog from "../newComponent/blogs/SingleBlog";
-
+import ForgotPass from "../auth/forgotPass/ForgotPass"
 const App = props => {
     const setUser = useStoreActions(actions => actions.setUser);
     const setCompares = useStoreActions(actions => actions.setCompares);
@@ -53,6 +53,7 @@ const App = props => {
             <Switch>
                 <Route path="/login" exact component={Login} />
                 <Route path="/register" exact component={Register} />
+                <Route path="/forgot-password" exact component={ForgotPass} />
                 {/* //JobLayoutRoutes */}
 
                 <CourseLayoutRoutes path="/" exact component={LandingPage} />

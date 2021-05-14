@@ -72,7 +72,7 @@ const Login = () => {
                                     </FormGroup>
                                 </Col>
                                 <Col sm="12" md="5">
-                                    <Link to="/forgot">Forgot Password</Link>
+                                    <Link to="/forgot-password">Forgot Password</Link>
                                 </Col>
                             </Row>
                             <button className="auth-btn" type="submit">
