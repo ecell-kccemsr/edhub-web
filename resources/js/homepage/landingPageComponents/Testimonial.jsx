@@ -27,6 +27,9 @@ const Testimonial = () => {
                 console.log(err);
             });
     }, []);
+    if(testimonial.length==0){
+        return <></>
+    }
     return (
         <div className="landing-page-testimonial-section ">
             <p className="header-testimonials">

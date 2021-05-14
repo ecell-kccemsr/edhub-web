@@ -20,6 +20,11 @@ const PopularChoice = ({ title, data }) => {
         slidesToShow: windowWidth <= 1200 ? (windowWidth < 800 ? 1 : 2) : 4,
         slidesToScroll: 1
     };
+
+    if(data.length==0){
+        return <></>
+    }
+    
     return (
         <>
             <div className="popular-choice-section">
