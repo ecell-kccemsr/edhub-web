@@ -45,7 +45,7 @@ class ResetPassword extends Notification implements ShouldQueue
                     ->subject('Reset your password')
                     ->greeting("Hello $notifiable->name")
                     ->line('You have requested for reset your password, please click on the link and reset your password.')
-                    ->action('Reset Password', url('/api/reset-password?token='.$this->token));
+                    ->action('Reset Password', url("/reset-password/$this->token"));
     }
 
     /**
