@@ -55,7 +55,7 @@ const App = props => {
                 <Route path="/login" exact component={Login} />
                 <Route path="/register" exact component={Register} />
                 <Route path="/forgot-password" exact component={ForgotPass} />
-                <Route path="/reset-password" component={ResetPass} />
+                <Route path="/reset-password/:token" component={ResetPass} />
                 {/* //JobLayoutRoutes */}
 
                 <CourseLayoutRoutes path="/" exact component={LandingPage} />

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
 import http from "../../utils/http";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const ForgotPass = () => {
     
@@ -16,11 +18,13 @@ const ForgotPass = () => {
         let data = new FormData(form);
         http.post("reset-link", data)
             .then(res => {
-               if(res.data.toLowerCase().includes("ok")){
+               if(res?.data=="Ok"){
                 setEmailSent(true)
+               }else{
+                   toast.error(res?.data?.message)
                }
             })
-            .catch(err => console.log(err));
+            .catch(err => toast.error('Something went wrong !'));
     };
 
     if(emailSent){
@@ -43,6 +47,7 @@ const ForgotPass = () => {
 
     return (
         <>
+        <ToastContainer />
         <h3 className="auth-brand text-center pt-4 mt-4">
                 edu<span>hub</span>
             </h3>

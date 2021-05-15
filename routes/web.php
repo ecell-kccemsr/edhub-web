@@ -21,7 +21,7 @@ Route::view('/', 'app');
 Route::view('/login', 'app');
 Route::view('/register', 'app');
 Route::view('/forgot-password', 'app');
-Route::view('/reset-password', 'app');
+Route::view('/reset-password/{token}', 'app');
 
 
 
