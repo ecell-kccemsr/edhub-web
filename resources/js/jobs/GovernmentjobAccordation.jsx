@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { List } from "reactstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const GovernmentjobAccordation = ({ data }) => {
     const [subcategory, setSubCategory] = useState([]);
     useEffect(() => {
@@ -30,7 +31,12 @@ const GovernmentjobAccordation = ({ data }) => {
                                                 aria-expanded="true"
                                                 aria-controls={`collapse-${d?.slug}`}
                                             >
-                                                {d?.name}
+                                                <div style={{display:"flex"}}>
+                                                              <img src={d?.image} alt="subcategory image" />
+                                                              <h5>
+                                                              {d?.name}
+                                                                  </h5>  
+                                                            </div>
                                                 <i
                                                     className="fas fa-chevron-down ml-2"
                                                     style={{
@@ -60,8 +66,14 @@ const GovernmentjobAccordation = ({ data }) => {
                                                         key={child?.id}
                                                         className="mb-2"
                                                     >
-                                                        <img src={child?.image} alt="subcategory image" />
-                                                        {child?.name}
+                                                            <div style={{display:"flex"}}>
+                                                              <img src={child?.image} alt="subcategory image" />
+                                                              <h5>
+                                                              {child?.name}
+                                                                  </h5>  
+                                                            </div>
+                                                        
+                                                        
                                                   
                                                     </List>
                                                 ))}

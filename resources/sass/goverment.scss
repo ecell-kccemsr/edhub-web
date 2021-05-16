@@ -223,6 +223,7 @@ html {
         left: 0;
         right: 0;
         z-index: 500;
+        margin-bottom: 16px;
         h4 {
             padding: 10px;
         }
@@ -239,6 +240,22 @@ html {
                     font-size: 16px;
                     justify-content: space-between;
                     align-items: center;
+                    img {
+                        vertical-align: middle;
+                        border-style: none;
+                        object-fit: cover;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 21px;
+                        margin-right: 5px;
+                    }
+                    h5 {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        color: #1f1f1e;
+                        margin: 6px;
+                    }
                     &:hover {
                         text-decoration: none;
                     }
@@ -253,6 +270,13 @@ html {
                         height: 35px;
                         border-radius: 21px;
                         margin-right: 5px;
+                    }
+                    h5 {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        color: #1f1f1e;
+                        margin: 6px;
                     }
                     .courseContent-list {
                         color: #333;

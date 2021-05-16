@@ -124,12 +124,45 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    img {
+                        vertical-align: middle;
+                        border-style: none;
+                        object-fit: cover;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 21px;
+                        margin-right: 5px;
+                    }
+                    h5 {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        color: #1f1f1e;
+                        margin: 6px;
+                    }
                     &:hover {
                         text-decoration: none;
                     }
                 }
                 .card-body {
                     background: #fff;
+                    img {
+                        vertical-align: middle;
+                        border-style: none;
+                        object-fit: cover;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 21px;
+                        margin-right: 5px;
+                    }
+                    h5 {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        text-align: center;
+                        color: #1f1f1e;
+                        margin: 6px;
+                    }
                     .courseContent-list {
                         color: #333;
                         margin: 10px 0;

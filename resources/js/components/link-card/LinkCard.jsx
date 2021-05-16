@@ -76,10 +76,10 @@ const LinkCard = props => {
                                         dangerouslySetInnerHTML={{
                                             __html:
                                             d?.description.length >
-                                                250
+                                                180
                                                     ? d?.description.slice(
                                                           0,
-                                                          250
+                                                          180
                                                       ) + "..."
                                                     : d?.description
                                         }}

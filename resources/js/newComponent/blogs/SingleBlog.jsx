@@ -278,13 +278,15 @@ const SingleBlog = props => {
                         </div>
                     )}
                 </>
-                {comments &&
+                <Row>
+                    <Col sm="12" md={{ size: 10, offset: 1 }}>
+                    {comments &&
                             comments.length>0 &&   
                                <div className="user-comment-section">
                  
                     <h4 className="user-comments">User Comments </h4> 
 
-                    <div className="container comment-section">
+                    <div className="comment-section">
                         {
                             !showComments && <button onClick={()=>setshowComments(true)}>Show {comments.length} comments</button>
                         }
@@ -322,6 +324,9 @@ const SingleBlog = props => {
                     </div>
                 </div>
                 }
+                    </Col>
+                </Row>
+                
             </Container>
             {course && (
                     <PopularChoice
