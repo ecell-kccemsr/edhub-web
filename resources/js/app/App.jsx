@@ -68,10 +68,16 @@ const App = props => {
                 />
 
                 <CourseLayoutRoutes
+                    path="/govermentjobs/:category_slug/:subcategory_slug"
+                    exact
+                    component={Governmentjobsubcategory}
+                />
+                  <CourseLayoutRoutes
                     path="/govermentjobs/:category_slug/:subcategory_slug/:slug"
                     exact
                     component={Governmentjobsubcategory}
                 />
+                
                 <CourseLayoutRoutes
                     path="/questionpaper"
                     exact

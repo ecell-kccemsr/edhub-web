@@ -11,18 +11,20 @@ import {
 import GovernmentjobAccordion from "./GovernmentjobAccordation";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { Link, useParams } from "react-router-dom";
-function Governmentjobsubcategory(props) {
+function Governmentjobsubcategory({match}) {
     const [categories, setCategory] = useState([]);
     const [course, setCourse] = useState([]);
     const [jobs, setJobs] = useState([]);
-    const [subcategory, setSubCategory] = useState([]);
-    const {subcategory_slug} = useParams();
+    const [subcategory, setSubCategory] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const {category_slug,subcategory_slug} = match.params
     useEffect(() => {
+        if(subcategory_slug){
             axios.get(`/api/government_jobs?subcategory_slug=${subcategory_slug}`).then(res => {
-                setSubCategory(res.data.data);
-            });
+                setSubCategory(res.data.data[0]);
+                setLoading(false)
+            }) .catch(err => console.log(err));
         
-
         axios
             .get("/api/government_jobs/categories")
             .then(res => setCategory(res.data.data))
@@ -39,7 +41,19 @@ function Governmentjobsubcategory(props) {
             .catch(err => {
                 console.log(err);
             });
+        }
     }, []);
+
+    console.log(subcategory);
+
+    if(loading){
+        return(
+            <>
+                <h4 className="text-center">Loading...</h4>
+            </>
+        )
+    }
+
 
     return (
         <>
@@ -56,7 +70,7 @@ function Governmentjobsubcategory(props) {
                         <Col sm="12" lg="6">
                             <div className="government-job-subcategory-details">
                                 <h3 className="title-bank-last">
-                                    {subcategory.title}
+                                    {subcategory?.title}
                                 </h3>
                                 <Container className="containerClass">
                                     <Nav>
@@ -134,7 +148,7 @@ function Governmentjobsubcategory(props) {
                                 </Container>
                                 <div className="content-bankjoblast">
                                     <img
-                                        src={subcategory.image}
+                                        src={subcategory?.image}
                                         className="subcategory-image"
                                         style={{
                                             maxWidth: "100%",
@@ -155,7 +169,7 @@ function Governmentjobsubcategory(props) {
                                             <div
                                                 dangerouslySetInnerHTML={{
                                                     __html:
-                                                        subcategory.description
+                                                        subcategory?.description
                                                 }}
                                             ></div>
                                         </h5>
@@ -170,7 +184,7 @@ function Governmentjobsubcategory(props) {
                                             <div
                                                 dangerouslySetInnerHTML={{
                                                     __html:
-                                                        subcategory.salary_and_job_positions
+                                                        subcategory?.salary_and_job_positions
                                                 }}
                                             ></div>
                                         </h5>
@@ -184,7 +198,7 @@ function Governmentjobsubcategory(props) {
                                             <div
                                                 dangerouslySetInnerHTML={{
                                                     __html:
-                                                        subcategory.eligibility_criteria
+                                                        subcategory?.eligibility_criteria
                                                 }}
                                             ></div>
                                         </h5>
@@ -198,7 +212,7 @@ function Governmentjobsubcategory(props) {
                                             <div
                                                 dangerouslySetInnerHTML={{
                                                     __html:
-                                                        subcategory.apply_online
+                                                        subcategory?.apply_online
                                                 }}
                                             ></div>
                                         </h5>
@@ -212,7 +226,7 @@ function Governmentjobsubcategory(props) {
                                             <div
                                                 dangerouslySetInnerHTML={{
                                                     __html:
-                                                        subcategory.admit_card
+                                                        subcategory?.admit_card
                                                 }}
                                             ></div>
                                         </h5>
@@ -225,7 +239,7 @@ function Governmentjobsubcategory(props) {
                                         <h5 className="government-job-subcategory-information-para">
                                             <div
                                                 dangerouslySetInnerHTML={{
-                                                    __html: subcategory.syllabus
+                                                    __html: subcategory?.syllabus
                                                 }}
                                             ></div>
                                         </h5>
@@ -239,7 +253,7 @@ function Governmentjobsubcategory(props) {
                                             <div
                                                 dangerouslySetInnerHTML={{
                                                     __html:
-                                                        subcategory.exam_pattern
+                                                        subcategory?.exam_pattern
                                                 }}
                                             ></div>
                                         </h5>
@@ -252,7 +266,7 @@ function Governmentjobsubcategory(props) {
                                         <h5 className="government-job-subcategory-information-para">
                                             <div
                                                 dangerouslySetInnerHTML={{
-                                                    __html: subcategory.cutoff
+                                                    __html: subcategory?.cutoff
                                                 }}
                                             ></div>
                                         </h5>

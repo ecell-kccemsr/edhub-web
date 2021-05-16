@@ -7,7 +7,7 @@ const GovernmentjobAccordation = ({ data }) => {
         axios.get(`/api/government_jobs/sub_categories`).then(res => {
             setSubCategory(res.data.data);
         });
-    });
+    },[]);
     return (
         <>
             {data &&
