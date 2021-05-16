@@ -150,12 +150,7 @@ function Governmentjobsubcategory({match}) {
                                     <img
                                         src={subcategory?.image}
                                         className="subcategory-image"
-                                        style={{
-                                            maxWidth: "100%",
-                                            marginLeft: "auto",
-                                            marginRight: "auto",
-                                            display: "block"
-                                        }}
+                                    
                                         alt="sub-image"
                                     />
                                     <div className="government-job-subcategory-content">

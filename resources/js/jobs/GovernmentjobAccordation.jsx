@@ -58,8 +58,9 @@ const GovernmentjobAccordation = ({ data }) => {
                                                     <List
                                                         type="unstyled"
                                                         key={child?.id}
-                                                        className="mb-0"
+                                                        className="mb-2"
                                                     >
+                                                        <img src={child?.image} alt="subcategory image" />
                                                         {child?.name}
                                                   
                                                     </List>

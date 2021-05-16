@@ -234,8 +234,9 @@ html {
                 border-radius: 0;
 
                 .job-detail-card-headerlink {
-                    color: #333333;
+                    color: #1f1f1e;
                     display: flex;
+                    font-size: 16px;
                     justify-content: space-between;
                     align-items: center;
                     &:hover {
@@ -244,6 +245,15 @@ html {
                 }
                 .card-body {
                     background: #fff;
+                    img {
+                        vertical-align: middle;
+                        border-style: none;
+                        object-fit: cover;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 21px;
+                        margin-right: 5px;
+                    }
                     .courseContent-list {
                         color: #333;
                         margin: 10px 0;
@@ -306,6 +316,13 @@ html {
     }
     .content-bankjoblast {
         margin-top: 45px;
+        img {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            border-radius: 5px;
+        }
         .government-job-subcategory {
             height: 350px;
             width: 100%;
