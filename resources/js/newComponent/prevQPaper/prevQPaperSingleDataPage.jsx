@@ -6,13 +6,24 @@ import LinkCard from "../../components/link-card/LinkCard";
 import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 import GovernmentjobAccordation from "../../jobs/GovernmentjobAccordation";
 
-const prevQPaperSingleDataPage = id => {
+const prevQPaperSingleDataPage = ({match}) => {
     const [categories, setCategory] = useState([]);
-    const [paper, setPaper] = useState([]);
+    const [paper, setPaper] = useState(null);
     const [course, setCourse] = useState([]);
     const [jobs, setJobs] = useState([]);
-    const {subcategory_slug} = useParams();
+    const [loading, setLoading] = useState(true);
+    const {category_slug,subcategory_slug} = match.params
     useEffect(() => {
+        if(subcategory_slug){
+               axios
+            .get(`/api/questionpapers?subcategory_slug=${subcategory_slug}`)
+            .then(res => {
+                setPaper(res.data.data);
+                setLoading(false)
+            })
+            .catch(err => console.log(err));   
+        }
+
         axios
             .get("/api/government_jobs/categories")
             .then(res => {
@@ -20,13 +31,7 @@ const prevQPaperSingleDataPage = id => {
             })
 
             .catch(err => console.log(err));
-        axios
-            .get(`/api/questionpapers?subcategory_slug=${subcategory_slug}`)
-            .then(res => {
-                setPaper(res.data.data);
-            })
 
-            .catch(err => console.log(err));
         axios
             .get("/api/courses")
             .then(res => {
@@ -44,6 +49,14 @@ const prevQPaperSingleDataPage = id => {
                 console.log(err);
             });
     }, []);
+    if(loading){
+        return(
+            <>
+                <h4 className="text-center">Loading...</h4>
+            </>
+        )
+    }
+
     return (
         <div className="prev-qpaper-singledata-section">
             <div>

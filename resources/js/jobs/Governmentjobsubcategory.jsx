@@ -44,7 +44,6 @@ function Governmentjobsubcategory({match}) {
         }
     }, []);
 
-    console.log(subcategory);
 
     if(loading){
         return(
