@@ -326,20 +326,37 @@ html {
             }
         }
     }
-    .govrnment-job-detail {
-        font-weight: 600;
-        font-size: 15px;
-        text-align: center;
-        padding: 7px;
-        color: #4e4e4e;
-        &:hover {
-            color: #f05454;
-            font-size: 16px;
-            border-bottom: 2px solid #f05454;
+    .containerClass {
+        position: sticky;
+        top: 75px;
+        left: 0;
+        right: 0;
+        z-index: 500;
+        background-color: #fff;
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+            justify-content: center;
+            .govrnment-job-detail {
+                font-weight: 600;
+                font-size: 15px;
+                text-align: center;
+                padding: 7px;
+                color: #4e4e4e;
+                &:hover {
+                    color: #f05454;
+                    font-size: 16px;
+                    border-bottom: 2px solid #f05454;
+                }
+            }
         }
     }
+
     .content-bankjoblast {
-        margin-top: 45px;
+        margin-top: 10px;
         img {
             max-width: 100%;
             margin-left: auto;
@@ -353,9 +370,7 @@ html {
             border-radius: 15px;
             box-shadow: 0px 4px 8px -1px #8888;
         }
-        .government-job-subcategory-content {
-            margin-top: 30px;
-        }
+
         .government-job-subcategory-information {
             padding: 10px;
             font-weight: 600;

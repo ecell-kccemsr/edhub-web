@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewsCard from "../../components/newscard/NewsCard";
-import { Col, Container, Row, Spinner } from "reactstrap";
+import { Col, Container, Row, Spinner, ButtonToggle } from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -81,20 +81,21 @@ const NewsHomePage = () => {
                     {categories &&
                         categories.length > 0 && (
                             <>
-                              <button
+                              <ButtonToggle
                                     className="category-btn-all"
                                     onClick={() => handleData()}
                                 >
                                     All
-                                </button>
+                                </ButtonToggle>
                             {
                                 categories.map(c => (
-                                    <button
+                                    <ButtonToggle 
+                                        color="danger"
                                         className="category-buttons-header"
                                         onClick={() => handleData(c?.id)}
                                     >
                                         {c.name}
-                                    </button>
+                                    </ButtonToggle >
                                 ))
                             }
                             </>

@@ -71,7 +71,7 @@ function Governmentjobsubcategory({match}) {
                         </Col>
                         <Col sm="12" lg="6">
                             <div className="government-job-subcategory-details">
-                                <h3 className="title-bank-last">
+                                <h3 className="title-bank-last" >
                                     {subcategory?.title}
                                 </h3>
                                 <Container className="containerClass">
@@ -107,7 +107,7 @@ function Governmentjobsubcategory({match}) {
                                                 href="#three"
                                             >
                                                 {" "}
-                                                Apply Online
+                                                Apply <br /> Online
                                             </NavLink>
                                         </NavItem>
                                         <NavItem>
@@ -116,7 +116,7 @@ function Governmentjobsubcategory({match}) {
                                                 href="#four"
                                             >
                                                 {" "}
-                                                Admit card{" "}
+                                                Admit <br /> card{" "}
                                             </NavLink>
                                         </NavItem>
                                         <NavItem>
@@ -149,12 +149,12 @@ function Governmentjobsubcategory({match}) {
                                     </Nav>
                                 </Container>
                                 <div className="content-bankjoblast">
-                                    <img
+                                    {/* <img
                                         src={subcategory?.image}
                                         className="subcategory-image"
                                     
                                         alt="sub-image"
-                                    />
+                                    /> */}
                                     <div className="government-job-subcategory-content">
                                         <h5
                                             className="government-job-subcategory-information"
