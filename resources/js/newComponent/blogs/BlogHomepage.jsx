@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Container } from "reactstrap";
+import { Row, Col, Container, Spinner } from "reactstrap";
 import BlogCard from "../../components/blogcard/BlogCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -50,7 +50,9 @@ const BlogHomepage = () => {
        return(
         <div className="blog-section">
         <Container>
-            <h4 className="text-center">Loading Blogs...</h4>
+            <h4 className="text-center">Loading Blogs...
+            <Spinner color="danger" />
+            </h4>
         </Container>
     </div>
        )

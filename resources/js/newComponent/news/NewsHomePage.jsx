@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewsCard from "../../components/newscard/NewsCard";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Row, Spinner } from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -66,7 +66,9 @@ const NewsHomePage = () => {
     if(loading){
         <div className="news-section-container">
         <div className="containerClass">
-            <h4 className="text-center">Loading News...</h4>
+            <h4 className="text-center">Loading News...
+            <Spinner color="danger" />
+            </h4>
         </div>
         </div>
     }

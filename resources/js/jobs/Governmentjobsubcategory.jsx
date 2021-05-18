@@ -6,7 +6,8 @@ import {
     Row,
     Nav,
     NavItem,
-    NavLink
+    NavLink,
+    Spinner 
 } from "reactstrap";
 import GovernmentjobAccordion from "./GovernmentjobAccordation";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
@@ -48,7 +49,9 @@ function Governmentjobsubcategory({match}) {
     if(loading){
         return(
             <>
-                <h4 className="text-center">Loading...</h4>
+                <h4 className="text-center">Loading Jobs...
+                <Spinner color="danger" />
+                </h4>
             </>
         )
     }

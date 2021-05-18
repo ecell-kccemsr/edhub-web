@@ -8,7 +8,8 @@ import {
     Progress,
     Nav,
     NavItem,
-    NavLink
+    NavLink,
+    Spinner 
 } from "reactstrap";
 import { v4 as uuidv4 } from "uuid";
 
@@ -102,7 +103,9 @@ function CourseDetail(props) {
         return (
             <> 
               <Container >
-                        <h4 className="text-center text-dark py-4 my-4">Loading Course...</h4>
+                        <h4 className="text-center text-dark py-4 my-4">Loading Course...
+                        <Spinner color="danger" />
+                        </h4>
                     </Container>
             </>
         )

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, FormGroup, Input, Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
+import { Container, Row, Col, FormGroup, Input, Modal, ModalHeader, ModalBody, ModalFooter, Button, Spinner } from "reactstrap";
 import Moment from "react-moment";
 import axios from "axios";
 import { Collapse } from "reactstrap";
@@ -116,7 +116,9 @@ const SingleBlog = props => {
             <>
             <div className="single-blog-section">
                 <Container>
-                    <h4 className="text-center">Loading Blog...</h4>
+                    <h4 className="text-center">Loading Blog...
+                    <Spinner color="danger" />
+                    </h4>
                 </Container>
             </div>
             </>

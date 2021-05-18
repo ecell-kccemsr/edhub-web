@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Collapse, Button, Row, Col } from "reactstrap";
+import { Collapse, Button, Row, Col, Spinner  } from "reactstrap";
 import axios from "axios";
 
 const Examcalendar = props => {
@@ -76,7 +76,8 @@ const Examcalendar = props => {
                         examName.length == 0 &&
                         examLoading == true && (
                             <h5 className="text-center py-3">
-                                Loading Categories
+                                Loading Categories... {" "}
+                                <Spinner color="danger" />
                             </h5>
                         )}
                     {examName &&
