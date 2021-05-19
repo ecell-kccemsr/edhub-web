@@ -62,7 +62,7 @@ function Governmentjobsubcategory({match}) {
     return (
         <>
              <Helmet>
-                   <title>Government Detail Job Page</title>
+                     <meta name='keywords' content='edhub, Government-job, india, trending, exams, jobs, details' />
                     <meta name="description" content="Government Job detail Page where single deatil jobs is added" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />

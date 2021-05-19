@@ -63,7 +63,7 @@ const prevQPaperSingleDataPage = ({match}) => {
     return (
         <>
           <Helmet>
-                   <title>Question Paper Detail Page</title>
+                  <meta name='keywords' content='edhub, question-paper, india, trending, exams, detail' />
                     <meta name="description" content="Question paper detail page where single question paper is added" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />

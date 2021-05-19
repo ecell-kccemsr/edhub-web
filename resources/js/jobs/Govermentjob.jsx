@@ -59,7 +59,7 @@ function Govermentjob() {
     return (
         <>
          <Helmet>
-                   <title>Government Job Page</title>
+                       <meta name='keywords' content='edhub, Government-job, india, trending, exams, jobs' />
                     <meta name="description" content="Government Job Page where all jobs are added" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />

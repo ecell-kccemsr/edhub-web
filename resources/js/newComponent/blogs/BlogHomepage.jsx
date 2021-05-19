@@ -62,7 +62,7 @@ const BlogHomepage = () => {
     return (
         <>
              <Helmet>
-                   <title>Blog Page</title>
+                  <meta name='keywords' content='edhub, blogs, india, trending' />
                     <meta name="description" content="Blog page where all sort of blogs are added with social share" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />

@@ -16,6 +16,7 @@ const SingleNewsPage = props => {
     const [relatednews, setRelatedNews] = useState([]);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState("");
+    const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [course, setCourse] = useState([]);
@@ -50,6 +51,14 @@ const SingleNewsPage = props => {
                 });
             getComment(news_slug);
         }
+        axios
+        .get("/api/news/categories")
+        .then(res => {
+            setCategories(res.data.data);
+        })
+        .catch(err => {
+            console.log(err);
+        });
     }, []);
 
     const handleComment = e => {
@@ -120,7 +129,7 @@ const SingleNewsPage = props => {
     return (
         <>
            <Helmet>
-                   <title>News Detail Page</title>
+                  <meta name='keywords' content='edhub, news, india, trending, detail' />
                     <meta name="description" content="Detail of blogs in this page" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />
@@ -137,6 +146,33 @@ const SingleNewsPage = props => {
         )}
          {
             !loading && !error && (
+                <>
+                <div className=" d-flex justify-content-center flex-wrap mb-5" style={newsNavStyles}>
+                  
+                  {categories &&
+                      categories.length > 0 && (
+                          <>
+                            <a
+                                  className="category-btn-all"
+                                  href="/news"
+                              >
+                                  All
+                              </a>
+                          {
+                              categories.map(c => (
+                                  <a 
+                                      color="danger"
+                                      className="category-buttons-header"
+                                         href="/news"
+                                  >
+                                      {c.name}
+                                  </a >
+                              ))
+                          }
+                          </>
+                      )    
+                  }
+              </div>
                 <Row>
                     <Col sm="12" md="8">
                         <h4 className="singlenewstitle-text">
@@ -394,6 +430,7 @@ const SingleNewsPage = props => {
                         </div>
                     </Col>
                 </Row>
+                </>
                 )}
             </Container>
             {course && (
@@ -406,5 +443,13 @@ const SingleNewsPage = props => {
         </>
     );
 };
+const newsNavStyles = {
+    position:"sticky",
+    top:77,
+    left:0,
+    right:0,
+    zIndex:999,
+    background:"#FAFAFA"
+}
 
 export default SingleNewsPage;

@@ -77,7 +77,7 @@ const NewsHomePage = () => {
     return (
     <>
           <Helmet>
-                   <title>News Page</title>
+                   <meta name='keywords' content='edhub, news, india, trending' />
                     <meta name="description" content="News page where all sort of News are added with social share" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />

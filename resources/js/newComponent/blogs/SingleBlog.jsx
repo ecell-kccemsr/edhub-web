@@ -130,7 +130,7 @@ const SingleBlog = props => {
     return (
         <>
          <Helmet>
-                   <title>Blog Detail Page</title>
+                      <meta name='keywords' content='edhub, blogs, india, trending, details' />
                     <meta name="description" content="Detail of blogs in this page" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />

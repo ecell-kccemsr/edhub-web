@@ -62,7 +62,7 @@ const prevQPaperHomepage = () => {
     return (
         <>
              <Helmet>
-                   <title>Question Paper Page</title>
+                 <meta name='keywords' content='edhub, question-paper, india, trending, exams' />
                     <meta name="description" content="Question paper page where all question papers are added" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />
