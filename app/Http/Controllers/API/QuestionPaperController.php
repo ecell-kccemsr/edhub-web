@@ -7,7 +7,7 @@ use App\Models\QuestionPaper;
 use App\Http\Controllers\Controller;
 use App\Models\QuestionPaperCategory;
 
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Query\Builder;
 use App\Models\QuestionPaperSubCategory;
 use App\Http\Resources\QuestionPaperResource;
 use App\Http\Resources\QuestionPaperResourceCollection;
