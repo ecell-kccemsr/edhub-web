@@ -13,7 +13,7 @@ class BlogController extends Controller
 {
     public function get(Request $request)
     {
-        $blogs = Blog::paginate($request->input('per_page',10));
+        $blogs = Blog::orderBy('created_at', 'desc')->paginate($request->input('per_page',10));
         return BlogResource::collection($blogs);
     }
 

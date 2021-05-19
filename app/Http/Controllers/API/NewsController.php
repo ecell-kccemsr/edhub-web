@@ -46,7 +46,7 @@ class NewsController extends Controller
         {
             $news = $news->where('subcategory_id',$request->input('subcategory_id'));
         }
-        $news = $news->paginate($request->input('per_page', 10));
+        $news = $news->orderBy('created_at','desc')->paginate($request->input('per_page', 10));
         return new NewsResourceCollection($news);
     }
 
