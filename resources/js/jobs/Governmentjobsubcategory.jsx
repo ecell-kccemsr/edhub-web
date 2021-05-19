@@ -12,6 +12,8 @@ import {
 import GovernmentjobAccordion from "./GovernmentjobAccordation";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { Link, useParams } from "react-router-dom";
+import {Helmet} from "react-helmet";
+
 function Governmentjobsubcategory({match}) {
     const [categories, setCategory] = useState([]);
     const [course, setCourse] = useState([]);
@@ -59,6 +61,12 @@ function Governmentjobsubcategory({match}) {
 
     return (
         <>
+             <Helmet>
+                   <title>Government Detail Job Page</title>
+                    <meta name="description" content="Government Job detail Page where single deatil jobs is added" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
             <div className="governmentjob">
                 <div className="government-section">
                     <Row>

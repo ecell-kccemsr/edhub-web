@@ -3,6 +3,7 @@ import { Row, Col, Container, Spinner } from "reactstrap";
 import BlogCard from "../../components/blogcard/BlogCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 const BlogHomepage = () => {
     const [blog, setBlogs] = useState([]);
@@ -59,6 +60,13 @@ const BlogHomepage = () => {
     }
     
     return (
+        <>
+             <Helmet>
+                   <title>Blog Page</title>
+                    <meta name="description" content="Blog page where all sort of blogs are added with social share" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
         <div className="blog-section">
                 <Row>
                     <Col sm="1" md={{ size: 6, offset: 1 }} lg="7">
@@ -152,6 +160,7 @@ const BlogHomepage = () => {
                     </Col>
                 </Row>
         </div>
+        </>
     );
 };
 

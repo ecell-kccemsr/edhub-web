@@ -5,6 +5,7 @@ import axios from "axios";
 import LinkCard from "../../components/link-card/LinkCard";
 import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 import GovernmentjobAccordation from "../../jobs/GovernmentjobAccordation";
+import {Helmet} from "react-helmet";
 
 const prevQPaperSingleDataPage = ({match}) => {
     const [categories, setCategory] = useState([]);
@@ -60,6 +61,13 @@ const prevQPaperSingleDataPage = ({match}) => {
     }
 
     return (
+        <>
+          <Helmet>
+                   <title>Question Paper Detail Page</title>
+                    <meta name="description" content="Question paper detail page where single question paper is added" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
         <div className="prev-qpaper-singledata-section">
             <div>
                 <Row>
@@ -117,6 +125,7 @@ const prevQPaperSingleDataPage = ({match}) => {
             {/* Courses */}
             {course && <PopularChoice data={course} title="Latest Courses" />}
         </div>
+        </>
     );
 };
 

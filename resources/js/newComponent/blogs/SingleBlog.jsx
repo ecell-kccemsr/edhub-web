@@ -9,6 +9,8 @@ import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import {Helmet} from "react-helmet";
+
 const SingleBlog = props => {
     const user = useStoreState(state => state.user);
     const [singleBlog, setSingleBlog] = useState(null);
@@ -127,6 +129,12 @@ const SingleBlog = props => {
 
     return (
         <>
+         <Helmet>
+                   <title>Blog Detail Page</title>
+                    <meta name="description" content="Detail of blogs in this page" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
         <ToastContainer />
         {!loading && error && (
              <>

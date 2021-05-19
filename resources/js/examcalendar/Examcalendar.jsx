@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Collapse, Button, Row, Col, Spinner  } from "reactstrap";
 import axios from "axios";
+import {Helmet} from "react-helmet";
 
 const Examcalendar = props => {
     const [isOpen, setIsOpen] = useState({
@@ -55,6 +56,13 @@ const Examcalendar = props => {
         });
     };
     return (
+        <>
+              <Helmet>
+                   <title>Exam calender Page</title>
+                    <meta name="description" content="Exam calender page where all exams are displayed" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
         <div>
             <section className="exam-calendar-section">
                 {/* Title */}
@@ -175,6 +183,7 @@ const Examcalendar = props => {
                     );
                 })}
         </div>
+        </>
     );
 };
 

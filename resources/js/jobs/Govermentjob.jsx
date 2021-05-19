@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col } from "reactstrap";
 import LinkCard from "../components/link-card/LinkCard";
+import {Helmet} from "react-helmet";
 
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 function Govermentjob() {
@@ -57,6 +58,12 @@ function Govermentjob() {
 
     return (
         <>
+         <Helmet>
+                   <title>Government Job Page</title>
+                    <meta name="description" content="Government Job Page where all jobs are added" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
             <div className="governmentjob">
                 <div className="job-page">
                     <div className="job-hero-section">

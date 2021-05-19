@@ -8,6 +8,8 @@ import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import {Helmet} from "react-helmet";
+
 const SingleNewsPage = props => {
     const user = useStoreState(state => state.user);
     const [categorynews, setcategorynews] = useState([]);
@@ -116,7 +118,13 @@ const SingleNewsPage = props => {
 
 
     return (
-        
+        <>
+           <Helmet>
+                   <title>News Detail Page</title>
+                    <meta name="description" content="Detail of blogs in this page" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
         <div className="singlenews-section">
         <ToastContainer />
             <Container>
@@ -395,6 +403,7 @@ const SingleNewsPage = props => {
                     />
                 )}
         </div>
+        </>
     );
 };
 

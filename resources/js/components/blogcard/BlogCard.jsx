@@ -26,8 +26,8 @@ const BlogCard = ({ tags, data, toUrl }) => {
                         style={{ color: "#585858", fontSize: "21px" }}
                         dangerouslySetInnerHTML={{
                             __html:
-                                data?.body.length > 500
-                                    ? data.body.slice(0, 500) + "..."
+                                data?.body.length > 280
+                                    ? data.body.slice(0, 280) + "..."
                                     : data?.body
                         }}
                     ></p>

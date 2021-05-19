@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 import LinkCard from "../../components/link-card/LinkCard";
 import axios from "axios";
+import {Helmet} from "react-helmet";
 
 const prevQPaperHomepage = () => {
     const [jobs, setJobs] = useState([]);
@@ -59,6 +60,13 @@ const prevQPaperHomepage = () => {
     };
 
     return (
+        <>
+             <Helmet>
+                   <title>Question Paper Page</title>
+                    <meta name="description" content="Question paper page where all question papers are added" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
         <div className="governmentjob">
             <div className="job-page">
                 <h4 className="text-center">Previous Question papers</h4>
@@ -136,6 +144,7 @@ const prevQPaperHomepage = () => {
                 <PopularChoice data={course} title="Defence Exams Courses" />
             )}
         </div>
+        </>
     );
 };
 

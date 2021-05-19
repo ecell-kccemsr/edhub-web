@@ -3,6 +3,7 @@ import NewsCard from "../../components/newscard/NewsCard";
 import { Col, Container, Row, Spinner, ButtonToggle } from "reactstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 const NewsHomePage = () => {
     const [news, setNews] = useState([]);
@@ -74,6 +75,13 @@ const NewsHomePage = () => {
     }
 
     return (
+    <>
+          <Helmet>
+                   <title>News Page</title>
+                    <meta name="description" content="News page where all sort of News are added with social share" />
+                    <meta name='copyright' content='Edhub' />
+                    <meta name='language' content='ES' />
+             </Helmet>
         <div className="news-section-container">
             <div className="containerClass">
                 <div className=" d-flex justify-content-center flex-wrap mb-5" style={newsNavStyles}>
@@ -157,10 +165,7 @@ const NewsHomePage = () => {
                                             
                                         </div>
                                         <p>
-                                            {t?.description.length > 100
-                                                ? t?.description.slice(0, 100) +
-                                                  "..."
-                                                : t?.description}
+                                           {t?.title}
                                         </p>
                                         <p style={{marginBottom:"10px"}}> 
                                           <Link  to={`/news/${t?.slug}`} style={{ color: "#ff0000"}}>
@@ -175,6 +180,7 @@ const NewsHomePage = () => {
                 </Row>
             </div>
         </div>
+        </>
     );
 };
 
