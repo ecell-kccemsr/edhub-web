@@ -10,9 +10,47 @@ class CurriculumComponent extends Component
 {
     public $course;
     public $data;
+    public $inputLecture;
+    public $inputChapter;
 
     public function mount()
     {
+        $this->data = $this->course->course_chapters()->with('curriculum_lectures')->get()->toArray();
+    }
+
+    public function addLecture($curriculum_chapter_id)
+    {
+        $lecture = new CurriculumLecture();
+        $lecture->title = $this->inputLecture;
+        $lecture->description = '';
+        $lecture->curriculum_chapter_id = $curriculum_chapter_id;
+        $lecture->save();
+        $this->mount();
+        $this->inputLecture = '';
+    }
+
+    public function addChapter()
+    {
+        $chapter = new CurriculumChapter;
+        $chapter->title = $this->inputChapter;
+        $chapter->description = '';
+        $chapter->course_id = $this->course->id;
+        $chapter->save();
+        $this->mount();
+        $this->inputChapter = "";
+    }
+
+    public function deleteChapter($id)
+    {
+        $curriculum = CurriculumChapter::find($id);
+        $curriculum->delete();
+        $this->data = $this->course->course_chapters()->with('curriculum_lectures')->get()->toArray();
+    }
+
+    public function deleteLecture($id)
+    {
+        $curriculum = CurriculumLecture::find($id);
+        $curriculum->delete();
         $this->data = $this->course->course_chapters()->with('curriculum_lectures')->get()->toArray();
     }
 

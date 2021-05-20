@@ -16,7 +16,7 @@ class CreateCurriculumChaptersTable extends Migration
         Schema::create('curriculum_chapters', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->unsignedBigInteger('course_id');
             $table->timestamps();
         });
