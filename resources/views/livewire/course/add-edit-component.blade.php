@@ -89,12 +89,15 @@
             @enderror
         </div>
         @if ($course !== null)     
-            <div class="form-group col-12 @error('rating_distribution') has-error has-feedback @enderror">
+        <div class="form-group col-12">
+            <label for="exampleInputEmail1">Course Instructor</label>
+            @livewire('course.instructor-component', ['course' => $course])
+        </div>
+        @endif
+        @if ($course !== null)     
+            <div class="form-group col-12">
                 <label for="exampleInputEmail1">Curriculum</label>
                 @livewire('course.curriculum-component', ['course' => $course])
-                @error('rating_distribution')
-                <div class="text-danger">{{ $message }}</div>
-                @enderror
             </div>
         @endif
         <div class="form-group col-12 @error('certification') has-error has-feedback @enderror">
