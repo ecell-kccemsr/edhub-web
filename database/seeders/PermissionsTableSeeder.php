@@ -1110,42 +1110,82 @@ class PermissionsTableSeeder extends Seeder
             136 => 
             array (
                 'id' => 147,
-                'key' => 'browse_comments',
-                'table_name' => 'comments',
-                'created_at' => '2021-05-14 18:11:19',
-                'updated_at' => '2021-05-14 18:11:19',
+                'key' => 'browse_course_instructors',
+                'table_name' => 'course_instructors',
+                'created_at' => '2021-05-21 19:36:36',
+                'updated_at' => '2021-05-21 19:36:36',
             ),
             137 => 
             array (
                 'id' => 148,
-                'key' => 'read_comments',
-                'table_name' => 'comments',
-                'created_at' => '2021-05-14 18:11:19',
-                'updated_at' => '2021-05-14 18:11:19',
+                'key' => 'read_course_instructors',
+                'table_name' => 'course_instructors',
+                'created_at' => '2021-05-21 19:36:36',
+                'updated_at' => '2021-05-21 19:36:36',
             ),
             138 => 
             array (
                 'id' => 149,
-                'key' => 'edit_comments',
-                'table_name' => 'comments',
-                'created_at' => '2021-05-14 18:11:19',
-                'updated_at' => '2021-05-14 18:11:19',
+                'key' => 'edit_course_instructors',
+                'table_name' => 'course_instructors',
+                'created_at' => '2021-05-21 19:36:36',
+                'updated_at' => '2021-05-21 19:36:36',
             ),
             139 => 
             array (
                 'id' => 150,
-                'key' => 'add_comments',
-                'table_name' => 'comments',
-                'created_at' => '2021-05-14 18:11:19',
-                'updated_at' => '2021-05-14 18:11:19',
+                'key' => 'add_course_instructors',
+                'table_name' => 'course_instructors',
+                'created_at' => '2021-05-21 19:36:36',
+                'updated_at' => '2021-05-21 19:36:36',
             ),
             140 => 
             array (
                 'id' => 151,
-                'key' => 'delete_comments',
-                'table_name' => 'comments',
-                'created_at' => '2021-05-14 18:11:19',
-                'updated_at' => '2021-05-14 18:11:19',
+                'key' => 'delete_course_instructors',
+                'table_name' => 'course_instructors',
+                'created_at' => '2021-05-21 19:36:36',
+                'updated_at' => '2021-05-21 19:36:36',
+            ),
+            141 => 
+            array (
+                'id' => 152,
+                'key' => 'browse_course_reviews',
+                'table_name' => 'course_reviews',
+                'created_at' => '2021-05-21 19:37:30',
+                'updated_at' => '2021-05-21 19:37:30',
+            ),
+            142 => 
+            array (
+                'id' => 153,
+                'key' => 'read_course_reviews',
+                'table_name' => 'course_reviews',
+                'created_at' => '2021-05-21 19:37:30',
+                'updated_at' => '2021-05-21 19:37:30',
+            ),
+            143 => 
+            array (
+                'id' => 154,
+                'key' => 'edit_course_reviews',
+                'table_name' => 'course_reviews',
+                'created_at' => '2021-05-21 19:37:30',
+                'updated_at' => '2021-05-21 19:37:30',
+            ),
+            144 => 
+            array (
+                'id' => 155,
+                'key' => 'add_course_reviews',
+                'table_name' => 'course_reviews',
+                'created_at' => '2021-05-21 19:37:30',
+                'updated_at' => '2021-05-21 19:37:30',
+            ),
+            145 => 
+            array (
+                'id' => 156,
+                'key' => 'delete_course_reviews',
+                'table_name' => 'course_reviews',
+                'created_at' => '2021-05-21 19:37:30',
+                'updated_at' => '2021-05-21 19:37:30',
             ),
         ));
         

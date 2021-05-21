@@ -31,7 +31,7 @@ class CurriculumComponent extends Component
 
     public function addChapter()
     {
-        $chapter = new CurriculumChapter;
+        $chapter = new CurriculumChapter();
         $chapter->title = $this->inputChapter;
         $chapter->description = '';
         $chapter->course_id = $this->course->id;
