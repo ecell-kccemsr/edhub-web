@@ -57,6 +57,7 @@ Route::view('/checkout','app');
 Route::view('/course-category','app');
 Route::view('/guide','app');
 Route::view('/degree','app');
+// Route::view('*','app');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

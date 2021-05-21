@@ -18,6 +18,7 @@ import Examcalendar from "../examcalendar/Examcalendar";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
 import Notification from "../notification/notification";
+import NotFound from "../404/NotFound";
 import Compare from "../compare/Compare";
 import Cart from "../cart/Cart";
 import Checkout from "../checkout/Checkout";
@@ -165,6 +166,7 @@ const App = props => {
                     component={GuideModal}
                 />
                 <CourseLayoutRoutes path="/degree" exact component={Degree} />
+                <CourseLayoutRoutes path='*' exact component={NotFound} />
             </Switch>
         </Fragment>
     );

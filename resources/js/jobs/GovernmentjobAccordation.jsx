@@ -67,10 +67,13 @@ const GovernmentjobAccordation = ({ data }) => {
                                                         className="mb-2"
                                                     >
                                                             <div style={{display:"flex"}}>
-                                                              <img src={child?.image} alt="subcategory image" />
-                                                              <h5>
+                                                                 <img src={child?.image} alt="subcategory image" />
+                                                             <a href={`/govermentjobs/${child?.category?.slug}/${child?.slug}`}>
+                                                                   <h5>
                                                               {child?.name}
-                                                                  </h5>  
+                                                                  </h5> 
+                                                             </a>
+                                                               
                                                             </div>
                                                         
                                                         
