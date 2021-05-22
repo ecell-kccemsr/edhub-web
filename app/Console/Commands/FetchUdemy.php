@@ -20,14 +20,14 @@ class FetchCourses extends Command
      *
      * @var string
      */
-    protected $signature = 'fetch:courses {count}';
+    protected $signature = 'fetch:udemy {count}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Fetch Courses from providers';
+    protected $description = 'Fetch Courses from udemy';
 
     /**
      * Create a new command instance.

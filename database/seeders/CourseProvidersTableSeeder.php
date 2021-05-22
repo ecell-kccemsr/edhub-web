@@ -40,6 +40,16 @@ class CourseProvidersTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:51:43',
                 'updated_at' => '2021-04-02 15:51:43',
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'Edureka',
+                'url' => 'https://www.edureka.co',
+                'image' => 'course-providers/edureka.png',
+                'slug' => 'edureka',
+                'created_at' => '2021-04-02 15:51:43',
+                'updated_at' => '2021-04-02 15:51:43',
+            ),
         ));
         
         
