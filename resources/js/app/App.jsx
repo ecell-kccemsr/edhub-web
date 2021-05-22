@@ -59,7 +59,7 @@ const App = props => {
                 <Route path="/reset-password/:token" component={ResetPass} />
                 {/* //JobLayoutRoutes */}
 
-                <CourseLayoutRoutes path="/" exact component={NewsHomePage} />
+                <CourseLayoutRoutes path="/" exact component={LandingPage} />
 
 
                 {/*CourseLayoutRoutes */}
