@@ -103,9 +103,9 @@
 //course navbar
 .course-navbar {
     position: sticky;
-    top:0;
-    left:0;
-    right:0;
+    top: 0;
+    left: 0;
+    right: 0;
     background: #fff;
     z-index: 1000;
     display: flex;
@@ -208,10 +208,11 @@
     }
     p {
         color: #3c64b1;
+        margin-right: 6px;
     }
     .search-bar-dropdown {
-        width: 15em;
-        padding-left: 110px;
+        width: 26em;
+        padding-left: 72px;
     }
 
     #results {
@@ -226,6 +227,7 @@
 
     #results > button {
         background-color: #fff;
+        display: flex;
     }
 
     /* width */

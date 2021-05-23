@@ -15,6 +15,7 @@ import {
 import { Link } from "react-router-dom";
 
 import CourseCard from "../components/course-card/CourseCard";
+import TooltipComponent from "../homepage/landingPageComponents/TooltipComponent";
 
 const carouselDummyData = [
     "https://i.ibb.co/HBWwCPK/Group-1.png",
@@ -75,7 +76,7 @@ const CourseCategoryCarousel = props => {
                 onExited={() => setAnimating(false)}
                 key={item.key}
             >
-                <img src={item} className="w-100" alt="Category Page Slider" />
+                <img src={item} className="w-100" style={{height:"20rem"}} alt="Category Page Slider" />
             </CarouselItem>
         );
     });
@@ -221,7 +222,7 @@ const courseCategory = props => {
     };
 
     const handlePagination = (pageNo)=>{
-            getCourses(true, apiURL,null,null,null,null,9,pageNo);
+            getCourses(true, apiURL,null,null,null,null,15,pageNo);
             window.scrollTo(0, 0)
     }
 
@@ -780,7 +781,10 @@ const courseCategory = props => {
                                             style={{ marginBottom: "25px" }}
                                             key={course?.id}
                                         >
-                                            <CourseCard data={course} />
+                                            <a data-tip data-for={course?.id.toString()}>
+                                             <CourseCard data={course} />
+                                          </a>
+                                            <TooltipComponent />
                                         </Col>
                                     ))}
                             </Row>

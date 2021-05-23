@@ -194,7 +194,7 @@ function CourseDetail(props) {
                                             href={singleCourse?.url}
                                             target="_blank"
                                         >
-                                            Buy Now
+                                            Go To Class
                                         </a>
                                     </button>
                                 </>
@@ -451,7 +451,7 @@ function CourseDetail(props) {
                                             target="_blank"
                                             className="card-section-details-buy-btn"
                                         >
-                                            Buy Now
+                                            Go To Class
                                         </a>
                                         {/* <button className="card-section-details-addCart-btn">
                                             Add To Cart

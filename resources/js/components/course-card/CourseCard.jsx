@@ -44,17 +44,20 @@ const CourseCard = ({ data }) => {
                 )}
             </button>
             <div className="coursecard-section h-100">
+            <Link to={`/courseDetail/${data?.slug}`}>
                 <img
                     src={data?.image}
                     className="card-header-img"
                     alt="card header image"
                 />
+            </Link>
+                
                 <div className="card-header-top">
                     <div>
                         <img
                             src={data?.course_provider.image}
                             alt="course-provider"
-                            style={{ height: "25px" }}
+                            style={{ height: "25px", width:"85px" }}
                         />
                     </div>
 
@@ -64,7 +67,8 @@ const CourseCard = ({ data }) => {
                     </h5>
                 </div>
                 <div>
-                    <h4 className="card-title">
+                <Link to={`/courseDetail/${data?.slug}`}>
+                     <h4 className="card-title">
                     {data?.title
                        .length > 40
                        ? data?.title.slice(
@@ -73,6 +77,8 @@ const CourseCard = ({ data }) => {
                          ) + "..."
                        : data?.title}
                         </h4>
+                </Link>
+                   
                     <div className="card-overview">
                         <div>
                             <img src="/images/courseCategory/play.png" alt="play" />
