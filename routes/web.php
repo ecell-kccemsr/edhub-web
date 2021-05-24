@@ -19,6 +19,7 @@ Route::get('/login/{provider}/callback', [SocialLoginController::class,'callback
 
 Route::view('/', 'app');
 Route::view('/login', 'app');
+Route::view('/request', 'app');
 Route::view('/register', 'app');
 Route::view('/forgot-password', 'app');
 Route::view('/reset-password/{token}', 'app');

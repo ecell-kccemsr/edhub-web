@@ -20,6 +20,7 @@ import Register from "../auth/register/Register";
 import Notification from "../notification/notification";
 import NotFound from "../404/NotFound";
 import Compare from "../compare/Compare";
+import RequestCallBack from "../components/RequestCallBack/RequestCallBack";
 import Cart from "../cart/Cart";
 import Checkout from "../checkout/Checkout";
 import CourseDetail from "../courseDetail/CourseDetail";
@@ -54,6 +55,7 @@ const App = props => {
         <Fragment>
             <Switch>
                 <Route path="/login" exact component={Login} />
+                <Route path="/request" exact component={RequestCallBack} />
                 <Route path="/register" exact component={Register} />
                 <Route path="/forgot-password" exact component={ForgotPass} />
                 <Route path="/reset-password/:token" component={ResetPass} />
