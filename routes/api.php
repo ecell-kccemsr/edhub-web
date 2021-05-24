@@ -10,6 +10,7 @@ use App\Http\Controllers\API\CourseController;
 use App\Http\Controllers\API\SearchController;
 use App\Http\Controllers\API\TestimonyController;
 use App\Http\Controllers\API\ExamResultController;
+use App\Http\Controllers\API\RequestCallController;
 use App\Http\Controllers\API\ExamCalendarController;
 use App\Http\Controllers\API\GovernmentJobController;
 use App\Http\Controllers\API\QuestionPaperController;
@@ -112,3 +113,6 @@ Route::group(['middleware' => 'auth:api'], function() {
 
 //Search 
 Route::get('/search',[SearchController::class,'search']);
+
+//Request a call
+Route::post('/request_call/add',[RequestCallController::class,'add']);
