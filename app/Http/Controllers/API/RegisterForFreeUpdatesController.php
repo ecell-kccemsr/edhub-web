@@ -22,9 +22,7 @@ class RegisterForFreeUpdatesController extends Controller
     public function add(RegisterForFreeUpdatesRequest $request)
     {
         $register = new RegisterForFreeUpdates();
-        $register->name = $request->input('name');
         $register->email = $request->input('email');
-        $register->mobile_no = $request->input('mobile_no');
         $register->save();
         return 'OK';
     }

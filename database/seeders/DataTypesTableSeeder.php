@@ -505,6 +505,24 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-05-21 19:37:30',
                 'updated_at' => '2021-05-21 19:54:36',
             ),
+            27 => 
+            array (
+                'id' => 32,
+                'name' => 'request_calls',
+                'slug' => 'request-calls',
+                'display_name_singular' => 'Request Call',
+                'display_name_plural' => 'Request Calls',
+                'icon' => 'voyager-telephone',
+                'model_name' => 'App\\Models\\RequestCall',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-05-24 15:07:28',
+                'updated_at' => '2021-05-24 15:07:28',
+            ),
         ));
         
         

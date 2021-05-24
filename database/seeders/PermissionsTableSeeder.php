@@ -1187,6 +1187,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-05-21 19:37:30',
                 'updated_at' => '2021-05-21 19:37:30',
             ),
+            146 => 
+            array (
+                'id' => 157,
+                'key' => 'browse_request_calls',
+                'table_name' => 'request_calls',
+                'created_at' => '2021-05-24 15:07:28',
+                'updated_at' => '2021-05-24 15:07:28',
+            ),
+            147 => 
+            array (
+                'id' => 158,
+                'key' => 'read_request_calls',
+                'table_name' => 'request_calls',
+                'created_at' => '2021-05-24 15:07:28',
+                'updated_at' => '2021-05-24 15:07:28',
+            ),
+            148 => 
+            array (
+                'id' => 159,
+                'key' => 'edit_request_calls',
+                'table_name' => 'request_calls',
+                'created_at' => '2021-05-24 15:07:28',
+                'updated_at' => '2021-05-24 15:07:28',
+            ),
+            149 => 
+            array (
+                'id' => 160,
+                'key' => 'add_request_calls',
+                'table_name' => 'request_calls',
+                'created_at' => '2021-05-24 15:07:28',
+                'updated_at' => '2021-05-24 15:07:28',
+            ),
+            150 => 
+            array (
+                'id' => 161,
+                'key' => 'delete_request_calls',
+                'table_name' => 'request_calls',
+                'created_at' => '2021-05-24 15:07:28',
+                'updated_at' => '2021-05-24 15:07:28',
+            ),
         ));
         
         

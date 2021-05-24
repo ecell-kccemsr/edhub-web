@@ -24,9 +24,7 @@ class RegisterForFreeUpdatesRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required'],
             'email' => ['required'],
-            'mobile_no' => ['required' , 'numeric' , 'digits:10'],
         ];
     }
 }

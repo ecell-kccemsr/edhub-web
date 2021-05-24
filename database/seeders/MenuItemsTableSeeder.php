@@ -675,6 +675,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => NULL,
                 'parameters' => '',
             ),
+            41 => 
+            array (
+                'id' => 44,
+                'menu_id' => 1,
+                'title' => 'Request Calls',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-telephone',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 16,
+                'created_at' => '2021-05-24 15:07:28',
+                'updated_at' => '2021-05-24 15:07:28',
+                'route' => 'voyager.request-calls.index',
+                'parameters' => NULL,
+            ),
         ));
         
         
