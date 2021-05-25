@@ -41,7 +41,7 @@ function LayoutCourse({ children }) {
                                  <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
                                  <ModalHeader toggle={toggleLogin}></ModalHeader>
                                    <ModalBody>
-                                       <RequestCallBack />
+                                       <RequestCallBack toggleLogin = {toggleLogin} />
                                    </ModalBody>
                                  </Modal>
             </div>

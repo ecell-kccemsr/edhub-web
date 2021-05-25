@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Col, Container, Row, FormGroup, Input, Label } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
 import http from "../utils/http";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 const Auth = () => {
     let history = useHistory();
 
@@ -26,7 +27,7 @@ const Auth = () => {
                 localStorage.setItem("accessToken", accessToken);
                 window.location.href = "/";
             })
-            .catch(err => console.log(err));
+            .catch(err => toast.error("Invalid Credentials"));
     };
 
     const handleRegister = e => {
@@ -41,6 +42,9 @@ const Auth = () => {
             })
             .catch(err => console.log(err.response.data.message));
     };
+    const myFunction= () => {
+        window.open("https://edhub.in/");
+      }
 
     if(type=='login'){
         return(
@@ -109,8 +113,10 @@ const Auth = () => {
                             </p>
                             <div style={{ marginLeft: "40%" }}>
                                 <a
+                                style={{backgroundColor:"#fff"}}
                                     href="/login/Facebook/redirect"
                                     target="_blank"
+                                    // onclick={myFunction}
                                 >
                                     <img
                                         className="social-sign-in"

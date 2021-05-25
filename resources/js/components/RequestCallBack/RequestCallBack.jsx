@@ -5,7 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import http from "../../utils/http";
-const request = () => {
+const request = ({toggleLogin}) => {
      
     const handleRequestForm = e => {
         e.preventDefault();
@@ -14,6 +14,7 @@ const request = () => {
         axios
             .post("/api/request_call/add", data)
             .then(res => {
+                toggleLogin();
                 toast.success("We Will Contact You Shortly !");
                 form.reset();
             })
@@ -85,3 +86,5 @@ const request = () => {
 };
 
 export default request;
+
+

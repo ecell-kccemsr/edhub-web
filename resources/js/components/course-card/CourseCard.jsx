@@ -26,7 +26,6 @@ const CourseCard = ({ data }) => {
             addToCompare(data);
         }
     };
-
     return (
         <>
             <button
@@ -45,6 +44,7 @@ const CourseCard = ({ data }) => {
             </button>
             <div className="coursecard-section h-100">
             <Link to={`/courseDetail/${data?.slug}`}>
+            
                 <img
                     src={data?.image}
                     className="card-header-img"
@@ -105,37 +105,39 @@ const CourseCard = ({ data }) => {
                 </div>
 
                 <div className="coursecard-footer">
-                    <div>
-                    {
-                        data?.rating <= 1
-                        ?  <img
-                            src="/images/courseDetail/1star.png"
-                            alt="Star"
-                        />
-                        : data?.rating <= 2
-                        ? <img
-                            src="/images/courseDetail/2star.png"
-                            alt="Star"
-                        />
-                        : data?.rating <= 3
-                        ?  <img
-                            src="/images/courseDetail/3star.png"
-                            alt="Star"
-                        />
-                        : data?.rating <= 4
-                        ?  <img
-                            src="/images/courseDetail/4star.png"
-                            alt="Star"
-                        />
-                        : <img
-                            src="/images/courseDetail/5star.png"
-                            alt="Star"
-                        />
-                }
-                        <p>
-                        <b style={{color:"#EAD628"}}>{Math.ceil(data?.rating)}</b>
-                         </p>
-                    </div>
+                    { data?.rating > 0 && 
+                        <div>
+                        {
+                            data?.rating <= 1
+                            ?  <img
+                                src="/images/courseDetail/1star.png"
+                                alt="Star"
+                            />
+                            : data?.rating <= 2
+                            ? <img
+                                src="/images/courseDetail/2star.png"
+                                alt="Star"
+                            />
+                            : data?.rating <= 3
+                            ?  <img
+                                src="/images/courseDetail/3star.png"
+                                alt="Star"
+                            />
+                            : data?.rating <= 4
+                            ?  <img
+                                src="/images/courseDetail/4star.png"
+                                alt="Star"
+                            />
+                            : <img
+                                src="/images/courseDetail/5star.png"
+                                alt="Star"
+                            />
+                    }
+                            <p>
+                            <b style={{color:"#EAD628"}}>{Math.ceil(data?.rating)}</b>
+                             </p>
+                        </div>
+                    }
                     <Link to={`/courseDetail/${data?.slug}`}>
                         <img src="/images/courseCategory/reviewArrow.png" alt="reviewArrow" />
                     </Link>

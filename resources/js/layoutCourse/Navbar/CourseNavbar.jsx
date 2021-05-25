@@ -89,7 +89,7 @@ const CourseNavbar = props => {
     });
 
     useEffect(() => {
-        http.get("courses/categories")
+        http.get("courses/categories?per_page=1000")
             .then(res => {
                 setCategory(res.data.data);
             })

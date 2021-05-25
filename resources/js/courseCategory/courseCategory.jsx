@@ -108,17 +108,17 @@ const courseCategory = props => {
 
     //State
     const [apiURL, setApiURL] = useState("");
-    const [ratingValue, setRating] = useState(1);
+    const [ratingValue, setRating] = useState(0);
     const [ceritificationVal, setCertificationVal] = useState(1);
     const [lang, setLang] = useState("");
     const [discount, setDiscount] = useState('0');
-    const [sliderVal, setSliderVal] = useState(150000);
+    const [sliderVal, setSliderVal] = useState(2000);
     const [providerVal, setProviderVal] = useState("");
     const [providerData, setProviderData] = useState([]);
     const [courseCategory, setCourseCategory] = useState([]);
     const [priceFilter, setPriceFilter] = useState({
         min: 0,
-        max: 150000
+        max: 2000
     });
     const [currentCoursePage, setCurrentCoursePage] = useState({
         current_page: 1,
@@ -181,7 +181,7 @@ const courseCategory = props => {
     }, [props?.location?.state]);
     
     //Function to get courese on basis of the various filter passed to it
-    const getCourses = (filter, url, rating, provider, max, min,perPage=9,pageNumber,certification,language,discountArg) => {
+    const getCourses = (filter, url, rating, provider, max, min,perPage=15,pageNumber,certification,language,discountArg) => {
         let pricefilter = "";
         let ratingfilter = "";
         let providerfilter = "";
@@ -289,11 +289,11 @@ const courseCategory = props => {
                                     <input
                                         type="range"
                                         min="0"
-                                        max="150000"
+                                        max="2000"
                                         step="100"
                                         className="course-pricing-slider"
                                         value={sliderVal}
-                                        step={10000}
+                                        step={100}
                                         onChange={e =>
                                             onSliderChange(e.target.value)
                                         }
@@ -302,7 +302,7 @@ const courseCategory = props => {
                                 </div>
                                 <div className="pricing-slider-div">
                                     <span>Free</span>
-                                    <span>1.5 Lakh</span>
+                                    <span>2K</span>
                                 </div>
                                 <div className="pricing-input-div">
                                     <div className="pricing-div">
@@ -784,7 +784,7 @@ const courseCategory = props => {
                                             <a data-tip data-for={course?.id.toString()}>
                                              <CourseCard data={course} />
                                           </a>
-                                            <TooltipComponent />
+                                            <TooltipComponent data={course} />
                                         </Col>
                                     ))}
                             </Row>
