@@ -89,12 +89,6 @@
             @enderror
         </div>
         @if ($course !== null)     
-        <div class="form-group col-12">
-            <label for="exampleInputEmail1">Course Instructor</label>
-            @livewire('course.instructor-component', ['course' => $course])
-        </div>
-        @endif
-        @if ($course !== null)     
             <div class="form-group col-12">
                 <label for="exampleInputEmail1">Curriculum</label>
                 @livewire('course.curriculum-component', ['course' => $course])

@@ -13,7 +13,7 @@ use App\Models\CurriculumChapter;
 use App\Models\CurriculumLecture;
 use Illuminate\Support\Facades\Http;
 
-class FetchCourses extends Command
+class FetchUdemy extends Command
 {
     /**
      * The name and signature of the console command.
@@ -67,6 +67,7 @@ class FetchCourses extends Command
                         'description' => $course['description'],
                         'prerequisites' => $course['prerequisites'],
                         'faq' => $course['faq'],
+                        'cid' => $course['id'],
                         'certification' => $course['has_certificate'],
                         'difficulty_level' => $course['instructional_level_simple'],
                         'rating' => $course['avg_rating'],
