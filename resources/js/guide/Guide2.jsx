@@ -1,13 +1,13 @@
 import React, { useState, useRef } from "react";
 import { Row, Col, FormGroup, Label, Input } from "reactstrap";
 const Guide2 = ({ nextStep, setModalVals, modalVals }) => {
-    const [sliderVal, setSliderVal] = useState(150000);
+    const [sliderVal, setSliderVal] = useState(2000);
     const minValue = useRef(null);
     const maxValue = useRef(null);
     const sliderValue = useRef(null);
     const [priceFilter, setPriceFilter] = useState({
         min: 0,
-        max: 150000
+        max: 2000
     });
     const onSliderChange = value => {
         setPriceFilter({
@@ -50,17 +50,17 @@ const Guide2 = ({ nextStep, setModalVals, modalVals }) => {
                             <input
                                 type="range"
                                 min="0"
-                                max="150000"
+                                max="2000"
                                 className="course-pricing-slider"
                                 value={sliderVal}
-                                step={10000}
+                                step={100}
                                 onChange={e => onSliderChange(e.target.value)}
                                 ref={sliderValue}
                             ></input>
                         </div>
                         <div className="pricing-slider-div">
                             <span>Free</span>
-                            <span>1.5 Lakh</span>
+                            <span>2K</span>
                         </div>
                         <div className="pricing-input-div">
                             <div className="pricing-div">
