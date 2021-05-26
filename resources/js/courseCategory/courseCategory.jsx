@@ -672,22 +672,22 @@ const courseCategory = props => {
                                                 <List type="unstyled" className="mb-0">
                                                     <FormGroup check>
                                                         <Label check>
-                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="30"/>30%  off
+                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="30"/>30% & above off
                                                         </Label>
                                                     </FormGroup>
                                                     <FormGroup check>
                                                         <Label check>
-                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="40"/>40%  off
+                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="40"/>40% & above off
                                                         </Label>
                                                     </FormGroup>
                                                     <FormGroup check>
                                                         <Label check>
-                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="60"/>60%  off
+                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="60"/>60% & above off
                                                         </Label>
                                                     </FormGroup>
                                                     <FormGroup check>
                                                         <Label check>
-                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="80"/>80%  off
+                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="80"/>80% & above off
                                                         </Label>
                                                     </FormGroup>
                                                 </List>
