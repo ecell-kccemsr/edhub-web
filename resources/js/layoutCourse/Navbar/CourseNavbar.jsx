@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect,withRouter } from "react-router-dom";
 import { Button,Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { useHistory } from "react-router";
 
 import { useStoreState } from "easy-peasy";
 import http from "../../utils/http";
@@ -16,6 +17,7 @@ import Guide5 from "../../guide/Guide5";
 //dummyData
 import { recommendedCourse } from "./navDummyData";
 import Auth from "../../auth/Auth";
+import GModal from "./Modal";
 //images
 
 const SearchbarDropdown = props => {
@@ -67,6 +69,7 @@ const SearchbarDropdown = props => {
 
 const CourseNavbar = props => {
     const [options, setOptions] = useState([]);
+     const history = useHistory();
     const onInputChange = event => {
         axios
             .get(`/api/search?search=${event.target.value}`)
@@ -74,7 +77,6 @@ const CourseNavbar = props => {
             .catch(err => console.log(err));
     };
     const [modal, setModal] = useState(false);
-    const [redirect, setRedirect] = useState(false);
     const [step, setStep] = useState(1);
     const [categories, setCategory] = useState([]);
     const user = useStoreState(state => state.user);
@@ -114,7 +116,10 @@ const CourseNavbar = props => {
 
     const handleSubmit = () => {
         setModal(false);
-        setRedirect(true);
+        history.push({
+            pathname:  "/course-category",
+            state: { modalValues: modalVals }
+         }); 
     };
 
     const handleChange = () => {
@@ -178,109 +183,9 @@ const CourseNavbar = props => {
                 console.log("This is a multi-step form built with React.");
         }
     };
-
-    if (redirect == true) {
-        return (
-            <Redirect
-                to={{
-                    pathname: "/course-category",
-                    state: { modalValues: modalVals }
-                }}
-            />
-        );
-    }
     return (
         <>
-            <Modal
-                isOpen={modal}
-                toggle={toggle}
-                className="guide-modal-container"
-            >
-                <button className="close-modal-btn" onClick={toggle}>
-                    X
-                </button>
-                <div className="guide-modal">
-                    <hr className="modal-hr" />
-                    <Row>
-                        <Col sm="12" md="3" className="text-center">
-                            <b>
-                                STEP <br />
-                                <span className="guide-modal-step">
-                                    {step} / 5
-                                </span>
-                                <div className="guide-modal-step-dot">
-                                    <span
-                                        style={{
-                                            color: `${
-                                                step >= 1
-                                                    ? "#1f1f1e"
-                                                    : "#808080"
-                                            }`
-                                        }}
-                                    >
-                                        &#8226;
-                                    </span>
-                                    <span
-                                        style={{
-                                            color: `${
-                                                step >= 2
-                                                    ? "#1f1f1e"
-                                                    : "#808080"
-                                            }`
-                                        }}
-                                    >
-                                        &#8226;
-                                    </span>
-                                    <span
-                                        style={{
-                                            color: `${
-                                                step >= 3
-                                                    ? "#1f1f1e"
-                                                    : "#808080"
-                                            }`
-                                        }}
-                                    >
-                                        &#8226;
-                                    </span>
-                                    <span
-                                        style={{
-                                            color: `${
-                                                step >= 4
-                                                    ? "#1f1f1e"
-                                                    : "#808080"
-                                            }`
-                                        }}
-                                    >
-                                        &#8226;
-                                    </span>
-                                    <span
-                                        style={{
-                                            color: `${
-                                                step >= 5
-                                                    ? "#1f1f1e"
-                                                    : "#808080"
-                                            }`
-                                        }}
-                                    >
-                                        &#8226;
-                                    </span>
-                                </div>
-                            </b>
-                        </Col>
-                        <Col sm="12" md="9">
-                            <h4 className="guide-modal-title">
-                                Let us guide you !
-                            </h4>
-                        </Col>
-                    </Row>
-                    <h5 className="guide-modal-subtitle">
-                        Select according to your requirement
-                    </h5>
-                    {currentModalForm(step)}
-                </div>
-            </Modal>
-
-
+        <GModal modal={modal} toggle={toggle} currentModalForm={currentModalForm} step={step}/>
             
             <nav className="navbar course-navbar navbar-expand-lg">
                 <div style={{display:"contents"}} >
