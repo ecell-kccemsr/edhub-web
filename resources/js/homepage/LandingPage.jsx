@@ -46,12 +46,12 @@ function LandingPage() {
 
             {course && <PopularChoice data={course} title="Popular Choices" />}
 
-            {course && (
+            {/* {course && (
                 <PopularChoice
                     data={course}
                     title="Get Started With Free Courses"
                 />
-            )}
+            )} */}
 
             <Promotions />
 
