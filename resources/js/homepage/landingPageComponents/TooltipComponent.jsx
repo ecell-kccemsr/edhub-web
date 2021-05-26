@@ -36,7 +36,7 @@ const TooltipComponent = ({ data }) => {
                         </div>
                     ))}
                 <a href={data?.url} target="_blank">
-                    <button className="buy-now-btn-tooltip">Buy Now</button>
+                    <button className="buy-now-btn-tooltip">Go to class</button>
                 </a>
                 <a href={`/courseDetail/${data?.slug}`} target="_blank">
                 <button className="add-cart-btn-tooltip">View Details</button>
