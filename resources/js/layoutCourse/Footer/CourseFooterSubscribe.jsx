@@ -34,11 +34,9 @@ const CourseFooterSubscribe = () => {
                         <h2 className="footer-course-header">
                             Sign up to our Newsletter
                         </h2>
-                        {/* <p className="footer-course-paragraph">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Habitant volutpat elementum facilisi mattis
-                            et. At
-                        </p> */}
+                        <p className="footer-course-paragraph">
+                        Free Ebooks  -  Free courses  - Free Articles
+                        </p>
                         {/* Footer-Form */}
                         <Row className=" footer-course-row">
                             <Col sm="12" md="12">

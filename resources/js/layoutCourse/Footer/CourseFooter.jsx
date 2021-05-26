@@ -22,7 +22,19 @@ function CourseFooter() {
                             <b> ~100+ Universities</b>
                         </div>
                         <Row>
-                            <Col sm="12" lg="6">
+                            <Col sm="12" lg="12">
+                                <div className=" footer-section-one">
+                                    <img
+                                        src="/images/footer/harvard.png"
+                                        alt="harvard"
+                                        className="footer-icons"
+                                    />
+                                    <p className="footer-header-name ml-2 mb-0">
+                                        Harvard university & Other top universities
+                                    </p>
+                                </div>
+                            </Col>
+                            {/* <Col sm="12" lg="6">
                                 <div className=" footer-section-one">
                                     <img
                                         src="/images/footer/harvard.png"
@@ -33,19 +45,7 @@ function CourseFooter() {
                                         Harvard university
                                     </p>
                                 </div>
-                            </Col>
-                            <Col sm="12" lg="6">
-                                <div className=" footer-section-one">
-                                    <img
-                                        src="/images/footer/harvard.png"
-                                        alt="harvard"
-                                        className="footer-icons"
-                                    />
-                                    <p className="footer-header-name ml-2 mb-0">
-                                        Harvard university
-                                    </p>
-                                </div>
-                            </Col>
+                            </Col> */}
                         </Row>
                     </Col>
                     <Col

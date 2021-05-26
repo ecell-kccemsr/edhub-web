@@ -78,9 +78,9 @@ const GuideModal = () => {
                     <Row>
                         <Col sm="12" md="3" className="text-center">
                             <b>
-                                Step <br />
+                                STEP <br />
                                 <span className="guide-modal-step">
-                                    {step} of 5
+                                    {step} / 5
                                 </span>
                                 <div className="guide-modal-step-dot">
                                     <span style={{color:`${step>=1?"#1f1f1e":"#808080"}`}}>&#8226;</span>

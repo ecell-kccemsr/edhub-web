@@ -204,9 +204,9 @@ const CourseNavbar = props => {
                     <Row>
                         <Col sm="12" md="3" className="text-center">
                             <b>
-                                Step <br />
+                                STEP <br />
                                 <span className="guide-modal-step">
-                                    {step} of 5
+                                    {step} / 5
                                 </span>
                                 <div className="guide-modal-step-dot">
                                     <span
