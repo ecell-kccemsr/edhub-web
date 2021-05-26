@@ -273,15 +273,6 @@ function CourseDetail(props) {
                                                     )}
                                             </div>
                                         </div>
-                                        <div className="card-section-details-content-price">
-                                            <p>
-                                                Get&nbsp;
-                                                <strong>
-                                                    5% extra cashback
-                                                </strong>
-                                                if you buy through us
-                                            </p>
-                                        </div>
                                         <div style={{ marginTop: "-10px" }}>
                                               {
                                                  singleCourse?.rating <= 1
