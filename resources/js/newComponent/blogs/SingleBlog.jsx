@@ -338,12 +338,6 @@ const SingleBlog = props => {
                 </Row>
                 
             </Container>
-            {course && (
-                    <PopularChoice
-                        data={course}
-                        title="Banking Exams Courses"
-                    />
-                )}
         </div>
             )
         }
