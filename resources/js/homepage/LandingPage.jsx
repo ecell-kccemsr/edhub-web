@@ -58,7 +58,7 @@ function LandingPage() {
             <Testimonial />
 
             {course && (
-                <PopularChoice data={course} title="Recommended for you" />
+                <PopularChoice data={course} title="Expand your career opportunities with Us" />
             )}
         </div>
     );
