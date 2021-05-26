@@ -281,10 +281,9 @@ function Governmentjobsubcategory({match}) {
                         </Col>
 
                         <Col sm="12" lg="3">
-                            {course.map(a => (
                                 <div className="job-course-sidebar">
                                     <h6>Related Courses</h6>
-
+                                    {course.map(a => (
                                     <div className="job-course-sidebar-list-el">
                                         <div className="sidebar-list-top">
                                             <i className="fas fa-chevron-right"></i>
@@ -302,8 +301,8 @@ function Governmentjobsubcategory({match}) {
                                             />
                                         </div>
                                     </div>
+                                    ))}
                                 </div>
-                            ))}
 
                             <div
                                 className="job-course-sidebar"
