@@ -691,6 +691,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.request-calls.index',
                 'parameters' => NULL,
             ),
+            42 => 
+            array (
+                'id' => 45,
+                'menu_id' => 1,
+                'title' => 'Testimonies',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-group',
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 17,
+                'created_at' => '2021-05-26 18:56:02',
+                'updated_at' => '2021-05-26 18:56:02',
+                'route' => 'voyager.testimonies.index',
+                'parameters' => NULL,
+            ),
         ));
         
         

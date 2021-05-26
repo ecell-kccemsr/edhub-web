@@ -523,6 +523,24 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-05-24 15:07:28',
                 'updated_at' => '2021-05-24 15:07:28',
             ),
+            28 => 
+            array (
+                'id' => 33,
+                'name' => 'testimonies',
+                'slug' => 'testimonies',
+                'display_name_singular' => 'Testimony',
+                'display_name_plural' => 'Testimonies',
+                'icon' => 'voyager-group',
+                'model_name' => 'App\\Models\\Testimony',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-05-26 18:56:02',
+                'updated_at' => '2021-05-26 18:56:02',
+            ),
         ));
         
         

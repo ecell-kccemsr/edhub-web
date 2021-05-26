@@ -1227,6 +1227,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-05-24 15:07:28',
                 'updated_at' => '2021-05-24 15:07:28',
             ),
+            151 => 
+            array (
+                'id' => 162,
+                'key' => 'browse_testimonies',
+                'table_name' => 'testimonies',
+                'created_at' => '2021-05-26 18:56:02',
+                'updated_at' => '2021-05-26 18:56:02',
+            ),
+            152 => 
+            array (
+                'id' => 163,
+                'key' => 'read_testimonies',
+                'table_name' => 'testimonies',
+                'created_at' => '2021-05-26 18:56:02',
+                'updated_at' => '2021-05-26 18:56:02',
+            ),
+            153 => 
+            array (
+                'id' => 164,
+                'key' => 'edit_testimonies',
+                'table_name' => 'testimonies',
+                'created_at' => '2021-05-26 18:56:02',
+                'updated_at' => '2021-05-26 18:56:02',
+            ),
+            154 => 
+            array (
+                'id' => 165,
+                'key' => 'add_testimonies',
+                'table_name' => 'testimonies',
+                'created_at' => '2021-05-26 18:56:02',
+                'updated_at' => '2021-05-26 18:56:02',
+            ),
+            155 => 
+            array (
+                'id' => 166,
+                'key' => 'delete_testimonies',
+                'table_name' => 'testimonies',
+                'created_at' => '2021-05-26 18:56:02',
+                'updated_at' => '2021-05-26 18:56:02',
+            ),
         ));
         
         
