@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login/{provider}/redirect', [SocialLoginController::class,'redirect']);
-Route::get('/login/{provider}/callback', [SocialLoginController::class,'callback']);
+
+Route::get('/login/{provider}/redirect', [SocialLoginController::class, 'redirect']);
+Route::get('/login/{provider}/callback', [SocialLoginController::class, 'callback']);
 
 Route::view('/', 'app');
 Route::view('/login', 'app');
@@ -28,7 +29,7 @@ Route::view('/reset-password/{token}', 'app');
 
 #newroutes for news
 Route::view('/news', 'app');
-Route::view('/news/{news_slug}','app')->name('news.show');
+Route::view('/news/{news_slug}', 'app')->name('news.show');
 
 #newroutes for questionpaper
 Route::view('/questionpaper', 'app');
@@ -45,20 +46,27 @@ Route::view('/govermentjobs/{category_slug}/{subcategory_slug}', 'app')->name('g
 Route::view('/govermentjobs/{category_slug}/{subcategory_slug}/{slug}', 'app')->name('government_job.show');
 
 Route::view('/exam/calendar', 'app')->name('exam_calendar.show');
-Route::view('/courseDetail/{course_slug}','app')->name('course.show');
-Route::view('/profile/basic','app');
-Route::view('/profile/wishlist','app');
-Route::view('/profile/my-courses','app');
+Route::view('/courseDetail/{course_slug}', 'app')->name('course.show');
+Route::view('/profile/basic', 'app');
+Route::view('/profile/wishlist', 'app');
+Route::view('/profile/my-courses', 'app');
 
 
-Route::view('/notification','app');
-Route::view('/compare','app');
-Route::view('/cart','app');
-Route::view('/checkout','app');
-Route::view('/course-category','app');
-Route::view('/guide','app');
-Route::view('/degree','app');
+Route::view('/notification', 'app');
+Route::view('/compare', 'app');
+Route::view('/cart', 'app');
+Route::view('/checkout', 'app');
+Route::view('/course-category', 'app');
+Route::view('/guide', 'app');
+Route::view('/degree', 'app');
 // Route::view('*','app');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+});
+
+
+Route::get('/testmail', function (\Illuminate\Http\Request $request) {
+    \Illuminate\Support\Facades\Notification::route('mail', $request->input('email', 'bhaktijkoli121@gmail.com'))
+        ->notify(new \App\Notifications\Test());
+    return "Sent";
 });
