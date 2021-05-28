@@ -15,13 +15,13 @@ class CourseProvidersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('course_providers')->delete();
-        
-        \DB::table('course_providers')->insert(array (
-            0 => 
-            array (
+
+        \DB::table('course_providers')->insert(array(
+            0 =>
+            array(
                 'id' => 1,
                 'name' => 'Udemy',
                 'url' => 'https://www.udemy.com',
@@ -30,8 +30,8 @@ class CourseProvidersTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:41:58',
                 'updated_at' => '2021-04-02 15:50:53',
             ),
-            1 => 
-            array (
+            1 =>
+            array(
                 'id' => 2,
                 'name' => 'Coursera',
                 'url' => 'https://www.coursera.org',
@@ -40,8 +40,8 @@ class CourseProvidersTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:51:43',
                 'updated_at' => '2021-04-02 15:51:43',
             ),
-            2 => 
-            array (
+            2 =>
+            array(
                 'id' => 3,
                 'name' => 'Edureka',
                 'url' => 'https://www.edureka.co',
@@ -51,7 +51,5 @@ class CourseProvidersTableSeeder extends Seeder
                 'updated_at' => '2021-04-02 15:51:43',
             ),
         ));
-        
-        
     }
 }

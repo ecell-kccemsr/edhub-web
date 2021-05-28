@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Console\Commands;
 
 use App\Models\Course;
@@ -14,21 +15,21 @@ use App\Models\CurriculumChapter;
 use App\Models\CurriculumLecture;
 use Illuminate\Support\Facades\Http;
 
-class FetchEdureka extends Command
+class FetchCourses extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'fetch:edureka {token}';
+    protected $signature = 'fetch:courses {token}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Fetch Courses from Edureka';
+    protected $description = 'Fetch Courses from rakutenmarketing.com';
 
     /**
      * Create a new command instance.
@@ -51,17 +52,15 @@ class FetchEdureka extends Command
         $count = 2;
         $token = $this->argument('token');
         $page = 1;
-        while($page++ <= $count) {
+        while ($page++ <= $count) {
             $response = Http::withHeaders(["Accept" => "application/json, text/plain, */*", "Authorization" => "Bearer $token", "Content-Type" => "application/json;charset=utf-8"])->get("https://api.rakutenmarketing.com/productsearch/1.0?pagenumber=" . $page);
-            if ($response->successful() === true)
-            {
+            if ($response->successful() === true) {
                 $xml = simplexml_load_string($response->body(), "SimpleXMLElement", LIBXML_NOCDATA);
-                $result = json_decode(json_encode($xml),TRUE);
-                if(isset($result['item'])) {
+                $result = json_decode(json_encode($xml), TRUE);
+                if (isset($result['item'])) {
                     $count = $result['TotalPages'];
-                    foreach($result['item'] as $item) 
-                    {
-                        if(Course::where('course_provider_id', '3')->where('cid', $item['sku'])->first() !== null) {
+                    foreach ($result['item'] as $item) {
+                        if (Course::where('cid', $item['sku'])->first() !== null) {
                             continue;
                         }
                         $dbCourse = new Course([
@@ -77,12 +76,17 @@ class FetchEdureka extends Command
                             'certification' => true,
                             'rating' => '0',
                         ]);
+                        if ($item['mid'] === '42536') {
+                            $dbCourse->course_provider_id = 3;
+                        } else if ($item['mid'] === '39197') {
+                            $dbCourse->course_provider_id = 1;
+                        }
                         $dbCourse->generateSlug();
-                        if(isset($item['category']['primary'])) {
+                        if (isset($item['category']['primary'])) {
                             $category = CourseCategory::firstOrCreate(['name' => $item['category']['primary']]);
                             $dbCourse->course_category_id = $category->id;
-                            if(isset($item['category']['secondary'])) {
-                                if(is_array($item['category']['secondary']) === false) {
+                            if (isset($item['category']['secondary'])) {
+                                if (is_array($item['category']['secondary']) === false) {
                                     $subCategory = CourseSubCategory::firstOrCreate(['name' => $item['category']['secondary'], 'course_category_id' => $category->id]);
                                     $dbCourse->course_sub_category_id = $subCategory->id;
                                 }
@@ -90,11 +94,11 @@ class FetchEdureka extends Command
                         }
                         $dbCourse->save();
                         $totalFetched++;
+                        $this->line("Fetched $dbCourse->title");
+                        sleep(2);
                     }
                 }
-            }
-            else
-            {
+            } else {
                 dd($response->status(), $response->body());
             }
         }
