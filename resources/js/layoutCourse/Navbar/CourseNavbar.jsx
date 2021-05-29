@@ -215,7 +215,7 @@ const CourseNavbar = props => {
                                 >
                                     Courses
                                 </a>
-                                <ul className="dropdown-menu">
+                                <ul className="dropdown-menu" >
                                     {categories &&
                                         categories.map(navl => {
                                             let ismegamenu = false;

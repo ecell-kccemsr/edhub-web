@@ -156,7 +156,7 @@ const courseCategory = props => {
             if (modalVals?.locale != "")
                 str = str.concat(`locale=${modalVals?.locale}&`);//If user selected difficulty append to url
             setApiURL("/api/courses?");
-            getCourses(true, str, 1, "", modalVals?.max, modalVals?.min);
+            getCourses(true, str, 0, "", modalVals?.max, modalVals?.min);
             window.history.replaceState(null, '')
         } 
         //If user comes from searching on landing page but entered empty string (show all courses)

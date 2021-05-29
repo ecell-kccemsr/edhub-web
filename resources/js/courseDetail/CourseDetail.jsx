@@ -130,7 +130,7 @@ function CourseDetail(props) {
                     <Container className="containerClass">
                         
                         <Row>
-                            <Col sm="1" md="8">
+                            <Col sm="12" md="8">
                                 <>
                                     {singleCourse?.course_provider?.image && (
                                         <img
@@ -199,7 +199,7 @@ function CourseDetail(props) {
                                     </button>
                                 </>
                             </Col>
-                            <Col sm="1" md="4">
+                            <Col sm="12" md="4">
                                 <div className="add-to-cart-section-details">
                                     {
                                         !singleCourse?.image && (
@@ -217,7 +217,7 @@ function CourseDetail(props) {
                                         style={{ marginBottom: "5px" }}
                                         src={singleCourse?.image}
                                         className="card-header-image-details"
-                                        alt="singleCourse"
+                                        alt={singleCourse?.title}
                                     />
                                     }
                                     
@@ -515,7 +515,9 @@ function CourseDetail(props) {
                     <Row>
                         <Col sm="12" md="8">
                             <div className="course-overview-card">
-                                <h5 className="course-overview-card-title">
+                            {
+                                  singleCourse.outcome && singleCourse?.outcome.length !=0 && <> 
+                                    <h5 className="course-overview-card-title">
                                     Learner's career outcome
                                 </h5>
                                 <div className="course-overview-card-descriptionbox">
@@ -524,6 +526,8 @@ function CourseDetail(props) {
                                         <p key={key}>{p}</p>
                                     ))}
                                     </div>
+                                  </> }
+                              
                                 <h5 className="course-overview-card-title">
                                     Job opportunities
                                 </h5>
@@ -555,7 +559,9 @@ function CourseDetail(props) {
                                 }
                                
                             </div>
-                            <div className="course-overview-card">
+                            {
+                                  singleCourse.description && singleCourse?.description.length !=0 && <> 
+                                     <div className="course-overview-card">
                                 <h5
                                     className="course-overview-card-title"
                                     id="Overview"
@@ -573,8 +579,12 @@ function CourseDetail(props) {
                                     <i className="fas fa-chevron-down ml-2"></i>
                                 </p> */}
                             </div>
+                                  </> }
+                         
 
-                            <h5
+                                  {
+                                  courseCurr.detail && singleCourse?.detail.length !=0 && <> 
+                                     <h5
                                 className="course-content-top-header"
                                 id="Content"
                             >
@@ -653,7 +663,11 @@ function CourseDetail(props) {
                                         </div>
                                     ))}
                             </div>
-                            <div className="course-prereq-section">
+                                  </> }
+                         
+                                  {
+                                  singleCourse.prerequisites && singleCourse?.prerequisites.length !=0 && <> 
+                                   <div className="course-prereq-section">
                                 <h5
                                     className="course-content-top-header"
                                     id="Prerequisites"
@@ -676,6 +690,9 @@ function CourseDetail(props) {
                                         ))}
                                 </List>
                             </div>
+                                  </> }
+
+                           
                         </Col>
                     </Row>
                 </Container>
@@ -684,7 +701,9 @@ function CourseDetail(props) {
                     <Container className="containerClass">
                         <Row>
                             <Col sm="12" md="8">
-                                <h5
+                                {
+                                  singleCourse.course_instructor && singleCourse?.course_instructor.length !=0 && <> 
+                                    <h5
                                     className="course-content-top-header"
                                     id="Instructor"
                                 >
@@ -744,7 +763,9 @@ function CourseDetail(props) {
                                             </>
                                         )
                                     )}
-
+                                    </>
+                                }
+                               
                                 <h5
                                     className="course-content-top-header"
                                     id="Reviews"
@@ -873,7 +894,9 @@ function CourseDetail(props) {
                 <Container className="containerClass">
                     <Row>
                         <Col sm="12" md="8">
-                            <h5
+                        {
+                                  singleCourse.faq && singleCourse?.faq.length !=0 && <> 
+                                     <h5
                                 className="course-content-top-header text-center pt-2"
                                 id="FAQs"
                             >
@@ -932,7 +955,9 @@ function CourseDetail(props) {
                                             </div>
                                         );
                                     })}
-                            </div>
+                            </div>  
+                                  </> }
+                       
                         </Col>
                     </Row>
                 </Container>

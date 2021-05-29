@@ -48,7 +48,7 @@ const CourseCard = ({ data }) => {
                 <img
                     src={data?.image}
                     className="card-header-img"
-                    alt="card header image"
+                    alt={data?.title}
                 />
             </Link>
                 
@@ -61,10 +61,13 @@ const CourseCard = ({ data }) => {
                         />
                     </div>
 
-                    <h5 style={{ fontWeight: "400" }}>
+                   {data?.discount_price != data?.price && <h5 style={{ fontWeight: "400" }}>
                         ₹ {data?.discount_price}
                         &nbsp; ₹ <strike>{data?.price}</strike>
-                    </h5>
+                    </h5>}
+                    {data?.discount_price == data?.price && <h5 style={{ fontWeight: "400" }}>
+                        ₹ {data?.discount_price}
+                    </h5>}
                 </div>
                 <div>
                 <Link to={`/courseDetail/${data?.slug}`}>
