@@ -9,17 +9,16 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialLoginController extends Controller
 {
-    public function redirect(Request $request,$provider)
+    public function redirect(Request $request, $provider)
     {
         return Socialite::driver($provider)->redirect();
     }
 
-    public function callback(Request $request,$provider)
+    public function callback(Request $request, $provider)
     {
         $data = Socialite::driver($provider)->user();
-        $user = User::where($provider,$data->getId())->first();
-        if($user === null)
-        {
+        $user = User::where($provider, $data->getId())->first();
+        if ($user === null) {
             $user = new User();
             $user->$provider = $data->getId();
         }
@@ -31,6 +30,6 @@ class SocialLoginController extends Controller
         $tokenResult = $user->createToken(config('app.name') . 'Personal Access Client');
         $token = $tokenResult->token;
         $token->save();
-        return view('social', ['accessToken' => $tokenResult->accessToken]);
+        return redirect('/');
     }
 }

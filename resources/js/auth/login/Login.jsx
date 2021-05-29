@@ -90,7 +90,6 @@ const Login = () => {
                             <div style={{ marginLeft: "40%" }}>
                                 <a
                                     href="/login/Facebook/redirect"
-                                    target="_blank"
                                 >
                                     <img
                                         className="social-sign-in"
@@ -100,7 +99,6 @@ const Login = () => {
                                 </a>
                                 <a
                                     href="/login/google/redirect"
-                                    target="_blank"
                                 >
                                     <img
                                         className="social-sign-in"
@@ -116,7 +114,7 @@ const Login = () => {
                         md={{ size: 6, offset: 2 }}
                         className="auth-img-col"
                     >
-                        
+
                         <img src="/images/loginBackground.png" alt="loginBackground" className="w-100" />
                     </Col> */}
                 </Row>
