@@ -13,7 +13,7 @@
         background: url("/images/courseDetail/courseDetailHeader.png");
         background-position: center;
         background-size: cover;
-        padding: 30px 50px;
+        padding: 30px;
         .containerClass {
             box-shadow: none;
             h2,
@@ -82,8 +82,37 @@
                 }
             }
         }
+
+    }
+    .compare-btn-detail {
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        display: block;
+        background: #3c64b1;
+        text-align: center;
+        height: 48px;
+        width: 150px;
+        color: #f6f7f8;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 10px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        left: 1420px;
+        position: fixed;
+        border: none;
+    }
+    .containerClass {
+        margin-top: 0;
+        margin-bottom: 0;
+        box-shadow: none;
         .add-to-cart-section-details {
-            position: absolute;
+            position: sticky;
+            top: 0px;
+            margin-top: -100px;
             width: 298px;
             background: #f6f7f8;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -109,7 +138,6 @@
                     p {
                         color: #f05454;
                         font-size: 16px;
-                        margin-top: -15px;
                     }
                     .course-provider {
                         height: 50px;
@@ -147,32 +175,6 @@
                 margin-top: 20px;
             }
         }
-    }
-    .compare-btn-detail {
-        transform: rotate(-90deg);
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-        display: block;
-        background: #3c64b1;
-        text-align: center;
-        height: 48px;
-        width: 150px;
-        color: #f6f7f8;
-        font-size: 20px;
-        text-decoration: none;
-        padding: 10px;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
-        left: 1420px;
-        position: fixed;
-        border: none;
-    }
-    .containerClass {
-        margin-top: 0;
-        margin-bottom: 0;
-        box-shadow: none;
         .course-overview-card {
             background: #f6f7f8;
             padding: 15px 30px;

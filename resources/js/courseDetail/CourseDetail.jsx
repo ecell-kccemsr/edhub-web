@@ -12,19 +12,17 @@ import {
     Spinner 
 } from "reactstrap";
 import { v4 as uuidv4 } from "uuid";
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
+import DetailCard from "./DetailCard";
 const authorOverview = [
     "4.2 Instructor Rating",
     "5,680 Reviews",
     "73,742 Students"
 ];
-
 function CourseDetail(props) {
     // const CourseDetail = ({ data } , props) => {
     const [courseslug, setCourseSlug] = useState("");
@@ -38,7 +36,6 @@ function CourseDetail(props) {
     useEffect(() => {
         const { course_slug } = props.match.params;
         setCourseSlug(course_slug);
-
         axios
             .get(`/api/courses/${course_slug}`)
             .then(res => {
@@ -77,7 +74,6 @@ function CourseDetail(props) {
     }, []);
     const compares = useStoreState(state => state.compares);
     const addToCompare = useStoreActions(actions => actions.addToCompare);
-
     const isAlreadyInCompares =
         compares.findIndex(course => course.id === singleCourse.id) !== -1;
     const handleCompare = singleCourse => {
@@ -88,7 +84,6 @@ function CourseDetail(props) {
             addToCompare(singleCourse);
         }
     };
-
     let totalrating =
         singleCourse?.rating_distribution &&
         singleCourse?.rating_distribution.reduce(
@@ -98,7 +93,6 @@ function CourseDetail(props) {
         );
     const url = window.location.href;
     const notify = () => toast("Link Copied!");
-
     if(loading){
         return (
             <> 
@@ -110,10 +104,8 @@ function CourseDetail(props) {
             </>
         )
     }
-
     return (
         <>
-
         {!loading && error && (
                     <>
                     <Container>
@@ -123,12 +115,8 @@ function CourseDetail(props) {
                 )}
          {!loading && !error && (
             <div className="course-detail-section">
-            
                 <div className="course-detail-hero-section">
-               
-               
                     <Container className="containerClass">
-                        
                         <Row>
                             <Col sm="12" md="8">
                                 <>
@@ -159,7 +147,6 @@ function CourseDetail(props) {
                                                 </h4>
                                             )
                                         )}
-
                                     {singleCourse?.captions && (
                                         <>
                                             <h5>Subtitles</h5>
@@ -199,506 +186,242 @@ function CourseDetail(props) {
                                     </button>
                                 </>
                             </Col>
-                            <Col sm="12" md="4">
-                                <div className="add-to-cart-section-details">
-                                    {
-                                        !singleCourse?.image && (
-                                            <img
-                                                style={{ marginBottom: "5px",objectFit:"contain" }}
-                                                src="https://i.stack.imgur.com/h6viz.gif"
-                                                className="card-header-image-details"
-                                                alt="d"
-                                            />
-                                            
-                                        )
-                                    }
-                                    {
-                                        singleCourse?.image && <img
-                                        style={{ marginBottom: "5px" }}
-                                        src={singleCourse?.image}
-                                        className="card-header-image-details"
-                                        alt={singleCourse?.title}
-                                    />
-                                    }
-                                    
-
-                                    <div className="card-section-details-content">
-                                        <div className="card-section-details-content-price">
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    marginBottom: "-10px"
-                                                }}
-                                            >
-                                                {singleCourse?.discount_price && (
-                                                    <h5>
-                                                        ₹
-                                                        {
-                                                            singleCourse?.discount_price
-                                                        }
-                                                        /-
-                                                    </h5>
-                                                )}
-                                                {singleCourse?.price && (
-                                                    <p
-                                                        style={{
-                                                            color: "#7B7B7B",
-                                                            padding: "17px"
-                                                        }}
-                                                    >
-                                                        <strike>
-                                                            ₹
-                                                            {
-                                                                singleCourse?.price
-                                                            }
-                                                        </strike>
-                                                    </p>
-                                                )}
-                                                {singleCourse?.discount_price &&
-                                                    singleCourse?.price && (
-                                                        <p
-                                                            style={{
-                                                                color:
-                                                                    "#7B7B7B",
-                                                                padding: "17px"
-                                                            }}
-                                                        >
-                                                            {`${Math.round(
-                                                                100 -
-                                                                    (singleCourse?.discount_price *
-                                                                        100) /
-                                                                        singleCourse?.price
-                                                            )} % off`}
-                                                        </p>
-                                                    )}
-                                            </div>
-                                        </div>
-                                        <div style={{ marginTop: "-10px" }}>
-                                              {
-                                                 singleCourse?.rating <= 1
-                                                 ?  <img
-                                                        src="/images/courseDetail/1star.png"
-                                                        alt="Star"
-                                                    />
-                                                 : singleCourse?.rating <= 2
-                                                 ? <img
-                                                        src="/images/courseDetail/2star.png"
-                                                        alt="Star"
-                                                    />
-                                                 : singleCourse?.rating <= 3
-                                                 ?  <img
-                                                        src="/images/courseDetail/3star.png"
-                                                        alt="Star"
-                                                    />
-                                                 : singleCourse?.rating <= 4
-                                                 ?  <img
-                                                        src="/images/courseDetail/4star.png"
-                                                        alt="Star"
-                                                    />
-                                                 : <img
-                                                        src="/images/courseDetail/5star.png"
-                                                        alt="Star"
-                                                    />
-                                            }
-                                            {/* <img
-                                                src="/images/courseCategory/star.png"
-                                                alt="star"
-                                            /> */}
-                                        </div>
-                                        <div className="card-section-details-content-price">
-                                            <div style={{ marginTop: "-20px" }}>
-                                                {singleCourse.course_instructor &&
-                                                    singleCourse
-                                                        .course_instructor
-                                                        .length > 0 &&
-                                                    singleCourse.course_instructor.map(
-                                                        courseinstructor => (
-                                                            <h5>
-                                                                {
-                                                                    courseinstructor?.name
-                                                                }
-                                                            </h5>
-                                                        )
-                                                    )}
-                                                <p style={{ color: "#818181" }}>
-                                                    Course provided by:
-                                                </p>
-                                                {singleCourse?.course_provider
-                                                    ?.image && (
-                                                    <div className="course-provider">
-                                                        <img
-                                                            src={
-                                                                singleCourse
-                                                                    ?.course_provider
-                                                                    ?.image
-                                                            }
-                                                            alt="course_provider"
-                                                            style={{
-                                                                height: "30px",
-                                                                padding: "1px",
-                                                                width: "100px"
-                                                            }}
-                                                        />
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
-                                        <div className="card-section-details-content-price">
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    marginBottom: "-10px"
-                                                }}
-                                            >
-                                                <img
-                                                    src="/images/courseDetail/Ellipse.png"
-                                                    alt="ellipse"
-                                                    style={{
-                                                        margin:
-                                                            "5px 11px 23px 0px"
-                                                    }}
-                                                />
-                                                <h6>Full time access</h6>
-                                            </div>
-                                        </div>
-                                        <div className="card-section-details-content-price">
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    marginBottom: "-10px"
-                                                }}
-                                            >
-                                                <img
-                                                    src="/images/courseDetail/Ellipse.png"
-                                                    alt="ellipse"
-                                                    style={{
-                                                        margin:
-                                                            "5px 11px 23px 0px"
-                                                    }}
-                                                />
-                                                <h6>Mentored Course</h6>
-                                            </div>
-                                        </div>
-                                        <div className="card-section-details-content-price">
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    marginBottom: "-10px"
-                                                }}
-                                            >
-                                                <img
-                                                    src="/images/courseDetail/Ellipse.png"
-                                                    alt="ellipse"
-                                                    style={{
-                                                        margin:
-                                                            "5px 11px 23px 0px"
-                                                    }}
-                                                />
-                                                <h6>22.5 hrs Total</h6>
-                                            </div>
-                                        </div>
-                                        <div className="card-section-details-content-price">
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    marginBottom: "-10px"
-                                                }}
-                                            >
-                                                <img
-                                                    src="/images/courseDetail/Ellipse.png"
-                                                    alt="ellipse"
-                                                    style={{
-                                                        margin:
-                                                            "5px 11px 23px 0px"
-                                                    }}
-                                                />
-                                                <h6>24/7 Support</h6>
-                                            </div>
-                                        </div>
-                                        <div className="card-section-details-content-price">
-                                            <div
-                                                style={{
-                                                    display: "flex",
-                                                    marginBottom: "-10px"
-                                                }}
-                                            >
-                                                <img
-                                                    src="/images/courseDetail/Ellipse.png"
-                                                    alt="ellipse"
-                                                    style={{
-                                                        margin:
-                                                            "5px 11px 23px 0px"
-                                                    }}
-                                                />
-                                                <h6>
-                                                    Watch on desktop, laptop
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a
-                                            href={singleCourse?.url}
-                                            target="_blank"
-                                            className="card-section-details-buy-btn"
-                                        >
-                                            Go To Class
-                                        </a>
-                                        {/* <button className="card-section-details-addCart-btn">
-                                            Add To Cart
-                                        </button> */}
-                                    </div>
-                                </div>
-                            </Col>
                         </Row>
                     </Container>
-                
-  
                 </div>
-                <Container className="containerClass">
-                    <Nav>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-course-detail"
-                                href="#Overview"
-                            >
-                                About
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-course-detail"
-                                href="#Content"
-                            >
-                                Course Content
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-course-detail"
-                                href="#Prerequisites"
-                            >
-                                {" "}
-                                Prerequisites
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-course-detail"
-                                href="#Instructor"
-                            >
-                                {" "}
-                                Instructor
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-course-detail"
-                                href="#Reviews"
-                            >
-                                {" "}
-                                Reviews{" "}
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink
-                                className="navlink-course-detail"
-                                href="#FAQs"
-                            >
-                                {" "}
-                                FAQs
-                            </NavLink>
-                        </NavItem>
-                    </Nav>
-                </Container>
-                <Container className="containerClass">
-                    <Row>
-                        <Col sm="12" md="8">
-                            <div className="course-overview-card">
-                            {
-                                  singleCourse.outcome && singleCourse?.outcome.length !=0 && <> 
-                                    <h5 className="course-overview-card-title">
-                                    Learner's career outcome
-                                </h5>
-                                <div className="course-overview-card-descriptionbox">
-                                {singleCourse?.outcome &&
-                                    singleCourse?.outcome.map((p,key) => (
-                                        <p key={key}>{p}</p>
-                                    ))}
-                                    </div>
-                                  </> }
-                              
-                                <h5 className="course-overview-card-title">
-                                    Job opportunities
-                                </h5>
-                                <div className="course-overview-card-stats">
-                                    <div className="stat-container">
-                                        <img
-                                            src="/images/courseDetail/stat1.png"
-                                            alt="stat1"
-                                        />
-                                        <p>Upto 50 % Promotions</p>
-                                    </div>
-                                    <div className="stat-container">
-                                        <img
-                                            src="/images/courseDetail/stat2.png"
-                                            alt="stat2"
-                                        />
-                                        <p>Upto 12 % New career</p>
-                                    </div>
-                                </div>
-                                <h5 className="course-overview-card-title">
-                                    Skills you'll gain
-                                </h5>
-                                {
-                                    singleCourse?.title && (
+                 <Container className="containerClass">
+                 <Row>
+                        <Col sm="12" md="6" lg="8">
+                            <Nav>
+                                <NavItem>
+                                    <NavLink
+                                        className="navlink-course-detail"
+                                        href="#Overview"
+                                    >
+                                        About
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink
+                                        className="navlink-course-detail"
+                                        href="#Content"
+                                    >
+                                        Course Content
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink
+                                        className="navlink-course-detail"
+                                        href="#Prerequisites"
+                                    >
+                                        {" "}
+                                        Prerequisites
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink
+                                        className="navlink-course-detail"
+                                        href="#Instructor"
+                                    >
+                                        {" "}
+                                        Instructor
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink
+                                        className="navlink-course-detail"
+                                        href="#Reviews"
+                                    >
+                                        {" "}
+                                        Reviews{" "}
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink
+                                        className="navlink-course-detail"
+                                        href="#FAQs"
+                                    >
+                                        {" "}
+                                        FAQs
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
+                            <Row>
+                                <Col sm="12">
+                                    <div className="course-overview-card">
+                                    {
+                                        singleCourse.outcome && singleCourse?.outcome.length !=0 && <> 
+                                            <h5 className="course-overview-card-title">
+                                            Learner's career outcome
+                                        </h5>
                                         <div className="course-overview-card-descriptionbox">
-                                        <p>{singleCourse?.title}</p>
-                                    </div>
-                                    )
-                                }
-                               
-                            </div>
-                            {
-                                  singleCourse.description && singleCourse?.description.length !=0 && <> 
-                                     <div className="course-overview-card">
-                                <h5
-                                    className="course-overview-card-title"
-                                    id="Overview"
-                                >
-                                    DESCRIPTION
-                                </h5>
-                                <p
-                                    className="course-description"
-                                    dangerouslySetInnerHTML={{
-                                        __html: singleCourse.description
-                                    }}
-                                ></p>
-                                {/* <p className="course-description-readmore">
-                                    Read more
-                                    <i className="fas fa-chevron-down ml-2"></i>
-                                </p> */}
-                            </div>
-                                  </> }
-                         
-
-                                  {
-                                  courseCurr.detail && singleCourse?.detail.length !=0 && <> 
-                                     <h5
-                                className="course-content-top-header"
-                                id="Content"
-                            >
-                                Course Content
-                            </h5>
-                            {/* <div className="course-content-top-overview">
-                                <span>41 sections •</span>
-                                <span>692 lectures •</span>
-                                <span>173h 31m total length</span>
-                            </div> */}
-                            <div
-                                className="accordion course-content-accordion"
-                                id="courseContentParent"
-                            >
-                                {courseCurr &&
-                                    courseCurr.map(detail => (
-                                        <div className="card" key={detail?.id}>
-                                            <div id={`heading${detail?.id}`}>
-                                                <h2 className="mb-0">
-                                                    <a
-                                                        className="btn btn-link course-content-card-headerlink"
-                                                        type="button"
-                                                        data-toggle="collapse"
-                                                        data-target={`#collapse${detail?.id}`}
-                                                        aria-expanded="true"
-                                                        aria-controls={`collapse${detail?.id}`}
-                                                    >
-                                                        <i
-                                                            className="fas fa-chevron-down mr-2"
-                                                            style={{
-                                                                color: "#F05454"
-                                                            }}
-                                                        ></i>
-                                                        {detail?.title}
-                                                    </a>
-                                                </h2>
+                                        {singleCourse?.outcome &&
+                                            singleCourse?.outcome.map((p,key) => (
+                                                <p key={key}>{p}</p>
+                                            ))}
                                             </div>
-
-                                            <div
-                                                id={`collapse${detail?.id}`}
-                                                className="collapse"
-                                                aria-labelledby={`heading${detail?.id}`}
-                                                data-parent="#courseContentParent"
-                                            >
-                                                <div className="card-body">
-                                                    <List
-                                                        type="unstyled"
-                                                        className="mb-0"
-                                                    >
-                                                        {detail?.lectures &&
-                                                            detail?.lectures.map(
-                                                                c => (
-                                                                    <li
-                                                                        className="courseContent-list"
-                                                                        key={
-                                                                            c?.title
-                                                                        }
-                                                                    >
-                                                                        <img
-                                                                            src="/images/courseDetail/playbutton.png"
-                                                                            alt="playbutton"
-                                                                            className="mr-2"
-                                                                        />
-                                                                        {
-                                                                            c?.title
-                                                                        }
-                                                                        <span className="duration ml-2">
-                                                                            time
-                                                                        </span>
-                                                                    </li>
-                                                                )
-                                                            )}
-                                                    </List>
-                                                </div>
+                                        </> }
+                                        <h5 className="course-overview-card-title">
+                                            Job opportunities
+                                        </h5>
+                                        <div className="course-overview-card-stats">
+                                            <div className="stat-container">
+                                                <img
+                                                    src="/images/courseDetail/stat1.png"
+                                                    alt="stat1"
+                                                />
+                                                <p>Upto 50 % Promotions</p>
+                                            </div>
+                                            <div className="stat-container">
+                                                <img
+                                                    src="/images/courseDetail/stat2.png"
+                                                    alt="stat2"
+                                                />
+                                                <p>Upto 12 % New career</p>
                                             </div>
                                         </div>
-                                    ))}
-                            </div>
-                                  </> }
-                         
-                                  {
-                                  singleCourse.prerequisites && singleCourse?.prerequisites.length !=0 && <> 
-                                   <div className="course-prereq-section">
-                                <h5
-                                    className="course-content-top-header"
-                                    id="Prerequisites"
-                                >
-                                    Prerequisites
-                                </h5>
-                                <List type="unstyled" className="mb-0">
-                                    {singleCourse?.prerequisites &&
-                                        singleCourse?.prerequisites.map(p => (
-                                            <li key={p} className="my-2">
-                                                <img
-                                                    src="/images/courseDetail/prereq.png"
-                                                    className="mr-2"
-                                                    alt="prereq"
-                                                />
-                                                <span className="course-prereq-title">
-                                                    {p}
-                                                </span>
-                                            </li>
-                                        ))}
-                                </List>
-                            </div>
-                                  </> }
-
-                           
-                        </Col>
-                    </Row>
-                </Container>
-
-                <div style={{ background: "#F6F7F8", padding: "30px 0" }}>
-                    <Container className="containerClass">
+                                        <h5 className="course-overview-card-title">
+                                            Skills you'll gain
+                                        </h5>
+                                        {
+                                            singleCourse?.title && (
+                                                <div className="course-overview-card-descriptionbox">
+                                                <p>{singleCourse?.title}</p>
+                                            </div>
+                                            )
+                                        }
+                                    </div>
+                                    {
+                                        singleCourse.description && singleCourse?.description.length !=0 && <> 
+                                            <div className="course-overview-card">
+                                        <h5
+                                            className="course-overview-card-title"
+                                            id="Overview"
+                                        >
+                                            DESCRIPTION
+                                        </h5>
+                                        <p
+                                            className="course-description"
+                                            dangerouslySetInnerHTML={{
+                                                __html: singleCourse.description
+                                            }}
+                                        ></p>
+                                        {/* <p className="course-description-readmore">
+                                            Read more
+                                            <i className="fas fa-chevron-down ml-2"></i>
+                                        </p> */}
+                                    </div>
+                                        </> }
+                                        {
+                                        courseCurr.detail && singleCourse?.detail.length !=0 && <> 
+                                            <h5
+                                        className="course-content-top-header"
+                                        id="Content"
+                                    >
+                                        Course Content
+                                    </h5>
+                                    {/* <div className="course-content-top-overview">
+                                        <span>41 sections •</span>
+                                        <span>692 lectures •</span>
+                                        <span>173h 31m total length</span>
+                                    </div> */}
+                                    <div
+                                        className="accordion course-content-accordion"
+                                        id="courseContentParent"
+                                    >
+                                        {courseCurr &&
+                                            courseCurr.map(detail => (
+                                                <div className="card" key={detail?.id}>
+                                                    <div id={`heading${detail?.id}`}>
+                                                        <h2 className="mb-0">
+                                                            <a
+                                                                className="btn btn-link course-content-card-headerlink"
+                                                                type="button"
+                                                                data-toggle="collapse"
+                                                                data-target={`#collapse${detail?.id}`}
+                                                                aria-expanded="true"
+                                                                aria-controls={`collapse${detail?.id}`}
+                                                            >
+                                                                <i
+                                                                    className="fas fa-chevron-down mr-2"
+                                                                    style={{
+                                                                        color: "#F05454"
+                                                                    }}
+                                                                ></i>
+                                                                {detail?.title}
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div
+                                                        id={`collapse${detail?.id}`}
+                                                        className="collapse"
+                                                        aria-labelledby={`heading${detail?.id}`}
+                                                        data-parent="#courseContentParent"
+                                                    >
+                                                        <div className="card-body">
+                                                            <List
+                                                                type="unstyled"
+                                                                className="mb-0"
+                                                            >
+                                                                {detail?.lectures &&
+                                                                    detail?.lectures.map(
+                                                                        c => (
+                                                                            <li
+                                                                                className="courseContent-list"
+                                                                                key={
+                                                                                    c?.title
+                                                                                }
+                                                                            >
+                                                                                <img
+                                                                                    src="/images/courseDetail/playbutton.png"
+                                                                                    alt="playbutton"
+                                                                                    className="mr-2"
+                                                                                />
+                                                                                {
+                                                                                    c?.title
+                                                                                }
+                                                                                <span className="duration ml-2">
+                                                                                    time
+                                                                                </span>
+                                                                            </li>
+                                                                        )
+                                                                    )}
+                                                            </List>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                    </div>
+                                        </> }
+                                        {
+                                        singleCourse.prerequisites && singleCourse?.prerequisites.length !=0 && <> 
+                                        <div className="course-prereq-section">
+                                        <h5
+                                            className="course-content-top-header"
+                                            id="Prerequisites"
+                                        >
+                                            Prerequisites
+                                        </h5>
+                                        <List type="unstyled" className="mb-0">
+                                            {singleCourse?.prerequisites &&
+                                                singleCourse?.prerequisites.map(p => (
+                                                    <li key={p} className="my-2">
+                                                        <img
+                                                            src="/images/courseDetail/prereq.png"
+                                                            className="mr-2"
+                                                            alt="prereq"
+                                                        />
+                                                        <span className="course-prereq-title">
+                                                            {p}
+                                                        </span>
+                                                    </li>
+                                                ))}
+                                        </List>
+                                    </div>
+                                        </> }
+                                </Col>
+                            </Row>
+                        <div style={{ background: "#F6F7F8", padding: "30px 5px" }}>
                         <Row>
                             <Col sm="12" md="8">
                                 {
@@ -765,7 +488,6 @@ function CourseDetail(props) {
                                     )}
                                     </>
                                 }
-                               
                                 <h5
                                     className="course-content-top-header"
                                     id="Reviews"
@@ -843,7 +565,6 @@ function CourseDetail(props) {
                                                                 : r?.rating == 4
                                                                 ? "/images/courseDetail/4star.png"
                                                                 : "/images/courseDetail/5star.png";
-
                                                         return (
                                                             <div className="indi-progress">
                                                                 <Progress
@@ -866,7 +587,7 @@ function CourseDetail(props) {
                             </Col>
                         </Row>
                         <Row className="course-detail-testimonial-section">
-                            <Col sm="12" md="8">
+                            <Col sm="12">
                                 <Row className="">
                                     {CourseRev &&
                                         CourseRev.filter(c=>c?.content!=="").map(u => (
@@ -889,10 +610,8 @@ function CourseDetail(props) {
                                 </Row>
                             </Col>
                         </Row>
-                    </Container>
                 </div>
-                <Container className="containerClass">
-                    <Row>
+                <Row>
                         <Col sm="12" md="8">
                         {
                                   singleCourse.faq && singleCourse?.faq.length !=0 && <> 
@@ -934,7 +653,6 @@ function CourseDetail(props) {
                                                         </a>
                                                     </h2>
                                                 </div>
-
                                                 <div
                                                     id={`collapse${id}`}
                                                     className="collapse"
@@ -957,10 +675,15 @@ function CourseDetail(props) {
                                     })}
                             </div>  
                                   </> }
-                       
                         </Col>
                     </Row>
-                </Container>
+                        </Col>
+                        <Col sm="12" md="6" lg="4">
+                            <DetailCard singleCourse={singleCourse}/>
+                        </Col>
+                    </Row>
+                 </Container>
+            
                 <div className="popular-choice-section-course-details">
                     <Row className="course-card-landing-page-row">
                         {Course && (
@@ -976,5 +699,4 @@ function CourseDetail(props) {
         </>
     );
 }
-
 export default CourseDetail;
