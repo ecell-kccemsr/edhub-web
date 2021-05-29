@@ -22,7 +22,7 @@ class FetchCourses extends Command
      *
      * @var string
      */
-    protected $signature = 'fetch:courses {token}';
+    protected $signature = 'fetch:courses';
 
     /**
      * The console command description.
@@ -30,6 +30,23 @@ class FetchCourses extends Command
      * @var string
      */
     protected $description = 'Fetch Courses from rakutenmarketing.com';
+
+    /**
+     * Crdentials
+     *
+     */
+
+    protected $requestToken = "NkV2VGY4VmJYZFNmZmt4NzNzZnBoQkNab2hzYTpwQjByeV9pNnhmMEFyWlBDdzJ3NDY5Q2VBRE1h";
+    protected $username = "highhand";
+    protected $password = "edhub@89";
+    protected $scope = "3854190";
+    protected $providers = [
+        [
+            'name' => 'Edureka',
+            'id' => 3,
+            'mid' => '42536',
+        ],
+    ];
 
     /**
      * Create a new command instance.
@@ -48,61 +65,73 @@ class FetchCourses extends Command
      */
     public function handle()
     {
+        $response =  Http::withToken($this->requestToken, "basic")->asForm()->post('https://api.rakutenmarketing.com/token', [
+            "grant_type" => "password",
+            "username" => $this->username,
+            "password" => $this->password,
+            "scope" => $this->scope,
+        ]);
+        if ($response->successful() === false) {
+            dd("Failed to aquire authentication token");
+        }
         $totalFetched = 0;
-        $count = 2;
-        $token = $this->argument('token');
-        $page = 1;
-        while ($page++ <= $count) {
-            $response = Http::withHeaders(["Accept" => "application/json, text/plain, */*", "Authorization" => "Bearer $token", "Content-Type" => "application/json;charset=utf-8"])->get("https://api.rakutenmarketing.com/productsearch/1.0?pagenumber=" . $page);
-            if ($response->successful() === true) {
-                $xml = simplexml_load_string($response->body(), "SimpleXMLElement", LIBXML_NOCDATA);
-                $result = json_decode(json_encode($xml), TRUE);
-                if (isset($result['item'])) {
+        $token = $response->json("access_token");
+        foreach ($this->providers as $provider) {
+            $count = 1;
+            $page = 0;
+            $this->info('Fetching courses from ' . $provider['name']);
+            while ($page++ <= $count) {
+                $this->line("Page: $page/$count");
+                $response = Http::withHeaders([
+                    "Accept" => "application/json, text/plain, */*",
+                    "Authorization" => "Bearer $token",
+                    "Content-Type" => "application/json;charset=utf-8"
+                ])->get("https://api.rakutenmarketing.com/productsearch/1.0?pagenumber=$page&mid=" . $provider['mid']);
+                if ($response->successful() === true) {
+                    $xml = simplexml_load_string($response->body(), "SimpleXMLElement", LIBXML_NOCDATA);
+                    $result = json_decode(json_encode($xml), TRUE);
                     $count = $result['TotalPages'];
-                    foreach ($result['item'] as $item) {
-                        if (Course::where('cid', $item['sku'])->first() !== null) {
-                            continue;
-                        }
-                        $dbCourse = new Course([
-                            'title' => $item['productname'],
-                            'cid' => $item['sku'],
-                            'subtitle' => is_array($item['description']['short']) ? '' : $item['description']['short'],
-                            'image' => $item['imageurl'],
-                            'url' => $item['linkurl'],
-                            'description' => is_array($item['description']['long']) ? '' : $item['description']['long'],
-                            'price' => $item['price'],
-                            'discount_price' => $item['saleprice'],
-                            'course_provider_id' => 3,
-                            'certification' => true,
-                            'rating' => '0',
-                        ]);
-                        if ($item['mid'] === '42536') {
-                            $dbCourse->course_provider_id = 3;
-                        } else if ($item['mid'] === '39197') {
-                            $dbCourse->course_provider_id = 1;
-                        }
-                        $dbCourse->generateSlug();
-                        if (isset($item['category']['primary'])) {
-                            $category = CourseCategory::firstOrCreate(['name' => $item['category']['primary']]);
-                            $dbCourse->course_category_id = $category->id;
-                            if (isset($item['category']['secondary'])) {
-                                if (is_array($item['category']['secondary']) === false) {
-                                    $subCategory = CourseSubCategory::firstOrCreate(['name' => $item['category']['secondary'], 'course_category_id' => $category->id]);
-                                    $dbCourse->course_sub_category_id = $subCategory->id;
+                    if (isset($result['item'])) {
+                        foreach ($result['item'] as $item) {
+                            if (Course::where('cid', $item['sku'])->first() !== null) {
+                                continue;
+                            }
+                            $dbCourse = new Course([
+                                'title' => $item['productname'],
+                                'cid' => $item['sku'],
+                                'subtitle' => is_array($item['description']['short']) ? '' : $item['description']['short'],
+                                'image' => $item['imageurl'],
+                                'url' => $item['linkurl'],
+                                'description' => is_array($item['description']['long']) ? '' : $item['description']['long'],
+                                'price' => $item['price'],
+                                'discount_price' => $item['saleprice'],
+                                'course_provider_id' => 3,
+                                'certification' => true,
+                                'rating' => '0',
+                                'course_provider_id' => $provider['id'],
+                            ]);
+                            $dbCourse->generateSlug();
+                            if (isset($item['category']['primary'])) {
+                                $category = CourseCategory::firstOrCreate(['name' => $item['category']['primary']]);
+                                $dbCourse->course_category_id = $category->id;
+                                if (isset($item['category']['secondary'])) {
+                                    if (is_array($item['category']['secondary']) === false) {
+                                        $subCategory = CourseSubCategory::firstOrCreate(['name' => $item['category']['secondary'], 'course_category_id' => $category->id]);
+                                        $dbCourse->course_sub_category_id = $subCategory->id;
+                                    }
                                 }
                             }
+                            $dbCourse->save();
+                            $totalFetched++;
+                            $this->line("Fetched $dbCourse->title");
                         }
-                        $dbCourse->save();
-                        $totalFetched++;
-                        $this->line("Fetched $dbCourse->title");
-                        sleep(2);
                     }
+                } else {
+                    dd($response->status(), $response->body());
                 }
-            } else {
-                dd($response->status(), $response->body());
             }
         }
-        $this->line("Total $totalFetched courses fetched from Edureka");
+        $this->info("Total $totalFetched courses fetched");
         return 0;
     }
 }
