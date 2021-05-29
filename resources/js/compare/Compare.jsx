@@ -48,7 +48,7 @@ const Compare = () => {
                                                 <a 
                                                    href={cmp?.url}
                                                    target="_blank">
-                                               <button> Buy Now</button>
+                                               <button> Go to class</button>
                                                 </a>
                                             </div>
                                         </td>
@@ -185,7 +185,7 @@ const Compare = () => {
                         </tr>
                         <tr>
                             <td>
-                                <p className="compare-title">Instructor Designation</p>
+                                <p className="compare-title"></p>
                             </td>
                             {compares.map((compare, key) => (
                                 <td key={key}>
@@ -200,7 +200,7 @@ const Compare = () => {
                                             target="_blank"
                                             
                                         >
-                                            Buy Now
+                                           Go to class
                                         </a> 
                                     </button>
                                    

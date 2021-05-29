@@ -247,7 +247,7 @@ const CourseNavbar = props => {
                                                         )}
                                                     </Link>
                                                     {ismegamenu && (
-                                                        <div className="megasubmenu dropdown-menu">
+                                                        <div className="megasubmenu dropdown-menu" style={{width:"21rem"}}>
                                                             <ul className="list-unstyled">
                                                                 {navl.sub_categories.map(
                                                                     child => {
