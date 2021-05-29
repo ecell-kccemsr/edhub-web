@@ -112,13 +112,13 @@ const courseCategory = props => {
     const [ceritificationVal, setCertificationVal] = useState(1);
     const [lang, setLang] = useState("");
     const [discount, setDiscount] = useState('0');
-    const [sliderVal, setSliderVal] = useState(2000);
+    const [sliderVal, setSliderVal] = useState(20000000);
     const [providerVal, setProviderVal] = useState("");
     const [providerData, setProviderData] = useState([]);
     const [courseCategory, setCourseCategory] = useState([]);
     const [priceFilter, setPriceFilter] = useState({
         min: 0,
-        max: 2000
+        max: 20000000
     });
     const [currentCoursePage, setCurrentCoursePage] = useState({
         current_page: 1,
@@ -289,11 +289,11 @@ const courseCategory = props => {
                                     <input
                                         type="range"
                                         min="0"
-                                        max="2000"
+                                        max="200000"
                                         step="100"
                                         className="course-pricing-slider"
                                         value={sliderVal}
-                                        step={100}
+                                        step={1000}
                                         onChange={e =>
                                             onSliderChange(e.target.value)
                                         }
@@ -302,7 +302,7 @@ const courseCategory = props => {
                                 </div>
                                 <div className="pricing-slider-div">
                                     <span>Free</span>
-                                    <span>2K</span>
+                                    <span>2L</span>
                                 </div>
                                 <div className="pricing-input-div">
                                     <div className="pricing-div">
