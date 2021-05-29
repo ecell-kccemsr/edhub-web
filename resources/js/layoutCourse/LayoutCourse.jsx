@@ -35,7 +35,7 @@ function LayoutCourse({ children }) {
                 COMPARE
             </Link>
             <div className="request-btn">
-               <img src="images/request-call.png" alt="request"
+               <img src="/images/request-call.png" alt="request"
                onClick={toggleLogin}
                />
                                  <Modal isOpen={modallogin} toggle={toggleLogin} className="model">

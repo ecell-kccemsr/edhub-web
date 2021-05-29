@@ -212,7 +212,6 @@ function CourseDetail(props) {
                                 <NavItem>
                                     <NavLink
                                         className="navlink-course-detail"
-                                        href="#Prerequisites"
                                     >
                                         {" "}
                                         Prerequisites
@@ -421,7 +420,7 @@ function CourseDetail(props) {
                                         </> }
                                 </Col>
                             </Row>
-                        <div style={{ background: "#F6F7F8", padding: "30px 5px" }}>
+                        <div style={{ background: "#F6F7F8", padding: "15px 30px", borderRadius:"12px" }}>
                         <Row>
                             <Col sm="12" md="8">
                                 {
