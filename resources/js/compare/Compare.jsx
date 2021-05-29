@@ -38,7 +38,8 @@ const Compare = () => {
                                                     style={{
                                                         borderRadius: "16px",
                                                         width: "100%",
-                                                        height:"9rem"
+                                                        height:"9rem",
+                                                        display:"block"
                                                     }}
                                                 />
                                                 <h5>{cmp?.title}</h5>

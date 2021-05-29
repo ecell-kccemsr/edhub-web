@@ -781,9 +781,10 @@ const courseCategory = props => {
                                             style={{ marginBottom: "25px" }}
                                             key={course?.id}
                                         >
-                                            <a data-tip data-for={course?.id.toString()}>
+                                                 <a data-tip data-for={course?.id.toString()}>
                                              <CourseCard data={course} />
                                           </a>
+                                           
                                             <TooltipComponent data={course} />
                                         </Col>
                                     ))}

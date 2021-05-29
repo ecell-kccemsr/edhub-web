@@ -42,9 +42,7 @@ const Auth = () => {
             })
             .catch(err => console.log(err.response.data.message));
     };
-    const myFunction= () => {
-        window.open("https://edhub.in/");
-      }
+ 
 
     if(type=='login'){
         return(
@@ -52,9 +50,14 @@ const Auth = () => {
             <Container style={{ boxShadow: "none" }} className="auth">
                 <Row className="align-items-center">
                     <Col sm="12" md="12">
-                        <h4 className="auth-header ">
-                            Welcome to edu<span>hub</span>
+                        <div style={{display:"flex"}}>
+                             <h4 className="auth-header ">
+                            Welcome to 
                         </h4>
+                        &nbsp;
+                        <img src="/images/landingpage/Edhub-1.png" alt="Logo" style={{width:"25%", height:"30px", margin:"2px"}} />
+                        </div>
+                       
                         <h2 className="auth-subheader">Login</h2>
                         <form onSubmit={handleLogin}>
                             <FormGroup>
@@ -159,9 +162,13 @@ const Auth = () => {
             >
                 <Row className="align-items-center">
                     <Col sm="12" md="12">
-                        <h4 className="auth-header text-center pb-0">
-                            Welcome to edu<span>hub</span>
+                    <div style={{display:"flex"}}>
+                             <h4 className="auth-header ">
+                            Welcome to 
                         </h4>
+                        &nbsp;
+                        <img src="/images/landingpage/Edhub-1.png" alt="Logo" style={{width:"25%", height:"30px", margin:"2px"}} />
+                        </div>
                         <h2
                             className="auth-subheader  text-center pb-0"
                             style={{ marginBottom: "25px" }}
