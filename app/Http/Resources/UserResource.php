@@ -23,6 +23,7 @@ class UserResource extends JsonResource
             'avatar' => str_starts_with($this->avatar, 'http') ? $this->avatar : Voyager::image($this->avatar),
             'seo_keywords' => $this->seo_keywords,
             'seo_description' => $this->seo_description,
+            'verified' => $this->email_verified_at===null?false:true,
         ];
     }
 }

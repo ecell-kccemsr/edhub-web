@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\EmailVerification;
 use App\Http\Requests\StoreSignUp;
+use App\Jobs\DeleteUnverifiedUser;
 use App\Notifications\VerifyEmail;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SignUpRequest;
@@ -53,6 +54,7 @@ class AuthController extends Controller
         $email_verification->save();
 
         $user->notify(new VerifyEmail($token));
+        DeleteUnverifiedUser::dispatch($user)->delay(now()->addHours(24));
         return response()->json([
             'message' => 'Veification email sent successfully'
         ]);
@@ -150,5 +152,41 @@ class AuthController extends Controller
             $user->gender = $request->input('gender');
         $user->save();
         return new UserResource(Auth::user());
+    }
+
+    public function updateEmail(Request $request){
+        $user = Auth::user();
+        $user->email = $request->input('email');
+        $user->email_verified_at = null;
+        $user->save();
+
+        $token = Str::random(128);
+        $email_verification = EmailVerification::where('user_id',$user->id)->first();
+        $email_verification->token = $token;
+        $email_verification->updated_at = Carbon::now(); 
+        $email_verification->save();
+    
+        $user->notify(new VerifyEmail($token));
+        return response()->json([
+            'message' => 'Veification email sent successfully'
+        ]);
+    }
+
+    public function resend_email(){
+        $user = Auth::user();
+
+        if($user->email_verified_at === null){
+            EmailVerification::where('user_id',$user->id)->first()->delete();
+            $token = Str::random(128);
+            $email_verification = new EmailVerification();
+            $email_verification->user_id = $user->id;
+            $email_verification->token = $token; 
+            $email_verification->save();
+            
+            $user->notify(new VerifyEmail($token));
+            return response()->json([
+                'message' => 'Veification email sent successfully'
+            ]);
+        }
     }
 }

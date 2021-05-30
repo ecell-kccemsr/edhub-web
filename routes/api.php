@@ -37,12 +37,14 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('/wishlist',[CourseWishlistController::class,'get']);
     Route::delete('/wishlist',[CourseWishlistController::class,'delete']);
     Route::post('/wishlist',[CourseWishlistController::class,'add']);
+    Route::post('/auth/resend-email',[AuthController::class,'resend_email']);
   });
 
 //Auth Controller
 Route::post('/auth/signup',[AuthController::class,'signUp']);
 Route::post('/auth/login',[AuthController::class,'login']);
 Route::post('/auth/logout',[AuthController::class,'logout']);
+
 
 //Email Verification
 Route::get('/auth/verify-email',[EmailVerificationController::class,'verify']);

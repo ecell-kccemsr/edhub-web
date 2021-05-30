@@ -39,4 +39,5 @@ class EmailVerificationController extends Controller
             'message' => 'Wrong token passed'
         ]);
     }
+
 }
