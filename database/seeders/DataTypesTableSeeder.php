@@ -541,6 +541,24 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2021-05-26 18:56:02',
                 'updated_at' => '2021-05-26 18:56:02',
             ),
+            29 => 
+            array (
+                'id' => 37,
+                'name' => 'comments',
+                'slug' => 'comments',
+                'display_name_singular' => 'Comment',
+                'display_name_plural' => 'Comments',
+                'icon' => NULL,
+                'model_name' => 'BeyondCode\\Comments\\Comment',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null}',
+                'created_at' => '2021-05-30 23:50:35',
+                'updated_at' => '2021-05-30 23:50:35',
+            ),
         ));
         
         

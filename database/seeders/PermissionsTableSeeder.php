@@ -1267,6 +1267,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-05-26 18:56:02',
                 'updated_at' => '2021-05-26 18:56:02',
             ),
+            156 => 
+            array (
+                'id' => 167,
+                'key' => 'browse_comments',
+                'table_name' => 'comments',
+                'created_at' => '2021-05-30 23:50:35',
+                'updated_at' => '2021-05-30 23:50:35',
+            ),
+            157 => 
+            array (
+                'id' => 168,
+                'key' => 'read_comments',
+                'table_name' => 'comments',
+                'created_at' => '2021-05-30 23:50:35',
+                'updated_at' => '2021-05-30 23:50:35',
+            ),
+            158 => 
+            array (
+                'id' => 169,
+                'key' => 'edit_comments',
+                'table_name' => 'comments',
+                'created_at' => '2021-05-30 23:50:35',
+                'updated_at' => '2021-05-30 23:50:35',
+            ),
+            159 => 
+            array (
+                'id' => 170,
+                'key' => 'add_comments',
+                'table_name' => 'comments',
+                'created_at' => '2021-05-30 23:50:35',
+                'updated_at' => '2021-05-30 23:50:35',
+            ),
+            160 => 
+            array (
+                'id' => 171,
+                'key' => 'delete_comments',
+                'table_name' => 'comments',
+                'created_at' => '2021-05-30 23:50:35',
+                'updated_at' => '2021-05-30 23:50:35',
+            ),
         ));
         
         

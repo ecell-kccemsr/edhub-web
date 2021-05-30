@@ -707,6 +707,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.testimonies.index',
                 'parameters' => NULL,
             ),
+            43 => 
+            array (
+                'id' => 46,
+                'menu_id' => 1,
+                'title' => 'Comments',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => NULL,
+                'color' => NULL,
+                'parent_id' => NULL,
+                'order' => 18,
+                'created_at' => '2021-05-30 23:50:35',
+                'updated_at' => '2021-05-30 23:50:35',
+                'route' => 'voyager.comments.index',
+                'parameters' => NULL,
+            ),
         ));
         
         
