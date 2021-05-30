@@ -67,7 +67,9 @@ const SearchbarDropdown = props => {
                             {option?.type}
                             </p>
                             <a href={`${option?.url}`}>
-                                {option?.title}
+                            {option?.title.length > 50
+                            ? option?.title.slice(0, 50) 
+                            : option?.title}
                             </a>
                         </button>
                     );
@@ -271,7 +273,7 @@ const CourseNavbar = props => {
                                                         )}
                                                     </Link>
                                                     {ismegamenu && (
-                                                        <div className="megasubmenu dropdown-menu" style={{width:"21rem"}}>
+                                                        <div className="megasubmenu dropdown-menu" style={{width:"17rem"}}>
                                                             <ul className="list-unstyled">
                                                                 {navl.sub_categories.map(
                                                                     child => {
