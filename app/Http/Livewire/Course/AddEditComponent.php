@@ -41,6 +41,7 @@ class AddEditComponent extends Component
         'rating' => 'required',
         'price' => 'required',
         'course_provider_id' => 'required',
+        'image' => 'image|max:1024',
     ];
 
     protected $listeners = ['outcomeUpdated','prerequitesUpdated','faqUpdated','ratingDistributionUpdated'];
