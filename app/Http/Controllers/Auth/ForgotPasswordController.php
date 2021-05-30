@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\PasswordReset;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ResetPasswordRequest;
+use App\Jobs\PasswordResetTokenExpiration;
 use App\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\ResetPasswordSuccessful;
@@ -41,6 +42,7 @@ class ForgotPasswordController extends Controller
             $password_reset->created_at = now();
             $password_reset->save();
             $user->notify(new ResetPassword($token));
+            PasswordResetTokenExpiration::dispatch($user)->delay(now()->addHours(4));
             return 'Ok';
         }
         return response()->json([

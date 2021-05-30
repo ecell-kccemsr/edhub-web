@@ -10,10 +10,9 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 
-class DeleteUnverifiedUser implements ShouldQueue
+class EmailTokenExpiration implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
     protected $user;
     /**
      * Create a new job instance.
@@ -32,12 +31,8 @@ class DeleteUnverifiedUser implements ShouldQueue
      */
     public function handle()
     {
-        if($this->user->email_verified_at === null)
-        {
-            $email_token = EmailVerification::where('user_id',$this->user->id)->first();
-            if($email_token)
-                $email_token->delete();
-            $this->user->delete();
-        }
+        $email_token = EmailVerification::where('user_id',$this->user->id)->first();
+        if($email_token)
+            $email_token->delete();
     }
 }

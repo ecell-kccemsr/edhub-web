@@ -9,6 +9,7 @@ use Illuminate\Support\Carbon;
 use App\Models\EmailVerification;
 use App\Http\Requests\StoreSignUp;
 use App\Jobs\DeleteUnverifiedUser;
+use App\Jobs\EmailTokenExpiration;
 use App\Notifications\VerifyEmail;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SignUpRequest;
@@ -167,6 +168,7 @@ class AuthController extends Controller
         $email_verification->save();
     
         $user->notify(new VerifyEmail($token));
+        EmailTokenExpiration::dispatch($user)->delay(now()->addHours(4));
         return response()->json([
             'message' => 'Veification email sent successfully'
         ]);
@@ -184,6 +186,7 @@ class AuthController extends Controller
             $email_verification->save();
             
             $user->notify(new VerifyEmail($token));
+            EmailTokenExpiration::dispatch($user)->delay(now()->addHours(4));
             return response()->json([
                 'message' => 'Veification email sent successfully'
             ]);
