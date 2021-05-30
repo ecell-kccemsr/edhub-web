@@ -77,7 +77,7 @@ const GuideModal = () => {
                     <hr className="modal-hr" />
                     <Row>
                         <Col sm="12" md="3" className="text-center">
-                            <b>
+                            <b style={{fontWeight:"bold", fontSize:"17px"}}>
                                 STEP <br />
                                 <span className="guide-modal-step">
                                     {step} / 5
