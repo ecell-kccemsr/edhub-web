@@ -19,11 +19,14 @@ class SocialLoginController extends Controller
         $data = Socialite::driver($provider)->user();
         $user = User::where($provider, $data->getId())->first();
         if ($user === null) {
-            $user = new User();
-            $user->$provider = $data->getId();
+            $user = User::where('email', $data->getEmail())->first();
+            if ($user === null) {
+                $user = new User();
+                $user->$provider = $data->getId();
+                $user->email = $data->getEmail();
+            }
         }
         $user->name = $data->getName();
-        $user->email = $data->getEmail();
         $user->avatar = $data->getAvatar();
         $user->email_verified_at = now();
         $user->save();
