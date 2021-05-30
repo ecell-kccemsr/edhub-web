@@ -8,10 +8,10 @@
 </head>
 <body>
     <script>
-        localStorage.setItem("accessToken", "{{$accessToken}}")
+        localStorage.setItem("accessToken", "{{$accessToken}}");
         setTimeout(() => {
-            window.close();
+            window.location.href = "/";
         }, 100);
     </script>
 </body>
-</html> 
+</html>

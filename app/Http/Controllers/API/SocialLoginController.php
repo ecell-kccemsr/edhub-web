@@ -30,6 +30,6 @@ class SocialLoginController extends Controller
         $tokenResult = $user->createToken(config('app.name') . 'Personal Access Client');
         $token = $tokenResult->token;
         $token->save();
-        return redirect('/');
+        return view('social', ['accessToken' => $tokenResult->accessToken]);
     }
 }
