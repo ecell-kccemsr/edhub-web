@@ -4,7 +4,7 @@ import { Col, Container, Row, Spinner  } from "reactstrap";
 import axios from "axios";
 import LinkCard from "../../components/link-card/LinkCard";
 import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
-import GovernmentjobAccordation from "../../jobs/GovernmentjobAccordation";
+import PaperAccordation from "./prevQPaperAccordation";
 import {Helmet} from "react-helmet";
 
 const prevQPaperSingleDataPage = ({match}) => {
@@ -26,7 +26,7 @@ const prevQPaperSingleDataPage = ({match}) => {
         }
 
         axios
-            .get("/api/government_jobs/categories")
+            .get("/api/questionpapers/categories")
             .then(res => {
                 setCategory(res.data.data);
             })
@@ -73,9 +73,9 @@ const prevQPaperSingleDataPage = ({match}) => {
                 <Row>
                     <Col sm="12" lg="3">
                         <div className="left-sidebar">
-                            <h4>JOBS</h4>
+                            <h4>Question Paper </h4>
 
-                            <GovernmentjobAccordation data={categories} />
+                            <PaperAccordation data={categories} />
                         </div>
                     </Col>
                     <Col sm="12" lg="6">

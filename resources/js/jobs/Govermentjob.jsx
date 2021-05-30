@@ -98,9 +98,12 @@ function Govermentjob() {
                             Select Your Exam
                         </h5>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
+                                 
                             {categories.map(d => {
                                 let isActive = d.id == categories[0].id;
                                 return (
+                                    <>
+                                  
                                     <li
                                         className="nav-item"
                                         role="presentation"
@@ -122,17 +125,15 @@ function Govermentjob() {
                                             {d?.name}
                                         </a>
                                     </li>
+                                    </>
                                 );
                             })}
                         </ul>
                         
-                        <div className="job-tab-content" id="myTabContent">
-                         <Row >
+                        <div className="job-tab-content d-flex flex-wrap" id="myTabContent">
                             {subCategoryFilter.map(d => {
                                 let isActive = d.id == subCategoryFilter[0].id;
                                 return (
-                                    <Col xs="12" sm="4" md="3"
-                                    >
                                     <div
                                         className={`tab-pane fade show ${
                                             isActive ? "active" : ""
@@ -140,8 +141,9 @@ function Govermentjob() {
                                         id={`${d?.category?.slug}`}
                                         role="tabpanel"
                                         aria-labelledby={`${d?.category?.slug}-tab`}
+                                        style={{margin:"0 13px 20px", width:"18%"}}
                                     >
-                                             <div className="job-tab-el my-2">
+                                             <div className="job-tab-el my-0">
                                                     <Link to={`/govermentjobs/${d?.category?.slug}/${d?.slug}`}>
                                                      <img
                                                         src={d?.image}
@@ -151,11 +153,9 @@ function Govermentjob() {
                                                     </Link>
                                                 </div>                                            
                                     </div>
-                                    </Col>
                                 
                                 );
                             })}
-                            </Row>
                         </div>
                        
                     </div>

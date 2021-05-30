@@ -58,7 +58,6 @@ const Examcalendar = props => {
     return (
         <>
               <Helmet>
-                   <title>Exam calender Page</title>
                     <meta name="description" content="Exam calender page where all exams are displayed" />
                     <meta name='copyright' content='Edhub' />
                     <meta name='language' content='ES' />
@@ -115,6 +114,7 @@ const Examcalendar = props => {
                         <section
                             className="exam-toggle-section"
                             key={month.value}
+                            onClick={() => toggle(month.name)}
                         >
                             <div className="exam-toggle-btn-section text-right">
                                 <h5 className="text-left">{month.name}</h5>
