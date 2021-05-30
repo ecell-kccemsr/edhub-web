@@ -67,7 +67,7 @@ const NewsHomePage = () => {
     if(loading){
         <div className="news-section-container">
         <div className="containerClass">
-            <h4 className="text-center">Loading News...
+            <h4 className="text-center">
             <Spinner color="danger" />
             </h4>
         </div>
@@ -84,7 +84,7 @@ const NewsHomePage = () => {
              </Helmet>
         <div className="news-section-container">
             <div className="containerClass">
-                <div className=" d-flex justify-content-center flex-wrap mb-5" style={newsNavStyles}>
+                <div className=" d-flex justify-content-center flex-wrap mb-3" style={newsNavStyles}>
                   
                     {categories &&
                         categories.length > 0 && (
@@ -186,7 +186,7 @@ const NewsHomePage = () => {
 
 const newsNavStyles = {
     position:"sticky",
-    top:77,
+    top:7,
     left:0,
     right:0,
     zIndex:999,

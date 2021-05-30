@@ -111,8 +111,8 @@ const Auth = () => {
                                     {" "}
                                 Login With Your Social Account
                             </p>
-                                <div style={{ marginLeft: "40%" }}>
-                                    <a
+                                <div style={{ marginLeft: "27%", marginTop:"-10px" }}>
+                                    {/* <a
                                         style={{ backgroundColor: "#fff" }}
                                         href="/login/Facebook/redirect"
                                     >
@@ -121,7 +121,7 @@ const Auth = () => {
                                             src="/images/FacebookLogo.png"
                                             alt="signInFacebook"
                                         />
-                                    </a>
+                                    </a> */}
                                     <a
                                         href="/login/google/redirect"
                                     >
@@ -244,8 +244,8 @@ const Auth = () => {
                             <p className="register-login-link">
                                 Register With Your Social Account
                             </p>
-                            <div style={{ marginLeft: "40%" }}>
-                                <a
+                            <div style={{ marginLeft: "27%", marginTop:"-10px" }}>
+                                {/* <a
                                     href="/login/Facebook/redirect"
                                     target="_blank"
                                 >
@@ -254,14 +254,14 @@ const Auth = () => {
                                         src="/images/FacebookLogo.png"
                                         alt="signInFacebook"
                                     />
-                                </a>
+                                </a> */}
                                 <a
                                     href="/login/google/redirect"
                                     target="_blank"
                                 >
                                     <img
                                         className="social-sign-in"
-                                        src="/images/signInGoogle.png"
+                                        src="/images/signUpGoogle.png"
                                         alt="signInGoogle"
                                     />
                                 </a>

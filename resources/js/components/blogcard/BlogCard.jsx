@@ -65,33 +65,33 @@ const BlogCard = ({ tags, data, toUrl }) => {
                 <div className="social-container">
 
                                   <a
-                                    href={` https://t.me/share/url?url=${window.location.href}`}
+                                    href={` https://t.me/share/url?url=${window.location.href}/${data?.slug}`}
                                     target="_blank"
                                 >
                                    <i className="fab fa-telegram" style={{color:"#0088CC"}}></i>
                                 </a>
                                 <a
-                                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`}
+                                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}/${data?.slug}`}
                                     target="_blank"
                                 >
                                    <i className="fab fa-linkedin" style={{color:"#2867B2"}}></i>
                                 </a>
                                 <a
-                                    href={`https://www.facebook.com/sharer.php?u=${window.location.href}`}
+                                    href={`https://www.facebook.com/sharer.php?u=${window.location.href}/${data?.slug}`}
                                     target="_blank"
                                 >
                                     
                                     <i className="fab fa-facebook" style={{color:"#3C5A99"}}></i>
                                 </a>
                                 <a
-                                    href={`https://twitter.com/intent/tweet?url=${window.location.href}`}
+                                    href={`https://twitter.com/intent/tweet?url=${window.location.href}/${data?.slug}`}
                                     target="_blank"
                                 >
                                     
                                     <i className="fab fa-twitter" style={{color:"#1DA1F2"}}></i>
                                 </a>
                                 <a
-                                    href={`https://api.whatsapp.com/send?text=${window.location.href}`}
+                                    href={`https://api.whatsapp.com/send?text=${window.location.href}/${data?.slug}`}
                                     target="_blank"
                                 >
                                     
