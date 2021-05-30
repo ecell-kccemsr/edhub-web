@@ -53,7 +53,7 @@ const GovernmentjobAccordation = ({ data }) => {
                                         aria-labelledby={`heading-${d?.slug}`}
                                         data-parent="#job-detailaccordionparent"
                                     >
-                                        <div className="card-body">
+                                        <div className="card-body" style={{padding:"10px"}}>
                                             {subcategory
                                                 ?.filter(
                                                     sc =>

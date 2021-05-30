@@ -134,13 +134,15 @@ const BlogHomepage = () => {
                         <div className="blog-sidebar">
                            
                             <h6 className="mt-0">Recent Courses</h6>
-                            <hr />
                             {
                                 course && course.length==0 && (
                                     <p  className="mb-0">No Recent Courses Found!</p>
                                 )
                             }
                             {course?.length>0 && course.map((a,key)=>(
+                                <>
+                            <hr />
+
                               <div className="blog-sidebar-list-el my-3" key={key}>
                               <div className="sidebar-list-top">
                                   <i className="fas fa-chevron-right"></i>
@@ -153,6 +155,7 @@ const BlogHomepage = () => {
                                   <img src={a?.course_provider?.image} alt={a?.course_provider?.name} />
                               </div>
                           </div>
+                          </>
                             ))}
                         </div>
                           

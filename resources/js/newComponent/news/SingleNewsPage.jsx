@@ -147,7 +147,7 @@ const SingleNewsPage = props => {
          {
             !loading && !error && (
                 <>
-                <div className=" d-flex justify-content-center flex-wrap mb-5" style={newsNavStyles}>
+                <div className=" d-flex justify-content-center flex-wrap mb-3" style={newsNavStyles}>
                   
                   {categories &&
                       categories.length > 0 && (
@@ -445,7 +445,7 @@ const SingleNewsPage = props => {
 };
 const newsNavStyles = {
     position:"sticky",
-    top:77,
+    top:0,
     left:0,
     right:0,
     zIndex:999,

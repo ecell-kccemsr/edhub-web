@@ -219,7 +219,7 @@ html {
         border-radius: 6px;
         box-shadow: 0px 2px 6px 0px #b5b5b5;
         position: sticky;
-        top: 100px;
+        top: 25px;
         left: 0;
         right: 0;
         z-index: 500;
@@ -301,6 +301,8 @@ html {
             border-color: #c4c4c4;
         }
         .job-course-sidebar-list-el {
+            border-bottom: 2px solid #c4c4c4;
+            margin-bottom: 8px;
             .sidebar-list-top {
                 display: flex;
                 align-items: flex-start;
@@ -328,7 +330,7 @@ html {
     }
     .containerClass {
         position: sticky;
-        top: 75px;
+        top: 0px;
         left: 0;
         right: 0;
         z-index: 500;

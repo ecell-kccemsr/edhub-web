@@ -186,7 +186,7 @@ const NewsHomePage = () => {
 
 const newsNavStyles = {
     position:"sticky",
-    top:7,
+    top:0,
     left:0,
     right:0,
     zIndex:999,
