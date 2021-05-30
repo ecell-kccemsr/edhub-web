@@ -12,8 +12,8 @@ const Auth = () => {
     const [password, setPassword] = useState("");
     const [remember_me, setRememberMe] = useState(false);
 
-    const toggleType = () =>{
-        if(type=="login")setType("register")
+    const toggleType = () => {
+        if (type == "login") setType("register")
         else setType("login")
     }
 
@@ -42,116 +42,113 @@ const Auth = () => {
             })
             .catch(err => console.log(err.response.data.message));
     };
- 
 
-    if(type=='login'){
-        return(
+
+    if (type == 'login') {
+        return (
             <>
-            <Container style={{ boxShadow: "none" }} className="auth">
-                <Row className="align-items-center">
-                    <Col sm="12" md="12">
-                             <h4 className="auth-header ">
-                            Welcome to <span>EdHub</span>
-                        </h4>
-                      
-                       
-                        <h2 className="auth-subheader">Login</h2>
-                        <form onSubmit={handleLogin}>
-                            <FormGroup>
-                                <Input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    placeholder="Email"
-                                    className="auth-input"
-                                    value={email}
-                                    onChange={e => setEmail(e.target.value)}
-                                />
-                            </FormGroup>
-                            <FormGroup>
-                                <Input
-                                    type="password"
-                                    name="password"
-                                    id="password"
-                                    placeholder="Password"
-                                    className="auth-input"
-                                    value={password}
-                                    onChange={e => setPassword(e.target.value)}
-                                />
-                            </FormGroup>
-                            <Row className="justify-content-between auth-row">
-                                <Col sm="12" md="6">
-                                    <FormGroup check>
-                                        <Label check>
-                                            <Input
-                                                type="checkbox"
-                                                name="remember_me"
-                                                checked={remember_me}
-                                                onChange={e =>
-                                                    setRememberMe(!remember_me)
-                                                }
-                                            />
+                <Container style={{ boxShadow: "none" }} className="auth">
+                    <Row className="align-items-center">
+                        <Col sm="12" md="12">
+                            <h4 className="auth-header ">
+                                Welcome to <span>EdHub</span>
+                            </h4>
+
+
+                            <h2 className="auth-subheader">Login</h2>
+                            <form onSubmit={handleLogin}>
+                                <FormGroup>
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        placeholder="Email"
+                                        className="auth-input"
+                                        value={email}
+                                        onChange={e => setEmail(e.target.value)}
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Input
+                                        type="password"
+                                        name="password"
+                                        id="password"
+                                        placeholder="Password"
+                                        className="auth-input"
+                                        value={password}
+                                        onChange={e => setPassword(e.target.value)}
+                                    />
+                                </FormGroup>
+                                <Row className="justify-content-between auth-row">
+                                    <Col sm="12" md="6">
+                                        <FormGroup check>
+                                            <Label check>
+                                                <Input
+                                                    type="checkbox"
+                                                    name="remember_me"
+                                                    checked={remember_me}
+                                                    onChange={e =>
+                                                        setRememberMe(!remember_me)
+                                                    }
+                                                />
                                             Remember Me
                                         </Label>
-                                    </FormGroup>
-                                </Col>
-                                <Col sm="12" md="5">
-                                    <Link to="/forgot-password">Forgot Password</Link>
-                                </Col>
-                            </Row>
-                            <button className="auth-btn" type="submit">
-                                submit
+                                        </FormGroup>
+                                    </Col>
+                                    <Col sm="12" md="5">
+                                        <Link to="/forgot-password">Forgot Password</Link>
+                                    </Col>
+                                </Row>
+                                <button className="auth-btn" type="submit">
+                                    submit
                             </button>
 
-                            <p className="register-login-link mt-3">
-                                Don't have an account?{" "}
-                                <Link onClick={toggleType} to="#">Get Started</Link>
-                            </p>
-                            <p className="register-login-link">
-                                {" "}
+                                <p className="register-login-link mt-3">
+                                    Don't have an account?{" "}
+                                    <Link onClick={toggleType} to="#">Get Started</Link>
+                                </p>
+                                <p className="register-login-link">
+                                    {" "}
                                 Login With Your Social Account
                             </p>
-                            <div style={{ marginLeft: "40%" }}>
-                                <a
-                                style={{backgroundColor:"#fff"}}
-                                    href="/login/Facebook/redirect"
-                                    target="_blank"
-                                    // onclick={myFunction}
-                                >
-                                    <img
-                                        className="social-sign-in"
-                                        src="/images/FacebookLogo.png"
-                                        alt="signInFacebook"
-                                    />
-                                </a>
-                                <a
-                                    href="/login/google/redirect"
-                                    target="_blank"
-                                >
-                                    <img
-                                        className="social-sign-in"
-                                        src="/images/signInGoogle.png"
-                                        alt="signInGoogle"
-                                    />
-                                </a>
-                            </div>
-                        </form>
-                    </Col>
-                    {/* <Col
+                                <div style={{ marginLeft: "40%" }}>
+                                    <a
+                                        style={{ backgroundColor: "#fff" }}
+                                        href="/login/Facebook/redirect"
+                                    >
+                                        <img
+                                            className="social-sign-in"
+                                            src="/images/FacebookLogo.png"
+                                            alt="signInFacebook"
+                                        />
+                                    </a>
+                                    <a
+                                        href="/login/google/redirect"
+                                    >
+                                        <img
+                                            className="social-sign-in"
+                                            src="/images/signInGoogle.png"
+                                            alt="signInGoogle"
+                                        />
+                                    </a>
+                                </div>
+                            </form>
+                        </Col>
+                        {/* <Col
                         sm="12"
                         md={{ size: 6, offset: 2 }}
                         className="auth-img-col"
                     >
-                        
+
                         <img src="/images/loginBackground.png" alt="loginBackground" className="w-100" />
                     </Col> */}
-                </Row>
-            </Container>
-        </>
+                    </Row>
+                </Container>
+            </>
         )
     }
-    
-    return(
+
+    return (
         <>
             <Container
                 style={{ boxShadow: "none", marginTop: "0" }}
@@ -159,10 +156,10 @@ const Auth = () => {
             >
                 <Row className="align-items-center">
                     <Col sm="12" md="12">
-                             <h4 className="auth-header ">
+                        <h4 className="auth-header ">
                             Welcome to <span>EdHub</span>
                         </h4>
-                     
+
                         <h2
                             className="auth-subheader  text-center pb-0"
                             style={{ marginBottom: "25px" }}
@@ -242,7 +239,7 @@ const Auth = () => {
                             </button>
                             <p className="register-login-link">
                                 Already have an account?
-                                <p style={{cursor:"pointer", color:"#F05454"}} onClick={toggleType}>Login</p>
+                                <p style={{ cursor: "pointer", color: "#F05454" }} onClick={toggleType}>Login</p>
                             </p>
                             <p className="register-login-link">
                                 Register With Your Social Account

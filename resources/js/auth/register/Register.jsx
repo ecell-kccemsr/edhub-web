@@ -115,13 +115,13 @@ const Register = () => {
                             </button>
                             <p className="register-login-link">
                                 Already have an account?
-                                <p style={{cursor:"pointer", color:"#F05454"}} onClick={toggleLogin}>login</p>
-                                 <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
-                                 <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
-                                   <ModalBody>
-                                    <Login />                                   
-                                   </ModalBody>
-                                 </Modal>
+                                <p style={{ cursor: "pointer", color: "#F05454" }} onClick={toggleLogin}>login</p>
+                                <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
+                                    <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
+                                    <ModalBody>
+                                        <Login />
+                                    </ModalBody>
+                                </Modal>
                             </p>
                             <p className="register-login-link">
                                 {" "}
@@ -130,7 +130,6 @@ const Register = () => {
                             <div style={{ marginLeft: "40%" }}>
                                 <a
                                     href="/login/Facebook/redirect"
-                                    target="_blank"
                                 >
                                     <img
                                         className="social-sign-in"
@@ -140,7 +139,6 @@ const Register = () => {
                                 </a>
                                 <a
                                     href="/login/google/redirect"
-                                    target="_blank"
                                 >
                                     <img
                                         className="social-sign-in"
