@@ -50,13 +50,10 @@ const Auth = () => {
             <Container style={{ boxShadow: "none" }} className="auth">
                 <Row className="align-items-center">
                     <Col sm="12" md="12">
-                        <div style={{display:"flex"}}>
                              <h4 className="auth-header ">
-                            Welcome to 
+                            Welcome to <span>EdHub</span>
                         </h4>
-                        &nbsp;
-                        <img src="/images/landingpage/Edhub-1.png" alt="Logo" style={{width:"25%", height:"30px", margin:"2px"}} />
-                        </div>
+                      
                        
                         <h2 className="auth-subheader">Login</h2>
                         <form onSubmit={handleLogin}>
@@ -162,13 +159,10 @@ const Auth = () => {
             >
                 <Row className="align-items-center">
                     <Col sm="12" md="12">
-                    <div style={{display:"flex"}}>
                              <h4 className="auth-header ">
-                            Welcome to 
+                            Welcome to <span>EdHub</span>
                         </h4>
-                        &nbsp;
-                        <img src="/images/landingpage/Edhub-1.png" alt="Logo" style={{width:"25%", height:"30px", margin:"2px"}} />
-                        </div>
+                     
                         <h2
                             className="auth-subheader  text-center pb-0"
                             style={{ marginBottom: "25px" }}

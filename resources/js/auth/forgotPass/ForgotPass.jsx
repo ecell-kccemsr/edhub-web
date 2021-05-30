@@ -31,7 +31,7 @@ const ForgotPass = () => {
         return(
             <>
              <h3 className="auth-brand text-center pt-4 mt-4">
-                edu<span>hub</span>
+                Ed<span>Hub</span>
             </h3>
              <Container style={{ boxShadow: "none" , paddingTop:"30px"}} className="auth">
                 <Row className="align-items-center justify-content-center">
@@ -49,7 +49,7 @@ const ForgotPass = () => {
         <>
         <ToastContainer />
         <h3 className="auth-brand text-center pt-4 mt-4">
-                edu<span>hub</span>
+                Ed<span>Hub</span>
             </h3>
         <Container style={{ boxShadow: "none" , paddingTop:"30px"}} className="auth">
             <Row className="align-items-center justify-content-center">

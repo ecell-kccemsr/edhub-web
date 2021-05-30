@@ -21,12 +21,18 @@ import GModal from "./Modal";
 //images
 
 const SearchbarDropdown = props => {
-    const { options, onInputChange } = props;
+    
+    const { options, onInputChange, searchText,handleSearch,setShowMegaMenu } = props;
     const ulRef = useRef();
     const inputRef = useRef();
+    const history = useHistory();
+
+ 
+   
     useEffect(() => {
         inputRef.current.addEventListener("click", event => {
             event.stopPropagation();
+            setShowMegaMenu(false)
             ulRef.current.style.display = "flex";
             onInputChange(event);
         });
@@ -36,7 +42,9 @@ const SearchbarDropdown = props => {
     }, []);
     return (
         <div className="search-bar-dropdown">
-            <input
+            <form onSubmit={handleSearch}>
+               <input
+               style={{width:"19rem"}}
                 id="search-bar"
                 type="text"
                 className="form-control"
@@ -44,7 +52,9 @@ const SearchbarDropdown = props => {
                 ref={inputRef}
                 onChange={onInputChange}
                 autoComplete="off"
-            />
+            /> 
+            </form>
+            
             <ul id="results" className="list-group" ref={ulRef}>
                 {options.map((option, index) => {
                     return (
@@ -66,16 +76,29 @@ const SearchbarDropdown = props => {
         </div>
     );
 };
-
 const CourseNavbar = props => {
     const [options, setOptions] = useState([]);
+    const [searchText, setSearchText] = useState("");
+    const [showMegaMenu,setShowMegaMenu] = useState(false)
      const history = useHistory();
     const onInputChange = event => {
+        setSearchText(event.target.value);
         axios
             .get(`/api/search?search=${event.target.value}`)
             .then(res => setOptions(res.data))
             .catch(err => console.log(err));
     };
+
+    const handleSearch = e => {
+        e.preventDefault();
+        const form = e.target
+        if(searchText!=""){
+            history.push(`/course-category?q=${searchText}`)
+            form.reset()
+        }
+    };
+
+    
     const [modal, setModal] = useState(false);
     const [step, setStep] = useState(1);
     const [categories, setCategory] = useState([]);
@@ -209,13 +232,14 @@ const CourseNavbar = props => {
                         <ul className="navbar-nav">
                             <li className="nav-item dropdown">
                                 <a
-                                    className="nav-link courseNavLink dropdown-toggle megamenu-btn"
+                                    className={`nav-link courseNavLink dropdown-toggle megamenu-btn ${showMegaMenu?"show":""}`}
                                     href="#"
                                     data-bs-toggle="dropdown"
+                                    aria-expanded={`${showMegaMenu}`}
                                 >
-                                    Courses
+                                    <span>Courses</span>
                                 </a>
-                                <ul className="dropdown-menu" >
+                                <ul className={`dropdown-menu ${showMegaMenu?"show":""}`} >
                                     {categories &&
                                         categories.map(navl => {
                                             let ismegamenu = false;
@@ -372,6 +396,9 @@ const CourseNavbar = props => {
                                 <SearchbarDropdown
                                     options={options}
                                     onInputChange={onInputChange}
+                                    searchText={searchText}
+                                    handleSearch={handleSearch}
+                                    setShowMegaMenu={setShowMegaMenu}
                                 />
                             </li>
                         </ul>
