@@ -16,6 +16,7 @@ class CreateQuestionPaperCategoriesTable extends Migration
         Schema::create('question_paper_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('image')->nullable();
             $table->string('slug')->unique();
             $table->string('seo_keywords')->nullable();
             $table->longText('seo_description')->nullable();

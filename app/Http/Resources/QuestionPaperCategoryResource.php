@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\QuestionPaperSubCategoryResource;
 
@@ -19,6 +20,7 @@ class QuestionPaperCategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'created_at' => $this->created_at,
+            'image' =>  Voyager::image($this->image),
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
             'updated_at_formated' => $this->updated_at === null ? null : $this->updated_at->diffForHumans(),
