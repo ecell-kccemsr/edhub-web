@@ -57,7 +57,7 @@ const CourseCard = ({ data }) => {
                         <img
                             src={data?.course_provider.image}
                             alt="course-provider"
-                            style={{ height: "25px", width:"85px" }}
+                            style={{ height: "20px", width:"95px" }}
                         />
                     </div>
 
@@ -108,7 +108,6 @@ const CourseCard = ({ data }) => {
                 </div>
 
                 <div className="coursecard-footer">
-                    { data?.rating > 0 && 
                         <div>
                         {
                             data?.rating <= 1
@@ -137,10 +136,10 @@ const CourseCard = ({ data }) => {
                             />
                     }
                             <p>
-                            <b style={{color:"#EAD628"}}>{Math.ceil(data?.rating)}</b>
+                            <b style={{color:"#575757", fontWeight:"500", fontSize:"16px"}}>{Math.ceil(data?.rating)} &nbsp; Reviews</b>
                              </p>
                         </div>
-                    }
+                    
                     <Link to={`/courseDetail/${data?.slug}`}>
                         <img src="/images/courseCategory/reviewArrow.png" alt="reviewArrow" />
                     </Link>
