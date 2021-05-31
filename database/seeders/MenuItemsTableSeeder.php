@@ -714,14 +714,14 @@ class MenuItemsTableSeeder extends Seeder
                 'title' => 'Comments',
                 'url' => '',
                 'target' => '_self',
-                'icon_class' => NULL,
-                'color' => NULL,
+                'icon_class' => 'voyager-people',
+                'color' => '#000000',
                 'parent_id' => NULL,
                 'order' => 18,
                 'created_at' => '2021-05-30 23:50:35',
-                'updated_at' => '2021-05-30 23:50:35',
+                'updated_at' => '2021-05-31 18:23:50',
                 'route' => 'voyager.comments.index',
-                'parameters' => NULL,
+                'parameters' => 'null',
             ),
         ));
         

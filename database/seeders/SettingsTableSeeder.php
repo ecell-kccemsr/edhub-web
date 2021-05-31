@@ -122,7 +122,7 @@ class SettingsTableSeeder extends Seeder
             array (
                 'id' => 10,
                 'key' => 'admin.google_analytics_client_id',
-                'display_name' => 'Google Analytics Client ID (used for admin dashboard)',
+            'display_name' => 'Google Analytics Client ID (used for admin dashboard)',
                 'value' => NULL,
                 'details' => '',
                 'type' => 'text',
