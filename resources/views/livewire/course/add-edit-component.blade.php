@@ -30,6 +30,7 @@
         </div>
         <div class="form-group col-12 @error('image') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Image</label>
+            <br/><img src="{{$image}}" width="256"/>
             <input type="file" class="form-control-file " id="exampleFormControlFile1" wire:model="image">
             @error('image')
             <div class="text-danger">{{ $message }}</div>

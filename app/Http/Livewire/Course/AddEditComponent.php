@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Course;
 use App\Models\Course;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use TCG\Voyager\Facades\Voyager;
 
 class AddEditComponent extends Component
 {
@@ -56,7 +57,7 @@ class AddEditComponent extends Component
         $this->course->subtitle = $this->subtitle;
         $this->course->locale = $this->locale;
         $this->course->captions = $this->captions;
-        $this->course->image = $this->image;
+        $this->course->image = $this->image->store('courses', 'public');
         $this->course->url = $this->url;
         $this->course->difficulty_level = $this->difficulty_level;
         $this->course->outcome = $this->outcome;
@@ -84,7 +85,7 @@ class AddEditComponent extends Component
             $this->subtitle = $this->course->subtitle;
             $this->locale = $this->course->locale;
             $this->captions = $this->course->captions;
-            $this->image = $this->course->image;
+            $this->image = Voyager::image($this->course->image);
             $this->url = $this->course->url;
             $this->difficulty_level = $this->course->difficulty_level;
             $this->outcome = $this->course->outcome;
@@ -101,7 +102,6 @@ class AddEditComponent extends Component
             $this->course_sub_category_id = $this->course->course_sub_category_id;
             $this->course_topic_id = $this->course->course_topic_id;
         }
-
     }
 
     public function render()

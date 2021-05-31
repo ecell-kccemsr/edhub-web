@@ -50,6 +50,16 @@ class CourseProvidersTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:51:43',
                 'updated_at' => '2021-04-02 15:51:43',
             ),
+            3 =>
+            array(
+                'id' => 4,
+                'name' => 'Youtube',
+                'url' => 'https://www.youtube.com',
+                'image' => 'course-providers/youtube.png',
+                'slug' => 'youtube',
+                'created_at' => '2021-04-02 15:51:43',
+                'updated_at' => '2021-04-02 15:51:43',
+            ),
         ));
     }
 }
