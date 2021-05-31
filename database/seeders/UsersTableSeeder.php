@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
                 'role_id' => 1,
                 'name' => env('ADMIN_NAME', 'admin'),
                 'email' => env('ADMIN_EMAIL', 'admin'),
-                'avatar' => 'users/default.png',
+                'avatar' => 'avatar.png',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$d/Fb/MiIaIURZW.U6ZlZAe285JYgt6KLw6OIj0/PtlyTh/SvNGUxq',
                 'remember_token' => NULL,
