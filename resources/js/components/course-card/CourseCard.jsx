@@ -110,28 +110,34 @@ const CourseCard = ({ data }) => {
                 <div className="coursecard-footer">
                         <div>
                         {
+                             data?.rating <= 0
+                             ?  <img
+                                 src="/images/star0.png"
+                                 alt="Star"
+                             />
+                             :
                             data?.rating <= 1
                             ?  <img
-                                src="/images/courseDetail/1star.png"
+                                src="/images/star1.png"
                                 alt="Star"
                             />
                             : data?.rating <= 2
                             ? <img
-                                src="/images/courseDetail/2star.png"
+                                src="/images/star2.png"
                                 alt="Star"
                             />
                             : data?.rating <= 3
                             ?  <img
-                                src="/images/courseDetail/3star.png"
+                                src="/images/star3.png"
                                 alt="Star"
                             />
                             : data?.rating <= 4
                             ?  <img
-                                src="/images/courseDetail/4star.png"
+                                src="/images/star4.png"
                                 alt="Star"
                             />
                             : <img
-                                src="/images/courseDetail/5star.png"
+                                src="/images/star5.png"
                                 alt="Star"
                             />
                     }

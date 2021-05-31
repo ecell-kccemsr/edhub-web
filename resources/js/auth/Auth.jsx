@@ -39,8 +39,9 @@ const Auth = () => {
                 const accessToken = res.data.access_token;
                 localStorage.setItem("accessToken", accessToken);
                 window.location.href = "/";
+                toast.success("Successfully Registered, Now verify your mail-id !");
             })
-            .catch(err => console.log(err.response.data.message));
+            .catch(err => toast.error("Invalid Credentials"));
     };
 
 
