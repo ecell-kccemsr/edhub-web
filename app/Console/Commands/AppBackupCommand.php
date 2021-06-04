@@ -45,6 +45,7 @@ class AppBackupCommand extends Command
         $backup_folder = $this->backupFolder();
         $this->copyPublicFolder($backup_folder);
         $this->dataBackup($backup_folder);
+        $this->line("App backup has been created");
     }
 
     public function backupBaseFolder()
@@ -52,10 +53,6 @@ class AppBackupCommand extends Command
         $path = base_path('.backup');
         if (!File::exists($path)) {
             File::makeDirectory($path);
-            $this->line("New backup base folder has been created.");   
-        }
-        else{
-            $this->line("Backup base folder already exists.");
         }
         return $path;
     }
@@ -66,16 +63,16 @@ class AppBackupCommand extends Command
         $path = base_path(".backup\\".$folderName);
         if(!File::isDirectory($path)){
             File::makeDirectory($path);
-            $this->line("New backup folder has been created.");
-        }
-        else{
-            $this->line("Backup folder already exists.");
         }
         return ".backup\\".$folderName;
     }
 
     public function copyPublicFolder($backup_folder){
-        File::copyDirectory(base_path('storage/app/public'), base_path($backup_folder));
+        $path = base_path("$backup_folder\\files");
+        if(!File::isDirectory($path)){
+            File::makeDirectory($path);
+        }
+        File::copyDirectory(base_path('storage/app/public'), $path);
     }
 
     public function dataBackup($backup_folder)
@@ -83,7 +80,6 @@ class AppBackupCommand extends Command
         $path = base_path("$backup_folder\data");
         if(!File::isDirectory($path)){
             File::makeDirectory($path);
-            $this->line("New data folder has been created.");
         }
         $tables = DB::select('SHOW TABLES');
         $exclude_tables = ['data_types','data_rows','menus','menu_items','data_rows','roles','permissions','permission_role','settings'];
@@ -92,7 +88,6 @@ class AppBackupCommand extends Command
         {
             if(!in_array($table->$db, $exclude_tables))
             {
-
                 $file = $table->$db . '.json';
                 $table->$db = DB::table($table->$db)->get();
                 $data = json_encode($table->$db);
@@ -100,7 +95,6 @@ class AppBackupCommand extends Command
                
             }
         }
-        $this->line("Data files have been created.");
     }
 
     
