@@ -60,15 +60,15 @@ class AppBackupCommand extends Command
     public function backupFolder()
     {
         $folderName =  Carbon::now()->format("Y-m-d-H-i-s");
-        $path = base_path(".backup\\".$folderName);
+        $path = base_path(".backup/".$folderName);
         if(!File::isDirectory($path)){
             File::makeDirectory($path);
         }
-        return ".backup\\".$folderName;
+        return ".backup/".$folderName;
     }
 
     public function copyPublicFolder($backup_folder){
-        $path = base_path("$backup_folder\\files");
+        $path = base_path("$backup_folder/files");
         if(!File::isDirectory($path)){
             File::makeDirectory($path);
         }
@@ -77,7 +77,7 @@ class AppBackupCommand extends Command
 
     public function dataBackup($backup_folder)
     {
-        $path = base_path("$backup_folder\data");
+        $path = base_path("$backup_folder/data");
         if(!File::isDirectory($path)){
             File::makeDirectory($path);
         }
@@ -91,7 +91,7 @@ class AppBackupCommand extends Command
                 $file = $table->$db . '.json';
                 $table->$db = DB::table($table->$db)->get();
                 $data = json_encode($table->$db);
-                File::put("$path\\$file",$data);
+                File::put("$path/$file",$data);
                
             }
         }
