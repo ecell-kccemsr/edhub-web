@@ -4483,6 +4483,22 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 8,
             ),
+            279 => 
+            array (
+                'id' => 323,
+                'data_type_id' => 26,
+                'field' => 'tags',
+                'type' => 'text_area',
+                'display_name' => 'Tags',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 4,
+            ),
         ));
         
         
