@@ -14,6 +14,7 @@ use App\Models\CourseSubCategory;
 use App\Models\CurriculumChapter;
 use App\Models\CurriculumLecture;
 use Illuminate\Support\Facades\Http;
+use TeamTNT\TNTSearch\Classifier\TNTClassifier;
 
 class FetchCourses extends Command
 {
@@ -65,6 +66,16 @@ class FetchCourses extends Command
      */
     public function handle()
     {
+        // Train Model
+        $classifier = new TNTClassifier();
+        foreach (CourseTopic::all() as $topic) {
+            $classifier->learn($topic->name, $topic->id);
+            $tags = explode(',', $topic->tags);
+            foreach ($tags as $tag) {
+                $classifier->learn($tag, $topic->id);
+            }
+        }
+
         $response =  Http::withToken($this->requestToken, "basic")->asForm()->post('https://api.rakutenmarketing.com/token', [
             "grant_type" => "password",
             "username" => $this->username,
@@ -111,15 +122,10 @@ class FetchCourses extends Command
                                 'course_provider_id' => $provider['id'],
                             ]);
                             $dbCourse->generateSlug();
-                            if (isset($item['category']['primary'])) {
-                                $category = CourseCategory::firstOrCreate(['name' => $item['category']['primary']]);
-                                $dbCourse->course_category_id = $category->id;
-                                if (isset($item['category']['secondary'])) {
-                                    if (is_array($item['category']['secondary']) === false) {
-                                        $subCategory = CourseSubCategory::firstOrCreate(['name' => $item['category']['secondary'], 'course_category_id' => $category->id]);
-                                        $dbCourse->course_sub_category_id = $subCategory->id;
-                                    }
-                                }
+                            // Predict Topic
+                            $guess = $classifier->predict($dbCourse->title);
+                            if (isset($guess['label'])) {
+                                $dbCourse->course_topic_id = intval($guess['label']);
                             }
                             $dbCourse->save();
                             $totalFetched++;
