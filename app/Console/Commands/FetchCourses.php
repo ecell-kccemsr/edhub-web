@@ -68,11 +68,11 @@ class FetchCourses extends Command
     {
         // Train Model
         $classifier = new TNTClassifier();
-        foreach (CourseTopic::all() as $topic) {
-            $classifier->learn($topic->name, $topic->id);
-            $tags = explode(',', $topic->tags);
+        foreach (CourseSubCategory::all() as $sub_category) {
+            $classifier->learn($sub_category->name, $sub_category->id);
+            $tags = explode(',', $sub_category->tags);
             foreach ($tags as $tag) {
-                $classifier->learn($tag, $topic->id);
+                $classifier->learn($tag, $sub_category->id);
             }
         }
 
@@ -124,12 +124,16 @@ class FetchCourses extends Command
                             $dbCourse->generateSlug();
                             // Predict Topic
                             $guess = $classifier->predict($dbCourse->title);
+                            $categoryText = "";
                             if (isset($guess['label'])) {
-                                $dbCourse->course_topic_id = intval($guess['label']);
+                                $sub_category = CourseSubCategory::find($guess['label']);
+                                $dbCourse->course_sub_category_id = $sub_category->id;
+                                $dbCourse->course_category_id = $sub_category->course_category_id;
+                                $categoryText = $sub_category->course_category->name . ' -> ' . $sub_category->name;
                             }
                             $dbCourse->save();
                             $totalFetched++;
-                            $this->line("Fetched $dbCourse->title");
+                            $this->line("Fetched $dbCourse->title ($categoryText)");
                         }
                     }
                 } else {
