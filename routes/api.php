@@ -19,6 +19,7 @@ use App\Http\Controllers\API\CourseWishlistController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\API\RegisterForFreeUpdatesController;
+use App\Http\Controllers\API\TweetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,3 +119,6 @@ Route::get('/search',[SearchController::class,'search']);
 
 //Request a call
 Route::post('/request_call/add',[RequestCallController::class,'add']);
+
+//Tweet
+Route::get('/tweets',[TweetController::class,'get']);
