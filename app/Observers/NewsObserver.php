@@ -26,7 +26,7 @@ class NewsObserver
             "Accept" => "application/json, text/plain, */*",
             "Authorization" => "Bearer $token",
             "Content-Type" => "application/json;charset=utf-8"
-        ])->get("https://api.twitter.com/2/tweets/search/recent?query=$tags&expansions=attachments.media_keys&media.fields=url&tweet.fields=created_at");
+        ])->get("https://api.twitter.com/2/tweets/search/recent?query=$tags&expansions=attachments.media_keys,author_id&media.fields=url&tweet.fields=created_at&user.fields=name");
 
         if ($response->successful() === true)
         { 
