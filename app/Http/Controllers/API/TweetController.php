@@ -11,7 +11,11 @@ class TweetController extends Controller
 {
     public function get(Request $request)
     {
-        $tweets = Tweet::where('news_id',$request->input('news_id'))->get();
-        return new TweetResourceCollection($tweets);
+        $tweets = Tweet::query();
+        if($request->has('news_id'))
+        {
+            $tweets = $tweets->where('news_id',$request->input('news_id'));
+        }
+        return new TweetResourceCollection($tweets->paginate($request->input('per_page', 10)));
     }
 }
