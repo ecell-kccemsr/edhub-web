@@ -20,6 +20,13 @@ class CreateTweetsTable extends Migration
             $table->string('author_name')->nullable();
             $table->dateTime('published_at');
             $table->unsignedInteger('news_id');
+            $table->string('tweet_url')->nullable();
+            $table->string('author_username')->nullable();
+            $table->string('author_profile_image')->nullable();
+            $table->string('tweet_source')->nullable();
+            $table->unsignedInteger('like_count')->nullable();
+            $table->unsignedInteger('retweet_count')->nullable();
+            $table->unsignedInteger('quote_count')->nullable();
             $table->timestamps();
         });
     }

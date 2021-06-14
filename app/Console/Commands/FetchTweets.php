@@ -50,7 +50,7 @@ class FetchTweets extends Command
                 "Accept" => "application/json, text/plain, */*",
                 "Authorization" => "Bearer $token",
                 "Content-Type" => "application/json;charset=utf-8"
-            ])->get("https://api.twitter.com/2/tweets/search/recent?query=$tags&expansions=attachments.media_keys,author_id&media.fields=url&tweet.fields=created_at&user.fields=name");
+            ])->get("https://api.twitter.com/2/tweets/search/recent?query=$tags&expansions=attachments.media_keys,author_id&media.fields=url&tweet.fields=created_at,source,entities,public_metrics&user.fields=name,profile_image_url");
 
             if ($response->successful() === true)
             { 
@@ -60,16 +60,23 @@ class FetchTweets extends Command
                     $dbtweet = new Tweet();
                     $dbtweet->body = $tweet['text'];
                     $dbtweet->news_id = $news->id;
+                    $dbtweet->tweet_source = $tweet['source'];
                     $dbtweet->published_at = Carbon::parse($tweet['created_at'])->format('Y-m-d h:i:s');
+                    $dbtweet->like_count = $tweet['public_metrics']['like_count'];
+                    $dbtweet->retweet_count = $tweet['public_metrics']['retweet_count'];
+                    $dbtweet->quote_count = $tweet['public_metrics']['quote_count'];
                     $tweet_users = $response->json()['includes']['users'];
                     foreach($tweet_users as $tweet_user)
                     {
                         if($tweet_user['id']==$tweet['author_id'])
                         {
                             $dbtweet->author_name=$tweet_user['name'];
+                            $dbtweet->author_profile_image=$tweet_user['profile_image_url'];
+                            $dbtweet->author_username=$tweet_user['username'];
+                            $dbtweet->tweet_url="https://twitter.com/".$tweet_user['username']."/status/".$tweet['id'];
                         }
                     }
-                    if(count($tweet)>4){
+                    if(count($tweet)>7){
                         $tweet_media = $response->json()['includes']['media'];
                         foreach($tweet_media as $media)
                         {

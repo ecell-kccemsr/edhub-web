@@ -22,6 +22,13 @@ class TweetResource extends JsonResource
             'published_at' => $this->published_at,
             'image' => Voyager::image($this->image),
             'news' => new NewsResource($this->news),
+            'tweet_url' => $this->tweet_url,
+            'author_username' => $this->author_username,
+            'author_profile_image' => $this->author_profile_image,
+            'tweet_source' => $this->tweet_source,
+            'like_count' => $this->like_count,
+            'retweet_count' => $this->retweet_count,
+            'quote_count' => $this->quote_count
         ];
     }
 }
