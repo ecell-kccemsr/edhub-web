@@ -43,11 +43,14 @@ const SingleNewsPage = props => {
                     setLoading(false)
                     setcategorynews(res.data.data);
                     id = res.data.data?.category.id;
+                    console.log(res.data.data);
                     news_id = res.data.data?.id;
+                    console.log(news_id);
                     axios.get(`/api/news?category_id=${id}`).then(res => {
                         setRelatedNews(res.data.data);
                     });
                      axios.get(`/api/tweets?news_id=${news_id}`).then(res => {
+                         console.log(res.data);
                         setTweets(res.data.data);
                     });
                 })
@@ -375,36 +378,24 @@ const SingleNewsPage = props => {
                         <h4 className="singlenewstitle-text">
                             Ideas and opinion
                                         </h4>
-                                        {tweets.map(data => (
+                                       
                                             <div className="singlenews-sidebar-container-top">
+                                            {tweets.map(data => (
                             <div className="top-container-el">
-                                <img src={tw} alt="Twitter" />
+                                <img src="/news/twitter" alt="Twitter" />
                                 <div className="text-container">
-                                    <p className="tag">#BILLS2020</p>
+                                    <p className="tag">#{data?.news?.tags}</p>
                                     <h4>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
+                                      {data?.body}
                                     </h4>
                                     <p className="author">
-                                        Hemant lamba on <span>twitter</span>
+                                        {data?.author_name} on <span>twitter</span>
                                     </p>
                                 </div>
                             </div>
-                            <div className="top-container-el">
-                                <img src={tw} alt="Twitter" />
-                                <div className="text-container">
-                                    <p className="tag">#BILLS2020</p>
-                                    <h4>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </h4>
-                                    <p className="author">
-                                        Hemant lamba on <span>twitter</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
                                         ))}
+                           
+                        </div>
                         
                         <br />
                         <h4 className="singlenewstitle-text">Related News</h4>

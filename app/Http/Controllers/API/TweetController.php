@@ -16,6 +16,6 @@ class TweetController extends Controller
         {
             $tweets = $tweets->where('news_id',$request->input('news_id'));
         }
-        return new TweetResourceCollection($tweets->paginate($request->input('per_page', 10)));
+        return new TweetResourceCollection($tweets->paginate($request->input('per_page', 5)));
     }
 }
