@@ -17,6 +17,7 @@ const SingleNewsPage = props => {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState("");
     const [categories, setCategories] = useState([]);
+    const [tweets, setTweets] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [course, setCourse] = useState([]);
@@ -32,6 +33,7 @@ const SingleNewsPage = props => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     let id;
+    let news_id;
     const { news_slug } = props.match.params;
     useEffect(() => {
         if (news_slug) {
@@ -41,8 +43,12 @@ const SingleNewsPage = props => {
                     setLoading(false)
                     setcategorynews(res.data.data);
                     id = res.data.data?.category.id;
+                    news_id = res.data.data?.id;
                     axios.get(`/api/news?category_id=${id}`).then(res => {
                         setRelatedNews(res.data.data);
+                    });
+                     axios.get(`/api/tweets?news_id=${news_id}`).then(res => {
+                        setTweets(res.data.data);
                     });
                 })
                 .catch(err => {
@@ -59,6 +65,8 @@ const SingleNewsPage = props => {
         .catch(err => {
             console.log(err);
         });
+         
+       
     }, []);
 
     const handleComment = e => {
@@ -364,10 +372,11 @@ const SingleNewsPage = props => {
                         </div>
                     </Col>
                     <Col sm="12" md="4">
-                        {/* <h4 className="singlenewstitle-text">
+                        <h4 className="singlenewstitle-text">
                             Ideas and opinion
-                        </h4>
-                        <div className="singlenews-sidebar-container-top">
+                                        </h4>
+                                        {tweets.map(data => (
+                                            <div className="singlenews-sidebar-container-top">
                             <div className="top-container-el">
                                 <img src={tw} alt="Twitter" />
                                 <div className="text-container">
@@ -395,7 +404,9 @@ const SingleNewsPage = props => {
                                 </div>
                             </div>
                         </div>
-                        <br /> */}
+                                        ))}
+                        
+                        <br />
                         <h4 className="singlenewstitle-text">Related News</h4>
                         <div className="singlenews-sidebar-container-top">
                             <div className="top-container-el">
