@@ -7,6 +7,7 @@ import PopularChoice from "./landingPageComponents/PopularChoice";
 import HelpSection from "./landingPageComponents/HelpSection";
 import Promotions from "./landingPageComponents/Promotions";
 import Testimonial from "./landingPageComponents/Testimonial";
+import SliderHomepage from "./landingPageComponents/SliderHomepage";
 function LandingPage() {
     const [course, setCourse] = useState([]);
     const [searchText, setSearchText] = useState("");
@@ -44,8 +45,18 @@ function LandingPage() {
 
             <HelpSection />
 
-            {course && <PopularChoice data={course} title="Popular Choices" />}
+            {/* {course && <PopularChoice data={course} title="Popular Choices" />} */}
+            <SliderHomepage title="Computer Science" course_category_id={1} />
+            <SliderHomepage title="Business" course_category_id={2} />
+            {/* <SliderHomepage title="Finance and Accounting" course_category_id={3} /> */}
+            <SliderHomepage title="IT & Software" course_category_id={4} />
+            <SliderHomepage title="Office Productivity" course_category_id={5} />
+            <SliderHomepage title="Personal Development" course_category_id={6} />
+            <SliderHomepage title="Design" course_category_id={7} />
+            <SliderHomepage title="Marketing" course_category_id={8} />
 
+
+        
             {/* {course && (
                 <PopularChoice
                     data={course}
