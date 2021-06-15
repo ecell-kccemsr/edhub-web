@@ -50,7 +50,6 @@ const SingleNewsPage = props => {
                         setRelatedNews(res.data.data);
                     });
                      axios.get(`/api/tweets?news_id=${news_id}`).then(res => {
-                         console.log(res.data);
                         setTweets(res.data.data);
                     });
                 })
@@ -378,23 +377,23 @@ const SingleNewsPage = props => {
                         <h4 className="singlenewstitle-text">
                             Ideas and opinion
                                         </h4>
-                                       
                                             <div className="singlenews-sidebar-container-top">
                                             {tweets.map(data => (
-                            <div className="top-container-el">
-                                <img src="/news/twitter" alt="Twitter" />
-                                <div className="text-container">
+                                 <div className="top-container-el">
+                                 <img src="/images/news/twitter" alt="Twitter" />
+                                 <div className="text-container">
                                     <p className="tag">#{data?.news?.tags}</p>
-                                    <h4>
+                                    <a href={data?.tweet_url}>
+                                           <h4 style={{color:"#000000"}}>
                                       {data?.body}
-                                    </h4>
+                                    </h4>                  
+                                    </a>
                                     <p className="author">
                                         {data?.author_name} on <span>twitter</span>
                                     </p>
                                 </div>
                             </div>
-                                        ))}
-                           
+                               ))}
                         </div>
                         
                         <br />
