@@ -723,6 +723,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.comments.index',
                 'parameters' => 'null',
             ),
+            44 => 
+            array (
+                'id' => 47,
+                'menu_id' => 1,
+                'title' => 'Import Courses',
+                'url' => '/admin/courses/import',
+                'target' => '_self',
+                'icon_class' => 'voyager-upload',
+                'color' => '#000000',
+                'parent_id' => 38,
+                'order' => 8,
+                'created_at' => '2021-06-18 18:09:23',
+                'updated_at' => '2021-06-18 18:09:30',
+                'route' => NULL,
+                'parameters' => '',
+            ),
         ));
         
         

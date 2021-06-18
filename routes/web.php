@@ -59,10 +59,11 @@ Route::view('/checkout', 'app');
 Route::view('/course-category', 'app');
 Route::view('/guide', 'app');
 Route::view('/degree', 'app');
-// Route::view('*','app');
 Route::group(['prefix' => 'admin'], function () {
+    Route::view('courses/import', 'admin.courses.import');
     Voyager::routes();
 });
+
 
 
 Route::get('/testmail', function (\Illuminate\Http\Request $request) {
