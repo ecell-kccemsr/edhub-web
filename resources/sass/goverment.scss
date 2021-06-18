@@ -209,6 +209,16 @@ html {
     .heroBg-img {
         width: 85%;
     }
+    .tab-pane {
+        width: 18%;
+        margin: 0px 13px 20px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .tab-pane {
+        width: 100%;
+        margin: 0px 13px 20px;
+    }
 }
 
 // Government-SubCategory

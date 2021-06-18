@@ -14,6 +14,7 @@ use App\Models\CourseSubCategory;
 use App\Models\CurriculumChapter;
 use App\Models\CurriculumLecture;
 use Illuminate\Support\Facades\Http;
+use TeamTNT\TNTSearch\Classifier\TNTClassifier;
 
 class FetchCourses extends Command
 {
@@ -65,6 +66,16 @@ class FetchCourses extends Command
      */
     public function handle()
     {
+        // Train Model
+        $classifier = new TNTClassifier();
+        foreach (CourseSubCategory::all() as $sub_category) {
+            $classifier->learn($sub_category->name, $sub_category->id);
+            $tags = explode(',', $sub_category->tags);
+            foreach ($tags as $tag) {
+                $classifier->learn($tag, $sub_category->id);
+            }
+        }
+
         $response =  Http::withToken($this->requestToken, "basic")->asForm()->post('https://api.rakutenmarketing.com/token', [
             "grant_type" => "password",
             "username" => $this->username,
@@ -111,19 +122,18 @@ class FetchCourses extends Command
                                 'course_provider_id' => $provider['id'],
                             ]);
                             $dbCourse->generateSlug();
-                            if (isset($item['category']['primary'])) {
-                                $category = CourseCategory::firstOrCreate(['name' => $item['category']['primary']]);
-                                $dbCourse->course_category_id = $category->id;
-                                if (isset($item['category']['secondary'])) {
-                                    if (is_array($item['category']['secondary']) === false) {
-                                        $subCategory = CourseSubCategory::firstOrCreate(['name' => $item['category']['secondary'], 'course_category_id' => $category->id]);
-                                        $dbCourse->course_sub_category_id = $subCategory->id;
-                                    }
-                                }
+                            // Predict Topic
+                            $guess = $classifier->predict($dbCourse->title);
+                            $categoryText = "";
+                            if (isset($guess['label'])) {
+                                $sub_category = CourseSubCategory::find($guess['label']);
+                                $dbCourse->course_sub_category_id = $sub_category->id;
+                                $dbCourse->course_category_id = $sub_category->course_category_id;
+                                $categoryText = $sub_category->course_category->name . ' -> ' . $sub_category->name;
                             }
                             $dbCourse->save();
                             $totalFetched++;
-                            $this->line("Fetched $dbCourse->title");
+                            $this->line("Fetched $dbCourse->title ($categoryText)");
                         }
                     }
                 } else {

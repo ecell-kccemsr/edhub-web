@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Row, Col } from "reactstrap";
 import LinkCard from "../components/link-card/LinkCard";
 import {Helmet} from "react-helmet";
-
+import SliderHomepage from "../homepage/landingPageComponents/SliderHomepage";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 function Govermentjob() {
     const [categories, setCategory] = useState([]);
@@ -141,7 +141,6 @@ function Govermentjob() {
                                         id={`${d?.category?.slug}`}
                                         role="tabpanel"
                                         aria-labelledby={`${d?.category?.slug}-tab`}
-                                        style={{margin:"0 13px 20px", width:"18%"}}
                                     >
                                              <div className="job-tab-el my-0">
                                                     <Link to={`/govermentjobs/${d?.category?.slug}/${d?.slug}`}>
@@ -171,18 +170,8 @@ function Govermentjob() {
                     )}
                 </div>
 
-                {course && (
-                    <PopularChoice
-                        data={course}
-                        title="Banking Exams Courses"
-                    />
-                )}
-                {course && (
-                    <PopularChoice
-                        data={course}
-                        title="Defence Exams Courses"
-                    />
-                )}
+            <SliderHomepage title="Office Productivity" course_category_id={5} />
+           <SliderHomepage title="Personal Development" course_category_id={6} />
             </div>
         </>
     );
