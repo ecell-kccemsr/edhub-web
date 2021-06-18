@@ -25,8 +25,13 @@ class Import extends Component
     public $platform = 'impact';
     public $file;
 
+    protected $rules = [
+        'file' => 'required|file',
+    ];
+
     public function submit()
     {
+        $this->validate();
         $filePath = realpath($this->file->getRealPath());
         if ($this->platform === 'rakuten') {
             $parser = new RakutenCourseParser();

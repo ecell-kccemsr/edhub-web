@@ -12,6 +12,9 @@
         <input  required  type="file" wire:model="file">
     </div>
     <div class="col-md-12">
-        <button class="btn btn-primary" wire:click="submit">Import</button>
+        <div wire:loading>
+            Processing File...
+        </div>
+        <button class="btn btn-primary" wire:click="submit" wire:loading.attr="disabled">Import</button>
     </div>
 </div>
