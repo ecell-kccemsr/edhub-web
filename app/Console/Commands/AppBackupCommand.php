@@ -82,7 +82,8 @@ class AppBackupCommand extends Command
         if (!File::isDirectory($path)) {
             File::makeDirectory($path);
         }
-        $tables = collect(DB::select('SHOW TABLES'))->pluck("Tables_in_" . env('DB_DATABASE'));
+        $dbName = DB::connection()->getDatabaseName();
+        $tables = collect(DB::select('SHOW TABLES'))->pluck("Tables_in_" . $dbName);
         $exclude_tables = ['data_types', 'data_rows', 'menus', 'menu_items', 'data_rows', 'roles', 'permissions', 'permission_role', 'settings'];
         foreach ($tables as $table) {
             if (!in_array($table, $exclude_tables)) {
