@@ -18,10 +18,18 @@ class Course extends Model
         parent::boot();
 
         static::creating(function (self $model): void {
+            if($model->discount_price === null)
+            {
+                $model->discount_price = 0;
+            }
             $model->discount_percentage = 100-intval(($model->discount_price/$model->price)*100);
         });
 
         static::updating(function (self $model): void {
+            if($model->discount_price === null)
+            {
+                $model->discount_price = 0;
+            }
             $model->discount_percentage = 100-intval(($model->discount_price/$model->price)*100);
         });
     }

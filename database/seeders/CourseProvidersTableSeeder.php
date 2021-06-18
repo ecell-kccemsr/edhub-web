@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class CourseProvidersTableSeeder extends Seeder
 {
@@ -15,13 +14,13 @@ class CourseProvidersTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('course_providers')->delete();
-
-        \DB::table('course_providers')->insert(array(
-            0 =>
-            array(
+        
+        \DB::table('course_providers')->insert(array (
+            0 => 
+            array (
                 'id' => 1,
                 'name' => 'Udemy',
                 'url' => 'https://www.udemy.com',
@@ -30,8 +29,8 @@ class CourseProvidersTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:41:58',
                 'updated_at' => '2021-04-02 15:50:53',
             ),
-            1 =>
-            array(
+            1 => 
+            array (
                 'id' => 2,
                 'name' => 'Coursera',
                 'url' => 'https://www.coursera.org',
@@ -40,8 +39,8 @@ class CourseProvidersTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:51:43',
                 'updated_at' => '2021-04-02 15:51:43',
             ),
-            2 =>
-            array(
+            2 => 
+            array (
                 'id' => 3,
                 'name' => 'Edureka',
                 'url' => 'https://www.edureka.co',
@@ -50,8 +49,8 @@ class CourseProvidersTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:51:43',
                 'updated_at' => '2021-04-02 15:51:43',
             ),
-            3 =>
-            array(
+            3 => 
+            array (
                 'id' => 4,
                 'name' => 'Youtube',
                 'url' => 'https://www.youtube.com',
@@ -60,6 +59,18 @@ class CourseProvidersTableSeeder extends Seeder
                 'created_at' => '2021-04-02 15:51:43',
                 'updated_at' => '2021-04-02 15:51:43',
             ),
+            4 => 
+            array (
+                'id' => 5,
+                'name' => 'LinkedIn',
+                'url' => 'https://www.linkedin.com/',
+                'image' => 'course-providers\\June2021\\QhW1VAX8jTjhGXtn4HXn.png',
+                'slug' => 'linkedin',
+                'created_at' => '2021-06-18 18:46:24',
+                'updated_at' => '2021-06-18 18:46:24',
+            ),
         ));
+        
+        
     }
 }
