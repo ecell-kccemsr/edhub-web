@@ -9,6 +9,7 @@ import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import {Helmet} from "react-helmet";
+import TwitterNews from "./TwitterNews";
 
 const SingleNewsPage = props => {
     const user = useStoreState(state => state.user);
@@ -22,9 +23,14 @@ const SingleNewsPage = props => {
     const [error, setError] = useState(false);
     const [course, setCourse] = useState([]);
     const [showComments, setshowComments] = useState(false);
-      // Login modal 
-      const [modallogin, setModalLogin] = useState(false);
-      const toggleLogin = () => setModalLogin(!modallogin);
+    
+    // Login modal
+    const [modallogin, setModalLogin] = useState(false);
+    const toggleLogin = () => setModalLogin(!modallogin);
+
+    //Twitter modal
+    const [modaltwitter, setModalTwitter] = useState(false);
+    const toggleTwitter = () => setModalTwitter(!modaltwitter);
 
     const [commentPage, setCommentPage] = useState({
         current_page: 1,
@@ -43,9 +49,7 @@ const SingleNewsPage = props => {
                     setLoading(false)
                     setcategorynews(res.data.data);
                     id = res.data.data?.category.id;
-                    console.log(res.data.data);
                     news_id = res.data.data?.id;
-                    console.log(news_id);
                     axios.get(`/api/news?category_id=${id}`).then(res => {
                         setRelatedNews(res.data.data);
                     });
@@ -380,14 +384,21 @@ const SingleNewsPage = props => {
                                             <div className="singlenews-sidebar-container-top">
                                             {tweets.map(data => (
                                  <div className="top-container-el">
-                                 <img src="/images/news/twitter" alt="Twitter" />
                                  <div className="text-container">
-                                    <p className="tag">#{data?.news?.tags}</p>
-                                    <a href={data?.tweet_url}>
-                                           <h4 style={{color:"#000000"}}>
-                                      {data?.body}
-                                    </h4>                  
-                                    </a>
+                                                    <p className="tag">#{data?.news?.tags}</p>
+                                                    <div onClick={toggleTwitter}>
+                                                <h4 style={{color:"#000000"}} >
+                                                           {data?.body}
+                                                            </h4>
+                                     <Modal isOpen={modaltwitter} toggle={toggleTwitter} className="model">
+                                 <ModalHeader toggle={toggleTwitter}></ModalHeader>
+                                   <ModalBody>
+                                       <TwitterNews toggleLogin = {toggleTwitter} />
+                                   </ModalBody>
+                                 </Modal>                    
+                                                    </div>
+                                                      
+                                  
                                     <p className="author">
                                         {data?.author_name} on <span>twitter</span>
                                     </p>
