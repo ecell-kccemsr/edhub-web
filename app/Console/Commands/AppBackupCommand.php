@@ -60,16 +60,17 @@ class AppBackupCommand extends Command
     public function backupFolder()
     {
         $folderName =  Carbon::now()->format("Y-m-d-H-i-s");
-        $path = base_path(".backup/".$folderName);
-        if(!File::isDirectory($path)){
+        $path = base_path(".backup/" . $folderName);
+        if (!File::isDirectory($path)) {
             File::makeDirectory($path);
         }
-        return ".backup/".$folderName;
+        return ".backup/" . $folderName;
     }
 
-    public function copyPublicFolder($backup_folder){
+    public function copyPublicFolder($backup_folder)
+    {
         $path = base_path("$backup_folder/files");
-        if(!File::isDirectory($path)){
+        if (!File::isDirectory($path)) {
             File::makeDirectory($path);
         }
         File::copyDirectory(base_path('storage/app/public'), $path);
@@ -78,26 +79,18 @@ class AppBackupCommand extends Command
     public function dataBackup($backup_folder)
     {
         $path = base_path("$backup_folder/data");
-        if(!File::isDirectory($path)){
+        if (!File::isDirectory($path)) {
             File::makeDirectory($path);
         }
-        $tables = DB::select('SHOW TABLES');
-        $exclude_tables = ['data_types','data_rows','menus','menu_items','data_rows','roles','permissions','permission_role','settings'];
-        $db = "Tables_in_".env('DB_DATABASE');
-        foreach($tables as $table)
-        {
-            if(!in_array($table->$db, $exclude_tables))
-            {
-                $file = $table->$db . '.json';
-                $table->$db = DB::table($table->$db)->get();
-                $data = json_encode($table->$db);
-                File::put("$path/$file",$data);
-               
+        $tables = collect(DB::select('SHOW TABLES'))->pluck("Tables_in_" . env('DB_DATABASE'));
+        $exclude_tables = ['data_types', 'data_rows', 'menus', 'menu_items', 'data_rows', 'roles', 'permissions', 'permission_role', 'settings'];
+        foreach ($tables as $table) {
+            if (!in_array($table, $exclude_tables)) {
+                $file = $table . '.json';
+                $table = DB::table($table)->get();
+                $data = json_encode($table);
+                File::put("$path/$file", $data);
             }
         }
     }
-
-    
-
-
 }
