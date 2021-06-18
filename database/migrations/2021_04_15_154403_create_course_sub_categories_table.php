@@ -17,6 +17,7 @@ class CreateCourseSubCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('course_category_id');
+            $table->longText('tags')->nullable();
             $table->string('slug')->unique();
             $table->timestamps();
         });

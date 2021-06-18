@@ -10,7 +10,7 @@ import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import {Helmet} from "react-helmet";
-
+import SliderHomepage from "../../homepage/landingPageComponents/SliderHomepage";
 const SingleBlog = props => {
     const user = useStoreState(state => state.user);
     const [singleBlog, setSingleBlog] = useState(null);
@@ -337,7 +337,7 @@ const SingleBlog = props => {
                     </Col>
                 </Row>
                 
-            </Container>
+                        </Container>
         </div>
             )
         }

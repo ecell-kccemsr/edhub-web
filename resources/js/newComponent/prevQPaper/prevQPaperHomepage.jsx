@@ -5,7 +5,7 @@ import PopularChoice from "../../homepage/landingPageComponents/PopularChoice";
 import LinkCard from "../../components/link-card/LinkCard";
 import axios from "axios";
 import {Helmet} from "react-helmet";
-
+import SliderHomepage from "../../homepage/landingPageComponents/SliderHomepage";
 const prevQPaperHomepage = () => {
     const [jobs, setJobs] = useState([]);
     const [subQuespapercategory, setSubQuespapercategory] = useState([]);
@@ -137,12 +137,8 @@ const prevQPaperHomepage = () => {
                 
             </div>
 
-            {course && (
-                <PopularChoice data={course} title="Banking Exams Courses" />
-            )}
-            {course && (
-                <PopularChoice data={course} title="Defence Exams Courses" />
-            )}
+                  <SliderHomepage title="Computer Science" course_category_id={1} />
+                   <SliderHomepage title="Design" course_category_id={7} />
         </div>
         </>
     );
