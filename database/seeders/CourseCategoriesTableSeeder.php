@@ -83,6 +83,30 @@ class CourseCategoriesTableSeeder extends Seeder
                 'created_at' => '2021-06-11 12:33:05',
                 'updated_at' => '2021-06-11 12:33:05',
             ),
+            8 => 
+            array (
+                'id' => 9,
+                'name' => 'Academics',
+                'slug' => 'academics',
+                'created_at' => '2021-06-19 18:20:17',
+                'updated_at' => '2021-06-19 18:20:17',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'name' => 'Photography & Video',
+                'slug' => 'photography-video',
+                'created_at' => '2021-06-19 18:21:11',
+                'updated_at' => '2021-06-19 18:21:11',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'name' => 'Fitness & Health',
+                'slug' => 'fitness-health',
+                'created_at' => '2021-06-19 18:21:34',
+                'updated_at' => '2021-06-19 18:21:34',
+            ),
         ));
         
         

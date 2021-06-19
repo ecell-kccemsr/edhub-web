@@ -42,12 +42,12 @@ class CourseSubCategoriesTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'name' => 'Programming Language',
+                'name' => 'Programming Languages',
                 'course_category_id' => 1,
                 'tags' => 'Python,Java,React,Node.js,Spring,Hibernate,C#,C++,C,Go,Javascript,Programmer,SQL,Programming Languages,JSP,Shell Scripting,TypeScript,Developer,Coding,PowerShell,Ruby,Matlab,Data Sctructre,Windows',
-                'slug' => 'programming-language-1',
+                'slug' => 'programming-languages',
                 'created_at' => '2021-06-06 22:45:00',
-                'updated_at' => '2021-06-11 13:01:36',
+                'updated_at' => '2021-06-19 19:24:48',
             ),
             3 => 
             array (
@@ -789,7 +789,348 @@ Training,Empower Clients,Salesforce,Workplace Safety,pharmacy math,pharmaceutica
                 'created_at' => '2021-06-12 16:39:29',
                 'updated_at' => '2021-06-12 16:39:29',
             ),
-        ));
+            75 => 
+            array (
+                'id' => 77,
+                'name' => 'Public Relations',
+                'course_category_id' => 8,
+                'tags' => 'Relation',
+                'slug' => 'public-relations',
+                'created_at' => '2021-06-19 18:24:52',
+                'updated_at' => '2021-06-19 18:24:52',
+            ),
+            76 => 
+            array (
+                'id' => 78,
+                'name' => 'Advertising',
+                'course_category_id' => 8,
+                'tags' => 'ads',
+                'slug' => 'advertising',
+                'created_at' => '2021-06-19 18:25:35',
+                'updated_at' => '2021-06-19 18:25:35',
+            ),
+            77 => 
+            array (
+                'id' => 79,
+                'name' => 'Video and Mobile Marketing',
+                'course_category_id' => 8,
+                'tags' => 'Video',
+                'slug' => 'video-and-mobile-marketing',
+                'created_at' => '2021-06-19 18:26:13',
+                'updated_at' => '2021-06-19 18:26:13',
+            ),
+            78 => 
+            array (
+                'id' => 80,
+                'name' => 'Growth Hacking',
+                'course_category_id' => 8,
+                'tags' => 'Hacking',
+                'slug' => 'growth-hacking',
+                'created_at' => '2021-06-19 18:27:03',
+                'updated_at' => '2021-06-19 18:27:03',
+            ),
+            79 => 
+            array (
+                'id' => 81,
+                'name' => 'Other Marketing',
+                'course_category_id' => 8,
+                'tags' => 'mar',
+                'slug' => 'other-marketing',
+                'created_at' => '2021-06-19 18:28:13',
+                'updated_at' => '2021-06-19 18:28:13',
+            ),
+            80 => 
+            array (
+                'id' => 82,
+                'name' => 'Engineering',
+                'course_category_id' => 9,
+                'tags' => 'Electronics,Electrical Engineering,Civil Engineering,Robotics,Structural Engineering,Mechanical Engineering,Aerospace Engineering,Control Systems,Solar Energy,HVAC,MATLAB,Electric Vehicles,Electricity,Power Engineering,Construction,Automotive Engineering,Engineering Instruction,Computational Fluid Dynamics',
+                'slug' => 'engineering',
+                'created_at' => '2021-06-19 19:37:16',
+                'updated_at' => '2021-06-19 19:37:16',
+            ),
+            81 => 
+            array (
+                'id' => 83,
+                'name' => 'Humanities',
+                'course_category_id' => 9,
+            'tags' => 'Christianity,The Bible,Psychology,Statistics,Philosophy,Creative Writing,Art History,Critical Thinking,English Literature,Acceptance and Commitment Therapy (ACT),Forensic Science,Investigation,Academic Writing,Grief Healing,Counseling,Psychotherapy,Depression Relief',
+                'slug' => 'humanities',
+                'created_at' => '2021-06-19 19:39:04',
+                'updated_at' => '2021-06-19 19:39:04',
+            ),
+            82 => 
+            array (
+                'id' => 84,
+                'name' => 'Math',
+                'course_category_id' => 9,
+                'tags' => 'Math,Calculus,Statistics,Linear Algebra,Algebra,Probability,Trigonometry,Discrete Math,Geometry,Vedic Math,Spatial Analysis,Differential Equations,Pre-Calculus,Coding For Kids,Robotics,GIS,Python',
+                'slug' => 'math',
+                'created_at' => '2021-06-19 19:42:51',
+                'updated_at' => '2021-06-19 19:42:51',
+            ),
+            83 => 
+            array (
+                'id' => 85,
+                'name' => 'Science',
+                'course_category_id' => 9,
+                'tags' => 'Physics,Orthodontics,Chemistry,Solar Energy,Bioinformatics,Anatomy,Research Paper Writing,Biology,Neuroscience,Astronomy,AP Physics
+,Physiology,Organic Chemistry,Radio Frequency,Data Analysis,GIS,Medical Coding',
+                'slug' => 'science',
+                'created_at' => '2021-06-19 19:43:38',
+                'updated_at' => '2021-06-19 19:43:38',
+            ),
+            84 => 
+            array (
+                'id' => 86,
+                'name' => 'online education',
+                'course_category_id' => 9,
+                'tags' => 'Online Course Creation,Teaching Online,Data Entry Skills,Canva,Online Business,Horsemanship,Articulate Storyline,Adobe Captivate,Instructional Design,Passive Income,Autism,Mortgage,Online Course Marketing,Moodle,Animation',
+                'slug' => 'online-education',
+                'created_at' => '2021-06-19 19:44:09',
+                'updated_at' => '2021-06-19 19:44:09',
+            ),
+            85 => 
+            array (
+                'id' => 87,
+                'name' => 'social science',
+                'course_category_id' => 9,
+            'tags' => 'Psychology,Counseling,Economics,Criminology,Psychotherapy,Dialectical Behavior Therapy DBT),Critical Thinking,Research Methods,Social Psychology,Child Psychology,Stress Management,Law,Data Analysis,Research Paper Writing,Statistics,CBT,SPSS',
+            'slug' => 'social-science',
+            'created_at' => '2021-06-19 19:44:35',
+            'updated_at' => '2021-06-19 19:44:35',
+        ),
+        86 => 
+        array (
+            'id' => 88,
+            'name' => 'Language',
+            'course_category_id' => 9,
+            'tags' => 'English Language,German Language,Spanish Language,Japanese Language,English Grammar,English Conversation,French Language,English Vocabulary,Sign Language,Korean Language,Arabic Language,Chinese Language,IELTS,English Pronunciation,Business English,Learning a Foreign Language,Russian Language',
+            'slug' => 'language',
+            'created_at' => '2021-06-19 19:46:43',
+            'updated_at' => '2021-06-19 19:46:43',
+        ),
+        87 => 
+        array (
+            'id' => 89,
+            'name' => 'Teacher Training',
+            'course_category_id' => 9,
+            'tags' => 'Teacher Training,Train the Trainer,Instructional Design,Voice-Over,Coaching,Early Childhood Education,Personal Development,Moodle,ESL,Presentation Skills,Media Training,Online Course Creation,Learning Technologies,Health Coaching,Education,Qi Gong,Camtasia',
+            'slug' => 'teacher-training',
+            'created_at' => '2021-06-19 19:48:05',
+            'updated_at' => '2021-06-19 19:48:05',
+        ),
+        88 => 
+        array (
+            'id' => 90,
+            'name' => 'Test Prep',
+            'course_category_id' => 9,
+        'tags' => 'IELTS,PMP,Microsoft Certification,Microsoft AZ-104,TOEFL,PMBOK,Math,Bookkeeping,GMAT,CAPM,GRE,Emergency Medicine,Advanced Trauma Life Support (ATLS),IT Fundamentals,UAS/Drone Remote Pilot,CCAT,SAT',
+            'slug' => 'test-prep',
+            'created_at' => '2021-06-19 19:49:37',
+            'updated_at' => '2021-06-19 19:49:37',
+        ),
+        89 => 
+        array (
+            'id' => 91,
+            'name' => 'Other Teaching and Academics',
+            'course_category_id' => 9,
+            'tags' => 'Online',
+            'slug' => 'other-teaching-and-academics',
+            'created_at' => '2021-06-19 19:50:03',
+            'updated_at' => '2021-06-19 19:50:03',
+        ),
+        90 => 
+        array (
+            'id' => 92,
+            'name' => 'Digital Photography',
+            'course_category_id' => 10,
+            'tags' => 'Photography,iPhone Photography,DSLR,Adobe Lightroom,Mobile Photography,Digital Photography,Affinity Photo,Photoshop,GIMP,Night Photography,Photoshop Retouching,Cameras,Food Photography,Nature Photography,Image Editing,GoPro,Flash Photography',
+            'slug' => 'digital-photography',
+            'created_at' => '2021-06-19 19:51:01',
+            'updated_at' => '2021-06-19 19:51:01',
+        ),
+        91 => 
+        array (
+            'id' => 93,
+            'name' => 'Portrait Photography',
+            'course_category_id' => 10,
+            'tags' => 'Portrait Photography,Posing,Photography Business,Photography Lighting,Family Portrait Photography,Wedding Photography,Fashion Photography,Nik Software,Instagram Photography,Underwater Photography',
+            'slug' => 'portrait-photography',
+            'created_at' => '2021-06-19 19:52:06',
+            'updated_at' => '2021-06-19 19:52:06',
+        ),
+        92 => 
+        array (
+            'id' => 94,
+            'name' => 'Photography Tools',
+            'course_category_id' => 10,
+            'tags' => 'Drone Photography,Cameras,Digital Image Processing,Mac Basics,Cinematography,After Effects,Landscape Photography',
+            'slug' => 'photography-tools',
+            'created_at' => '2021-06-19 19:52:33',
+            'updated_at' => '2021-06-19 19:52:33',
+        ),
+        93 => 
+        array (
+            'id' => 95,
+            'name' => 'Commercial Photography',
+            'course_category_id' => 10,
+            'tags' => 'Real Estate Photography,Product Photography,Architecture Photography,Wedding Photography,Photography,Marketing Strategy,Stock Footage,Photography Composition,360 video',
+            'slug' => 'commercial-photography',
+            'created_at' => '2021-06-19 19:53:14',
+            'updated_at' => '2021-06-19 19:53:14',
+        ),
+        94 => 
+        array (
+            'id' => 96,
+            'name' => 'Photography',
+            'course_category_id' => 10,
+            'tags' => 'Landscape',
+            'slug' => 'photography',
+            'created_at' => '2021-06-19 19:54:08',
+            'updated_at' => '2021-06-19 19:54:08',
+        ),
+        95 => 
+        array (
+            'id' => 97,
+            'name' => 'Other Photography and Video',
+            'course_category_id' => 10,
+            'tags' => 'Video',
+            'slug' => 'other-photography-and-video',
+            'created_at' => '2021-06-19 19:54:47',
+            'updated_at' => '2021-06-19 19:54:47',
+        ),
+        96 => 
+        array (
+            'id' => 98,
+            'name' => 'Video Design',
+            'course_category_id' => 10,
+            'tags' => 'Video Editing,Adobe Premiere,Video Production,DaVinci Resolve,Filmmaking,Color Grading,Final Cut Pro,Videography,Documentary Filmmaking,Unreal Engine,Filmora,Video Lighting,iPhone Filmmaking,Video creation',
+            'slug' => 'video-design',
+            'created_at' => '2021-06-19 19:55:07',
+            'updated_at' => '2021-06-19 19:55:07',
+        ),
+        97 => 
+        array (
+            'id' => 99,
+            'name' => 'Fitness',
+            'course_category_id' => 11,
+            'tags' => 'Fitness,Pilates,Home Workout,Beauty,Testosterone,Stretching Exercise,Posture,Kettlebell,Weight Loss,Tai Chi,Personal Trainer Business,Barre Workout,Sword,Qi Gong,Health',
+            'slug' => 'fitness',
+            'created_at' => '2021-06-19 19:57:37',
+            'updated_at' => '2021-06-19 19:57:37',
+        ),
+        98 => 
+        array (
+            'id' => 100,
+            'name' => 'General health',
+            'course_category_id' => 11,
+            'tags' => 'Herbalism,Massage,Holistic Medicine,Aromatherapy,Natural Medicine,Acupressure,Health,Reflexology,Cupping Therapy,Breathing Techniques,Tai Chi,Essential Oil,Health Coaching,Facial Massage',
+            'slug' => 'general-health',
+            'created_at' => '2021-06-19 19:58:46',
+            'updated_at' => '2021-06-19 19:58:46',
+        ),
+        99 => 
+        array (
+            'id' => 101,
+            'name' => 'Sports',
+            'course_category_id' => 11,
+            'tags' => 'Soccer,Sport Psychology,Tennis,Sports Coaching,Martial Arts,Swimming,Boxing,Sports Massage,Golf,Running,Inline Skating,Self-Defense,Sports Management,Qi Gong,Kickboxing,Muay Thai,Brazilian Jiu-Jitsu',
+            'slug' => 'sports',
+            'created_at' => '2021-06-19 20:00:12',
+            'updated_at' => '2021-06-19 20:00:12',
+        ),
+        100 => 
+        array (
+            'id' => 102,
+            'name' => 'Nutrition',
+            'course_category_id' => 11,
+            'tags' => 'Nutrition,Dieting,Sports Nutrition,Vegan Cooking,Ketogenic Diet,Meal Planning,Farming,Cooking,Herbalism,Anti-Aging,Health,Body Building',
+            'slug' => 'nutrition',
+            'created_at' => '2021-06-19 20:01:07',
+            'updated_at' => '2021-06-19 20:01:07',
+        ),
+        101 => 
+        array (
+            'id' => 103,
+            'name' => 'Yoga',
+            'course_category_id' => 11,
+            'tags' => 'Yoga,Yoga for Kids,Pranayama,Face Yoga,Chair Yoga,Kundalini,Meditation,Anatomy,Qi Gong,Prenatal Yoga,Anti-Aging,Back Pain,Tantra,Face Lift,Breathing Techniques',
+            'slug' => 'yoga',
+            'created_at' => '2021-06-19 20:02:18',
+            'updated_at' => '2021-06-19 20:02:18',
+        ),
+        102 => 
+        array (
+            'id' => 104,
+            'name' => 'Dieting',
+            'course_category_id' => 11,
+        'tags' => 'Dieting,Ketosis,Muscle Building,Fat Loss,Diabetes,Positive Psychology,Fasting,Strength Training,Gut Health,Ayurveda,EFT (Emotional Freedom Technique)',
+            'slug' => 'dieting',
+            'created_at' => '2021-06-19 20:03:15',
+            'updated_at' => '2021-06-19 20:03:15',
+        ),
+        103 => 
+        array (
+            'id' => 105,
+            'name' => 'Self Defense',
+            'course_category_id' => 11,
+            'tags' => 'Krav Maga,Self-Defense,Close Combat,Martial Arts,Boxing,Tai Chi,Kung Fu,Wing Chun,Muay Thai,Brazilian Jiu Jitsu,Karate,Taekwondo,Kickboxing,Taijutsu,Sword,Jeet Kune Do,Conflict Management',
+            'slug' => 'self-defense',
+            'created_at' => '2021-06-19 20:04:27',
+            'updated_at' => '2021-06-19 20:04:27',
+        ),
+        104 => 
+        array (
+            'id' => 106,
+            'name' => 'Safety and First Aid',
+            'course_category_id' => 11,
+            'tags' => 'First Aid,Workplace Health and Safety,Nursing,Health Coaching,Survival Skills,OSHA,Grief Healing,Fire Safety,Food Safety,Personal Emergency Preparedness,Mental Health,NEBOSH,Microbiology,Injury Recovery,Pet Care,Kinesiology Taping',
+            'slug' => 'safety-and-first-aid',
+            'created_at' => '2021-06-19 20:06:11',
+            'updated_at' => '2021-06-19 20:06:11',
+        ),
+        105 => 
+        array (
+            'id' => 107,
+            'name' => 'Dance',
+            'course_category_id' => 11,
+            'tags' => 'Dance,Belly Dancing,Salsa Dancing,Hip Hop Dancing,Tango Dance,Bachata,Poi Spinning,Ballet,Indian Dance,Kundalini,Breakdancing,Street Dance,Fitness,Jazz,Daily Fantasy Sports,Choreography,Marriage',
+            'slug' => 'dance',
+            'created_at' => '2021-06-19 20:07:33',
+            'updated_at' => '2021-06-19 20:07:33',
+        ),
+        106 => 
+        array (
+            'id' => 108,
+            'name' => 'Meditation',
+            'course_category_id' => 11,
+            'tags' => 'Meditation,Sound Therapy,Mindfulness,Addiction Recovery,Tai Chi,Qi Gong,Stress Management,Reiki,Energy Healing,Energy,Yoga,Breathing Techniques,Ashtanga Yoga,Personal Productivity,Massage,Personal Transformation,Mikkyo',
+            'slug' => 'meditation',
+            'created_at' => '2021-06-19 20:08:36',
+            'updated_at' => '2021-06-19 20:08:36',
+        ),
+        107 => 
+        array (
+            'id' => 109,
+            'name' => 'Mental Health',
+            'course_category_id' => 11,
+            'tags' => 'Mental Health',
+            'slug' => 'mental-health',
+            'created_at' => '2021-06-19 20:08:43',
+            'updated_at' => '2021-06-19 20:08:43',
+        ),
+        108 => 
+        array (
+            'id' => 110,
+            'name' => 'Other Health & Fitness',
+            'course_category_id' => 11,
+            'tags' => 'Health & Fitness',
+            'slug' => 'other-health-fitness',
+            'created_at' => '2021-06-19 20:08:49',
+            'updated_at' => '2021-06-19 20:08:49',
+        ),
+    ));
         
         
     }
