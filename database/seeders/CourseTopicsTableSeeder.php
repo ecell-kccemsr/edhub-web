@@ -1657,6 +1657,1932 @@ class CourseTopicsTableSeeder extends Seeder
                 'created_at' => '2021-06-19 01:03:20',
                 'updated_at' => '2021-06-19 01:03:20',
             ),
+            182 => 
+            array (
+                'id' => 183,
+                'name' => 'Python',
+                'course_sub_category_id' => 3,
+                'slug' => 'python-1',
+                'created_at' => '2021-06-19 10:28:23',
+                'updated_at' => '2021-06-19 10:28:23',
+            ),
+            183 => 
+            array (
+                'id' => 184,
+                'name' => 'Go',
+                'course_sub_category_id' => 3,
+                'slug' => 'go',
+                'created_at' => '2021-06-19 10:29:59',
+                'updated_at' => '2021-06-19 10:29:59',
+            ),
+            184 => 
+            array (
+                'id' => 185,
+                'name' => 'Spring Framework',
+                'course_sub_category_id' => 3,
+                'slug' => 'spring-framework',
+                'created_at' => '2021-06-19 10:31:20',
+                'updated_at' => '2021-06-19 10:31:20',
+            ),
+            185 => 
+            array (
+                'id' => 186,
+                'name' => 'Javascript',
+                'course_sub_category_id' => 3,
+                'slug' => 'javascript-1',
+                'created_at' => '2021-06-19 10:32:15',
+                'updated_at' => '2021-06-19 10:32:15',
+            ),
+            186 => 
+            array (
+                'id' => 187,
+                'name' => 'Unity',
+                'course_sub_category_id' => 6,
+                'slug' => 'unity',
+                'created_at' => '2021-06-19 10:37:14',
+                'updated_at' => '2021-06-19 10:37:14',
+            ),
+            187 => 
+            array (
+                'id' => 188,
+                'name' => 'Game Development Fundamentals',
+                'course_sub_category_id' => 6,
+                'slug' => 'game-development-fundamentals',
+                'created_at' => '2021-06-19 10:38:21',
+                'updated_at' => '2021-06-19 10:38:21',
+            ),
+            188 => 
+            array (
+                'id' => 189,
+                'name' => 'Unreal Engine',
+                'course_sub_category_id' => 6,
+                'slug' => 'unreal-engine',
+                'created_at' => '2021-06-19 10:39:02',
+                'updated_at' => '2021-06-19 10:39:02',
+            ),
+            189 => 
+            array (
+                'id' => 190,
+                'name' => 'C#',
+                'course_sub_category_id' => 6,
+                'slug' => 'c-3',
+                'created_at' => '2021-06-19 10:40:23',
+                'updated_at' => '2021-06-19 10:40:23',
+            ),
+            190 => 
+            array (
+                'id' => 191,
+                'name' => '3D Game Development',
+                'course_sub_category_id' => 6,
+                'slug' => '3d-game-development',
+                'created_at' => '2021-06-19 10:40:54',
+                'updated_at' => '2021-06-19 10:40:54',
+            ),
+            191 => 
+            array (
+                'id' => 192,
+                'name' => 'C++',
+                'course_sub_category_id' => 6,
+                'slug' => 'c-4',
+                'created_at' => '2021-06-19 10:41:17',
+                'updated_at' => '2021-06-19 10:41:17',
+            ),
+            192 => 
+            array (
+                'id' => 193,
+                'name' => '2D Game Development',
+                'course_sub_category_id' => 6,
+                'slug' => '2d-game-development',
+                'created_at' => '2021-06-19 10:42:34',
+                'updated_at' => '2021-06-19 10:42:34',
+            ),
+            193 => 
+            array (
+                'id' => 194,
+                'name' => 'Unreal Engine Blueprints',
+                'course_sub_category_id' => 6,
+                'slug' => 'unreal-engine-blueprints',
+                'created_at' => '2021-06-19 10:43:21',
+                'updated_at' => '2021-06-19 10:43:21',
+            ),
+            194 => 
+            array (
+                'id' => 195,
+                'name' => 'Blender',
+                'course_sub_category_id' => 6,
+                'slug' => 'blender',
+                'created_at' => '2021-06-19 10:44:00',
+                'updated_at' => '2021-06-19 10:44:00',
+            ),
+            195 => 
+            array (
+                'id' => 196,
+                'name' => 'SQL',
+                'course_sub_category_id' => 5,
+                'slug' => 'sql',
+                'created_at' => '2021-06-19 10:45:16',
+                'updated_at' => '2021-06-19 10:45:16',
+            ),
+            196 => 
+            array (
+                'id' => 197,
+                'name' => 'MySQL',
+                'course_sub_category_id' => 5,
+                'slug' => 'mysql',
+                'created_at' => '2021-06-19 10:45:34',
+                'updated_at' => '2021-06-19 10:45:34',
+            ),
+            197 => 
+            array (
+                'id' => 198,
+                'name' => 'Oracle SQL',
+                'course_sub_category_id' => 5,
+                'slug' => 'oracle-sql',
+                'created_at' => '2021-06-19 10:45:56',
+                'updated_at' => '2021-06-19 10:45:56',
+            ),
+            198 => 
+            array (
+                'id' => 199,
+                'name' => 'MongoDB',
+                'course_sub_category_id' => 5,
+                'slug' => 'mongodb',
+                'created_at' => '2021-06-19 10:46:13',
+                'updated_at' => '2021-06-19 10:46:13',
+            ),
+            199 => 
+            array (
+                'id' => 200,
+                'name' => 'Apache Kafka',
+                'course_sub_category_id' => 5,
+                'slug' => 'apache-kafka',
+                'created_at' => '2021-06-19 10:46:33',
+                'updated_at' => '2021-06-19 10:46:33',
+            ),
+            200 => 
+            array (
+                'id' => 201,
+                'name' => 'Oracle Certification',
+                'course_sub_category_id' => 5,
+                'slug' => 'oracle-certification',
+                'created_at' => '2021-06-19 10:47:09',
+                'updated_at' => '2021-06-19 10:47:09',
+            ),
+            201 => 
+            array (
+                'id' => 202,
+                'name' => 'SQL Server',
+                'course_sub_category_id' => 5,
+                'slug' => 'sql-server',
+                'created_at' => '2021-06-19 10:47:44',
+                'updated_at' => '2021-06-19 10:47:44',
+            ),
+            202 => 
+            array (
+                'id' => 203,
+                'name' => 'Database Programming',
+                'course_sub_category_id' => 5,
+                'slug' => 'database-programming',
+                'created_at' => '2021-06-19 10:48:16',
+                'updated_at' => '2021-06-19 10:48:16',
+            ),
+            203 => 
+            array (
+                'id' => 204,
+                'name' => 'PostgreSQL',
+                'course_sub_category_id' => 5,
+                'slug' => 'postgresql',
+                'created_at' => '2021-06-19 10:49:06',
+                'updated_at' => '2021-06-19 10:49:06',
+            ),
+            204 => 
+            array (
+                'id' => 205,
+                'name' => 'Selenium WebDriver',
+                'course_sub_category_id' => 8,
+                'slug' => 'selenium-webdriver',
+                'created_at' => '2021-06-19 10:50:19',
+                'updated_at' => '2021-06-19 10:50:19',
+            ),
+            205 => 
+            array (
+                'id' => 206,
+                'name' => 'Java',
+                'course_sub_category_id' => 8,
+                'slug' => 'java-1',
+                'created_at' => '2021-06-19 10:50:38',
+                'updated_at' => '2021-06-19 10:50:38',
+            ),
+            206 => 
+            array (
+                'id' => 207,
+                'name' => 'Selenium Testing Framework',
+                'course_sub_category_id' => 8,
+                'slug' => 'selenium-testing-framework',
+                'created_at' => '2021-06-19 10:51:00',
+                'updated_at' => '2021-06-19 10:51:00',
+            ),
+            207 => 
+            array (
+                'id' => 208,
+                'name' => 'Automation Testing',
+                'course_sub_category_id' => 8,
+                'slug' => 'automation-testing',
+                'created_at' => '2021-06-19 10:51:39',
+                'updated_at' => '2021-06-19 10:51:39',
+            ),
+            208 => 
+            array (
+                'id' => 209,
+                'name' => 'API Testing',
+                'course_sub_category_id' => 8,
+                'slug' => 'api-testing',
+                'created_at' => '2021-06-19 10:52:05',
+                'updated_at' => '2021-06-19 10:52:05',
+            ),
+            209 => 
+            array (
+                'id' => 210,
+                'name' => 'REST Assured',
+                'course_sub_category_id' => 8,
+                'slug' => 'rest-assured',
+                'created_at' => '2021-06-19 10:52:27',
+                'updated_at' => '2021-06-19 10:52:27',
+            ),
+            210 => 
+            array (
+                'id' => 211,
+                'name' => 'Cypress.io',
+                'course_sub_category_id' => 8,
+                'slug' => 'cypressio',
+                'created_at' => '2021-06-19 10:52:50',
+                'updated_at' => '2021-06-19 10:52:50',
+            ),
+            211 => 
+            array (
+                'id' => 212,
+                'name' => 'Appium',
+                'course_sub_category_id' => 8,
+                'slug' => 'appium',
+                'created_at' => '2021-06-19 10:53:15',
+                'updated_at' => '2021-06-19 10:53:15',
+            ),
+            212 => 
+            array (
+                'id' => 213,
+                'name' => 'Coding Interview',
+                'course_sub_category_id' => 9,
+                'slug' => 'coding-interview',
+                'created_at' => '2021-06-19 10:58:15',
+                'updated_at' => '2021-06-19 10:58:15',
+            ),
+            213 => 
+            array (
+                'id' => 214,
+                'name' => 'Data Structures',
+                'course_sub_category_id' => 9,
+                'slug' => 'data-structures',
+                'created_at' => '2021-06-19 10:58:45',
+                'updated_at' => '2021-06-19 10:58:45',
+            ),
+            214 => 
+            array (
+                'id' => 215,
+                'name' => 'Algorithms',
+                'course_sub_category_id' => 9,
+                'slug' => 'algorithms',
+                'created_at' => '2021-06-19 10:59:05',
+                'updated_at' => '2021-06-19 10:59:05',
+            ),
+            215 => 
+            array (
+                'id' => 216,
+                'name' => 'Microservices',
+                'course_sub_category_id' => 9,
+                'slug' => 'microservices',
+                'created_at' => '2021-06-19 10:59:25',
+                'updated_at' => '2021-06-19 10:59:25',
+            ),
+            216 => 
+            array (
+                'id' => 217,
+                'name' => 'Kubernetes',
+                'course_sub_category_id' => 9,
+                'slug' => 'kubernetes',
+                'created_at' => '2021-06-19 10:59:46',
+                'updated_at' => '2021-06-19 10:59:46',
+            ),
+            217 => 
+            array (
+                'id' => 218,
+            'name' => 'Certified Kubernetes Application Developer(CKAD)',
+                'course_sub_category_id' => 9,
+                'slug' => 'certified-kubernetes-application-developerckad',
+                'created_at' => '2021-06-19 11:00:26',
+                'updated_at' => '2021-06-19 11:00:42',
+            ),
+            218 => 
+            array (
+                'id' => 219,
+                'name' => 'Python',
+                'course_sub_category_id' => 9,
+                'slug' => 'python-2',
+                'created_at' => '2021-06-19 11:00:58',
+                'updated_at' => '2021-06-19 11:00:58',
+            ),
+            219 => 
+            array (
+                'id' => 220,
+                'name' => 'Linux',
+                'course_sub_category_id' => 9,
+                'slug' => 'linux-1',
+                'created_at' => '2021-06-19 11:01:14',
+                'updated_at' => '2021-06-19 11:01:14',
+            ),
+            220 => 
+            array (
+                'id' => 221,
+                'name' => 'Software Practices',
+                'course_sub_category_id' => 9,
+                'slug' => 'software-practices',
+                'created_at' => '2021-06-19 11:01:41',
+                'updated_at' => '2021-06-19 11:01:41',
+            ),
+            221 => 
+            array (
+                'id' => 222,
+                'name' => 'Git',
+                'course_sub_category_id' => 10,
+                'slug' => 'git',
+                'created_at' => '2021-06-19 11:04:19',
+                'updated_at' => '2021-06-19 11:04:19',
+            ),
+            222 => 
+            array (
+                'id' => 223,
+                'name' => 'Docker',
+                'course_sub_category_id' => 10,
+                'slug' => 'docker',
+                'created_at' => '2021-06-19 11:04:36',
+                'updated_at' => '2021-06-19 11:04:36',
+            ),
+            223 => 
+            array (
+                'id' => 224,
+                'name' => 'Kubernetes',
+                'course_sub_category_id' => 10,
+                'slug' => 'kubernetes-1',
+                'created_at' => '2021-06-19 11:04:51',
+                'updated_at' => '2021-06-19 11:04:51',
+            ),
+            224 => 
+            array (
+                'id' => 225,
+                'name' => 'DevOps',
+                'course_sub_category_id' => 10,
+                'slug' => 'devops',
+                'created_at' => '2021-06-19 11:05:10',
+                'updated_at' => '2021-06-19 11:05:10',
+            ),
+            225 => 
+            array (
+                'id' => 226,
+                'name' => 'JenKins',
+                'course_sub_category_id' => 10,
+                'slug' => 'jenkins',
+                'created_at' => '2021-06-19 11:05:33',
+                'updated_at' => '2021-06-19 11:05:33',
+            ),
+            226 => 
+            array (
+                'id' => 228,
+                'name' => 'JIRA',
+                'course_sub_category_id' => 10,
+                'slug' => 'jira-1',
+                'created_at' => '2021-06-19 11:06:24',
+                'updated_at' => '2021-06-19 11:06:24',
+            ),
+            227 => 
+            array (
+                'id' => 229,
+                'name' => 'Confluence',
+                'course_sub_category_id' => 10,
+                'slug' => 'confluence',
+                'created_at' => '2021-06-19 11:06:40',
+                'updated_at' => '2021-06-19 11:06:40',
+            ),
+            228 => 
+            array (
+                'id' => 230,
+                'name' => 'AWS Certified Solutions Architect-Associate',
+                'course_sub_category_id' => 10,
+                'slug' => 'aws-certified-solutions-architect-associate-1',
+                'created_at' => '2021-06-19 11:07:15',
+                'updated_at' => '2021-06-19 11:07:15',
+            ),
+            229 => 
+            array (
+                'id' => 231,
+                'name' => 'Continuous Integration',
+                'course_sub_category_id' => 10,
+                'slug' => 'continuous-integration',
+                'created_at' => '2021-06-19 11:07:35',
+                'updated_at' => '2021-06-19 11:07:35',
+            ),
+            230 => 
+            array (
+                'id' => 232,
+                'name' => 'Sales Skills',
+                'course_sub_category_id' => 14,
+                'slug' => 'sales-skills',
+                'created_at' => '2021-06-19 11:30:31',
+                'updated_at' => '2021-06-19 11:30:31',
+            ),
+            231 => 
+            array (
+                'id' => 233,
+                'name' => 'B2B Sales',
+                'course_sub_category_id' => 14,
+                'slug' => 'b2b-sales',
+                'created_at' => '2021-06-19 11:31:00',
+                'updated_at' => '2021-06-19 11:31:00',
+            ),
+            232 => 
+            array (
+                'id' => 234,
+                'name' => 'LinkedIn',
+                'course_sub_category_id' => 14,
+                'slug' => 'linkedin-1',
+                'created_at' => '2021-06-19 11:31:23',
+                'updated_at' => '2021-06-19 11:31:23',
+            ),
+            233 => 
+            array (
+                'id' => 235,
+                'name' => 'Presentation Skills',
+                'course_sub_category_id' => 14,
+                'slug' => 'presentation-skills-2',
+                'created_at' => '2021-06-19 11:31:52',
+                'updated_at' => '2021-06-19 11:31:52',
+            ),
+            234 => 
+            array (
+                'id' => 236,
+                'name' => 'Business Development',
+                'course_sub_category_id' => 14,
+                'slug' => 'business-development',
+                'created_at' => '2021-06-19 11:32:21',
+                'updated_at' => '2021-06-19 11:32:21',
+            ),
+            235 => 
+            array (
+                'id' => 237,
+                'name' => 'Lead Generation',
+                'course_sub_category_id' => 14,
+                'slug' => 'lead-generation',
+                'created_at' => '2021-06-19 11:32:59',
+                'updated_at' => '2021-06-19 11:32:59',
+            ),
+            236 => 
+            array (
+                'id' => 238,
+                'name' => 'Lead Generation',
+                'course_sub_category_id' => 14,
+                'slug' => 'lead-generation-1',
+                'created_at' => '2021-06-19 11:33:06',
+                'updated_at' => '2021-06-19 11:33:06',
+            ),
+            237 => 
+            array (
+                'id' => 239,
+                'name' => 'Customer Service',
+                'course_sub_category_id' => 14,
+                'slug' => 'customer-service',
+                'created_at' => '2021-06-19 11:33:35',
+                'updated_at' => '2021-06-19 11:33:35',
+            ),
+            238 => 
+            array (
+                'id' => 240,
+                'name' => 'Cold Email',
+                'course_sub_category_id' => 14,
+                'slug' => 'cold-email',
+                'created_at' => '2021-06-19 11:34:02',
+                'updated_at' => '2021-06-19 11:34:02',
+            ),
+            239 => 
+            array (
+                'id' => 241,
+                'name' => 'Customer Success Management',
+                'course_sub_category_id' => 14,
+                'slug' => 'customer-success-management',
+                'created_at' => '2021-06-19 11:34:33',
+                'updated_at' => '2021-06-19 11:34:33',
+            ),
+            240 => 
+            array (
+                'id' => 242,
+                'name' => 'Digital Marketing',
+                'course_sub_category_id' => 15,
+                'slug' => 'digital-marketing',
+                'created_at' => '2021-06-19 11:36:20',
+                'updated_at' => '2021-06-19 11:36:20',
+            ),
+            241 => 
+            array (
+                'id' => 243,
+                'name' => 'Management Consulting',
+                'course_sub_category_id' => 15,
+                'slug' => 'management-consulting',
+                'created_at' => '2021-06-19 11:36:53',
+                'updated_at' => '2021-06-19 11:36:53',
+            ),
+            242 => 
+            array (
+                'id' => 244,
+                'name' => 'Business Model',
+                'course_sub_category_id' => 15,
+                'slug' => 'business-model',
+                'created_at' => '2021-06-19 11:37:22',
+                'updated_at' => '2021-06-19 11:37:22',
+            ),
+            243 => 
+            array (
+                'id' => 245,
+                'name' => 'Futures Trading',
+                'course_sub_category_id' => 15,
+                'slug' => 'futures-trading',
+                'created_at' => '2021-06-19 11:37:53',
+                'updated_at' => '2021-06-19 11:37:53',
+            ),
+            244 => 
+            array (
+                'id' => 246,
+            'name' => 'Google Ads (Adwords)',
+                'course_sub_category_id' => 15,
+                'slug' => 'google-ads-adwords',
+                'created_at' => '2021-06-19 11:38:36',
+                'updated_at' => '2021-06-19 11:38:36',
+            ),
+            245 => 
+            array (
+                'id' => 247,
+                'name' => 'Innovation',
+                'course_sub_category_id' => 15,
+                'slug' => 'innovation',
+                'created_at' => '2021-06-19 11:39:03',
+                'updated_at' => '2021-06-19 11:39:03',
+            ),
+            246 => 
+            array (
+                'id' => 248,
+                'name' => 'Digital Transformation',
+                'course_sub_category_id' => 15,
+                'slug' => 'digital-transformation',
+                'created_at' => '2021-06-19 11:39:45',
+                'updated_at' => '2021-06-19 11:39:45',
+            ),
+            247 => 
+            array (
+                'id' => 249,
+                'name' => 'TOGAF 9 Foundation',
+                'course_sub_category_id' => 15,
+                'slug' => 'togaf-9-foundation',
+                'created_at' => '2021-06-19 11:40:11',
+                'updated_at' => '2021-06-19 11:40:11',
+            ),
+            248 => 
+            array (
+                'id' => 250,
+                'name' => 'Six Sigma',
+                'course_sub_category_id' => 16,
+                'slug' => 'six-sigma',
+                'created_at' => '2021-06-19 11:41:22',
+                'updated_at' => '2021-06-19 11:41:22',
+            ),
+            249 => 
+            array (
+                'id' => 251,
+                'name' => 'Six Sigma Green Belt',
+                'course_sub_category_id' => 16,
+                'slug' => 'six-sigma-green-belt',
+                'created_at' => '2021-06-19 11:41:55',
+                'updated_at' => '2021-06-19 11:41:55',
+            ),
+            250 => 
+            array (
+                'id' => 252,
+                'name' => 'Supply Chain',
+                'course_sub_category_id' => 16,
+                'slug' => 'supply-chain',
+                'created_at' => '2021-06-19 11:42:30',
+                'updated_at' => '2021-06-19 11:42:30',
+            ),
+            251 => 
+            array (
+                'id' => 253,
+                'name' => 'Six Sigma Black Belt',
+                'course_sub_category_id' => 16,
+                'slug' => 'six-sigma-black-belt',
+                'created_at' => '2021-06-19 11:43:34',
+                'updated_at' => '2021-06-19 11:43:34',
+            ),
+            252 => 
+            array (
+                'id' => 254,
+                'name' => 'Six Sigma Yellow Belt',
+                'course_sub_category_id' => 16,
+                'slug' => 'six-sigma-yellow-belt',
+                'created_at' => '2021-06-19 11:44:06',
+                'updated_at' => '2021-06-19 11:44:06',
+            ),
+            253 => 
+            array (
+                'id' => 255,
+                'name' => 'Six Sigma White Belt',
+                'course_sub_category_id' => 16,
+                'slug' => 'six-sigma-white-belt',
+                'created_at' => '2021-06-19 11:45:06',
+                'updated_at' => '2021-06-19 11:45:06',
+            ),
+            254 => 
+            array (
+                'id' => 256,
+                'name' => 'Robotic Process Automation',
+                'course_sub_category_id' => 16,
+                'slug' => 'robotic-process-automation',
+                'created_at' => '2021-06-19 11:45:38',
+                'updated_at' => '2021-06-19 11:45:38',
+            ),
+            255 => 
+            array (
+                'id' => 257,
+                'name' => 'Lean',
+                'course_sub_category_id' => 16,
+                'slug' => 'lean',
+                'created_at' => '2021-06-19 11:46:04',
+                'updated_at' => '2021-06-19 11:46:04',
+            ),
+            256 => 
+            array (
+                'id' => 258,
+                'name' => 'Quality Management',
+                'course_sub_category_id' => 16,
+                'slug' => 'quality-management-1',
+                'created_at' => '2021-06-19 11:46:42',
+                'updated_at' => '2021-06-19 11:46:42',
+            ),
+            257 => 
+            array (
+                'id' => 259,
+                'name' => 'PMP',
+                'course_sub_category_id' => 17,
+                'slug' => 'pmp',
+                'created_at' => '2021-06-19 11:49:26',
+                'updated_at' => '2021-06-19 11:49:26',
+            ),
+            258 => 
+            array (
+                'id' => 260,
+                'name' => 'PMBOK',
+                'course_sub_category_id' => 17,
+                'slug' => 'pmbok',
+                'created_at' => '2021-06-19 11:49:50',
+                'updated_at' => '2021-06-19 11:49:50',
+            ),
+            259 => 
+            array (
+                'id' => 261,
+                'name' => 'Agile',
+                'course_sub_category_id' => 17,
+                'slug' => 'agile-1',
+                'created_at' => '2021-06-19 11:50:13',
+                'updated_at' => '2021-06-19 11:50:13',
+            ),
+            260 => 
+            array (
+                'id' => 262,
+                'name' => 'Scrum',
+                'course_sub_category_id' => 17,
+                'slug' => 'scrum',
+                'created_at' => '2021-06-19 11:50:40',
+                'updated_at' => '2021-06-19 11:50:40',
+            ),
+            261 => 
+            array (
+                'id' => 263,
+                'name' => 'CAPM',
+                'course_sub_category_id' => 17,
+                'slug' => 'capm',
+                'created_at' => '2021-06-19 11:51:04',
+                'updated_at' => '2021-06-19 11:51:04',
+            ),
+            262 => 
+            array (
+                'id' => 264,
+                'name' => 'PMI-ACP',
+                'course_sub_category_id' => 17,
+                'slug' => 'pmi-acp',
+                'created_at' => '2021-06-19 11:51:30',
+                'updated_at' => '2021-06-19 11:51:30',
+            ),
+            263 => 
+            array (
+                'id' => 265,
+                'name' => 'Microsoft Project',
+                'course_sub_category_id' => 17,
+                'slug' => 'microsoft-project',
+                'created_at' => '2021-06-19 11:52:17',
+                'updated_at' => '2021-06-19 11:52:17',
+            ),
+            264 => 
+            array (
+                'id' => 266,
+                'name' => 'Project Risk Management',
+                'course_sub_category_id' => 17,
+                'slug' => 'project-risk-management',
+                'created_at' => '2021-06-19 11:53:12',
+                'updated_at' => '2021-06-19 11:53:12',
+            ),
+            265 => 
+            array (
+                'id' => 267,
+                'name' => 'GDPR',
+                'course_sub_category_id' => 18,
+                'slug' => 'gdpr',
+                'created_at' => '2021-06-19 11:54:24',
+                'updated_at' => '2021-06-19 11:54:24',
+            ),
+            266 => 
+            array (
+                'id' => 268,
+                'name' => 'Contract Law',
+                'course_sub_category_id' => 18,
+                'slug' => 'contract-law-1',
+                'created_at' => '2021-06-19 11:54:52',
+                'updated_at' => '2021-06-19 11:54:52',
+            ),
+            267 => 
+            array (
+                'id' => 269,
+                'name' => 'Law',
+                'course_sub_category_id' => 18,
+                'slug' => 'law',
+                'created_at' => '2021-06-19 11:55:25',
+                'updated_at' => '2021-06-19 11:55:25',
+            ),
+            268 => 
+            array (
+                'id' => 270,
+                'name' => 'Contract Management',
+                'course_sub_category_id' => 18,
+                'slug' => 'contract-management',
+                'created_at' => '2021-06-19 11:56:04',
+                'updated_at' => '2021-06-19 11:56:04',
+            ),
+            269 => 
+            array (
+                'id' => 271,
+                'name' => 'Medical Device Development',
+                'course_sub_category_id' => 18,
+                'slug' => 'medical-device-development-1',
+                'created_at' => '2021-06-19 11:56:59',
+                'updated_at' => '2021-06-19 11:56:59',
+            ),
+            270 => 
+            array (
+                'id' => 272,
+                'name' => 'LGPD Lei Geral de Protecao de Dados',
+                'course_sub_category_id' => 18,
+                'slug' => 'lgpd-lei-geral-de-protecao-de-dados',
+                'created_at' => '2021-06-19 11:57:30',
+                'updated_at' => '2021-06-19 11:57:30',
+            ),
+            271 => 
+            array (
+                'id' => 273,
+                'name' => 'Patent',
+                'course_sub_category_id' => 18,
+                'slug' => 'patent',
+                'created_at' => '2021-06-19 11:57:58',
+                'updated_at' => '2021-06-19 11:57:58',
+            ),
+            272 => 
+            array (
+                'id' => 274,
+                'name' => 'Data Protection',
+                'course_sub_category_id' => 18,
+                'slug' => 'data-protection',
+                'created_at' => '2021-06-19 11:58:39',
+                'updated_at' => '2021-06-19 11:58:39',
+            ),
+            273 => 
+            array (
+                'id' => 275,
+                'name' => 'Microsoft Power BI',
+                'course_sub_category_id' => 19,
+                'slug' => 'microsoft-power-bi',
+                'created_at' => '2021-06-19 11:59:59',
+                'updated_at' => '2021-06-19 11:59:59',
+            ),
+            274 => 
+            array (
+                'id' => 276,
+                'name' => 'SQL',
+                'course_sub_category_id' => 19,
+                'slug' => 'sql-1',
+                'created_at' => '2021-06-19 12:00:24',
+                'updated_at' => '2021-06-19 12:00:24',
+            ),
+            275 => 
+            array (
+                'id' => 277,
+                'name' => 'Tableau',
+                'course_sub_category_id' => 19,
+                'slug' => 'tableau',
+                'created_at' => '2021-06-19 12:00:48',
+                'updated_at' => '2021-06-19 12:00:48',
+            ),
+            276 => 
+            array (
+                'id' => 278,
+                'name' => 'Business Analysis',
+                'course_sub_category_id' => 19,
+                'slug' => 'business-analysis',
+                'created_at' => '2021-06-19 12:01:18',
+                'updated_at' => '2021-06-19 12:01:18',
+            ),
+            277 => 
+            array (
+                'id' => 279,
+                'name' => 'Data Modeling',
+                'course_sub_category_id' => 19,
+                'slug' => 'data-modeling',
+                'created_at' => '2021-06-19 12:01:44',
+                'updated_at' => '2021-06-19 12:01:44',
+            ),
+            278 => 
+            array (
+                'id' => 280,
+                'name' => 'Business Intelligence',
+                'course_sub_category_id' => 19,
+                'slug' => 'business-intelligence',
+                'created_at' => '2021-06-19 12:02:19',
+                'updated_at' => '2021-06-19 12:02:19',
+            ),
+            279 => 
+            array (
+                'id' => 281,
+                'name' => 'MySQL',
+                'course_sub_category_id' => 19,
+                'slug' => 'mysql-1',
+                'created_at' => '2021-06-19 12:02:44',
+                'updated_at' => '2021-06-19 12:02:44',
+            ),
+            280 => 
+            array (
+                'id' => 282,
+                'name' => 'Data Analysis',
+                'course_sub_category_id' => 19,
+                'slug' => 'data-analysis-1',
+                'created_at' => '2021-06-19 12:03:14',
+                'updated_at' => '2021-06-19 12:03:14',
+            ),
+            281 => 
+            array (
+                'id' => 283,
+                'name' => 'Blockchain',
+                'course_sub_category_id' => 19,
+                'slug' => 'blockchain',
+                'created_at' => '2021-06-19 12:03:43',
+                'updated_at' => '2021-06-19 12:03:43',
+            ),
+            282 => 
+            array (
+                'id' => 284,
+                'name' => 'Recruiting',
+                'course_sub_category_id' => 20,
+                'slug' => 'recruiting',
+                'created_at' => '2021-06-19 12:06:27',
+                'updated_at' => '2021-06-19 12:06:27',
+            ),
+            283 => 
+            array (
+                'id' => 285,
+                'name' => 'HR Analytics',
+                'course_sub_category_id' => 20,
+                'slug' => 'hr-analytics',
+                'created_at' => '2021-06-19 12:06:57',
+                'updated_at' => '2021-06-19 12:06:57',
+            ),
+            284 => 
+            array (
+                'id' => 286,
+                'name' => 'Instructional Design',
+                'course_sub_category_id' => 20,
+                'slug' => 'instructional-design',
+                'created_at' => '2021-06-19 12:07:24',
+                'updated_at' => '2021-06-19 12:07:24',
+            ),
+            285 => 
+            array (
+                'id' => 287,
+                'name' => 'Hiring',
+                'course_sub_category_id' => 20,
+                'slug' => 'hiring',
+                'created_at' => '2021-06-19 12:07:58',
+                'updated_at' => '2021-06-19 12:07:58',
+            ),
+            286 => 
+            array (
+                'id' => 288,
+                'name' => 'Emotional Intelligence',
+                'course_sub_category_id' => 20,
+                'slug' => 'emotional-intelligence-2',
+                'created_at' => '2021-06-19 12:08:25',
+                'updated_at' => '2021-06-19 12:08:25',
+            ),
+            287 => 
+            array (
+                'id' => 289,
+                'name' => 'Employment Law',
+                'course_sub_category_id' => 20,
+                'slug' => 'employment-law',
+                'created_at' => '2021-06-19 12:08:56',
+                'updated_at' => '2021-06-19 12:08:56',
+            ),
+            288 => 
+            array (
+                'id' => 290,
+                'name' => 'Conflict Management',
+                'course_sub_category_id' => 20,
+                'slug' => 'conflict-management-1',
+                'created_at' => '2021-06-19 12:09:21',
+                'updated_at' => '2021-06-19 12:09:21',
+            ),
+            289 => 
+            array (
+                'id' => 291,
+                'name' => 'Diversity and inclusion',
+                'course_sub_category_id' => 20,
+                'slug' => 'diversity-and-inclusion',
+                'created_at' => '2021-06-19 12:09:58',
+                'updated_at' => '2021-06-19 12:09:58',
+            ),
+            290 => 
+            array (
+                'id' => 292,
+                'name' => 'Piping',
+                'course_sub_category_id' => 21,
+                'slug' => 'piping',
+                'created_at' => '2021-06-19 12:11:17',
+                'updated_at' => '2021-06-19 12:11:17',
+            ),
+            291 => 
+            array (
+                'id' => 293,
+                'name' => 'EPLAN Electric P8',
+                'course_sub_category_id' => 21,
+                'slug' => 'eplan-electric-p8',
+                'created_at' => '2021-06-19 12:12:54',
+                'updated_at' => '2021-06-19 12:12:54',
+            ),
+            292 => 
+            array (
+                'id' => 294,
+                'name' => 'Electrical Engineering',
+                'course_sub_category_id' => 21,
+                'slug' => 'electrical-engineering',
+                'created_at' => '2021-06-19 12:15:24',
+                'updated_at' => '2021-06-19 12:15:24',
+            ),
+            293 => 
+            array (
+                'id' => 295,
+                'name' => 'Life Coach Training',
+                'course_sub_category_id' => 21,
+                'slug' => 'life-coach-training-3',
+                'created_at' => '2021-06-19 12:17:27',
+                'updated_at' => '2021-06-19 12:17:27',
+            ),
+            294 => 
+            array (
+                'id' => 296,
+                'name' => 'Freight Broker',
+                'course_sub_category_id' => 21,
+                'slug' => 'freight-broker-1',
+                'created_at' => '2021-06-19 12:17:52',
+                'updated_at' => '2021-06-19 12:17:52',
+            ),
+            295 => 
+            array (
+                'id' => 297,
+                'name' => 'Trucking',
+                'course_sub_category_id' => 21,
+                'slug' => 'trucking',
+                'created_at' => '2021-06-19 12:18:43',
+                'updated_at' => '2021-06-19 12:18:43',
+            ),
+            296 => 
+            array (
+                'id' => 298,
+                'name' => 'Chemical Engineering',
+                'course_sub_category_id' => 21,
+                'slug' => 'chemical-engineering',
+                'created_at' => '2021-06-19 12:19:22',
+                'updated_at' => '2021-06-19 12:19:22',
+            ),
+            297 => 
+            array (
+                'id' => 299,
+                'name' => 'Salesforce',
+                'course_sub_category_id' => 21,
+                'slug' => 'salesforce',
+                'created_at' => '2021-06-19 12:20:03',
+                'updated_at' => '2021-06-19 12:20:03',
+            ),
+            298 => 
+            array (
+                'id' => 300,
+                'name' => 'Solar Energy',
+                'course_sub_category_id' => 21,
+                'slug' => 'solar-energy',
+                'created_at' => '2021-06-19 12:20:32',
+                'updated_at' => '2021-06-19 12:20:32',
+            ),
+            299 => 
+            array (
+                'id' => 301,
+                'name' => 'Oil and Gas Industry',
+                'course_sub_category_id' => 21,
+                'slug' => 'oil-and-gas-industry',
+                'created_at' => '2021-06-19 12:21:05',
+                'updated_at' => '2021-06-19 12:21:05',
+            ),
+            300 => 
+            array (
+                'id' => 302,
+                'name' => 'Amazon FBA',
+                'course_sub_category_id' => 22,
+                'slug' => 'amazon-fba',
+                'created_at' => '2021-06-19 12:25:32',
+                'updated_at' => '2021-06-19 12:25:32',
+            ),
+            301 => 
+            array (
+                'id' => 303,
+                'name' => 'Dropshipping',
+                'course_sub_category_id' => 22,
+                'slug' => 'dropshipping',
+                'created_at' => '2021-06-19 12:26:32',
+                'updated_at' => '2021-06-19 12:26:32',
+            ),
+            302 => 
+            array (
+                'id' => 304,
+                'name' => 'Shopify',
+                'course_sub_category_id' => 22,
+                'slug' => 'shopify',
+                'created_at' => '2021-06-19 12:26:52',
+                'updated_at' => '2021-06-19 12:26:52',
+            ),
+            303 => 
+            array (
+                'id' => 305,
+                'name' => 'Shopify Dropshipping',
+                'course_sub_category_id' => 22,
+                'slug' => 'shopify-dropshipping',
+                'created_at' => '2021-06-19 12:27:25',
+                'updated_at' => '2021-06-19 12:27:25',
+            ),
+            304 => 
+            array (
+                'id' => 306,
+                'name' => 'Selling on Amazon',
+                'course_sub_category_id' => 22,
+                'slug' => 'selling-on-amazon',
+                'created_at' => '2021-06-19 12:27:55',
+                'updated_at' => '2021-06-19 12:27:55',
+            ),
+            305 => 
+            array (
+                'id' => 307,
+                'name' => 'WooCommerce',
+                'course_sub_category_id' => 22,
+                'slug' => 'woocommerce',
+                'created_at' => '2021-06-19 12:28:16',
+                'updated_at' => '2021-06-19 12:28:16',
+            ),
+            306 => 
+            array (
+                'id' => 308,
+                'name' => 'Passive Income',
+                'course_sub_category_id' => 22,
+                'slug' => 'passive-income',
+                'created_at' => '2021-06-19 12:28:44',
+                'updated_at' => '2021-06-19 12:28:44',
+            ),
+            307 => 
+            array (
+                'id' => 309,
+                'name' => 'WordPress',
+                'course_sub_category_id' => 22,
+                'slug' => 'wordpress-1',
+                'created_at' => '2021-06-19 12:29:12',
+                'updated_at' => '2021-06-19 12:29:12',
+            ),
+            308 => 
+            array (
+                'id' => 310,
+                'name' => 'Writing',
+                'course_sub_category_id' => 23,
+                'slug' => 'writing-1',
+                'created_at' => '2021-06-19 12:32:00',
+                'updated_at' => '2021-06-19 12:32:00',
+            ),
+            309 => 
+            array (
+                'id' => 311,
+                'name' => 'Audiobook Creation',
+                'course_sub_category_id' => 23,
+                'slug' => 'audiobook-creation',
+                'created_at' => '2021-06-19 12:32:24',
+                'updated_at' => '2021-06-19 12:32:24',
+            ),
+            310 => 
+            array (
+                'id' => 312,
+                'name' => 'Screenwriting',
+                'course_sub_category_id' => 23,
+                'slug' => 'screenwriting',
+                'created_at' => '2021-06-19 12:32:57',
+                'updated_at' => '2021-06-19 12:32:57',
+            ),
+            311 => 
+            array (
+                'id' => 313,
+                'name' => 'SEO',
+                'course_sub_category_id' => 23,
+                'slug' => 'seo',
+                'created_at' => '2021-06-19 12:33:14',
+                'updated_at' => '2021-06-19 12:33:14',
+            ),
+            312 => 
+            array (
+                'id' => 314,
+                'name' => 'Journalism',
+                'course_sub_category_id' => 23,
+                'slug' => 'journalism',
+                'created_at' => '2021-06-19 12:33:37',
+                'updated_at' => '2021-06-19 12:33:37',
+            ),
+            313 => 
+            array (
+                'id' => 315,
+                'name' => 'Podcasting',
+                'course_sub_category_id' => 23,
+                'slug' => 'podcasting',
+                'created_at' => '2021-06-19 12:34:01',
+                'updated_at' => '2021-06-19 12:34:01',
+            ),
+            314 => 
+            array (
+                'id' => 316,
+                'name' => 'After Effects',
+                'course_sub_category_id' => 23,
+                'slug' => 'after-effects',
+                'created_at' => '2021-06-19 12:34:23',
+                'updated_at' => '2021-06-19 12:34:23',
+            ),
+            315 => 
+            array (
+                'id' => 317,
+                'name' => 'Motion Graphics',
+                'course_sub_category_id' => 23,
+                'slug' => 'motion-graphics',
+                'created_at' => '2021-06-19 12:34:46',
+                'updated_at' => '2021-06-19 12:34:46',
+            ),
+            316 => 
+            array (
+                'id' => 318,
+            'name' => 'Amazon Kindle Direct Publishing (KDP)',
+                'course_sub_category_id' => 23,
+                'slug' => 'amazon-kindle-direct-publishing-kdp',
+                'created_at' => '2021-06-19 12:35:40',
+                'updated_at' => '2021-06-19 12:35:40',
+            ),
+            317 => 
+            array (
+                'id' => 319,
+                'name' => 'Accounting',
+                'course_sub_category_id' => 26,
+                'slug' => 'accounting',
+                'created_at' => '2021-06-19 12:47:22',
+                'updated_at' => '2021-06-19 12:47:22',
+            ),
+            318 => 
+            array (
+                'id' => 320,
+                'name' => 'Bookkeeping',
+                'course_sub_category_id' => 26,
+                'slug' => 'bookkeeping',
+                'created_at' => '2021-06-19 12:47:37',
+                'updated_at' => '2021-06-19 12:47:37',
+            ),
+            319 => 
+            array (
+                'id' => 321,
+                'name' => 'Financial Accounting',
+                'course_sub_category_id' => 26,
+                'slug' => 'financial-accounting',
+                'created_at' => '2021-06-19 12:47:55',
+                'updated_at' => '2021-06-19 12:47:55',
+            ),
+            320 => 
+            array (
+                'id' => 322,
+                'name' => 'Finance Fundamentals',
+                'course_sub_category_id' => 26,
+                'slug' => 'finance-fundamentals',
+                'created_at' => '2021-06-19 12:48:28',
+                'updated_at' => '2021-06-19 12:48:28',
+            ),
+            321 => 
+            array (
+                'id' => 323,
+                'name' => 'Financial Statement',
+                'course_sub_category_id' => 26,
+                'slug' => 'financial-statement',
+                'created_at' => '2021-06-19 12:48:51',
+                'updated_at' => '2021-06-19 12:48:51',
+            ),
+            322 => 
+            array (
+                'id' => 324,
+                'name' => 'QuickBooks Online',
+                'course_sub_category_id' => 26,
+                'slug' => 'quickbooks-online-1',
+                'created_at' => '2021-06-19 12:49:11',
+                'updated_at' => '2021-06-19 12:49:11',
+            ),
+            323 => 
+            array (
+                'id' => 325,
+                'name' => 'Tally.ERP',
+                'course_sub_category_id' => 26,
+                'slug' => 'tallyerp',
+                'created_at' => '2021-06-19 12:49:40',
+                'updated_at' => '2021-06-19 12:49:40',
+            ),
+            324 => 
+            array (
+                'id' => 326,
+                'name' => 'Xero',
+                'course_sub_category_id' => 26,
+                'slug' => 'xero',
+                'created_at' => '2021-06-19 12:49:58',
+                'updated_at' => '2021-06-19 12:49:58',
+            ),
+            325 => 
+            array (
+                'id' => 327,
+                'name' => 'Cost Accounting',
+                'course_sub_category_id' => 26,
+                'slug' => 'cost-accounting',
+                'created_at' => '2021-06-19 12:50:22',
+                'updated_at' => '2021-06-19 12:50:22',
+            ),
+            326 => 
+            array (
+                'id' => 328,
+                'name' => 'Anti-Money Laundering',
+                'course_sub_category_id' => 27,
+                'slug' => 'anti-money-laundering',
+                'created_at' => '2021-06-19 12:51:51',
+                'updated_at' => '2021-06-19 12:51:51',
+            ),
+            327 => 
+            array (
+                'id' => 329,
+                'name' => 'Risk Management',
+                'course_sub_category_id' => 27,
+                'slug' => 'risk-management',
+                'created_at' => '2021-06-19 12:52:45',
+                'updated_at' => '2021-06-19 12:52:45',
+            ),
+            328 => 
+            array (
+                'id' => 330,
+            'name' => 'Sarbanes-Oxley (SOX)',
+                'course_sub_category_id' => 27,
+                'slug' => 'sarbanes-oxley-sox',
+                'created_at' => '2021-06-19 12:53:23',
+                'updated_at' => '2021-06-19 12:53:23',
+            ),
+            329 => 
+            array (
+                'id' => 331,
+                'name' => 'CAMS Certification',
+                'course_sub_category_id' => 27,
+                'slug' => 'cams-certification',
+                'created_at' => '2021-06-19 12:53:52',
+                'updated_at' => '2021-06-19 12:53:52',
+            ),
+            330 => 
+            array (
+                'id' => 332,
+                'name' => 'Internal Auditing',
+                'course_sub_category_id' => 27,
+                'slug' => 'internal-auditing',
+                'created_at' => '2021-06-19 12:54:11',
+                'updated_at' => '2021-06-19 12:54:11',
+            ),
+            331 => 
+            array (
+                'id' => 333,
+                'name' => 'Trade and Commerce',
+                'course_sub_category_id' => 27,
+                'slug' => 'trade-and-commerce',
+                'created_at' => '2021-06-19 12:54:33',
+                'updated_at' => '2021-06-19 12:54:33',
+            ),
+            332 => 
+            array (
+                'id' => 334,
+                'name' => 'IFRS',
+                'course_sub_category_id' => 27,
+                'slug' => 'ifrs',
+                'created_at' => '2021-06-19 12:55:01',
+                'updated_at' => '2021-06-19 12:55:01',
+            ),
+            333 => 
+            array (
+                'id' => 335,
+            'name' => 'Financial Risk Manager (FRM)',
+                'course_sub_category_id' => 27,
+                'slug' => 'financial-risk-manager-frm',
+                'created_at' => '2021-06-19 12:55:32',
+                'updated_at' => '2021-06-19 12:55:32',
+            ),
+            334 => 
+            array (
+                'id' => 336,
+                'name' => 'Accounting',
+                'course_sub_category_id' => 27,
+                'slug' => 'accounting-1',
+                'created_at' => '2021-06-19 12:56:06',
+                'updated_at' => '2021-06-19 12:56:06',
+            ),
+            335 => 
+            array (
+                'id' => 337,
+                'name' => 'Cryptocurrency',
+                'course_sub_category_id' => 28,
+                'slug' => 'cryptocurrency',
+                'created_at' => '2021-06-19 12:57:49',
+                'updated_at' => '2021-06-19 12:57:49',
+            ),
+            336 => 
+            array (
+                'id' => 338,
+                'name' => 'Bitcoin',
+                'course_sub_category_id' => 28,
+                'slug' => 'bitcoin-1',
+                'created_at' => '2021-06-19 12:58:10',
+                'updated_at' => '2021-06-19 12:58:10',
+            ),
+            337 => 
+            array (
+                'id' => 339,
+                'name' => 'Blockchain',
+                'course_sub_category_id' => 28,
+                'slug' => 'blockchain-1',
+                'created_at' => '2021-06-19 12:58:42',
+                'updated_at' => '2021-06-19 12:58:42',
+            ),
+            338 => 
+            array (
+                'id' => 340,
+                'name' => 'Personal Finance',
+                'course_sub_category_id' => 28,
+                'slug' => 'personal-finance',
+                'created_at' => '2021-06-19 12:59:01',
+                'updated_at' => '2021-06-19 12:59:01',
+            ),
+            339 => 
+            array (
+                'id' => 341,
+                'name' => 'Day Trading',
+                'course_sub_category_id' => 28,
+                'slug' => 'day-trading',
+                'created_at' => '2021-06-19 12:59:16',
+                'updated_at' => '2021-06-19 12:59:16',
+            ),
+            340 => 
+            array (
+                'id' => 342,
+                'name' => 'Algorithmic Trading',
+                'course_sub_category_id' => 28,
+                'slug' => 'algorithmic-trading',
+                'created_at' => '2021-06-19 12:59:33',
+                'updated_at' => '2021-06-19 12:59:33',
+            ),
+            341 => 
+            array (
+                'id' => 343,
+                'name' => 'Bitcoin Trading',
+                'course_sub_category_id' => 28,
+                'slug' => 'bitcoin-trading',
+                'created_at' => '2021-06-19 12:59:50',
+                'updated_at' => '2021-06-19 12:59:50',
+            ),
+            342 => 
+            array (
+                'id' => 344,
+                'name' => 'Technical Analysis',
+                'course_sub_category_id' => 28,
+                'slug' => 'technical-analysis',
+                'created_at' => '2021-06-19 13:00:14',
+                'updated_at' => '2021-06-19 13:00:14',
+            ),
+            343 => 
+            array (
+                'id' => 345,
+            'name' => 'NFT (Non-Fungible Tokens)',
+                'course_sub_category_id' => 28,
+                'slug' => 'nft-non-fungible-tokens',
+                'created_at' => '2021-06-19 13:00:34',
+                'updated_at' => '2021-06-19 13:00:34',
+            ),
+            344 => 
+            array (
+                'id' => 346,
+                'name' => 'Stata',
+                'course_sub_category_id' => 29,
+                'slug' => 'stata',
+                'created_at' => '2021-06-19 13:01:46',
+                'updated_at' => '2021-06-19 13:01:46',
+            ),
+            345 => 
+            array (
+                'id' => 347,
+                'name' => 'Microeconomics',
+                'course_sub_category_id' => 29,
+                'slug' => 'microeconomics',
+                'created_at' => '2021-06-19 13:02:11',
+                'updated_at' => '2021-06-19 13:02:11',
+            ),
+            346 => 
+            array (
+                'id' => 348,
+                'name' => 'Macroeconomics',
+                'course_sub_category_id' => 29,
+                'slug' => 'macroeconomics',
+                'created_at' => '2021-06-19 13:02:40',
+                'updated_at' => '2021-06-19 13:02:40',
+            ),
+            347 => 
+            array (
+                'id' => 349,
+                'name' => 'Finance Fundamentals',
+                'course_sub_category_id' => 29,
+                'slug' => 'finance-fundamentals-1',
+                'created_at' => '2021-06-19 13:02:57',
+                'updated_at' => '2021-06-19 13:02:57',
+            ),
+            348 => 
+            array (
+                'id' => 350,
+                'name' => 'Entrepreneurship Fundamentals',
+                'course_sub_category_id' => 29,
+                'slug' => 'entrepreneurship-fundamentals-1',
+                'created_at' => '2021-06-19 13:03:28',
+                'updated_at' => '2021-06-19 13:03:28',
+            ),
+            349 => 
+            array (
+                'id' => 351,
+                'name' => 'Regression Analysis',
+                'course_sub_category_id' => 29,
+                'slug' => 'regression-analysis',
+                'created_at' => '2021-06-19 13:03:44',
+                'updated_at' => '2021-06-19 13:03:44',
+            ),
+            350 => 
+            array (
+                'id' => 352,
+                'name' => 'Data Visualization',
+                'course_sub_category_id' => 29,
+                'slug' => 'data-visualization',
+                'created_at' => '2021-06-19 13:04:10',
+                'updated_at' => '2021-06-19 13:04:10',
+            ),
+            351 => 
+            array (
+                'id' => 353,
+                'name' => 'Econometrics',
+                'course_sub_category_id' => 29,
+                'slug' => 'econometrics',
+                'created_at' => '2021-06-19 13:04:57',
+                'updated_at' => '2021-06-19 13:04:57',
+            ),
+            352 => 
+            array (
+                'id' => 354,
+                'name' => 'Personal Finance',
+                'course_sub_category_id' => 30,
+                'slug' => 'personal-finance-1',
+                'created_at' => '2021-06-19 13:07:43',
+                'updated_at' => '2021-06-19 13:07:43',
+            ),
+            353 => 
+            array (
+                'id' => 355,
+                'name' => 'Investment Banking',
+                'course_sub_category_id' => 30,
+                'slug' => 'investment-banking',
+                'created_at' => '2021-06-19 13:07:59',
+                'updated_at' => '2021-06-19 13:07:59',
+            ),
+            354 => 
+            array (
+                'id' => 356,
+                'name' => 'Finance Fundamentals',
+                'course_sub_category_id' => 30,
+                'slug' => 'finance-fundamentals-2',
+                'created_at' => '2021-06-19 13:08:19',
+                'updated_at' => '2021-06-19 13:08:19',
+            ),
+            355 => 
+            array (
+                'id' => 357,
+                'name' => 'CFA',
+                'course_sub_category_id' => 30,
+                'slug' => 'cfa',
+                'created_at' => '2021-06-19 13:09:25',
+                'updated_at' => '2021-06-19 13:09:25',
+            ),
+            356 => 
+            array (
+                'id' => 358,
+                'name' => 'Financial Management',
+                'course_sub_category_id' => 30,
+                'slug' => 'financial-management',
+                'created_at' => '2021-06-19 13:10:21',
+                'updated_at' => '2021-06-19 13:10:21',
+            ),
+            357 => 
+            array (
+                'id' => 359,
+                'name' => 'Corporate Finance',
+                'course_sub_category_id' => 30,
+                'slug' => 'corporate-finance',
+                'created_at' => '2021-06-19 13:10:40',
+                'updated_at' => '2021-06-19 13:10:40',
+            ),
+            358 => 
+            array (
+                'id' => 360,
+                'name' => 'Financial Analysis',
+                'course_sub_category_id' => 30,
+                'slug' => 'financial-analysis',
+                'created_at' => '2021-06-19 13:11:03',
+                'updated_at' => '2021-06-19 13:11:03',
+            ),
+            359 => 
+            array (
+                'id' => 361,
+                'name' => 'Company Valuation',
+                'course_sub_category_id' => 30,
+                'slug' => 'company-valuation',
+                'created_at' => '2021-06-19 13:11:26',
+                'updated_at' => '2021-06-19 13:11:26',
+            ),
+            360 => 
+            array (
+                'id' => 362,
+                'name' => 'Private Equity',
+                'course_sub_category_id' => 30,
+                'slug' => 'private-equity',
+                'created_at' => '2021-06-19 13:11:41',
+                'updated_at' => '2021-06-19 13:11:41',
+            ),
+            361 => 
+            array (
+                'id' => 363,
+                'name' => 'Stock Trading',
+                'course_sub_category_id' => 31,
+                'slug' => 'stock-trading',
+                'created_at' => '2021-06-19 13:15:30',
+                'updated_at' => '2021-06-19 13:15:30',
+            ),
+            362 => 
+            array (
+                'id' => 364,
+                'name' => 'Technical Analysis',
+                'course_sub_category_id' => 31,
+                'slug' => 'technical-analysis-1',
+                'created_at' => '2021-06-19 13:15:45',
+                'updated_at' => '2021-06-19 13:15:45',
+            ),
+            363 => 
+            array (
+                'id' => 365,
+                'name' => 'Investing',
+                'course_sub_category_id' => 31,
+                'slug' => 'investing',
+                'created_at' => '2021-06-19 13:15:59',
+                'updated_at' => '2021-06-19 13:15:59',
+            ),
+            364 => 
+            array (
+                'id' => 366,
+                'name' => 'Forex',
+                'course_sub_category_id' => 31,
+                'slug' => 'forex',
+                'created_at' => '2021-06-19 13:16:15',
+                'updated_at' => '2021-06-19 13:16:15',
+            ),
+            365 => 
+            array (
+                'id' => 367,
+                'name' => 'Day Trading',
+                'course_sub_category_id' => 31,
+                'slug' => 'day-trading-1',
+                'created_at' => '2021-06-19 13:16:18',
+                'updated_at' => '2021-06-19 13:17:28',
+            ),
+            366 => 
+            array (
+                'id' => 368,
+                'name' => 'Cryptocurrency',
+                'course_sub_category_id' => 31,
+                'slug' => 'cryptocurrency-1',
+                'created_at' => '2021-06-19 13:16:40',
+                'updated_at' => '2021-06-19 13:16:40',
+            ),
+            367 => 
+            array (
+                'id' => 369,
+                'name' => 'Algorithmic Trading',
+                'course_sub_category_id' => 31,
+                'slug' => 'algorithmic-trading-1',
+                'created_at' => '2021-06-19 13:17:48',
+                'updated_at' => '2021-06-19 13:17:48',
+            ),
+            368 => 
+            array (
+                'id' => 370,
+                'name' => 'Financial Trading',
+                'course_sub_category_id' => 31,
+                'slug' => 'financial-trading',
+                'created_at' => '2021-06-19 13:19:18',
+                'updated_at' => '2021-06-19 13:19:18',
+            ),
+            369 => 
+            array (
+                'id' => 371,
+                'name' => 'Options Trading',
+                'course_sub_category_id' => 31,
+                'slug' => 'options-trading',
+                'created_at' => '2021-06-19 13:19:35',
+                'updated_at' => '2021-06-19 13:19:35',
+            ),
+            370 => 
+            array (
+                'id' => 372,
+                'name' => 'QuickBooks Online',
+                'course_sub_category_id' => 32,
+                'slug' => 'quickbooks-online-2',
+                'created_at' => '2021-06-19 13:21:09',
+                'updated_at' => '2021-06-19 13:21:09',
+            ),
+            371 => 
+            array (
+                'id' => 373,
+                'name' => 'QuickBooks',
+                'course_sub_category_id' => 32,
+                'slug' => 'quickbooks',
+                'created_at' => '2021-06-19 13:21:30',
+                'updated_at' => '2021-06-19 13:21:30',
+            ),
+            372 => 
+            array (
+                'id' => 374,
+                'name' => 'QuickBooks Pro',
+                'course_sub_category_id' => 32,
+                'slug' => 'quickbooks-pro',
+                'created_at' => '2021-06-19 13:21:50',
+                'updated_at' => '2021-06-19 13:21:50',
+            ),
+            373 => 
+            array (
+                'id' => 375,
+                'name' => 'SAP FICO',
+                'course_sub_category_id' => 32,
+                'slug' => 'sap-fico',
+                'created_at' => '2021-06-19 13:22:04',
+                'updated_at' => '2021-06-19 13:22:04',
+            ),
+            374 => 
+            array (
+                'id' => 376,
+                'name' => 'Bitcoin Trading',
+                'course_sub_category_id' => 32,
+                'slug' => 'bitcoin-trading-1',
+                'created_at' => '2021-06-19 13:22:07',
+                'updated_at' => '2021-06-19 13:22:47',
+            ),
+            375 => 
+            array (
+                'id' => 377,
+                'name' => 'Excel',
+                'course_sub_category_id' => 32,
+                'slug' => 'excel',
+                'created_at' => '2021-06-19 13:22:22',
+                'updated_at' => '2021-06-19 13:22:22',
+            ),
+            376 => 
+            array (
+                'id' => 378,
+                'name' => 'Xero',
+                'course_sub_category_id' => 32,
+                'slug' => 'xero-1',
+                'created_at' => '2021-06-19 13:23:07',
+                'updated_at' => '2021-06-19 13:23:07',
+            ),
+            377 => 
+            array (
+                'id' => 379,
+                'name' => 'Excel Analytics',
+                'course_sub_category_id' => 32,
+                'slug' => 'excel-analytics',
+                'created_at' => '2021-06-19 13:23:24',
+                'updated_at' => '2021-06-19 13:23:24',
+            ),
+            378 => 
+            array (
+                'id' => 380,
+                'name' => 'Financial Analysis',
+                'course_sub_category_id' => 32,
+                'slug' => 'financial-analysis-1',
+                'created_at' => '2021-06-19 13:23:37',
+                'updated_at' => '2021-06-19 13:23:37',
+            ),
+            379 => 
+            array (
+                'id' => 381,
+                'name' => 'Tax Preparation',
+                'course_sub_category_id' => 33,
+                'slug' => 'tax-preparation',
+                'created_at' => '2021-06-19 13:25:50',
+                'updated_at' => '2021-06-19 13:25:50',
+            ),
+            380 => 
+            array (
+                'id' => 382,
+                'name' => 'Accounting',
+                'course_sub_category_id' => 33,
+                'slug' => 'accounting-2',
+                'created_at' => '2021-06-19 13:26:06',
+                'updated_at' => '2021-06-19 13:26:06',
+            ),
+            381 => 
+            array (
+                'id' => 383,
+                'name' => 'Goods and Services Tax',
+                'course_sub_category_id' => 33,
+                'slug' => 'goods-and-services-tax',
+                'created_at' => '2021-06-19 13:26:22',
+                'updated_at' => '2021-06-19 13:26:22',
+            ),
+            382 => 
+            array (
+                'id' => 384,
+                'name' => 'Home Business',
+                'course_sub_category_id' => 33,
+                'slug' => 'home-business-1',
+                'created_at' => '2021-06-19 13:26:37',
+                'updated_at' => '2021-06-19 13:26:37',
+            ),
+            383 => 
+            array (
+                'id' => 385,
+                'name' => 'SAT',
+                'course_sub_category_id' => 33,
+                'slug' => 'sat',
+                'created_at' => '2021-06-19 13:26:40',
+                'updated_at' => '2021-06-19 13:26:57',
+            ),
+            384 => 
+            array (
+                'id' => 386,
+            'name' => 'Value Added Tax (VAT)',
+                'course_sub_category_id' => 33,
+                'slug' => 'value-added-tax-vat',
+                'created_at' => '2021-06-19 13:27:29',
+                'updated_at' => '2021-06-19 13:27:29',
+            ),
+            385 => 
+            array (
+                'id' => 387,
+                'name' => 'Financial Accounting',
+                'course_sub_category_id' => 33,
+                'slug' => 'financial-accounting-1',
+                'created_at' => '2021-06-19 13:27:45',
+                'updated_at' => '2021-06-19 13:27:45',
+            ),
+            386 => 
+            array (
+                'id' => 388,
+                'name' => 'QuickBooks Online',
+                'course_sub_category_id' => 33,
+                'slug' => 'quickbooks-online-3',
+                'created_at' => '2021-06-19 13:28:04',
+                'updated_at' => '2021-06-19 13:28:04',
+            ),
+            387 => 
+            array (
+                'id' => 389,
+                'name' => 'Entrepreneurship Fundamentals',
+                'course_sub_category_id' => 33,
+                'slug' => 'entrepreneurship-fundamentals-2',
+                'created_at' => '2021-06-19 13:28:19',
+                'updated_at' => '2021-06-19 13:28:19',
+            ),
+            388 => 
+            array (
+                'id' => 390,
+                'name' => 'PowerPoint',
+                'course_sub_category_id' => 34,
+                'slug' => 'powerpoint-1',
+                'created_at' => '2021-06-19 13:30:29',
+                'updated_at' => '2021-06-19 13:30:56',
+            ),
+            389 => 
+            array (
+                'id' => 391,
+                'name' => 'Technical Analysis',
+                'course_sub_category_id' => 34,
+                'slug' => 'technical-analysis-3',
+                'created_at' => '2021-06-19 13:30:29',
+                'updated_at' => '2021-06-19 13:30:29',
+            ),
+            390 => 
+            array (
+                'id' => 392,
+                'name' => 'Passive Income',
+                'course_sub_category_id' => 34,
+                'slug' => 'passive-income-1',
+                'created_at' => '2021-06-19 13:30:30',
+                'updated_at' => '2021-06-19 13:31:49',
+            ),
+            391 => 
+            array (
+                'id' => 393,
+                'name' => 'Stock Trading',
+                'course_sub_category_id' => 34,
+                'slug' => 'stock-trading-1',
+                'created_at' => '2021-06-19 13:30:30',
+                'updated_at' => '2021-06-19 13:31:14',
+            ),
+            392 => 
+            array (
+                'id' => 394,
+                'name' => 'Credit Repair',
+                'course_sub_category_id' => 34,
+                'slug' => 'credit-repair',
+                'created_at' => '2021-06-19 13:32:15',
+                'updated_at' => '2021-06-19 13:32:15',
+            ),
+            393 => 
+            array (
+                'id' => 395,
+                'name' => 'Financial Planning',
+                'course_sub_category_id' => 34,
+                'slug' => 'financial-planning',
+                'created_at' => '2021-06-19 13:32:34',
+                'updated_at' => '2021-06-19 13:32:34',
+            ),
+            394 => 
+            array (
+                'id' => 396,
+                'name' => 'Online Business',
+                'course_sub_category_id' => 34,
+                'slug' => 'online-business-1',
+                'created_at' => '2021-06-19 13:33:01',
+                'updated_at' => '2021-06-19 13:33:01',
+            ),
+            395 => 
+            array (
+                'id' => 397,
+                'name' => 'Personal Finance',
+                'course_sub_category_id' => 34,
+                'slug' => 'personal-finance-2',
+                'created_at' => '2021-06-19 13:33:15',
+                'updated_at' => '2021-06-19 13:33:15',
+            ),
         ));
         
         
