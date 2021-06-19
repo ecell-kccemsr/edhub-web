@@ -9,6 +9,7 @@ import { useStoreState } from "easy-peasy";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import {Helmet} from "react-helmet";
+import TwitterNews from "./TwitterNews";
 
 const SingleNewsPage = props => {
     const user = useStoreState(state => state.user);
@@ -17,13 +18,19 @@ const SingleNewsPage = props => {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState("");
     const [categories, setCategories] = useState([]);
+    const [tweets, setTweets] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [course, setCourse] = useState([]);
     const [showComments, setshowComments] = useState(false);
-      // Login modal 
-      const [modallogin, setModalLogin] = useState(false);
-      const toggleLogin = () => setModalLogin(!modallogin);
+    
+    // Login modal
+    const [modallogin, setModalLogin] = useState(false);
+    const toggleLogin = () => setModalLogin(!modallogin);
+
+    //Twitter modal
+    const [modaltwitter, setModalTwitter] = useState(false);
+    const toggleTwitter = () => setModalTwitter(!modaltwitter);
 
     const [commentPage, setCommentPage] = useState({
         current_page: 1,
@@ -32,6 +39,7 @@ const SingleNewsPage = props => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     let id;
+    let news_id;
     const { news_slug } = props.match.params;
     useEffect(() => {
         if (news_slug) {
@@ -41,8 +49,12 @@ const SingleNewsPage = props => {
                     setLoading(false)
                     setcategorynews(res.data.data);
                     id = res.data.data?.category.id;
+                    news_id = res.data.data?.id;
                     axios.get(`/api/news?category_id=${id}`).then(res => {
                         setRelatedNews(res.data.data);
+                    });
+                     axios.get(`/api/tweets?news_id=${news_id}`).then(res => {
+                        setTweets(res.data.data);
                     });
                 })
                 .catch(err => {
@@ -59,6 +71,8 @@ const SingleNewsPage = props => {
         .catch(err => {
             console.log(err);
         });
+         
+       
     }, []);
 
     const handleComment = e => {
@@ -364,38 +378,36 @@ const SingleNewsPage = props => {
                         </div>
                     </Col>
                     <Col sm="12" md="4">
-                        {/* <h4 className="singlenewstitle-text">
+                        <h4 className="singlenewstitle-text">
                             Ideas and opinion
-                        </h4>
-                        <div className="singlenews-sidebar-container-top">
-                            <div className="top-container-el">
-                                <img src={tw} alt="Twitter" />
-                                <div className="text-container">
-                                    <p className="tag">#BILLS2020</p>
-                                    <h4>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </h4>
+                                        </h4>
+                                            <div className="singlenews-sidebar-container-top">
+                                            {tweets.map(data => (
+                                 <div className="top-container-el">
+                                 <div className="text-container">
+                                                    <p className="tag">#{data?.news?.tags}</p>
+                                                    <div onClick={toggleTwitter}>
+                                                <h4 style={{color:"#000000"}} >
+                                                           {data?.body}
+                                                            </h4>
+                                     <Modal isOpen={modaltwitter} toggle={toggleTwitter} className="model">
+                                 <ModalHeader toggle={toggleTwitter}></ModalHeader>
+                                   <ModalBody>
+                                       <TwitterNews toggleLogin = {toggleTwitter} />
+                                   </ModalBody>
+                                 </Modal>                    
+                                                    </div>
+                                                      
+                                  
                                     <p className="author">
-                                        Hemant lamba on <span>twitter</span>
+                                        {data?.author_name} on <span>twitter</span>
                                     </p>
                                 </div>
                             </div>
-                            <div className="top-container-el">
-                                <img src={tw} alt="Twitter" />
-                                <div className="text-container">
-                                    <p className="tag">#BILLS2020</p>
-                                    <h4>
-                                        JPMorgan CEO Jamie Dimon shares his
-                                        thoughts on remote work
-                                    </h4>
-                                    <p className="author">
-                                        Hemant lamba on <span>twitter</span>
-                                    </p>
-                                </div>
-                            </div>
+                               ))}
                         </div>
-                        <br /> */}
+                        
+                        <br />
                         <h4 className="singlenewstitle-text">Related News</h4>
                         <div className="singlenews-sidebar-container-top">
                             <div className="top-container-el">
