@@ -3583,6 +3583,1628 @@ class CourseTopicsTableSeeder extends Seeder
                 'created_at' => '2021-06-19 13:33:15',
                 'updated_at' => '2021-06-19 13:33:15',
             ),
+            396 => 
+            array (
+                'id' => 398,
+                'name' => 'Excel',
+                'course_sub_category_id' => 40,
+                'slug' => 'excel-1',
+                'created_at' => '2021-06-19 15:22:11',
+                'updated_at' => '2021-06-19 15:22:11',
+            ),
+            397 => 
+            array (
+                'id' => 399,
+                'name' => 'Excel VBA',
+                'course_sub_category_id' => 40,
+                'slug' => 'excel-vba',
+                'created_at' => '2021-06-19 15:22:37',
+                'updated_at' => '2021-06-19 15:22:37',
+            ),
+            398 => 
+            array (
+                'id' => 400,
+                'name' => 'Excel Formulas and Functions',
+                'course_sub_category_id' => 40,
+                'slug' => 'excel-formulas-and-functions',
+                'created_at' => '2021-06-19 15:23:08',
+                'updated_at' => '2021-06-19 15:23:08',
+            ),
+            399 => 
+            array (
+                'id' => 401,
+                'name' => 'Data Analysis',
+                'course_sub_category_id' => 40,
+                'slug' => 'data-analysis-2',
+                'created_at' => '2021-06-19 15:23:30',
+                'updated_at' => '2021-06-19 15:23:30',
+            ),
+            400 => 
+            array (
+                'id' => 402,
+                'name' => 'PowerPoint',
+                'course_sub_category_id' => 40,
+                'slug' => 'powerpoint-2',
+                'created_at' => '2021-06-19 15:24:15',
+                'updated_at' => '2021-06-19 15:24:15',
+            ),
+            401 => 
+            array (
+                'id' => 403,
+                'name' => 'Microsoft Power BI',
+                'course_sub_category_id' => 40,
+                'slug' => 'microsoft-power-bi-1',
+                'created_at' => '2021-06-19 15:24:36',
+                'updated_at' => '2021-06-19 15:24:36',
+            ),
+            402 => 
+            array (
+                'id' => 404,
+                'name' => 'Microsoft Office',
+                'course_sub_category_id' => 40,
+                'slug' => 'microsoft-office',
+                'created_at' => '2021-06-19 15:25:11',
+                'updated_at' => '2021-06-19 15:25:11',
+            ),
+            403 => 
+            array (
+                'id' => 405,
+                'name' => 'Pivot Tables',
+                'course_sub_category_id' => 40,
+                'slug' => 'pivot-tables',
+                'created_at' => '2021-06-19 15:25:45',
+                'updated_at' => '2021-06-19 15:25:45',
+            ),
+            404 => 
+            array (
+                'id' => 406,
+                'name' => 'Microsoft Word',
+                'course_sub_category_id' => 40,
+                'slug' => 'microsoft-word',
+                'created_at' => '2021-06-19 15:26:13',
+                'updated_at' => '2021-06-19 15:26:13',
+            ),
+            405 => 
+            array (
+                'id' => 407,
+                'name' => 'iMovie',
+                'course_sub_category_id' => 41,
+                'slug' => 'imovie',
+                'created_at' => '2021-06-19 15:29:17',
+                'updated_at' => '2021-06-19 15:29:17',
+            ),
+            406 => 
+            array (
+                'id' => 408,
+                'name' => 'Mac Basics',
+                'course_sub_category_id' => 41,
+                'slug' => 'mac-basics',
+                'created_at' => '2021-06-19 15:29:47',
+                'updated_at' => '2021-06-19 15:29:47',
+            ),
+            407 => 
+            array (
+                'id' => 409,
+                'name' => 'macOS',
+                'course_sub_category_id' => 41,
+                'slug' => 'macos',
+                'created_at' => '2021-06-19 15:30:15',
+                'updated_at' => '2021-06-19 15:30:15',
+            ),
+            408 => 
+            array (
+                'id' => 410,
+                'name' => 'Numbers For Mac',
+                'course_sub_category_id' => 41,
+                'slug' => 'numbers-for-mac',
+                'created_at' => '2021-06-19 15:31:07',
+                'updated_at' => '2021-06-19 15:31:07',
+            ),
+            409 => 
+            array (
+                'id' => 411,
+                'name' => 'Apple Keynote',
+                'course_sub_category_id' => 41,
+                'slug' => 'apple-keynote',
+                'created_at' => '2021-06-19 15:31:29',
+                'updated_at' => '2021-06-19 15:31:29',
+            ),
+            410 => 
+            array (
+                'id' => 412,
+                'name' => 'Mac Pages',
+                'course_sub_category_id' => 41,
+                'slug' => 'mac-pages',
+                'created_at' => '2021-06-19 15:31:52',
+                'updated_at' => '2021-06-19 15:31:52',
+            ),
+            411 => 
+            array (
+                'id' => 413,
+                'name' => 'Microsoft Word',
+                'course_sub_category_id' => 41,
+                'slug' => 'microsoft-word-1',
+                'created_at' => '2021-06-19 15:32:15',
+                'updated_at' => '2021-06-19 15:32:15',
+            ),
+            412 => 
+            array (
+                'id' => 414,
+                'name' => 'Microsoft Office 365',
+                'course_sub_category_id' => 41,
+                'slug' => 'microsoft-office-365',
+                'created_at' => '2021-06-19 15:32:36',
+                'updated_at' => '2021-06-19 15:32:36',
+            ),
+            413 => 
+            array (
+                'id' => 415,
+                'name' => 'Excel Dashboard',
+                'course_sub_category_id' => 41,
+                'slug' => 'excel-dashboard',
+                'created_at' => '2021-06-19 15:33:06',
+                'updated_at' => '2021-06-19 15:33:06',
+            ),
+            414 => 
+            array (
+                'id' => 416,
+                'name' => 'Google Sheets',
+                'course_sub_category_id' => 42,
+                'slug' => 'google-sheets',
+                'created_at' => '2021-06-19 15:34:17',
+                'updated_at' => '2021-06-19 15:34:17',
+            ),
+            415 => 
+            array (
+                'id' => 417,
+            'name' => 'Google Workspace (G Suite)',
+                'course_sub_category_id' => 42,
+                'slug' => 'google-workspace-g-suite',
+                'created_at' => '2021-06-19 15:34:47',
+                'updated_at' => '2021-06-19 15:34:47',
+            ),
+            416 => 
+            array (
+                'id' => 418,
+                'name' => 'Google Drive',
+                'course_sub_category_id' => 42,
+                'slug' => 'google-drive',
+                'created_at' => '2021-06-19 15:35:21',
+                'updated_at' => '2021-06-19 15:35:21',
+            ),
+            417 => 
+            array (
+                'id' => 419,
+                'name' => 'Google Apps',
+                'course_sub_category_id' => 42,
+                'slug' => 'google-apps',
+                'created_at' => '2021-06-19 15:35:54',
+                'updated_at' => '2021-06-19 15:35:54',
+            ),
+            418 => 
+            array (
+                'id' => 420,
+                'name' => 'Google Data Studio',
+                'course_sub_category_id' => 42,
+                'slug' => 'google-data-studio',
+                'created_at' => '2021-06-19 15:36:22',
+                'updated_at' => '2021-06-19 15:36:22',
+            ),
+            419 => 
+            array (
+                'id' => 421,
+                'name' => 'Excel',
+                'course_sub_category_id' => 42,
+                'slug' => 'excel-2',
+                'created_at' => '2021-06-19 15:36:47',
+                'updated_at' => '2021-06-19 15:36:47',
+            ),
+            420 => 
+            array (
+                'id' => 422,
+                'name' => 'Gmail Productivity',
+                'course_sub_category_id' => 42,
+                'slug' => 'gmail-productivity',
+                'created_at' => '2021-06-19 15:37:09',
+                'updated_at' => '2021-06-19 15:37:09',
+            ),
+            421 => 
+            array (
+                'id' => 423,
+                'name' => 'Google Office',
+                'course_sub_category_id' => 42,
+                'slug' => 'google-office',
+                'created_at' => '2021-06-19 15:37:32',
+                'updated_at' => '2021-06-19 15:37:32',
+            ),
+            422 => 
+            array (
+                'id' => 424,
+                'name' => 'Google Forms',
+                'course_sub_category_id' => 42,
+                'slug' => 'google-forms',
+                'created_at' => '2021-06-19 15:37:57',
+                'updated_at' => '2021-06-19 15:37:57',
+            ),
+            423 => 
+            array (
+                'id' => 425,
+                'name' => 'SAP S/4HANA',
+                'course_sub_category_id' => 43,
+                'slug' => 'sap-s4hana',
+                'created_at' => '2021-06-19 15:39:27',
+                'updated_at' => '2021-06-19 15:39:27',
+            ),
+            424 => 
+            array (
+                'id' => 426,
+                'name' => 'SAP MM',
+                'course_sub_category_id' => 43,
+                'slug' => 'sap-mm',
+                'created_at' => '2021-06-19 15:39:49',
+                'updated_at' => '2021-06-19 15:39:49',
+            ),
+            425 => 
+            array (
+                'id' => 427,
+                'name' => 'SAP ABAP',
+                'course_sub_category_id' => 43,
+                'slug' => 'sap-abap',
+                'created_at' => '2021-06-19 15:40:19',
+                'updated_at' => '2021-06-19 15:40:19',
+            ),
+            426 => 
+            array (
+                'id' => 428,
+                'name' => 'SAP SD',
+                'course_sub_category_id' => 43,
+                'slug' => 'sap-sd',
+                'created_at' => '2021-06-19 15:40:42',
+                'updated_at' => '2021-06-19 15:40:42',
+            ),
+            427 => 
+            array (
+                'id' => 429,
+                'name' => 'SAP Financial Accounting',
+                'course_sub_category_id' => 43,
+                'slug' => 'sap-financial-accounting',
+                'created_at' => '2021-06-19 15:41:26',
+                'updated_at' => '2021-06-19 15:41:26',
+            ),
+            428 => 
+            array (
+                'id' => 430,
+                'name' => 'Logistics Management',
+                'course_sub_category_id' => 43,
+                'slug' => 'logistics-management',
+                'created_at' => '2021-06-19 15:41:56',
+                'updated_at' => '2021-06-19 15:41:56',
+            ),
+            429 => 
+            array (
+                'id' => 431,
+                'name' => 'B2B Sales',
+                'course_sub_category_id' => 43,
+                'slug' => 'b2b-sales-1',
+                'created_at' => '2021-06-19 15:42:10',
+                'updated_at' => '2021-06-19 15:42:10',
+            ),
+            430 => 
+            array (
+                'id' => 432,
+                'name' => 'Sales Management',
+                'course_sub_category_id' => 43,
+                'slug' => 'sales-management',
+                'created_at' => '2021-06-19 15:42:50',
+                'updated_at' => '2021-06-19 15:42:50',
+            ),
+            431 => 
+            array (
+                'id' => 433,
+                'name' => 'Oracle SQL',
+                'course_sub_category_id' => 44,
+                'slug' => 'oracle-sql-1',
+                'created_at' => '2021-06-19 15:43:39',
+                'updated_at' => '2021-06-19 15:43:39',
+            ),
+            432 => 
+            array (
+                'id' => 434,
+                'name' => 'Oracle Database',
+                'course_sub_category_id' => 44,
+                'slug' => 'oracle-database',
+                'created_at' => '2021-06-19 15:44:00',
+                'updated_at' => '2021-06-19 15:44:00',
+            ),
+            433 => 
+            array (
+                'id' => 435,
+                'name' => 'Pl/SQL',
+                'course_sub_category_id' => 44,
+                'slug' => 'plsql',
+                'created_at' => '2021-06-19 15:44:38',
+                'updated_at' => '2021-06-19 15:44:38',
+            ),
+            434 => 
+            array (
+                'id' => 436,
+                'name' => 'Database Administration',
+                'course_sub_category_id' => 44,
+                'slug' => 'database-administration',
+                'created_at' => '2021-06-19 15:45:01',
+                'updated_at' => '2021-06-19 15:45:01',
+            ),
+            435 => 
+            array (
+                'id' => 437,
+                'name' => 'Oracle Fusion HCM',
+                'course_sub_category_id' => 44,
+                'slug' => 'oracle-fusion-hcm',
+                'created_at' => '2021-06-19 15:45:25',
+                'updated_at' => '2021-06-19 15:45:25',
+            ),
+            436 => 
+            array (
+                'id' => 438,
+                'name' => 'SQL',
+                'course_sub_category_id' => 44,
+                'slug' => 'sql-2',
+                'created_at' => '2021-06-19 15:46:35',
+                'updated_at' => '2021-06-19 15:46:35',
+            ),
+            437 => 
+            array (
+                'id' => 439,
+                'name' => 'Oracle Data Integrator',
+                'course_sub_category_id' => 44,
+                'slug' => 'oracle-data-integrator',
+                'created_at' => '2021-06-19 15:46:57',
+                'updated_at' => '2021-06-19 15:46:57',
+            ),
+            438 => 
+            array (
+                'id' => 440,
+                'name' => 'Oracle Business Intelligence',
+                'course_sub_category_id' => 44,
+                'slug' => 'oracle-business-intelligence',
+                'created_at' => '2021-06-19 15:47:23',
+                'updated_at' => '2021-06-19 15:47:23',
+            ),
+            439 => 
+            array (
+                'id' => 441,
+                'name' => 'Oracle Primavera',
+                'course_sub_category_id' => 44,
+                'slug' => 'oracle-primavera',
+                'created_at' => '2021-06-19 15:47:43',
+                'updated_at' => '2021-06-19 15:47:43',
+            ),
+            440 => 
+            array (
+                'id' => 442,
+                'name' => 'Graphic Design',
+                'course_sub_category_id' => 58,
+                'slug' => 'graphic-design',
+                'created_at' => '2021-06-19 15:58:30',
+                'updated_at' => '2021-06-19 15:58:30',
+            ),
+            441 => 
+            array (
+                'id' => 443,
+                'name' => 'Photoshop',
+                'course_sub_category_id' => 58,
+                'slug' => 'photoshop',
+                'created_at' => '2021-06-19 15:58:50',
+                'updated_at' => '2021-06-19 15:58:50',
+            ),
+            442 => 
+            array (
+                'id' => 444,
+                'name' => 'Adobe Illustrator',
+                'course_sub_category_id' => 58,
+                'slug' => 'adobe-illustrator',
+                'created_at' => '2021-06-19 15:59:11',
+                'updated_at' => '2021-06-19 15:59:11',
+            ),
+            443 => 
+            array (
+                'id' => 445,
+                'name' => 'Drawing',
+                'course_sub_category_id' => 58,
+                'slug' => 'drawing',
+                'created_at' => '2021-06-19 15:59:35',
+                'updated_at' => '2021-06-19 15:59:35',
+            ),
+            444 => 
+            array (
+                'id' => 446,
+                'name' => 'Digital Painting',
+                'course_sub_category_id' => 58,
+                'slug' => 'digital-painting',
+                'created_at' => '2021-06-19 16:00:22',
+                'updated_at' => '2021-06-19 16:00:22',
+            ),
+            445 => 
+            array (
+                'id' => 447,
+                'name' => 'InDesign',
+                'course_sub_category_id' => 58,
+                'slug' => 'indesign',
+                'created_at' => '2021-06-19 16:00:53',
+                'updated_at' => '2021-06-19 16:00:53',
+            ),
+            446 => 
+            array (
+                'id' => 448,
+                'name' => 'Character Design',
+                'course_sub_category_id' => 58,
+                'slug' => 'character-design',
+                'created_at' => '2021-06-19 16:01:36',
+                'updated_at' => '2021-06-19 16:01:36',
+            ),
+            447 => 
+            array (
+                'id' => 449,
+                'name' => 'Design Theory',
+                'course_sub_category_id' => 58,
+                'slug' => 'design-theory',
+                'created_at' => '2021-06-19 16:02:02',
+                'updated_at' => '2021-06-19 16:02:02',
+            ),
+            448 => 
+            array (
+                'id' => 450,
+                'name' => 'Canva',
+                'course_sub_category_id' => 58,
+                'slug' => 'canva',
+                'created_at' => '2021-06-19 16:02:20',
+                'updated_at' => '2021-06-19 16:02:20',
+            ),
+            449 => 
+            array (
+                'id' => 451,
+                'name' => 'Photoshop',
+                'course_sub_category_id' => 59,
+                'slug' => 'photoshop-1',
+                'created_at' => '2021-06-19 16:03:45',
+                'updated_at' => '2021-06-19 16:03:45',
+            ),
+            450 => 
+            array (
+                'id' => 452,
+                'name' => 'After Effects',
+                'course_sub_category_id' => 59,
+                'slug' => 'after-effects-1',
+                'created_at' => '2021-06-19 16:04:03',
+                'updated_at' => '2021-06-19 16:04:03',
+            ),
+            451 => 
+            array (
+                'id' => 453,
+                'name' => 'Adobe Illustrator',
+                'course_sub_category_id' => 59,
+                'slug' => 'adobe-illustrator-1',
+                'created_at' => '2021-06-19 16:04:26',
+                'updated_at' => '2021-06-19 16:04:26',
+            ),
+            452 => 
+            array (
+                'id' => 454,
+                'name' => 'AutoCAD',
+                'course_sub_category_id' => 59,
+                'slug' => 'autocad',
+                'created_at' => '2021-06-19 16:04:55',
+                'updated_at' => '2021-06-19 16:04:55',
+            ),
+            453 => 
+            array (
+                'id' => 455,
+                'name' => 'Procreate Digital Illustration App',
+                'course_sub_category_id' => 59,
+                'slug' => 'procreate-digital-illustration-app',
+                'created_at' => '2021-06-19 16:05:17',
+                'updated_at' => '2021-06-19 16:05:17',
+            ),
+            454 => 
+            array (
+                'id' => 456,
+                'name' => 'Adobe Premiere',
+                'course_sub_category_id' => 59,
+                'slug' => 'adobe-premiere',
+                'created_at' => '2021-06-19 16:05:41',
+                'updated_at' => '2021-06-19 16:05:41',
+            ),
+            455 => 
+            array (
+                'id' => 457,
+                'name' => 'Digital Art',
+                'course_sub_category_id' => 59,
+                'slug' => 'digital-art',
+                'created_at' => '2021-06-19 16:06:03',
+                'updated_at' => '2021-06-19 16:06:03',
+            ),
+            456 => 
+            array (
+                'id' => 458,
+                'name' => 'Affinity Designer',
+                'course_sub_category_id' => 59,
+                'slug' => 'affinity-designer',
+                'created_at' => '2021-06-19 16:06:23',
+                'updated_at' => '2021-06-19 16:06:23',
+            ),
+            457 => 
+            array (
+                'id' => 459,
+                'name' => 'SOLIDWORKS',
+                'course_sub_category_id' => 59,
+                'slug' => 'solidworks',
+                'created_at' => '2021-06-19 16:06:49',
+                'updated_at' => '2021-06-19 16:06:49',
+            ),
+            458 => 
+            array (
+                'id' => 460,
+                'name' => 'User Interface',
+                'course_sub_category_id' => 60,
+                'slug' => 'user-interface',
+                'created_at' => '2021-06-19 16:09:44',
+                'updated_at' => '2021-06-19 16:09:44',
+            ),
+            459 => 
+            array (
+                'id' => 461,
+                'name' => 'Adobe XD',
+                'course_sub_category_id' => 60,
+                'slug' => 'adobe-xd',
+                'created_at' => '2021-06-19 16:10:03',
+                'updated_at' => '2021-06-19 16:10:03',
+            ),
+            460 => 
+            array (
+                'id' => 462,
+                'name' => 'Figma',
+                'course_sub_category_id' => 60,
+                'slug' => 'figma',
+                'created_at' => '2021-06-19 16:10:22',
+                'updated_at' => '2021-06-19 16:10:22',
+            ),
+            461 => 
+            array (
+                'id' => 463,
+                'name' => 'Web Design',
+                'course_sub_category_id' => 60,
+                'slug' => 'web-design',
+                'created_at' => '2021-06-19 16:10:50',
+                'updated_at' => '2021-06-19 16:10:50',
+            ),
+            462 => 
+            array (
+                'id' => 464,
+                'name' => 'Product Design',
+                'course_sub_category_id' => 60,
+                'slug' => 'product-design',
+                'created_at' => '2021-06-19 16:11:09',
+                'updated_at' => '2021-06-19 16:11:09',
+            ),
+            463 => 
+            array (
+                'id' => 465,
+                'name' => 'Mobile App Design',
+                'course_sub_category_id' => 60,
+                'slug' => 'mobile-app-design',
+                'created_at' => '2021-06-19 16:11:29',
+                'updated_at' => '2021-06-19 16:11:29',
+            ),
+            464 => 
+            array (
+                'id' => 466,
+                'name' => 'Usability Testing',
+                'course_sub_category_id' => 60,
+                'slug' => 'usability-testing',
+                'created_at' => '2021-06-19 16:11:49',
+                'updated_at' => '2021-06-19 16:11:49',
+            ),
+            465 => 
+            array (
+                'id' => 467,
+                'name' => 'Web Accessibility',
+                'course_sub_category_id' => 60,
+                'slug' => 'web-accessibility',
+                'created_at' => '2021-06-19 16:12:53',
+                'updated_at' => '2021-06-19 16:12:53',
+            ),
+            466 => 
+            array (
+                'id' => 468,
+                'name' => 'Unreal Engine',
+                'course_sub_category_id' => 61,
+                'slug' => 'unreal-engine-1',
+                'created_at' => '2021-06-19 16:24:00',
+                'updated_at' => '2021-06-19 16:24:00',
+            ),
+            467 => 
+            array (
+                'id' => 469,
+                'name' => 'Pixel Art',
+                'course_sub_category_id' => 61,
+                'slug' => 'pixel-art',
+                'created_at' => '2021-06-19 16:24:25',
+                'updated_at' => '2021-06-19 16:24:25',
+            ),
+            468 => 
+            array (
+                'id' => 470,
+                'name' => 'Unity',
+                'course_sub_category_id' => 61,
+                'slug' => 'unity-1',
+                'created_at' => '2021-06-19 16:24:50',
+                'updated_at' => '2021-06-19 16:24:50',
+            ),
+            469 => 
+            array (
+                'id' => 471,
+                'name' => 'Drawing',
+                'course_sub_category_id' => 61,
+                'slug' => 'drawing-1',
+                'created_at' => '2021-06-19 16:25:10',
+                'updated_at' => '2021-06-19 16:25:10',
+            ),
+            470 => 
+            array (
+                'id' => 472,
+                'name' => 'Game Development Fundamentals',
+                'course_sub_category_id' => 61,
+                'slug' => 'game-development-fundamentals-1',
+                'created_at' => '2021-06-19 16:25:30',
+                'updated_at' => '2021-06-19 16:25:30',
+            ),
+            471 => 
+            array (
+                'id' => 473,
+                'name' => 'Blender',
+                'course_sub_category_id' => 61,
+                'slug' => 'blender-1',
+                'created_at' => '2021-06-19 16:25:50',
+                'updated_at' => '2021-06-19 16:25:50',
+            ),
+            472 => 
+            array (
+                'id' => 474,
+                'name' => 'Digital Painting',
+                'course_sub_category_id' => 61,
+                'slug' => 'digital-painting-1',
+                'created_at' => '2021-06-19 16:26:20',
+                'updated_at' => '2021-06-19 16:26:20',
+            ),
+            473 => 
+            array (
+                'id' => 475,
+                'name' => 'Level Design',
+                'course_sub_category_id' => 61,
+                'slug' => 'level-design',
+                'created_at' => '2021-06-19 16:27:05',
+                'updated_at' => '2021-06-19 16:27:05',
+            ),
+            474 => 
+            array (
+                'id' => 476,
+                'name' => 'Anime',
+                'course_sub_category_id' => 62,
+                'slug' => 'anime',
+                'created_at' => '2021-06-19 16:31:21',
+                'updated_at' => '2021-06-19 16:31:21',
+            ),
+            475 => 
+            array (
+                'id' => 477,
+                'name' => 'User Experience Design',
+                'course_sub_category_id' => 62,
+                'slug' => 'user-experience-design',
+                'created_at' => '2021-06-19 16:31:50',
+                'updated_at' => '2021-06-19 16:31:50',
+            ),
+            476 => 
+            array (
+                'id' => 478,
+                'name' => 'SOLIDWORKS',
+                'course_sub_category_id' => 62,
+                'slug' => 'solidworks-1',
+                'created_at' => '2021-06-19 16:32:09',
+                'updated_at' => '2021-06-19 16:32:09',
+            ),
+            477 => 
+            array (
+                'id' => 479,
+                'name' => 'Digital Painting',
+                'course_sub_category_id' => 62,
+                'slug' => 'digital-painting-2',
+                'created_at' => '2021-06-19 16:32:28',
+                'updated_at' => '2021-06-19 16:32:28',
+            ),
+            478 => 
+            array (
+                'id' => 480,
+                'name' => 'Gamification',
+                'course_sub_category_id' => 62,
+                'slug' => 'gamification',
+                'created_at' => '2021-06-19 16:32:50',
+                'updated_at' => '2021-06-19 16:32:50',
+            ),
+            479 => 
+            array (
+                'id' => 481,
+                'name' => 'VLSI',
+                'course_sub_category_id' => 62,
+                'slug' => 'vlsi',
+                'created_at' => '2021-06-19 16:34:10',
+                'updated_at' => '2021-06-19 16:34:10',
+            ),
+            480 => 
+            array (
+                'id' => 482,
+                'name' => 'Design Pattern',
+                'course_sub_category_id' => 62,
+                'slug' => 'design-pattern',
+                'created_at' => '2021-06-19 16:34:29',
+                'updated_at' => '2021-06-19 16:34:29',
+            ),
+            481 => 
+            array (
+                'id' => 483,
+                'name' => 'Adobe Illustrator',
+                'course_sub_category_id' => 62,
+                'slug' => 'adobe-illustrator-2',
+                'created_at' => '2021-06-19 16:34:50',
+                'updated_at' => '2021-06-19 16:34:50',
+            ),
+            482 => 
+            array (
+                'id' => 484,
+                'name' => 'Blender',
+                'course_sub_category_id' => 63,
+                'slug' => 'blender-2',
+                'created_at' => '2021-06-19 16:39:41',
+                'updated_at' => '2021-06-19 16:39:41',
+            ),
+            483 => 
+            array (
+                'id' => 485,
+                'name' => '3D Modeling',
+                'course_sub_category_id' => 63,
+                'slug' => '3d-modeling',
+                'created_at' => '2021-06-19 16:39:58',
+                'updated_at' => '2021-06-19 16:39:58',
+            ),
+            484 => 
+            array (
+                'id' => 486,
+                'name' => 'After Effects',
+                'course_sub_category_id' => 63,
+                'slug' => 'after-effects-2',
+                'created_at' => '2021-06-19 16:40:21',
+                'updated_at' => '2021-06-19 16:40:21',
+            ),
+            485 => 
+            array (
+                'id' => 487,
+                'name' => 'Motion Graphics',
+                'course_sub_category_id' => 63,
+                'slug' => 'motion-graphics-1',
+                'created_at' => '2021-06-19 16:40:36',
+                'updated_at' => '2021-06-19 16:40:36',
+            ),
+            486 => 
+            array (
+                'id' => 488,
+                'name' => '3D Animation',
+                'course_sub_category_id' => 63,
+                'slug' => '3d-animation',
+                'created_at' => '2021-06-19 16:41:07',
+                'updated_at' => '2021-06-19 16:41:07',
+            ),
+            487 => 
+            array (
+                'id' => 489,
+                'name' => 'zBrush',
+                'course_sub_category_id' => 63,
+                'slug' => 'zbrush',
+                'created_at' => '2021-06-19 16:41:22',
+                'updated_at' => '2021-06-19 16:41:22',
+            ),
+            488 => 
+            array (
+                'id' => 490,
+                'name' => 'Character Design',
+                'course_sub_category_id' => 63,
+                'slug' => 'character-design-1',
+                'created_at' => '2021-06-19 16:41:41',
+                'updated_at' => '2021-06-19 16:41:41',
+            ),
+            489 => 
+            array (
+                'id' => 491,
+                'name' => 'Fusion 360',
+                'course_sub_category_id' => 63,
+                'slug' => 'fusion-360',
+                'created_at' => '2021-06-19 16:41:59',
+                'updated_at' => '2021-06-19 16:41:59',
+            ),
+            490 => 
+            array (
+                'id' => 492,
+                'name' => 'Animation',
+                'course_sub_category_id' => 63,
+                'slug' => 'animation',
+                'created_at' => '2021-06-19 16:42:35',
+                'updated_at' => '2021-06-19 16:42:35',
+            ),
+            491 => 
+            array (
+                'id' => 493,
+                'name' => 'Fashion',
+                'course_sub_category_id' => 64,
+                'slug' => 'fashion',
+                'created_at' => '2021-06-19 16:45:22',
+                'updated_at' => '2021-06-19 16:45:22',
+            ),
+            492 => 
+            array (
+                'id' => 494,
+                'name' => 'Sewing',
+                'course_sub_category_id' => 64,
+                'slug' => 'sewing',
+                'created_at' => '2021-06-19 16:45:39',
+                'updated_at' => '2021-06-19 16:45:39',
+            ),
+            493 => 
+            array (
+                'id' => 495,
+                'name' => 'Adobe Illustrator',
+                'course_sub_category_id' => 64,
+                'slug' => 'adobe-illustrator-3',
+                'created_at' => '2021-06-19 16:45:56',
+                'updated_at' => '2021-06-19 16:45:56',
+            ),
+            494 => 
+            array (
+                'id' => 496,
+                'name' => 'Photoshop',
+                'course_sub_category_id' => 64,
+                'slug' => 'photoshop-2',
+                'created_at' => '2021-06-19 16:46:25',
+                'updated_at' => '2021-06-19 16:46:25',
+            ),
+            495 => 
+            array (
+                'id' => 497,
+                'name' => 'Jewelry Design',
+                'course_sub_category_id' => 64,
+                'slug' => 'jewelry-design',
+                'created_at' => '2021-06-19 16:46:43',
+                'updated_at' => '2021-06-19 16:46:43',
+            ),
+            496 => 
+            array (
+                'id' => 498,
+                'name' => 'T-Shirt Design',
+                'course_sub_category_id' => 64,
+                'slug' => 't-shirt-design',
+                'created_at' => '2021-06-19 16:47:14',
+                'updated_at' => '2021-06-19 16:47:14',
+            ),
+            497 => 
+            array (
+                'id' => 499,
+                'name' => 'Anime',
+                'course_sub_category_id' => 64,
+                'slug' => 'anime-1',
+                'created_at' => '2021-06-19 16:47:29',
+                'updated_at' => '2021-06-19 16:47:29',
+            ),
+            498 => 
+            array (
+                'id' => 500,
+                'name' => 'Jewelry Making',
+                'course_sub_category_id' => 64,
+                'slug' => 'jewelry-making',
+                'created_at' => '2021-06-19 16:48:15',
+                'updated_at' => '2021-06-19 16:48:15',
+            ),
+            499 => 
+            array (
+                'id' => 501,
+                'name' => 'AutoCAD',
+                'course_sub_category_id' => 65,
+                'slug' => 'autocad-1',
+                'created_at' => '2021-06-19 16:50:21',
+                'updated_at' => '2021-06-19 16:50:21',
+            ),
+        ));
+        \DB::table('course_topics')->insert(array (
+            0 => 
+            array (
+                'id' => 502,
+                'name' => 'Revit',
+                'course_sub_category_id' => 65,
+                'slug' => 'revit',
+                'created_at' => '2021-06-19 16:50:37',
+                'updated_at' => '2021-06-19 16:50:37',
+            ),
+            1 => 
+            array (
+                'id' => 503,
+                'name' => 'SketchUp',
+                'course_sub_category_id' => 65,
+                'slug' => 'sketchup',
+                'created_at' => '2021-06-19 16:50:57',
+                'updated_at' => '2021-06-19 16:50:57',
+            ),
+            2 => 
+            array (
+                'id' => 504,
+                'name' => 'Blender',
+                'course_sub_category_id' => 65,
+                'slug' => 'blender-3',
+                'created_at' => '2021-06-19 16:51:15',
+                'updated_at' => '2021-06-19 16:51:15',
+            ),
+            3 => 
+            array (
+                'id' => 505,
+                'name' => 'ARCHICAD',
+                'course_sub_category_id' => 65,
+                'slug' => 'archicad',
+                'created_at' => '2021-06-19 16:51:41',
+                'updated_at' => '2021-06-19 16:51:41',
+            ),
+            4 => 
+            array (
+                'id' => 506,
+                'name' => 'Landscape Architecture',
+                'course_sub_category_id' => 65,
+                'slug' => 'landscape-architecture',
+                'created_at' => '2021-06-19 16:52:00',
+                'updated_at' => '2021-06-19 16:52:00',
+            ),
+            5 => 
+            array (
+                'id' => 507,
+                'name' => '3D Animation',
+                'course_sub_category_id' => 65,
+                'slug' => '3d-animation-1',
+                'created_at' => '2021-06-19 16:52:20',
+                'updated_at' => '2021-06-19 16:52:20',
+            ),
+            6 => 
+            array (
+                'id' => 508,
+                'name' => 'LEED',
+                'course_sub_category_id' => 65,
+                'slug' => 'leed',
+                'created_at' => '2021-06-19 16:52:42',
+                'updated_at' => '2021-06-19 16:52:42',
+            ),
+            7 => 
+            array (
+                'id' => 509,
+                'name' => 'SketchUp',
+                'course_sub_category_id' => 66,
+                'slug' => 'sketchup-1',
+                'created_at' => '2021-06-19 16:56:43',
+                'updated_at' => '2021-06-19 16:56:43',
+            ),
+            8 => 
+            array (
+                'id' => 510,
+                'name' => 'Color Theory',
+                'course_sub_category_id' => 66,
+                'slug' => 'color-theory',
+                'created_at' => '2021-06-19 16:57:00',
+                'updated_at' => '2021-06-19 16:57:00',
+            ),
+            9 => 
+            array (
+                'id' => 511,
+                'name' => 'Lighting Design',
+                'course_sub_category_id' => 66,
+                'slug' => 'lighting-design',
+                'created_at' => '2021-06-19 16:57:17',
+                'updated_at' => '2021-06-19 16:57:17',
+            ),
+            10 => 
+            array (
+                'id' => 512,
+                'name' => 'HVAC',
+                'course_sub_category_id' => 66,
+                'slug' => 'hvac',
+                'created_at' => '2021-06-19 16:57:35',
+                'updated_at' => '2021-06-19 16:57:35',
+            ),
+            11 => 
+            array (
+                'id' => 513,
+                'name' => 'Minimalist Lifestyle',
+                'course_sub_category_id' => 66,
+                'slug' => 'minimalist-lifestyle',
+                'created_at' => '2021-06-19 16:57:52',
+                'updated_at' => '2021-06-19 16:57:52',
+            ),
+            12 => 
+            array (
+                'id' => 514,
+                'name' => 'Blender',
+                'course_sub_category_id' => 66,
+                'slug' => 'blender-4',
+                'created_at' => '2021-06-19 16:58:09',
+                'updated_at' => '2021-06-19 16:58:09',
+            ),
+            13 => 
+            array (
+                'id' => 515,
+                'name' => '3ds Max',
+                'course_sub_category_id' => 66,
+                'slug' => '3ds-max',
+                'created_at' => '2021-06-19 16:58:26',
+                'updated_at' => '2021-06-19 16:58:26',
+            ),
+            14 => 
+            array (
+                'id' => 516,
+                'name' => 'Botany',
+                'course_sub_category_id' => 66,
+                'slug' => 'botany',
+                'created_at' => '2021-06-19 16:58:42',
+                'updated_at' => '2021-06-19 16:58:42',
+            ),
+            15 => 
+            array (
+                'id' => 517,
+                'name' => 'Character Design',
+                'course_sub_category_id' => 67,
+                'slug' => 'character-design-2',
+                'created_at' => '2021-06-19 17:00:54',
+                'updated_at' => '2021-06-19 17:00:54',
+            ),
+            16 => 
+            array (
+                'id' => 518,
+                'name' => 'Electronics',
+                'course_sub_category_id' => 67,
+                'slug' => 'electronics-1',
+                'created_at' => '2021-06-19 17:01:12',
+                'updated_at' => '2021-06-19 17:01:12',
+            ),
+            17 => 
+            array (
+                'id' => 519,
+                'name' => 'Drawing',
+                'course_sub_category_id' => 67,
+                'slug' => 'drawing-2',
+                'created_at' => '2021-06-19 17:01:31',
+                'updated_at' => '2021-06-19 17:01:31',
+            ),
+            18 => 
+            array (
+                'id' => 520,
+                'name' => 'Circuit Design',
+                'course_sub_category_id' => 67,
+                'slug' => 'circuit-design',
+                'created_at' => '2021-06-19 17:01:59',
+                'updated_at' => '2021-06-19 17:01:59',
+            ),
+            19 => 
+            array (
+                'id' => 521,
+                'name' => 'Digital Painting',
+                'course_sub_category_id' => 67,
+                'slug' => 'digital-painting-3',
+                'created_at' => '2021-06-19 17:02:09',
+                'updated_at' => '2021-06-19 17:02:09',
+            ),
+            20 => 
+            array (
+                'id' => 522,
+                'name' => 'Comic Book Creation',
+                'course_sub_category_id' => 67,
+                'slug' => 'comic-book-creation',
+                'created_at' => '2021-06-19 17:02:28',
+                'updated_at' => '2021-06-19 17:02:28',
+            ),
+            21 => 
+            array (
+                'id' => 523,
+                'name' => 'Perspective Drawing',
+                'course_sub_category_id' => 67,
+                'slug' => 'perspective-drawing',
+                'created_at' => '2021-06-19 17:02:44',
+                'updated_at' => '2021-06-19 17:02:44',
+            ),
+            22 => 
+            array (
+                'id' => 524,
+                'name' => 'Portraiture',
+                'course_sub_category_id' => 67,
+                'slug' => 'portraiture',
+                'created_at' => '2021-06-19 17:03:02',
+                'updated_at' => '2021-06-19 17:03:02',
+            ),
+            23 => 
+            array (
+                'id' => 525,
+            'name' => 'Geometric Dimensioning and Tolerancing (GD&T)',
+                'course_sub_category_id' => 67,
+                'slug' => 'geometric-dimensioning-and-tolerancing-gdt',
+                'created_at' => '2021-06-19 17:03:26',
+                'updated_at' => '2021-06-19 17:03:26',
+            ),
+            24 => 
+            array (
+                'id' => 526,
+                'name' => 'Social Media Marketing',
+                'course_sub_category_id' => 68,
+                'slug' => 'social-media-marketing',
+                'created_at' => '2021-06-19 17:10:58',
+                'updated_at' => '2021-06-19 17:10:58',
+            ),
+            25 => 
+            array (
+                'id' => 527,
+            'name' => 'Google Ads (AdWords)',
+                'course_sub_category_id' => 68,
+                'slug' => 'google-ads-adwords-1',
+                'created_at' => '2021-06-19 17:11:16',
+                'updated_at' => '2021-06-19 17:11:16',
+            ),
+            26 => 
+            array (
+                'id' => 528,
+                'name' => 'Marketing Strategy',
+                'course_sub_category_id' => 68,
+                'slug' => 'marketing-strategy',
+                'created_at' => '2021-06-19 17:11:31',
+                'updated_at' => '2021-06-19 17:11:31',
+            ),
+            27 => 
+            array (
+                'id' => 529,
+            'name' => 'Google Ads (AdWords) Certification',
+                'course_sub_category_id' => 68,
+                'slug' => 'google-ads-adwords-certification',
+                'created_at' => '2021-06-19 17:11:50',
+                'updated_at' => '2021-06-19 17:11:50',
+            ),
+            28 => 
+            array (
+                'id' => 530,
+                'name' => 'Internet Marketing',
+                'course_sub_category_id' => 68,
+                'slug' => 'internet-marketing',
+                'created_at' => '2021-06-19 17:12:08',
+                'updated_at' => '2021-06-19 17:12:08',
+            ),
+            29 => 
+            array (
+                'id' => 531,
+                'name' => 'YouTube Marketing',
+                'course_sub_category_id' => 68,
+                'slug' => 'youtube-marketing',
+                'created_at' => '2021-06-19 17:12:25',
+                'updated_at' => '2021-06-19 17:12:25',
+            ),
+            30 => 
+            array (
+                'id' => 532,
+                'name' => 'Email Marketing',
+                'course_sub_category_id' => 68,
+                'slug' => 'email-marketing',
+                'created_at' => '2021-06-19 17:12:43',
+                'updated_at' => '2021-06-19 17:12:43',
+            ),
+            31 => 
+            array (
+                'id' => 533,
+                'name' => 'Instagram Marketing',
+                'course_sub_category_id' => 68,
+                'slug' => 'instagram-marketing',
+                'created_at' => '2021-06-19 17:13:01',
+                'updated_at' => '2021-06-19 17:13:01',
+            ),
+            32 => 
+            array (
+                'id' => 534,
+                'name' => 'Google Analytics',
+                'course_sub_category_id' => 68,
+                'slug' => 'google-analytics',
+                'created_at' => '2021-06-19 17:13:18',
+                'updated_at' => '2021-06-19 17:13:18',
+            ),
+            33 => 
+            array (
+                'id' => 535,
+                'name' => 'SEO',
+                'course_sub_category_id' => 69,
+                'slug' => 'seo-1',
+                'created_at' => '2021-06-19 17:17:23',
+                'updated_at' => '2021-06-19 17:17:23',
+            ),
+            34 => 
+            array (
+                'id' => 536,
+                'name' => 'WordPress',
+                'course_sub_category_id' => 69,
+                'slug' => 'wordpress-2',
+                'created_at' => '2021-06-19 17:17:41',
+                'updated_at' => '2021-06-19 17:17:41',
+            ),
+            35 => 
+            array (
+                'id' => 537,
+                'name' => 'Keyword Research',
+                'course_sub_category_id' => 69,
+                'slug' => 'keyword-research',
+                'created_at' => '2021-06-19 17:17:59',
+                'updated_at' => '2021-06-19 17:17:59',
+            ),
+            36 => 
+            array (
+                'id' => 538,
+                'name' => 'Local SEO',
+                'course_sub_category_id' => 69,
+                'slug' => 'local-seo',
+                'created_at' => '2021-06-19 17:18:18',
+                'updated_at' => '2021-06-19 17:18:18',
+            ),
+            37 => 
+            array (
+                'id' => 539,
+                'name' => 'Google my Business',
+                'course_sub_category_id' => 69,
+                'slug' => 'google-my-business',
+                'created_at' => '2021-06-19 17:18:35',
+                'updated_at' => '2021-06-19 17:18:35',
+            ),
+            38 => 
+            array (
+                'id' => 540,
+                'name' => 'SEO Audit',
+                'course_sub_category_id' => 69,
+                'slug' => 'seo-audit',
+                'created_at' => '2021-06-19 17:18:56',
+                'updated_at' => '2021-06-19 17:18:56',
+            ),
+            39 => 
+            array (
+                'id' => 541,
+                'name' => 'Link Building',
+                'course_sub_category_id' => 69,
+                'slug' => 'link-building',
+                'created_at' => '2021-06-19 17:19:12',
+                'updated_at' => '2021-06-19 17:19:12',
+            ),
+            40 => 
+            array (
+                'id' => 542,
+                'name' => 'Shopify',
+                'course_sub_category_id' => 69,
+                'slug' => 'shopify-1',
+                'created_at' => '2021-06-19 17:19:28',
+                'updated_at' => '2021-06-19 17:19:28',
+            ),
+            41 => 
+            array (
+                'id' => 543,
+                'name' => 'Blogging',
+                'course_sub_category_id' => 69,
+                'slug' => 'blogging-1',
+                'created_at' => '2021-06-19 17:19:44',
+                'updated_at' => '2021-06-19 17:19:44',
+            ),
+            42 => 
+            array (
+                'id' => 544,
+                'name' => 'Instagram Marketing',
+                'course_sub_category_id' => 70,
+                'slug' => 'instagram-marketing-1',
+                'created_at' => '2021-06-19 17:22:36',
+                'updated_at' => '2021-06-19 17:22:36',
+            ),
+            43 => 
+            array (
+                'id' => 545,
+                'name' => 'Facebook Ads',
+                'course_sub_category_id' => 70,
+                'slug' => 'facebook-ads',
+                'created_at' => '2021-06-19 17:22:56',
+                'updated_at' => '2021-06-19 17:22:56',
+            ),
+            44 => 
+            array (
+                'id' => 546,
+                'name' => 'Facebook Marketing',
+                'course_sub_category_id' => 70,
+                'slug' => 'facebook-marketing',
+                'created_at' => '2021-06-19 17:23:25',
+                'updated_at' => '2021-06-19 17:23:25',
+            ),
+            45 => 
+            array (
+                'id' => 547,
+                'name' => 'PPC Advertising',
+                'course_sub_category_id' => 70,
+                'slug' => 'ppc-advertising',
+                'created_at' => '2021-06-19 17:23:50',
+                'updated_at' => '2021-06-19 17:23:50',
+            ),
+            46 => 
+            array (
+                'id' => 548,
+                'name' => 'Social Media Management',
+                'course_sub_category_id' => 70,
+                'slug' => 'social-media-management',
+                'created_at' => '2021-06-19 17:24:25',
+                'updated_at' => '2021-06-19 17:24:25',
+            ),
+            47 => 
+            array (
+                'id' => 549,
+                'name' => 'LinkedIn',
+                'course_sub_category_id' => 70,
+                'slug' => 'linkedin-2',
+                'created_at' => '2021-06-19 17:25:08',
+                'updated_at' => '2021-06-19 17:25:08',
+            ),
+            48 => 
+            array (
+                'id' => 550,
+                'name' => 'Pinterest Marketing',
+                'course_sub_category_id' => 70,
+                'slug' => 'pinterest-marketing',
+                'created_at' => '2021-06-19 17:25:33',
+                'updated_at' => '2021-06-19 17:25:33',
+            ),
+            49 => 
+            array (
+                'id' => 551,
+                'name' => 'Business Branding',
+                'course_sub_category_id' => 71,
+                'slug' => 'business-branding',
+                'created_at' => '2021-06-19 17:29:03',
+                'updated_at' => '2021-06-19 17:29:03',
+            ),
+            50 => 
+            array (
+                'id' => 552,
+                'name' => 'YouTube Audience Growth',
+                'course_sub_category_id' => 71,
+                'slug' => 'youtube-audience-growth',
+                'created_at' => '2021-06-19 17:30:06',
+                'updated_at' => '2021-06-19 17:30:06',
+            ),
+            51 => 
+            array (
+                'id' => 553,
+                'name' => 'YouTube Marketing',
+                'course_sub_category_id' => 71,
+                'slug' => 'youtube-marketing-1',
+                'created_at' => '2021-06-19 17:30:25',
+                'updated_at' => '2021-06-19 17:30:25',
+            ),
+            52 => 
+            array (
+                'id' => 554,
+                'name' => 'Personal Branding',
+                'course_sub_category_id' => 71,
+                'slug' => 'personal-branding-1',
+                'created_at' => '2021-06-19 17:30:44',
+                'updated_at' => '2021-06-19 17:30:44',
+            ),
+            53 => 
+            array (
+                'id' => 555,
+                'name' => 'Brand Management',
+                'course_sub_category_id' => 71,
+                'slug' => 'brand-management',
+                'created_at' => '2021-06-19 17:31:08',
+                'updated_at' => '2021-06-19 17:31:08',
+            ),
+            54 => 
+            array (
+                'id' => 556,
+                'name' => 'Marketing Strategy',
+                'course_sub_category_id' => 71,
+                'slug' => 'marketing-strategy-1',
+                'created_at' => '2021-06-19 17:31:26',
+                'updated_at' => '2021-06-19 17:31:26',
+            ),
+            55 => 
+            array (
+                'id' => 557,
+                'name' => 'Canva',
+                'course_sub_category_id' => 71,
+                'slug' => 'canva-1',
+                'created_at' => '2021-06-19 17:31:46',
+                'updated_at' => '2021-06-19 17:31:46',
+            ),
+            56 => 
+            array (
+                'id' => 558,
+                'name' => 'Customer Service',
+                'course_sub_category_id' => 71,
+                'slug' => 'customer-service-1',
+                'created_at' => '2021-06-19 17:32:06',
+                'updated_at' => '2021-06-19 17:32:06',
+            ),
+            57 => 
+            array (
+                'id' => 559,
+                'name' => 'Graphic Design',
+                'course_sub_category_id' => 71,
+                'slug' => 'graphic-design-1',
+                'created_at' => '2021-06-19 17:32:26',
+                'updated_at' => '2021-06-19 17:32:26',
+            ),
+            58 => 
+            array (
+                'id' => 560,
+                'name' => 'Copywriting',
+                'course_sub_category_id' => 72,
+                'slug' => 'copywriting',
+                'created_at' => '2021-06-19 17:36:01',
+                'updated_at' => '2021-06-19 17:36:01',
+            ),
+            59 => 
+            array (
+                'id' => 561,
+                'name' => 'Marketing Strategy',
+                'course_sub_category_id' => 72,
+                'slug' => 'marketing-strategy-2',
+                'created_at' => '2021-06-19 17:36:25',
+                'updated_at' => '2021-06-19 17:36:25',
+            ),
+            60 => 
+            array (
+                'id' => 562,
+                'name' => 'Marketing Management',
+                'course_sub_category_id' => 72,
+                'slug' => 'marketing-management',
+                'created_at' => '2021-06-19 17:36:53',
+                'updated_at' => '2021-06-19 17:36:53',
+            ),
+            61 => 
+            array (
+                'id' => 563,
+                'name' => 'Marketing Analytics',
+                'course_sub_category_id' => 72,
+                'slug' => 'marketing-analytics',
+                'created_at' => '2021-06-19 17:37:22',
+                'updated_at' => '2021-06-19 17:37:22',
+            ),
+            62 => 
+            array (
+                'id' => 564,
+                'name' => 'Event Planning',
+                'course_sub_category_id' => 72,
+                'slug' => 'event-planning',
+                'created_at' => '2021-06-19 17:37:46',
+                'updated_at' => '2021-06-19 17:37:46',
+            ),
+            63 => 
+            array (
+                'id' => 565,
+                'name' => 'Neuromarketing',
+                'course_sub_category_id' => 72,
+                'slug' => 'neuromarketing',
+                'created_at' => '2021-06-19 17:38:09',
+                'updated_at' => '2021-06-19 17:38:09',
+            ),
+            64 => 
+            array (
+                'id' => 566,
+                'name' => 'Sales Skills',
+                'course_sub_category_id' => 72,
+                'slug' => 'sales-skills-1',
+                'created_at' => '2021-06-19 17:38:29',
+                'updated_at' => '2021-06-19 17:38:29',
+            ),
+            65 => 
+            array (
+                'id' => 567,
+                'name' => 'Marketing Plan',
+                'course_sub_category_id' => 72,
+                'slug' => 'marketing-plan',
+                'created_at' => '2021-06-19 17:38:55',
+                'updated_at' => '2021-06-19 17:38:55',
+            ),
+            66 => 
+            array (
+                'id' => 568,
+                'name' => 'Marketing Psychology',
+                'course_sub_category_id' => 72,
+                'slug' => 'marketing-psychology',
+                'created_at' => '2021-06-19 17:39:25',
+                'updated_at' => '2021-06-19 17:39:25',
+            ),
+            67 => 
+            array (
+                'id' => 569,
+                'name' => 'Google Analytics',
+                'course_sub_category_id' => 73,
+                'slug' => 'google-analytics-1',
+                'created_at' => '2021-06-19 17:46:03',
+                'updated_at' => '2021-06-19 17:46:03',
+            ),
+            68 => 
+            array (
+                'id' => 570,
+            'name' => 'Google Analytics Individual Qualification (IQ)',
+                'course_sub_category_id' => 73,
+                'slug' => 'google-analytics-individual-qualification-iq',
+                'created_at' => '2021-06-19 17:46:54',
+                'updated_at' => '2021-06-19 17:46:54',
+            ),
+            69 => 
+            array (
+                'id' => 571,
+                'name' => 'Data Analysis',
+                'course_sub_category_id' => 73,
+                'slug' => 'data-analysis-3',
+                'created_at' => '2021-06-19 17:47:13',
+                'updated_at' => '2021-06-19 17:47:13',
+            ),
+            70 => 
+            array (
+                'id' => 572,
+                'name' => 'Marketing Analytics',
+                'course_sub_category_id' => 73,
+                'slug' => 'marketing-analytics-1',
+                'created_at' => '2021-06-19 17:47:31',
+                'updated_at' => '2021-06-19 17:47:31',
+            ),
+            71 => 
+            array (
+                'id' => 573,
+                'name' => 'Google Tag Manager',
+                'course_sub_category_id' => 73,
+                'slug' => 'google-tag-manager',
+                'created_at' => '2021-06-19 17:47:58',
+                'updated_at' => '2021-06-19 17:47:58',
+            ),
+            72 => 
+            array (
+                'id' => 574,
+                'name' => 'SQL',
+                'course_sub_category_id' => 73,
+                'slug' => 'sql-3',
+                'created_at' => '2021-06-19 17:48:15',
+                'updated_at' => '2021-06-19 17:48:15',
+            ),
+            73 => 
+            array (
+                'id' => 575,
+                'name' => 'Marketing Strategy',
+                'course_sub_category_id' => 73,
+                'slug' => 'marketing-strategy-3',
+                'created_at' => '2021-06-19 17:48:33',
+                'updated_at' => '2021-06-19 17:48:33',
+            ),
+            74 => 
+            array (
+                'id' => 576,
+                'name' => 'Google Analytics Reports',
+                'course_sub_category_id' => 73,
+                'slug' => 'google-analytics-reports',
+                'created_at' => '2021-06-19 17:49:01',
+                'updated_at' => '2021-06-19 17:49:01',
+            ),
+            75 => 
+            array (
+                'id' => 577,
+                'name' => 'Marketing Automation',
+                'course_sub_category_id' => 73,
+                'slug' => 'marketing-automation',
+                'created_at' => '2021-06-19 17:49:24',
+                'updated_at' => '2021-06-19 17:49:24',
+            ),
         ));
         
         
