@@ -23,7 +23,7 @@ class CourseResource extends JsonResource
             'subtitle' => $this->subtitle,
             'locale' => $this->locale,
             'captions' => $this->captions,
-            'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
+            'image' => $this->image === null ? 'https://via.placeholder.com/600x325?text=Course' : (str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image)),
             'url' => $this->url,
             'course_provider' => new CourseProviderResource($this->course_provider),
             'course_instructor' => new CourseInstructorResourceCollection($this->course_instructors),
