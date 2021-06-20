@@ -5205,6 +5205,852 @@ class CourseTopicsTableSeeder extends Seeder
                 'created_at' => '2021-06-19 17:49:24',
                 'updated_at' => '2021-06-19 17:49:24',
             ),
+            76 => 
+            array (
+                'id' => 578,
+                'name' => 'Electronics',
+                'course_sub_category_id' => 82,
+                'slug' => 'electronics-2',
+                'created_at' => '2021-06-20 14:04:20',
+                'updated_at' => '2021-06-20 14:04:20',
+            ),
+            77 => 
+            array (
+                'id' => 579,
+                'name' => 'Electrical Engineering',
+                'course_sub_category_id' => 82,
+                'slug' => 'electrical-engineering-1',
+                'created_at' => '2021-06-20 14:04:45',
+                'updated_at' => '2021-06-20 14:04:45',
+            ),
+            78 => 
+            array (
+                'id' => 580,
+                'name' => 'Civil Engineering',
+                'course_sub_category_id' => 82,
+                'slug' => 'civil-engineering',
+                'created_at' => '2021-06-20 14:05:05',
+                'updated_at' => '2021-06-20 14:05:05',
+            ),
+            79 => 
+            array (
+                'id' => 581,
+                'name' => 'Robotics',
+                'course_sub_category_id' => 82,
+                'slug' => 'robotics',
+                'created_at' => '2021-06-20 14:05:25',
+                'updated_at' => '2021-06-20 14:05:25',
+            ),
+            80 => 
+            array (
+                'id' => 582,
+                'name' => 'Structural Engineering',
+                'course_sub_category_id' => 82,
+                'slug' => 'structural-engineering',
+                'created_at' => '2021-06-20 18:06:04',
+                'updated_at' => '2021-06-20 18:06:04',
+            ),
+            81 => 
+            array (
+                'id' => 583,
+                'name' => 'Mechanical Engineering',
+                'course_sub_category_id' => 82,
+                'slug' => 'mechanical-engineering',
+                'created_at' => '2021-06-20 18:06:22',
+                'updated_at' => '2021-06-20 18:06:22',
+            ),
+            82 => 
+            array (
+                'id' => 584,
+                'name' => 'Aerospace Engineering',
+                'course_sub_category_id' => 82,
+                'slug' => 'aerospace-engineering',
+                'created_at' => '2021-06-20 18:06:36',
+                'updated_at' => '2021-06-20 18:06:36',
+            ),
+            83 => 
+            array (
+                'id' => 585,
+                'name' => 'Control Systems',
+                'course_sub_category_id' => 82,
+                'slug' => 'control-systems',
+                'created_at' => '2021-06-20 18:06:54',
+                'updated_at' => '2021-06-20 18:06:54',
+            ),
+            84 => 
+            array (
+                'id' => 586,
+                'name' => 'Solar Energy',
+                'course_sub_category_id' => 82,
+                'slug' => 'solar-energy-1',
+                'created_at' => '2021-06-20 18:07:16',
+                'updated_at' => '2021-06-20 18:07:16',
+            ),
+            85 => 
+            array (
+                'id' => 587,
+                'name' => 'Christianity',
+                'course_sub_category_id' => 83,
+                'slug' => 'christianity',
+                'created_at' => '2021-06-20 18:08:01',
+                'updated_at' => '2021-06-20 18:08:01',
+            ),
+            86 => 
+            array (
+                'id' => 588,
+                'name' => 'The Bible',
+                'course_sub_category_id' => 83,
+                'slug' => 'the-bible',
+                'created_at' => '2021-06-20 18:08:14',
+                'updated_at' => '2021-06-20 18:08:14',
+            ),
+            87 => 
+            array (
+                'id' => 589,
+                'name' => 'Psychology',
+                'course_sub_category_id' => 83,
+                'slug' => 'psychology',
+                'created_at' => '2021-06-20 18:08:28',
+                'updated_at' => '2021-06-20 18:08:28',
+            ),
+            88 => 
+            array (
+                'id' => 590,
+                'name' => 'Statistics',
+                'course_sub_category_id' => 83,
+                'slug' => 'statistics-1',
+                'created_at' => '2021-06-20 18:08:41',
+                'updated_at' => '2021-06-20 18:08:41',
+            ),
+            89 => 
+            array (
+                'id' => 591,
+                'name' => 'Philosophy',
+                'course_sub_category_id' => 83,
+                'slug' => 'philosophy',
+                'created_at' => '2021-06-20 18:08:56',
+                'updated_at' => '2021-06-20 18:08:56',
+            ),
+            90 => 
+            array (
+                'id' => 592,
+                'name' => 'Creative Writing',
+                'course_sub_category_id' => 83,
+                'slug' => 'creative-writing',
+                'created_at' => '2021-06-20 18:09:10',
+                'updated_at' => '2021-06-20 18:09:10',
+            ),
+            91 => 
+            array (
+                'id' => 593,
+                'name' => 'Art History',
+                'course_sub_category_id' => 83,
+                'slug' => 'art-history',
+                'created_at' => '2021-06-20 18:09:23',
+                'updated_at' => '2021-06-20 18:09:23',
+            ),
+            92 => 
+            array (
+                'id' => 594,
+                'name' => 'Critical Thinking',
+                'course_sub_category_id' => 83,
+                'slug' => 'critical-thinking',
+                'created_at' => '2021-06-20 18:09:36',
+                'updated_at' => '2021-06-20 18:09:36',
+            ),
+            93 => 
+            array (
+                'id' => 595,
+                'name' => 'English Literature',
+                'course_sub_category_id' => 83,
+                'slug' => 'english-literature',
+                'created_at' => '2021-06-20 18:09:50',
+                'updated_at' => '2021-06-20 18:09:50',
+            ),
+            94 => 
+            array (
+                'id' => 596,
+                'name' => 'Calculus',
+                'course_sub_category_id' => 84,
+                'slug' => 'calculus',
+                'created_at' => '2021-06-20 18:10:14',
+                'updated_at' => '2021-06-20 18:10:52',
+            ),
+            95 => 
+            array (
+                'id' => 597,
+                'name' => 'Statistics',
+                'course_sub_category_id' => 84,
+                'slug' => 'statistics-2',
+                'created_at' => '2021-06-20 18:11:12',
+                'updated_at' => '2021-06-20 18:11:12',
+            ),
+            96 => 
+            array (
+                'id' => 598,
+                'name' => 'Linear Algebra',
+                'course_sub_category_id' => 84,
+                'slug' => 'linear-algebra',
+                'created_at' => '2021-06-20 18:11:25',
+                'updated_at' => '2021-06-20 18:11:25',
+            ),
+            97 => 
+            array (
+                'id' => 599,
+                'name' => 'Algebra',
+                'course_sub_category_id' => 84,
+                'slug' => 'algebra',
+                'created_at' => '2021-06-20 18:11:40',
+                'updated_at' => '2021-06-20 18:11:40',
+            ),
+            98 => 
+            array (
+                'id' => 600,
+                'name' => 'Probability',
+                'course_sub_category_id' => 84,
+                'slug' => 'probability',
+                'created_at' => '2021-06-20 18:11:54',
+                'updated_at' => '2021-06-20 18:11:54',
+            ),
+            99 => 
+            array (
+                'id' => 601,
+                'name' => 'Trigonometry',
+                'course_sub_category_id' => 84,
+                'slug' => 'trigonometry',
+                'created_at' => '2021-06-20 18:12:08',
+                'updated_at' => '2021-06-20 18:12:08',
+            ),
+            100 => 
+            array (
+                'id' => 602,
+                'name' => 'Discrete Math',
+                'course_sub_category_id' => 84,
+                'slug' => 'discrete-math',
+                'created_at' => '2021-06-20 18:12:21',
+                'updated_at' => '2021-06-20 18:12:21',
+            ),
+            101 => 
+            array (
+                'id' => 603,
+                'name' => 'Geometry',
+                'course_sub_category_id' => 84,
+                'slug' => 'geometry',
+                'created_at' => '2021-06-20 18:12:35',
+                'updated_at' => '2021-06-20 18:12:35',
+            ),
+            102 => 
+            array (
+                'id' => 604,
+                'name' => 'Physics',
+                'course_sub_category_id' => 85,
+                'slug' => 'physics',
+                'created_at' => '2021-06-20 18:12:52',
+                'updated_at' => '2021-06-20 18:12:52',
+            ),
+            103 => 
+            array (
+                'id' => 605,
+                'name' => 'Orthodontics',
+                'course_sub_category_id' => 85,
+                'slug' => 'orthodontics',
+                'created_at' => '2021-06-20 18:13:07',
+                'updated_at' => '2021-06-20 18:13:07',
+            ),
+            104 => 
+            array (
+                'id' => 606,
+                'name' => 'Chemistry',
+                'course_sub_category_id' => 85,
+                'slug' => 'chemistry',
+                'created_at' => '2021-06-20 18:13:21',
+                'updated_at' => '2021-06-20 18:13:21',
+            ),
+            105 => 
+            array (
+                'id' => 607,
+                'name' => 'Solar Energy',
+                'course_sub_category_id' => 85,
+                'slug' => 'solar-energy-2',
+                'created_at' => '2021-06-20 18:13:37',
+                'updated_at' => '2021-06-20 18:13:37',
+            ),
+            106 => 
+            array (
+                'id' => 608,
+                'name' => 'Bioinformatics',
+                'course_sub_category_id' => 85,
+                'slug' => 'bioinformatics',
+                'created_at' => '2021-06-20 18:15:03',
+                'updated_at' => '2021-06-20 18:15:03',
+            ),
+            107 => 
+            array (
+                'id' => 609,
+                'name' => 'Anatomy',
+                'course_sub_category_id' => 85,
+                'slug' => 'anatomy',
+                'created_at' => '2021-06-20 18:15:27',
+                'updated_at' => '2021-06-20 18:15:27',
+            ),
+            108 => 
+            array (
+                'id' => 610,
+                'name' => 'Research Paper Writing',
+                'course_sub_category_id' => 85,
+                'slug' => 'research-paper-writing',
+                'created_at' => '2021-06-20 18:15:39',
+                'updated_at' => '2021-06-20 18:15:39',
+            ),
+            109 => 
+            array (
+                'id' => 611,
+                'name' => 'Biology',
+                'course_sub_category_id' => 85,
+                'slug' => 'biology',
+                'created_at' => '2021-06-20 18:15:53',
+                'updated_at' => '2021-06-20 18:15:53',
+            ),
+            110 => 
+            array (
+                'id' => 612,
+                'name' => 'Neuroscience',
+                'course_sub_category_id' => 85,
+                'slug' => 'neuroscience-1',
+                'created_at' => '2021-06-20 18:16:06',
+                'updated_at' => '2021-06-20 18:16:06',
+            ),
+            111 => 
+            array (
+                'id' => 613,
+                'name' => 'Online Course Creation',
+                'course_sub_category_id' => 86,
+                'slug' => 'online-course-creation',
+                'created_at' => '2021-06-20 18:16:25',
+                'updated_at' => '2021-06-20 18:16:25',
+            ),
+            112 => 
+            array (
+                'id' => 614,
+                'name' => 'Teaching Online',
+                'course_sub_category_id' => 86,
+                'slug' => 'teaching-online',
+                'created_at' => '2021-06-20 18:16:39',
+                'updated_at' => '2021-06-20 18:16:39',
+            ),
+            113 => 
+            array (
+                'id' => 615,
+                'name' => 'Data Entry Skills',
+                'course_sub_category_id' => 86,
+                'slug' => 'data-entry-skills',
+                'created_at' => '2021-06-20 18:23:14',
+                'updated_at' => '2021-06-20 18:23:14',
+            ),
+            114 => 
+            array (
+                'id' => 616,
+                'name' => 'Canva',
+                'course_sub_category_id' => 86,
+                'slug' => 'canva-2',
+                'created_at' => '2021-06-20 18:23:34',
+                'updated_at' => '2021-06-20 18:23:34',
+            ),
+            115 => 
+            array (
+                'id' => 617,
+                'name' => 'Online Business',
+                'course_sub_category_id' => 86,
+                'slug' => 'online-business-2',
+                'created_at' => '2021-06-20 18:23:51',
+                'updated_at' => '2021-06-20 18:23:51',
+            ),
+            116 => 
+            array (
+                'id' => 618,
+                'name' => 'Horsemanship',
+                'course_sub_category_id' => 86,
+                'slug' => 'horsemanship',
+                'created_at' => '2021-06-20 18:24:08',
+                'updated_at' => '2021-06-20 18:24:08',
+            ),
+            117 => 
+            array (
+                'id' => 619,
+                'name' => 'Math',
+                'course_sub_category_id' => 86,
+                'slug' => 'math',
+                'created_at' => '2021-06-20 18:24:31',
+                'updated_at' => '2021-06-20 18:24:31',
+            ),
+            118 => 
+            array (
+                'id' => 620,
+                'name' => 'Articulate Storyline',
+                'course_sub_category_id' => 86,
+                'slug' => 'articulate-storyline',
+                'created_at' => '2021-06-20 18:24:46',
+                'updated_at' => '2021-06-20 18:24:46',
+            ),
+            119 => 
+            array (
+                'id' => 621,
+                'name' => 'Teaching English',
+                'course_sub_category_id' => 86,
+                'slug' => 'teaching-english',
+                'created_at' => '2021-06-20 18:26:46',
+                'updated_at' => '2021-06-20 18:26:46',
+            ),
+            120 => 
+            array (
+                'id' => 622,
+                'name' => 'Psychology',
+                'course_sub_category_id' => 87,
+                'slug' => 'psychology-1',
+                'created_at' => '2021-06-20 18:27:21',
+                'updated_at' => '2021-06-20 18:27:21',
+            ),
+            121 => 
+            array (
+                'id' => 623,
+                'name' => 'Counseling',
+                'course_sub_category_id' => 87,
+                'slug' => 'counseling-1',
+                'created_at' => '2021-06-20 18:27:43',
+                'updated_at' => '2021-06-20 18:27:43',
+            ),
+            122 => 
+            array (
+                'id' => 624,
+                'name' => 'Economics',
+                'course_sub_category_id' => 87,
+                'slug' => 'economics',
+                'created_at' => '2021-06-20 18:28:17',
+                'updated_at' => '2021-06-20 18:28:17',
+            ),
+            123 => 
+            array (
+                'id' => 625,
+                'name' => 'Criminology',
+                'course_sub_category_id' => 87,
+                'slug' => 'criminology',
+                'created_at' => '2021-06-20 18:28:32',
+                'updated_at' => '2021-06-20 18:28:32',
+            ),
+            124 => 
+            array (
+                'id' => 626,
+                'name' => 'Psychotherapy',
+                'course_sub_category_id' => 87,
+                'slug' => 'psychotherapy',
+                'created_at' => '2021-06-20 18:28:47',
+                'updated_at' => '2021-06-20 18:28:47',
+            ),
+            125 => 
+            array (
+                'id' => 627,
+            'name' => 'Dialectical Behavior Therapy (DBT)',
+                'course_sub_category_id' => 87,
+                'slug' => 'dialectical-behavior-therapy-dbt',
+                'created_at' => '2021-06-20 18:29:08',
+                'updated_at' => '2021-06-20 18:29:08',
+            ),
+            126 => 
+            array (
+                'id' => 628,
+                'name' => 'Critical Thinking',
+                'course_sub_category_id' => 87,
+                'slug' => 'critical-thinking-1',
+                'created_at' => '2021-06-20 18:29:23',
+                'updated_at' => '2021-06-20 18:29:23',
+            ),
+            127 => 
+            array (
+                'id' => 629,
+                'name' => 'Research Methods',
+                'course_sub_category_id' => 87,
+                'slug' => 'research-methods',
+                'created_at' => '2021-06-20 18:29:40',
+                'updated_at' => '2021-06-20 18:29:40',
+            ),
+            128 => 
+            array (
+                'id' => 630,
+                'name' => 'Social Psychology',
+                'course_sub_category_id' => 87,
+                'slug' => 'social-psychology',
+                'created_at' => '2021-06-20 18:30:05',
+                'updated_at' => '2021-06-20 18:30:05',
+            ),
+            129 => 
+            array (
+                'id' => 631,
+                'name' => 'English Language',
+                'course_sub_category_id' => 88,
+                'slug' => 'english-language',
+                'created_at' => '2021-06-20 18:31:05',
+                'updated_at' => '2021-06-20 18:31:05',
+            ),
+            130 => 
+            array (
+                'id' => 632,
+                'name' => 'German Language',
+                'course_sub_category_id' => 88,
+                'slug' => 'german-language',
+                'created_at' => '2021-06-20 18:31:21',
+                'updated_at' => '2021-06-20 18:31:21',
+            ),
+            131 => 
+            array (
+                'id' => 633,
+                'name' => 'Spanish Language',
+                'course_sub_category_id' => 88,
+                'slug' => 'spanish-language',
+                'created_at' => '2021-06-20 18:31:38',
+                'updated_at' => '2021-06-20 18:31:38',
+            ),
+            132 => 
+            array (
+                'id' => 634,
+                'name' => 'Japanese Language',
+                'course_sub_category_id' => 88,
+                'slug' => 'japanese-language',
+                'created_at' => '2021-06-20 18:33:43',
+                'updated_at' => '2021-06-20 18:33:43',
+            ),
+            133 => 
+            array (
+                'id' => 635,
+                'name' => 'English Grammar',
+                'course_sub_category_id' => 88,
+                'slug' => 'english-grammar',
+                'created_at' => '2021-06-20 18:35:56',
+                'updated_at' => '2021-06-20 18:35:56',
+            ),
+            134 => 
+            array (
+                'id' => 636,
+                'name' => 'English Conversation',
+                'course_sub_category_id' => 88,
+                'slug' => 'english-conversation',
+                'created_at' => '2021-06-20 18:36:11',
+                'updated_at' => '2021-06-20 18:36:11',
+            ),
+            135 => 
+            array (
+                'id' => 637,
+                'name' => 'French Language',
+                'course_sub_category_id' => 88,
+                'slug' => 'french-language-2',
+                'created_at' => '2021-06-20 18:36:29',
+                'updated_at' => '2021-06-20 18:36:29',
+            ),
+            136 => 
+            array (
+                'id' => 638,
+                'name' => 'English Vocabulary',
+                'course_sub_category_id' => 88,
+                'slug' => 'english-vocabulary',
+                'created_at' => '2021-06-20 18:36:46',
+                'updated_at' => '2021-06-20 18:36:46',
+            ),
+            137 => 
+            array (
+                'id' => 639,
+                'name' => 'Sign Language',
+                'course_sub_category_id' => 88,
+                'slug' => 'sign-language',
+                'created_at' => '2021-06-20 18:37:02',
+                'updated_at' => '2021-06-20 18:37:02',
+            ),
+            138 => 
+            array (
+                'id' => 640,
+                'name' => 'Train the Trainer',
+                'course_sub_category_id' => 89,
+                'slug' => 'train-the-trainer',
+                'created_at' => '2021-06-20 18:38:08',
+                'updated_at' => '2021-06-20 18:38:08',
+            ),
+            139 => 
+            array (
+                'id' => 641,
+                'name' => 'Instructional Design',
+                'course_sub_category_id' => 89,
+                'slug' => 'instructional-design-1',
+                'created_at' => '2021-06-20 18:38:22',
+                'updated_at' => '2021-06-20 18:38:22',
+            ),
+            140 => 
+            array (
+                'id' => 642,
+                'name' => 'Voice-Over',
+                'course_sub_category_id' => 89,
+                'slug' => 'voice-over',
+                'created_at' => '2021-06-20 18:39:59',
+                'updated_at' => '2021-06-20 18:39:59',
+            ),
+            141 => 
+            array (
+                'id' => 643,
+                'name' => 'Coaching',
+                'course_sub_category_id' => 89,
+                'slug' => 'coaching',
+                'created_at' => '2021-06-20 18:40:14',
+                'updated_at' => '2021-06-20 18:40:14',
+            ),
+            142 => 
+            array (
+                'id' => 644,
+                'name' => 'Early Childhood Education',
+                'course_sub_category_id' => 89,
+                'slug' => 'early-childhood-education-1',
+                'created_at' => '2021-06-20 18:40:26',
+                'updated_at' => '2021-06-20 18:40:26',
+            ),
+            143 => 
+            array (
+                'id' => 645,
+                'name' => 'Personal Development',
+                'course_sub_category_id' => 89,
+                'slug' => 'personal-development-2',
+                'created_at' => '2021-06-20 18:40:51',
+                'updated_at' => '2021-06-20 18:40:51',
+            ),
+            144 => 
+            array (
+                'id' => 646,
+                'name' => 'Moodle',
+                'course_sub_category_id' => 89,
+                'slug' => 'moodle',
+                'created_at' => '2021-06-20 18:42:18',
+                'updated_at' => '2021-06-20 18:42:18',
+            ),
+            145 => 
+            array (
+                'id' => 647,
+                'name' => 'ESL',
+                'course_sub_category_id' => 89,
+                'slug' => 'esl',
+                'created_at' => '2021-06-20 18:42:33',
+                'updated_at' => '2021-06-20 18:42:33',
+            ),
+            146 => 
+            array (
+                'id' => 648,
+                'name' => 'IELTS',
+                'course_sub_category_id' => 90,
+                'slug' => 'ielts',
+                'created_at' => '2021-06-20 18:53:26',
+                'updated_at' => '2021-06-20 18:53:26',
+            ),
+            147 => 
+            array (
+                'id' => 649,
+                'name' => 'PMP',
+                'course_sub_category_id' => 90,
+                'slug' => 'pmp-1',
+                'created_at' => '2021-06-20 18:53:41',
+                'updated_at' => '2021-06-20 18:53:41',
+            ),
+            148 => 
+            array (
+                'id' => 650,
+                'name' => 'Microsoft Certification',
+                'course_sub_category_id' => 90,
+                'slug' => 'microsoft-certification-1',
+                'created_at' => '2021-06-20 18:54:05',
+                'updated_at' => '2021-06-20 18:54:05',
+            ),
+            149 => 
+            array (
+                'id' => 651,
+                'name' => 'Microsoft AZ-104',
+                'course_sub_category_id' => 90,
+                'slug' => 'microsoft-az-104',
+                'created_at' => '2021-06-20 18:54:19',
+                'updated_at' => '2021-06-20 18:54:19',
+            ),
+            150 => 
+            array (
+                'id' => 652,
+                'name' => 'TOEFL',
+                'course_sub_category_id' => 90,
+                'slug' => 'toefl',
+                'created_at' => '2021-06-20 18:54:31',
+                'updated_at' => '2021-06-20 18:54:31',
+            ),
+            151 => 
+            array (
+                'id' => 653,
+                'name' => 'PMBOK',
+                'course_sub_category_id' => 90,
+                'slug' => 'pmbok-1',
+                'created_at' => '2021-06-20 18:54:45',
+                'updated_at' => '2021-06-20 18:54:45',
+            ),
+            152 => 
+            array (
+                'id' => 654,
+                'name' => 'Math',
+                'course_sub_category_id' => 90,
+                'slug' => 'math-1',
+                'created_at' => '2021-06-20 18:54:59',
+                'updated_at' => '2021-06-20 18:54:59',
+            ),
+            153 => 
+            array (
+                'id' => 655,
+                'name' => 'Bookkeeping',
+                'course_sub_category_id' => 90,
+                'slug' => 'bookkeeping-1',
+                'created_at' => '2021-06-20 18:55:16',
+                'updated_at' => '2021-06-20 18:55:16',
+            ),
+            154 => 
+            array (
+                'id' => 656,
+                'name' => 'GMAT',
+                'course_sub_category_id' => 90,
+                'slug' => 'gmat',
+                'created_at' => '2021-06-20 18:55:31',
+                'updated_at' => '2021-06-20 18:55:31',
+            ),
+            155 => 
+            array (
+                'id' => 657,
+                'name' => 'Proofreading',
+                'course_sub_category_id' => 91,
+                'slug' => 'proofreading',
+                'created_at' => '2021-06-20 18:56:19',
+                'updated_at' => '2021-06-20 18:56:19',
+            ),
+            156 => 
+            array (
+                'id' => 658,
+                'name' => 'Teaching Online',
+                'course_sub_category_id' => 91,
+                'slug' => 'teaching-online-1',
+                'created_at' => '2021-06-20 18:56:44',
+                'updated_at' => '2021-06-20 18:56:44',
+            ),
+            157 => 
+            array (
+                'id' => 659,
+                'name' => 'Research Methods',
+                'course_sub_category_id' => 91,
+                'slug' => 'research-methods-1',
+                'created_at' => '2021-06-20 18:56:58',
+                'updated_at' => '2021-06-20 18:56:58',
+            ),
+            158 => 
+            array (
+                'id' => 660,
+                'name' => 'Technical Analysis',
+                'course_sub_category_id' => 91,
+                'slug' => 'technical-analysis-2',
+                'created_at' => '2021-06-20 18:57:12',
+                'updated_at' => '2021-06-20 18:57:12',
+            ),
+            159 => 
+            array (
+                'id' => 661,
+                'name' => 'Academic Writing',
+                'course_sub_category_id' => 91,
+                'slug' => 'academic-writing',
+                'created_at' => '2021-06-20 18:57:28',
+                'updated_at' => '2021-06-20 18:57:28',
+            ),
+            160 => 
+            array (
+                'id' => 662,
+                'name' => 'NVivo',
+                'course_sub_category_id' => 91,
+                'slug' => 'nvivo',
+                'created_at' => '2021-06-20 18:57:40',
+                'updated_at' => '2021-06-20 18:57:40',
+            ),
+            161 => 
+            array (
+                'id' => 663,
+                'name' => 'Early Childhood Education',
+                'course_sub_category_id' => 91,
+                'slug' => 'early-childhood-education-2',
+                'created_at' => '2021-06-20 18:58:07',
+                'updated_at' => '2021-06-20 18:58:07',
+            ),
+            162 => 
+            array (
+                'id' => 664,
+                'name' => 'Punctuation',
+                'course_sub_category_id' => 91,
+                'slug' => 'punctuation',
+                'created_at' => '2021-06-20 18:59:53',
+                'updated_at' => '2021-06-20 18:59:53',
+            ),
+            163 => 
+            array (
+                'id' => 665,
+            'name' => 'Design of Experiments (DOE)',
+                'course_sub_category_id' => 91,
+                'slug' => 'design-of-experiments-doe',
+                'created_at' => '2021-06-20 19:00:10',
+                'updated_at' => '2021-06-20 19:00:10',
+            ),
+            164 => 
+            array (
+                'id' => 666,
+                'name' => 'Photography',
+                'course_sub_category_id' => 92,
+                'slug' => 'photography',
+                'created_at' => '2021-06-20 19:06:43',
+                'updated_at' => '2021-06-20 19:06:43',
+            ),
+            165 => 
+            array (
+                'id' => 667,
+                'name' => 'iPhone Photography',
+                'course_sub_category_id' => 92,
+                'slug' => 'iphone-photography',
+                'created_at' => '2021-06-20 19:07:07',
+                'updated_at' => '2021-06-20 19:07:07',
+            ),
+            166 => 
+            array (
+                'id' => 668,
+                'name' => 'DSLR',
+                'course_sub_category_id' => 92,
+                'slug' => 'dslr',
+                'created_at' => '2021-06-20 19:07:22',
+                'updated_at' => '2021-06-20 19:07:22',
+            ),
+            167 => 
+            array (
+                'id' => 669,
+                'name' => 'Adobe Lightroom',
+                'course_sub_category_id' => 92,
+                'slug' => 'adobe-lightroom',
+                'created_at' => '2021-06-20 19:07:36',
+                'updated_at' => '2021-06-20 19:07:36',
+            ),
+            168 => 
+            array (
+                'id' => 670,
+                'name' => 'Mobile Photography',
+                'course_sub_category_id' => 92,
+                'slug' => 'mobile-photography',
+                'created_at' => '2021-06-20 19:07:51',
+                'updated_at' => '2021-06-20 19:07:51',
+            ),
+            169 => 
+            array (
+                'id' => 671,
+                'name' => 'Digital Photography',
+                'course_sub_category_id' => 92,
+                'slug' => 'digital-photography',
+                'created_at' => '2021-06-20 19:08:14',
+                'updated_at' => '2021-06-20 19:08:14',
+            ),
         ));
         
         
