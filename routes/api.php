@@ -92,6 +92,7 @@ Route::post('/register_for_free_updates/add',[RegisterForFreeUpdatesController::
 
 //Course
 Route::get('/courses',[CourseController::class,'get']);
+Route::get('/courses',[CourseController::class,'add']);
 Route::get('/courses/categories',[CourseController::class,'categories']);
 Route::get('/courses/{course}',[CourseController::class,'show']);
 Route::get('/courses/{course}/curriculum',[CourseController::class,'curriculum']);
