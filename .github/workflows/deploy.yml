@@ -21,6 +21,7 @@ jobs:
             php artisan app:refresh
             php artisan app:restore latest
             php artisan optimize
+            supervisorctl restart eduhub-queue-worker
             npm i
             npm run prod-css
             npm run prod-js
