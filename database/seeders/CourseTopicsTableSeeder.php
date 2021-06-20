@@ -6051,6 +6051,1338 @@ class CourseTopicsTableSeeder extends Seeder
                 'created_at' => '2021-06-20 19:08:14',
                 'updated_at' => '2021-06-20 19:08:14',
             ),
+            170 => 
+            array (
+                'id' => 672,
+                'name' => 'Photoshop',
+                'course_sub_category_id' => 92,
+                'slug' => 'photoshop-3',
+                'created_at' => '2021-06-20 20:01:22',
+                'updated_at' => '2021-06-20 20:01:22',
+            ),
+            171 => 
+            array (
+                'id' => 673,
+                'name' => 'GIMP',
+                'course_sub_category_id' => 92,
+                'slug' => 'gimp',
+                'created_at' => '2021-06-20 20:01:45',
+                'updated_at' => '2021-06-20 20:01:45',
+            ),
+            172 => 
+            array (
+                'id' => 674,
+                'name' => 'Affinity Photo',
+                'course_sub_category_id' => 92,
+                'slug' => 'affinity-photo',
+                'created_at' => '2021-06-20 20:03:49',
+                'updated_at' => '2021-06-20 20:03:49',
+            ),
+            173 => 
+            array (
+                'id' => 675,
+                'name' => 'Affinity Photo',
+                'course_sub_category_id' => 96,
+                'slug' => 'affinity-photo-1',
+                'created_at' => '2021-06-20 20:04:25',
+                'updated_at' => '2021-06-20 20:04:25',
+            ),
+            174 => 
+            array (
+                'id' => 676,
+                'name' => 'Digital Photography',
+                'course_sub_category_id' => 96,
+                'slug' => 'digital-photography-1',
+                'created_at' => '2021-06-20 20:04:42',
+                'updated_at' => '2021-06-20 20:04:42',
+            ),
+            175 => 
+            array (
+                'id' => 677,
+                'name' => 'Photography Composition',
+                'course_sub_category_id' => 96,
+                'slug' => 'photography-composition',
+                'created_at' => '2021-06-20 20:04:58',
+                'updated_at' => '2021-06-20 20:04:58',
+            ),
+            176 => 
+            array (
+                'id' => 678,
+                'name' => 'Food Photography',
+                'course_sub_category_id' => 96,
+                'slug' => 'food-photography',
+                'created_at' => '2021-06-20 20:05:13',
+                'updated_at' => '2021-06-20 20:05:13',
+            ),
+            177 => 
+            array (
+                'id' => 679,
+                'name' => 'DSLR',
+                'course_sub_category_id' => 96,
+                'slug' => 'dslr-1',
+                'created_at' => '2021-06-20 20:05:29',
+                'updated_at' => '2021-06-20 20:05:29',
+            ),
+            178 => 
+            array (
+                'id' => 680,
+                'name' => 'Mobile Photography',
+                'course_sub_category_id' => 96,
+                'slug' => 'mobile-photography-1',
+                'created_at' => '2021-06-20 20:05:45',
+                'updated_at' => '2021-06-20 20:05:45',
+            ),
+            179 => 
+            array (
+                'id' => 681,
+                'name' => 'Landscape Photography',
+                'course_sub_category_id' => 96,
+                'slug' => 'landscape-photography',
+                'created_at' => '2021-06-20 20:07:48',
+                'updated_at' => '2021-06-20 20:07:48',
+            ),
+            180 => 
+            array (
+                'id' => 682,
+                'name' => 'Photography Lighting',
+                'course_sub_category_id' => 96,
+                'slug' => 'photography-lighting',
+                'created_at' => '2021-06-20 20:08:03',
+                'updated_at' => '2021-06-20 20:08:03',
+            ),
+            181 => 
+            array (
+                'id' => 683,
+                'name' => 'Posing',
+                'course_sub_category_id' => 93,
+                'slug' => 'posing',
+                'created_at' => '2021-06-20 20:08:41',
+                'updated_at' => '2021-06-20 20:08:41',
+            ),
+            182 => 
+            array (
+                'id' => 684,
+                'name' => 'Photography Business',
+                'course_sub_category_id' => 93,
+                'slug' => 'photography-business',
+                'created_at' => '2021-06-20 20:09:08',
+                'updated_at' => '2021-06-20 20:09:08',
+            ),
+            183 => 
+            array (
+                'id' => 685,
+                'name' => 'Photography',
+                'course_sub_category_id' => 93,
+                'slug' => 'photography-1',
+                'created_at' => '2021-06-20 20:09:25',
+                'updated_at' => '2021-06-20 20:09:25',
+            ),
+            184 => 
+            array (
+                'id' => 686,
+                'name' => 'Photoshop Retouching',
+                'course_sub_category_id' => 93,
+                'slug' => 'photoshop-retouching',
+                'created_at' => '2021-06-20 20:09:40',
+                'updated_at' => '2021-06-20 20:09:40',
+            ),
+            185 => 
+            array (
+                'id' => 687,
+                'name' => 'Photography Lighting',
+                'course_sub_category_id' => 93,
+                'slug' => 'photography-lighting-1',
+                'created_at' => '2021-06-20 20:09:56',
+                'updated_at' => '2021-06-20 20:09:56',
+            ),
+            186 => 
+            array (
+                'id' => 688,
+                'name' => 'Family Portrait Photography',
+                'course_sub_category_id' => 93,
+                'slug' => 'family-portrait-photography',
+                'created_at' => '2021-06-20 20:10:13',
+                'updated_at' => '2021-06-20 20:10:13',
+            ),
+            187 => 
+            array (
+                'id' => 689,
+                'name' => 'Photoshop',
+                'course_sub_category_id' => 93,
+                'slug' => 'photoshop-4',
+                'created_at' => '2021-06-20 20:10:31',
+                'updated_at' => '2021-06-20 20:10:31',
+            ),
+            188 => 
+            array (
+                'id' => 690,
+                'name' => 'Flash Photography',
+                'course_sub_category_id' => 93,
+                'slug' => 'flash-photography',
+                'created_at' => '2021-06-20 20:10:45',
+                'updated_at' => '2021-06-20 20:10:45',
+            ),
+            189 => 
+            array (
+                'id' => 691,
+                'name' => 'Adobe Lightroom',
+                'course_sub_category_id' => 94,
+                'slug' => 'adobe-lightroom-1',
+                'created_at' => '2021-06-20 20:11:37',
+                'updated_at' => '2021-06-20 20:11:37',
+            ),
+            190 => 
+            array (
+                'id' => 692,
+                'name' => 'Photoshop',
+                'course_sub_category_id' => 94,
+                'slug' => 'photoshop-5',
+                'created_at' => '2021-06-20 20:11:53',
+                'updated_at' => '2021-06-20 20:11:53',
+            ),
+            191 => 
+            array (
+                'id' => 693,
+                'name' => 'Affinity Photo',
+                'course_sub_category_id' => 94,
+                'slug' => 'affinity-photo-2',
+                'created_at' => '2021-06-20 20:12:11',
+                'updated_at' => '2021-06-20 20:12:11',
+            ),
+            192 => 
+            array (
+                'id' => 694,
+                'name' => 'Image Editing',
+                'course_sub_category_id' => 94,
+                'slug' => 'image-editing',
+                'created_at' => '2021-06-20 20:12:27',
+                'updated_at' => '2021-06-20 20:12:27',
+            ),
+            193 => 
+            array (
+                'id' => 695,
+                'name' => 'Photoshop Retouching',
+                'course_sub_category_id' => 94,
+                'slug' => 'photoshop-retouching-1',
+                'created_at' => '2021-06-20 20:12:45',
+                'updated_at' => '2021-06-20 20:12:45',
+            ),
+            194 => 
+            array (
+                'id' => 696,
+                'name' => 'Drone Photography',
+                'course_sub_category_id' => 94,
+                'slug' => 'drone-photography',
+                'created_at' => '2021-06-20 20:13:03',
+                'updated_at' => '2021-06-20 20:13:03',
+            ),
+            195 => 
+            array (
+                'id' => 697,
+                'name' => 'Cameras',
+                'course_sub_category_id' => 94,
+                'slug' => 'cameras',
+                'created_at' => '2021-06-20 20:13:18',
+                'updated_at' => '2021-06-20 20:13:18',
+            ),
+            196 => 
+            array (
+                'id' => 698,
+                'name' => 'Photography',
+                'course_sub_category_id' => 94,
+                'slug' => 'photography-2',
+                'created_at' => '2021-06-20 20:13:36',
+                'updated_at' => '2021-06-20 20:13:36',
+            ),
+            197 => 
+            array (
+                'id' => 699,
+                'name' => 'DSLR',
+                'course_sub_category_id' => 94,
+                'slug' => 'dslr-2',
+                'created_at' => '2021-06-20 20:13:53',
+                'updated_at' => '2021-06-20 20:13:53',
+            ),
+            198 => 
+            array (
+                'id' => 700,
+                'name' => 'Real Estate Photography',
+                'course_sub_category_id' => 95,
+                'slug' => 'real-estate-photography',
+                'created_at' => '2021-06-20 20:14:18',
+                'updated_at' => '2021-06-20 20:14:18',
+            ),
+            199 => 
+            array (
+                'id' => 701,
+                'name' => 'Product Photography',
+                'course_sub_category_id' => 95,
+                'slug' => 'product-photography',
+                'created_at' => '2021-06-20 20:14:34',
+                'updated_at' => '2021-06-20 20:14:34',
+            ),
+            200 => 
+            array (
+                'id' => 702,
+                'name' => 'Architecture Photography',
+                'course_sub_category_id' => 95,
+                'slug' => 'architecture-photography',
+                'created_at' => '2021-06-20 20:14:52',
+                'updated_at' => '2021-06-20 20:14:52',
+            ),
+            201 => 
+            array (
+                'id' => 703,
+                'name' => 'Food Photography',
+                'course_sub_category_id' => 95,
+                'slug' => 'food-photography-1',
+                'created_at' => '2021-06-20 20:15:08',
+                'updated_at' => '2021-06-20 20:15:08',
+            ),
+            202 => 
+            array (
+                'id' => 704,
+                'name' => 'Photography Business',
+                'course_sub_category_id' => 95,
+                'slug' => 'photography-business-1',
+                'created_at' => '2021-06-20 20:15:28',
+                'updated_at' => '2021-06-20 20:15:28',
+            ),
+            203 => 
+            array (
+                'id' => 705,
+                'name' => 'Wedding Photography',
+                'course_sub_category_id' => 95,
+                'slug' => 'wedding-photography',
+                'created_at' => '2021-06-20 20:15:44',
+                'updated_at' => '2021-06-20 20:15:44',
+            ),
+            204 => 
+            array (
+                'id' => 706,
+                'name' => 'Photography',
+                'course_sub_category_id' => 95,
+                'slug' => 'photography-3',
+                'created_at' => '2021-06-20 20:16:01',
+                'updated_at' => '2021-06-20 20:16:01',
+            ),
+            205 => 
+            array (
+                'id' => 707,
+                'name' => 'Marketing Strategy',
+                'course_sub_category_id' => 95,
+                'slug' => 'marketing-strategy-4',
+                'created_at' => '2021-06-20 20:16:25',
+                'updated_at' => '2021-06-20 20:16:25',
+            ),
+            206 => 
+            array (
+                'id' => 708,
+                'name' => 'Photoshop',
+                'course_sub_category_id' => 95,
+                'slug' => 'photoshop-6',
+                'created_at' => '2021-06-20 20:16:40',
+                'updated_at' => '2021-06-20 20:16:40',
+            ),
+            207 => 
+            array (
+                'id' => 709,
+                'name' => 'Video Editing',
+                'course_sub_category_id' => 98,
+                'slug' => 'video-editing',
+                'created_at' => '2021-06-20 20:16:59',
+                'updated_at' => '2021-06-20 20:16:59',
+            ),
+            208 => 
+            array (
+                'id' => 710,
+                'name' => 'Adobe Premiere',
+                'course_sub_category_id' => 98,
+                'slug' => 'adobe-premiere-1',
+                'created_at' => '2021-06-20 20:17:18',
+                'updated_at' => '2021-06-20 20:17:18',
+            ),
+            209 => 
+            array (
+                'id' => 711,
+                'name' => 'Video Production',
+                'course_sub_category_id' => 98,
+                'slug' => 'video-production',
+                'created_at' => '2021-06-20 20:17:34',
+                'updated_at' => '2021-06-20 20:17:34',
+            ),
+            210 => 
+            array (
+                'id' => 712,
+                'name' => 'DaVinci Resolve',
+                'course_sub_category_id' => 98,
+                'slug' => 'davinci-resolve',
+                'created_at' => '2021-06-20 20:17:47',
+                'updated_at' => '2021-06-20 20:17:47',
+            ),
+            211 => 
+            array (
+                'id' => 713,
+                'name' => 'Filmmaking',
+                'course_sub_category_id' => 98,
+                'slug' => 'filmmaking',
+                'created_at' => '2021-06-20 20:18:02',
+                'updated_at' => '2021-06-20 20:18:02',
+            ),
+            212 => 
+            array (
+                'id' => 714,
+                'name' => 'Color Grading',
+                'course_sub_category_id' => 98,
+                'slug' => 'color-grading',
+                'created_at' => '2021-06-20 20:18:17',
+                'updated_at' => '2021-06-20 20:18:17',
+            ),
+            213 => 
+            array (
+                'id' => 715,
+                'name' => 'Cinematography',
+                'course_sub_category_id' => 98,
+                'slug' => 'cinematography',
+                'created_at' => '2021-06-20 20:18:31',
+                'updated_at' => '2021-06-20 20:18:31',
+            ),
+            214 => 
+            array (
+                'id' => 716,
+                'name' => 'Final Cut Pro',
+                'course_sub_category_id' => 98,
+                'slug' => 'final-cut-pro',
+                'created_at' => '2021-06-20 20:18:46',
+                'updated_at' => '2021-06-20 20:18:46',
+            ),
+            215 => 
+            array (
+                'id' => 717,
+                'name' => 'Videography',
+                'course_sub_category_id' => 98,
+                'slug' => 'videography',
+                'created_at' => '2021-06-20 20:19:04',
+                'updated_at' => '2021-06-20 20:19:04',
+            ),
+            216 => 
+            array (
+                'id' => 718,
+                'name' => 'Photography',
+                'course_sub_category_id' => 97,
+                'slug' => 'photography-4',
+                'created_at' => '2021-06-20 20:19:36',
+                'updated_at' => '2021-06-20 20:19:36',
+            ),
+            217 => 
+            array (
+                'id' => 719,
+                'name' => 'Drone Photography',
+                'course_sub_category_id' => 97,
+                'slug' => 'drone-photography-1',
+                'created_at' => '2021-06-20 20:20:30',
+                'updated_at' => '2021-06-20 20:20:30',
+            ),
+            218 => 
+            array (
+                'id' => 720,
+                'name' => 'Landscape Photography',
+                'course_sub_category_id' => 97,
+                'slug' => 'landscape-photography-1',
+                'created_at' => '2021-06-20 20:23:50',
+                'updated_at' => '2021-06-20 20:23:50',
+            ),
+            219 => 
+            array (
+                'id' => 721,
+                'name' => 'Video Editing',
+                'course_sub_category_id' => 97,
+                'slug' => 'video-editing-1',
+                'created_at' => '2021-06-20 20:24:13',
+                'updated_at' => '2021-06-20 20:24:13',
+            ),
+            220 => 
+            array (
+                'id' => 722,
+                'name' => 'Drone',
+                'course_sub_category_id' => 97,
+                'slug' => 'drone',
+                'created_at' => '2021-06-20 20:24:37',
+                'updated_at' => '2021-06-20 20:24:37',
+            ),
+            221 => 
+            array (
+                'id' => 723,
+                'name' => 'Nature Photography',
+                'course_sub_category_id' => 97,
+                'slug' => 'nature-photography',
+                'created_at' => '2021-06-20 20:25:18',
+                'updated_at' => '2021-06-20 20:25:18',
+            ),
+            222 => 
+            array (
+                'id' => 724,
+                'name' => '3D Modeling',
+                'course_sub_category_id' => 97,
+                'slug' => '3d-modeling-1',
+                'created_at' => '2021-06-20 20:25:40',
+                'updated_at' => '2021-06-20 20:25:40',
+            ),
+            223 => 
+            array (
+                'id' => 725,
+                'name' => 'Color Grading',
+                'course_sub_category_id' => 97,
+                'slug' => 'color-grading-1',
+                'created_at' => '2021-06-20 20:26:03',
+                'updated_at' => '2021-06-20 20:26:03',
+            ),
+            224 => 
+            array (
+                'id' => 726,
+                'name' => 'Filmmaking',
+                'course_sub_category_id' => 97,
+                'slug' => 'filmmaking-1',
+                'created_at' => '2021-06-20 20:26:28',
+                'updated_at' => '2021-06-20 20:26:28',
+            ),
+            225 => 
+            array (
+                'id' => 727,
+                'name' => 'Pilates',
+                'course_sub_category_id' => 99,
+                'slug' => 'pilates',
+                'created_at' => '2021-06-20 20:27:42',
+                'updated_at' => '2021-06-20 20:27:42',
+            ),
+            226 => 
+            array (
+                'id' => 728,
+                'name' => 'Home Workout',
+                'course_sub_category_id' => 99,
+                'slug' => 'home-workout',
+                'created_at' => '2021-06-20 20:28:06',
+                'updated_at' => '2021-06-20 20:28:06',
+            ),
+            227 => 
+            array (
+                'id' => 729,
+                'name' => 'Teacher Training',
+                'course_sub_category_id' => 99,
+                'slug' => 'teacher-training',
+                'created_at' => '2021-06-20 20:28:43',
+                'updated_at' => '2021-06-20 20:28:43',
+            ),
+            228 => 
+            array (
+                'id' => 730,
+                'name' => 'Muscle Building',
+                'course_sub_category_id' => 99,
+                'slug' => 'muscle-building',
+                'created_at' => '2021-06-20 20:29:05',
+                'updated_at' => '2021-06-20 20:29:05',
+            ),
+            229 => 
+            array (
+                'id' => 731,
+                'name' => 'Beauty',
+                'course_sub_category_id' => 99,
+                'slug' => 'beauty',
+                'created_at' => '2021-06-20 20:29:28',
+                'updated_at' => '2021-06-20 20:29:28',
+            ),
+            230 => 
+            array (
+                'id' => 732,
+                'name' => 'Testosterone',
+                'course_sub_category_id' => 99,
+                'slug' => 'testosterone',
+                'created_at' => '2021-06-20 20:29:57',
+                'updated_at' => '2021-06-20 20:29:57',
+            ),
+            231 => 
+            array (
+                'id' => 733,
+                'name' => 'Stretching Exercise',
+                'course_sub_category_id' => 99,
+                'slug' => 'stretching-exercise',
+                'created_at' => '2021-06-20 20:30:59',
+                'updated_at' => '2021-06-20 20:30:59',
+            ),
+            232 => 
+            array (
+                'id' => 734,
+                'name' => 'Posture',
+                'course_sub_category_id' => 99,
+                'slug' => 'posture',
+                'created_at' => '2021-06-20 20:31:24',
+                'updated_at' => '2021-06-20 20:31:24',
+            ),
+            233 => 
+            array (
+                'id' => 735,
+                'name' => 'Herbalism',
+                'course_sub_category_id' => 100,
+                'slug' => 'herbalism',
+                'created_at' => '2021-06-20 20:31:51',
+                'updated_at' => '2021-06-20 20:31:51',
+            ),
+            234 => 
+            array (
+                'id' => 736,
+                'name' => 'Massage',
+                'course_sub_category_id' => 100,
+                'slug' => 'massage',
+                'created_at' => '2021-06-20 20:32:17',
+                'updated_at' => '2021-06-20 20:32:17',
+            ),
+            235 => 
+            array (
+                'id' => 737,
+                'name' => 'Holistic Medicine',
+                'course_sub_category_id' => 100,
+                'slug' => 'holistic-medicine',
+                'created_at' => '2021-06-20 20:32:40',
+                'updated_at' => '2021-06-20 20:32:40',
+            ),
+            236 => 
+            array (
+                'id' => 738,
+                'name' => 'Aromatherapy',
+                'course_sub_category_id' => 100,
+                'slug' => 'aromatherapy',
+                'created_at' => '2021-06-20 20:33:11',
+                'updated_at' => '2021-06-20 20:33:11',
+            ),
+            237 => 
+            array (
+                'id' => 739,
+                'name' => 'Natural Medicine',
+                'course_sub_category_id' => 100,
+                'slug' => 'natural-medicine',
+                'created_at' => '2021-06-20 20:34:01',
+                'updated_at' => '2021-06-20 20:34:01',
+            ),
+            238 => 
+            array (
+                'id' => 740,
+                'name' => 'Acupressure',
+                'course_sub_category_id' => 100,
+                'slug' => 'acupressure',
+                'created_at' => '2021-06-20 20:34:25',
+                'updated_at' => '2021-06-20 20:34:25',
+            ),
+            239 => 
+            array (
+                'id' => 741,
+                'name' => 'Health',
+                'course_sub_category_id' => 100,
+                'slug' => 'health',
+                'created_at' => '2021-06-20 20:34:51',
+                'updated_at' => '2021-06-20 20:34:51',
+            ),
+            240 => 
+            array (
+                'id' => 742,
+                'name' => 'Reflexology',
+                'course_sub_category_id' => 100,
+                'slug' => 'reflexology',
+                'created_at' => '2021-06-20 20:35:16',
+                'updated_at' => '2021-06-20 20:35:16',
+            ),
+            241 => 
+            array (
+                'id' => 743,
+                'name' => 'Cupping Therapy',
+                'course_sub_category_id' => 100,
+                'slug' => 'cupping-therapy',
+                'created_at' => '2021-06-20 20:35:47',
+                'updated_at' => '2021-06-20 20:35:47',
+            ),
+            242 => 
+            array (
+                'id' => 744,
+                'name' => 'Soccer',
+                'course_sub_category_id' => 101,
+                'slug' => 'soccer',
+                'created_at' => '2021-06-20 20:36:14',
+                'updated_at' => '2021-06-20 20:36:14',
+            ),
+            243 => 
+            array (
+                'id' => 745,
+                'name' => 'Sport Psychology',
+                'course_sub_category_id' => 101,
+                'slug' => 'sport-psychology',
+                'created_at' => '2021-06-20 20:36:37',
+                'updated_at' => '2021-06-20 20:36:37',
+            ),
+            244 => 
+            array (
+                'id' => 746,
+                'name' => 'Tennis',
+                'course_sub_category_id' => 101,
+                'slug' => 'tennis',
+                'created_at' => '2021-06-20 20:37:00',
+                'updated_at' => '2021-06-20 20:37:00',
+            ),
+            245 => 
+            array (
+                'id' => 747,
+                'name' => 'Sports Coaching',
+                'course_sub_category_id' => 101,
+                'slug' => 'sports-coaching',
+                'created_at' => '2021-06-20 20:37:27',
+                'updated_at' => '2021-06-20 20:37:27',
+            ),
+            246 => 
+            array (
+                'id' => 748,
+                'name' => 'Martial Arts',
+                'course_sub_category_id' => 101,
+                'slug' => 'martial-arts',
+                'created_at' => '2021-06-20 20:37:51',
+                'updated_at' => '2021-06-20 20:37:51',
+            ),
+            247 => 
+            array (
+                'id' => 749,
+                'name' => 'Swimming',
+                'course_sub_category_id' => 101,
+                'slug' => 'swimming',
+                'created_at' => '2021-06-20 20:38:21',
+                'updated_at' => '2021-06-20 20:38:21',
+            ),
+            248 => 
+            array (
+                'id' => 750,
+                'name' => 'Boxing',
+                'course_sub_category_id' => 101,
+                'slug' => 'boxing',
+                'created_at' => '2021-06-20 20:38:45',
+                'updated_at' => '2021-06-20 20:38:45',
+            ),
+            249 => 
+            array (
+                'id' => 751,
+                'name' => 'Sports Massage',
+                'course_sub_category_id' => 101,
+                'slug' => 'sports-massage',
+                'created_at' => '2021-06-20 20:39:08',
+                'updated_at' => '2021-06-20 20:39:08',
+            ),
+            250 => 
+            array (
+                'id' => 752,
+                'name' => 'Golf',
+                'course_sub_category_id' => 101,
+                'slug' => 'golf',
+                'created_at' => '2021-06-20 20:39:30',
+                'updated_at' => '2021-06-20 20:39:30',
+            ),
+            251 => 
+            array (
+                'id' => 753,
+                'name' => 'Health Coaching',
+                'course_sub_category_id' => 102,
+                'slug' => 'health-coaching',
+                'created_at' => '2021-06-20 20:39:59',
+                'updated_at' => '2021-06-20 20:39:59',
+            ),
+            252 => 
+            array (
+                'id' => 754,
+                'name' => 'Dieting',
+                'course_sub_category_id' => 102,
+                'slug' => 'dieting',
+                'created_at' => '2021-06-20 20:40:22',
+                'updated_at' => '2021-06-20 20:40:22',
+            ),
+            253 => 
+            array (
+                'id' => 755,
+                'name' => 'Sports Nutrition',
+                'course_sub_category_id' => 102,
+                'slug' => 'sports-nutrition',
+                'created_at' => '2021-06-20 20:40:46',
+                'updated_at' => '2021-06-20 20:40:46',
+            ),
+            254 => 
+            array (
+                'id' => 756,
+                'name' => 'Vegan Cooking',
+                'course_sub_category_id' => 102,
+                'slug' => 'vegan-cooking',
+                'created_at' => '2021-06-20 20:41:09',
+                'updated_at' => '2021-06-20 20:41:09',
+            ),
+            255 => 
+            array (
+                'id' => 757,
+                'name' => 'Ketogenic Diet',
+                'course_sub_category_id' => 102,
+                'slug' => 'ketogenic-diet',
+                'created_at' => '2021-06-20 20:41:39',
+                'updated_at' => '2021-06-20 20:41:39',
+            ),
+            256 => 
+            array (
+                'id' => 758,
+                'name' => 'Gut Health',
+                'course_sub_category_id' => 102,
+                'slug' => 'gut-health',
+                'created_at' => '2021-06-20 20:43:00',
+                'updated_at' => '2021-06-20 20:43:00',
+            ),
+            257 => 
+            array (
+                'id' => 759,
+                'name' => 'Weight Loss',
+                'course_sub_category_id' => 102,
+                'slug' => 'weight-loss',
+                'created_at' => '2021-06-20 20:43:28',
+                'updated_at' => '2021-06-20 20:43:28',
+            ),
+            258 => 
+            array (
+                'id' => 760,
+                'name' => 'Meal Planning',
+                'course_sub_category_id' => 102,
+                'slug' => 'meal-planning',
+                'created_at' => '2021-06-20 20:43:53',
+                'updated_at' => '2021-06-20 20:43:53',
+            ),
+            259 => 
+            array (
+                'id' => 761,
+                'name' => 'Yoga for Kids',
+                'course_sub_category_id' => 103,
+                'slug' => 'yoga-for-kids',
+                'created_at' => '2021-06-20 20:44:21',
+                'updated_at' => '2021-06-20 20:44:21',
+            ),
+            260 => 
+            array (
+                'id' => 762,
+                'name' => 'Pranayama',
+                'course_sub_category_id' => 103,
+                'slug' => 'pranayama',
+                'created_at' => '2021-06-20 20:44:43',
+                'updated_at' => '2021-06-20 20:44:43',
+            ),
+            261 => 
+            array (
+                'id' => 763,
+                'name' => 'Face Yoga',
+                'course_sub_category_id' => 103,
+                'slug' => 'face-yoga',
+                'created_at' => '2021-06-20 20:45:05',
+                'updated_at' => '2021-06-20 20:45:05',
+            ),
+            262 => 
+            array (
+                'id' => 764,
+                'name' => 'Chair Yoga',
+                'course_sub_category_id' => 103,
+                'slug' => 'chair-yoga',
+                'created_at' => '2021-06-20 20:45:27',
+                'updated_at' => '2021-06-20 20:45:27',
+            ),
+            263 => 
+            array (
+                'id' => 765,
+                'name' => 'Teacher Training',
+                'course_sub_category_id' => 103,
+                'slug' => 'teacher-training-1',
+                'created_at' => '2021-06-20 20:45:56',
+                'updated_at' => '2021-06-20 20:45:56',
+            ),
+            264 => 
+            array (
+                'id' => 766,
+                'name' => 'Kundalini',
+                'course_sub_category_id' => 103,
+                'slug' => 'kundalini',
+                'created_at' => '2021-06-20 20:46:19',
+                'updated_at' => '2021-06-20 20:46:19',
+            ),
+            265 => 
+            array (
+                'id' => 767,
+                'name' => 'Meditation',
+                'course_sub_category_id' => 103,
+                'slug' => 'meditation-1',
+                'created_at' => '2021-06-20 20:46:41',
+                'updated_at' => '2021-06-20 20:46:41',
+            ),
+            266 => 
+            array (
+                'id' => 768,
+                'name' => 'Anatomy',
+                'course_sub_category_id' => 103,
+                'slug' => 'anatomy-1',
+                'created_at' => '2021-06-20 20:47:04',
+                'updated_at' => '2021-06-20 20:47:04',
+            ),
+            267 => 
+            array (
+                'id' => 769,
+                'name' => 'Weight Loss',
+                'course_sub_category_id' => 104,
+                'slug' => 'weight-loss-1',
+                'created_at' => '2021-06-20 20:47:30',
+                'updated_at' => '2021-06-20 20:47:30',
+            ),
+            268 => 
+            array (
+                'id' => 770,
+                'name' => 'Nutrition',
+                'course_sub_category_id' => 104,
+                'slug' => 'nutrition',
+                'created_at' => '2021-06-20 20:48:04',
+                'updated_at' => '2021-06-20 20:48:04',
+            ),
+            269 => 
+            array (
+                'id' => 771,
+                'name' => 'Ketogenic Diet',
+                'course_sub_category_id' => 104,
+                'slug' => 'ketogenic-diet-1',
+                'created_at' => '2021-06-20 20:48:27',
+                'updated_at' => '2021-06-20 20:48:27',
+            ),
+            270 => 
+            array (
+                'id' => 772,
+                'name' => 'Ketosis',
+                'course_sub_category_id' => 104,
+                'slug' => 'ketosis',
+                'created_at' => '2021-06-20 20:48:50',
+                'updated_at' => '2021-06-20 20:48:50',
+            ),
+            271 => 
+            array (
+                'id' => 773,
+                'name' => 'Fitness',
+                'course_sub_category_id' => 104,
+                'slug' => 'fitness',
+                'created_at' => '2021-06-20 20:49:11',
+                'updated_at' => '2021-06-20 20:49:11',
+            ),
+            272 => 
+            array (
+                'id' => 774,
+                'name' => 'Muscle Building',
+                'course_sub_category_id' => 104,
+                'slug' => 'muscle-building-1',
+                'created_at' => '2021-06-20 20:49:32',
+                'updated_at' => '2021-06-20 20:49:32',
+            ),
+            273 => 
+            array (
+                'id' => 775,
+                'name' => 'Fat Loss',
+                'course_sub_category_id' => 104,
+                'slug' => 'fat-loss',
+                'created_at' => '2021-06-20 20:49:54',
+                'updated_at' => '2021-06-20 20:49:54',
+            ),
+            274 => 
+            array (
+                'id' => 776,
+                'name' => 'Massage',
+                'course_sub_category_id' => 104,
+                'slug' => 'massage-1',
+                'created_at' => '2021-06-20 20:50:18',
+                'updated_at' => '2021-06-20 20:50:18',
+            ),
+            275 => 
+            array (
+                'id' => 777,
+                'name' => 'Krav Maga',
+                'course_sub_category_id' => 105,
+                'slug' => 'krav-maga',
+                'created_at' => '2021-06-20 20:50:41',
+                'updated_at' => '2021-06-20 20:50:41',
+            ),
+            276 => 
+            array (
+                'id' => 778,
+                'name' => 'Self-Defense',
+                'course_sub_category_id' => 105,
+                'slug' => 'self-defense',
+                'created_at' => '2021-06-20 20:51:07',
+                'updated_at' => '2021-06-20 20:51:07',
+            ),
+            277 => 
+            array (
+                'id' => 779,
+                'name' => 'Close Combat',
+                'course_sub_category_id' => 105,
+                'slug' => 'close-combat',
+                'created_at' => '2021-06-20 20:51:29',
+                'updated_at' => '2021-06-20 20:51:29',
+            ),
+            278 => 
+            array (
+                'id' => 780,
+                'name' => 'Martial Arts',
+                'course_sub_category_id' => 105,
+                'slug' => 'martial-arts-1',
+                'created_at' => '2021-06-20 20:51:51',
+                'updated_at' => '2021-06-20 20:51:51',
+            ),
+            279 => 
+            array (
+                'id' => 781,
+                'name' => 'Boxing',
+                'course_sub_category_id' => 105,
+                'slug' => 'boxing-1',
+                'created_at' => '2021-06-20 20:52:14',
+                'updated_at' => '2021-06-20 20:52:14',
+            ),
+            280 => 
+            array (
+                'id' => 782,
+                'name' => 'Tai Chi',
+                'course_sub_category_id' => 105,
+                'slug' => 'tai-chi',
+                'created_at' => '2021-06-20 20:52:41',
+                'updated_at' => '2021-06-20 20:52:41',
+            ),
+            281 => 
+            array (
+                'id' => 783,
+                'name' => 'Kung Fu',
+                'course_sub_category_id' => 105,
+                'slug' => 'kung-fu',
+                'created_at' => '2021-06-20 20:53:08',
+                'updated_at' => '2021-06-20 20:53:08',
+            ),
+            282 => 
+            array (
+                'id' => 784,
+                'name' => 'Wing Chun',
+                'course_sub_category_id' => 105,
+                'slug' => 'wing-chun',
+                'created_at' => '2021-06-20 20:53:32',
+                'updated_at' => '2021-06-20 20:53:32',
+            ),
+            283 => 
+            array (
+                'id' => 785,
+                'name' => 'Muay Thai',
+                'course_sub_category_id' => 105,
+                'slug' => 'muay-thai',
+                'created_at' => '2021-06-20 20:53:58',
+                'updated_at' => '2021-06-20 20:53:58',
+            ),
+            284 => 
+            array (
+                'id' => 786,
+                'name' => 'First Aid',
+                'course_sub_category_id' => 106,
+                'slug' => 'first-aid',
+                'created_at' => '2021-06-20 20:54:29',
+                'updated_at' => '2021-06-20 20:54:29',
+            ),
+            285 => 
+            array (
+                'id' => 787,
+                'name' => 'Workplace Health and Safety',
+                'course_sub_category_id' => 106,
+                'slug' => 'workplace-health-and-safety',
+                'created_at' => '2021-06-20 20:54:51',
+                'updated_at' => '2021-06-20 20:54:51',
+            ),
+            286 => 
+            array (
+                'id' => 788,
+                'name' => 'Herbalism',
+                'course_sub_category_id' => 106,
+                'slug' => 'herbalism-1',
+                'created_at' => '2021-06-20 20:55:14',
+                'updated_at' => '2021-06-20 20:55:14',
+            ),
+            287 => 
+            array (
+                'id' => 789,
+                'name' => 'Health',
+                'course_sub_category_id' => 106,
+                'slug' => 'health-1',
+                'created_at' => '2021-06-20 20:55:39',
+                'updated_at' => '2021-06-20 20:55:39',
+            ),
+            288 => 
+            array (
+                'id' => 790,
+                'name' => 'Nursing',
+                'course_sub_category_id' => 106,
+                'slug' => 'nursing',
+                'created_at' => '2021-06-20 20:56:05',
+                'updated_at' => '2021-06-20 20:56:05',
+            ),
+            289 => 
+            array (
+                'id' => 791,
+                'name' => 'Health Coaching',
+                'course_sub_category_id' => 106,
+                'slug' => 'health-coaching-1',
+                'created_at' => '2021-06-20 20:56:28',
+                'updated_at' => '2021-06-20 20:56:28',
+            ),
+            290 => 
+            array (
+                'id' => 792,
+                'name' => 'Survival Skills',
+                'course_sub_category_id' => 106,
+                'slug' => 'survival-skills',
+                'created_at' => '2021-06-20 20:56:51',
+                'updated_at' => '2021-06-20 20:56:51',
+            ),
+            291 => 
+            array (
+                'id' => 793,
+                'name' => 'OSHA',
+                'course_sub_category_id' => 106,
+                'slug' => 'osha',
+                'created_at' => '2021-06-20 20:57:17',
+                'updated_at' => '2021-06-20 20:57:17',
+            ),
+            292 => 
+            array (
+                'id' => 794,
+                'name' => 'Grief Healing',
+                'course_sub_category_id' => 106,
+                'slug' => 'grief-healing',
+                'created_at' => '2021-06-20 20:57:39',
+                'updated_at' => '2021-06-20 20:57:39',
+            ),
+            293 => 
+            array (
+                'id' => 795,
+                'name' => 'Belly Dancing',
+                'course_sub_category_id' => 107,
+                'slug' => 'belly-dancing',
+                'created_at' => '2021-06-20 20:58:01',
+                'updated_at' => '2021-06-20 20:58:01',
+            ),
+            294 => 
+            array (
+                'id' => 796,
+                'name' => 'Salsa Dancing',
+                'course_sub_category_id' => 107,
+                'slug' => 'salsa-dancing',
+                'created_at' => '2021-06-20 20:58:24',
+                'updated_at' => '2021-06-20 20:58:24',
+            ),
+            295 => 
+            array (
+                'id' => 797,
+                'name' => 'Hip Hop Dancing',
+                'course_sub_category_id' => 107,
+                'slug' => 'hip-hop-dancing',
+                'created_at' => '2021-06-20 20:58:47',
+                'updated_at' => '2021-06-20 20:58:47',
+            ),
+            296 => 
+            array (
+                'id' => 798,
+                'name' => 'Tango Dance',
+                'course_sub_category_id' => 107,
+                'slug' => 'tango-dance',
+                'created_at' => '2021-06-20 20:59:26',
+                'updated_at' => '2021-06-20 20:59:26',
+            ),
+            297 => 
+            array (
+                'id' => 799,
+                'name' => 'Bachata',
+                'course_sub_category_id' => 107,
+                'slug' => 'bachata',
+                'created_at' => '2021-06-20 20:59:51',
+                'updated_at' => '2021-06-20 20:59:51',
+            ),
+            298 => 
+            array (
+                'id' => 800,
+                'name' => 'Poi Spinning',
+                'course_sub_category_id' => 107,
+                'slug' => 'poi-spinning',
+                'created_at' => '2021-06-20 21:00:13',
+                'updated_at' => '2021-06-20 21:00:13',
+            ),
+            299 => 
+            array (
+                'id' => 801,
+                'name' => 'Ballet',
+                'course_sub_category_id' => 107,
+                'slug' => 'ballet',
+                'created_at' => '2021-06-20 21:00:37',
+                'updated_at' => '2021-06-20 21:00:37',
+            ),
+            300 => 
+            array (
+                'id' => 802,
+                'name' => 'Indian Dance',
+                'course_sub_category_id' => 107,
+                'slug' => 'indian-dance',
+                'created_at' => '2021-06-20 21:01:05',
+                'updated_at' => '2021-06-20 21:01:05',
+            ),
+            301 => 
+            array (
+                'id' => 803,
+                'name' => 'Sound Therapy',
+                'course_sub_category_id' => 108,
+                'slug' => 'sound-therapy',
+                'created_at' => '2021-06-20 21:01:34',
+                'updated_at' => '2021-06-20 21:01:34',
+            ),
+            302 => 
+            array (
+                'id' => 804,
+                'name' => 'Mindfulness',
+                'course_sub_category_id' => 108,
+                'slug' => 'mindfulness-1',
+                'created_at' => '2021-06-20 21:01:59',
+                'updated_at' => '2021-06-20 21:01:59',
+            ),
+            303 => 
+            array (
+                'id' => 805,
+                'name' => 'Addiction Recovery',
+                'course_sub_category_id' => 108,
+                'slug' => 'addiction-recovery',
+                'created_at' => '2021-06-20 21:02:28',
+                'updated_at' => '2021-06-20 21:02:28',
+            ),
+            304 => 
+            array (
+                'id' => 806,
+                'name' => 'Tai Chi',
+                'course_sub_category_id' => 108,
+                'slug' => 'tai-chi-1',
+                'created_at' => '2021-06-20 21:02:55',
+                'updated_at' => '2021-06-20 21:02:55',
+            ),
+            305 => 
+            array (
+                'id' => 807,
+                'name' => 'Qi Gong',
+                'course_sub_category_id' => 108,
+                'slug' => 'qi-gong',
+                'created_at' => '2021-06-20 21:03:29',
+                'updated_at' => '2021-06-20 21:03:29',
+            ),
+            306 => 
+            array (
+                'id' => 808,
+                'name' => 'Stress Management',
+                'course_sub_category_id' => 108,
+                'slug' => 'stress-management',
+                'created_at' => '2021-06-20 21:03:53',
+                'updated_at' => '2021-06-20 21:03:53',
+            ),
+            307 => 
+            array (
+                'id' => 809,
+                'name' => 'Reiki',
+                'course_sub_category_id' => 108,
+                'slug' => 'reiki',
+                'created_at' => '2021-06-20 21:04:17',
+                'updated_at' => '2021-06-20 21:04:17',
+            ),
+            308 => 
+            array (
+                'id' => 810,
+                'name' => 'Energy Healing',
+                'course_sub_category_id' => 108,
+                'slug' => 'energy-healing',
+                'created_at' => '2021-06-20 21:04:42',
+                'updated_at' => '2021-06-20 21:04:42',
+            ),
+            309 => 
+            array (
+                'id' => 811,
+                'name' => 'Massage',
+                'course_sub_category_id' => 110,
+                'slug' => 'massage-2',
+                'created_at' => '2021-06-20 21:05:11',
+                'updated_at' => '2021-06-20 21:05:11',
+            ),
+            310 => 
+            array (
+                'id' => 812,
+                'name' => 'Sports Massage',
+                'course_sub_category_id' => 110,
+                'slug' => 'sports-massage-1',
+                'created_at' => '2021-06-20 21:05:36',
+                'updated_at' => '2021-06-20 21:05:36',
+            ),
+            311 => 
+            array (
+                'id' => 813,
+                'name' => 'Qi Gong',
+                'course_sub_category_id' => 110,
+                'slug' => 'qi-gong-1',
+                'created_at' => '2021-06-20 21:06:03',
+                'updated_at' => '2021-06-20 21:06:03',
+            ),
+            312 => 
+            array (
+                'id' => 814,
+                'name' => 'Holistic Medicine',
+                'course_sub_category_id' => 110,
+                'slug' => 'holistic-medicine-1',
+                'created_at' => '2021-06-20 21:06:30',
+                'updated_at' => '2021-06-20 21:06:30',
+            ),
+            313 => 
+            array (
+                'id' => 815,
+            'name' => 'EFT (Emotional FreedomTechnique)',
+                'course_sub_category_id' => 110,
+                'slug' => 'eft-emotional-freedomtechnique',
+                'created_at' => '2021-06-20 21:06:54',
+                'updated_at' => '2021-06-20 21:06:54',
+            ),
+            314 => 
+            array (
+                'id' => 816,
+                'name' => 'Skincare',
+                'course_sub_category_id' => 110,
+                'slug' => 'skincare',
+                'created_at' => '2021-06-20 21:07:22',
+                'updated_at' => '2021-06-20 21:07:22',
+            ),
+            315 => 
+            array (
+                'id' => 817,
+                'name' => 'Makeup Artistry',
+                'course_sub_category_id' => 110,
+                'slug' => 'makeup-artistry',
+                'created_at' => '2021-06-20 21:07:47',
+                'updated_at' => '2021-06-20 21:07:47',
+            ),
+            316 => 
+            array (
+                'id' => 818,
+                'name' => 'Facial Massage',
+                'course_sub_category_id' => 110,
+                'slug' => 'facial-massage',
+                'created_at' => '2021-06-20 21:08:12',
+                'updated_at' => '2021-06-20 21:08:12',
+            ),
+            317 => 
+            array (
+                'id' => 819,
+                'name' => 'Beauty',
+                'course_sub_category_id' => 110,
+                'slug' => 'beauty-1',
+                'created_at' => '2021-06-20 21:08:47',
+                'updated_at' => '2021-06-20 21:08:47',
+            ),
         ));
         
         
