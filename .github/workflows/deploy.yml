@@ -17,9 +17,17 @@ jobs:
             php artisan down
             git pull
             composer install --no-interaction --prefer-dist --optimize-autoloader
-            php artisan migrate --force
+            php artisan app:backup
+            php artisan app:refresh
+            php artisan app:restore latest
             php artisan optimize
+            php artisan config:clear
+            supervisorctl restart eduhub-queue-worker
             npm i
             npm run prod-css
             npm run prod-js
+            chown -R $USER:www-data storage
+            chown -R $USER:www-data bootstrap/cache
+            chmod -R 775 storage
+            chmod -R 775 bootstrap/cache
             php artisan up

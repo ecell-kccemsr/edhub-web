@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 
 class AppRestoreCommand extends Command
 {
@@ -44,24 +45,60 @@ class AppRestoreCommand extends Command
 
     public function restore($backup_name)
     {
-        if(!File::exists(base_path(".backup/".$backup_name)))
+        if($backup_name == "latest")
         {
-            $this->line("Backup not found");
-        }
-        else{
-            $source_path = base_path(".backup/$backup_name/files");
-            File::copyDirectory($source_path, base_path('storage/app/public'));
-            $path = base_path(".backup/$backup_name/data");
-            $data = array_diff(scandir($path), array('..', '.'));
-            foreach($data as $d)
+            $path = base_path('.backup');
+            $files = array_diff(scandir($path,1), array('..', '.'));
+            $backup_name = $files[0];
+            if(!File::exists(base_path(".backup/".$backup_name)))
             {
-                $data_path = ".backup/$backup_name/data/$d";
-                $rows = json_decode(file_get_contents($data_path), true);
-                $table_name = pathinfo($d, PATHINFO_FILENAME);
-                DB::table($table_name)->delete();
-                DB::table($table_name)->insert($rows);
+                $this->line("Backup not found");
+            }
+            else{
+                $this->restore_backup($backup_name);
             }
         }
-        
+        else{
+            if(!File::exists(base_path(".backup/".$backup_name)))
+            {
+                $this->line("Backup not found");
+            }
+            else{
+                $this->restore_backup($backup_name);
+            }
+        }
+    }
+
+    public function restore_backup($backup_name)
+    {
+        $source_path = base_path(".backup/$backup_name/files");
+        File::copyDirectory($source_path, base_path('storage/app/public'));
+        $path = base_path(".backup/$backup_name/data");
+        $data = array_diff(scandir($path), array('..', '.'));
+        foreach($data as $d)
+        {
+            $data_path = ".backup/$backup_name/data/$d";
+            $rows = json_decode(file_get_contents($data_path), true);
+            $table_name = pathinfo($d, PATHINFO_FILENAME);
+            DB::table($table_name)->delete();
+            foreach($rows as $row){
+                Schema::disableForeignKeyConstraints();
+                DB::beginTransaction();
+                try
+                {
+                    DB::table($table_name)->insert($row);
+                    DB::commit();
+                }
+                catch(\Exception $e)
+                {
+                    DB::rollback();
+                    throw $e;
+                }
+                finally 
+                {
+                    Schema::enableForeignKeyConstraints();   
+                }
+            }
+        }
     }
 }

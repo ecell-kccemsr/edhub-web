@@ -310,3 +310,67 @@
         }
     }
 }
+
+//twitter
+.twitter {
+    .twitter-header {
+        display: flex;
+        img {
+            border-radius: 35px;
+            object-fit: cover;
+            width: 43px;
+            height: 43px;
+            margin-right: 12px;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    .twitter-body {
+        margin-top: 5px;
+        .twitter-body-text {
+            margin: 10px;
+        }
+        img {
+            width: 100%;
+            border-radius: 12px;
+        }
+    }
+    .twitter-date-provider {
+        display: flex;
+        margin-top: 10px;
+        border-bottom: 1px rgb(235, 238, 240) solid;
+        .twiiter-date {
+            margin-right: 7px;
+        }
+    }
+    .twitter-footer {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px rgb(235, 238, 240) solid;
+        .twitter-footer-like {
+            display: flex;
+            align-items: center;
+            p {
+                margin-top: 8px;
+                margin-left: 8px;
+            }
+        }
+        .twitter-footer-retweet {
+            display: flex;
+            align-items: center;
+            p {
+                margin-top: 8px;
+                margin-left: 8px;
+            }
+        }
+        .twitter-footer-comment {
+            display: flex;
+            align-items: center;
+            p {
+                margin-top: 8px;
+                margin-left: 8px;
+            }
+        }
+    }
+}
