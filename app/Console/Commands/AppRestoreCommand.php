@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 
 class AppRestoreCommand extends Command
 {
@@ -81,7 +82,22 @@ class AppRestoreCommand extends Command
             $table_name = pathinfo($d, PATHINFO_FILENAME);
             DB::table($table_name)->delete();
             foreach($rows as $row){
-                DB::table($table_name)->insert($row);
+                Schema::disableForeignKeyConstraints();
+                DB::beginTransaction();
+                try
+                {
+                    DB::table($table_name)->insert($row);
+                    DB::commit();
+                }
+                catch(\Exception $e)
+                {
+                    DB::rollback();
+                    throw $e;
+                }
+                finally 
+                {
+                    Schema::enableForeignKeyConstraints();   
+                }
             }
         }
     }
