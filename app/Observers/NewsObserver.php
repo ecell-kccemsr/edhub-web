@@ -20,7 +20,7 @@ class NewsObserver
     {
         AddNewsTweets::dispatch($news);
     }
-        
+
 
     /**
      * Handle the News "updated" event.
@@ -30,8 +30,6 @@ class NewsObserver
      */
     public function updated(News $news)
     {
-        Tweet::where('news_id',$news->id)->delete();
-        AddNewsTweets::dispatch($news);
     }
 
     /**
