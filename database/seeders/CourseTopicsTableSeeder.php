@@ -7383,6 +7383,771 @@ class CourseTopicsTableSeeder extends Seeder
                 'created_at' => '2021-06-20 21:08:47',
                 'updated_at' => '2021-06-20 21:08:47',
             ),
+            318 => 
+            array (
+                'id' => 820,
+                'name' => 'Cisco CCNA',
+                'course_sub_category_id' => 36,
+                'slug' => 'cisco-ccna-1',
+                'created_at' => '2021-06-20 21:52:25',
+                'updated_at' => '2021-06-20 21:52:25',
+            ),
+            319 => 
+            array (
+                'id' => 821,
+                'name' => 'CompTIA Security+',
+                'course_sub_category_id' => 36,
+                'slug' => 'comptia-security-1',
+                'created_at' => '2021-06-20 21:53:28',
+                'updated_at' => '2021-06-20 21:53:28',
+            ),
+            320 => 
+            array (
+                'id' => 822,
+                'name' => 'CompTIA Network+',
+                'course_sub_category_id' => 36,
+                'slug' => 'comptia-network',
+                'created_at' => '2021-06-20 21:53:53',
+                'updated_at' => '2021-06-20 21:53:53',
+            ),
+            321 => 
+            array (
+                'id' => 823,
+                'name' => 'Kubernetes',
+                'course_sub_category_id' => 36,
+                'slug' => 'kubernetes-2',
+                'created_at' => '2021-06-20 21:54:47',
+                'updated_at' => '2021-06-20 21:54:47',
+            ),
+            322 => 
+            array (
+                'id' => 824,
+                'name' => 'Python',
+                'course_sub_category_id' => 39,
+                'slug' => 'python-3',
+                'created_at' => '2021-06-20 22:08:45',
+                'updated_at' => '2021-06-20 22:08:45',
+            ),
+            323 => 
+            array (
+                'id' => 825,
+                'name' => 'Kubernetes',
+                'course_sub_category_id' => 39,
+                'slug' => 'kubernetes-3',
+                'created_at' => '2021-06-20 22:08:59',
+                'updated_at' => '2021-06-20 22:08:59',
+            ),
+            324 => 
+            array (
+                'id' => 826,
+                'name' => 'Docker',
+                'course_sub_category_id' => 39,
+                'slug' => 'docker-1',
+                'created_at' => '2021-06-20 22:10:48',
+                'updated_at' => '2021-06-20 22:10:48',
+            ),
+            325 => 
+            array (
+                'id' => 827,
+                'name' => 'DevOps',
+                'course_sub_category_id' => 39,
+                'slug' => 'devops-1',
+                'created_at' => '2021-06-20 22:11:21',
+                'updated_at' => '2021-06-20 22:11:21',
+            ),
+            326 => 
+            array (
+                'id' => 828,
+                'name' => 'Algorithms',
+                'course_sub_category_id' => 39,
+                'slug' => 'algorithms-1',
+                'created_at' => '2021-06-20 22:11:51',
+                'updated_at' => '2021-06-20 22:11:51',
+            ),
+            327 => 
+            array (
+                'id' => 829,
+                'name' => 'Ansible',
+                'course_sub_category_id' => 39,
+                'slug' => 'ansible',
+                'created_at' => '2021-06-20 22:12:30',
+                'updated_at' => '2021-06-20 22:12:30',
+            ),
+            328 => 
+            array (
+                'id' => 830,
+                'name' => 'React',
+                'course_sub_category_id' => 39,
+                'slug' => 'react-2',
+                'created_at' => '2021-06-20 22:13:03',
+                'updated_at' => '2021-06-20 22:13:03',
+            ),
+            329 => 
+            array (
+                'id' => 831,
+                'name' => 'Java',
+                'course_sub_category_id' => 39,
+                'slug' => 'java-2',
+                'created_at' => '2021-06-20 22:13:29',
+                'updated_at' => '2021-06-20 22:13:29',
+            ),
+            330 => 
+            array (
+                'id' => 832,
+                'name' => 'Software Architecture',
+                'course_sub_category_id' => 39,
+                'slug' => 'software-architecture',
+                'created_at' => '2021-06-20 22:13:56',
+                'updated_at' => '2021-06-20 22:13:56',
+            ),
+            331 => 
+            array (
+                'id' => 833,
+                'name' => 'Mindfulness',
+                'course_sub_category_id' => 54,
+                'slug' => 'mindfulness-2',
+                'created_at' => '2021-06-20 22:21:46',
+                'updated_at' => '2021-06-20 22:21:46',
+            ),
+            332 => 
+            array (
+                'id' => 834,
+                'name' => 'Meditation',
+                'course_sub_category_id' => 54,
+                'slug' => 'meditation-2',
+                'created_at' => '2021-06-20 22:22:46',
+                'updated_at' => '2021-06-20 22:22:46',
+            ),
+            333 => 
+            array (
+                'id' => 835,
+                'name' => 'Creative Writing',
+                'course_sub_category_id' => 53,
+                'slug' => 'creative-writing-1',
+                'created_at' => '2021-06-20 22:24:39',
+                'updated_at' => '2021-06-20 22:24:39',
+            ),
+            334 => 
+            array (
+                'id' => 836,
+                'name' => 'Writing',
+                'course_sub_category_id' => 53,
+                'slug' => 'writing-2',
+                'created_at' => '2021-06-20 22:25:17',
+                'updated_at' => '2021-06-20 22:25:17',
+            ),
+            335 => 
+            array (
+                'id' => 837,
+                'name' => 'Screenwriting',
+                'course_sub_category_id' => 53,
+                'slug' => 'screenwriting-1',
+                'created_at' => '2021-06-20 22:26:18',
+                'updated_at' => '2021-06-20 22:26:18',
+            ),
+            336 => 
+            array (
+                'id' => 838,
+                'name' => 'Art Therapy',
+                'course_sub_category_id' => 53,
+                'slug' => 'art-therapy',
+                'created_at' => '2021-06-20 22:26:43',
+                'updated_at' => '2021-06-20 22:26:43',
+            ),
+            337 => 
+            array (
+                'id' => 839,
+                'name' => 'Writing a Book',
+                'course_sub_category_id' => 53,
+                'slug' => 'writing-a-book-1',
+                'created_at' => '2021-06-20 22:27:09',
+                'updated_at' => '2021-06-20 22:27:09',
+            ),
+            338 => 
+            array (
+                'id' => 840,
+                'name' => 'Storytelling',
+                'course_sub_category_id' => 53,
+                'slug' => 'storytelling-1',
+                'created_at' => '2021-06-20 22:27:34',
+                'updated_at' => '2021-06-20 22:27:34',
+            ),
+            339 => 
+            array (
+                'id' => 841,
+                'name' => 'Aromatherapy',
+                'course_sub_category_id' => 53,
+                'slug' => 'aromatherapy-1',
+                'created_at' => '2021-06-20 22:28:02',
+                'updated_at' => '2021-06-20 22:28:02',
+            ),
+            340 => 
+            array (
+                'id' => 842,
+                'name' => 'Drawing',
+                'course_sub_category_id' => 53,
+                'slug' => 'drawing-3',
+                'created_at' => '2021-06-20 22:28:29',
+                'updated_at' => '2021-06-20 22:28:29',
+            ),
+            341 => 
+            array (
+                'id' => 843,
+                'name' => 'English Literature',
+                'course_sub_category_id' => 53,
+                'slug' => 'english-literature-1',
+                'created_at' => '2021-06-20 22:29:01',
+                'updated_at' => '2021-06-20 22:29:01',
+            ),
+            342 => 
+            array (
+                'id' => 844,
+                'name' => 'Spirituality',
+                'course_sub_category_id' => 51,
+                'slug' => 'spirituality',
+                'created_at' => '2021-06-20 22:29:53',
+                'updated_at' => '2021-06-20 22:29:53',
+            ),
+            343 => 
+            array (
+                'id' => 845,
+                'name' => 'Mindfulness',
+                'course_sub_category_id' => 51,
+                'slug' => 'mindfulness-3',
+                'created_at' => '2021-06-20 22:30:21',
+                'updated_at' => '2021-06-20 22:30:21',
+            ),
+            344 => 
+            array (
+                'id' => 846,
+                'name' => 'Life Coach Training',
+                'course_sub_category_id' => 51,
+                'slug' => 'life-coach-training-4',
+                'created_at' => '2021-06-20 22:30:48',
+                'updated_at' => '2021-06-20 22:30:48',
+            ),
+            345 => 
+            array (
+                'id' => 847,
+                'name' => 'Tarot Reading',
+                'course_sub_category_id' => 51,
+                'slug' => 'tarot-reading',
+                'created_at' => '2021-06-20 22:31:15',
+                'updated_at' => '2021-06-20 22:31:15',
+            ),
+            346 => 
+            array (
+                'id' => 848,
+                'name' => 'Spiritual Healing',
+                'course_sub_category_id' => 51,
+                'slug' => 'spiritual-healing',
+                'created_at' => '2021-06-20 22:32:08',
+                'updated_at' => '2021-06-20 22:32:08',
+            ),
+            347 => 
+            array (
+                'id' => 849,
+                'name' => 'Numerology',
+                'course_sub_category_id' => 51,
+                'slug' => 'numerology',
+                'created_at' => '2021-06-20 22:32:37',
+                'updated_at' => '2021-06-20 22:32:37',
+            ),
+            348 => 
+            array (
+                'id' => 850,
+                'name' => 'Meditation',
+                'course_sub_category_id' => 51,
+                'slug' => 'meditation-3',
+                'created_at' => '2021-06-20 22:37:29',
+                'updated_at' => '2021-06-20 22:37:29',
+            ),
+            349 => 
+            array (
+                'id' => 851,
+                'name' => 'Divination',
+                'course_sub_category_id' => 51,
+                'slug' => 'divination',
+                'created_at' => '2021-06-20 22:38:04',
+                'updated_at' => '2021-06-20 22:38:04',
+            ),
+            350 => 
+            array (
+                'id' => 852,
+                'name' => 'Akashic Records',
+                'course_sub_category_id' => 51,
+                'slug' => 'akashic-records',
+                'created_at' => '2021-06-20 22:38:54',
+                'updated_at' => '2021-06-20 22:38:54',
+            ),
+            351 => 
+            array (
+                'id' => 853,
+                'name' => 'Reiki',
+                'course_sub_category_id' => 50,
+                'slug' => 'reiki-1',
+                'created_at' => '2021-06-20 22:41:46',
+                'updated_at' => '2021-06-20 22:41:46',
+            ),
+            352 => 
+            array (
+                'id' => 854,
+                'name' => 'Energy Healing',
+                'course_sub_category_id' => 50,
+                'slug' => 'energy-healing-1',
+                'created_at' => '2021-06-20 22:42:31',
+                'updated_at' => '2021-06-20 22:42:31',
+            ),
+            353 => 
+            array (
+                'id' => 855,
+                'name' => 'Tarot Reading',
+                'course_sub_category_id' => 50,
+                'slug' => 'tarot-reading-1',
+                'created_at' => '2021-06-20 22:42:52',
+                'updated_at' => '2021-06-20 22:42:52',
+            ),
+            354 => 
+            array (
+                'id' => 856,
+                'name' => 'Psychic',
+                'course_sub_category_id' => 50,
+                'slug' => 'psychic',
+                'created_at' => '2021-06-20 22:43:19',
+                'updated_at' => '2021-06-20 22:43:19',
+            ),
+            355 => 
+            array (
+                'id' => 857,
+                'name' => 'Hypnotherapy',
+                'course_sub_category_id' => 50,
+                'slug' => 'hypnotherapy',
+                'created_at' => '2021-06-20 22:43:49',
+                'updated_at' => '2021-06-20 22:43:49',
+            ),
+            356 => 
+            array (
+                'id' => 858,
+                'name' => 'Crystal Energy',
+                'course_sub_category_id' => 50,
+                'slug' => 'crystal-energy',
+                'created_at' => '2021-06-20 22:44:13',
+                'updated_at' => '2021-06-20 22:44:13',
+            ),
+            357 => 
+            array (
+                'id' => 859,
+                'name' => 'Chakra',
+                'course_sub_category_id' => 50,
+                'slug' => 'chakra',
+                'created_at' => '2021-06-20 22:44:40',
+                'updated_at' => '2021-06-20 22:44:40',
+            ),
+            358 => 
+            array (
+                'id' => 860,
+                'name' => 'Shamanism',
+                'course_sub_category_id' => 50,
+                'slug' => 'shamanism',
+                'created_at' => '2021-06-20 22:45:05',
+                'updated_at' => '2021-06-20 22:45:05',
+            ),
+            359 => 
+            array (
+                'id' => 861,
+                'name' => 'Spiritual Healing',
+                'course_sub_category_id' => 50,
+                'slug' => 'spiritual-healing-1',
+                'created_at' => '2021-06-20 22:45:31',
+                'updated_at' => '2021-06-20 22:45:31',
+            ),
+            360 => 
+            array (
+                'id' => 862,
+                'name' => 'Life Coach Training',
+                'course_sub_category_id' => 49,
+                'slug' => 'life-coach-training-5',
+                'created_at' => '2021-06-20 22:47:54',
+                'updated_at' => '2021-06-20 22:47:54',
+            ),
+            361 => 
+            array (
+                'id' => 863,
+                'name' => 'Childhood Trauma Healing',
+                'course_sub_category_id' => 49,
+                'slug' => 'childhood-trauma-healing-2',
+                'created_at' => '2021-06-20 22:48:15',
+                'updated_at' => '2021-06-20 22:48:15',
+            ),
+            362 => 
+            array (
+                'id' => 864,
+            'name' => 'Eye Movement Desensitization and Reprocessing (EMDR)',
+                'course_sub_category_id' => 49,
+                'slug' => 'eye-movement-desensitization-and-reprocessing-emdr-1',
+                'created_at' => '2021-06-20 22:48:47',
+                'updated_at' => '2021-06-20 22:48:47',
+            ),
+            363 => 
+            array (
+                'id' => 865,
+                'name' => 'Positive Psychology',
+                'course_sub_category_id' => 49,
+                'slug' => 'positive-psychology-1',
+                'created_at' => '2021-06-20 22:49:54',
+                'updated_at' => '2021-06-20 22:49:54',
+            ),
+            364 => 
+            array (
+                'id' => 866,
+                'name' => 'Law of Attraction',
+                'course_sub_category_id' => 49,
+                'slug' => 'law-of-attraction-1',
+                'created_at' => '2021-06-20 22:50:08',
+                'updated_at' => '2021-06-20 22:50:08',
+            ),
+            365 => 
+            array (
+                'id' => 867,
+                'name' => 'CBT',
+                'course_sub_category_id' => 49,
+                'slug' => 'cbt-1',
+                'created_at' => '2021-06-20 22:50:36',
+                'updated_at' => '2021-06-20 22:50:36',
+            ),
+            366 => 
+            array (
+                'id' => 868,
+                'name' => 'Mindfulness',
+                'course_sub_category_id' => 49,
+                'slug' => 'mindfulness-4',
+                'created_at' => '2021-06-20 22:51:28',
+                'updated_at' => '2021-06-20 22:51:28',
+            ),
+            367 => 
+            array (
+                'id' => 869,
+                'name' => 'Life Purpose',
+                'course_sub_category_id' => 49,
+                'slug' => 'life-purpose-2',
+                'created_at' => '2021-06-20 22:51:49',
+                'updated_at' => '2021-06-20 22:51:49',
+            ),
+            368 => 
+            array (
+                'id' => 870,
+                'name' => 'Voice Acting',
+                'course_sub_category_id' => 47,
+                'slug' => 'voice-acting',
+                'created_at' => '2021-06-20 22:53:50',
+                'updated_at' => '2021-06-20 22:53:50',
+            ),
+            369 => 
+            array (
+                'id' => 871,
+                'name' => 'LinkedIn',
+                'course_sub_category_id' => 47,
+                'slug' => 'linkedin-3',
+                'created_at' => '2021-06-20 22:54:15',
+                'updated_at' => '2021-06-20 22:54:15',
+            ),
+            370 => 
+            array (
+                'id' => 872,
+                'name' => 'WordPress',
+                'course_sub_category_id' => 113,
+                'slug' => 'wordpress-3',
+                'created_at' => '2021-06-20 22:58:38',
+                'updated_at' => '2021-06-20 22:58:38',
+            ),
+            371 => 
+            array (
+                'id' => 873,
+                'name' => 'CSS',
+                'course_sub_category_id' => 113,
+                'slug' => 'css-1',
+                'created_at' => '2021-06-20 22:59:00',
+                'updated_at' => '2021-06-20 22:59:00',
+            ),
+            372 => 
+            array (
+                'id' => 874,
+                'name' => 'Mobile App Design',
+                'course_sub_category_id' => 113,
+                'slug' => 'mobile-app-design-1',
+                'created_at' => '2021-06-20 23:00:23',
+                'updated_at' => '2021-06-20 23:00:23',
+            ),
+            373 => 
+            array (
+                'id' => 875,
+                'name' => 'Photoshop',
+                'course_sub_category_id' => 113,
+                'slug' => 'photoshop-7',
+                'created_at' => '2021-06-20 23:00:47',
+                'updated_at' => '2021-06-20 23:00:47',
+            ),
+            374 => 
+            array (
+                'id' => 876,
+                'name' => 'HTML',
+                'course_sub_category_id' => 113,
+                'slug' => 'html',
+                'created_at' => '2021-06-20 23:01:18',
+                'updated_at' => '2021-06-20 23:01:18',
+            ),
+            375 => 
+            array (
+                'id' => 877,
+                'name' => 'Adobe XD',
+                'course_sub_category_id' => 113,
+                'slug' => 'adobe-xd-1',
+                'created_at' => '2021-06-20 23:01:46',
+                'updated_at' => '2021-06-20 23:01:46',
+            ),
+            376 => 
+            array (
+                'id' => 878,
+                'name' => 'User Interface',
+                'course_sub_category_id' => 113,
+                'slug' => 'user-interface-1',
+                'created_at' => '2021-06-20 23:02:15',
+                'updated_at' => '2021-06-20 23:02:15',
+            ),
+            377 => 
+            array (
+                'id' => 879,
+                'name' => 'HTML5',
+                'course_sub_category_id' => 113,
+                'slug' => 'html5',
+                'created_at' => '2021-06-20 23:02:45',
+                'updated_at' => '2021-06-20 23:02:45',
+            ),
+            378 => 
+            array (
+                'id' => 880,
+                'name' => 'Confidence',
+                'course_sub_category_id' => 114,
+                'slug' => 'confidence',
+                'created_at' => '2021-06-20 23:05:43',
+                'updated_at' => '2021-06-20 23:05:43',
+            ),
+            379 => 
+            array (
+                'id' => 881,
+                'name' => 'Self-Esteem',
+                'course_sub_category_id' => 114,
+                'slug' => 'self-esteem',
+                'created_at' => '2021-06-20 23:06:05',
+                'updated_at' => '2021-06-20 23:06:05',
+            ),
+            380 => 
+            array (
+                'id' => 882,
+                'name' => 'Fashion',
+                'course_sub_category_id' => 114,
+                'slug' => 'fashion-1',
+                'created_at' => '2021-06-20 23:06:34',
+                'updated_at' => '2021-06-20 23:06:34',
+            ),
+            381 => 
+            array (
+                'id' => 883,
+                'name' => 'Communication Skills',
+                'course_sub_category_id' => 114,
+                'slug' => 'communication-skills-2',
+                'created_at' => '2021-06-20 23:07:04',
+                'updated_at' => '2021-06-20 23:07:04',
+            ),
+            382 => 
+            array (
+                'id' => 884,
+                'name' => 'Neuro-Linguistic Programming',
+                'course_sub_category_id' => 114,
+                'slug' => 'neuro-linguistic-programming-2',
+                'created_at' => '2021-06-20 23:07:26',
+                'updated_at' => '2021-06-20 23:07:26',
+            ),
+            383 => 
+            array (
+                'id' => 885,
+                'name' => 'Social Skills',
+                'course_sub_category_id' => 114,
+                'slug' => 'social-skills',
+                'created_at' => '2021-06-20 23:07:52',
+                'updated_at' => '2021-06-20 23:07:52',
+            ),
+            384 => 
+            array (
+                'id' => 886,
+                'name' => 'Art for Kids',
+                'course_sub_category_id' => 114,
+                'slug' => 'art-for-kids',
+                'created_at' => '2021-06-20 23:08:19',
+                'updated_at' => '2021-06-20 23:08:19',
+            ),
+            385 => 
+            array (
+                'id' => 887,
+                'name' => 'Drawing',
+                'course_sub_category_id' => 114,
+                'slug' => 'drawing-4',
+                'created_at' => '2021-06-20 23:08:44',
+                'updated_at' => '2021-06-20 23:08:44',
+            ),
+            386 => 
+            array (
+                'id' => 888,
+                'name' => 'Personal Development',
+                'course_sub_category_id' => 114,
+                'slug' => 'personal-development-3',
+                'created_at' => '2021-06-20 23:09:10',
+                'updated_at' => '2021-06-20 23:09:10',
+            ),
+            387 => 
+            array (
+                'id' => 889,
+                'name' => 'CFA',
+                'course_sub_category_id' => 111,
+                'slug' => 'cfa-1',
+                'created_at' => '2021-06-20 23:13:07',
+                'updated_at' => '2021-06-20 23:13:07',
+            ),
+            388 => 
+            array (
+                'id' => 890,
+            'name' => 'Certified Management Accountant (CMA)',
+                'course_sub_category_id' => 111,
+                'slug' => 'certified-management-accountant-cma',
+                'created_at' => '2021-06-20 23:13:27',
+                'updated_at' => '2021-06-20 23:13:27',
+            ),
+            389 => 
+            array (
+                'id' => 891,
+                'name' => 'Quantitative Finance',
+                'course_sub_category_id' => 111,
+                'slug' => 'quantitative-finance',
+                'created_at' => '2021-06-20 23:15:45',
+                'updated_at' => '2021-06-20 23:15:45',
+            ),
+            390 => 
+            array (
+                'id' => 892,
+                'name' => 'Financial Management',
+                'course_sub_category_id' => 111,
+                'slug' => 'financial-management-1',
+                'created_at' => '2021-06-20 23:16:14',
+                'updated_at' => '2021-06-20 23:16:14',
+            ),
+            391 => 
+            array (
+                'id' => 893,
+                'name' => 'Stock Trading',
+                'course_sub_category_id' => 111,
+                'slug' => 'stock-trading-2',
+                'created_at' => '2021-06-20 23:16:39',
+                'updated_at' => '2021-06-20 23:16:39',
+            ),
+            392 => 
+            array (
+                'id' => 894,
+                'name' => 'Corporate Finance',
+                'course_sub_category_id' => 111,
+                'slug' => 'corporate-finance-1',
+                'created_at' => '2021-06-20 23:17:30',
+                'updated_at' => '2021-06-20 23:17:30',
+            ),
+            393 => 
+            array (
+                'id' => 895,
+                'name' => 'Financial Markets',
+                'course_sub_category_id' => 111,
+                'slug' => 'financial-markets',
+                'created_at' => '2021-06-20 23:18:06',
+                'updated_at' => '2021-06-20 23:18:06',
+            ),
+            394 => 
+            array (
+                'id' => 896,
+                'name' => 'Financial Planning',
+                'course_sub_category_id' => 111,
+                'slug' => 'financial-planning-1',
+                'created_at' => '2021-06-20 23:18:55',
+                'updated_at' => '2021-06-20 23:18:55',
+            ),
+            395 => 
+            array (
+                'id' => 897,
+                'name' => 'ANBIMA Certification',
+                'course_sub_category_id' => 111,
+                'slug' => 'anbima-certification',
+                'created_at' => '2021-06-20 23:20:18',
+                'updated_at' => '2021-06-20 23:20:18',
+            ),
+            396 => 
+            array (
+                'id' => 898,
+                'name' => 'ACCA',
+                'course_sub_category_id' => 111,
+                'slug' => 'acca',
+                'created_at' => '2021-06-20 23:21:09',
+                'updated_at' => '2021-06-20 23:21:09',
+            ),
+            397 => 
+            array (
+                'id' => 899,
+                'name' => 'Financial Analysis',
+                'course_sub_category_id' => 112,
+                'slug' => 'financial-analysis-2',
+                'created_at' => '2021-06-20 23:24:41',
+                'updated_at' => '2021-06-20 23:24:41',
+            ),
+            398 => 
+            array (
+                'id' => 900,
+                'name' => 'Financial Modeling',
+                'course_sub_category_id' => 112,
+                'slug' => 'financial-modeling-1',
+                'created_at' => '2021-06-20 23:25:03',
+                'updated_at' => '2021-06-20 23:25:03',
+            ),
+            399 => 
+            array (
+                'id' => 901,
+                'name' => 'Finance Fundamentals',
+                'course_sub_category_id' => 112,
+                'slug' => 'finance-fundamentals-3',
+                'created_at' => '2021-06-20 23:25:28',
+                'updated_at' => '2021-06-20 23:25:28',
+            ),
+            400 => 
+            array (
+                'id' => 902,
+                'name' => 'Excel',
+                'course_sub_category_id' => 112,
+                'slug' => 'excel-3',
+                'created_at' => '2021-06-20 23:25:54',
+                'updated_at' => '2021-06-20 23:25:54',
+            ),
+            401 => 
+            array (
+                'id' => 903,
+                'name' => 'Investing',
+                'course_sub_category_id' => 112,
+                'slug' => 'investing-1',
+                'created_at' => '2021-06-20 23:26:20',
+                'updated_at' => '2021-06-20 23:26:20',
+            ),
+            402 => 
+            array (
+                'id' => 904,
+                'name' => 'Investment Banking',
+                'course_sub_category_id' => 112,
+                'slug' => 'investment-banking-1',
+                'created_at' => '2021-06-20 23:26:47',
+                'updated_at' => '2021-06-20 23:26:47',
+            ),
         ));
         
         
