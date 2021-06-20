@@ -22,47 +22,46 @@ class CourseController extends Controller
     public function get(Request $request)
     {
         $courses = Course::query();
-        if($request->has('course_provider_id')) {
-            $courses = $courses->where('course_provider_id',$request->input('course_provider_id'));
+        if ($request->has('course_provider_id')) {
+            $courses = $courses->where('course_provider_id', $request->input('course_provider_id'));
         }
-        if($request->has('course_category_id')) {
-            $courses = $courses->where('course_category_id',$request->input('course_category_id'));
+        if ($request->has('course_category_id')) {
+            $courses = $courses->where('course_category_id', $request->input('course_category_id'));
         }
-        if($request->has('course_sub_category_id')) {
-            $courses = $courses->where('course_sub_category_id',$request->input('course_sub_category_id'));
+        if ($request->has('course_sub_category_id')) {
+            $courses = $courses->where('course_sub_category_id', $request->input('course_sub_category_id'));
         }
-        if($request->has('course_topic_id')) {
-            $courses = $courses->where('course_topic_id',$request->input('course_topic_id'));
-        }   
-        if($request->has('difficulty_level')) {
-            $courses = $courses->where('difficulty_level',$request->input('difficulty_level'));
+        if ($request->has('course_topic_id')) {
+            $courses = $courses->where('course_topic_id', $request->input('course_topic_id'));
         }
-         if($request->has('price_min')) {
+        if ($request->has('difficulty_level')) {
+            $courses = $courses->where('difficulty_level', $request->input('difficulty_level'));
+        }
+        if ($request->has('price_min')) {
             $courses = $courses->where('price', '>=', $request->input('price_min'));
         }
-        if($request->has('price_max')) {
+        if ($request->has('price_max')) {
             $courses = $courses->where('price', '<=', $request->input('price_max'));
         }
-        if($request->has('rating')) {
-            $courses = $courses->where('rating','>=', $request->input('rating'));
+        if ($request->has('rating')) {
+            $courses = $courses->where('rating', '>=', $request->input('rating'));
         }
-        if($request->has('search')) {
-            $courses = $courses->where('title','like','%' . $request->input('search') . '%');
+        if ($request->has('search')) {
+            $courses = $courses->where('title', 'like', '%' . $request->input('search') . '%');
         }
-        if($request->has('trending')) {
+        if ($request->has('trending')) {
             $courses = $courses->orderBy('rating', 'desc');
         }
-        if($request->has('locale')){
-            $courses = $courses->where('locale',$request->input('locale'));
+        if ($request->has('locale')) {
+            $courses = $courses->where('locale', $request->input('locale'));
         }
-        if($request->has('certification')){
-            $courses = $courses->where('certification',$request->input('certification'));
+        if ($request->has('certification')) {
+            $courses = $courses->where('certification', $request->input('certification'));
         }
-        if($request->has('discount_percentage'))
-        {
-            $courses = $courses->where('discount_percentage','>=',$request->input('discount_percentage'));
+        if ($request->has('discount_percentage')) {
+            $courses = $courses->where('discount_percentage', '>=', $request->input('discount_percentage'));
         }
-        return new CourseResourceCollection($courses->paginate($request->input('per_page',10)));
+        return new CourseResourceCollection($courses->paginate($request->input('per_page', 10)));
     }
 
     public function add(Request $request)
@@ -82,10 +81,10 @@ class CourseController extends Controller
         $course->certification = true;
         $course->rating = '0';
         $course->generateSlug();
-        $course_provider = CourseProvider::where('name',$request->input('course_provider'))->first();
+        $course_provider = CourseProvider::where('name', $request->input('course_provider'))->first();
         $course->course_provider_id = $course_provider->id;
 
-         // Train Model
+        // Train Model
         $classifier = new TNTClassifier();
         foreach (CourseSubCategory::all() as $sub_category) {
             $classifier->learn($sub_category->name, $sub_category->id);
@@ -108,25 +107,25 @@ class CourseController extends Controller
 
     public function show($course)
     {
-        $course = Course::where('id',$course)->orWhere('slug',$course)->firstOrFail();
+        $course = Course::where('id', $course)->orWhere('slug', $course)->firstOrFail();
         return new CourseResource($course);
     }
 
     public function curriculum($course, Request $request)
     {
-        $course = Course::where('id',$course)->orWhere('slug',$course)->firstOrFail();
-        return CurriculumChapterResource::collection($course->course_chapters()->paginate($request->input('per_page',10)));
+        $course = Course::where('id', $course)->orWhere('slug', $course)->firstOrFail();
+        return CurriculumChapterResource::collection($course->course_chapters()->paginate($request->input('per_page', 10)));
     }
-     
+
     public function reviews($course, Request $request)
     {
-        $course = Course::where('id',$course)->orWhere('slug',$course)->firstOrFail();
-        return new CourseReviewResourceCollection($course->course_reviews()->paginate($request->input('per_page',10)));
+        $course = Course::where('id', $course)->orWhere('slug', $course)->firstOrFail();
+        return new CourseReviewResourceCollection($course->course_reviews()->paginate($request->input('per_page', 10)));
     }
 
     public function categories(Request $request)
     {
-        $query = CourseCategory::paginate($request->input('per_page',10));
+        $query = CourseCategory::paginate($request->input('per_page', 10));
         return CourseCategoryResource::collection($query);
     }
 }
