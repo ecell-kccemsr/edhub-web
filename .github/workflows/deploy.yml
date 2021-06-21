@@ -22,6 +22,7 @@ jobs:
             php artisan app:restore latest
             php artisan optimize:clear
             php artisan optimize
+            php artisan config:clear
             supervisorctl restart eduhub-queue-worker
             npm i
             npm run prod-css
