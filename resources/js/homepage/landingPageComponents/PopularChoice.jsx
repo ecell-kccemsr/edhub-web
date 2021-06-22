@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import CourseCard from "../../components/course-card/CourseCard";
 import TooltipComponent from "./TooltipComponent";
 
-const PopularChoice = ({ title, data }) => {
+const PopularChoice = ({ title, data, description }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const updateSize = () => setWindowWidth(window.innerWidth);
     useEffect(() => (window.onresize = updateSize), []);
@@ -32,9 +32,7 @@ const PopularChoice = ({ title, data }) => {
                 <Row className=" popular-choice-sub-section">
                     <Col sm="12" md="6" lg="5">
                         <p className="popular-choice-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Habitant volutpat elementum facilisi mattis
-                            et. At
+                           {description}
                         </p>
                     </Col>
                     <Col

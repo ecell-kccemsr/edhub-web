@@ -7,17 +7,18 @@ const HeroSection = ({ handleSubmit, handleChange }) => {
             <div className="landing-page-hero-section">
                 <Row>
                     <Col sm="12" md="8" lg="6">
-                        <div className="landing-page-hero-section-top">
+                        {/* <div className="landing-page-hero-section-top">
                             <span className="top-button">New</span>
                             <span className="top-text">
                                 Avail latest discounts on courses
                             </span>
-                        </div>
+                        </div> */}
                         <h4 className="hero-section-main-text">
-                            Let’s Grow Your Education Level up with Edhub.
+                            Learn. <br />
+                            From The World's Best.
                         </h4>
                         <p className="hero-section-sub-text">
-                            Learn anytime anywhere with experts.
+                           What do you like to learn?
                         </p>
                         <div className="hero-section-input-box">
                             <form onSubmit={handleSubmit}>
@@ -26,7 +27,7 @@ const HeroSection = ({ handleSubmit, handleChange }) => {
                                     name=""
                                     id=""
                                     onChange={handleChange}
-                                    placeholder="Search your course"
+                                    placeholder="Search your course...."
                                 />
                                 <button type="submit">
                                     <i className="fas fa-search"></i>

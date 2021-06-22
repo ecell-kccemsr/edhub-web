@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CourseCard from "../../components/course-card/CourseCard";
 import TooltipComponent from "./TooltipComponent";
 
-const SliderHomepage = ({ title, course_category_id }) => {
+const SliderHomepage = ({ title, course_category_id, description }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const updateSize = () => setWindowWidth(window.innerWidth);
     useEffect(() => (window.onresize = updateSize), []);
@@ -47,9 +46,7 @@ const SliderHomepage = ({ title, course_category_id }) => {
                 <Row className=" popular-choice-sub-section">
                     <Col sm="12" md="6" lg="5">
                         <p className="popular-choice-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Habitant volutpat elementum facilisi mattis
-                            et. At
+                            {description}
                         </p>
                     </Col>
                     <Col

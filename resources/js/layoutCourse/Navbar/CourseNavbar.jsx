@@ -273,7 +273,7 @@ const CourseNavbar = props => {
                                                         )}
                                                     </Link>
                                                     {ismegamenu && (
-                                                        <div className="megasubmenu dropdown-menu" style={{width:"17rem"}}>
+                                                        <div className="megasubmenu dropdown-menu" style={{width:"21rem"}}>
                                                             <ul className="list-unstyled">
                                                                 {navl.sub_categories.map(
                                                                     child => {
@@ -314,11 +314,11 @@ const CourseNavbar = props => {
                                                                                 </Link>
                                                                                 {ismegamenu2 && (
                                                                                     <div className="megasubmenu-2 dropdown-menu">
-                                                                                        <Row>
+                                                                                        {/* <Row>
                                                                                             <Col
                                                                                                 sm="12"
-                                                                                                md="6"
-                                                                                            >
+                                                                                                md="12"
+                                                                                            > */}
                                                                                                 <ul className="list-unstyled">
                                                                                                     {child.course_topics.map(
                                                                                                         subc => {
@@ -341,8 +341,8 @@ const CourseNavbar = props => {
                                                                                                         }
                                                                                                     )}
                                                                                                 </ul>
-                                                                                            </Col>
-                                                                                            <Col
+                                                                                            {/* </Col> */}
+                                                                                            {/* <Col
                                                                                                 sm="12"
                                                                                                 md="6"
                                                                                             >
@@ -378,8 +378,8 @@ const CourseNavbar = props => {
                                                                                                         </div>
                                                                                                     )
                                                                                                 )}
-                                                                                            </Col>
-                                                                                        </Row>
+                                                                                            </Col> */}
+                                                                                        {/* </Row> */}
                                                                                     </div>
                                                                                 )}
                                                                             </li>
@@ -456,7 +456,7 @@ const CourseNavbar = props => {
                                     to="#"
                                     onClick={toggle}
                                 >
-                                    Guide
+                                    Guide Me
                                 </Link>
                             </li>
                             <li className="nav-item">

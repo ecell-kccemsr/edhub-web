@@ -24,8 +24,7 @@ const HelpSection = () => {
                         <div className="text-container">
                             <h4>BROWSE</h4>
                             <p>
-                                Find your perfect course among thousands of
-                                others.
+                                Search from the world's best courses
                             </p>
                         </div>
                     </Col>
@@ -51,8 +50,7 @@ const HelpSection = () => {
                         <div className="text-container">
                             <h4>ANALYZE AND COMPARE</h4>
                             <p>
-                                After finding your perfect course get enrolled
-                                in it.
+                                Find your Perfect course among thousands of others
                             </p>
                         </div>
                     </Col>
@@ -77,7 +75,7 @@ const HelpSection = () => {
                         />
                         <div className="text-container">
                             <h4>UPSKILL</h4>
-                            <p>Get a Shareable certificate for your course.</p>
+                            <p>Reward your brain with an extra skill.</p>
                         </div>
                     </Col>
                 </Row>

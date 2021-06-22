@@ -4,12 +4,12 @@
     .landing-page-div {
         padding: 30px 50px;
         .landing-page-hero-section {
-            background: url("/images/landingpage/landingpage.png");
+            background: url("/images/landingpage/landingpage1.png");
             background-size: cover;
             background-position: center;
             padding: 50px 60px 100px;
-            border-radius: 50px;
-            height: 32rem;
+            border-radius: 40px;
+            height: 27rem;
 
             .landing-page-hero-section-top {
                 background-color: #706a6459;
@@ -31,28 +31,29 @@
             }
 
             .hero-section-main-text {
-                color: white;
-                font-family: "Margarine", cursive;
+                color: rgb(61, 61, 61);
+                font-family: "Merriweather", serif;
                 font-weight: 400;
                 font-size: 50px;
                 margin: 40px 0 30px;
                 letter-spacing: 2px;
             }
             .hero-section-sub-text {
-                color: white;
-                font-family: "Poppins", sans-serif;
+                color: rgb(61, 61, 61);
+                font-family: "Merriweather", serif;
                 font-size: 24px;
             }
             .hero-section-input-box {
                 position: relative;
-                margin-top: 20px;
+                margin-top: 10px;
                 display: inline-block;
                 input {
                     outline: none;
                     border: none;
                     border-radius: 10px;
                     padding: 15px 30px 15px 10px;
-                    min-width: 400px;
+                    min-width: 500px;
+                    border: 2px solid rgb(61, 61, 61);
                 }
                 button {
                     position: absolute;

@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { Route } from "react-router";
 import { Link } from "react-router-dom";
-import { Button,Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 //Components
 import CourseFooterSubscribe from "./Footer/CourseFooterSubscribe";
-import CourseFooter from "./Footer/CourseFooter";
 import CourseNavbar from "./Navbar/CourseNavbar";
 import ScrollToTop from "../components/scrolltotop/ScrollToTop";
 import RequestCallBack from "../components/RequestCallBack/RequestCallBack";
@@ -46,7 +45,7 @@ function LayoutCourse({ children }) {
                                  </Modal>
             </div>
           
-            <CourseFooter />
+            {/* <CourseFooter /> */}
             <CourseFooterSubscribe />
         </>
     );
