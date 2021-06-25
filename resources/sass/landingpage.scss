@@ -475,3 +475,12 @@ div[data-id="tooltip"] {
         }
     }
 }
+@media only screen and (max-width: 600px) {
+    .landing-page-section
+        .landing-page-div
+        .landing-page-hero-section
+        .hero-section-input-box
+        input {
+        min-width: 330px;
+    }
+}

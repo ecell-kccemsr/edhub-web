@@ -1,5 +1,6 @@
 import React from "react";
 import { useStoreActions, useStoreState } from "easy-peasy";
+import CourseCardCompare from "../components/courseCardCompare/courseCardCompare";
 const Compare = () => {
     const compares = useStoreState(state => state.compares);
     const addToCompare = useStoreActions(actions => actions.addToCompare);
@@ -9,7 +10,7 @@ const Compare = () => {
             <div className="no-course-compare-section">
                 <h3>No course present to compare</h3>
                 <h4>Add course to compare now </h4>
-            </div> 
+            </div>
         );
     }
     return (
@@ -28,9 +29,9 @@ const Compare = () => {
                             {compares &&
                                 compares.map(cmp => {
                                     return (
-                                        <td style={{ border: "none"}}>
-                                            <div className="compare-card">
-                                                <img
+                                        <td style={{ border: "none" }}>
+                                            {/* <div className="compare-card"> */}
+                                            {/* <img
                                                     src={
                                                         cmp?.image || "/images/compare/cardheader.png"
                                                     }
@@ -50,8 +51,9 @@ const Compare = () => {
                                                    href={cmp?.url}
                                                    target="_blank">
                                                <button> Go to class</button>
-                                                </a>
-                                            </div>
+                                                </a> */}
+                                            <CourseCardCompare data={cmp} />
+                                            {/* </div> */}
                                         </td>
                                     );
                                 })}
@@ -64,21 +66,60 @@ const Compare = () => {
                                 return (
                                     <td key={key}>
                                         <div style={{ display: "flex" }}>
-                                            <img
-                                                src="/images/courseDetail/4star.png"
-                                                alt="Star"
-                                                style={{ objectFit: "contain" }}
-                                            />
+                                            {compare?.rating <= 0 ? (
+                                                <img
+                                                    src="/images/star0.png"
+                                                    alt="Star"
+                                                    style={{
+                                                        objectFit: "contain"
+                                                    }}
+                                                />
+                                            ) : compare?.rating <= 1 ? (
+                                                <img
+                                                    src="/images/star1.png"
+                                                    alt="Star"
+                                                    style={{
+                                                        objectFit: "contain"
+                                                    }}
+                                                />
+                                            ) : compare?.rating <= 2 ? (
+                                                <img
+                                                    src="/images/star2.png"
+                                                    alt="Star"
+                                                    style={{
+                                                        objectFit: "contain"
+                                                    }}
+                                                />
+                                            ) : compare?.rating <= 3 ? (
+                                                <img
+                                                    src="/images/star3.png"
+                                                    alt="Star"
+                                                    style={{
+                                                        objectFit: "contain"
+                                                    }}
+                                                />
+                                            ) : compare?.rating <= 4 ? (
+                                                <img
+                                                    src="/images/star4.png"
+                                                    alt="Star"
+                                                    style={{
+                                                        objectFit: "contain"
+                                                    }}
+                                                />
+                                            ) : (
+                                                <img
+                                                    src="/images/star5.png"
+                                                    alt="Star"
+                                                    style={{
+                                                        objectFit: "contain"
+                                                    }}
+                                                />
+                                            )}
                                             <p>
-                                            {
-                         Math.round(parseFloat
-                            (
-                                compare?.rating 
-                            )
-                            )
-
-                       }
-                       </p>
+                                                {Math.round(
+                                                    parseFloat(compare?.rating)
+                                                )}
+                                            </p>
                                         </div>
                                     </td>
                                 );
@@ -102,32 +143,26 @@ const Compare = () => {
                         </tr>
                         <tr>
                             <td>
-                                <p className="compare-title">
-                                    Language
-                                </p>
+                                <p className="compare-title">Language</p>
                             </td>
                             {compares.map((compare, key) => {
-                                return(
-                                     <td key={key}> 
-                                <p>{compare?.locale}</p>
-                             </td>
-                                )
-                            
+                                return (
+                                    <td key={key}>
+                                        <p>{compare?.locale}</p>
+                                    </td>
+                                );
                             })}
                         </tr>
                         <tr>
                             <td>
-                                <p className="compare-title">
-                                    Captions
-                                </p>
+                                <p className="compare-title">Captions</p>
                             </td>
                             {compares.map((compare, key) => {
-                                return(
-                                     <td key={key}> 
-                                <p>{compare?.captions}</p>
-                                 </td>
-                                )
-                            
+                                return (
+                                    <td key={key}>
+                                        <p>{compare?.captions}</p>
+                                    </td>
+                                );
                             })}
                         </tr>
                         <tr>
@@ -192,19 +227,16 @@ const Compare = () => {
                                 <td key={key}>
                                     {compare.course_instructor.map(
                                         (cinstructor, key) => (
-                                            <p key={key}>{cinstructor.designation}</p>
+                                            <p key={key}>
+                                                {cinstructor.designation}
+                                            </p>
                                         )
                                     )}
                                     <button className="compare-buy-btn">
-                                    <a
-                                            href={compare?.url}
-                                            target="_blank"
-                                            
-                                        >
-                                           Go to class
-                                        </a> 
+                                        <a href={compare?.url} target="_blank">
+                                            Go to class
+                                        </a>
                                     </button>
-                                   
                                 </td>
                             ))}
                         </tr>
