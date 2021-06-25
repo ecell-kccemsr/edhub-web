@@ -43,6 +43,9 @@ class AddNewsTweets implements ShouldQueue
         ])->get("https://api.twitter.com/2/tweets/search/recent?query=$tags&expansions=attachments.media_keys,author_id&media.fields=url&tweet.fields=created_at,source,entities,public_metrics&user.fields=name,profile_image_url");
 
         if ($response->successful() === true) {
+            if (isset($response->json()['data']) === false) {
+                return;
+            }
             $tweets = $response->json()['data'];
             foreach ($tweets as $tweet) {
                 $dbtweet = new Tweet();
