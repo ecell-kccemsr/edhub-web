@@ -14,17 +14,17 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
     useEffect(() => (window.onresize = updateSize), []);
     const [data, setData] = useState([]);
     useEffect(() => {
-        if  (course_category_id) {
-              axios
-            .get(`/api/courses?course_category_id=${course_category_id}`)
-            .then(res => {
-                setData(res.data.data);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        if (course_category_id) {
+            axios
+                .get(`/api/courses?course_category_id=${course_category_id}&sugessted=1`)
+                .then(res => {
+                    setData(res.data.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         }
-     
+
     }, []);
 
     const settings = {
@@ -35,10 +35,10 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
         slidesToScroll: 1
     };
 
-    if(data.length==0){
+    if (data.length == 0) {
         return <></>
     }
-    
+
     return (
         <>
             <div className="popular-choice-section">

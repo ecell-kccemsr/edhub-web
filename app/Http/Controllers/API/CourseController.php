@@ -61,6 +61,9 @@ class CourseController extends Controller
         if ($request->has('discount_percentage')) {
             $courses = $courses->where('discount_percentage', '>=', $request->input('discount_percentage'));
         }
+        if ($request->has('sugessted')) {
+            $courses = $courses->inRandomOrder();
+        }
         return new CourseResourceCollection($courses->paginate($request->input('per_page', 10)));
     }
 
