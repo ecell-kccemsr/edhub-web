@@ -16,7 +16,9 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
     useEffect(() => {
         if (course_category_id) {
             axios
-                .get(`/api/courses?course_category_id=${course_category_id}&sugessted=1`)
+                .get(
+                    `/api/courses?course_category_id=${course_category_id}&sugessted=1`
+                )
                 .then(res => {
                     setData(res.data.data);
                 })
@@ -24,7 +26,6 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
                     console.log(err);
                 });
         }
-
     }, []);
 
     const settings = {
@@ -36,7 +37,7 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
     };
 
     if (data.length == 0) {
-        return <></>
+        return <></>;
     }
 
     return (
@@ -45,9 +46,7 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
                 <h3 className="popular-choice-header">{title}</h3>
                 <Row className=" popular-choice-sub-section">
                     <Col sm="12" md="6" lg="5">
-                        <p className="popular-choice-content">
-                            {description}
-                        </p>
+                        <p className="popular-choice-content">{description}</p>
                     </Col>
                     <Col
                         sm="12"
@@ -55,7 +54,7 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
                         lg="5"
                         className="popular-choice-btn-container"
                     >
-                        <Link to={`/course-category`}>
+                        <Link to={`/course-category?q=${title}`}>
                             <Button className="popular-choice-btn">
                                 View all
                             </Button>
