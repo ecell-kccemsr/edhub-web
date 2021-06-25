@@ -17,90 +17,95 @@ import { Link } from "react-router-dom";
 import CourseCard from "../components/course-card/CourseCard";
 import TooltipComponent from "../homepage/landingPageComponents/TooltipComponent";
 
-const carouselDummyData = [
-    "https://i.ibb.co/HBWwCPK/Group-1.png",
-    "https://i.ibb.co/HBWwCPK/Group-1.png",
-    "https://i.ibb.co/HBWwCPK/Group-1.png"
-];
-const items = [
-    {
-        src: "https://i.ibb.co/HBWwCPK/Group-1.png",
-        altText: "Slide 1",
-        caption: "Slide 1",
-        header: "Slide 1 Header",
-        key: "ac9861b1-baa3-43ad-9934-9d67e8617565"
-    },
-    {
-        src: "https://i.ibb.co/HBWwCPK/Group-1.png",
-        altText: "Slide 2",
-        caption: "Slide 2",
-        header: "Slide 2 Header",
-        key: "62ab7a96-d868-4b9f-a70a-b8af5a417631"
-    },
-    {
-        src: "https://i.ibb.co/HBWwCPK/Group-1.png",
-        altText: "Slide 3",
-        caption: "Slide 3",
-        header: "Slide 3 Header",
-        key: "20e05c32-bd0f-4e81-8cca-dab1166c89f1"
-    }
-];
+// const carouselDummyData = [
+//     "https://i.ibb.co/HBWwCPK/Group-1.png",
+//     "https://i.ibb.co/HBWwCPK/Group-1.png",
+//     "https://i.ibb.co/HBWwCPK/Group-1.png"
+// ];
+// const items = [
+//     {
+//         src: "https://i.ibb.co/HBWwCPK/Group-1.png",
+//         altText: "Slide 1",
+//         caption: "Slide 1",
+//         header: "Slide 1 Header",
+//         key: "ac9861b1-baa3-43ad-9934-9d67e8617565"
+//     },
+//     {
+//         src: "https://i.ibb.co/HBWwCPK/Group-1.png",
+//         altText: "Slide 2",
+//         caption: "Slide 2",
+//         header: "Slide 2 Header",
+//         key: "62ab7a96-d868-4b9f-a70a-b8af5a417631"
+//     },
+//     {
+//         src: "https://i.ibb.co/HBWwCPK/Group-1.png",
+//         altText: "Slide 3",
+//         caption: "Slide 3",
+//         header: "Slide 3 Header",
+//         key: "20e05c32-bd0f-4e81-8cca-dab1166c89f1"
+//     }
+// ];
 
 const CourseCategoryCarousel = props => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [animating, setAnimating] = useState(false);
+    // const [activeIndex, setActiveIndex] = useState(0);
+    // const [animating, setAnimating] = useState(false);
 
-    const next = () => {
-        if (animating) return;
-        const nextIndex =
-            activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-        setActiveIndex(nextIndex);
-    };
+    // const next = () => {
+    //     if (animating) return;
+    //     const nextIndex =
+    //         activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    //     setActiveIndex(nextIndex);
+    // };
 
-    const previous = () => {
-        if (animating) return;
-        const nextIndex =
-            activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-        setActiveIndex(nextIndex);
-    };
+    // const previous = () => {
+    //     if (animating) return;
+    //     const nextIndex =
+    //         activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    //     setActiveIndex(nextIndex);
+    // };
 
-    const goToIndex = newIndex => {
-        if (animating) return;
-        setActiveIndex(newIndex);
-    };
+    // const goToIndex = newIndex => {
+    //     if (animating) return;
+    //     setActiveIndex(newIndex);
+    // };
 
-    const slides = carouselDummyData.map(item => {
-        return (
-            <CarouselItem
-                onExiting={() => setAnimating(true)}
-                onExited={() => setAnimating(false)}
-                key={item.key}
-            >
-                <img src={item} className="w-100" style={{height:"20rem"}} alt="Category Page Slider" />
-            </CarouselItem>
-        );
-    });
+    // const slides = carouselDummyData.map(item => {
+    //     return (
+    //         <CarouselItem
+    //             onExiting={() => setAnimating(true)}
+    //             onExited={() => setAnimating(false)}
+    //             key={item.key}
+    //         >
+    //             <img src={item} className="w-100" style={{height:"20rem"}} alt="Category Page Slider" />
+    //         </CarouselItem>
+    //     );
+    // });
 
     return (
         // Carousel-CategoryPage
-        <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-            <CarouselIndicators
-                items={items}
-                activeIndex={activeIndex}
-                onClickHandler={goToIndex}
-            />
-            {slides}
-            <CarouselControl
-                direction="prev"
-                directionText="Previous"
-                onClickHandler={previous}
-            />
-            <CarouselControl
-                direction="next"
-                directionText="Next"
-                onClickHandler={next}
-            />
-        </Carousel>
+        // <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+        //     <CarouselIndicators
+        //         items={items}
+        //         activeIndex={activeIndex}
+        //         onClickHandler={goToIndex}
+        //     />
+        //     {slides}
+        //     <CarouselControl
+        //         direction="prev"
+        //         directionText="Previous"
+        //         onClickHandler={previous}
+        //     />
+        //     <CarouselControl
+        //         direction="next"
+        //         directionText="Next"
+        //         onClickHandler={next}
+        //     />
+        // </Carousel>
+        <div>
+            <h2 style={{textAlign:"center", fontFamily:"Merriweather"}}>
+                All ‘category or search’ Courses From Top Universities, Institutions and Experts
+            </h2>
+        </div>
     );
 };
 
