@@ -1,6 +1,6 @@
 import React from "react";
 import { useStoreActions, useStoreState } from "easy-peasy";
-import CourseCardCompare from "../components/courseCardCompare/courseCardCompare";
+import CourseCardCompare from "../components/courseCardCompare/CourseCardCompare";
 const Compare = () => {
     const compares = useStoreState(state => state.compares);
     const addToCompare = useStoreActions(actions => actions.addToCompare);
@@ -47,7 +47,7 @@ const Compare = () => {
                                                 <span>
                                                     <b>₹ {cmp?.price}</b>
                                                 </span>
-                                                <a 
+                                                <a
                                                    href={cmp?.url}
                                                    target="_blank">
                                                <button> Go to class</button>
