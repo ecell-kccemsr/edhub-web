@@ -10,7 +10,8 @@ import {
     CarouselControl,
     CarouselIndicators,
     FormGroup,
-    Input
+    Input,
+    Button
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -102,21 +103,21 @@ const CourseCategoryCarousel = props => {
         //     />
         // </Carousel>
         <div>
-            <h2 style={{textAlign:"center", fontFamily:"Merriweather"}}>
-                All ‘category or search’ Courses From Top Universities, Institutions and Experts
+            <h2 style={{ textAlign: "center", fontFamily: "Merriweather" }}>
+                All ‘category or search’ Courses From Top Universities,
+                Institutions and Experts
             </h2>
         </div>
     );
 };
 
 const courseCategory = props => {
-
     //State
     const [apiURL, setApiURL] = useState("");
     const [ratingValue, setRating] = useState(0);
     const [ceritificationVal, setCertificationVal] = useState(1);
     const [lang, setLang] = useState("");
-    const [discount, setDiscount] = useState('0');
+    const [discount, setDiscount] = useState("0");
     const [sliderVal, setSliderVal] = useState(20000000);
     const [providerVal, setProviderVal] = useState("");
     const [providerData, setProviderData] = useState([]);
@@ -134,8 +135,8 @@ const courseCategory = props => {
     const minValue = useRef(null);
     const maxValue = useRef(null);
     const sliderValue = useRef(null);
-   
-    //Change price input and slider value when user slides. Also get all courses by adding price filter 
+
+    //Change price input and slider value when user slides. Also get all courses by adding price filter
     const onSliderChange = value => {
         setPriceFilter({
             ...priceFilter,
@@ -154,21 +155,21 @@ const courseCategory = props => {
                 str = str.concat(`course_category_id=${modalVals?.category}&`); //If user selected category append to url
             if (modalVals?.subcategory != "")
                 str = str.concat(
-                    `course_sub_category_id=${modalVals?.subcategory}&`//If user selected subcategory append to url
+                    `course_sub_category_id=${modalVals?.subcategory}&` //If user selected subcategory append to url
                 );
             if (modalVals?.difficulty != "")
-                str = str.concat(`difficulty_level=${modalVals?.difficulty}&`);//If user selected difficulty append to url
+                str = str.concat(`difficulty_level=${modalVals?.difficulty}&`); //If user selected difficulty append to url
             if (modalVals?.locale != "")
-                str = str.concat(`locale=${modalVals?.locale}&`);//If user selected difficulty append to url
+                str = str.concat(`locale=${modalVals?.locale}&`); //If user selected difficulty append to url
             setApiURL("/api/courses?");
             getCourses(true, str, 0, "", modalVals?.max, modalVals?.min);
-            window.history.replaceState(null, '')
-        } 
+            window.history.replaceState(null, "");
+        }
         //If user comes from searching on landing page but entered empty string (show all courses)
         else if (props?.location?.search == "") {
             setApiURL("/api/courses?");
             getCourses(false, "/api/courses?");
-        } 
+        }
         //If user comes from searching on landing page (show courses as per user preference)
         else {
             let url = `/api/courses?search${props?.location?.search.substring(
@@ -184,9 +185,21 @@ const courseCategory = props => {
             .then(res => setProviderData(res.data.data))
             .catch(err => console.log(err));
     }, [props?.location?.state]);
-    
+
     //Function to get courese on basis of the various filter passed to it
-    const getCourses = (filter, url, rating, provider, max, min,perPage=15,pageNumber,certification,language,discountArg) => {
+    const getCourses = (
+        filter,
+        url,
+        rating,
+        provider,
+        max,
+        min,
+        perPage = 15,
+        pageNumber,
+        certification,
+        language,
+        discountArg
+    ) => {
         let pricefilter = "";
         let ratingfilter = "";
         let providerfilter = "";
@@ -194,26 +207,31 @@ const courseCategory = props => {
         let langfilter = "";
         let discountfilter = "";
         let perpage = `&per_page=${perPage}`;
-        let pagenumber = pageNumber?`&page=${pageNumber}`:`&page=${currentCoursePage?.current_page}`;
+        let pagenumber = pageNumber
+            ? `&page=${pageNumber}`
+            : `&page=${currentCoursePage?.current_page}`;
         let ratingV = rating || ratingValue;
         let providerV = provider || providerVal;
         let minV = min || minValue.current.value;
         let maxv = max || maxValue.current.value;
-        let certificationV = certification==null?ceritificationVal: certification;
-        let languageV = language==null?lang:language
-        let discountV = discountArg==null?discount:discountArg
+        let certificationV =
+            certification == null ? ceritificationVal : certification;
+        let languageV = language == null ? lang : language;
+        let discountV = discountArg == null ? discount : discountArg;
         if (filter) {
             pricefilter = `price_min=${minV}&price_max=${maxv}`;
             ratingfilter = `&rating=${ratingV}`;
             certificationfilter = `&certification=${certificationV}`;
             discountfilter = `&discount_percentage=${discountV}`;
-            langfilter =languageV==""?"": `&locale=${languageV}`;
+            langfilter = languageV == "" ? "" : `&locale=${languageV}`;
             providerfilter =
                 providerV == "" ? "" : `&course_provider_id=${providerV}`;
         }
         //Request Data
         axios
-            .get(`${url}${pricefilter}${ratingfilter}${providerfilter}${langfilter}${discountfilter}${certificationfilter}${perpage}${pagenumber}`)
+            .get(
+                `${url}${pricefilter}${ratingfilter}${providerfilter}${langfilter}${discountfilter}${certificationfilter}${perpage}${pagenumber}`
+            )
             .then(res => {
                 setCourseCategory(res.data.data);
                 setCurrentCoursePage({
@@ -226,10 +244,10 @@ const courseCategory = props => {
             });
     };
 
-    const handlePagination = (pageNo)=>{
-            getCourses(true, apiURL,null,null,null,null,15,pageNo);
-            window.scrollTo(0, 0)
-    }
+    const handlePagination = pageNo => {
+        getCourses(true, apiURL, null, null, null, null, 15, pageNo);
+        window.scrollTo(0, 0);
+    };
 
     //Function to set values of the range slider and input as user changes input and also call courses adding price filters
     const onPriceChange = (name, value) => {
@@ -257,19 +275,19 @@ const courseCategory = props => {
     //Function to get courses by adding a certificate filter
     const onCertificationChange = val => {
         setCertificationVal(val);
-        getCourses(true, apiURL,null,null,null,null,9,1,val);
+        getCourses(true, apiURL, null, null, null, null, 9, 1, val);
     };
 
     //Function to get courses by adding a language filter
     const onLangChange = val => {
         setLang(val);
-        getCourses(true, apiURL,null,null,null,null,9,1,null,val);
+        getCourses(true, apiURL, null, null, null, null, 9, 1, null, val);
     };
 
     //Function to get courses by adding a discount filter
     const onDiscountChange = val => {
         setDiscount(val);
-        getCourses(true, apiURL,null,null,null,null,9,1,null,null,val);
+        getCourses(true, apiURL, null, null, null, null, 9, 1, null, null, val);
     };
 
     //Function to get courses by adding a provider filter
@@ -278,6 +296,9 @@ const courseCategory = props => {
         getCourses(true, apiURL, null, providerVal);
     };
 
+    const refreshPage = () => {
+        window.location.reload();
+    };
     return (
         <>
             <div className="course-category-section">
@@ -288,7 +309,25 @@ const courseCategory = props => {
                     <Row>
                         <Col sm="12" lg="3">
                             <div className="course-category-filter-section">
-                                <h5>Filters</h5>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignItems: "baseline"
+                                    }}
+                                >
+                                    <h5>Filters</h5>
+                                    <Button
+                                        style={{
+                                            marginRight: "20px",
+                                            backgroundColor: "#3C64B1"
+                                        }}
+                                        onClick={refreshPage}
+                                    >
+                                        Clear Filter
+                                    </Button>
+                                </div>
+
                                 <h6>Pricing</h6>
                                 <div style={{ padding: "5px 20px" }}>
                                     <input
@@ -383,7 +422,8 @@ const courseCategory = props => {
                                                     <FormGroup check>
                                                         <Label check>
                                                             <Input
-                                                                  type="radio" name="rating"
+                                                                type="radio"
+                                                                name="rating"
                                                                 value="4"
                                                                 onChange={e =>
                                                                     onRatingChange(
@@ -398,7 +438,8 @@ const courseCategory = props => {
                                                     <FormGroup check>
                                                         <Label check>
                                                             <Input
-                                                                  type="radio" name="rating"
+                                                                type="radio"
+                                                                name="rating"
                                                                 value="3"
                                                                 onChange={e =>
                                                                     onRatingChange(
@@ -413,7 +454,8 @@ const courseCategory = props => {
                                                     <FormGroup check>
                                                         <Label check>
                                                             <Input
-                                                                 type="radio" name="rating"
+                                                                type="radio"
+                                                                name="rating"
                                                                 value="2"
                                                                 onChange={e =>
                                                                     onRatingChange(
@@ -428,7 +470,8 @@ const courseCategory = props => {
                                                     <FormGroup check>
                                                         <Label check>
                                                             <Input
-                                                                 type="radio" name="rating"
+                                                                type="radio"
+                                                                name="rating"
                                                                 value="1"
                                                                 onChange={e =>
                                                                     onRatingChange(
@@ -484,45 +527,46 @@ const courseCategory = props => {
                                                     className="mb-0"
                                                 >
                                                     {providerData &&
-                                                        providerData.map((p,key) => {
-                                                            return (
-                                                                <FormGroup
-                                                                    check
-                                                                    key={key}
-                                                                >
-                                                                    <Label
+                                                        providerData.map(
+                                                            (p, key) => {
+                                                                return (
+                                                                    <FormGroup
                                                                         check
-                                                                    >
-                                                                        <Input
-                                                                         type="radio" name="provider"
-                                                                            
-                                                                            value={
-                                                                                p?.id
-                                                                            }
-                                                                            onChange={e =>
-                                                                                handleProviderFilter(
-                                                                                    e
-                                                                                        .target
-                                                                                        .value
-                                                                                )
-                                                                            }
-                                                                        />
-                                                                        {
-                                                                            p?.name
+                                                                        key={
+                                                                            key
                                                                         }
-                                                                    </Label>
-                                                                </FormGroup>
-                                                            );
-                                                        })}
+                                                                    >
+                                                                        <Label
+                                                                            check
+                                                                        >
+                                                                            <Input
+                                                                                type="radio"
+                                                                                name="provider"
+                                                                                value={
+                                                                                    p?.id
+                                                                                }
+                                                                                onChange={e =>
+                                                                                    handleProviderFilter(
+                                                                                        e
+                                                                                            .target
+                                                                                            .value
+                                                                                    )
+                                                                                }
+                                                                            />
+                                                                            {
+                                                                                p?.name
+                                                                            }
+                                                                        </Label>
+                                                                    </FormGroup>
+                                                                );
+                                                            }
+                                                        )}
                                                 </List>
                                             </div>
                                         </div>
-
-                                        
                                     </div>
                                 </div>
 
-                                
                                 <div
                                     className="accordion course-category-accordion"
                                     id="courseCategoryParent"
@@ -560,81 +604,86 @@ const courseCategory = props => {
                                                     type="unstyled"
                                                     className="mb-0"
                                                 >
-                                                    
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                       
-                                                                       type="radio" name="language"
-                                                                            value="English (US)"
-                                                                            onClick={(e)=>onLangChange(e.target.value)}
-                                                                        />
-                                                                       English (US)
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                             type="radio" name="language"
-                                                                            value="English (UK)"
-                                                                            onClick={(e)=>onLangChange(e.target.value)}
-                                                                        />
-                                                                       English (UK)
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                             type="radio" name="language"
-                                                                            value="Hindi"
-                                                                            onClick={(e)=>onLangChange(e.target.value)}
-                                                                        />
-                                                                       Hindi
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                             type="radio" name="language"
-                                                                            value="Marathi"
-                                                                            onClick={(e)=>onLangChange(e.target.value)}
-                                                                        />
-                                                                       Marathi
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                             type="radio" name="language"
-                                                                            value="Punjabi"
-                                                                            onClick={(e)=>onLangChange(e.target.value)}
-                                                                        />
-                                                                       Punjabi
-                                                                    </Label>
-                                                                </FormGroup>
-                                                             
-                                                          
-                                                        
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="radio"
+                                                                name="language"
+                                                                value="English (US)"
+                                                                onClick={e =>
+                                                                    onLangChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            English (US)
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="radio"
+                                                                name="language"
+                                                                value="English (UK)"
+                                                                onClick={e =>
+                                                                    onLangChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            English (UK)
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="radio"
+                                                                name="language"
+                                                                value="Hindi"
+                                                                onClick={e =>
+                                                                    onLangChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            Hindi
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="radio"
+                                                                name="language"
+                                                                value="Marathi"
+                                                                onClick={e =>
+                                                                    onLangChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            Marathi
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="radio"
+                                                                name="language"
+                                                                value="Punjabi"
+                                                                onClick={e =>
+                                                                    onLangChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            />
+                                                            Punjabi
+                                                        </Label>
+                                                    </FormGroup>
                                                 </List>
                                             </div>
                                         </div>
@@ -674,25 +723,72 @@ const courseCategory = props => {
                                             data-parent="#courseCategoryParent"
                                         >
                                             <div className="card-body">
-                                                <List type="unstyled" className="mb-0">
+                                                <List
+                                                    type="unstyled"
+                                                    className="mb-0"
+                                                >
                                                     <FormGroup check>
                                                         <Label check>
-                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="30"/>30% & above off
+                                                            <Input
+                                                                type="radio"
+                                                                name="discount_percentage"
+                                                                onChange={e =>
+                                                                    onDiscountChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                                value="30"
+                                                            />
+                                                            30% & above off
                                                         </Label>
                                                     </FormGroup>
                                                     <FormGroup check>
                                                         <Label check>
-                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="40"/>40% & above off
+                                                            <Input
+                                                                type="radio"
+                                                                name="discount_percentage"
+                                                                onChange={e =>
+                                                                    onDiscountChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                                value="40"
+                                                            />
+                                                            40% & above off
                                                         </Label>
                                                     </FormGroup>
                                                     <FormGroup check>
                                                         <Label check>
-                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="60"/>60% & above off
+                                                            <Input
+                                                                type="radio"
+                                                                name="discount_percentage"
+                                                                onChange={e =>
+                                                                    onDiscountChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                                value="60"
+                                                            />
+                                                            60% & above off
                                                         </Label>
                                                     </FormGroup>
                                                     <FormGroup check>
                                                         <Label check>
-                                                            <Input type="radio" name="discount_percentage" onChange={e=>onDiscountChange(e.target.value)} value="80"/>80% & above off
+                                                            <Input
+                                                                type="radio"
+                                                                name="discount_percentage"
+                                                                onChange={e =>
+                                                                    onDiscountChange(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                                value="80"
+                                                            />
+                                                            80% & above off
                                                         </Label>
                                                     </FormGroup>
                                                 </List>
@@ -738,42 +834,39 @@ const courseCategory = props => {
                                                     type="unstyled"
                                                     className="mb-0"
                                                 >
-                                                    
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                            type="radio"
-                                                                            name="radio1"
-                                                                            onChange={()=>onCertificationChange(1)}
-                                                                        />
-                                                                       Yes
-                                                                    </Label>
-                                                                </FormGroup>
-                                                                <FormGroup
-                                                                    check
-                                                                >
-                                                                    <Label
-                                                                        check
-                                                                    >
-                                                                        <Input
-                                                                            type="radio"
-                                                                            name="radio1"
-                                                                            onChange={()=>onCertificationChange(0)}
-                                                                        />
-                                                                      No
-                                                                    </Label>
-                                                                </FormGroup>
-                                                             
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="radio"
+                                                                name="radio1"
+                                                                onChange={() =>
+                                                                    onCertificationChange(
+                                                                        1
+                                                                    )
+                                                                }
+                                                            />
+                                                            Yes
+                                                        </Label>
+                                                    </FormGroup>
+                                                    <FormGroup check>
+                                                        <Label check>
+                                                            <Input
+                                                                type="radio"
+                                                                name="radio1"
+                                                                onChange={() =>
+                                                                    onCertificationChange(
+                                                                        0
+                                                                    )
+                                                                }
+                                                            />
+                                                            No
+                                                        </Label>
+                                                    </FormGroup>
                                                 </List>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </Col>
                         <Col sm="12" lg="9">
@@ -786,33 +879,50 @@ const courseCategory = props => {
                                             style={{ marginBottom: "25px" }}
                                             key={course?.id}
                                         >
-                                                 <a data-tip data-for={course?.id.toString()}>
-                                             <CourseCard data={course} />
-                                          </a>
-                                           
+                                            <a
+                                                data-tip
+                                                data-for={course?.id.toString()}
+                                            >
+                                                <CourseCard data={course} />
+                                            </a>
+
                                             <TooltipComponent data={course} />
                                         </Col>
                                     ))}
                             </Row>
-                            {
-                                courseCategory && courseCategory?.length>0 && (
-                                    <>
-                                    <button 
-                                    className="pg-btn"
-                                    disabled={currentCoursePage?.current_page==1}
-                                    onClick={()=>{
-                                        handlePagination(currentCoursePage?.current_page-1)
-                                    }}>PREV</button>
-                                    <button 
-                                    className="pg-btn"
-                                     disabled={currentCoursePage?.current_page==currentCoursePage?.last_page}
-                                    onClick={()=>{
-                                        handlePagination(currentCoursePage?.current_page+1)
-                                    }}>NEXT</button>
-                                    </>
-                                )
-                            }
-                            
+                            {courseCategory && courseCategory?.length > 0 && (
+                                <>
+                                    <button
+                                        className="pg-btn"
+                                        disabled={
+                                            currentCoursePage?.current_page == 1
+                                        }
+                                        onClick={() => {
+                                            handlePagination(
+                                                currentCoursePage?.current_page -
+                                                    1
+                                            );
+                                        }}
+                                    >
+                                        PREV
+                                    </button>
+                                    <button
+                                        className="pg-btn"
+                                        disabled={
+                                            currentCoursePage?.current_page ==
+                                            currentCoursePage?.last_page
+                                        }
+                                        onClick={() => {
+                                            handlePagination(
+                                                currentCoursePage?.current_page +
+                                                    1
+                                            );
+                                        }}
+                                    >
+                                        NEXT
+                                    </button>
+                                </>
+                            )}
                         </Col>
                     </Row>
                 </div>
