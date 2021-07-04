@@ -42,6 +42,7 @@ class CourseResource extends JsonResource
             'slug' => $this->slug,
             'category' => $this->course_category,
             'sub_category' => $this->course_sub_category,
+            'total_hits' => $this->total_hits,
         ];
     }
 }

@@ -37,6 +37,7 @@ class CreateCoursesTable extends Migration
             $table->unsignedInteger('course_sub_category_id')->nullable();
             $table->string('slug')->unique();
             $table->integer('discount_percentage');
+            $table->unsignedBigInteger('total_hits')->default(0);
             $table->timestamps();
         });
     }

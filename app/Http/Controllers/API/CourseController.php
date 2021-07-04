@@ -111,6 +111,7 @@ class CourseController extends Controller
     public function show($course)
     {
         $course = Course::where('id', $course)->orWhere('slug', $course)->firstOrFail();
+        $course->increment('total_hits',1);
         return new CourseResource($course);
     }
 

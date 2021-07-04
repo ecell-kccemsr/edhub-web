@@ -21,7 +21,7 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $data = [];
-        $news = News::where('title', 'like', '%' . $request->input('search') . '%')->get();
+        $news = News::where('title', 'like', '%' . $request->input('search') . '%')->limit(3)->get();
         foreach ($news as $n) {
             $sub_data['title'] = $n->title;
             $sub_data['slug'] = $n->slug;
@@ -29,7 +29,7 @@ class SearchController extends Controller
             $sub_data['url'] = route('news.show',$n->slug);
             array_push($data, $sub_data);
         }
-        $question_paper = QuestionPaper::where('title', 'like', '%' . $request->input('search') . '%')->get();
+        $question_paper = QuestionPaper::where('title', 'like', '%' . $request->input('search') . '%')->limit(3)->get();
         foreach ($question_paper as $qp) {
             $category = new QuestionPaperCategoryResource($qp->category);
             $sub_category = new QuestionPaperSubCategoryResource($qp->sub_category);
@@ -39,7 +39,7 @@ class SearchController extends Controller
             $sub_data['url'] = route('question_paper.show',[$category->slug,$sub_category->slug]);
             array_push($data, $sub_data);
         }
-        $government_job = GovernmentJob::where('title', 'like', '%' . $request->input('search') . '%')->get();
+        $government_job = GovernmentJob::where('title', 'like', '%' . $request->input('search') . '%')->limit(3)->get();
         foreach ($government_job as $g) {
             $category = new GovernmentJobCategoryResource($g->category);
             $sub_category = new GovernmentJobSubCategoryResource($g->sub_category);
@@ -49,7 +49,7 @@ class SearchController extends Controller
             $sub_data['url'] = route('government_job.show',[$category->slug,$sub_category->slug,$g->slug]);
             array_push($data, $sub_data);
         }
-        $blog = Blog::where('title', 'like', '%' . $request->input('search') . '%')->get();
+        $blog = Blog::where('title', 'like', '%' . $request->input('search') . '%')->limit(3)->get();
         foreach ($blog as $b) {
             $sub_data['title'] = $b->title;
             $sub_data['slug'] = $b->slug;
@@ -57,7 +57,7 @@ class SearchController extends Controller
             $sub_data['url'] = route('blog.show',$b->slug);
             array_push($data, $sub_data);
         }
-        $exam_calendar = ExamCalendar::where('name', 'like', '%' . $request->input('search') . '%')->get();
+        $exam_calendar = ExamCalendar::where('name', 'like', '%' . $request->input('search') . '%')->limit(3)->get();
         foreach ($exam_calendar as $e) {
             $sub_data['title'] = $e->name;
             $sub_data['slug'] = $e->slug;
@@ -65,7 +65,7 @@ class SearchController extends Controller
             $sub_data['url'] = route('exam_calendar.show');
             array_push($data, $sub_data);
         }
-        $course = Course::where('title', 'like', '%' . $request->input('search') . '%')->get();
+        $course = Course::where('title', 'like', '%' . $request->input('search') . '%')->limit(3)->get();
         foreach ($course as $c) {
             $sub_data['title'] = $c->title;
             $sub_data['slug'] = $c->slug;
