@@ -22,6 +22,7 @@
         "orangehill/iseed": "^3.0",
         "overtrue/laravel-like": "^4.0",
         "pragmarx/health": "^1.0",
+        "sentry/sentry-laravel": "^2.7",
         "tcg/voyager": "^1.4",
         "teamtnt/tntsearch": "^2.8"
     },
