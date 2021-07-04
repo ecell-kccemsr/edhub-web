@@ -46,13 +46,13 @@ const CourseCard = ({ data }) => {
                 )}
             </button>
             <div className="coursecard-section h-100">
-                <Link to={`/courseDetail/${data?.slug}`}>
+                <a to={`/courseDetail/${data?.slug}`}>
                     <img
                         src={data?.image}
                         className="card-header-img"
                         alt={data?.title}
                     />
-                </Link>
+                </a>
 
                 <div className="card-header-top">
                     <div>
@@ -73,13 +73,13 @@ const CourseCard = ({ data }) => {
                     <h5 style={{ fontWeight: "400" }}>$ {data?.price}</h5>
                 </div>
                 <div>
-                    <Link to={`/courseDetail/${data?.slug}`}>
+                    <a to={`/courseDetail/${data?.slug}`}>
                         <h4 className="card-title">
                             {data?.title.length > 40
                                 ? data?.title.slice(0, 40) + "..."
                                 : data?.title}
                         </h4>
-                    </Link>
+                    </a>
 
                     <div className="card-overview">
                         <div>
@@ -143,12 +143,12 @@ const CourseCard = ({ data }) => {
                         </p>
                     </div>
 
-                    <Link to={`/courseDetail/${data?.slug}`}>
+                    <a to={`/courseDetail/${data?.slug}`}>
                         <img
                             src="/images/courseCategory/reviewArrow.png"
                             alt="reviewArrow"
                         />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </>

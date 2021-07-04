@@ -23,7 +23,7 @@ const NewsHomePage = () => {
             idVal = `category_id=${id}`;
         }
         axios
-            .get(`/api/news?per_page=5&page=${pageNo}&${idVal}`)
+            .get(`/api/news?per_page=8&page=${pageNo}&${idVal}`)
             .then(res => {
                 setNews(res.data.data);
                 setLoading(false);
