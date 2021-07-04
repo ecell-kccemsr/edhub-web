@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col } from "reactstrap";
 import LinkCard from "../components/link-card/LinkCard";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import SliderHomepage from "../homepage/landingPageComponents/SliderHomepage";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
 function Govermentjob() {
@@ -58,12 +58,18 @@ function Govermentjob() {
 
     return (
         <>
-         <Helmet>
-                       <meta name='keywords' content='edhub, Government-job, india, trending, exams, jobs' />
-                    <meta name="description" content="Government Job Page where all jobs are added" />
-                    <meta name='copyright' content='Edhub' />
-                    <meta name='language' content='ES' />
-             </Helmet>
+            <Helmet>
+                <meta
+                    name="keywords"
+                    content="edhub, Government-job, india, trending, exams, jobs"
+                />
+                <meta
+                    name="description"
+                    content="Government Job Page where all jobs are added"
+                />
+                <meta name="copyright" content="Edhub" />
+                <meta name="language" content="ES" />
+            </Helmet>
             <div className="governmentjob">
                 <div className="job-page">
                     <div className="job-hero-section">
@@ -98,39 +104,40 @@ function Govermentjob() {
                             Select Your Exam
                         </h5>
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
-                                 
                             {categories.map(d => {
                                 let isActive = d.id == categories[0].id;
                                 return (
                                     <>
-                                  
-                                    <li
-                                        className="nav-item"
-                                        role="presentation"
-                                    >
-                                        <a
-                                            className={`nav-link ${
-                                                isActive ? "active" : ""
-                                            }`}
-                                            id={`${d?.slug}-tab`}
-                                            data-toggle="tab"
-                                            href={`#${d?.slug}`}
-                                            role="tab"
-                                            aria-controls={`${d?.slug}`}
-                                            aria-selected="true"
-                                            onClick={() =>
-                                                handleTabFilter(d?.id)
-                                            }
+                                        <li
+                                            className="nav-item"
+                                            role="presentation"
                                         >
-                                            {d?.name}
-                                        </a>
-                                    </li>
+                                            <a
+                                                className={`nav-link ${
+                                                    isActive ? "active" : ""
+                                                }`}
+                                                id={`${d?.slug}-tab`}
+                                                data-toggle="tab"
+                                                href={`#${d?.slug}`}
+                                                role="tab"
+                                                aria-controls={`${d?.slug}`}
+                                                aria-selected="true"
+                                                onClick={() =>
+                                                    handleTabFilter(d?.id)
+                                                }
+                                            >
+                                                {d?.name}
+                                            </a>
+                                        </li>
                                     </>
                                 );
                             })}
                         </ul>
-                        
-                        <div className="job-tab-content d-flex flex-wrap" id="myTabContent">
+
+                        <div
+                            className="job-tab-content d-flex flex-wrap"
+                            id="myTabContent"
+                        >
                             {subCategoryFilter.map(d => {
                                 let isActive = d.id == subCategoryFilter[0].id;
                                 return (
@@ -142,21 +149,24 @@ function Govermentjob() {
                                         role="tabpanel"
                                         aria-labelledby={`${d?.category?.slug}-tab`}
                                     >
-                                             <div className="job-tab-el my-0">
-                                                    <Link to={`/govermentjobs/${d?.category?.slug}/${d?.slug}`}>
-                                                     <img
-                                                        src={d?.image}
-                                                        alt="Sub-Image"
-                                                    />{" "}
-                                                    <p>{d?.name}</p>
-                                                    </Link>
-                                                </div>                                            
+                                        <div
+                                            className="job-tab-el my-0"
+                                            style={{ height: "65px" }}
+                                        >
+                                            <Link
+                                                to={`/govermentjobs/${d?.category?.slug}/${d?.slug}`}
+                                            >
+                                                <img
+                                                    src={d?.image}
+                                                    alt="Sub-Image"
+                                                />{" "}
+                                                <p>{d?.name}</p>
+                                            </Link>
+                                        </div>
                                     </div>
-                                
                                 );
                             })}
                         </div>
-                       
                     </div>
                     {/* Latest Notifications */}
                     {jobs && jobs.length > 0 && (
@@ -170,8 +180,14 @@ function Govermentjob() {
                     )}
                 </div>
 
-            <SliderHomepage title="Office Productivity" course_category_id={5} />
-           <SliderHomepage title="Personal Development" course_category_id={6} />
+                <SliderHomepage
+                    title="Office Productivity"
+                    course_category_id={5}
+                />
+                <SliderHomepage
+                    title="Personal Development"
+                    course_category_id={6}
+                />
             </div>
         </>
     );

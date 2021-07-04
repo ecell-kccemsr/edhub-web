@@ -1,7 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect, useRef } from "react";
-import { Link, Redirect,withRouter } from "react-router-dom";
-import { Button,Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Link, Redirect, withRouter } from "react-router-dom";
+import {
+    Button,
+    Row,
+    Col,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    ModalFooter
+} from "reactstrap";
 import { useHistory } from "react-router";
 
 import { useStoreState } from "easy-peasy";
@@ -21,18 +29,21 @@ import GModal from "./Modal";
 //images
 
 const SearchbarDropdown = props => {
-    
-    const { options, onInputChange, searchText,handleSearch,setShowMegaMenu } = props;
+    const {
+        options,
+        onInputChange,
+        searchText,
+        handleSearch,
+        setShowMegaMenu
+    } = props;
     const ulRef = useRef();
     const inputRef = useRef();
     const history = useHistory();
 
- 
-   
     useEffect(() => {
         inputRef.current.addEventListener("click", event => {
             event.stopPropagation();
-            setShowMegaMenu(false)
+            setShowMegaMenu(false);
             ulRef.current.style.display = "flex";
             onInputChange(event);
         });
@@ -43,18 +54,18 @@ const SearchbarDropdown = props => {
     return (
         <div className="search-bar-dropdown">
             <form onSubmit={handleSearch}>
-               <input
-               style={{width:"19rem"}}
-                id="search-bar"
-                type="text"
-                className="form-control"
-                placeholder="Search"
-                ref={inputRef}
-                onChange={onInputChange}
-                autoComplete="off"
-            /> 
+                <input
+                    style={{ width: "19rem" }}
+                    id="search-bar"
+                    type="text"
+                    className="form-control"
+                    placeholder="Search"
+                    ref={inputRef}
+                    onChange={onInputChange}
+                    autoComplete="off"
+                />
             </form>
-            
+
             <ul id="results" className="list-group" ref={ulRef}>
                 {options.map((option, index) => {
                     return (
@@ -63,13 +74,19 @@ const SearchbarDropdown = props => {
                             key={index}
                             className="list-group-item list-group-item-action"
                         >
-                            <p style={{textTransform:"uppercase",marginBottom: 0,fontWeight: 600}}>
-                            {option?.type}
+                            <p
+                                style={{
+                                    textTransform: "uppercase",
+                                    marginBottom: 0,
+                                    fontWeight: 600
+                                }}
+                            >
+                                {option?.type}
                             </p>
                             <a href={`${option?.url}`}>
-                            {option?.title.length > 50
-                            ? option?.title.slice(0, 50) 
-                            : option?.title}
+                                {option?.title.length > 50
+                                    ? option?.title.slice(0, 50)
+                                    : option?.title}
                             </a>
                         </button>
                     );
@@ -81,8 +98,8 @@ const SearchbarDropdown = props => {
 const CourseNavbar = props => {
     const [options, setOptions] = useState([]);
     const [searchText, setSearchText] = useState("");
-    const [showMegaMenu,setShowMegaMenu] = useState(false)
-     const history = useHistory();
+    const [showMegaMenu, setShowMegaMenu] = useState(false);
+    const history = useHistory();
     const onInputChange = event => {
         setSearchText(event.target.value);
         axios
@@ -93,14 +110,13 @@ const CourseNavbar = props => {
 
     const handleSearch = e => {
         e.preventDefault();
-        const form = e.target
-        if(searchText!=""){
-            history.push(`/course-category?q=${searchText}`)
-            form.reset()
+        const form = e.target;
+        if (searchText != "") {
+            history.push(`/course-category?q=${searchText}`);
+            form.reset();
         }
     };
 
-    
     const [modal, setModal] = useState(false);
     const [step, setStep] = useState(1);
     const [categories, setCategory] = useState([]);
@@ -130,11 +146,9 @@ const CourseNavbar = props => {
         setStep(1);
     };
 
-    // Login modal 
+    // Login modal
     const [modallogin, setModalLogin] = useState(false);
     const toggleLogin = () => setModalLogin(!modallogin);
-
-
 
     const nextStep = () => setStep(prev => prev + 1);
     const prevStep = () => setStep(prev => prev - 1);
@@ -142,9 +156,9 @@ const CourseNavbar = props => {
     const handleSubmit = () => {
         setModal(false);
         history.push({
-            pathname:  "/course-category",
+            pathname: "/course-category",
             state: { modalValues: modalVals }
-         }); 
+        });
     };
 
     const handleChange = () => {
@@ -210,10 +224,15 @@ const CourseNavbar = props => {
     };
     return (
         <>
-        <GModal modal={modal} toggle={toggle} currentModalForm={currentModalForm} step={step}/>
-            
+            <GModal
+                modal={modal}
+                toggle={toggle}
+                currentModalForm={currentModalForm}
+                step={step}
+            />
+
             <nav className="navbar course-navbar navbar-expand-lg">
-                <div style={{display:"contents"}} >
+                <div style={{ display: "contents" }}>
                     <Link className="navbar-brand" to="/">
                         <img
                             src="/images/landingpage/Edhub-1.png"
@@ -234,14 +253,20 @@ const CourseNavbar = props => {
                         <ul className="navbar-nav">
                             <li className="nav-item dropdown">
                                 <a
-                                    className={`nav-link courseNavLink dropdown-toggle megamenu-btn ${showMegaMenu?"show":""}`}
+                                    className={`nav-link courseNavLink dropdown-toggle megamenu-btn ${
+                                        showMegaMenu ? "show" : ""
+                                    }`}
                                     href="#"
                                     data-bs-toggle="dropdown"
                                     aria-expanded={`${showMegaMenu}`}
                                 >
                                     <span>Courses</span>
                                 </a>
-                                <ul className={`dropdown-menu ${showMegaMenu?"show":""}`} >
+                                <ul
+                                    className={`dropdown-menu ${
+                                        showMegaMenu ? "show" : ""
+                                    }`}
+                                >
                                     {categories &&
                                         categories.map(navl => {
                                             let ismegamenu = false;
@@ -273,7 +298,12 @@ const CourseNavbar = props => {
                                                         )}
                                                     </Link>
                                                     {ismegamenu && (
-                                                        <div className="megasubmenu dropdown-menu" style={{width:"21rem"}}>
+                                                        <div
+                                                            className="megasubmenu dropdown-menu"
+                                                            style={{
+                                                                width: "21rem"
+                                                            }}
+                                                        >
                                                             <ul className="list-unstyled">
                                                                 {navl.sub_categories.map(
                                                                     child => {
@@ -319,30 +349,30 @@ const CourseNavbar = props => {
                                                                                                 sm="12"
                                                                                                 md="12"
                                                                                             > */}
-                                                                                                <ul className="list-unstyled">
-                                                                                                    {child.course_topics.map(
-                                                                                                        subc => {
-                                                                                                            return (
-                                                                                                                <li
-                                                                                                                    key={
-                                                                                                                        subc?.id
-                                                                                                                    }
-                                                                                                                >
-                                                                                                                    <Link
-                                                                                                                        className="dropdown-item"
-                                                                                                                        to={`/course-category?q=${subc.name}`}
-                                                                                                                    >
-                                                                                                                        {
-                                                                                                                            subc.name
-                                                                                                                        }
-                                                                                                                    </Link>
-                                                                                                                </li>
-                                                                                                            );
-                                                                                                        }
-                                                                                                    )}
-                                                                                                </ul>
-                                                                                            {/* </Col> */}
-                                                                                            {/* <Col
+                                                                                        <ul className="list-unstyled">
+                                                                                            {child.course_topics.map(
+                                                                                                subc => {
+                                                                                                    return (
+                                                                                                        <li
+                                                                                                            key={
+                                                                                                                subc?.id
+                                                                                                            }
+                                                                                                        >
+                                                                                                            <Link
+                                                                                                                className="dropdown-item"
+                                                                                                                to={`/course-category?q=${subc.name}`}
+                                                                                                            >
+                                                                                                                {
+                                                                                                                    subc.name
+                                                                                                                }
+                                                                                                            </Link>
+                                                                                                        </li>
+                                                                                                    );
+                                                                                                }
+                                                                                            )}
+                                                                                        </ul>
+                                                                                        {/* </Col> */}
+                                                                                        {/* <Col
                                                                                                 sm="12"
                                                                                                 md="6"
                                                                                             >
@@ -472,38 +502,49 @@ const CourseNavbar = props => {
                                     className="nav-link courseNavLink"
                                     to="/profile/wishlist"
                                 >
-                                    <img src="/images/landingpage/bookmark.png" alt="bookmark" />
+                                    <img
+                                        src="/images/landingpage/bookmark.png"
+                                        alt="bookmark"
+                                    />
                                 </Link>
                             </li>
-                         
-                           <li>
-                           {user ? (
-                                  <li className="nav-item">
-                                  <Link
-                                      className="nav-link courseNavLink"
-                                      to="/profile/basic"
-                                  >
-                                      <img src={user?.avatar} alt="User" />
-                                  </Link>
-                              </li>
-                            ) : (
-                                <div className="login-toggle-form">
 
-                                 <Button className="login-btn-navbar" onClick={toggleLogin}>login</Button>
-                                 <Modal isOpen={modallogin} toggle={toggleLogin} className="model">
-                                 <ModalHeader toggle={toggleLogin}></ModalHeader>
-                                   <ModalBody>
-                                    <Auth/>                                   
-                                   </ModalBody>
-                                 </Modal>
-                                       
-                                 
-                             </div>
-                            )}
-                              
-                           </li>
-                           
-
+                            <li>
+                                {user ? (
+                                    <li className="nav-item">
+                                        <Link
+                                            className="nav-link courseNavLink"
+                                            to="/profile/basic"
+                                        >
+                                            <img
+                                                src={user?.avatar}
+                                                alt="User"
+                                            />
+                                        </Link>
+                                    </li>
+                                ) : (
+                                    <div className="login-toggle-form">
+                                        <Button
+                                            className="login-btn-navbar"
+                                            onClick={toggleLogin}
+                                        >
+                                            login
+                                        </Button>
+                                        <Modal
+                                            isOpen={modallogin}
+                                            toggle={toggleLogin}
+                                            className="model"
+                                        >
+                                            <ModalHeader
+                                                toggle={toggleLogin}
+                                            ></ModalHeader>
+                                            <ModalBody>
+                                                <Auth />
+                                            </ModalBody>
+                                        </Modal>
+                                    </div>
+                                )}
+                            </li>
                         </ul>
                     </div>
                 </div>

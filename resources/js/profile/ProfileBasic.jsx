@@ -1,12 +1,12 @@
 import { FormGroup, Input } from "reactstrap";
 import ProfileLayout from "./ProfileLayout";
-import React, {  } from "react";
+import React from "react";
 import http from "../utils/http";
 import { useStoreState } from "easy-peasy";
 const ProfileBasic = () => {
     const user = useStoreState(state => state.user);
     if (user === null) {
-        return  <h3 className="py-4 my-4 text-center">Not Authenticated !</h3>
+        return <h3 className="py-4 my-4 text-center">Not Authenticated !</h3>;
     }
     const onSubmit = e => {
         e.preventDefault();
@@ -38,15 +38,15 @@ const ProfileBasic = () => {
                             disabled
                         />
                     </FormGroup>
-                    <FormGroup>
+                    {/* <FormGroup>
                         <p className="input-headers">Mobile No</p>
                         <Input
                             type="number"
                             name="mobile_no"
-                            defaultValue="9837282813"
+                            defaultValue="22222 55555"
                             className="input-group"
                         />
-                    </FormGroup>
+                    </FormGroup> */}
                     <button className="btn btn-primary">Save</button>
                 </form>
             </div>
