@@ -50,7 +50,7 @@ class CourseController extends Controller
             $courses = $courses->where('title', 'like', '%' . $request->input('search') . '%');
         }
         if ($request->has('trending')) {
-            $courses = $courses->orderBy('rating', 'desc');
+            $courses = $courses->orderBy('total_hits', 'desc');
         }
         if ($request->has('locale')) {
             $courses = $courses->where('locale', $request->input('locale'));
