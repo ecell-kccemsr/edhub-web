@@ -26,7 +26,7 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
                     console.log(err);
                 });
         }
-    }, []);
+    }, [course_category_id]);
 
     const settings = {
         dots: true,

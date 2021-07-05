@@ -15,6 +15,7 @@ import { v4 as uuidv4 } from "uuid";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PopularChoice from "../homepage/landingPageComponents/PopularChoice";
+import SliderHomepage from "../homepage/landingPageComponents/SliderHomepage";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import DetailCard from "./DetailCard";
@@ -784,12 +785,11 @@ function CourseDetail(props) {
 
                     <div className="popular-choice-section-course-details">
                         <Row className="course-card-landing-page-row">
-                            {Course && (
-                                <PopularChoice
-                                    data={Course}
-                                    title="Recommended for you"
-                                />
-                            )}
+                            <SliderHomepage
+                                title="Recommended for you"
+                                description=""
+                                course_category_id={singleCourse?.category?.id}
+                            />
                         </Row>
                     </div>
                 </div>

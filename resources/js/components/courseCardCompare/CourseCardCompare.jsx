@@ -19,7 +19,7 @@ const CourseCardCompare = ({ data }) => {
     };
 
     const handleCompare = data => {
-        if (isAlreadyInCompares === false && compares.length > 2) {
+        if (isAlreadyInCompares === false && compares?.length > 2) {
             alert("Can't add more than 3 courses");
             return;
         } else {
@@ -47,7 +47,7 @@ const CourseCardCompare = ({ data }) => {
                 <div>
                     <Link to={`/courseDetail/${data?.slug}`}>
                         <h4 className="card-title">
-                            {data?.title.length > 40
+                            {data?.title?.length > 40
                                 ? data?.title.slice(0, 40) + "..."
                                 : data?.title}
                         </h4>
