@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { Route, Switch } from "react-router";
+import loadable from "@loadable/component";
 
 //Layout
 import JobLayoutRoute from "../layout/JobLayout";
@@ -9,38 +10,114 @@ import CourseLayoutRoutes from "../layoutCourse/LayoutCourse";
 import "../../sass/app.scss";
 
 //Components
-import Govermentjob from "../jobs/Govermentjob";
-import Governmentjobsubcategory from "../jobs/Governmentjobsubcategory";
+const Govermentjob = loadable(() =>
+    import("../jobs/Govermentjob" /* webpackChunkName: "js/goverment-job" */)
+);
+const Governmentjobsubcategory = loadable(() =>
+    import(
+        "../jobs/Governmentjobsubcategory" /* webpackChunkName: "js/government-job-subcategory" */
+    )
+);
 
 // import News from "../news/News";
+const Examcalendar = loadable(() =>
+    import(
+        "../examcalendar/Examcalendar" /* webpackChunkName: "js/exam-calendar" */
+    )
+);
+const Notification = loadable(() =>
+    import(
+        "../notification/notification" /* webpackChunkName: "js/notification" */
+    )
+);
+const NotFound = loadable(() =>
+    import("../404/NotFound" /* webpackChunkName: "js/not-found" */)
+);
+const Compare = loadable(() =>
+    import("../compare/Compare" /* webpackChunkName: "js/compare" */)
+);
+import RequestCallBack from "../components/RequestCallBack/RequestCallBack";
+const Cart = loadable(() =>
+    import("../cart/Cart" /* webpackChunkName: "js/cart" */)
+);
+const Checkout = loadable(() =>
+    import("../checkout/Checkout" /* webpackChunkName: "js/checkout" */)
+);
+const CourseDetail = loadable(() =>
+    import(
+        "../courseDetail/CourseDetail" /* webpackChunkName: "js/course-detail" */
+    )
+);
+const LandingPage = loadable(() =>
+    import("../homepage/LandingPage" /* webpackChunkName: "js/landing-page" */)
+);
+const courseCategory = loadable(() =>
+    import(
+        "../courseCategory/courseCategory" /* webpackChunkName: "js/course-category" */
+    )
+);
+const ProfileBasic = loadable(() =>
+    import("../profile/ProfileBasic" /* webpackChunkName: "js/profile-basic" */)
+);
+const ProfileWishlist = loadable(() =>
+    import(
+        "../profile/ProfileWishlist" /* webpackChunkName: "js/profile-wishlist" */
+    )
+);
+const ProfileCourses = loadable(() =>
+    import(
+        "../profile/ProfileCourses" /* webpackChunkName: "js/profile-course" */
+    )
+);
+const Degree = loadable(() =>
+    import("../degree/Degree" /* webpackChunkName: "js/degree" */)
+);
+const NewsHomePage = loadable(() =>
+    import(
+        "../newComponent/news/NewsHomePage" /* webpackChunkName: "js/news-home-page" */
+    )
+);
+const SingleNewsPage = loadable(() =>
+    import(
+        "../newComponent/news/SingleNewsPage" /* webpackChunkName: "js/single-news-page" */
+    )
+);
+const prevQPaperHomepage = loadable(() =>
+    import(
+        "../newComponent/prevQPaper/prevQPaperHomepage" /* webpackChunkName: "js/prev-qpaper-home-page" */
+    )
+);
+const prevQPaperSingleDataPage = loadable(() =>
+    import(
+        "../newComponent/prevQPaper/prevQPaperSingleDataPage" /* webpackChunkName: "js/prev-qpaper-single-data-page" */
+    )
+);
+const BlogHomepage = loadable(() =>
+    import(
+        "../newComponent/blogs/BlogHomepage" /* webpackChunkName: "js/blog-home-page" */
+    )
+);
+const SingleBlog = loadable(() =>
+    import(
+        "../newComponent/blogs/SingleBlog" /* webpackChunkName: "js/single-blog" */
+    )
+);
+const ForgotPass = loadable(() =>
+    import(
+        "../auth/forgotPass/ForgotPass" /* webpackChunkName: "js/forgot-pass" */
+    )
+);
+const ResetPass = loadable(() =>
+    import(
+        "../auth/resetPass/ResetPass" /* webpackChunkName: "js/reset-pass" */
+    )
+);
 
-import Examcalendar from "../examcalendar/Examcalendar";
 import Login from "../auth/login/Login";
 import Register from "../auth/register/Register";
-import Notification from "../notification/notification";
-import NotFound from "../404/NotFound";
-import Compare from "../compare/Compare";
-import RequestCallBack from "../components/RequestCallBack/RequestCallBack";
-import Cart from "../cart/Cart";
-import Checkout from "../checkout/Checkout";
-import CourseDetail from "../courseDetail/CourseDetail";
-import LandingPage from "../homepage/LandingPage";
-import courseCategory from "../courseCategory/courseCategory";
 import GuideModal from "../guide/Guide";
-import ProfileBasic from "../profile/ProfileBasic";
-import ProfileWishlist from "../profile/ProfileWishlist";
-import ProfileCourses from "../profile/ProfileCourses";
-import Degree from "../degree/Degree";
 import http from "../utils/http";
 import { useStoreActions } from "easy-peasy";
-import NewsHomePage from "../newComponent/news/NewsHomePage";
-import SingleNewsPage from "../newComponent/news/SingleNewsPage";
-import prevQPaperHomepage from "../newComponent/prevQPaper/prevQPaperHomepage";
-import prevQPaperSingleDataPage from "../newComponent/prevQPaper/prevQPaperSingleDataPage";
-import BlogHomepage from "../newComponent/blogs/BlogHomepage";
-import SingleBlog from "../newComponent/blogs/SingleBlog";
-import ForgotPass from "../auth/forgotPass/ForgotPass"
-import ResetPass from "../auth/resetPass/ResetPass";
 const App = props => {
     const setUser = useStoreActions(actions => actions.setUser);
     const setCompares = useStoreActions(actions => actions.setCompares);
@@ -63,7 +140,6 @@ const App = props => {
 
                 <CourseLayoutRoutes path="/" exact component={LandingPage} />
 
-
                 {/*CourseLayoutRoutes */}
                 <CourseLayoutRoutes
                     path="/govermentjobs"
@@ -76,12 +152,12 @@ const App = props => {
                     exact
                     component={Governmentjobsubcategory}
                 />
-                  <CourseLayoutRoutes
+                <CourseLayoutRoutes
                     path="/govermentjobs/:category_slug/:subcategory_slug/:slug"
                     exact
                     component={Governmentjobsubcategory}
                 />
-                
+
                 <CourseLayoutRoutes
                     path="/questionpaper"
                     exact
@@ -168,7 +244,7 @@ const App = props => {
                     component={GuideModal}
                 />
                 <CourseLayoutRoutes path="/degree" exact component={Degree} />
-                <CourseLayoutRoutes path='*' exact component={NotFound} />
+                <CourseLayoutRoutes path="*" exact component={NotFound} />
             </Switch>
         </Fragment>
     );
