@@ -18,7 +18,7 @@ class ExamCalendarCategoryResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
+            'image' => $this->image === null ? 'https://via.placeholder.com/600x325?text=Exam Calendar' : (str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image)),
             'slug' => $this->slug,
             'seo_keywords' => $this->seo_keywords,
             'seo_description' => $this->seo_description,

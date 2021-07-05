@@ -27,7 +27,7 @@ class NewsResource extends JsonResource
             'description' => $this->description,
             'details' => $this->details,
             'tags' => $this->tags,
-            'image' =>  Voyager::image($this->image),
+            'image' =>  $this->image === null ? 'https://via.placeholder.com/600x325?text=News' : (str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image)),
             'total_views' => $this->total_views,
             'category' => new NewsCategoryResource($this->category),
             'subcategory' => new NewsSubCategoryResource($this->sub_category),

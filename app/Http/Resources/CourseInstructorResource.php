@@ -19,7 +19,7 @@ class CourseInstructorResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'designation' => $this->designation,
-            'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
+            'image' => $this->image === null ? 'https://via.placeholder.com/600x325?text=Course Instructor' : (str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image)),
             'url' => $this->url,
         ];
     }

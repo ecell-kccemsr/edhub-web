@@ -20,7 +20,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'gender' => $this->gender,
-            'avatar' => str_starts_with($this->avatar, 'http') ? $this->avatar : Voyager::image($this->avatar),
+            'avatar' => $this->avatar === null ? 'https://via.placeholder.com/600x325?text=Avatar' : (str_starts_with($this->avatar, 'http') ? $this->avatar : Voyager::image($this->avatar)),
             'seo_keywords' => $this->seo_keywords,
             'seo_description' => $this->seo_description,
             'verified' => $this->email_verified_at===null?false:true,

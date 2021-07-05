@@ -20,7 +20,7 @@ class QuestionPaperCategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'created_at' => $this->created_at,
-            'image' =>  Voyager::image($this->image),
+            'image' =>  $this->image === null ? 'https://via.placeholder.com/600x325?text=Question Paper' : (str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image)),
             'created_at_formated' => $this->created_at === null ? null : $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at,
             'updated_at_formated' => $this->updated_at === null ? null : $this->updated_at->diffForHumans(),

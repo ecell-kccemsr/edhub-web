@@ -20,7 +20,7 @@ class GovernmentJobResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'image' =>  Voyager::image($this->image),
+            'image' =>  $this->image === null ? 'https://via.placeholder.com/600x325?text=Government Job' : (str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image)),
             'salary_and_job_positions' => $this->salary_and_job_positions,
             'eligibility_criteria' => $this->eligibility_criteria,
             'syllabus' => $this->syllabus,

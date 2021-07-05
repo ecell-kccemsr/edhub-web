@@ -25,7 +25,7 @@ class BlogResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'body' => $this->body,
-            'image' => str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image),
+            'image' => $this->image === null ? 'https://via.placeholder.com/600x325?text=Blog' : (str_starts_with($this->image, 'http') ? $this->image : Voyager::image($this->image)),
             'tags' => $this->tags,
             'author_name' => $this->author_name,
             'author_image' => str_starts_with($this->author_image, 'http') ? $this->author_image : Voyager::image($this->author_image),
