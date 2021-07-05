@@ -17,9 +17,6 @@ jobs:
             php artisan down
             git pull
             composer install --no-interaction --prefer-dist --optimize-autoloader
-            php artisan app:backup
-            php artisan app:refresh
-            php artisan app:restore latest
             supervisorctl restart eduhub-queue-worker
             npm i
             npm run prod-css
