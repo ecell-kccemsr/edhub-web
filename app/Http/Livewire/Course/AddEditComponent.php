@@ -32,7 +32,6 @@ class AddEditComponent extends Component
     public $course_provider_id;
     public $course_category_id;
     public $course_sub_category_id;
-    public $course_topic_id;
 
     protected $rules = [
         'title' => 'required|min:6',
@@ -45,12 +44,12 @@ class AddEditComponent extends Component
         'image' => 'image|max:1024',
     ];
 
-    protected $listeners = ['outcomeUpdated','prerequitesUpdated','faqUpdated','ratingDistributionUpdated'];
+    protected $listeners = ['outcomeUpdated', 'prerequitesUpdated', 'faqUpdated', 'ratingDistributionUpdated'];
 
     public function submit()
     {
         $this->validate();
-        if($this->course === null) {
+        if ($this->course === null) {
             $this->course = new Course();
         }
         $this->course->title = $this->title;
@@ -72,7 +71,6 @@ class AddEditComponent extends Component
         $this->course->course_provider_id = $this->course_provider_id;
         $this->course->course_category_id = $this->course_category_id;
         $this->course->course_sub_category_id = $this->course_sub_category_id;
-        $this->course->course_topic_id = $this->course_topic_id;
         $this->course->generateSlug();
         $this->course->save();
         redirect()->to('/admin/courses');
@@ -80,7 +78,7 @@ class AddEditComponent extends Component
 
     public function mount()
     {
-        if($this->course !== null) {
+        if ($this->course !== null) {
             $this->title = $this->course->title;
             $this->subtitle = $this->course->subtitle;
             $this->locale = $this->course->locale;
@@ -100,7 +98,6 @@ class AddEditComponent extends Component
             $this->course_provider_id = $this->course->course_provider_id;
             $this->course_category_id = $this->course->course_category_id;
             $this->course_sub_category_id = $this->course->course_sub_category_id;
-            $this->course_topic_id = $this->course->course_topic_id;
         }
     }
 

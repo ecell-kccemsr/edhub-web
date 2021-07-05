@@ -89,7 +89,7 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        @if ($course !== null)     
+        @if ($course !== null)
             <div class="form-group col-12">
                 <label for="exampleInputEmail1">Curriculum</label>
                 @livewire('course.curriculum-component', ['course' => $course])
@@ -113,7 +113,7 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        
+
         <div class="form-group col-12 @error('rating') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Rating</label>
             <input type="number" class="form-control"  placeholder="Enter rating" min="1" max="5"  wire:model="rating">
@@ -121,7 +121,7 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        
+
         <div class="form-group col-12 @error('discount_price') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Discount Price</label>
             <input type="number" class="form-control"  placeholder="Enter discount price" wire:model="discount_price">
@@ -129,7 +129,7 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        
+
         <div class="form-group col-12 @error('price') has-error has-feedback @enderror">
             <label for="exampleInputEmail1">Price</label>
             <input type="number" class="form-control"  placeholder="Enter price"  wire:model="price">
@@ -137,7 +137,7 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        
+
         <div class="form-group col-12 @error('course_provider_id') has-error has-feedback @enderror">
             <label for="validationTextarea">Course Provider</label>
             <select class="form-control select2" wire:model="course_provider_id">
@@ -149,7 +149,7 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        
+
         <div class="form-group col-12 @error('course_category_id') has-error has-feedback @enderror">
             <label for="validationTextarea">Course Category</label>
             <select class="form-control select2 " wire:model="course_category_id">
@@ -161,7 +161,7 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        
+
         <div class="form-group col-12 @error('course_sub_category_id') has-error has-feedback @enderror">
             <label for="validationTextarea">Course Sub Category</label>
             <select class="form-control select2" wire:model="course_sub_category_id">
@@ -173,20 +173,8 @@
             <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-        
-        <div class="form-group col-12 @error('course_topic_id') has-error has-feedback @enderror">
-            <label for="validationTextarea">Course Topic</label>
-            <select class="form-control select2" wire:model="course_topic_id">
-                @foreach(App\Models\CourseTopic::all() as $topic)
-                <option value="{{$topic->id}}">{{$topic->name}}</option>
-                @endforeach
-            </select>
-            @error('course_topic_id')
-            <div class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-    
-    
+
+
 </form>
