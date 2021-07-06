@@ -42,7 +42,7 @@ const LinkCard = props => {
                 <h4 className="link-card-section-header">{props?.title}</h4>
                 <Row>
                     {data &&
-                        data.length > 0 &&
+                        data?.length > 0 &&
                         data.slice(0, props?.limit || visible).map((d, key) => {
                             let link = "#";
                             if (props?.governmentJobURL) {
@@ -75,23 +75,20 @@ const LinkCard = props => {
                                     <p
                                         dangerouslySetInnerHTML={{
                                             __html:
-                                            d?.description.length >
-                                                180
+                                                d?.description?.length > 180
                                                     ? d?.description.slice(
                                                           0,
                                                           180
                                                       ) + "..."
                                                     : d?.description
                                         }}
-                                        
-                                    >
-                                    </p>
+                                    ></p>
                                 </Col>
                             );
                         })}
                 </Row>
                 <hr />
-                {visible < data.length && props?.toggleTrue && (
+                {visible < data?.length && props?.toggleTrue && (
                     <div className="text-center">
                         <p
                             className="link-card-section-btn mb-0 pb-0"
@@ -103,7 +100,7 @@ const LinkCard = props => {
                     </div>
                 )}
 
-                {visible >= data.length && props?.toggleTrue && (
+                {visible >= data?.length && props?.toggleTrue && (
                     <div className="text-center">
                         <p
                             className="link-card-section-btn mb-0 pb-0"

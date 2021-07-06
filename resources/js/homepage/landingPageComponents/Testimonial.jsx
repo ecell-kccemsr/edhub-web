@@ -27,8 +27,8 @@ const Testimonial = () => {
                 console.log(err);
             });
     }, []);
-    if(testimonial.length==0){
-        return <></>
+    if (testimonial?.length == 0) {
+        return <></>;
     }
     return (
         <div className="landing-page-testimonial-section ">
@@ -41,9 +41,11 @@ const Testimonial = () => {
                         <div className="carousel-slider-div">
                             <div className="course-detail-testimonial-cards-outer">
                                 <>
-                                   
                                     <div className="course-detail-testimonial-cards-inner">
-                                        <img src={testimonials?.image} alt="testimonials" />
+                                        <img
+                                            src={testimonials?.image}
+                                            alt="testimonials"
+                                        />
                                         <h6>{testimonials?.name}</h6>
                                         <p>“{testimonials?.review}”</p>
                                     </div>

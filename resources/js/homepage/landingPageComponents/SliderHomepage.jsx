@@ -36,7 +36,7 @@ const SliderHomepage = ({ title, course_category_id, description }) => {
         slidesToScroll: 1
     };
 
-    if (data.length == 0) {
+    if (data?.length == 0) {
         return <></>;
     }
 

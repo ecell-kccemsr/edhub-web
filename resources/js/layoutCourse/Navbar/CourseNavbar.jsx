@@ -84,7 +84,7 @@ const SearchbarDropdown = props => {
                                 {option?.type}
                             </p>
                             <a href={`${option?.url}`}>
-                                {option?.title.length > 50
+                                {option?.title?.length > 50
                                     ? option?.title.slice(0, 50)
                                     : option?.title}
                             </a>
@@ -271,7 +271,7 @@ const CourseNavbar = props => {
                                         categories.map(navl => {
                                             let ismegamenu = false;
                                             if (
-                                                navl.sub_categories.length > 0
+                                                navl.sub_categories?.length > 0
                                             ) {
                                                 ismegamenu = true;
                                             }
@@ -311,7 +311,7 @@ const CourseNavbar = props => {
                                                                         if (
                                                                             child
                                                                                 .course_topics
-                                                                                .length >
+                                                                                ?.length >
                                                                             0
                                                                         ) {
                                                                             ismegamenu2 = true;

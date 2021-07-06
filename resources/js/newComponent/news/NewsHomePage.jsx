@@ -90,7 +90,7 @@ const NewsHomePage = () => {
                         className=" d-flex justify-content-center flex-wrap mb-3"
                         style={newsNavStyles}
                     >
-                        {categories && categories.length > 0 && (
+                        {categories && categories?.length > 0 && (
                             <>
                                 <ButtonToggle
                                     className="category-btn-all"

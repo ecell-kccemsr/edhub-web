@@ -8,11 +8,11 @@ const PaperAccordation = ({ data }) => {
         axios.get(`/api/questionpapers/sub_categories`).then(res => {
             setSubCategory(res.data.data);
         });
-    },[]);
+    }, []);
     return (
         <>
             {data &&
-                data.length > 0 &&
+                data?.length > 0 &&
                 data.map(d => {
                     return (
                         <div
@@ -31,12 +31,15 @@ const PaperAccordation = ({ data }) => {
                                                 aria-expanded="true"
                                                 aria-controls={`collapse-${d?.slug}`}
                                             >
-                                                <div style={{display:"flex"}}>
-                                                              <img src={d?.image} alt="subcategory image" />
-                                                              <h5>
-                                                              {d?.name}
-                                                                  </h5>  
-                                                            </div>
+                                                <div
+                                                    style={{ display: "flex" }}
+                                                >
+                                                    <img
+                                                        src={d?.image}
+                                                        alt="subcategory image"
+                                                    />
+                                                    <h5>{d?.name}</h5>
+                                                </div>
                                                 <i
                                                     className="fas fa-chevron-down ml-2"
                                                     style={{
@@ -53,7 +56,10 @@ const PaperAccordation = ({ data }) => {
                                         aria-labelledby={`heading-${d?.slug}`}
                                         data-parent="#job-detailaccordionparent"
                                     >
-                                        <div className="card-body" style={{padding:"10px"}}>
+                                        <div
+                                            className="card-body"
+                                            style={{ padding: "10px" }}
+                                        >
                                             {subcategory
                                                 ?.filter(
                                                     sc =>
@@ -66,18 +72,27 @@ const PaperAccordation = ({ data }) => {
                                                         key={child?.id}
                                                         className="mb-2"
                                                     >
-                                                            <div style={{display:"flex"}}>
-                                                                 <img src={child?.image} alt="subcategory image" />
-                                                             <a href={`/questionpaper/${child?.category?.slug}/${child?.slug}`}>
-                                                                   <h5>
-                                                              {child?.name}
-                                                                  </h5> 
-                                                             </a>
-                                                               
-                                                            </div>
-                                                        
-                                                        
-                                                  
+                                                        <div
+                                                            style={{
+                                                                display: "flex"
+                                                            }}
+                                                        >
+                                                            <img
+                                                                src={
+                                                                    child?.image
+                                                                }
+                                                                alt="subcategory image"
+                                                            />
+                                                            <a
+                                                                href={`/questionpaper/${child?.category?.slug}/${child?.slug}`}
+                                                            >
+                                                                <h5>
+                                                                    {
+                                                                        child?.name
+                                                                    }
+                                                                </h5>
+                                                            </a>
+                                                        </div>
                                                     </List>
                                                 ))}
                                         </div>

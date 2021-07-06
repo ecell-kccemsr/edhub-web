@@ -196,7 +196,7 @@ const SingleBlog = props => {
                                     src="/images/blogs/comment.png"
                                     alt="Comments"
                                 />
-                                <b>{comments.length}</b>
+                                <b>{comments?.length}</b>
                             </div>
                         </div>
                         <div className="singleBlog-author-section">
@@ -372,7 +372,7 @@ const SingleBlog = props => {
                         </>
                         <Row>
                             <Col sm="12" md={{ size: 10, offset: 1 }}>
-                                {comments && comments.length > 0 && (
+                                {comments && comments?.length > 0 && (
                                     <div className="user-comment-section">
                                         <h4 className="user-comments">
                                             User Comments{" "}
@@ -385,14 +385,14 @@ const SingleBlog = props => {
                                                         setshowComments(true)
                                                     }
                                                 >
-                                                    Show {comments.length}{" "}
+                                                    Show {comments?.length}{" "}
                                                     comments
                                                 </button>
                                             )}
                                             {showComments && (
                                                 <>
                                                     {comments &&
-                                                        comments.length > 0 &&
+                                                        comments?.length > 0 &&
                                                         comments.map(c => {
                                                             return (
                                                                 <div className="comments">

@@ -77,7 +77,7 @@ const DetailCard = ({ singleCourse }) => {
                 <div className="card-section-details-content-price">
                     <div>
                         {singleCourse.course_instructor &&
-                            singleCourse.course_instructor.length > 0 &&
+                            singleCourse.course_instructor?.length > 0 &&
                             singleCourse.course_instructor.map(
                                 courseinstructor => (
                                     <h5>{courseinstructor?.name}</h5>

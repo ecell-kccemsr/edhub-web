@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "reactstrap";
 const TwitterNews = ({ data }) => {
-    console.log(data);
     return (
         <>
             <Container style={{ boxShadow: "none" }} className="auth">

@@ -31,15 +31,20 @@ function ProfileWishlist() {
                         </Col>
                     )}
 
-                    {!loadingCourses && wishlist && wishlist.length == 0 && (
+                    {!loadingCourses && wishlist && wishlist?.length == 0 && (
                         <h4>You don't have any courses in wishlist !</h4>
                     )}
 
                     {!loadingCourses &&
                         wishlist &&
-                        wishlist.length > 0 &&
+                        wishlist?.length > 0 &&
                         wishlist.map(course => (
-                            <Col sm="12" md="4" key={course?.id} style={{marginBottom:"15px"}}>
+                            <Col
+                                sm="12"
+                                md="4"
+                                key={course?.id}
+                                style={{ marginBottom: "15px" }}
+                            >
                                 <CourseCard data={course} />
                             </Col>
                         ))}

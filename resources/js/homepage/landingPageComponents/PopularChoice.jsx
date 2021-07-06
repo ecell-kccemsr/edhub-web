@@ -21,19 +21,17 @@ const PopularChoice = ({ title, data, description }) => {
         slidesToScroll: 1
     };
 
-    if(data.length==0){
-        return <></>
+    if (data?.length == 0) {
+        return <></>;
     }
-    
+
     return (
         <>
             <div className="popular-choice-section">
                 <h3 className="popular-choice-header">{title}</h3>
                 <Row className=" popular-choice-sub-section">
                     <Col sm="12" md="6" lg="5">
-                        <p className="popular-choice-content">
-                           {description}
-                        </p>
+                        <p className="popular-choice-content">{description}</p>
                     </Col>
                     <Col
                         sm="12"

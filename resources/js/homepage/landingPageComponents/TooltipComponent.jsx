@@ -17,7 +17,7 @@ const TooltipComponent = ({ data }) => {
             <div className="course-card-tooltip-div">
                 <h3>{data?.title}</h3>
                 <h6>
-                    {data?.description.length > 80
+                    {data?.description?.length > 80
                         ? data?.description.slice(0, 80) + "..."
                         : data?.description}
                 </h6>

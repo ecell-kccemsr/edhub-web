@@ -78,7 +78,7 @@ function CourseDetail(props) {
     const isAlreadyInCompares =
         compares.findIndex(course => course.id === singleCourse.id) !== -1;
     const handleCompare = singleCourse => {
-        if (compares.length > 2) {
+        if (compares?.length > 2) {
             alert("Cant add more");
             return;
         } else {
@@ -255,7 +255,7 @@ function CourseDetail(props) {
                                     <Col sm="12">
                                         <div className="course-overview-card">
                                             {singleCourse.outcome &&
-                                                singleCourse?.outcome.length !=
+                                                singleCourse?.outcome?.length !=
                                                     0 && (
                                                     <>
                                                         <h5 className="course-overview-card-title">
@@ -310,7 +310,7 @@ function CourseDetail(props) {
                                             )}
                                         </div>
                                         {singleCourse.description &&
-                                            singleCourse?.description.length !=
+                                            singleCourse?.description?.length !=
                                                 0 && (
                                                 <>
                                                     <div className="course-overview-card">
@@ -335,7 +335,7 @@ function CourseDetail(props) {
                                                 </>
                                             )}
                                         {courseCurr.detail &&
-                                            singleCourse?.detail.length !=
+                                            singleCourse?.detail?.length !=
                                                 0 && (
                                                 <>
                                                     <h5
@@ -432,7 +432,7 @@ function CourseDetail(props) {
                                             )}
                                         {singleCourse.prerequisites &&
                                             singleCourse?.prerequisites
-                                                .length != 0 && (
+                                                ?.length != 0 && (
                                                 <>
                                                     <div className="course-prereq-section">
                                                         <h5
@@ -484,7 +484,7 @@ function CourseDetail(props) {
                                         <Col sm="12" md="8">
                                             {singleCourse.course_instructor &&
                                                 singleCourse?.course_instructor
-                                                    .length != 0 && (
+                                                    ?.length != 0 && (
                                                     <>
                                                         <h5
                                                             className="course-content-top-header"
@@ -495,7 +495,7 @@ function CourseDetail(props) {
                                                         {singleCourse.course_instructor &&
                                                             singleCourse
                                                                 .course_instructor
-                                                                .length > 0 &&
+                                                                ?.length > 0 &&
                                                             singleCourse.course_instructor.map(
                                                                 courseinstructor => (
                                                                     <>
