@@ -9,7 +9,10 @@ const NewsCard = ({ tags, data, toUrl }) => {
                     <Col sm="12" md="6" lg="9">
                         <div className="blog-card-top-text-section">
                             <h6>#{data?.category?.name}</h6>
-                            <Link to={toUrl || "#"} style={{ color: "#515151" }}>
+                            <Link
+                                to={toUrl || "#"}
+                                style={{ color: "#515151" }}
+                            >
                                 <h4>{data?.title}</h4>
                             </Link>
                         </div>
@@ -22,11 +25,11 @@ const NewsCard = ({ tags, data, toUrl }) => {
             {data?.description && (
                 <>
                     <p>
-                        {data?.description.length > 180
+                        {data?.description?.length > 180
                             ? data?.description.slice(0, 180) + "..."
                             : data?.description}
                     </p>
-                    <p >
+                    <p>
                         <Link
                             to={toUrl || "#"}
                             style={{ color: "#ff0000", fontSize: "21px" }}
@@ -41,7 +44,7 @@ const NewsCard = ({ tags, data, toUrl }) => {
                     <p
                         dangerouslySetInnerHTML={{
                             __html:
-                                data?.body.length > 300
+                                data?.body?.length > 300
                                     ? data.body.slice(0, 300) + "..."
                                     : data?.body
                         }}
@@ -60,47 +63,62 @@ const NewsCard = ({ tags, data, toUrl }) => {
             <div className="blog-card-footer-section">
                 {data && (
                     <div className="tag">
-                    <img src="/images/news/tag.png" alt="tags"/>
+                        <img src="/images/news/tag.png" alt="tags" />
                         <p>#{data?.tags}</p>
                     </div>
                 )}
 
                 <div className="blog-footer-social">
-                <div className="social-container">
-                                  <a
-                                    href={` https://t.me/share/url?url=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                   <i className="fab fa-telegram" style={{color:"#0088CC"}}></i>
-                                </a>
-                                <a
-                                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                   <i className="fab fa-linkedin" style={{color:"#2867B2"}}></i>
-                                </a>
-                                <a
-                                    href={`https://www.facebook.com/sharer.php?u=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                    {" "}
-                                    <i className="fab fa-facebook" style={{color:"#3C5A99"}}></i>
-                                </a>
-                                <a
-                                    href={`https://twitter.com/intent/tweet?url=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                    {" "}
-                                    <i className="fab fa-twitter" style={{color:"#1DA1F2"}}></i>
-                                </a>
-                                <a
-                                    href={`https://api.whatsapp.com/send?text=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                    {" "}
-                                    <i className="fab fa-whatsapp" style={{color:"#49C858"}}></i>
-                                </a>
-                            </div>
+                    <div className="social-container">
+                        <a
+                            href={` https://t.me/share/url?url=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            <i
+                                className="fab fa-telegram"
+                                style={{ color: "#0088CC" }}
+                            ></i>
+                        </a>
+                        <a
+                            href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            <i
+                                className="fab fa-linkedin"
+                                style={{ color: "#2867B2" }}
+                            ></i>
+                        </a>
+                        <a
+                            href={`https://www.facebook.com/sharer.php?u=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            {" "}
+                            <i
+                                className="fab fa-facebook"
+                                style={{ color: "#3C5A99" }}
+                            ></i>
+                        </a>
+                        <a
+                            href={`https://twitter.com/intent/tweet?url=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            {" "}
+                            <i
+                                className="fab fa-twitter"
+                                style={{ color: "#1DA1F2" }}
+                            ></i>
+                        </a>
+                        <a
+                            href={`https://api.whatsapp.com/send?text=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            {" "}
+                            <i
+                                className="fab fa-whatsapp"
+                                style={{ color: "#49C858" }}
+                            ></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

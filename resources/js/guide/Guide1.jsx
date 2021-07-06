@@ -35,7 +35,7 @@ const Guide = ({ nextStep, categories, setModalVals, modalVals }) => {
                                 Select an Category
                             </option>
                             {categories &&
-                                categories.length > 0 &&
+                                categories?.length > 0 &&
                                 categories.map(c => (
                                     <option key={c?.id} value={c?.id}>
                                         {c?.name}
@@ -54,7 +54,7 @@ const Guide = ({ nextStep, categories, setModalVals, modalVals }) => {
                             </option>
                             {subCategories &&
                                 subCategories?.sub_categories &&
-                                subCategories?.sub_categories.length > 0 &&
+                                subCategories?.sub_categories?.length > 0 &&
                                 subCategories?.sub_categories.map(sc => (
                                     <option key={sc?.id} value={sc?.id}>
                                         {sc?.name}
@@ -62,7 +62,7 @@ const Guide = ({ nextStep, categories, setModalVals, modalVals }) => {
                                 ))}
                             {subCategories &&
                                 subCategories?.sub_categories &&
-                                subCategories?.sub_categories.length == 0 && (
+                                subCategories?.sub_categories?.length == 0 && (
                                     <option value="none" disabled>
                                         No sub-category found
                                     </option>

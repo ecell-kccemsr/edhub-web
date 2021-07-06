@@ -144,7 +144,7 @@ const prevQPaperHomepage = () => {
                         </div>
                     </div>
                     {/* Latest Notifications */}
-                    {jobs && jobs.length > 0 && (
+                    {jobs && jobs?.length > 0 && (
                         <LinkCard
                             title="Latest Notifications"
                             data={jobs}

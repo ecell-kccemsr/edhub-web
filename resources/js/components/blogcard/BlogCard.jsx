@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React from "react";
 import { Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 const BlogCard = ({ tags, data, toUrl }) => {
@@ -31,7 +31,7 @@ const BlogCard = ({ tags, data, toUrl }) => {
                                     : data?.body
                         }}
                     ></p>
-                    <span >
+                    <span>
                         <Link
                             to={toUrl || "#"}
                             style={{ color: "#F05454", fontSize: "16px" }}
@@ -52,8 +52,8 @@ const BlogCard = ({ tags, data, toUrl }) => {
                     </div>
                 )}
 
-                    {!tags && (
-                       <div className="blog-footer-author-section">
+                {!tags && (
+                    <div className="blog-footer-author-section">
                         <img src={data?.author_image} alt="Author Image" />
                         <p>
                             {data?.author_name} | {data?.autor_designation}
@@ -62,42 +62,53 @@ const BlogCard = ({ tags, data, toUrl }) => {
                 )}
 
                 <div className="blog-footer-social">
-                <div className="social-container">
-
-                                  <a
-                                    href={` https://t.me/share/url?url=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                   <i className="fab fa-telegram" style={{color:"#0088CC"}}></i>
-                                </a>
-                                <a
-                                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                   <i className="fab fa-linkedin" style={{color:"#2867B2"}}></i>
-                                </a>
-                                <a
-                                    href={`https://www.facebook.com/sharer.php?u=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                    
-                                    <i className="fab fa-facebook" style={{color:"#3C5A99"}}></i>
-                                </a>
-                                <a
-                                    href={`https://twitter.com/intent/tweet?url=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                    
-                                    <i className="fab fa-twitter" style={{color:"#1DA1F2"}}></i>
-                                </a>
-                                <a
-                                    href={`https://api.whatsapp.com/send?text=${window.location.href}/${data?.slug}`}
-                                    target="_blank"
-                                >
-                                    
-                                    <i className="fab fa-whatsapp" style={{color:"#49C858"}}></i>
-                                </a>
-                            </div>
+                    <div className="social-container">
+                        <a
+                            href={` https://t.me/share/url?url=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            <i
+                                className="fab fa-telegram"
+                                style={{ color: "#0088CC" }}
+                            ></i>
+                        </a>
+                        <a
+                            href={`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            <i
+                                className="fab fa-linkedin"
+                                style={{ color: "#2867B2" }}
+                            ></i>
+                        </a>
+                        <a
+                            href={`https://www.facebook.com/sharer.php?u=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            <i
+                                className="fab fa-facebook"
+                                style={{ color: "#3C5A99" }}
+                            ></i>
+                        </a>
+                        <a
+                            href={`https://twitter.com/intent/tweet?url=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            <i
+                                className="fab fa-twitter"
+                                style={{ color: "#1DA1F2" }}
+                            ></i>
+                        </a>
+                        <a
+                            href={`https://api.whatsapp.com/send?text=${window.location.href}/${data?.slug}`}
+                            target="_blank"
+                        >
+                            <i
+                                className="fab fa-whatsapp"
+                                style={{ color: "#49C858" }}
+                            ></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

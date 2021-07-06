@@ -183,7 +183,7 @@ const SingleNewsPage = props => {
                                 className=" d-flex justify-content-center flex-wrap mb-3"
                                 style={newsNavStyles}
                             >
-                                {categories && categories.length > 0 && (
+                                {categories && categories?.length > 0 && (
                                     <>
                                         <a
                                             className="category-btn-all"
@@ -238,7 +238,7 @@ const SingleNewsPage = props => {
                                                         alt="Comments"
                                                     />
                                                     <span>
-                                                        {comments.length}
+                                                        {comments?.length}
                                                     </span>
                                                 </div>
                                                 <div className="news-interaction-el-1">
@@ -415,14 +415,14 @@ const SingleNewsPage = props => {
                                                             }
                                                         >
                                                             Show{" "}
-                                                            {comments.length}{" "}
+                                                            {comments?.length}{" "}
                                                             comments
                                                         </button>
                                                     )}
                                                     {showComments && (
                                                         <>
                                                             {comments &&
-                                                                comments.length >
+                                                                comments?.length >
                                                                     0 &&
                                                                 comments.map(
                                                                     c => {
@@ -541,7 +541,7 @@ const SingleNewsPage = props => {
                                         <div className="top-container-el">
                                             <div className="text-container">
                                                 {relatednews &&
-                                                    relatednews.length > 0 &&
+                                                    relatednews?.length > 0 &&
                                                     relatednews.map(r => (
                                                         <>
                                                             <p className="tag">
@@ -560,7 +560,7 @@ const SingleNewsPage = props => {
                                                                     __html:
                                                                         r
                                                                             ?.details
-                                                                            .length >
+                                                                            ?.length >
                                                                         100
                                                                             ? r?.details.slice(
                                                                                   0,
