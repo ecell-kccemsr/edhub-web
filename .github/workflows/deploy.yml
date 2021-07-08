@@ -17,7 +17,6 @@ jobs:
             php artisan down
             git pull
             composer install --no-interaction --prefer-dist --optimize-autoloader
-            supervisorctl restart eduhub-queue-worker
             npm i
             npm run prod-css
             npm run prod-js
@@ -26,3 +25,4 @@ jobs:
             chmod -R 775 storage
             chmod -R 775 bootstrap/cache
             php artisan up
+            supervisorctl restart eduhub-queue-worker
