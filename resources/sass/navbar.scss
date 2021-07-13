@@ -193,6 +193,7 @@
     }
 }
 .dropdown-menu {
+    z-index: 2000;
     min-width: max-content;
     .megasubmenu,
     .megasubmenu-2 {

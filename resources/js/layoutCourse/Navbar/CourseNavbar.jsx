@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link, Redirect, withRouter } from "react-router-dom";
 import {
     Button,
@@ -132,6 +132,14 @@ const CourseNavbar = props => {
         locale: ""
     });
 
+    const wrapperRef = useRef();
+
+    const handleMouseDown = useCallback(event => {
+        if (!!wrapperRef && !wrapperRef.current.contains(event.target)) {
+            setShowMegaMenu(false);
+        }
+    }, []);
+
     useEffect(() => {
         http.get("courses/categories?per_page=1000")
             .then(res => {
@@ -141,6 +149,14 @@ const CourseNavbar = props => {
                 console.log(err);
             });
     }, []);
+
+    useEffect(() => {
+        window.addEventListener("mousedown", handleMouseDown);
+
+        return () => {
+            window.removeEventListener("mousedown", handleMouseDown);
+        };
+    }, [handleMouseDown]);
 
     const toggle = () => {
         setModal(!modal);
@@ -247,6 +263,7 @@ const CourseNavbar = props => {
                         data-bs-target="#main_nav"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
+                        data-toggle="dropdown"
                     >
                         <i className="fas fa-bars"></i>
                     </button>
@@ -258,7 +275,9 @@ const CourseNavbar = props => {
                                         showMegaMenu ? "show" : ""
                                     }`}
                                     href="#"
-                                    data-bs-toggle="dropdown"
+                                    onClick={() =>
+                                        setShowMegaMenu(!showMegaMenu)
+                                    }
                                     aria-expanded={`${showMegaMenu}`}
                                 >
                                     <span>Courses</span>
@@ -267,6 +286,7 @@ const CourseNavbar = props => {
                                     className={`dropdown-menu ${
                                         showMegaMenu ? "show" : ""
                                     }`}
+                                    ref={wrapperRef}
                                 >
                                     {categories &&
                                         categories.map(navl => {
