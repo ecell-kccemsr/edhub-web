@@ -113,6 +113,7 @@ const CourseNavbar = props => {
         const form = e.target;
         if (searchText != "") {
             history.push(`/course-category?q=${searchText}`);
+            location.reload();
             form.reset();
         }
     };

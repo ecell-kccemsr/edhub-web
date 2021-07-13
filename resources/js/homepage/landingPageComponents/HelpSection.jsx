@@ -5,7 +5,9 @@ const HelpSection = () => {
     return (
         <div className="landing-page-help-section">
             <h1 className="landing-page-help-section-header">
-                How Edhub helps you choose the best course
+                Edhub helps you choose & compare the best course from global
+                Ed-tech leaders like Udemy, Coursera, Skillshare, Linkedin
+                Learning & many more.
             </h1>
 
             <Container>
@@ -23,9 +25,7 @@ const HelpSection = () => {
                         />
                         <div className="text-container">
                             <h4>BROWSE</h4>
-                            <p>
-                                Search from the world's best courses
-                            </p>
+                            <p>Search from the world's best courses</p>
                         </div>
                     </Col>
                     <Col
@@ -50,7 +50,8 @@ const HelpSection = () => {
                         <div className="text-container">
                             <h4>ANALYZE AND COMPARE</h4>
                             <p>
-                                Find your Perfect course among thousands of others
+                                Find your Perfect course among thousands of
+                                others
                             </p>
                         </div>
                     </Col>

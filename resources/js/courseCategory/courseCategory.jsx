@@ -167,14 +167,14 @@ const courseCategory = props => {
         }
         //If user comes from searching on landing page but entered empty string (show all courses)
         else if (props?.location?.search == "") {
-            setApiURL("/api/courses?");
-            getCourses(false, "/api/courses?");
+            setApiURL("/api/courses?&sugessted=1");
+            getCourses(false, "/api/courses?&sugessted=1");
         }
         //If user comes from searching on landing page (show courses as per user preference)
         else {
             let url = `/api/courses?search${props?.location?.search.substring(
                 2
-            )}&`;
+            )}&sugessted=1`;
             setApiURL(url);
             getCourses(false, url);
         }

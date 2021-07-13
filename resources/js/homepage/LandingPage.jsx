@@ -14,7 +14,7 @@ function LandingPage() {
     const [redirectToCourse, setRedirect] = useState(false);
     useEffect(() => {
         axios
-            .get("/api/courses")
+            .get(`/api/courses?&sugessted=1`)
             .then(res => {
                 setCourse(res.data.data);
             })
@@ -25,7 +25,7 @@ function LandingPage() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        if(searchText!=""){
+        if (searchText != "") {
             setRedirect(true);
         }
     };
@@ -46,18 +46,35 @@ function LandingPage() {
             <HelpSection />
 
             {/* {course && <PopularChoice data={course} title="Popular Choices" />} */}
-            <SliderHomepage title="Computer Science" description="Learn top-rated courses like AI, ML, Programming, data analysis, DevOps from experts." course_category_id={1} />
-            <SliderHomepage title="Business"
-            description="Learn top-rated courses like Entrepreneurship, Project Management, Business analytics & Intelligence from experts." course_category_id={2} />
+            <SliderHomepage
+                title="Development"
+                description="Learn top-rated courses like AI, ML, Programming, data analysis, DevOps from experts."
+                course_category_id={1}
+            />
+            <SliderHomepage
+                title="Business"
+                description="Learn top-rated courses like Entrepreneurship, Project Management, Business analytics & Intelligence from experts."
+                course_category_id={2}
+            />
             {/* <SliderHomepage title="Finance and Accounting" course_category_id={3} /> */}
-            <SliderHomepage title="IT & Software" description="Learn top-rated courses like Network & Security, Operating Systems, AWS, Hardware from experts." course_category_id={4} />
-            <SliderHomepage title="Office Productivity" description="Learn top-rated Office Productivity courses in Apple, Microsoft, Google, SAP, Oracle from experts" course_category_id={5} />
+            <SliderHomepage
+                title="IT & Software"
+                description="Learn top-rated courses like Network & Security, Operating Systems, AWS, Hardware from experts."
+                course_category_id={4}
+            />
+            <SliderHomepage
+                title="Office Productivity"
+                description="Learn top-rated Office Productivity courses in Apple, Microsoft, Google, SAP, Oracle from experts"
+                course_category_id={5}
+            />
             {/* <SliderHomepage title="Personal Development" description="Learn top-rated courses like Web Design, Game Design, 3D & Animation, Fashion Design from experts." course_category_id={6} /> */}
             {/* <SliderHomepage title="Design" description="Learn top-rated courses like Web Design, Game Design, 3D & Animation, Fashion Design from experts." course_category_id={7} /> */}
-            <SliderHomepage title="Marketing" description="Learn top-rated courses like Digital Marketing, SEO, Branding, SMM, Affiliate Marketing  from experts." course_category_id={8} />
+            <SliderHomepage
+                title="Marketing"
+                description="Learn top-rated courses like Digital Marketing, SEO, Branding, SMM, Affiliate Marketing  from experts."
+                course_category_id={8}
+            />
 
-
-        
             {/* {course && (
                 <PopularChoice
                     data={course}
@@ -70,7 +87,11 @@ function LandingPage() {
             <Testimonial />
 
             {course && (
-                <PopularChoice data={course} title="Popular Choices" description="Explore what most students have enrolled for. " />
+                <PopularChoice
+                    data={course}
+                    title="Popular Choices"
+                    description="Explore what most students have enrolled for. "
+                />
             )}
         </div>
     );
