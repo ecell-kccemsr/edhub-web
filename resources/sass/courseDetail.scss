@@ -10,13 +10,12 @@
         }
     }
     .course-detail-hero-section {
-        background: url("/images/courseDetail/courseDetailHeader.png");
+        background: url("/images/courseDetail/BannerCourseDetailPage.png");
         background-position: center;
         background-size: cover;
         padding: 30px;
         .containerClass {
             box-shadow: none;
-            h2,
             h4,
             h5,
             h6 {
@@ -29,6 +28,7 @@
                 font-size: 25px;
                 font-weight: 500;
                 margin-bottom: 20px;
+                color: #000;
             }
             h4 {
                 font-weight: 400;
@@ -82,7 +82,6 @@
                 }
             }
         }
-
     }
     .compare-btn-detail {
         transform: rotate(-90deg);
@@ -405,6 +404,7 @@
             }
             .popular-choice-btn-container {
                 text-align: right;
+                margin-top: -20px;
 
                 .popular-choice-btn {
                     padding: 10px 60px;

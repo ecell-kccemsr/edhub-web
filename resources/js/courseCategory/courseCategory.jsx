@@ -103,9 +103,14 @@ const CourseCategoryCarousel = props => {
         //     />
         // </Carousel>
         <div>
-            <h2 style={{ textAlign: "center", fontFamily: "Merriweather" }}>
-                All ‘category or search’ Courses From Top Universities,
-                Institutions and Experts
+            <h2
+                style={{
+                    fontFamily: "Merriweather",
+                    marginLeft: "0px",
+                    fontSize: "23px"
+                }}
+            >
+                Explore All Courses From Top Univerties Institution & Experts
             </h2>
         </div>
     );
@@ -194,7 +199,7 @@ const courseCategory = props => {
         provider,
         max,
         min,
-        perPage = 15,
+        perPage = 24,
         pageNumber,
         certification,
         language,
@@ -245,7 +250,7 @@ const courseCategory = props => {
     };
 
     const handlePagination = pageNo => {
-        getCourses(true, apiURL, null, null, null, null, 15, pageNo);
+        getCourses(true, apiURL, null, null, null, null, 24, pageNo);
         window.scrollTo(0, 0);
     };
 

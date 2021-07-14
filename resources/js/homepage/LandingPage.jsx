@@ -46,11 +46,11 @@ function LandingPage() {
             <HelpSection />
 
             {/* {course && <PopularChoice data={course} title="Popular Choices" />} */}
-            <SliderHomepage
+            {/* <SliderHomepage
                 title="Development"
                 description="Learn top-rated courses like AI, ML, Programming, data analysis, DevOps from experts."
                 course_category_id={1}
-            />
+            /> */}
             <SliderHomepage
                 title="Business"
                 description="Learn top-rated courses like Entrepreneurship, Project Management, Business analytics & Intelligence from experts."

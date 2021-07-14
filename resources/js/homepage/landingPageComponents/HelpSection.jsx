@@ -76,7 +76,10 @@ const HelpSection = () => {
                         />
                         <div className="text-container">
                             <h4>UPSKILL</h4>
-                            <p>Reward your brain with an extra skill.</p>
+                            <p>
+                                Get certified & Reward your brain with an extra
+                                skill.
+                            </p>
                         </div>
                     </Col>
                 </Row>

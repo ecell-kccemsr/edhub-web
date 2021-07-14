@@ -47,7 +47,7 @@ const DetailCard = ({ singleCourse }) => {
                            </>
                        )
                    } */}
-                        <h5>₹{singleCourse?.price}/-</h5>
+                        <h5>${singleCourse?.price}/-</h5>
                         {/* {
                        singleCourse?.price==singleCourse?.discount_price && (
                            <>
@@ -60,7 +60,7 @@ const DetailCard = ({ singleCourse }) => {
                     </div>
                 </div>
                 <div>
-                    {singleCourse?.rating <= 0 ? (
+                    {/* {singleCourse?.rating <= 0 ? (
                         <img src="/images/star0.png" alt="Star" />
                     ) : singleCourse?.rating <= 1 ? (
                         <img src="/images/star1.png" alt="Star" />
@@ -72,7 +72,8 @@ const DetailCard = ({ singleCourse }) => {
                         <img src="/images/star4.png" alt="Star" />
                     ) : (
                         <img src="/images/star5.png" alt="Star" />
-                    )}
+                    )} */}
+                    <img src="/images/star4.png" alt="Star" />
                 </div>
                 <div className="card-section-details-content-price">
                     <div>
@@ -133,7 +134,7 @@ const DetailCard = ({ singleCourse }) => {
                         <h6>Mentored Course</h6>
                     </div>
                 </div>
-                <div className="card-section-details-content-price">
+                {/* <div className="card-section-details-content-price">
                     <div
                         style={{
                             display: "flex",
@@ -149,7 +150,7 @@ const DetailCard = ({ singleCourse }) => {
                         />
                         <h6>22.5 hrs Total</h6>
                     </div>
-                </div>
+                </div> */}
                 <div className="card-section-details-content-price">
                     <div
                         style={{

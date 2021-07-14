@@ -297,7 +297,10 @@ function CourseDetail(props) {
                                                         src="/images/courseDetail/stat2.png"
                                                         alt="stat2"
                                                     />
-                                                    <p>Upto 12 % New career</p>
+                                                    <p>
+                                                        Upto 85% + New career
+                                                        opportunities
+                                                    </p>
                                                 </div>
                                             </div>
                                             <h5 className="course-overview-card-title">
@@ -565,7 +568,7 @@ function CourseDetail(props) {
                                                         md="2"
                                                         className="rating-container"
                                                     >
-                                                        {singleCourse?.rating && (
+                                                        {/* {singleCourse?.rating && (
                                                             <h4>
                                                                 {Math.ceil(
                                                                     parseFloat(
@@ -609,7 +612,12 @@ function CourseDetail(props) {
                                                                 src="/images/star5.png"
                                                                 alt="Star"
                                                             />
-                                                        )}
+                                                        )} */}
+                                                        <h4>4.2</h4>
+                                                        <img
+                                                            src="/images/star4.png"
+                                                            alt="Star"
+                                                        />
                                                         <p>course rating</p>
                                                     </Col>
                                                     <Col
@@ -786,8 +794,8 @@ function CourseDetail(props) {
                     <div className="popular-choice-section-course-details">
                         <Row className="course-card-landing-page-row">
                             <SliderHomepage
-                                title="Recommended for you"
-                                description=""
+                                title="Recommended Courses for you"
+                                description="All top rated courses enrolled by learners"
                                 course_category_id={singleCourse?.category?.id}
                             />
                         </Row>

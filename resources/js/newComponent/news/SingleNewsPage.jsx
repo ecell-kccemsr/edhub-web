@@ -209,6 +209,8 @@ const SingleNewsPage = props => {
                                         {categorynews?.category?.name}
                                     </h4>
                                     <div className="singlnews-main-card">
+                                        <h5>{categorynews?.title}</h5>
+
                                         {categorynews && (
                                             <img
                                                 src={categorynews?.image}
@@ -314,7 +316,6 @@ const SingleNewsPage = props => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <h5>{categorynews?.title}</h5>
                                         <h6 className="news-author">
                                             By {categorynews?.published_by}
                                         </h6>

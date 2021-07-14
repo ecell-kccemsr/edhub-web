@@ -17,7 +17,7 @@ const BlogHomepage = () => {
     useEffect(() => {
         getBlogs();
         axios
-            .get("/api/courses?per_page=5")
+            .get("/api/courses?per_page=8")
             .then(res => {
                 setCourse(res.data.data);
             })
@@ -28,7 +28,7 @@ const BlogHomepage = () => {
 
     const getBlogs = (pageNo = 1) => {
         axios
-            .get(`/api/blogs?per_page=5&page=${pageNo}`)
+            .get(`/api/blogs?per_page=8&page=${pageNo}`)
             .then(res => {
                 setLoading(false);
                 setBlogs(res.data.data);
