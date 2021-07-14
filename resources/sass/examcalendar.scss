@@ -1,6 +1,6 @@
 // title
 .exam-calendar-section {
-    padding: 50px 150px;
+    padding: 10px 150px;
 }
 // Exam Categories
 .exam-menu-section {
@@ -34,7 +34,7 @@
 }
 // exam-toggle-section
 .exam-toggle-section {
-    padding: 20px 150px;
+    padding: 5px 150px;
 
     .exam-toggle-btn-section {
         background: #f8f8f8;
@@ -63,7 +63,7 @@
 .exam-toggle-content-section {
     background-color: #f3f3f3;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 5px;
     border-radius: 10px;
     .exam-toggle-content {
         display: flex;
@@ -122,6 +122,17 @@
     .exam-menu-section {
         .exam-btn-section {
             flex-wrap: wrap;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .exam-menu-section {
+        display: none;
+    }
+    .exam-toggle-section {
+        padding: 5px;
+        .exam-toggle-content-section {
+            margin: 2px;
         }
     }
 }

@@ -87,7 +87,7 @@ const NewsHomePage = () => {
             <div className="news-section-container">
                 <div className="containerClass">
                     <div
-                        className=" d-flex justify-content-center flex-wrap mb-3"
+                        className=" d-flex justify-content-center flex-wrap mb-1"
                         style={newsNavStyles}
                     >
                         {categories && categories?.length > 0 && (

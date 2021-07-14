@@ -200,7 +200,7 @@ function CourseDetail(props) {
                     <Container className="containerClass">
                         <Row>
                             <Col sm="12" md="6" lg="8">
-                                <Nav>
+                                <Nav className="course-detail-page-mini-navbar">
                                     <NavItem>
                                         <NavLink
                                             className="navlink-course-detail"

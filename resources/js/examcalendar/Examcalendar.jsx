@@ -150,7 +150,7 @@ const Examcalendar = props => {
                                                             sm="12"
                                                             md="6"
                                                             lg="3"
-                                                            className="exam-toggle-content-section m-4"
+                                                            className="exam-toggle-content-section m-2"
                                                             key={cal.id}
                                                         >
                                                             <div className="exam-toggle-content-sub-section">

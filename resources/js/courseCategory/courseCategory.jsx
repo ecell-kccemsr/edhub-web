@@ -102,17 +102,18 @@ const CourseCategoryCarousel = props => {
         //         onClickHandler={next}
         //     />
         // </Carousel>
-        <div>
-            <h2
-                style={{
-                    fontFamily: "Merriweather",
-                    marginLeft: "0px",
-                    fontSize: "23px"
-                }}
-            >
-                Explore All Courses From Top Univerties Institution & Experts
-            </h2>
-        </div>
+
+        <h2
+            style={{
+                fontFamily: "Merriweather",
+                marginLeft: "0px",
+                fontSize: "23px",
+                marginTop: "10px",
+                paddingTop: "21px"
+            }}
+        >
+            Explore All Courses From Top Univerties Institution & Experts
+        </h2>
     );
 };
 

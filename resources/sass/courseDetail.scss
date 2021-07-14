@@ -48,7 +48,7 @@
                 border: none;
                 outline: none;
                 padding: 5px 20px;
-                font-weight: 300;
+                font-weight: 600;
                 margin: 2px 4px 2px 0;
                 border-radius: 10px;
             }
@@ -62,7 +62,7 @@
                 border: none;
                 outline: none;
                 padding: 5px 20px;
-                font-weight: 300;
+                font-weight: 600;
                 margin: 2px 40px 2px 0;
                 border-radius: 10px;
             }
@@ -73,12 +73,13 @@
                 border: none;
                 outline: none;
                 padding: 9px 10px;
-                font-weight: 300;
+                font-weight: 600;
                 margin: 2px 4px 2px 0;
                 border-radius: 10px;
                 h5 {
                     margin-bottom: 0px;
                     font-size: 15px;
+                    font-weight: 600;
                 }
             }
         }
@@ -180,7 +181,7 @@
             border-radius: 12px;
             margin: 30px 0;
             .course-overview-card-title {
-                font-weight: 400;
+                font-weight: 600;
                 text-transform: capitalize;
                 color: #333333;
             }
@@ -203,7 +204,7 @@
                 margin: 15px 0;
                 .stat-container {
                     display: flex;
-                    flex-wrap: wrap;
+                    flex-wrap: nowrap;
                     align-items: center;
                     margin: 2px 10px 2px 0;
                     img {
@@ -230,7 +231,7 @@
             }
         }
         .course-content-top-header {
-            font-weight: 400;
+            font-weight: 600;
             color: #333333;
             text-transform: capitalize;
             margin-bottom: 15px;
@@ -405,6 +406,7 @@
             .popular-choice-btn-container {
                 text-align: right;
                 margin-top: -20px;
+                padding: 20px;
 
                 .popular-choice-btn {
                     padding: 10px 60px;
@@ -431,5 +433,12 @@
     }
     .add-to-cart-section-details {
         display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .containerClass {
+        .course-detail-page-mini-navbar {
+            display: none;
+        }
     }
 }

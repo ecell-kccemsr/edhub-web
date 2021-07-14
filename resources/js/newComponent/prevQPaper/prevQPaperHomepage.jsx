@@ -75,7 +75,9 @@ const prevQPaperHomepage = () => {
             </Helmet>
             <div className="governmentjob">
                 <div className="job-page">
-                    <h4 className="text-center">Previous Question papers</h4>
+                    <h4 className="text-center">
+                        Previous Year Question papers
+                    </h4>
                     <div className="job-tabs-section">
                         <h5 className="job-tab-header-text">
                             Select Your Exam

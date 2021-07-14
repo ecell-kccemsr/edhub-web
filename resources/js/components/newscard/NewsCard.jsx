@@ -3,7 +3,7 @@ import { Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 const NewsCard = ({ tags, data, toUrl }) => {
     return (
-        <div className="blog-main-card mb-2">
+        <div className="blog-main-card">
             <div className="blog-card-top-section">
                 <Row>
                     <Col sm="12" md="6" lg="9">
