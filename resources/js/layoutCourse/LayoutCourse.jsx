@@ -36,8 +36,9 @@ function LayoutCourse({ children }) {
             </Link>
             <div className="request-btn">
                 <img
-                    src="/images/request-call.png"
+                    src="/images/phone.png"
                     alt="request"
+                    style={{ height: "68px", width: "50%", zIndex: "1000" }}
                     onClick={toggleLogin}
                 />
                 <Modal
